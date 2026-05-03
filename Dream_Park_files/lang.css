@@ -1,0 +1,54 @@
+
+.not-logged-in #header {
+  background-image: url(../images/gmenu-n.png);
+}
+.trial #header {
+  background-image: url(../images/gmenu-t.png);
+}
+.logged-in-black #header {
+  background-image: url(../images/gmenu-b.png);
+}
+.logged-in-white #header {
+  background-image: url(../images/gmenu-w.png);
+}
+.logged-in-black2 #header {
+  background-image: url(../images/gmenu-b2.png);
+}
+.logged-in-white2 #header {
+  background-image: url(../images/gmenu-w2.png);
+}
+
+.trial #head-menu li a {
+  background-image: url(../images/gmenu-t.png);
+}
+.logged-in-black #head-menu li a {
+  background-image: url(../images/gmenu-b.png);
+}
+.logged-in-white #head-menu li a {
+  background-image: url(../images/gmenu-w.png);
+}
+.logged-in-black2 #head-menu li a {
+  background-image: url(../images/gmenu-b2.png);
+}
+.logged-in-white2 #head-menu li a {
+  background-image: url(../images/gmenu-w2.png);
+}
+
+#header #logo a {
+  background-image: url(../images/logo.png);
+}
+#header-rom-change a {
+  background-image: url(../images/header-buttons.png);
+}
+#header-logout a {
+  background-image: url(../images/header-buttons.png);
+}
+#header-back-to-top a {
+  background-image: url(../images/gmenu-n.png);
+}
+
+.dialog-buttons-ok, .dialog-buttons-register, .dialog-buttons-cancel, .dialog-buttons-back, .dialog-buttons-wakeup, .dialog-buttons-details {
+  background-image: url(../images/dialog-buttons.png);
+}
+
+

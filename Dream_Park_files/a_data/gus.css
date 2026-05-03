@@ -1,0 +1,199 @@
+div.clear {
+	clear:both;
+	height:1px;
+	margin-top:-1px;
+	overflow:hidden;
+}
+span.offscreen {
+	display:block;
+	position:absolute;
+	left:-999999em;
+}
+
+div#gus {
+	width:100%;
+	z-index:10;
+	height: 56px;
+	position:absolute;
+	top:0;
+	left:0;
+	background: #333333 url('../img/gus-bg-repeater.png') repeat-x scroll center 0;
+}
+	div#gus div.wrapper {
+		background: url('../img/gus.png') no-repeat scroll top left;
+		width: 960px;
+		height: 56px;
+		margin:auto;
+		position:relative;
+	}
+		div#gus div.wrapper a#pokemonLogo {
+			width:110px;
+			height:44px;
+			position:absolute;
+			left:27px;
+			top:0;
+			display:block;
+			outline:0;
+		}
+		
+		div#gus ul {
+			position:absolute;
+			margin:0;
+			padding:0;
+			list-style:none;
+		}
+		
+			#gus-nav {
+				width:493px;
+				height:43px;
+				left:154px;
+				top:0;
+			}
+		
+				#gus-nav li {
+					margin:0;
+					padding:0;
+					float:left;
+				}
+					#gus-nav li a {
+						display:block;
+						height:43px;
+						border:0;
+						display:block;
+						background-repeat: no-repeat;
+						outline:0;
+						cursor:pointer;
+					}
+				
+					div#gus.en #gus-nav li a {
+						background-image: url('../img/en/gus-buttons.png')
+					} 
+
+					div#gus.fr #gus-nav li a {
+						background-image: url('../img/fr/gus-buttons.png')
+					} 
+
+					div#gus.it #gus-nav li a {
+						background-image: url('../img/it/gus-buttons.png')
+					} 
+
+					div#gus.de #gus-nav li a {
+						background-image: url('../img/de/gus-buttons.png')
+					} 
+
+					div#gus.es #gus-nav li a {
+						background-image: url('../img/es/gus-buttons.png')
+					} 
+
+					div#gus #gus-nav li#gus-videoGames a {
+						background-position:0 0;
+						width:95px;
+					}
+					div#gus #gus-nav li#gus-videoGames a:hover {
+						background-position:0 -43px;
+					}
+					div#gus #gus-nav li#gus-videoGames a:active {
+						background-position:0 -86px;
+					}
+				
+					div#gus #gus-nav li#gus-tradingCardGame a {
+						background-position:-95px 0;
+						width:136px;
+					}
+					div#gus #gus-nav li#gus-tradingCardGame a:hover {
+						background-position:-95px -43px;
+					}
+					div#gus #gus-nav li#gus-tradingCardGame a:active {
+						background-position:-95px -86px;
+					}
+				
+					div#gus #gus-nav li#gus-animation a {
+						background-position:-231px 0;
+						width:79px;
+					}
+					div#gus #gus-nav li#gus-animation a:hover {
+						background-position:-231px -43px;
+					}
+					div#gus #gus-nav li#gus-animation a:active {
+						background-position:-231px -86px;
+					}
+				
+					div#gus #gus-nav li#gus-funZone a {
+						background-position:-310px 0;
+						width:76px;
+					}
+					div#gus #gus-nav li#gus-funZone a:hover {
+						background-position:-310px -43px;
+					}
+					div#gus #gus-nav li#gus-funZone a:active {
+						background-position:-310px -86px;
+					}
+				
+					div#gus #gus-nav li#gus-news a {
+						background-position:-386px 0;
+						width:107px;
+					}
+					div#gus #gus-nav li#gus-news a:hover {
+						background-position:-386px -43px;
+					}
+					div#gus #gus-nav li#gus-news a:active {
+						background-position:-386px -86px;
+					}
+					
+			#gus-subnav {
+				width: 270px;
+				height: 54px;
+				left: 675px;
+				top: 0;
+			}
+			
+				#gus-subnav li {
+					margin:0;
+					padding:0;
+					float:left;
+				}
+					#gus-subnav li a {
+						display:block;
+						height:54px;
+						border:0;
+						display:block;
+						background-repeat: no-repeat;
+						outline:0;
+						cursor:pointer;
+					}
+					
+						div#gus.en #gus-subnav li a { background-image: url('../img/en/gus-subnav.png') } 
+						div#gus.fr #gus-subnav li a { background-image: url('../img/fr/gus-subnav.png') } 
+						div#gus.it #gus-subnav li a { background-image: url('../img/it/gus-subnav.png') }
+						div#gus.de #gus-subnav li a { background-image: url('../img/de/gus-subnav.png') } 
+						div#gus.es #gus-subnav li a { background-image: url('../img/es/gus-subnav.png') }
+						
+						#gus-subnav #gus-subnav-pokedex {
+							width: 85px;
+							margin-right: 11px;
+						}
+						
+							#gus-subnav #gus-subnav-pokedex a {
+								background-position: 0 0;
+								width: 85px;
+							}
+
+						#gus-subnav #gus-subnav-pgl {
+							width: 95px;
+							margin-right: 6px;
+						}
+
+							#gus-subnav #gus-subnav-pgl a {
+								background-position: -96px 0;
+								width: 95px;
+							}
+
+						#gus-subnav #gus-subnav-pokemontv,
+						#gus-subnav #gus-subnav-pokemontcgo {
+							width: 72px;
+						}
+							#gus-subnav #gus-subnav-pokemontv a,
+							#gus-subnav #gus-subnav-pokemontcgo a {
+								background-position: -198px 0;
+								width: 72px;
+							}
