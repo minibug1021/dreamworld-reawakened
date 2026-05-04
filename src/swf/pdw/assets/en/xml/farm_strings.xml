@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data locale="ja">
-    <string id="lo_a_1">lo_a_1</string>
+    <string id="k_ad_1">k_ad_1</string>
+    <string id="k_ad_2">In use</string>
+    <string id="k_ad_3">k_ad_3</string>
+    <string id="k_ad_4">k_ad_4</string>
+    <string id="k_ad_5">k_ad_5</string>
+    <string id="k_ad_6">k_ad_6</string>
+    <string id="k_ad_7">k_ad_7</string>
+    <string id="k_ad_8">k_ad_8</string>
+    <string id="k_ad_9">k_ad_9</string>
+    <string id="k_ad_10">k_ad_10</string>
+    <string id="k_ad_11">k_ad_11</string>
+    <string id="k_ad_12">k_ad_12</string>
+    <string id="k_ad_13">k_ad_13</string>
+    <string id="k_ad_14">k_ad_14</string>
+    <string id="k_ad_15">Current garden bed</string>
+
+    <string id="h_da_3">Return to your home.</string>
 </data>

@@ -4,8 +4,6 @@
         "type1": "Grass",
         "type2": "Poison",
         "filename": "bchgeajj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Chlorophyll"
     },
     "2": {
@@ -13,8 +11,6 @@
         "type1": "Grass",
         "type2": "Poison",
         "filename": "bcgjifgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Chlorophyll"
     },
     "3": {
@@ -22,8 +18,6 @@
         "type1": "Grass",
         "type2": "Poison",
         "filename": "bcgddach",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Chlorophyll"
     },
     "4": {
@@ -31,8 +25,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "bdajbhhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Solar Power"
     },
     "5": {
@@ -40,8 +32,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "bdacgced",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Solar Power"
     },
     "6": {
@@ -49,8 +39,6 @@
         "type1": "Fire",
         "type2": "Flying",
         "filename": "bcjgahah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Solar Power"
     },
     "7": {
@@ -58,8 +46,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bcijfbhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rain Dish"
     },
     "8": {
@@ -67,8 +53,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bddfdjcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rain Dish"
     },
     "9": {
@@ -76,8 +60,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bdciidih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rain Dish"
     },
     "10": {
@@ -85,8 +67,6 @@
         "type1": "Bug",
         "type2": null,
         "filename": "bdcccifb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Run Away"
     },
     "11": {
@@ -94,17 +74,13 @@
         "type1": "Bug",
         "type2": null,
         "filename": "bdbfhdbf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "12": {
         "pokemon": "Butterfree",
         "type1": "Bug",
         "type2": "Flying",
         "filename": "bdgbgagh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Tinted Lens"
     },
     "13": {
@@ -112,8 +88,6 @@
         "type1": "Bug",
         "type2": "Poison",
         "filename": "bdffafdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Run Away"
     },
     "14": {
@@ -121,17 +95,13 @@
         "type1": "Bug",
         "type2": "Poison",
         "filename": "bdeiejjf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "15": {
         "pokemon": "Beedrill",
         "type1": "Bug",
         "type2": "Poison",
         "filename": "bdebjefj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sniper"
     },
     "16": {
@@ -139,8 +109,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "bdihicbb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Big Pecks"
     },
     "17": {
@@ -148,8 +116,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "bdibcghf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Big Pecks"
     },
     "18": {
@@ -157,8 +123,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "bdhehbdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Big Pecks"
     },
     "19": {
@@ -166,8 +130,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "bdgibgad",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hustle"
     },
     "20": {
@@ -175,8 +137,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "bebeadff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hustle"
     },
     "21": {
@@ -184,8 +144,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "beaheibj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sniper"
     },
     "22": {
@@ -193,8 +151,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "beaajcid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sniper"
     },
     "23": {
@@ -202,8 +158,6 @@
         "type1": "Poison",
         "type2": null,
         "filename": "bdjedheh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "24": {
@@ -211,8 +165,6 @@
         "type1": "Poison",
         "type2": null,
         "filename": "beeacejj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "25": {
@@ -220,8 +172,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "beddgjgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Lightning Rod"
     },
     "26": {
@@ -229,8 +179,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "bechbech",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Lightning Rod"
     },
     "27": {
@@ -238,8 +186,6 @@
         "type1": "Ground",
         "type2": null,
         "filename": "becafijb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Rush"
     },
     "28": {
@@ -247,8 +193,6 @@
         "type1": "Ground",
         "type2": null,
         "filename": "beggeged",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Rush"
     },
     "29": {
@@ -256,8 +200,6 @@
         "type1": "Poison",
         "type2": null,
         "filename": "befjjbah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hustle"
     },
     "30": {
@@ -265,8 +207,6 @@
         "type1": "Poison",
         "type2": null,
         "filename": "befddfhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hustle"
     },
     "31": {
@@ -274,8 +214,6 @@
         "type1": "Poison",
         "type2": "Ground",
         "filename": "beegiadf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sheer Force"
     },
     "32": {
@@ -283,8 +221,6 @@
         "type1": "Poison",
         "type2": null,
         "filename": "bejcghih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hustle"
     },
     "33": {
@@ -292,8 +228,6 @@
         "type1": "Poison",
         "type2": null,
         "filename": "beigbcfb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hustle"
     },
     "34": {
@@ -301,8 +235,6 @@
         "type1": "Poison",
         "type2": "Ground",
         "filename": "behjfhbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sheer Force"
     },
     "35": {
@@ -310,8 +242,6 @@
         "type1": "Fairy",
         "type2": null,
         "filename": "behdabhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Friend Guard"
     },
     "36": {
@@ -319,8 +249,6 @@
         "type1": "Fairy",
         "type2": null,
         "filename": "bfbiijdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unaware"
     },
     "37": {
@@ -328,8 +256,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "bfbcddjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Drought"
     },
     "38": {
@@ -337,8 +263,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "bfafhifj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Drought"
     },
     "39": {
@@ -346,8 +270,6 @@
         "type1": "Normal",
         "type2": "Fairy",
         "filename": "bejjcdcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Friend Guard"
     },
     "40": {
@@ -355,8 +277,6 @@
         "type1": "Normal",
         "type2": "Fairy",
         "filename": "bfefbahf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Frisk"
     },
     "41": {
@@ -364,8 +284,6 @@
         "type1": "Poison",
         "type2": "Flying",
         "filename": "bfdiffdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Infiltrator"
     },
     "42": {
@@ -373,8 +291,6 @@
         "type1": "Poison",
         "type2": "Flying",
         "filename": "bfdcaaad",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Infiltrator"
     },
     "43": {
@@ -382,8 +298,6 @@
         "type1": "Grass",
         "type2": "Poison",
         "filename": "bfcfeegh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Run Away"
     },
     "44": {
@@ -391,8 +305,6 @@
         "type1": "Grass",
         "type2": "Poison",
         "filename": "bfhbdcbj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Stench"
     },
     "45": {
@@ -400,8 +312,6 @@
         "type1": "Grass",
         "type2": "Poison",
         "filename": "bfgehgid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Effect Spore"
     },
     "46": {
@@ -409,8 +319,6 @@
         "type1": "Bug",
         "type2": "Grass",
         "filename": "bfficbeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Damp"
     },
     "47": {
@@ -418,8 +326,6 @@
         "type1": "Bug",
         "type2": "Grass",
         "filename": "bffbggbb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Damp"
     },
     "48": {
@@ -427,8 +333,6 @@
         "type1": "Bug",
         "type2": "Poison",
         "filename": "bfjhfdgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Run Away"
     },
     "49": {
@@ -436,8 +340,6 @@
         "type1": "Bug",
         "type2": "Poison",
         "filename": "bfjajich",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Wonder Skin"
     },
     "50": {
@@ -445,8 +347,6 @@
         "type1": "Ground",
         "type2": null,
         "filename": "bfieecjb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Force"
     },
     "51": {
@@ -454,8 +354,6 @@
         "type1": "Ground",
         "type2": null,
         "filename": "bfhhihff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Force"
     },
     "52": {
@@ -463,8 +361,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "bgcdhfah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "53": {
@@ -472,8 +368,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "bgbhbjhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "54": {
@@ -481,8 +375,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bgbagedf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Swift Swim"
     },
     "55": {
@@ -490,8 +382,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bgaeaijj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Swift Swim"
     },
     "56": {
@@ -499,8 +389,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "bgejjgfb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Defiant"
     },
     "57": {
@@ -508,8 +396,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "bgedebbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Defiant"
     },
     "58": {
@@ -517,8 +403,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "bgdgifhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Justified"
     },
     "59": {
@@ -526,8 +410,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "bgdadaed",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Justified"
     },
     "60": {
@@ -535,8 +417,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bghgbhjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Swift Swim"
     },
     "61": {
@@ -544,8 +424,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bggjgcfj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Swift Swim"
     },
     "62": {
@@ -553,8 +431,6 @@
         "type1": "Water",
         "type2": "Fighting",
         "filename": "bggdahcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Swift Swim"
     },
     "63": {
@@ -562,8 +438,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "bgfgfbih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Magic Guard"
     },
     "64": {
@@ -571,8 +445,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "igdfddb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Magic Guard"
     },
     "65": {
@@ -580,8 +452,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "ifgjhjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Magic Guard"
     },
     "66": {
@@ -589,8 +459,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "ifaecfj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Steadfast"
     },
     "67": {
@@ -598,8 +466,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "iedihcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Steadfast"
     },
     "68": {
@@ -607,8 +473,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "iijhehf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Steadfast"
     },
     "69": {
@@ -616,8 +480,6 @@
         "type1": "Grass",
         "type2": "Poison",
         "filename": "iidbjdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Gluttony"
     },
     "70": {
@@ -625,8 +487,6 @@
         "type1": "Grass",
         "type2": "Poison",
         "filename": "ihggead",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Gluttony"
     },
     "71": {
@@ -634,8 +494,6 @@
         "type1": "Grass",
         "type2": "Poison",
         "filename": "ihaaigh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Gluttony"
     },
     "72": {
@@ -643,8 +501,6 @@
         "type1": "Water",
         "type2": "Poison",
         "filename": "jbfjgbj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rain Dish"
     },
     "73": {
@@ -652,8 +508,6 @@
         "type1": "Water",
         "type2": "Poison",
         "filename": "jajeaid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rain Dish"
     },
     "74": {
@@ -661,8 +515,6 @@
         "type1": "Rock",
         "type2": "Ground",
         "filename": "jacifeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Veil"
     },
     "75": {
@@ -670,8 +522,6 @@
         "type1": "Rock",
         "type2": "Ground",
         "filename": "ijgdabb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Veil"
     },
     "76": {
@@ -679,8 +529,6 @@
         "type1": "Rock",
         "type2": "Ground",
         "filename": "jecbhgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Veil"
     },
     "77": {
@@ -688,8 +536,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "jdfgcch",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Flame Body"
     },
     "78": {
@@ -697,8 +543,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "jcjagjb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Flame Body"
     },
     "79": {
@@ -706,8 +550,6 @@
         "type1": "Water",
         "type2": "Psychic",
         "filename": "jccfbff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Regenerator"
     },
     "80": {
@@ -715,8 +557,6 @@
         "type1": "Water",
         "type2": "Psychic",
         "filename": "jgidjah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Regenerator"
     },
     "81": {
@@ -724,8 +564,6 @@
         "type1": "Electric",
         "type2": "Steel",
         "filename": "jgbidhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Analytic"
     },
     "82": {
@@ -733,8 +571,6 @@
         "type1": "Electric",
         "type2": "Steel",
         "filename": "jffcidf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Analytic"
     },
     "83": {
@@ -742,8 +578,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "jeihcjj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Defiant"
     },
     "84": {
@@ -751,8 +585,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "jjegafb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Tangled Feet"
     },
     "85": {
@@ -760,8 +592,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "jiiafbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Tangled Feet"
     },
     "86": {
@@ -769,8 +599,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "jibejhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Ice Body"
     },
     "87": {
@@ -778,8 +606,6 @@
         "type1": "Water",
         "type2": "Ice",
         "filename": "jhejeed",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Ice Body"
     },
     "88": {
@@ -787,8 +613,6 @@
         "type1": "Poison",
         "type2": null,
         "filename": "bacaibjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Poison Touch"
     },
     "89": {
@@ -796,8 +620,6 @@
         "type1": "Poison",
         "type2": null,
         "filename": "babecgfj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Poison Touch"
     },
     "90": {
@@ -805,8 +627,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "baahhbcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Overcoat"
     },
     "91": {
@@ -814,8 +634,6 @@
         "type1": "Water",
         "type2": "Ice",
         "filename": "baabbfih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Overcoat"
     },
     "92": {
@@ -823,35 +641,27 @@
         "type1": "Ghost",
         "type2": "Poison",
         "filename": "baehaddj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "93": {
         "pokemon": "Haunter",
         "type1": "Ghost",
         "type2": "Poison",
         "filename": "baeaeiad",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "94": {
         "pokemon": "Gengar",
         "type1": "Ghost",
         "type2": "Poison",
         "filename": "baddjcgh",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "95": {
         "pokemon": "Onix",
         "type1": "Rock",
         "type2": "Ground",
         "filename": "bachdhdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "96": {
@@ -859,8 +669,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "bahdceid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Inner Focus"
     },
     "97": {
@@ -868,8 +676,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "bagggjeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Inner Focus"
     },
     "98": {
@@ -877,8 +683,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bagabebb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sheer Force"
     },
     "99": {
@@ -886,8 +690,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bafdfihf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sheer Force"
     },
     "100": {
@@ -895,8 +697,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "bajjegch",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Aftermath"
     },
     "101": {
@@ -904,8 +704,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "bajcjajb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Aftermath"
     },
     "102": {
@@ -913,8 +711,6 @@
         "type1": "Grass",
         "type2": "Psychic",
         "filename": "baigdfff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Harvest"
     },
     "103": {
@@ -922,8 +718,6 @@
         "type1": "Grass",
         "type2": "Psychic",
         "filename": "bahjiabj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Harvest"
     },
     "104": {
@@ -931,8 +725,6 @@
         "type1": "Ground",
         "type2": null,
         "filename": "bbcfghhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Battle Armor"
     },
     "105": {
@@ -940,8 +732,6 @@
         "type1": "Ground",
         "type2": null,
         "filename": "bbbjbcdf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Battle Armor"
     },
     "106": {
@@ -949,8 +739,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "bbbcfgjj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unburden"
     },
     "107": {
@@ -958,8 +746,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "bbagabgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Inner Focus"
     },
     "108": {
@@ -967,8 +753,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "bbfbijbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Cloud Nine"
     },
     "109": {
@@ -976,26 +760,20 @@
         "type1": "Poison",
         "type2": null,
         "filename": "bbefddhj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "110": {
         "pokemon": "Weezing",
         "type1": "Poison",
         "type2": null,
         "filename": "bbdihied",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "111": {
         "pokemon": "Rhyhorn",
         "type1": "Ground",
         "type2": "Rock",
         "filename": "bbdccdah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Reckless"
     },
     "112": {
@@ -1003,8 +781,6 @@
         "type1": "Ground",
         "type2": "Rock",
         "filename": "bbhibafj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Reckless"
     },
     "113": {
@@ -1012,8 +788,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "bbhbffcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Healer"
     },
     "114": {
@@ -1021,8 +795,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "bbgejjih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Regenerator"
     },
     "115": {
@@ -1030,8 +802,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "bbfieefb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Inner Focus"
     },
     "116": {
@@ -1039,8 +809,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bcaedcad",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Damp"
     },
     "117": {
@@ -1048,8 +816,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bbjhhggh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Damp"
     },
     "118": {
@@ -1057,8 +823,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bbjbcbdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Lightning Rod"
     },
     "119": {
@@ -1066,8 +830,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bbiegfjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Lightning Rod"
     },
     "120": {
@@ -1075,8 +837,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bcdafdeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Analytic"
     },
     "121": {
@@ -1084,8 +844,6 @@
         "type1": "Water",
         "type2": "Psychic",
         "filename": "bccdjibb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Analytic"
     },
     "122": {
@@ -1093,8 +851,6 @@
         "type1": "Psychic",
         "type2": "Fairy",
         "filename": "bcbhechf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Technician"
     },
     "123": {
@@ -1102,8 +858,6 @@
         "type1": "Bug",
         "type2": "Flying",
         "filename": "bcbaihdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Steadfast"
     },
     "124": {
@@ -1111,8 +865,6 @@
         "type1": "Ice",
         "type2": "Psychic",
         "filename": "bcfghejb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Dry Skin"
     },
     "125": {
@@ -1120,8 +872,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "bcfabjff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Vital Spirit"
     },
     "126": {
@@ -1129,8 +879,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "bcedgebj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Vital Spirit"
     },
     "127": {
@@ -1138,8 +886,6 @@
         "type1": "Bug",
         "type2": null,
         "filename": "bcdhaiid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Moxie"
     },
     "128": {
@@ -1147,8 +893,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "eeebach",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sheer Force"
     },
     "129": {
@@ -1156,8 +900,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "edhfejb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rattled"
     },
     "130": {
@@ -1165,8 +907,6 @@
         "type1": "Water",
         "type2": "Flying",
         "filename": "edajjff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Moxie"
     },
     "131": {
@@ -1174,8 +914,6 @@
         "type1": "Water",
         "type2": "Ice",
         "filename": "eceeebj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hydration"
     },
     "132": {
@@ -1183,8 +921,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "ehadbhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Imposter"
     },
     "133": {
@@ -1192,8 +928,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "egdhgdf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Anticipation"
     },
     "134": {
@@ -1201,8 +935,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "efhcajj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hydration"
     },
     "135": {
@@ -1210,8 +942,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "efagfgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Quick Feet"
     },
     "136": {
@@ -1219,8 +949,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "ejgfdbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Guts"
     },
     "137": {
@@ -1228,8 +956,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "eijjhhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Analytic"
     },
     "138": {
@@ -1237,8 +963,6 @@
         "type1": "Rock",
         "type2": "Water",
         "filename": "eideced",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "139": {
@@ -1246,8 +970,6 @@
         "type1": "Rock",
         "type2": "Water",
         "filename": "ehgihah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "140": {
@@ -1255,8 +977,6 @@
         "type1": "Rock",
         "type2": "Water",
         "filename": "fcchefj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "141": {
@@ -1264,8 +984,6 @@
         "type1": "Rock",
         "type2": "Water",
         "filename": "fbgbjcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "142": {
@@ -1273,8 +991,6 @@
         "type1": "Rock",
         "type2": "Flying",
         "filename": "fajgdih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "143": {
@@ -1282,8 +998,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "fadaifb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Gluttony"
     },
     "144": {
@@ -1291,35 +1005,27 @@
         "type1": "Ice",
         "type2": "Flying",
         "filename": "feijgad",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "145": {
         "pokemon": "Zapdos",
         "type1": "Electric",
         "type2": "Flying",
         "filename": "feceagh",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "146": {
         "pokemon": "Moltres",
         "type1": "Fire",
         "type2": "Flying",
         "filename": "fdfifdb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "147": {
         "pokemon": "Dratini",
         "type1": "Dragon",
         "type2": null,
         "filename": "fcjcjjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Marvel Scale"
     },
     "148": {
@@ -1327,8 +1033,6 @@
         "type1": "Dragon",
         "type2": null,
         "filename": "fhfbheh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Marvel Scale"
     },
     "149": {
@@ -1336,8 +1040,6 @@
         "type1": "Dragon",
         "type2": "Flying",
         "filename": "fgigcbb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Multiscale"
     },
     "150": {
@@ -1345,8 +1047,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "fgcaghf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "151": {
@@ -1354,98 +1054,76 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "ffffbdj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "152": {
         "pokemon": "Chikorita",
         "type1": "Grass",
         "type2": null,
         "filename": "gabdijb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "153": {
         "pokemon": "Bayleef",
         "type1": "Grass",
         "type2": null,
         "filename": "fjeidff",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "154": {
         "pokemon": "Meganium",
         "type1": "Grass",
         "type2": null,
         "filename": "fiicibj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "155": {
         "pokemon": "Cyndaquil",
         "type1": "Fire",
         "type2": null,
         "filename": "fibhcid",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "156": {
         "pokemon": "Quilava",
         "type1": "Fire",
         "type2": null,
         "filename": "gchgadf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "157": {
         "pokemon": "Typhlosion",
         "type1": "Fire",
         "type2": null,
         "filename": "gcbaejj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "158": {
         "pokemon": "Totodile",
         "type1": "Water",
         "type2": null,
         "filename": "gbeejgd",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "159": {
         "pokemon": "Croconaw",
         "type1": "Water",
         "type2": null,
         "filename": "gahjech",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "160": {
         "pokemon": "Feraligatr",
         "type1": "Water",
         "type2": null,
         "filename": "gfdibhj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "161": {
         "pokemon": "Sentret",
         "type1": "Normal",
         "type2": null,
         "filename": "gehcged",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Frisk"
     },
     "162": {
@@ -1453,8 +1131,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "geahbah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Frisk"
     },
     "163": {
@@ -1462,8 +1138,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "gdebfhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Tinted Lens"
     },
     "164": {
@@ -1471,8 +1145,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "giaadcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Tinted Lens"
     },
     "165": {
@@ -1480,8 +1152,6 @@
         "type1": "Bug",
         "type2": "Flying",
         "filename": "ghdehih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rattled"
     },
     "166": {
@@ -1489,8 +1159,6 @@
         "type1": "Bug",
         "type2": "Flying",
         "filename": "gggjcfb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Iron Fist"
     },
     "167": {
@@ -1498,8 +1166,6 @@
         "type1": "Bug",
         "type2": "Poison",
         "filename": "ggadhbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sniper"
     },
     "168": {
@@ -1507,8 +1173,6 @@
         "type1": "Bug",
         "type2": "Poison",
         "filename": "hagcegh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sniper"
     },
     "169": {
@@ -1516,8 +1180,6 @@
         "type1": "Poison",
         "type2": "Flying",
         "filename": "gjjgjdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Infiltrator"
     },
     "170": {
@@ -1525,8 +1187,6 @@
         "type1": "Water",
         "type2": "Electric",
         "filename": "gjdbdjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Water Absorb"
     },
     "171": {
@@ -1534,8 +1194,6 @@
         "type1": "Water",
         "type2": "Electric",
         "filename": "gigfifj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Water Absorb"
     },
     "172": {
@@ -1543,8 +1201,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "hdcegbb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Lightning Rod"
     },
     "173": {
@@ -1552,8 +1208,6 @@
         "type1": "Fairy",
         "type2": null,
         "filename": "hcfjahf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Friend Guard"
     },
     "174": {
@@ -1561,8 +1215,6 @@
         "type1": "Normal",
         "type2": "Fairy",
         "filename": "hbjdfdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Friend Guard"
     },
     "175": {
@@ -1570,8 +1222,6 @@
         "type1": "Fairy",
         "type2": null,
         "filename": "hbciaad",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Super Luck"
     },
     "176": {
@@ -1579,8 +1229,6 @@
         "type1": "Fairy",
         "type2": "Flying",
         "filename": "hfighff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Super Luck"
     },
     "177": {
@@ -1588,8 +1236,6 @@
         "type1": "Psychic",
         "type2": "Flying",
         "filename": "hfcbcbj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Magic Bounce"
     },
     "178": {
@@ -1597,8 +1243,6 @@
         "type1": "Psychic",
         "type2": "Flying",
         "filename": "heffgid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Magic Bounce"
     },
     "179": {
@@ -1606,8 +1250,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "hdjabeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Plus"
     },
     "180": {
@@ -1615,8 +1257,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "hieiijj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Plus"
     },
     "181": {
@@ -1624,8 +1264,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "hhiddgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Plus"
     },
     "182": {
@@ -1633,8 +1271,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "hhbhich",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Healer"
     },
     "183": {
@@ -1642,8 +1278,6 @@
         "type1": "Water",
         "type2": "Fairy",
         "filename": "hgfccjb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sap Sipper"
     },
     "184": {
@@ -1651,8 +1285,6 @@
         "type1": "Water",
         "type2": "Fairy",
         "filename": "ibbbaed",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sap Sipper"
     },
     "185": {
@@ -1660,8 +1292,6 @@
         "type1": "Rock",
         "type2": null,
         "filename": "iaeffah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rattled"
     },
     "186": {
@@ -1669,8 +1299,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "hjhjjhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Drizzle"
     },
     "187": {
@@ -1678,8 +1306,6 @@
         "type1": "Grass",
         "type2": "Flying",
         "filename": "hjbeedf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Infiltrator"
     },
     "188": {
@@ -1687,8 +1313,6 @@
         "type1": "Grass",
         "type2": "Flying",
         "filename": "idhdbih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Infiltrator"
     },
     "189": {
@@ -1696,8 +1320,6 @@
         "type1": "Grass",
         "type2": "Flying",
         "filename": "idahgfb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Infiltrator"
     },
     "190": {
@@ -1705,8 +1327,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "icecbbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Skill Link"
     },
     "191": {
@@ -1714,8 +1334,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "ibhgfhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Early Bird"
     },
     "192": {
@@ -1723,8 +1341,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "ceghcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Early Bird"
     },
     "193": {
@@ -1732,8 +1348,6 @@
         "type1": "Bug",
         "type2": "Flying",
         "filename": "bibbih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Frisk"
     },
     "194": {
@@ -1741,8 +1355,6 @@
         "type1": "Water",
         "type2": "Ground",
         "filename": "bbfgfb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unaware"
     },
     "195": {
@@ -1750,8 +1362,6 @@
         "type1": "Water",
         "type2": "Ground",
         "filename": "fabbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unaware"
     },
     "196": {
@@ -1759,8 +1369,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "faiigh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Magic Bounce"
     },
     "197": {
@@ -1768,8 +1376,6 @@
         "type1": "Dark",
         "type2": null,
         "filename": "eedddb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Inner Focus"
     },
     "198": {
@@ -1777,8 +1383,6 @@
         "type1": "Dark",
         "type2": "Flying",
         "filename": "dhhhjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Prankster"
     },
     "199": {
@@ -1786,8 +1390,6 @@
         "type1": "Water",
         "type2": "Psychic",
         "filename": "dbccfj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Regenerator"
     },
     "200": {
@@ -1795,9 +1397,7 @@
         "type1": "Ghost",
         "type2": null,
         "filename": "hhbabb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-a": {
         "pokemon": "Unown",
@@ -1806,7 +1406,7 @@
         "filename": "hafehf",
         "form": "a",
         "form_no": "0",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-b": {
         "pokemon": "Unown",
@@ -1815,7 +1415,7 @@
         "filename": "hafcbj",
         "form": "b",
         "form_no": "1",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-c": {
         "pokemon": "Unown",
@@ -1824,7 +1424,7 @@
         "filename": "haejgd",
         "form": "c",
         "form_no": "2",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-d": {
         "pokemon": "Unown",
@@ -1833,7 +1433,7 @@
         "filename": "haehah",
         "form": "d",
         "form_no": "3",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-e": {
         "pokemon": "Unown",
@@ -1842,7 +1442,7 @@
         "filename": "hagejj",
         "form": "e",
         "form_no": "4",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-f": {
         "pokemon": "Unown",
@@ -1851,7 +1451,7 @@
         "filename": "hagced",
         "form": "f",
         "form_no": "5",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-g": {
         "pokemon": "Unown",
@@ -1860,7 +1460,7 @@
         "filename": "hafjih",
         "form": "g",
         "form_no": "6",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-h": {
         "pokemon": "Unown",
@@ -1869,7 +1469,7 @@
         "filename": "hafhdb",
         "form": "h",
         "form_no": "7",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-i": {
         "pokemon": "Unown",
@@ -1878,7 +1478,7 @@
         "filename": "hahfcd",
         "form": "i",
         "form_no": "8",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-j": {
         "pokemon": "Unown",
@@ -1887,7 +1487,7 @@
         "filename": "hahcgh",
         "form": "j",
         "form_no": "9",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-k": {
         "pokemon": "Unown",
@@ -1896,7 +1496,7 @@
         "filename": "hahabb",
         "form": "k",
         "form_no": "10",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-l": {
         "pokemon": "Unown",
@@ -1905,7 +1505,7 @@
         "filename": "haghff",
         "form": "l",
         "form_no": "11",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-m": {
         "pokemon": "Unown",
@@ -1914,7 +1514,7 @@
         "filename": "haifeh",
         "form": "m",
         "form_no": "12",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-n": {
         "pokemon": "Unown",
@@ -1923,7 +1523,7 @@
         "filename": "haicjb",
         "form": "n",
         "form_no": "13",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-o": {
         "pokemon": "Unown",
@@ -1932,7 +1532,7 @@
         "filename": "haiadf",
         "form": "o",
         "form_no": "14",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-p": {
         "pokemon": "Unown",
@@ -1941,7 +1541,7 @@
         "filename": "hahhhj",
         "form": "p",
         "form_no": "15",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-q": {
         "pokemon": "Unown",
@@ -1950,7 +1550,7 @@
         "filename": "hajfhb",
         "form": "q",
         "form_no": "16",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-r": {
         "pokemon": "Unown",
@@ -1959,7 +1559,7 @@
         "filename": "hajdbf",
         "form": "r",
         "form_no": "17",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-s": {
         "pokemon": "Unown",
@@ -1968,7 +1568,7 @@
         "filename": "hajafj",
         "form": "s",
         "form_no": "18",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-t": {
         "pokemon": "Unown",
@@ -1977,7 +1577,7 @@
         "filename": "haiiad",
         "form": "t",
         "form_no": "19",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-u": {
         "pokemon": "Unown",
@@ -1986,7 +1586,7 @@
         "filename": "hbafjf",
         "form": "u",
         "form_no": "20",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-v": {
         "pokemon": "Unown",
@@ -1995,7 +1595,7 @@
         "filename": "hbaddj",
         "form": "v",
         "form_no": "21",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-w": {
         "pokemon": "Unown",
@@ -2004,7 +1604,7 @@
         "filename": "hbaaid",
         "form": "w",
         "form_no": "22",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-x": {
         "pokemon": "Unown",
@@ -2013,7 +1613,7 @@
         "filename": "hajich",
         "form": "x",
         "form_no": "23",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-y": {
         "pokemon": "Unown",
@@ -2022,7 +1622,7 @@
         "filename": "hbbgbj",
         "form": "y",
         "form_no": "24",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-z": {
         "pokemon": "Unown",
@@ -2031,7 +1631,7 @@
         "filename": "hbbdgd",
         "form": "z",
         "form_no": "25",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-exclamation": {
         "pokemon": "Unown",
@@ -2040,7 +1640,7 @@
         "filename": "hbbbah",
         "form": "exclamation",
         "form_no": "26",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "201-question": {
         "pokemon": "Unown",
@@ -2049,15 +1649,13 @@
         "filename": "hbaifb",
         "form": "question",
         "form_no": "27",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "202": {
         "pokemon": "Wobbuffet",
         "type1": "Psychic",
         "type2": null,
         "filename": "gdjjdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Telepathy"
     },
     "203": {
@@ -2065,8 +1663,6 @@
         "type1": "Normal",
         "type2": "Psychic",
         "filename": "fheead",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sap Sipper"
     },
     "204": {
@@ -2074,8 +1670,6 @@
         "type1": "Bug",
         "type2": null,
         "filename": "baddbff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Overcoat"
     },
     "205": {
@@ -2083,8 +1677,6 @@
         "type1": "Bug",
         "type2": "Steel",
         "filename": "jghgbj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Overcoat"
     },
     "206": {
@@ -2092,8 +1684,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "jacaid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rattled"
     },
     "207": {
@@ -2101,8 +1691,6 @@
         "type1": "Ground",
         "type2": "Flying",
         "filename": "idgfeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Immunity"
     },
     "208": {
@@ -2110,8 +1698,6 @@
         "type1": "Steel",
         "type2": "Ground",
         "filename": "bcjfcjj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sheer Force"
     },
     "209": {
@@ -2119,8 +1705,6 @@
         "type1": "Fairy",
         "type2": null,
         "filename": "bccjhgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rattled"
     },
     "210": {
@@ -2128,8 +1712,6 @@
         "type1": "Fairy",
         "type2": null,
         "filename": "bbgecch",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rattled"
     },
     "211": {
@@ -2137,8 +1719,6 @@
         "type1": "Water",
         "type2": "Poison",
         "filename": "bajigjb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Intimidate"
     },
     "212": {
@@ -2146,8 +1726,6 @@
         "type1": "Bug",
         "type2": "Steel",
         "filename": "bffheed",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Light Metal"
     },
     "213": {
@@ -2155,8 +1733,6 @@
         "type1": "Bug",
         "type2": "Rock",
         "filename": "bejbjah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Contrary"
     },
     "214": {
@@ -2164,8 +1740,6 @@
         "type1": "Bug",
         "type2": "Fighting",
         "filename": "becgdhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Moxie"
     },
     "215": {
@@ -2173,8 +1747,6 @@
         "type1": "Dark",
         "type2": "Ice",
         "filename": "bdgaidf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Pickpocket"
     },
     "216": {
@@ -2182,8 +1754,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "bibjfih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Honey Gather"
     },
     "217": {
@@ -2191,8 +1761,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "bhfeafb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "218": {
@@ -2200,8 +1768,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "bgiifbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "219": {
@@ -2209,8 +1775,6 @@
         "type1": "Fire",
         "type2": "Rock",
         "filename": "bgccjhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "220": {
@@ -2218,8 +1782,6 @@
         "type1": "Ice",
         "type2": "Ground",
         "filename": "caibhdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Thick Fat"
     },
     "221": {
@@ -2227,8 +1789,6 @@
         "type1": "Ice",
         "type2": "Ground",
         "filename": "cabgbjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Thick Fat"
     },
     "222": {
@@ -2236,8 +1796,6 @@
         "type1": "Water",
         "type2": "Rock",
         "filename": "bjfagfj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Regenerator"
     },
     "223": {
@@ -2245,8 +1803,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "biifbcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Moody"
     },
     "224": {
@@ -2254,8 +1810,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "cdedihf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Moody"
     },
     "225": {
@@ -2263,8 +1817,6 @@
         "type1": "Ice",
         "type2": "Flying",
         "filename": "cchiddj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Insomnia"
     },
     "226": {
@@ -2272,8 +1824,6 @@
         "type1": "Water",
         "type2": "Flying",
         "filename": "ccbciad",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Water Veil"
     },
     "227": {
@@ -2281,8 +1831,6 @@
         "type1": "Steel",
         "type2": "Flying",
         "filename": "cbehcgh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "228": {
@@ -2290,8 +1838,6 @@
         "type1": "Dark",
         "type2": "Fire",
         "filename": "cgagabj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "229": {
@@ -2299,8 +1845,6 @@
         "type1": "Dark",
         "type2": "Fire",
         "filename": "cfeaeid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "230": {
@@ -2308,8 +1852,6 @@
         "type1": "Water",
         "type2": "Dragon",
         "filename": "cehejeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Damp"
     },
     "231": {
@@ -2317,8 +1859,6 @@
         "type1": "Ground",
         "type2": null,
         "filename": "ceajebb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Veil"
     },
     "232": {
@@ -2326,8 +1866,6 @@
         "type1": "Ground",
         "type2": null,
         "filename": "cigibgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Veil"
     },
     "233": {
@@ -2335,8 +1873,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "ciacgch",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Analytic"
     },
     "234": {
@@ -2344,8 +1880,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "chdhajb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sap Sipper"
     },
     "235": {
@@ -2353,8 +1887,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "cghbfff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Moody"
     },
     "236": {
@@ -2362,8 +1894,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "dbdadah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Vital Spirit"
     },
     "237": {
@@ -2371,8 +1901,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "dagehhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Steadfast"
     },
     "238": {
@@ -2380,8 +1908,6 @@
         "type1": "Ice",
         "type2": "Psychic",
         "filename": "cjjjcdf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hydration"
     },
     "239": {
@@ -2389,8 +1915,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "cjddgjj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Vital Spirit"
     },
     "240": {
@@ -2398,8 +1922,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "ddjcefb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Vital Spirit"
     },
     "241": {
@@ -2407,8 +1929,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "ddcgjbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sap Sipper"
     },
     "242": {
@@ -2416,8 +1936,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "dcgbdhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Healer"
     },
     "243": {
@@ -2425,35 +1943,27 @@
         "type1": "Electric",
         "type2": null,
         "filename": "dbjfied",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "244": {
         "pokemon": "Entei",
         "type1": "Fire",
         "type2": null,
         "filename": "dgfefjf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "245": {
         "pokemon": "Suicune",
         "type1": "Water",
         "type2": null,
         "filename": "dfijafj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "246": {
         "pokemon": "Larvitar",
         "type1": "Rock",
         "type2": "Ground",
         "filename": "dfcdfcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Veil"
     },
     "247": {
@@ -2461,17 +1971,13 @@
         "type1": "Rock",
         "type2": "Ground",
         "filename": "defhjih",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "248": {
         "pokemon": "Tyranitar",
         "type1": "Rock",
         "type2": "Dark",
         "filename": "djbghdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "249": {
@@ -2479,8 +1985,6 @@
         "type1": "Psychic",
         "type2": "Flying",
         "filename": "difbcad",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Multiscale"
     },
     "250": {
@@ -2488,8 +1992,6 @@
         "type1": "Fire",
         "type2": "Flying",
         "filename": "dhifggh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Regenerator "
     },
     "251": {
@@ -2497,17 +1999,13 @@
         "type1": "Psychic",
         "type2": "Grass",
         "filename": "dhcabdb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "252": {
         "pokemon": "Treecko",
         "type1": "Grass",
         "type2": null,
         "filename": "ebhiiid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unburden"
     },
     "253": {
@@ -2515,8 +2013,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "ebbddeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unburden"
     },
     "254": {
@@ -2524,8 +2020,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "eaehibb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unburden"
     },
     "255": {
@@ -2533,8 +2027,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "djicchf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Speed Boost"
     },
     "256": {
@@ -2542,8 +2034,6 @@
         "type1": "Fire",
         "type2": "Fighting",
         "filename": "cjgagifb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Speed Boost"
     },
     "257": {
@@ -2551,8 +2041,6 @@
         "type1": "Fire",
         "type2": "Fighting",
         "filename": "cjfebdbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Speed Boost"
     },
     "258": {
@@ -2560,8 +2048,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "cjehfhhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Damp"
     },
     "259": {
@@ -2569,8 +2055,6 @@
         "type1": "Water",
         "type2": "Ground",
         "filename": "cjebaced",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Damp"
     },
     "260": {
@@ -2578,8 +2062,6 @@
         "type1": "Water",
         "type2": "Ground",
         "filename": "cjigijjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Damp"
     },
     "261": {
@@ -2587,8 +2069,6 @@
         "type1": "Dark",
         "type2": null,
         "filename": "cjiadefj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rattled"
     },
     "262": {
@@ -2596,8 +2076,6 @@
         "type1": "Dark",
         "type2": null,
         "filename": "cjhdhjcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Moxie"
     },
     "263": {
@@ -2605,8 +2083,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "cjghcdih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Quick Feet"
     },
     "264": {
@@ -2614,8 +2090,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "dabdbbdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Quick Feet"
     },
     "265": {
@@ -2623,8 +2097,6 @@
         "type1": "Bug",
         "type2": null,
         "filename": "daagfgad",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Run Away"
     },
     "266": {
@@ -2632,17 +2104,13 @@
         "type1": "Bug",
         "type2": null,
         "filename": "daaaaagh",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "267": {
         "pokemon": "Beautifly",
         "type1": "Bug",
         "type2": "Flying",
         "filename": "cjjdefdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rivalry"
     },
     "268": {
@@ -2650,17 +2118,13 @@
         "type1": "Bug",
         "type2": null,
         "filename": "dadjdcid",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "269": {
         "pokemon": "Dustox",
         "type1": "Bug",
         "type2": "Poison",
         "filename": "dadchheh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Compound Eyes"
     },
     "270": {
@@ -2668,8 +2132,6 @@
         "type1": "Water",
         "type2": "Grass",
         "filename": "dacgccbb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Own Tempo"
     },
     "271": {
@@ -2677,8 +2139,6 @@
         "type1": "Water",
         "type2": "Grass",
         "filename": "dabjgghf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Own Tempo"
     },
     "272": {
@@ -2686,8 +2146,6 @@
         "type1": "Water",
         "type2": "Grass",
         "filename": "dagffech",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Own Tempo"
     },
     "273": {
@@ -2695,8 +2153,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "dafijijb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Pickpocket"
     },
     "274": {
@@ -2704,8 +2160,6 @@
         "type1": "Grass",
         "type2": "Dark",
         "filename": "dafcedff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Pickpocket"
     },
     "275": {
@@ -2713,8 +2167,6 @@
         "type1": "Grass",
         "type2": "Dark",
         "filename": "daefiibj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Pickpocket"
     },
     "276": {
@@ -2722,8 +2174,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "dajbhfhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Scrappy"
     },
     "277": {
@@ -2731,8 +2181,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "daifcadf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Scrappy"
     },
     "278": {
@@ -2740,8 +2188,6 @@
         "type1": "Water",
         "type2": "Flying",
         "filename": "dahigejj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rain Dish"
     },
     "279": {
@@ -2749,8 +2195,6 @@
         "type1": "Water",
         "type2": "Flying",
         "filename": "dahcajgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rain Dish"
     },
     "280": {
@@ -2758,8 +2202,6 @@
         "type1": "Psychic",
         "type2": "Fairy",
         "filename": "dbbhjhbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Telepathy"
     },
     "281": {
@@ -2767,8 +2209,6 @@
         "type1": "Psychic",
         "type2": "Fairy",
         "filename": "dbbbebhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Telepathy"
     },
     "282": {
@@ -2776,8 +2216,6 @@
         "type1": "Psychic",
         "type2": "Fairy",
         "filename": "dbaeiged",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Telepathy"
     },
     "283": {
@@ -2785,8 +2223,6 @@
         "type1": "Bug",
         "type2": "Water",
         "filename": "dajidbah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rain Dish"
     },
     "284": {
@@ -2794,8 +2230,6 @@
         "type1": "Bug",
         "type2": "Flying",
         "filename": "dbeebifj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "285": {
@@ -2803,8 +2237,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "dbdhgdcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Quick Feet"
     },
     "286": {
@@ -2812,8 +2244,6 @@
         "type1": "Grass",
         "type2": "Fighting",
         "filename": "dbdbahih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Technician"
     },
     "287": {
@@ -2821,35 +2251,27 @@
         "type1": "Normal",
         "type2": null,
         "filename": "dbcefcfb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "288": {
         "pokemon": "Vigoroth",
         "type1": "Normal",
         "type2": null,
         "filename": "dbhaeaad",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "289": {
         "pokemon": "Slaking",
         "type1": "Normal",
         "type2": null,
         "filename": "dbgdiegh",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "290": {
         "pokemon": "Nincada",
         "type1": "Bug",
         "type2": "Ground",
         "filename": "dbfhcjdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Run Away"
     },
     "291": {
@@ -2857,8 +2279,6 @@
         "type1": "Bug",
         "type2": "Flying",
         "filename": "dbfahdjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Infiltrator"
     },
     "292": {
@@ -2866,17 +2286,13 @@
         "type1": "Bug",
         "type2": "Ghost",
         "filename": "dbjggbeh",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "293": {
         "pokemon": "Whismur",
         "type1": "Normal",
         "type2": null,
         "filename": "dbjaagbb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rattled"
     },
     "294": {
@@ -2884,8 +2300,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "dbidfahf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Scrappy"
     },
     "295": {
@@ -2893,8 +2307,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "dbhgjfdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Scrappy"
     },
     "296": {
@@ -2902,8 +2314,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "dcccicjb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sheer Force"
     },
     "297": {
@@ -2911,8 +2321,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "dcbgchff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sheer Force"
     },
     "298": {
@@ -2920,8 +2328,6 @@
         "type1": "Normal",
         "type2": "Fairy",
         "filename": "dcajhcbj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sap Sipper"
     },
     "299": {
@@ -2929,8 +2335,6 @@
         "type1": "Rock",
         "type2": null,
         "filename": "dcadbgid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Force"
     },
     "300": {
@@ -2938,8 +2342,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "dcejaedf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Wonder Skin"
     },
     "301": {
@@ -2947,8 +2349,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "dceceijj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Wonder Skin"
     },
     "302": {
@@ -2956,8 +2356,6 @@
         "type1": "Dark",
         "type2": "Ghost",
         "filename": "dcdfjdgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Prankster"
     },
     "303": {
@@ -2965,8 +2363,6 @@
         "type1": "Steel",
         "type2": "Fairy",
         "filename": "dccjdich",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sheer Force"
     },
     "304": {
@@ -2974,8 +2370,6 @@
         "type1": "Steel",
         "type2": "Rock",
         "filename": "dchfcfhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Heavy Metal"
     },
     "305": {
@@ -2983,8 +2377,6 @@
         "type1": "Steel",
         "type2": "Rock",
         "filename": "dcgihaed",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Heavy Metal"
     },
     "306": {
@@ -2992,8 +2384,6 @@
         "type1": "Steel",
         "type2": "Rock",
         "filename": "dcgcbfah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Heavy Metal"
     },
     "307": {
@@ -3001,8 +2391,6 @@
         "type1": "Fighting",
         "type2": "Psychic",
         "filename": "dcfffjhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Telepathy"
     },
     "308": {
@@ -3010,8 +2398,6 @@
         "type1": "Fighting",
         "type2": "Psychic",
         "filename": "ddabehcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Telepathy"
     },
     "309": {
@@ -3019,8 +2405,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "dcjejbih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Minus"
     },
     "310": {
@@ -3028,8 +2412,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "dciidgfb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Minus"
     },
     "311": {
@@ -3037,26 +2419,20 @@
         "type1": "Electric",
         "type2": null,
         "filename": "dcibibbf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "312": {
         "pokemon": "Minun",
         "type1": "Electric",
         "type2": null,
         "filename": "ddchgigh",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "313": {
         "pokemon": "Volbeat",
         "type1": "Bug",
         "type2": null,
         "filename": "ddcbbddb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Prankster"
     },
     "314": {
@@ -3064,8 +2440,6 @@
         "type1": "Bug",
         "type2": null,
         "filename": "ddbefhjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Prankster"
     },
     "315": {
@@ -3073,8 +2447,6 @@
         "type1": "Grass",
         "type2": "Poison",
         "filename": "ddaiacfj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Leaf Guard"
     },
     "316": {
@@ -3082,8 +2454,6 @@
         "type1": "Poison",
         "type2": null,
         "filename": "ddfdjabb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Gluttony"
     },
     "317": {
@@ -3091,8 +2461,6 @@
         "type1": "Poison",
         "type2": null,
         "filename": "ddehdehf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Gluttony"
     },
     "318": {
@@ -3100,8 +2468,6 @@
         "type1": "Water",
         "type2": "Dark",
         "filename": "ddeahjdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Speed Boost"
     },
     "319": {
@@ -3109,8 +2475,6 @@
         "type1": "Water",
         "type2": "Dark",
         "filename": "dddecead",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Speed Boost"
     },
     "320": {
@@ -3118,8 +2482,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "cfebcfeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Pressure"
     },
     "321": {
@@ -3127,8 +2489,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "cfdehabb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Pressure"
     },
     "322": {
@@ -3136,8 +2496,6 @@
         "type1": "Fire",
         "type2": "Ground",
         "filename": "cfcibehf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Own Tempo"
     },
     "323": {
@@ -3145,8 +2503,6 @@
         "type1": "Fire",
         "type2": "Ground",
         "filename": "cfcbfjdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Anger Point"
     },
     "324": {
@@ -3154,8 +2510,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "cfghegjb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Shell Armor"
     },
     "325": {
@@ -3163,8 +2517,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "cfgajbff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Gluttony"
     },
     "326": {
@@ -3172,8 +2524,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "cffedgbj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Gluttony"
     },
     "327": {
@@ -3181,8 +2531,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "cfehiaid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Contrary"
     },
     "328": {
@@ -3190,8 +2538,6 @@
         "type1": "Ground",
         "type2": null,
         "filename": "cfjdgidf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sheer Force"
     },
     "329": {
@@ -3199,26 +2545,20 @@
         "type1": "Ground",
         "type2": "Dragon",
         "filename": "cfihbcjj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "330": {
         "pokemon": "Flygon",
         "type1": "Ground",
         "type2": "Dragon",
         "filename": "cfiafhgd",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "331": {
         "pokemon": "Cacnea",
         "type1": "Grass",
         "type2": null,
         "filename": "cfheacch",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Water Absorb"
     },
     "332": {
@@ -3226,8 +2566,6 @@
         "type1": "Grass",
         "type2": "Dark",
         "filename": "cgbjijhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Water Absorb"
     },
     "333": {
@@ -3235,8 +2573,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "cgbddeed",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Cloud Nine"
     },
     "334": {
@@ -3244,8 +2580,6 @@
         "type1": "Dragon",
         "type2": "Flying",
         "filename": "cgaghjah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Cloud Nine"
     },
     "335": {
@@ -3253,8 +2587,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "cgaacdhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Toxic Boost"
     },
     "336": {
@@ -3262,8 +2594,6 @@
         "type1": "Poison",
         "type2": null,
         "filename": "cgegbbcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Infiltrator"
     },
     "337": {
@@ -3271,26 +2601,20 @@
         "type1": "Rock",
         "type2": "Psychic",
         "filename": "cgdjffih",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "338": {
         "pokemon": "Solrock",
         "type1": "Rock",
         "type2": "Psychic",
         "filename": "cgddaafb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "339": {
         "pokemon": "Barboach",
         "type1": "Water",
         "type2": "Ground",
         "filename": "cgcgefbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hydration"
     },
     "340": {
@@ -3298,8 +2622,6 @@
         "type1": "Water",
         "type2": "Ground",
         "filename": "cghcdcgh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hydration"
     },
     "341": {
@@ -3307,8 +2629,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "cggfhhdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Adaptability"
     },
     "342": {
@@ -3316,8 +2636,6 @@
         "type1": "Water",
         "type2": "Dark",
         "filename": "cgfjcbjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Adaptability"
     },
     "343": {
@@ -3325,26 +2643,20 @@
         "type1": "Ground",
         "type2": "Psychic",
         "filename": "cgfcggfj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "344": {
         "pokemon": "Claydol",
         "type1": "Ground",
         "type2": "Psychic",
         "filename": "cgjifebb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "345": {
         "pokemon": "Lileep",
         "type1": "Rock",
         "type2": "Grass",
         "filename": "cgjbjihf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Storm Drain"
     },
     "346": {
@@ -3352,8 +2664,6 @@
         "type1": "Rock",
         "type2": "Grass",
         "filename": "cgifeddj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Storm Drain"
     },
     "347": {
@@ -3361,8 +2671,6 @@
         "type1": "Rock",
         "type2": "Bug",
         "filename": "cghiiiad",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Swift Swim"
     },
     "348": {
@@ -3370,8 +2678,6 @@
         "type1": "Rock",
         "type2": "Bug",
         "filename": "chcehfff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Swift Swim"
     },
     "349": {
@@ -3379,8 +2685,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "chbicabj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Adaptability"
     },
     "350": {
@@ -3388,8 +2692,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "chbbgeid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Cute Charm"
     },
     "351-normal": {
@@ -3399,7 +2701,7 @@
         "filename": "chafajeh",
         "form": "normal",
         "form_no": "0",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "351-sunny": {
         "pokemon": "Castform",
@@ -3408,7 +2710,7 @@
         "filename": "chafagjb",
         "form": "sunny",
         "form_no": "1",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "351-rainy": {
         "pokemon": "Castform",
@@ -3417,7 +2719,7 @@
         "filename": "chafaedf",
         "form": "rainy",
         "form_no": "2",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "351-snow": {
         "pokemon": "Castform",
@@ -3433,17 +2735,13 @@
         "type1": "Normal",
         "type2": null,
         "filename": "chfajgjj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "353": {
         "pokemon": "Shuppet",
         "type1": "Ghost",
         "type2": null,
         "filename": "cheeebgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Cursed Body"
     },
     "354": {
@@ -3451,8 +2749,6 @@
         "type1": "Ghost",
         "type2": null,
         "filename": "chdhigch",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Cursed Body"
     },
     "355": {
@@ -3460,26 +2756,20 @@
         "type1": "Ghost",
         "type2": null,
         "filename": "chdbdajb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "356": {
         "pokemon": "Dusclops",
         "type1": "Ghost",
         "type2": null,
         "filename": "chhhbied",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "357": {
         "pokemon": "Tropius",
         "type1": "Grass",
         "type2": "Flying",
         "filename": "chhagdah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Harvest"
     },
     "358": {
@@ -3487,17 +2777,13 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "chgeahhb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "359": {
         "pokemon": "Absol",
         "type1": "Dark",
         "type2": null,
         "filename": "chfhfcdf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Justified"
     },
     "360": {
@@ -3505,8 +2791,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "ciaddjih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Telepathy"
     },
     "361": {
@@ -3514,8 +2798,6 @@
         "type1": "Ice",
         "type2": null,
         "filename": "chjgiefb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Moody"
     },
     "362": {
@@ -3523,8 +2805,6 @@
         "type1": "Ice",
         "type2": null,
         "filename": "chjacjbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Moody"
     },
     "363": {
@@ -3532,8 +2812,6 @@
         "type1": "Ice",
         "type2": "Water",
         "filename": "chidhdhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Oblivious"
     },
     "364": {
@@ -3541,8 +2819,6 @@
         "type1": "Ice",
         "type2": "Water",
         "filename": "cicjgbdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Oblivious"
     },
     "365": {
@@ -3550,8 +2826,6 @@
         "type1": "Ice",
         "type2": "Water",
         "filename": "cicdafjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Oblivious"
     },
     "366": {
@@ -3559,8 +2833,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "cibgfafj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rattled"
     },
     "367": {
@@ -3568,8 +2840,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "ciajjfcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Water Veil"
     },
     "368": {
@@ -3577,8 +2847,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "ciffichf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hydration"
     },
     "369": {
@@ -3586,8 +2854,6 @@
         "type1": "Water",
         "type2": "Rock",
         "filename": "ciejchdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sturdy"
     },
     "370": {
@@ -3595,8 +2861,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "ciechcad",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hydration"
     },
     "371": {
@@ -3604,8 +2868,6 @@
         "type1": "Dragon",
         "type2": null,
         "filename": "cidgbggh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sheer Force"
     },
     "372": {
@@ -3613,8 +2875,6 @@
         "type1": "Dragon",
         "type2": null,
         "filename": "ciicaebj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Overcoat"
     },
     "373": {
@@ -3622,8 +2882,6 @@
         "type1": "Dragon",
         "type2": "Flying",
         "filename": "cihfeiid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Moxie"
     },
     "374": {
@@ -3631,8 +2889,6 @@
         "type1": "Steel",
         "type2": "Psychic",
         "filename": "cigijdeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Light Metal"
     },
     "375": {
@@ -3640,8 +2896,6 @@
         "type1": "Steel",
         "type2": "Psychic",
         "filename": "cigcdibb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Light Metal"
     },
     "376": {
@@ -3649,8 +2903,6 @@
         "type1": "Steel",
         "type2": "Psychic",
         "filename": "cjaicfgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Light Metal "
     },
     "377": {
@@ -3658,81 +2910,63 @@
         "type1": "Rock",
         "type2": null,
         "filename": "cjabhach",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "378": {
         "pokemon": "Regice",
         "type1": "Ice",
         "type2": null,
         "filename": "cijfbejb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "379": {
         "pokemon": "Registeel",
         "type1": "Steel",
         "type2": null,
         "filename": "ciiifjff",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "380": {
         "pokemon": "Latias",
         "type1": "Dragon",
         "type2": "Psychic",
         "filename": "cjdeehah",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "381": {
         "pokemon": "Latios",
         "type1": "Dragon",
         "type2": "Psychic",
         "filename": "cjchjbhb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "382": {
         "pokemon": "Kyogre",
         "type1": "Water",
         "type2": null,
         "filename": "cjcbdgdf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "383": {
         "pokemon": "Groudon",
         "type1": "Ground",
         "type2": null,
         "filename": "cjbeiajj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "384": {
         "pokemon": "Rayquaza",
         "type1": "Dragon",
         "type2": "Flying",
         "filename": "cbcbiced",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "385": {
         "pokemon": "Jirachi",
         "type1": "Steel",
         "type2": "Psychic",
         "filename": "cbbfchah",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "386-normal": {
         "pokemon": "Deoxys",
@@ -3741,7 +2975,7 @@
         "filename": "cbaihbhb",
         "form": "normal",
         "form_no": "0",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "386-attack": {
         "pokemon": "Deoxys",
@@ -3750,7 +2984,7 @@
         "filename": "cbaigjbf",
         "form": "attack",
         "form_no": "1",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "386-defense": {
         "pokemon": "Deoxys",
@@ -3759,7 +2993,7 @@
         "filename": "cbaiggfj",
         "form": "defense",
         "form_no": "2",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "386-speed": {
         "pokemon": "Deoxys",
@@ -3768,15 +3002,13 @@
         "filename": "cbaigead",
         "form": "speed",
         "form_no": "3",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "387": {
         "pokemon": "Turtwig",
         "type1": "Grass",
         "type2": null,
         "filename": "cbacbgdf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Shell Armor"
     },
     "388": {
@@ -3784,8 +3016,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "cbeiadih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Shell Armor"
     },
     "389": {
@@ -3793,8 +3023,6 @@
         "type1": "Grass",
         "type2": "Ground",
         "filename": "cbebeifb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Shell Armor"
     },
     "390": {
@@ -3802,8 +3030,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "cbdejdbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Iron Fist"
     },
     "391": {
@@ -3811,8 +3037,6 @@
         "type1": "Fire",
         "type2": "Fighting",
         "filename": "cbcidhhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Iron Fist"
     },
     "392": {
@@ -3820,8 +3044,6 @@
         "type1": "Fire",
         "type2": "Fighting",
         "filename": "cbhecfdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Iron Fist"
     },
     "393": {
@@ -3829,8 +3051,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "cbghgjjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Defiant"
     },
     "394": {
@@ -3838,8 +3058,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "cbgbbefj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Defiant"
     },
     "395": {
@@ -3847,8 +3065,6 @@
         "type1": "Water",
         "type2": "Steel",
         "filename": "cbfefjcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Defiant"
     },
     "396": {
@@ -3856,17 +3072,13 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "ccaaeghf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "397": {
         "pokemon": "Staravia",
         "type1": "Normal",
         "type2": "Flying",
         "filename": "cbjdjbdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Reckless"
     },
     "398": {
@@ -3874,8 +3086,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "cbihdgad",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Reckless"
     },
     "399": {
@@ -3883,8 +3093,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "cbiaiagh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Moody"
     },
     "400": {
@@ -3892,8 +3100,6 @@
         "type1": "Normal",
         "type2": "Water",
         "filename": "cccggibj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Moody"
     },
     "401": {
@@ -3901,8 +3107,6 @@
         "type1": "Bug",
         "type2": null,
         "filename": "cccabcid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Run Away"
     },
     "402": {
@@ -3910,8 +3114,6 @@
         "type1": "Bug",
         "type2": null,
         "filename": "ccbdfheh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Technician"
     },
     "403": {
@@ -3919,8 +3121,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "ccahacbb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Guts"
     },
     "404": {
@@ -3928,8 +3128,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "ccfcijgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Guts"
     },
     "405": {
@@ -3937,8 +3135,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "ccegdech",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Guts"
     },
     "406": {
@@ -3946,8 +3142,6 @@
         "type1": "Grass",
         "type2": "Poison",
         "filename": "ccdjhijb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Leaf Guard"
     },
     "407": {
@@ -3955,8 +3149,6 @@
         "type1": "Grass",
         "type2": "Poison",
         "filename": "ccddcdff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Technician"
     },
     "408": {
@@ -3964,8 +3156,6 @@
         "type1": "Rock",
         "type2": null,
         "filename": "cchjbbah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sheer Force"
     },
     "409": {
@@ -3973,8 +3163,6 @@
         "type1": "Rock",
         "type2": null,
         "filename": "cchcffhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sheer Force"
     },
     "410": {
@@ -3982,8 +3170,6 @@
         "type1": "Rock",
         "type2": "Steel",
         "filename": "ccggaadf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Soundproof"
     },
     "411": {
@@ -3991,8 +3177,6 @@
         "type1": "Rock",
         "type2": "Steel",
         "filename": "ccfjeejj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Soundproof"
     },
     "412-plant": {
@@ -4011,7 +3195,7 @@
         "filename": "cdafcjjf",
         "form": "sandy",
         "form_no": "1",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "412-trash": {
         "pokemon": "Burmy",
@@ -4020,7 +3204,7 @@
         "filename": "cdafchdj",
         "form": "trash",
         "form_no": "2",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "413-plant": {
         "pokemon": "Wormadam",
@@ -4038,7 +3222,7 @@
         "filename": "ccjihefj",
         "form": "sandy",
         "form_no": "1",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "413-trash": {
         "pokemon": "Wormadam",
@@ -4047,15 +3231,13 @@
         "filename": "ccjihcad",
         "form": "trash",
         "form_no": "2",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "414": {
         "pokemon": "Mothim",
         "type1": "Bug",
         "type2": "Flying",
         "filename": "ccjccbhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Tinted Lens"
     },
     "415": {
@@ -4063,8 +3245,6 @@
         "type1": "Bug",
         "type2": "Flying",
         "filename": "ccifgged",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hustle"
     },
     "416": {
@@ -4072,8 +3252,6 @@
         "type1": "Bug",
         "type2": "Flying",
         "filename": "cddbfdjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "417": {
@@ -4081,8 +3259,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "cdcejifj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Volt Absorb"
     },
     "418": {
@@ -4090,8 +3266,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "cdbiedcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Water Veil"
     },
     "419": {
@@ -4099,8 +3273,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "cdbbihih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Water Veil"
     },
     "420": {
@@ -4108,9 +3280,7 @@
         "type1": "Grass",
         "type2": null,
         "filename": "cdfhhfdj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "421-sunshine": {
         "pokemon": "Cherrim",
@@ -4119,7 +3289,7 @@
         "filename": "cdfbcaad",
         "form": "sunshine",
         "form_no": "0",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "421-overcast": {
         "pokemon": "Cherrim",
@@ -4128,7 +3298,7 @@
         "filename": "cdfbbheh",
         "form": "overcast",
         "form_no": "1",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "422-west": {
         "pokemon": "Shellos",
@@ -4171,8 +3341,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "cdidjgid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Skill Link"
     },
     "425": {
@@ -4180,8 +3348,6 @@
         "type1": "Ghost",
         "type2": "Flying",
         "filename": "cdhhebeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Flare Boost"
     },
     "426": {
@@ -4189,8 +3355,6 @@
         "type1": "Ghost",
         "type2": "Flying",
         "filename": "cdhaigbb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Flare Boost"
     },
     "427": {
@@ -4198,8 +3362,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "cdgedahf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Limber"
     },
     "428": {
@@ -4207,8 +3369,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "cebabich",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Limber"
     },
     "429": {
@@ -4216,17 +3376,13 @@
         "type1": "Ghost",
         "type2": null,
         "filename": "ceadgcjb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "430": {
         "pokemon": "Honchkrow",
         "type1": "Dark",
         "type2": "Flying",
         "filename": "cdjhahff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Moxie"
     },
     "431": {
@@ -4234,8 +3390,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "cdjafcbj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Keen Eye"
     },
     "432": {
@@ -4243,8 +3397,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "cedgdjhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Defiant"
     },
     "433": {
@@ -4252,17 +3404,13 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "cecjiedf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "434": {
         "pokemon": "Stunky",
         "type1": "Poison",
         "type2": "Dark",
         "filename": "cecdcijj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Keen Eye"
     },
     "435": {
@@ -4270,8 +3418,6 @@
         "type1": "Poison",
         "type2": "Dark",
         "filename": "cebghdgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Keen Eye"
     },
     "436": {
@@ -4279,8 +3425,6 @@
         "type1": "Steel",
         "type2": "Psychic",
         "filename": "cegcgbbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Heavy Metal"
     },
     "437": {
@@ -4288,8 +3432,6 @@
         "type1": "Steel",
         "type2": "Psychic",
         "filename": "cefgafhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Heavy Metal"
     },
     "438": {
@@ -4297,8 +3439,6 @@
         "type1": "Rock",
         "type2": null,
         "filename": "ceejfaed",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rattled"
     },
     "439": {
@@ -4306,8 +3446,6 @@
         "type1": "Psychic",
         "type2": "Fairy",
         "filename": "ceecjfah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Technician"
     },
     "440": {
@@ -4315,8 +3453,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "ceiiicfj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Friend Guard"
     },
     "441": {
@@ -4324,8 +3460,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "ceicchcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Big Pecks"
     },
     "442": {
@@ -4333,8 +3467,6 @@
         "type1": "Ghost",
         "type2": "Dark",
         "filename": "cehfhbih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Infiltrator"
     },
     "443": {
@@ -4342,8 +3474,6 @@
         "type1": "Dragon",
         "type2": "Ground",
         "filename": "cegjbgfb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rough Skin"
     },
     "444": {
@@ -4351,8 +3481,6 @@
         "type1": "Dragon",
         "type2": "Ground",
         "filename": "cfbfaead",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rough Skin"
     },
     "445": {
@@ -4360,8 +3488,6 @@
         "type1": "Dragon",
         "type2": "Ground",
         "filename": "cfaieigh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rough Skin"
     },
     "446": {
@@ -4369,8 +3495,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "cfabjddb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Gluttony"
     },
     "447": {
@@ -4378,8 +3502,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "cejfdhjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Prankster"
     },
     "448": {
@@ -4387,8 +3509,6 @@
         "type1": "Fighting",
         "type2": "Steel",
         "filename": "bhacdjdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Justified"
     },
     "449": {
@@ -4396,8 +3516,6 @@
         "type1": "Ground",
         "type2": null,
         "filename": "bgjfiead",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Force"
     },
     "450": {
@@ -4405,8 +3523,6 @@
         "type1": "Ground",
         "type2": null,
         "filename": "bgijcigh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Force"
     },
     "451": {
@@ -4414,8 +3530,6 @@
         "type1": "Poison",
         "type2": "Bug",
         "filename": "bgichddb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Keen Eye"
     },
     "452": {
@@ -4423,8 +3537,6 @@
         "type1": "Poison",
         "type2": "Dark",
         "filename": "bhcigaid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Keen Eye"
     },
     "453": {
@@ -4432,8 +3544,6 @@
         "type1": "Poison",
         "type2": "Fighting",
         "filename": "bhccafeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Poison Touch"
     },
     "454": {
@@ -4441,8 +3551,6 @@
         "type1": "Poison",
         "type2": "Fighting",
         "filename": "bhbffabb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Poison Touch"
     },
     "455": {
@@ -4450,17 +3558,13 @@
         "type1": "Grass",
         "type2": null,
         "filename": "bhaijehf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "456": {
         "pokemon": "Finneon",
         "type1": "Water",
         "type2": null,
         "filename": "bhfeicch",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Water Veil"
     },
     "457": {
@@ -4468,8 +3572,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "bheicgjb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Water Veil"
     },
     "458": {
@@ -4477,8 +3579,6 @@
         "type1": "Water",
         "type2": "Flying",
         "filename": "bhebhbff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Water Veil"
     },
     "459": {
@@ -4486,8 +3586,6 @@
         "type1": "Grass",
         "type2": "Ice",
         "filename": "bhdfbgbj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Soundproof"
     },
     "460": {
@@ -4495,8 +3593,6 @@
         "type1": "Grass",
         "type2": "Ice",
         "filename": "bhibadhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Soundproof"
     },
     "461": {
@@ -4504,8 +3600,6 @@
         "type1": "Dark",
         "type2": "Ice",
         "filename": "bhheeidf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Pickpocket"
     },
     "462": {
@@ -4513,8 +3607,6 @@
         "type1": "Electric",
         "type2": "Steel",
         "filename": "bhghjcjj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Analytic"
     },
     "463": {
@@ -4522,8 +3614,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "bhgbdhgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Cloud Nine"
     },
     "464": {
@@ -4531,8 +3621,6 @@
         "type1": "Ground",
         "type2": "Rock",
         "filename": "biahcfbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Reckless"
     },
     "465": {
@@ -4540,8 +3628,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "biaagjhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Regenerator"
     },
     "466": {
@@ -4549,8 +3635,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "bhjebeed",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Vital Spirit"
     },
     "467": {
@@ -4558,8 +3642,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "bhihfjah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Vital Spirit"
     },
     "468": {
@@ -4567,8 +3649,6 @@
         "type1": "Fairy",
         "type2": "Flying",
         "filename": "biddegfj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Super Luck"
     },
     "469": {
@@ -4576,8 +3656,6 @@
         "type1": "Bug",
         "type2": "Flying",
         "filename": "bicgjbcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Frisk"
     },
     "470": {
@@ -4585,8 +3663,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "bicadfih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Chlorophyll"
     },
     "471": {
@@ -4594,8 +3670,6 @@
         "type1": "Ice",
         "type2": null,
         "filename": "bibdiafb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Ice Body"
     },
     "472": {
@@ -4603,8 +3677,6 @@
         "type1": "Ground",
         "type2": "Flying",
         "filename": "bifjgiad",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Poison Heal"
     },
     "473": {
@@ -4612,8 +3684,6 @@
         "type1": "Ice",
         "type2": "Ground",
         "filename": "bifdbcgh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Thick Fat"
     },
     "474": {
@@ -4621,8 +3691,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "biegfhdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Analytic "
     },
     "475": {
@@ -4630,8 +3698,6 @@
         "type1": "Psychic",
         "type2": "Fighting",
         "filename": "bieaabjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Justified"
     },
     "476": {
@@ -4639,8 +3705,6 @@
         "type1": "Rock",
         "type2": "Steel",
         "filename": "biifijeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Force"
     },
     "477": {
@@ -4648,17 +3712,13 @@
         "type1": "Ghost",
         "type2": null,
         "filename": "bihjdebb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "478": {
         "pokemon": "Froslass",
         "type1": "Ice",
         "type2": "Ghost",
         "filename": "bihchihf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Cursed Body"
     },
     "479": {
@@ -4666,9 +3726,7 @@
         "type1": "Electric",
         "type2": "Ghost",
         "filename": "biggcddj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "479-heat": {
         "pokemon": "Rotom",
@@ -4677,7 +3735,7 @@
         "filename": "biggcaid",
         "form": "heat",
         "form_no": "0",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "479-wash": {
         "pokemon": "Rotom",
@@ -4686,7 +3744,7 @@
         "filename": "biggbich",
         "form": "wash",
         "form_no": "1",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "479-frost": {
         "pokemon": "Rotom",
@@ -4695,7 +3753,7 @@
         "filename": "biggbfhb",
         "form": "frost",
         "form_no": "2",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "479-fan": {
         "pokemon": "Rotom",
@@ -4704,7 +3762,7 @@
         "filename": "biggddgd",
         "form": "fan",
         "form_no": "3",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "479-mow": {
         "pokemon": "Rotom",
@@ -4713,42 +3771,34 @@
         "filename": "biggdbah",
         "form": "mow",
         "form_no": "4",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "480": {
         "pokemon": "Uxie",
         "type1": "Psychic",
         "type2": null,
         "filename": "bjbcbajb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "481": {
         "pokemon": "Mesprit",
         "type1": "Psychic",
         "type2": null,
         "filename": "bjafffff",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "482": {
         "pokemon": "Azelf",
         "type1": "Psychic",
         "type2": null,
         "filename": "bijjaabj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "483": {
         "pokemon": "Dialga",
         "type1": "Steel",
         "type2": "Dragon",
         "filename": "bijceeid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Telepathy"
     },
     "484": {
@@ -4756,8 +3806,6 @@
         "type1": "Water",
         "type2": "Dragon",
         "filename": "bjdidcdf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Telepathy"
     },
     "485": {
@@ -4765,18 +3813,14 @@
         "type1": "Fire",
         "type2": "Steel",
         "filename": "bjdbhgjj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "486": {
         "pokemon": "Regigigas",
         "type1": "Normal",
         "type2": null,
         "filename": "bjcfcbgd",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "487-altered": {
         "pokemon": "Giratina",
@@ -4801,36 +3845,28 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "bjgefdhj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "489": {
         "pokemon": "Phione",
         "type1": "Water",
         "type2": null,
         "filename": "bjfhjied",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "490": {
         "pokemon": "Manaphy",
         "type1": "Water",
         "type2": null,
         "filename": "bjfbedah",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "491": {
         "pokemon": "Darkrai",
         "type1": "Dark",
         "type2": null,
         "filename": "bjeeihhb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "492-land": {
         "pokemon": "Shaymin",
@@ -4839,7 +3875,7 @@
         "filename": "bjjahfcd",
         "form": "land",
         "form_no": "0",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "492-sky": {
         "pokemon": "Shaymin",
@@ -4848,7 +3884,7 @@
         "filename": "bjjahcgh",
         "form": "sky",
         "form_no": "1",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-normal": {
         "pokemon": "Arceus",
@@ -4857,7 +3893,7 @@
         "filename": "bjiebjih",
         "form": "normal",
         "form_no": "0",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-fighting": {
         "pokemon": "Arceus",
@@ -4866,7 +3902,7 @@
         "filename": "bjiebhdb",
         "form": "fighting",
         "form_no": "1",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-flying": {
         "pokemon": "Arceus",
@@ -4875,7 +3911,7 @@
         "filename": "bjiebehf",
         "form": "flying",
         "form_no": "2",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-poison": {
         "pokemon": "Arceus",
@@ -4884,7 +3920,7 @@
         "filename": "bjiebcbj",
         "form": "poison",
         "form_no": "3",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-ground": {
         "pokemon": "Arceus",
@@ -4893,7 +3929,7 @@
         "filename": "bjiedabb",
         "form": "ground",
         "form_no": "4",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-rock": {
         "pokemon": "Arceus",
@@ -4902,7 +3938,7 @@
         "filename": "bjiechff",
         "form": "rock",
         "form_no": "5",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-bug": {
         "pokemon": "Arceus",
@@ -4911,7 +3947,7 @@
         "filename": "bjiecejj",
         "form": "bug",
         "form_no": "6",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-ghost": {
         "pokemon": "Arceus",
@@ -4920,7 +3956,7 @@
         "filename": "bjiecced",
         "form": "ghost",
         "form_no": "7",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-steel": {
         "pokemon": "Arceus",
@@ -4929,7 +3965,7 @@
         "filename": "bjieeadf",
         "form": "steel",
         "form_no": "8",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-fire": {
         "pokemon": "Arceus",
@@ -4938,7 +3974,7 @@
         "filename": "bjiedhhj",
         "form": "fire",
         "form_no": "9",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-water": {
         "pokemon": "Arceus",
@@ -4947,7 +3983,7 @@
         "filename": "bjiedfcd",
         "form": "water",
         "form_no": "10",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-grass": {
         "pokemon": "Arceus",
@@ -4956,7 +3992,7 @@
         "filename": "bjiedcgh",
         "form": "grass",
         "form_no": "11",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-electric": {
         "pokemon": "Arceus",
@@ -4965,7 +4001,7 @@
         "filename": "bjiefafj",
         "form": "electric",
         "form_no": "12",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-psychic": {
         "pokemon": "Arceus",
@@ -4974,7 +4010,7 @@
         "filename": "bjieeiad",
         "form": "psychic",
         "form_no": "13",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-ice": {
         "pokemon": "Arceus",
@@ -4983,7 +4019,7 @@
         "filename": "bjieefeh",
         "form": "ice",
         "form_no": "14",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-dragon": {
         "pokemon": "Arceus",
@@ -4992,7 +4028,7 @@
         "filename": "bjieecjb",
         "form": "dragon",
         "form_no": "15",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "493-dark": {
         "pokemon": "Arceus",
@@ -5001,105 +4037,83 @@
         "filename": "bjiegaid",
         "form": "dark",
         "form_no": "16",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "494": {
         "pokemon": "Victini",
         "type1": "Psychic",
         "type2": "Fire",
         "filename": "bjhhgefb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "495": {
         "pokemon": "Snivy",
         "type1": "Grass",
         "type2": null,
         "filename": "bjhbajbf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "496": {
         "pokemon": "Servine",
         "type1": "Grass",
         "type2": null,
         "filename": "cabgjggh",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "497": {
         "pokemon": "Serperior",
         "type1": "Grass",
         "type2": null,
         "filename": "cabaebdb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "498": {
         "pokemon": "Tepig",
         "type1": "Fire",
         "type2": null,
         "filename": "caadifjf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "499": {
         "pokemon": "Pignite",
         "type1": "Fire",
         "type2": "Fighting",
         "filename": "bjjhdafj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "500": {
         "pokemon": "Emboar",
         "type1": "Fire",
         "type2": "Fighting",
         "filename": "caedbibb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "501": {
         "pokemon": "Oshawott",
         "type1": "Water",
         "type2": null,
         "filename": "cadggchf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "502": {
         "pokemon": "Dewott",
         "type1": "Water",
         "type2": null,
         "filename": "cadaahdj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "503": {
         "pokemon": "Samurott",
         "type1": "Water",
         "type2": null,
         "filename": "cacdfcad",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "504": {
         "pokemon": "Patrat",
         "type1": "Normal",
         "type2": null,
         "filename": "cagjdjff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Analytic"
     },
     "505": {
@@ -5107,8 +4121,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "cagciebj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Analytic"
     },
     "506": {
@@ -5116,8 +4128,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "cafgciid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Run Away"
     },
     "507": {
@@ -5125,8 +4135,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "caejhdeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Scrappy"
     },
     "508": {
@@ -5134,8 +4142,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "cajfgajj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Scrappy"
     },
     "509": {
@@ -5143,8 +4149,6 @@
         "type1": "Dark",
         "type2": null,
         "filename": "caijafgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Prankster"
     },
     "510": {
@@ -5152,8 +4156,6 @@
         "type1": "Dark",
         "type2": null,
         "filename": "caicfach",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Prankster"
     },
     "511": {
@@ -5161,8 +4163,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "cahfjejb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Overgrow"
     },
     "512": {
@@ -5170,8 +4170,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "egdieagh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Overgrow"
     },
     "513": {
@@ -5179,8 +4177,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "egdbifdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Blaze"
     },
     "514": {
@@ -5188,8 +4184,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "egcfcjjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Blaze"
     },
     "515": {
@@ -5197,8 +4191,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "egbihefj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Torrent"
     },
     "516": {
@@ -5206,8 +4198,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "eggegcbb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Torrent"
     },
     "517": {
@@ -5215,8 +4205,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "egfiaghf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Telepathy"
     },
     "518": {
@@ -5224,8 +4212,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "egfbfbdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Telepathy"
     },
     "519": {
@@ -5233,8 +4219,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "egeejgad",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rivalry"
     },
     "520": {
@@ -5242,8 +4226,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "egjaidff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rivalry"
     },
     "521": {
@@ -5251,8 +4233,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "egiecibj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rivalry"
     },
     "522": {
@@ -5260,8 +4240,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "eghhhcid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sap Sipper"
     },
     "523": {
@@ -5269,8 +4247,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "eghbbheh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sap Sipper"
     },
     "524": {
@@ -5278,8 +4254,6 @@
         "type1": "Rock",
         "type2": null,
         "filename": "ehbhaejj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Force"
     },
     "525": {
@@ -5287,8 +4261,6 @@
         "type1": "Rock",
         "type2": null,
         "filename": "ehbaejgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Force"
     },
     "526": {
@@ -5296,8 +4268,6 @@
         "type1": "Rock",
         "type2": null,
         "filename": "ehadjech",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Force"
     },
     "527": {
@@ -5305,8 +4275,6 @@
         "type1": "Psychic",
         "type2": "Flying",
         "filename": "egjhdijb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Simple"
     },
     "528": {
@@ -5314,8 +4282,6 @@
         "type1": "Psychic",
         "type2": "Flying",
         "filename": "ehedcged",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Simple"
     },
     "529": {
@@ -5323,8 +4289,6 @@
         "type1": "Ground",
         "type2": null,
         "filename": "ehdghbah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Mold Breaker"
     },
     "530": {
@@ -5332,8 +4296,6 @@
         "type1": "Ground",
         "type2": "Steel",
         "filename": "ehdabfhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Mold Breaker"
     },
     "531": {
@@ -5341,8 +4303,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "ehcdgadf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Klutz"
     },
     "532": {
@@ -5350,8 +4310,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "ehgjehih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Iron Fist"
     },
     "533": {
@@ -5359,8 +4317,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "ehgcjcfb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Iron Fist"
     },
     "534": {
@@ -5368,8 +4324,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "ehfgdhbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Iron Fist"
     },
     "535": {
@@ -5377,8 +4331,6 @@
         "type1": "Water",
         "type2": null,
         "filename": "ehejibhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Water Absorb"
     },
     "536": {
@@ -5386,8 +4338,6 @@
         "type1": "Water",
         "type2": "Ground",
         "filename": "ehjfgjdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Water Absorb"
     },
     "537": {
@@ -5395,8 +4345,6 @@
         "type1": "Water",
         "type2": "Ground",
         "filename": "ehijbdjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Water Absorb"
     },
     "538": {
@@ -5404,8 +4352,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "ehicfifj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Mold Breaker"
     },
     "539": {
@@ -5413,8 +4359,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "ehhgadcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Mold Breaker"
     },
     "540": {
@@ -5422,8 +4366,6 @@
         "type1": "Bug",
         "type2": "Grass",
         "filename": "eicbjahf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Overcoat"
     },
     "541": {
@@ -5431,8 +4373,6 @@
         "type1": "Bug",
         "type2": "Grass",
         "filename": "eibfdfdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Overcoat"
     },
     "542": {
@@ -5440,8 +4380,6 @@
         "type1": "Bug",
         "type2": "Grass",
         "filename": "eiaiiaad",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Overcoat"
     },
     "543": {
@@ -5449,8 +4387,6 @@
         "type1": "Bug",
         "type2": "Poison",
         "filename": "eiaccegh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Quick Feet"
     },
     "544": {
@@ -5458,8 +4394,6 @@
         "type1": "Bug",
         "type2": "Poison",
         "filename": "eieibcbj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Quick Feet"
     },
     "545": {
@@ -5467,8 +4401,6 @@
         "type1": "Bug",
         "type2": "Poison",
         "filename": "eiebfgid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Quick Feet"
     },
     "546": {
@@ -5476,8 +4408,6 @@
         "type1": "Grass",
         "type2": "Fairy",
         "filename": "eidfabeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Chlorophyll"
     },
     "547": {
@@ -5485,8 +4415,6 @@
         "type1": "Grass",
         "type2": "Fairy",
         "filename": "eiciegbb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Chlorophyll"
     },
     "548": {
@@ -5494,8 +4422,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "eiheddgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Leaf Guard"
     },
     "549": {
@@ -5503,8 +4429,6 @@
         "type1": "Grass",
         "type2": null,
         "filename": "eighhich",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Leaf Guard"
     },
     "550-red": {
@@ -5530,8 +4454,6 @@
         "type1": "Ground",
         "type2": "Dark",
         "filename": "eifeghff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Anger Point"
     },
     "552": {
@@ -5539,8 +4461,6 @@
         "type1": "Ground",
         "type2": "Dark",
         "filename": "ejaaffah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Anger Point"
     },
     "553": {
@@ -5548,8 +4468,6 @@
         "type1": "Ground",
         "type2": "Dark",
         "filename": "eijdjjhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Anger Point"
     },
     "554": {
@@ -5557,8 +4475,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "eiiheedf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Inner Focus"
     },
     "555-standard": {
@@ -5577,15 +4493,13 @@
         "filename": "eiiaiged",
         "form": "zen",
         "form_no": "1",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "556": {
         "pokemon": "Maractus",
         "type1": "Grass",
         "type2": null,
         "filename": "ejcghgfb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Storm Drain"
     },
     "557": {
@@ -5593,8 +4507,6 @@
         "type1": "Bug",
         "type2": "Rock",
         "filename": "ejcacbbf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "558": {
@@ -5602,8 +4514,6 @@
         "type1": "Bug",
         "type2": "Rock",
         "filename": "ejbdgfhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "559": {
@@ -5611,8 +4521,6 @@
         "type1": "Dark",
         "type2": "Fighting",
         "filename": "ejahbaed",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Intimidate"
     },
     "560": {
@@ -5620,8 +4528,6 @@
         "type1": "Dark",
         "type2": "Fighting",
         "filename": "ejfcjhjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Intimidate"
     },
     "561": {
@@ -5629,8 +4535,6 @@
         "type1": "Psychic",
         "type2": "Flying",
         "filename": "ejegecfj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Tinted Lens"
     },
     "562": {
@@ -5638,26 +4542,20 @@
         "type1": "Ghost",
         "type2": null,
         "filename": "ejdjihcd",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "563": {
         "pokemon": "Cofagrigus",
         "type1": "Ghost",
         "type2": null,
         "filename": "ejdddbih",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "564": {
         "pokemon": "Tirtouga",
         "type1": "Water",
         "type2": "Rock",
         "filename": "ejhjbjdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Swift Swim"
     },
     "565": {
@@ -5665,8 +4563,6 @@
         "type1": "Water",
         "type2": "Rock",
         "filename": "ejhcgead",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Swift Swim"
     },
     "566": {
@@ -5674,26 +4570,20 @@
         "type1": "Rock",
         "type2": "Flying",
         "filename": "ejggaigh",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "567": {
         "pokemon": "Archeops",
         "type1": "Rock",
         "type2": "Flying",
         "filename": "ejfjfddb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "568": {
         "pokemon": "Trubbish",
         "type1": "Poison",
         "type2": null,
         "filename": "faafeaid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Aftermath"
     },
     "569": {
@@ -5701,8 +4591,6 @@
         "type1": "Poison",
         "type2": null,
         "filename": "ejjiifeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Aftermath"
     },
     "570": {
@@ -5710,26 +4598,20 @@
         "type1": "Dark",
         "type2": null,
         "filename": "ejjcdabb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "571": {
         "pokemon": "Zoroark",
         "type1": "Dark",
         "type2": null,
         "filename": "ejifhehf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "572": {
         "pokemon": "Minccino",
         "type1": "Normal",
         "type2": null,
         "filename": "fadbgcch",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Skill Link"
     },
     "573": {
@@ -5737,8 +4619,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "facfagjb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Skill Link"
     },
     "574": {
@@ -5746,17 +4626,13 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "fabifbff",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "575": {
         "pokemon": "Gothorita",
         "type1": "Psychic",
         "type2": null,
         "filename": "fabbjgbj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Shadow Tag"
     },
     "576": {
@@ -5764,8 +4640,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "ecbijhgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Shadow Tag"
     },
     "577": {
@@ -5773,8 +4647,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "ecbcecch",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Regenerator"
     },
     "578": {
@@ -5782,8 +4654,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "ecafigjb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Regenerator"
     },
     "579": {
@@ -5791,8 +4661,6 @@
         "type1": "Psychic",
         "type2": null,
         "filename": "ebjjdbff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Regenerator"
     },
     "580": {
@@ -5800,8 +4668,6 @@
         "type1": "Water",
         "type2": "Flying",
         "filename": "ecefbjah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hydration"
     },
     "581": {
@@ -5809,8 +4675,6 @@
         "type1": "Water",
         "type2": "Flying",
         "filename": "ecdigdhb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Hydration"
     },
     "582": {
@@ -5818,8 +4682,6 @@
         "type1": "Ice",
         "type2": null,
         "filename": "ecdcaidf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "583": {
@@ -5827,8 +4689,6 @@
         "type1": "Ice",
         "type2": null,
         "filename": "eccffcjj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "584": {
@@ -5836,8 +4696,6 @@
         "type1": "Ice",
         "type2": null,
         "filename": "echbeafb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "585-spring": {
@@ -5856,7 +4714,7 @@
         "filename": "ecgeicfj",
         "form": "summer",
         "form_no": "1",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "585-autumn": {
         "pokemon": "Deerling",
@@ -5865,7 +4723,7 @@
         "filename": "ecgeiaad",
         "form": "autumn",
         "form_no": "2",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "585-winter": {
         "pokemon": "Deerling",
@@ -5874,7 +4732,7 @@
         "filename": "ecgehheh",
         "form": "winter",
         "form_no": "3",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "586-spring": {
         "pokemon": "Sawsbuck",
@@ -5892,7 +4750,7 @@
         "filename": "ecfichcd",
         "form": "summer",
         "form_no": "1",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "586-autumn": {
         "pokemon": "Sawsbuck",
@@ -5901,7 +4759,7 @@
         "filename": "ecficegh",
         "form": "autumn",
         "form_no": "2",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "586-winter": {
         "pokemon": "Sawsbuck",
@@ -5910,15 +4768,13 @@
         "filename": "ecficcbb",
         "form": "winter",
         "form_no": "3",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "587": {
         "pokemon": "Emolga",
         "type1": "Electric",
         "type2": "Flying",
         "filename": "ecfbheed",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Motor Drive"
     },
     "588": {
@@ -5926,8 +4782,6 @@
         "type1": "Bug",
         "type2": null,
         "filename": "ecjhgbjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "No Guard"
     },
     "589": {
@@ -5935,8 +4789,6 @@
         "type1": "Bug",
         "type2": "Steel",
         "filename": "ecjbagfj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Overcoat"
     },
     "590": {
@@ -5944,8 +4796,6 @@
         "type1": "Grass",
         "type2": "Poison",
         "filename": "eciefbcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Regenerator"
     },
     "591": {
@@ -5953,8 +4803,6 @@
         "type1": "Grass",
         "type2": "Poison",
         "filename": "echhjfih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Regenerator"
     },
     "592": {
@@ -5962,8 +4810,6 @@
         "type1": "Water",
         "type2": "Ghost",
         "filename": "edcdiddj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Damp"
     },
     "593": {
@@ -5971,8 +4817,6 @@
         "type1": "Water",
         "type2": "Ghost",
         "filename": "edbhciad",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Damp"
     },
     "594": {
@@ -5980,17 +4824,13 @@
         "type1": "Water",
         "type2": null,
         "filename": "edbahcgh",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "595": {
         "pokemon": "Joltik",
         "type1": "Bug",
         "type2": "Electric",
         "filename": "edaebhdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Regenerator"
     },
     "596": {
@@ -5998,8 +4838,6 @@
         "type1": "Bug",
         "type2": "Electric",
         "filename": "edfaaeid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Swarm"
     },
     "597": {
@@ -6007,8 +4845,6 @@
         "type1": "Grass",
         "type2": "Steel",
         "filename": "ededejeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Swarm"
     },
     "598": {
@@ -6016,35 +4852,27 @@
         "type1": "Grass",
         "type2": "Steel",
         "filename": "eddgjebb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "599": {
         "pokemon": "Klink",
         "type1": "Steel",
         "type2": null,
         "filename": "eddadihf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "600": {
         "pokemon": "Klang",
         "type1": "Steel",
         "type2": null,
         "filename": "edhgcgch",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "601": {
         "pokemon": "Klinklang",
         "type1": "Steel",
         "type2": null,
         "filename": "edgjhajb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Clear Body"
     },
     "602": {
@@ -6052,8 +4880,6 @@
         "type1": "Electric",
         "type2": null,
         "filename": "edgdbfff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Clear Body"
     },
     "603": {
@@ -6061,35 +4887,27 @@
         "type1": "Electric",
         "type2": null,
         "filename": "edfggabj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "604": {
         "pokemon": "Eelektross",
         "type1": "Electric",
         "type2": null,
         "filename": "eeacehhb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "605": {
         "pokemon": "Elgyem",
         "type1": "Psychic",
         "type2": null,
         "filename": "edjfjcdf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "606": {
         "pokemon": "Beheeyem",
         "type1": "Psychic",
         "type2": null,
         "filename": "edijdgjj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Analytic"
     },
     "607": {
@@ -6097,8 +4915,6 @@
         "type1": "Ghost",
         "type2": "Fire",
         "filename": "edicibgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Analytic"
     },
     "608": {
@@ -6106,35 +4922,27 @@
         "type1": "Ghost",
         "type2": "Fire",
         "filename": "eecigjbf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "609": {
         "pokemon": "Chandelure",
         "type1": "Ghost",
         "type2": "Fire",
         "filename": "eeccbdhj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "610": {
         "pokemon": "Axew",
         "type1": "Dragon",
         "type2": null,
         "filename": "eebffied",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "611": {
         "pokemon": "Fraxure",
         "type1": "Dragon",
         "type2": null,
         "filename": "eeajadah",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "612": {
@@ -6142,8 +4950,6 @@
         "type1": "Dragon",
         "type2": null,
         "filename": "eefejafj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "613": {
@@ -6151,8 +4957,6 @@
         "type1": "Ice",
         "type2": null,
         "filename": "eeeidfcd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unnerve"
     },
     "614": {
@@ -6160,8 +4964,6 @@
         "type1": "Ice",
         "type2": null,
         "filename": "eeebhjih",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Rattled"
     },
     "615": {
@@ -6169,8 +4971,6 @@
         "type1": "Ice",
         "type2": null,
         "filename": "eedfcefb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Swift Swim"
     },
     "616": {
@@ -6178,17 +4978,13 @@
         "type1": "Bug",
         "type2": null,
         "filename": "eeibbcad",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "617": {
         "pokemon": "Accelgor",
         "type1": "Bug",
         "type2": null,
         "filename": "eehefggh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Overcoat"
     },
     "618": {
@@ -6196,8 +4992,6 @@
         "type1": "Ground",
         "type2": "Electric",
         "filename": "eegiabdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Unburden"
     },
     "619": {
@@ -6205,8 +4999,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "eegbefjf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sand Veil"
     },
     "620": {
@@ -6214,8 +5006,6 @@
         "type1": "Fighting",
         "type2": null,
         "filename": "efahddeh",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Reckless"
     },
     "621": {
@@ -6223,8 +5013,6 @@
         "type1": "Dragon",
         "type2": null,
         "filename": "efaahibb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Reckless"
     },
     "622": {
@@ -6232,8 +5020,6 @@
         "type1": "Ground",
         "type2": "Ghost",
         "filename": "eejecchf",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Mold Breaker"
     },
     "623": {
@@ -6241,8 +5027,6 @@
         "type1": "Ground",
         "type2": "Ghost",
         "filename": "eeihghdj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "No Guard"
     },
     "624": {
@@ -6250,8 +5034,6 @@
         "type1": "Dark",
         "type2": "Steel",
         "filename": "efddfejb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "No Guard"
     },
     "625": {
@@ -6259,8 +5041,6 @@
         "type1": "Dark",
         "type2": "Steel",
         "filename": "efcgjjff",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Pressure"
     },
     "626": {
@@ -6268,8 +5048,6 @@
         "type1": "Normal",
         "type2": null,
         "filename": "efcaeebj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Pressure"
     },
     "627": {
@@ -6277,8 +5055,6 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "efbdiiid",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Soundproof"
     },
     "628": {
@@ -6286,17 +5062,13 @@
         "type1": "Normal",
         "type2": "Flying",
         "filename": "effjhgdf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "629": {
         "pokemon": "Vullaby",
         "type1": "Dark",
         "type2": "Flying",
         "filename": "effdcajj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Defiant"
     },
     "630": {
@@ -6304,8 +5076,6 @@
         "type1": "Dark",
         "type2": "Flying",
         "filename": "efeggfgd",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "631": {
@@ -6313,8 +5083,6 @@
         "type1": "Fire",
         "type2": null,
         "filename": "efeabach",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Weak Armor"
     },
     "632": {
@@ -6322,8 +5090,6 @@
         "type1": "Bug",
         "type2": "Steel",
         "filename": "efifjhhj",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "White Smoke"
     },
     "633": {
@@ -6331,8 +5097,6 @@
         "type1": "Dark",
         "type2": "Dragon",
         "filename": "efhjeced",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Truant"
     },
     "634": {
@@ -6340,80 +5104,80 @@
         "type1": "Dark",
         "type2": "Dragon",
         "filename": "efhcihah",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "635": {
         "pokemon": "Hydreigon",
         "type1": "Dark",
         "type2": "Dragon",
         "filename": "efggdbhb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "636": {
         "pokemon": "Larvesta",
         "type1": "Bug",
         "type2": "Fire",
         "filename": "egbcbjcd",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "637": {
         "pokemon": "Volcarona",
         "type1": "Bug",
         "type2": "Fire",
         "filename": "egafgdih",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "638": {
         "pokemon": "Cobalion",
         "type1": "Steel",
         "type2": "Fighting",
         "filename": "efjjaifb",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "639": {
         "pokemon": "Terrakion",
         "type1": "Rock",
         "type2": "Fighting",
         "filename": "efjcfdbf",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "640": {
         "pokemon": "Virizion",
         "type1": "Grass",
         "type2": "Fighting",
         "filename": "dhjjfefj",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "641": {
         "pokemon": "Tornadus",
         "type1": "Flying",
         "type2": null,
         "filename": "dhjcjjcd",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
+    },
+    "641-therian": {
+        "pokemon": "Tornadus",
+        "type1": "Flying",
+        "type2": null,
+        "filename": "dhjcjggh",
+        "form": "therian",
+        "form_no": "1",
+        "hidden_ability": null
     },
     "642": {
         "pokemon": "Thundurus",
         "type1": "Electric",
         "type2": "Flying",
         "filename": "dhigedih",
-        "form": "",
-        "form_no": "",
+        "hidden_ability": "Defiant"
+    },
+    "642-therian": {
+        "pokemon": "Thundurus",
+        "type1": "Electric",
+        "type2": "Flying",
+        "filename": "dhigebdb",
+        "form": "therian",
+        "form_no": "1",
         "hidden_ability": "Defiant"
     },
     "643": {
@@ -6421,8 +5185,6 @@
         "type1": "Dragon",
         "type2": "Fire",
         "filename": "dhhjiifb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Defiant"
     },
     "644": {
@@ -6430,26 +5192,124 @@
         "type1": "Dragon",
         "type2": "Electric",
         "filename": "dicfhgad",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
     },
     "645": {
         "pokemon": "Landorus",
         "type1": "Ground",
         "type2": "Flying",
         "filename": "dibjcagh",
-        "form": "",
-        "form_no": "",
-        "hidden_ability": ""
+        "hidden_ability": null
+    },
+    "645-therian": {
+        "pokemon": "Landorus",
+        "type1": "Ground",
+        "type2": "Flying",
+        "filename": "dhigebdb",
+        "form": "therian",
+        "form_no": "1",
+        "hidden_ability": null
     },
     "646": {
         "pokemon": "Kyurem",
         "type1": "Dragon",
         "type2": "Ice",
         "filename": "dibcgfdb",
-        "form": "",
-        "form_no": "",
         "hidden_ability": "Sheer Force"
+    },
+    "646-white": {
+        "pokemon": "Kyurem",
+        "type1": "Dragon",
+        "type2": "Ice",
+        "filename": "dibcgchf",
+        "form": "white",
+        "form_no": "1",
+        "hidden_ability": "Sheer Force"
+    },
+    "646-black": {
+        "pokemon": "Kyurem",
+        "type1": "Dragon",
+        "type2": "Ice",
+        "filename": "dibcgabj",
+        "form": "black",
+        "form_no": "2",
+        "hidden_ability": "Sheer Force"
+    },
+    "647": {
+        "pokemon": "Keldeo",
+        "type1": "Water",
+        "type2": "Fighting",
+        "filename": "diagajjf",
+        "hidden_ability": null
+    },
+    "647-resolute": {
+        "pokemon": "Keldeo",
+        "type1": "Water",
+        "type2": "Fighting",
+        "filename": "diagahdj",
+        "form": "resolute",
+        "form_no": "1",
+        "hidden_ability": null
+    },
+    "648-aria": {
+        "pokemon": "Meloetta",
+        "type1": "Normal",
+        "type2": "Psychic",
+        "filename": "difbjheh",
+        "form": "aria",
+        "form_no": "0",
+        "hidden_ability": null
+    },
+    "648-pirouette": {
+        "pokemon": "Meloetta",
+        "type1": "Normal",
+        "type2": "Fighting",
+        "filename": "difbjejb",
+        "form": "pirouette",
+        "form_no": "1",
+        "hidden_ability": null
+    },
+    "649": {
+        "pokemon": "Genesect",
+        "type1": "Bug",
+        "type2": "Steel",
+        "filename": "diefecbb",
+        "hidden_ability": null
+    },
+    "649-douse": {
+        "pokemon": "Genesect",
+        "type1": "Bug",
+        "type2": "Steel",
+        "filename": "diefdjff",
+        "form": "douse",
+        "form_no": "1",
+        "hidden_ability": null
+    },
+    "649-shock": {
+        "pokemon": "Genesect",
+        "type1": "Bug",
+        "type2": "Steel",
+        "filename": "diefdgjj",
+        "form": "shock",
+        "form_no": "2",
+        "hidden_ability": null
+    },
+    "649-burn": {
+        "pokemon": "Genesect",
+        "type1": "Bug",
+        "type2": "Steel",
+        "filename": "diefdeed",
+        "form": "burn",
+        "form_no": "3",
+        "hidden_ability": null
+    },
+    "649-chill": {
+        "pokemon": "Genesect",
+        "type1": "Bug",
+        "type2": "Steel",
+        "filename": "dieffcdf",
+        "form": "chill",
+        "form_no": "4",
+        "hidden_ability": null
     }
 }

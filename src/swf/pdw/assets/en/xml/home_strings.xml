@@ -59,7 +59,7 @@
     <string id="b_aa_1">By date</string>
     <string id="b_aa_2">By name</string>
     <string id="b_aa_3">By type</string>
-    <string id="b_aa_4">b_aa_4</string>
+    <string id="b_aa_4">Send</string>
     <string id="b_aa_5">b_aa_5</string>
     <string id="b_aa_6">Treasure Chest</string>
 
@@ -88,6 +88,5 @@
     <string id="h_ee_7">Gender</string>
     <string id="h_ee_8">Nature</string>
     <string id="h_ee_9">Poké Ball Used</string>
-
    
 </data>

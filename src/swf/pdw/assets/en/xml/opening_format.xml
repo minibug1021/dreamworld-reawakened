@@ -4,7 +4,7 @@
 		<font id="f01" name="FFF Compact"></font>
 		<font id="f02" name="FFF Corporate Bold"></font>
 	</fonts>
-    <string id="lo_a_1" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
-	<string id="op_b_1" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="lo_a_1" size="10" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+	<string id="op_b_1" size="18" color="0xFFFFFF" kerning="true" letterSpacing="0" bold="true"/>
 	<string id="op_b_2" size="12" color="00000000" kerning="true" letterSpacing="0" bold="true"/>
 </data>

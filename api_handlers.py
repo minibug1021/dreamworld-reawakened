@@ -36,20 +36,42 @@ STATIC_POST_RESPONSES = {
 
 def handle_my_croft_list(_query):
     croft_template = {
-        "kinomi_state": 0,
-        "my_croft_id":  0,
-        "pokeitem_id":  0,
-        "kinomi":       0,
-        "kinomi_id":    52,
-        "dirt_hp":      0,
+      "pokeitem_id": None,
+      "kinomi": "Thing",
+      "kinomi_id": 52,
+      "dirt_hp": 100,
+      "kinomi_state": 0,
     }
     response = {
         "croft_list": [
-            {**croft_template, "x": 1, "y": 1},
-            {**croft_template, "x": 2, "y": 1},
+            {"my_croft_id": randint(1, 100), **croft_template, "x": 1, "y": 1},
+            {"my_croft_id": randint(1, 100), **croft_template, "x": 1, "y": 2},
+            {"my_croft_id": randint(1, 100), **croft_template, "x": 2, "y": 1},
+            {"my_croft_id": randint(1, 100), **croft_template, "x": 2, "y": 2},
         ],
         "diglett_flag": 0,
     }
+    return json.dumps(response).encode()
+
+
+def handle_waterpot_list_GET(_query):
+    response = {
+        "waterpot_list": [
+            {
+            "my_interior_id": 283,
+            "interior_id": 1,
+            "selected_flag": 1,
+            "interior_name": "ふつうのじょうろ"
+            },
+            {
+            "my_interior_id": 284,
+            "interior_id": 2,
+            "selected_flag": 0,
+            "interior_name": "ふつうのじょうろ"
+            }
+        ]
+    }
+
     return json.dumps(response).encode()
 
 
@@ -75,7 +97,7 @@ def handle_dreamland_tree_top(_query):
 
         pokemon_list.append({
             "pokemon_no":        natdex,
-            "form_no":           pkmn["form_no"],
+            "form_no":           pkmn.get("form_no", None),
             "pgl_name":          "PGLName",
             "member_savedata_id": 123,
             "nickname":          None,
@@ -128,7 +150,7 @@ def handle_my_island(_query):
         "pokemon": {
             "pokemon_no":        natdex,
             "pokemon_name":      pkmn["pokemon"],
-            "form_no":           pkmn["form_no"],
+            "form_no":           pkmn.get("form_no", None),
             "type1":             pkmn["type1"],
             "type2":             pkmn["type2"],
             "pokemon_nickname":  None,
@@ -154,8 +176,23 @@ def handle_pdw_start(_query):
     return json.dumps({"started_at": int(time.time())}).encode()
 
 
+def handle_waterpot_list_POST(_query):
+    response = {
+        "waterpot_list": [
+            {
+            "my_interior_id": 283,
+            "interior_id": 1,
+            "selected_flag": 1,
+            "interior_name": "Watering Can"
+            }
+        ]
+    }
+    return json.dumps(response).encode()
+
+
 DYNAMIC_GET_RESPONSES = {
     "pdw.croft.my_croft_list":   handle_my_croft_list,
+    "pdw.croft.waterpot_list":   handle_waterpot_list_GET,
     "pdw.dreamland.top":         handle_dreamland_top,
     "pdw.dreamland.tree_top":    handle_dreamland_tree_top,
     "pdw.item.item_list":        handle_item_list,
@@ -163,5 +200,6 @@ DYNAMIC_GET_RESPONSES = {
 }
 
 DYNAMIC_POST_RESPONSES = {
-    "pdw.home.pdw_start": handle_pdw_start,
+    "pdw.home.pdw_start":      handle_pdw_start,
+    "pdw.croft.waterpot_list": handle_waterpot_list_POST
 }
