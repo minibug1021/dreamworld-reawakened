@@ -39,7 +39,7 @@ class S(BaseHTTPRequestHandler):
         logging.info("GET %s", self.path)
         parsed = urlparse(self.path)
         path = parsed.path
-
+        
         if path == "/api/":
             query = parse_qs(parsed.query, strict_parsing=True)
             api_name = query["p"][0]

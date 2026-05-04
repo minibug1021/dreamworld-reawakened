@@ -13,7 +13,7 @@
 	<!--Leave the Pokemon Dream World Options-->
 	<string id="da_aa_1">Your time in the Pokémon Dream World is about to end.</string>
 	<string id="da_aa_2">Exit and prepare to wake up</string>
-	<string id="da_aa_3">Prepare to exit the Pokémon DW&#xD;and use Game Sync to wake up your Pokémon. You can check the&#xD;Pokémon and items you're&#xD;sending to your Entralink.</string>
+	<string id="da_aa_3">Prepare to exit the Pokémon DW&#xD;and use Game Sync to wake up&#xD;your Pokémon. You can check the&#xD;Pokémon and items you're&#xD;sending to your Entralink.</string>
 	<string id="da_aa_4">Exit and continue sleeping</string>
 	<string id="da_aa_5">Exit the Pokémon DW and wake up</string>
 	<string id="da_aa_6">Exit the Pokémon DW without waking</string>

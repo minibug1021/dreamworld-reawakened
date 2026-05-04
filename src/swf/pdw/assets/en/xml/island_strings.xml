@@ -6,9 +6,7 @@
     <string id="y_aa_1">Tree of Dreams</string>
     <string id="y_za_3">Twee of Dweams</string>
     
-
-
-    <!--I wanna see if these come up anywhere-->
+    <!--I wanna see if these come up anywhere
     <string id="y_aa_5">Test1</string>
     <string id="y_aa_6">Test2</string>
     <string id="y_aa_7">Test3</string>
@@ -19,7 +17,7 @@
     <string id="y_aa_12">Test8</string>
     <string id="y_aa_13">Test9</string>
     <string id="y_aa_14">Test10</string>
-    <string id="y_aa_15">Test11</string>
+    <string id="y_aa_15">Test11</string>-->
 
     <!--Tree of Dreams Location-->
     <string id="t_aa_1">Tree of Dreams</string>
@@ -47,4 +45,78 @@
     <string id="y_zc_7">You arrive at the Island of Dreams and decide to explore the Dream Park</string>
     <string id="y_aa_19">Island of Dreams—Dream Park</string>
 
+    <!-- game header -->
+    <string id="y_ad_1">It's [ポケモン名]!</string>
+
+    <!-- game1.swf -->
+    <string id="y_ad_10">y_ad_10</string>
+    <string id="y_ad_11">y_ad_11</string>
+    <string id="y_ag_5">y_ag_5</string>
+    <string id="y_ag_6">y_ag_6</string>
+
+    <!-- game2.swf -->
+    <string id="y_ad_2">y_ad_2</string>
+    <string id="y_ad_4">y_ad_4</string>
+    <string id="y_ag_1">y_ag_1</string>
+    <string id="y_ag_2">y_ag_2</string>
+
+    <!-- game3.swf -->
+    <string id="y_ad_7">y_ad_7</string>
+    <string id="y_ad_8">y_ad_8</string>
+    <string id="y_ag_3">y_ag_3</string>
+    <string id="y_ag_4">y_ag_4</string>
+
+    <!-- game4.swf -->
+    <string id="y_ad_13">y_ad_13</string>
+    <string id="y_ad_14">y_ad_14</string>
+    <string id="y_ag_7">y_ag_7</string>
+    <string id="y_ag_8">y_ag_8</string>
+
+    <!-- game5.swf -->
+    <string id="y_ad_15">y_ad_15</string> <!-- request (subheader) -->
+    <string id="y_ad_16">y_ad_16</string> <!-- select (line with yes/no) --> 
+    <string id="y_ag_10">y_ag_10</string> <!-- failure -->
+    <string id="y_ag_11">y_ag_11</string> <!-- abort (choose to quit)-->
+
+    <!-- game6.swf -->
+    <string id="y_aa_12">y_aa_12</string>
+    <string id="y_aa_13">y_aa_13</string>
+    <string id="y_aa_14">y_aa_14</string>
+    <string id="y_aa_15">y_aa_15</string>
+
+    <!-- game7.swf -->
+    <string id="y_ad_18">y_ad_18</string>
+    <string id="y_ad_19">y_ad_19</string>
+    <string id="y_ag_12">y_ag_12</string>
+    <string id="y_ag_13">y_ag_13</string>
+
+    <!-- game8.swf -->
+    <string id="y_ad_20">y_ad_20</string>
+    <string id="y_ad_21">y_ad_21</string>
+    <string id="y_ag_14">y_ag_14</string>
+    <string id="y_ag_15">y_ag_15</string>
+
+    <!-- game9.swf -->
+    <string id="y_ad_22">y_ad_22</string>
+    <string id="y_ad_23">y_ad_23</string>
+    <string id="y_ag_16">y_ag_16</string>
+    <string id="y_ag_17">y_ag_17</string>
+
+    <!-- game10.swf -->
+    <string id="y_ad_24">y_ad_24</string>
+    <string id="y_ad_25">y_ad_25</string>
+    <string id="y_ag_18">y_ag_18</string>
+    <string id="y_ag_19">y_ag_19</string>
+
+    <!-- game11.swf -->
+    <string id="y_ad_30">y_ad_30</string>
+    <string id="y_ad_31">y_ad_31</string>
+    <string id="y_ad_32">y_ad_32</string>
+    <string id="y_ad_33">y_ad_33</string>
+
+    <!-- game12.swf -->
+    <string id="y_ad_26">y_ad_26</string>
+    <string id="y_ad_27">y_ad_27</string>
+    <string id="y_ad_28">y_ad_28</string>
+    <string id="y_ad_29">y_ad_29</string>
 </data>

@@ -37,20 +37,23 @@ STATIC_POST_RESPONSES = {
 def handle_my_croft_list(_query):
     croft_template = {
       "pokeitem_id": None,
-      "kinomi": "Thing",
-      "kinomi_id": 52,
+      "kinomi": None,
+      "kinomi_id": None,
       "dirt_hp": 100,
       "kinomi_state": 0,
     }
     response = {
         "croft_list": [
-            {"my_croft_id": randint(1, 100), **croft_template, "x": 1, "y": 1},
-            {"my_croft_id": randint(1, 100), **croft_template, "x": 1, "y": 2},
-            {"my_croft_id": randint(1, 100), **croft_template, "x": 2, "y": 1},
-            {"my_croft_id": randint(1, 100), **croft_template, "x": 2, "y": 2},
+            {"my_croft_id": 1000, **croft_template, "x": 1, "y": 1},
+            {"my_croft_id": 1001, **croft_template, "x": 2, "y": 1},
+            {"my_croft_id": 1002, **croft_template, "x": 3, "y": 1},
+            {"my_croft_id": 1003, **croft_template, "x": 1, "y": 2},
+            {"my_croft_id": 1004, **croft_template, "x": 2, "y": 2},
+            {"my_croft_id": 1005, **croft_template, "x": 3, "y": 2},
         ],
         "diglett_flag": 0,
     }
+    print(response)
     return json.dumps(response).encode()
 
 
@@ -76,9 +79,33 @@ def handle_waterpot_list_GET(_query):
 
 
 def handle_dreamland_top(_query):
+    object_list = []
+    for _ in range(10):
+        pkmn = choice(list(pokemon_info.keys()))
+        natdex = pkmn.split("-")[0]
+        
+        pkmn = pokemon_info[pkmn]
+        
+        object_list.append(
+            {
+            "object_id": randint(1, 1000),
+            "object_category": randint(0, 1), # 0 - Pokemon, 1 - Pokemon Stay, 2 - Item
+            "pokemon": {
+                "pokemon_no": natdex,
+                "form_no": pkmn.get("form_no", None),
+                "pokename": pkmn["pokemon"]
+            },
+            "minigame_id": choice([3, 4, 6, 8]),
+            "kinomi_id": 0,
+            "kinomi_count": 0,
+            "pokeitem_id": 0,
+            "object_pokemon_id": 0,
+            "otoken": randint(1, 1000)
+            }
+        )
     response = {
         "dreamland_area_id": randint(3, 9),
-        "object_list": [],
+        "object_list": object_list
     }
     return json.dumps(response).encode()
 

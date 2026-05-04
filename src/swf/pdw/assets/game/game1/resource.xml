@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <entry name="STRINGS" lang="*" source="dummy.xml" version="1.0"/>
+    <entry name="FORMAT" lang="*" source="dummy.xml" version="1.0"/>
+    <entry name="BGM_FOREST" lang="*" source="dummy.xml" version="1.0"/>
+    <entry name="BGM_SEA" lang="*" source="dummy.xml" version="1.0"/>
+    <entry name="BGM_SKY" lang="*" source="dummy.xml" version="1.0"/>
+    <entry name="BGM_TOR" lang="*" source="dummy.xml" version="1.0"/>
+    <entry name="BGM_MANOR" lang="*" source="dummy.xml" version="1.0"/>
+</resources>

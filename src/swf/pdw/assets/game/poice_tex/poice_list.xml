@@ -1,0 +1,39 @@
+<root>
+  <poice_list>
+    <poice no="1" tex_id01="ice_texA01" tex_id02="ice_texA02" tex_id03="ice_texA03" tex_id04="ice_texA04" tex_id05="ice_texA05" />
+    <poice no="2" tex_id01="ice_texB01" tex_id02="ice_texB02" tex_id03="ice_texB03" tex_id04="ice_texB04" tex_id05="ice_texB05" />
+    <poice no="3" tex_id01="ice_texC01" tex_id02="ice_texC02" tex_id03="ice_texC03" tex_id04="ice_texC04" tex_id05="ice_texC05" />
+    <poice no="4" tex_id01="ice_texD01" tex_id02="ice_texD02" tex_id03="ice_texD03" tex_id04="ice_texD04" tex_id05="ice_texD05" />
+    <poice no="5" tex_id01="ice_texE01" tex_id02="ice_texE02" tex_id03="ice_texE03" tex_id04="ice_texE04" tex_id05="ice_texE05" />
+    <poice no="6" tex_id01="ice_texZ00" tex_id02="ice_texZ00" tex_id03="ice_texZ00"/>
+  </poice_list>
+
+  <tex_list>
+    <tex name="ice_texA01" file="ice_texA01.swf" type="1" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texA02" file="ice_texA02.swf" type="2" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texA03" file="ice_texA03.swf" type="3" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texA04" file="ice_texA04.swf" type="4" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texA05" file="ice_texA05.swf" type="5" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texB01" file="ice_texB01.swf" type="6" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texB02" file="ice_texB02.swf" type="7" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texB03" file="ice_texB03.swf" type="8" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texB04" file="ice_texB04.swf" type="9" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texB05" file="ice_texB05.swf" type="10" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texC01" file="ice_texC01.swf" type="11" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texC02" file="ice_texC02.swf" type="12" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texC03" file="ice_texC03.swf" type="13" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texC04" file="ice_texC04.swf" type="14" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texC05" file="ice_texC05.swf" type="15" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texD01" file="ice_texD01.swf" type="16" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texD02" file="ice_texD02.swf" type="17" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texD03" file="ice_texD03.swf" type="18" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texD04" file="ice_texD04.swf" type="19" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texD05" file="ice_texD05.swf" type="20" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texE01" file="ice_texE01.swf" type="21" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texE02" file="ice_texE02.swf" type="22" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texE03" file="ice_texE03.swf" type="23" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texE04" file="ice_texE04.swf" type="24" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texE05" file="ice_texE05.swf" type="25" fric_top="100000" fric_side="100000" mag="10" />
+    <tex name="ice_texZ00" file="ice_texZ00.swf" type="26" fric_top="100000" fric_side="100000" mag="10" />
+  </tex_list>
+</root>
