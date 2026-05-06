@@ -38,17 +38,20 @@ def get_random_pokemon() -> dict[str: str|None]:
 # --------------------
 
 STATIC_GET_RESPONSES = {
-    "pgl.news.information_list":   b"{\"list\":[], \"total_count\":0}",
+    "pgl.news.information_list":   json.dumps({"list":[], "total_count":0}).encode,
     "pgl.member.profile.my_state": b"{}",
     "pgl.top.init":                b"{}",
     "pdw.home.my_bridge":          b"{}",
     "pdw.croft.tutorial_start":    b"{}",
     "pdw.croft.tutorial_end":      b"{}",
+    "pdw.home.footprint_list":     b"{}",
 }
 
 STATIC_POST_RESPONSES = {
     "pdw.home.pdw_timecheck":        b"{}",
     "pgl.member.profile.pdw_login":  b"{}",
+    "pdw.item.item_trade_list":      json.dumps([{"material_id":None,"item_id":None,"pokeitem":None,"x":1,"y":1,"history_id":None,"old_member_savedata_id":None,"pokemon_no":None,"form_no":None,"pokename":None,"pgl_name":None,"nickname":None,"poke_nickname":None,"field_line1":None,"field_line2":None,"field_line3":None,"created_at":"","old_item_id":None,"new_item_id":None,"old_item_name":None}]).encode(),
+    "pdw.home.pdw_start":            json.dumps({"started_at": int(time.time())}).encode(),
 }
 
 # ---------------------
@@ -139,7 +142,7 @@ def handle_dreamland_tree_top(_query):
 
         pokemon_list.append({
             "pokemon_no":        pkmn["pokemon_no"],
-            "form_no":           pkmn.get("form_no", None),
+            "form_no":           pkmn.get("form_no", "0"),
             "pgl_name":          "PGLName",
             "member_savedata_id": 123,
             "nickname":          None,
@@ -213,11 +216,6 @@ def handle_my_island(_query):
     return json.dumps(response).encode()
 
 
-
-def handle_pdw_start(_query):
-    return json.dumps({"started_at": int(time.time())}).encode()
-
-
 def handle_waterpot_list_POST(_query):
     response = {
         "waterpot_list": [
@@ -242,6 +240,5 @@ DYNAMIC_GET_RESPONSES = {
 }
 
 DYNAMIC_POST_RESPONSES = {
-    "pdw.home.pdw_start":      handle_pdw_start,
     "pdw.croft.waterpot_list": handle_waterpot_list_POST
 }
