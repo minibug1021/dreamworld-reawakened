@@ -34,7 +34,7 @@ class S(BaseHTTPRequestHandler):
             body = dynamic_map[api_name](query)
         else:
             logging.warning("Unknown API: %s", api_name)
-            self.send_response(410)
+            self.send_response(501)
             self.end_headers()
             self.wfile.write(b"")
             return
@@ -95,11 +95,14 @@ class S(BaseHTTPRequestHandler):
 
     def do_POST(self):
         logging.info("POST %s", self.path)
+        
         content_length = int(self.headers["Content-Length"])
         post_data = self.rfile.read(content_length)
         query = parse_qs(post_data.decode(), strict_parsing=True)
         api_name = query["p"][0]
+        
         logging.info("API POST: %s", api_name)
+        
         self._log_referrer(f"POST:{api_name}")
         self._dispatch_api(api_name, query, STATIC_POST_RESPONSES, DYNAMIC_POST_RESPONSES)
 
