@@ -2,6 +2,7 @@
 import time
 import json
 import logging
+import hashlib
 from random import randint
 from random import choice
 from pathlib import Path
@@ -23,9 +24,14 @@ with open(ROOT_DIR / "json_data" / "pokemon.json") as f:
 
 pokemon_natures = ("Adamant","Bashful","Bold","Brave","Calm","Careful","Docile","Gentle","Hardy","Hasty","Impish","Jolly","Lax","Lonely","Mild","Modest","Naive","Naughty","Quiet","Quirky","Rash","Relaxed","Sassy","Serious","Timid")
 
+encounter_store = {}
+
 # --------------------
 # Helper functions
 # --------------------
+
+def generate_otoken():
+    return f"{randint(1, 99)}dwt{player_data['member']['world_id']}{format(int(time.time()), 'x')}.{randint(10000000, 99999999)}"
 
 def get_random_pokemon() -> dict[str: str|None]:
     pkmn = choice(list(pokemon_info.keys()))
@@ -76,7 +82,6 @@ def handle_my_croft_list(_query):
         ],
         "diglett_flag": 0,
     }
-    print(response)
     return json.dumps(response).encode()
 
 
@@ -102,31 +107,98 @@ def handle_waterpot_list_GET(_query):
 
 
 def handle_dreamland_top(_query):
-    object_list = []
-    for _ in range(10):
-        pkmn = get_random_pokemon()
-        
-        object_list.append(
-            {
-            "object_id": randint(1, 1000),
-            "object_category": randint(0, 1), # 0 - Pokemon, 1 - Pokemon Stay, 2 - Item
+    if _query["is_random"]:
+        object_list = []
+        for _ in range(10):
+            pkmn = get_random_pokemon()
+            
+            object_list.append(
+                {
+                "object_id": randint(1, 1000),
+                "object_category": randint(0, 1),
+                "pokemon": {
+                    "pokemon_no": pkmn["pokemon_no"],
+                    "form_no": pkmn.get("form_no", "0"),
+                    "pokename": pkmn["pokemon_name"]
+                },
+                "minigame_id": choice([2, 3, 4, 6, 8, 9, 10, 12]),
+                "kinomi_id": 0,
+                "kinomi_count": 0,
+                "pokeitem_id": 0,
+                "object_pokemon_id": 0,
+                "otoken": generate_otoken()
+                }
+            )
+        response = {
+            "dreamland_area_id": randint(3, 9),
+            "object_list": object_list
+        }
+        return json.dumps(response).encode()
+
+    def make_pokemon_encounter(pkmn, obj_id, obj_pkmn_id, category="0"):
+        encounter_store[str(obj_pkmn_id)] = {"type": "pokemon", "pokemon": pkmn}
+
+        return {
+            "object_id":         str(obj_id),
+            "otoken":            generate_otoken(),
+            "public_date_from":  None,
+            "public_date_to":    None,
+            "object_category":   category,
+            "minigame_id":       "1" if category == "1" else str(choice([1, 2, 3, 4, 7, 8])),
+            "kinomi_id":         "0",
+            "kinomi_count":      "0",
+            "pokeitem_id":       0,
+            "object_pokemon_id": obj_pkmn_id,
             "pokemon": {
-                "pokemon_no": pkmn["pokemon_no"],
-                "form_no": pkmn.get("form_no", "0"),
-                "pokename": pkmn["pokemon_name"]
-            },
-            "minigame_id": choice([2, 3, 4, 6, 8, 9, 10, 12]),
-            "kinomi_id": 0,
-            "kinomi_count": 0,
-            "pokeitem_id": 0,
-            "object_pokemon_id": 0,
-            "otoken": randint(1, 1000)
+                "pokemon_no":  pkmn["pokemon_no"],
+                "form_no":     pkmn.get("form_no", "0"),
+                "pokename":    pkmn["pokemon_name"],
+                "sex_id":      str(randint(0, 1)),
+                "action_type": "1",
+                "type1":       pkmn.get("type1", ""),
+                "type2":       pkmn.get("type2", ""),
+                "speabi1":     pkmn.get("speabi1", ""),
+                "speabi2":     pkmn.get("speabi2", ""),
+                "speabi3":     pkmn.get("speabi3", ""),
             }
-        )
+        }
+
+    def make_item_encounter(obj_id, obj_pkmn_id):
+        encounter_store[str(obj_pkmn_id)] = {"type": "item"}
+
+        return {
+            "object_id":         str(obj_id),
+            "otoken":            generate_otoken(),
+            "public_date_from":  None,
+            "public_date_to":    None,
+            "object_category":   "2",
+            "minigame_id":       "0",
+            "kinomi_id":         "0",
+            "kinomi_count":      "0",
+            "pokeitem_id":       0,
+            "object_pokemon_id": obj_pkmn_id,
+        }
+    
+    object_list = []
+
+    base_object_pokemon_id = randint(3700, 4000)
+
+    # First entry is always the special Pokémon (category 1)
+    object_list.append(make_pokemon_encounter(get_random_pokemon(), randint(100, 400), base_object_pokemon_id, category="1"))
+
+    for i in range(1, 10):
+        obj_id = randint(90, 400)
+        base_object_pokemon_id -= i
+        if randint(1, 2) == 1: #ratio of pokemon/items is about 50/20
+            object_list.append(make_item_encounter(obj_id, base_object_pokemon_id))
+        else:
+            object_list.append(make_pokemon_encounter(get_random_pokemon(), obj_id, base_object_pokemon_id))
+
     response = {
-        "dreamland_area_id": randint(3, 9),
-        "object_list": object_list
+        "dreamland_area_id": str(randint(3, 9)),
+        "object_list":       object_list,
     }
+
     return json.dumps(response).encode()
 
 
@@ -238,7 +310,6 @@ def handle_footprint_list(_query):
 
 # --------
 
-
 def handle_waterpot_list_POST(_query):
     response = {
         "waterpot_list": [
@@ -252,6 +323,48 @@ def handle_waterpot_list_POST(_query):
     }
     return json.dumps(response).encode()
 
+def handle_game_clear(_query):
+    print(json.dumps(encounter_store, indent=2))
+    print(json.dumps(_query, indent=2))
+    encounter = encounter_store.get(str(_query["object_pokemon_id"][0]))
+
+    if encounter["type"] == "pokemon":
+        pkmn = encounter["pokemon"]
+        reward = {
+            "pokemon": {
+                "pokemon_no":     pkmn["pokemon_no"],
+                "pokename":       pkmn["pokemon_name"],
+                "form_no":        pkmn.get("form_no", "0"),
+                "sex_id":         str(randint(0, 1)),
+                "waza_name_disp": "Sunny Day" if "special_moves" not in pkmn else choice(pkmn["special_moves"])["move_name"],
+                "waza_count":     4,
+                "action_type":    "1",
+                "type1":          pkmn["type1"],
+                "type2":          pkmn.get("type2", ""),
+                "speabi1":        pkmn["speabi1"],
+                "speabi2":        pkmn.get("speabi2", ""),
+                "speabi3":        pkmn["speabi3"],
+            },
+            "item":     None,
+            "interior": None,
+            "present":  None,
+        }
+    
+    elif encounter["type"] == "item":
+        item_id = choice(list(item_info.keys()))
+        reward = {
+            "pokemon": None,
+            "item": {
+                "pokeitem_id":   int(item_id),
+                "pokeitem":      item_info[item_id]["item_name"],
+                "poke_item_num": 1,
+            },
+            "interior": None,
+            "present":  None,
+        }
+ 
+    logging.info("game_clear response: %s", json.dumps(reward))
+    return json.dumps(reward).encode()
 
 DYNAMIC_GET_RESPONSES = {
     "pdw.croft.my_croft_list":   handle_my_croft_list,
@@ -264,5 +377,6 @@ DYNAMIC_GET_RESPONSES = {
 }
 
 DYNAMIC_POST_RESPONSES = {
-    "pdw.croft.waterpot_list": handle_waterpot_list_POST
+    "pdw.croft.waterpot_list":  handle_waterpot_list_POST,
+    "pdw.dreamland.game_clear": handle_game_clear
 }

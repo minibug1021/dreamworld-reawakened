@@ -46,6 +46,19 @@
     <string id="y_zc_7">You arrive at the Island of Dreams and decide to explore the Dream Park</string>
     <string id="y_aa_19">Island of Dreams—Dream Park</string>
 
+    <!-- item get -->
+    <string id="y_ai_1">Found: [道具名].</string>
+    <string id="y_aj_1">Put the [道具名] in the Treasure Chest.</string>
+
+    <!-- pokemon get -->
+    <string id="y_af_1">Befriended [ポケモン名].</string>
+    <string id="y_af_2">Pokémon Name:</string>
+    <string id="y_af_3">Ability:</string>
+    <string id="y_af_4">Type:</string>
+    <string id="y_af_5">Gender:</string>
+    <string id="y_af_6">Learned moves:</string>
+    <string id="y_af_7">[ポケモン名] looks happy.</string>
+
     <!-- game header -->
     <string id="y_ad_1">It's [ポケモン名]!</string>
 
