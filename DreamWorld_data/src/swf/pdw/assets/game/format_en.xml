@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data locale="ja">
+
+	<string id="DIALOG_TUTORIAL_TITLE" size="33" color="0x0068A3" bold="true" baselineShift="0"/>
+	<string id="DIALOG_TUTORIAL_INFO0" size="17" color="0x0068A3" bold="true" baselineShift="0"/>
+	<string id="DIALOG_TUTORIAL_INFO1" size="17" color="0x0068A3" bold="true" baselineShift="0"/>
+
+	<string id="DIALOG_BUTTON_START" size="30" color="0xFFFFFF" bold="true" baselineShift="0"/>
+	<string id="DIALOG_BUTTON_START_S" size="30" color="0x999999" bold="true" baselineShift="0"/>
+
+	<string id="BUTTON_TOP_EXIT" size="12" color="0xFFFFFF" bold="true" baselineShift="0"/>
+
+	<string id="DIALOG_EXIT_INFO" size="22" color="0x0068A3" bold="true" baselineShift="5"/>
+
+	<string id="DIALOG_BUTTON_YES" size="30" color="0xFFFFFF" bold="true" baselineShift="0"/>
+	<string id="DIALOG_BUTTON_YES_S" size="30" color="0x999999" bold="true" baselineShift="0"/>
+	<string id="DIALOG_BUTTON_NO" size="30" color="0xFFFFFF" bold="true" baselineShift="0"/>
+	<string id="DIALOG_BUTTON_NO_S" size="30" color="0x999999" bold="true" baselineShift="0"/>
+
+	<string id="DIALOG_RESULT_TITLE" size="33" color="0x0068A3" bold="true" baselineShift="0"/>
+
+	<string id="DIALOG_RESULT_KO_0" size="22" color="0x0068A3" bold="true" baselineShift="0"/>
+	<string id="DIALOG_RESULT_KO_1" size="22" color="0x0068A3" bold="true" baselineShift="0"/>
+	<string id="DIALOG_RESULT_KO_2" size="22" color="0x0068A3" bold="true" baselineShift="0"/>
+	<string id="DIALOG_RESULT_KO_3" size="22" color="0x0068A3" bold="true" baselineShift="0"/>
+	<string id="DIALOG_RESULT_POINT_0" size="22" color="0x0068A3" bold="true" baselineShift="0"/>
+	<string id="DIALOG_RESULT_POINT_1" size="22" color="0x0068A3" bold="true" baselineShift="0"/>
+	<string id="DIALOG_RESULT_POINT_2" size="22" color="0x0068A3" bold="true" baselineShift="0"/>
+	<string id="DIALOG_RESULT_POINT_3" size="22" color="0x0068A3" bold="true" baselineShift="0"/>
+	<string id="DIALOG_RESULT_POINT_4" size="22" color="0x0068A3" bold="true" baselineShift="0"/>
+	<string id="DIALOG_RESULT_POINT_5" size="22" color="0x0068A3" bold="true" baselineShift="0"/>
+
+	<string id="DIALOG_RESULT_BONUS" size="30" color="0x0068A3" bold="true" baselineShift="0"/>
+	<string id="DIALOG_RESULT_TOTAL" size="30" color="0x0068A3" bold="true" baselineShift="0"/>
+	<string id="DIALOG_BUTTON_CLOSE" size="30" color="0xFFFFFF" bold="true" baselineShift="0"/>
+	<string id="DIALOG_BUTTON_CLOSE_S" size="30" color="0x999999" bold="true" baselineShift="0"/>
+
+	<string id="ICON_ME" size="10" color="0xFFFFFF" bold="false" baselineShift="0"/>
+
+	<string id="MESSAGE_WINDOW" size="15" color="0xFFFFFF" bold="true" baselineShift="0"/>
+
+	<string id="POKEMON_STATUS_NAME_ME" size="20" color="0xFF6633" bold="true" baselineShift="0"/>
+	<string id="POKEMON_STATUS_NAME_ENEMY" size="15" color="0x00FEFB" bold="true" baselineShift="0"/>
+
+	<string id="ICON_ENCOUNT" size="10" color="0xFFFFFF" bold="false" baselineShift="0"/>
+
+</data>

@@ -1,10 +1,30 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<resources>
-    <entry name="STRINGS" lang="*" source="dummy.xml" version="1.0"/>
-    <entry name="FORMAT" lang="*" source="dummy.xml" version="1.0"/>
-    <entry name="BGM_FOREST" lang="*" source="../../island_bgm/bgm3.swf" version="1.0"/>
-    <entry name="BGM_SEA" lang="*" source="../../island_bgm/bgm3.swf" version="1.0"/>
-    <entry name="BGM_SKY" lang="*" source="../../island_bgm/bgm3.swf" version="1.0"/>
-    <entry name="BGM_TOR" lang="*" source="../../island_bgm/bgm3.swf" version="1.0"/>
-    <entry name="BGM_MANOR" lang="*" source="../../island_bgm/bgm3.swf" version="1.0"/>
-</resources>
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+	<entry name="BGM_FOREST" lang="*" source="bgm_forest.swf" version="1"/>
+	<entry name="BGM_SEA" lang="*" source="bgm_sea.swf" version="1"/>
+	<entry name="BGM_SKY" lang="*" source="bgm_sky.swf" version="1"/>
+    <entry name="BGM_TOR" lang="*" source="bgm_tor.swf" version="1"/>
+    <entry name="BGM_MANOR" lang="*" source="bgm_manor.swf" version="1"/>
+	
+	<entry name="STRINGS" lang="ja" source="strings_ja.xml" version="1"/>
+	<entry name="STRINGS" lang="en" source="strings_en.xml" version="1"/>
+	<entry name="STRINGS" lang="fr" source="strings_fr.xml" version="1"/>
+	<entry name="STRINGS" lang="it" source="strings_it.xml" version="1"/>
+	<entry name="STRINGS" lang="de" source="strings_de.xml" version="1"/>
+	<entry name="STRINGS" lang="es" source="strings_es.xml" version="1"/>
+	<entry name="STRINGS" lang="ko" source="strings_ko.xml" version="1"/>
+	
+	<entry name="FORMAT" lang="es" source="format_es.xml" version="1"/>
+	<entry name="FORMAT" lang="en" source="format_en.xml" version="1"/>
+	<entry name="FORMAT" lang="fr" source="format_fr.xml" version="1"/>
+	<entry name="FORMAT" lang="de" source="format_de.xml" version="1"/>
+	<entry name="FORMAT" lang="ko" source="format_ko.xml" version="1"/>
+	<entry name="FORMAT" lang="it" source="format_it.xml" version="1"/>
+	<entry name="FORMAT" lang="ja" source="format_ja.xml" version="1"/>
+
+    <entry name="森" bgm="BGM_FOREST" lang="*" source="bgm3.swf" version="1.0"/>
+    <entry name="海" bgm="BGM_SEA" lang="*" source="bgm4.swf" version="1.0"/>
+    <entry name="空" bgm="BGM_SKY" lang="*" source="bgm5.swf" version="1.0"/>
+    <entry name="岩山" bgm="BGM_TOR" lang="*" source="bgm6.swf" version="1.0"/>
+    <entry name="洋館" bgm="BGM_MANOR" lang="*" source="bgm7.swf" version="1.0"/>
+</resource>

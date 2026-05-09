@@ -11,7 +11,7 @@ ROOT_DIR = Path(__file__).resolve().parent
 def inject_htm_playerdata() -> None:
     """Inject player_data.json into Dream_Park.htm so it displays the correct information on the UI."""
     
-    with open(ROOT_DIR / "json_data" / "player_data.json") as f:
+    with open(ROOT_DIR / "save_data" / "player_data.json") as f:
         player_data = json.load(f)
 
     htm_file = ROOT_DIR / "DreamWorld_data" / "Dream_Park.htm"
