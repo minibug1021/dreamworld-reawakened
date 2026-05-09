@@ -7,7 +7,7 @@
     "speabi1": "Overgrow", 
     "speabi2": null, 
     "speabi3": "Chlorophyll", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "2": {
@@ -18,7 +18,7 @@
     "speabi1": "Overgrow", 
     "speabi2": null, 
     "speabi3": "Chlorophyll", 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "3": {
@@ -29,7 +29,7 @@
     "speabi1": "Overgrow", 
     "speabi2": null, 
     "speabi3": "Chlorophyll", 
-    "level": null, 
+    "level": "32", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "4": {
@@ -40,7 +40,7 @@
     "speabi1": "Blaze", 
     "speabi2": null, 
     "speabi3": "Solar Power", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "5": {
@@ -51,7 +51,7 @@
     "speabi1": "Blaze", 
     "speabi2": null, 
     "speabi3": "Solar Power", 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "6": {
@@ -62,7 +62,7 @@
     "speabi1": "Blaze", 
     "speabi2": null, 
     "speabi3": "Solar Power", 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "7": {
@@ -73,7 +73,7 @@
     "speabi1": "Torrent", 
     "speabi2": null, 
     "speabi3": "Rain Dish", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "8": {
@@ -84,7 +84,7 @@
     "speabi1": "Torrent", 
     "speabi2": null, 
     "speabi3": "Rain Dish", 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "9": {
@@ -95,7 +95,7 @@
     "speabi1": "Torrent", 
     "speabi2": null, 
     "speabi3": "Rain Dish", 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "10": {
@@ -106,7 +106,7 @@
     "speabi1": "Shield Dust", 
     "speabi2": null, 
     "speabi3": "Run Away", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "11": {
@@ -117,7 +117,7 @@
     "speabi1": "Shed Skin", 
     "speabi2": null, 
     "speabi3": "Shed Skin", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "12": {
@@ -144,7 +144,7 @@
     "speabi1": "Shield Dust", 
     "speabi2": null, 
     "speabi3": "Run Away", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "14": {
@@ -155,7 +155,7 @@
     "speabi1": "Shed Skin", 
     "speabi2": null, 
     "speabi3": "Shed Skin", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "15": {
@@ -198,7 +198,7 @@
     "speabi1": "Keen Eye", 
     "speabi2": "Tangled Feet", 
     "speabi3": "Keen Eye", 
-    "level": null, 
+    "level": "18", 
     "gender_ratio": ["0", "1"]
   }, 
   "18": {
@@ -209,7 +209,7 @@
     "speabi1": "Keen Eye", 
     "speabi2": "Tangled Feet", 
     "speabi3": "Keen Eye", 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "1"]
   }, 
   "19": {
@@ -236,7 +236,7 @@
     "speabi1": "Run Away", 
     "speabi2": "Guts", 
     "speabi3": "Hustle", 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0", "1"]
   }, 
   "21": {
@@ -263,7 +263,7 @@
     "speabi1": "Keen Eye", 
     "speabi2": null, 
     "speabi3": "Sniper", 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0", "1"]
   }, 
   "23": {
@@ -290,7 +290,7 @@
     "speabi1": "Intimidate", 
     "speabi2": "Shed Skin", 
     "speabi3": "Unnerve", 
-    "level": null, 
+    "level": "22", 
     "gender_ratio": ["0", "1"]
   }, 
   "25": {
@@ -301,7 +301,7 @@
     "speabi1": "Static", 
     "speabi2": null, 
     "speabi3": "Lightning Rod", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "26": {
@@ -312,7 +312,7 @@
     "speabi1": "Static", 
     "speabi2": null, 
     "speabi3": "Lightning Rod", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "27": {
@@ -339,7 +339,7 @@
     "speabi1": "Sand Veil", 
     "speabi2": null, 
     "speabi3": "Sand Rush", 
-    "level": null, 
+    "level": "22", 
     "gender_ratio": ["0", "1"]
   }, 
   "29": {
@@ -366,7 +366,7 @@
     "speabi1": "Poison Point", 
     "speabi2": "Rivalry", 
     "speabi3": "Poison Point", 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["1"]
   }, 
   "31": {
@@ -377,7 +377,7 @@
     "speabi1": "Poison Point", 
     "speabi2": "Rivalry", 
     "speabi3": "Poison Point", 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["1"]
   }, 
   "32": {
@@ -404,7 +404,7 @@
     "speabi1": "Poison Point", 
     "speabi2": "Rivalry", 
     "speabi3": "Poison Point", 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["0"]
   }, 
   "34": {
@@ -415,7 +415,7 @@
     "speabi1": "Poison Point", 
     "speabi2": "Rivalry", 
     "speabi3": "Poison Point", 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["0"]
   }, 
   "35": {
@@ -426,7 +426,7 @@
     "speabi1": "Cute Charm", 
     "speabi2": "Magic Guard", 
     "speabi3": "Cute Charm", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1", "1", "1"]
   }, 
   "36": {
@@ -437,7 +437,7 @@
     "speabi1": "Cute Charm", 
     "speabi2": "Magic Guard", 
     "speabi3": "Cute Charm", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1", "1", "1"]
   }, 
   "37": {
@@ -464,7 +464,7 @@
     "speabi1": "Flash Fire", 
     "speabi2": null, 
     "speabi3": "Drought", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1", "1", "1"]
   }, 
   "39": {
@@ -475,7 +475,7 @@
     "speabi1": "Cute Charm", 
     "speabi2": null, 
     "speabi3": "Cute Charm", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1", "1", "1"]
   }, 
   "40": {
@@ -486,7 +486,7 @@
     "speabi1": "Cute Charm", 
     "speabi2": null, 
     "speabi3": "Cute Charm", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1", "1", "1"]
   }, 
   "41": {
@@ -513,7 +513,7 @@
     "speabi1": "Inner Focus", 
     "speabi2": null, 
     "speabi3": "Infiltrator", 
-    "level": null, 
+    "level": "22", 
     "gender_ratio": ["0", "1"]
   }, 
   "43": {
@@ -540,7 +540,7 @@
     "speabi1": "Chlorophyll", 
     "speabi2": null, 
     "speabi3": "Stench", 
-    "level": null, 
+    "level": "21", 
     "gender_ratio": ["0", "1"]
   }, 
   "45": {
@@ -551,7 +551,7 @@
     "speabi1": "Chlorophyll", 
     "speabi2": null, 
     "speabi3": "Effect Spore", 
-    "level": null, 
+    "level": "21", 
     "gender_ratio": ["0", "1"]
   }, 
   "46": {
@@ -578,7 +578,7 @@
     "speabi1": "Effect Spore", 
     "speabi2": "Dry Skin", 
     "speabi3": "Effect Spore", 
-    "level": null, 
+    "level": "24", 
     "gender_ratio": ["0", "1"]
   }, 
   "48": {
@@ -605,7 +605,7 @@
     "speabi1": "Shield Dust", 
     "speabi2": "Tinted Lens", 
     "speabi3": "Shield Dust", 
-    "level": null, 
+    "level": "31", 
     "gender_ratio": ["0", "1"]
   }, 
   "50": {
@@ -632,7 +632,7 @@
     "speabi1": "Sand Veil", 
     "speabi2": "Arena Trap", 
     "speabi3": "Sand Force", 
-    "level": null, 
+    "level": "26", 
     "gender_ratio": ["0", "1"]
   }, 
   "52": {
@@ -659,7 +659,7 @@
     "speabi1": "Limber", 
     "speabi2": "Technician", 
     "speabi3": "Limber", 
-    "level": null, 
+    "level": "28", 
     "gender_ratio": ["0", "1"]
   }, 
   "54": {
@@ -686,7 +686,7 @@
     "speabi1": "Damp", 
     "speabi2": "Cloud Nine", 
     "speabi3": "Swift Swim", 
-    "level": null, 
+    "level": "33", 
     "gender_ratio": ["0", "1"]
   }, 
   "56": {
@@ -713,7 +713,7 @@
     "speabi1": "Vital Spirit", 
     "speabi2": "Anger Point", 
     "speabi3": "Vital Spirit", 
-    "level": null, 
+    "level": "28", 
     "gender_ratio": ["0", "1"]
   }, 
   "58": {
@@ -740,7 +740,7 @@
     "speabi1": "Intimidate", 
     "speabi2": "Flash Fire", 
     "speabi3": "Justified", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "1"]
   }, 
   "60": {
@@ -783,7 +783,7 @@
     "speabi1": "Water Absorb", 
     "speabi2": "Damp", 
     "speabi3": "Swift Swim", 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "1"]
   }, 
   "63": {
@@ -810,7 +810,7 @@
     "speabi1": "Synchronize", 
     "speabi2": "Inner Focus", 
     "speabi3": "Magic Guard", 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["0", "0", "0", "1"]
   }, 
   "65": {
@@ -821,7 +821,7 @@
     "speabi1": "Synchronize", 
     "speabi2": "Inner Focus", 
     "speabi3": "Magic Guard", 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["0", "0", "0", "1"]
   }, 
   "66": {
@@ -848,7 +848,7 @@
     "speabi1": "Guts", 
     "speabi2": "No Guard", 
     "speabi3": "Guts", 
-    "level": null, 
+    "level": "28", 
     "gender_ratio": ["0", "0", "0", "1"]
   }, 
   "68": {
@@ -859,7 +859,7 @@
     "speabi1": "Guts", 
     "speabi2": "No Guard", 
     "speabi3": "Guts", 
-    "level": null, 
+    "level": "28", 
     "gender_ratio": ["0", "0", "0", "1"]
   }, 
   "69": {
@@ -886,7 +886,7 @@
     "speabi1": "Chlorophyll", 
     "speabi2": null, 
     "speabi3": "Gluttony", 
-    "level": null, 
+    "level": "21", 
     "gender_ratio": ["0", "1"]
   }, 
   "71": {
@@ -897,7 +897,7 @@
     "speabi1": "Chlorophyll", 
     "speabi2": null, 
     "speabi3": "Gluttony", 
-    "level": null, 
+    "level": "21", 
     "gender_ratio": ["0", "1"]
   }, 
   "72": {
@@ -924,7 +924,7 @@
     "speabi1": "Clear Body", 
     "speabi2": "Liquid Ooze", 
     "speabi3": "Rain Dish", 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "1"]
   }, 
   "74": {
@@ -951,7 +951,7 @@
     "speabi1": "Rock Head", 
     "speabi2": "Sturdy", 
     "speabi3": "Sand Veil", 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "1"]
   }, 
   "76": {
@@ -962,7 +962,7 @@
     "speabi1": "Rock Head", 
     "speabi2": "Sturdy", 
     "speabi3": "Sand Veil", 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "1"]
   }, 
   "77": {
@@ -989,7 +989,7 @@
     "speabi1": "Run Away", 
     "speabi2": "Flash Fire", 
     "speabi3": "Flame Body", 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0", "1"]
   }, 
   "79": {
@@ -1016,7 +1016,7 @@
     "speabi1": "Oblivious", 
     "speabi2": "Own Tempo", 
     "speabi3": "Regenerator", 
-    "level": null, 
+    "level": "37", 
     "gender_ratio": ["0", "1"]
   }, 
   "81": {
@@ -1043,7 +1043,7 @@
     "speabi1": "Magnet Pull", 
     "speabi2": "Sturdy", 
     "speabi3": "Analytic", 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["2"]
   }, 
   "83": {
@@ -1086,7 +1086,7 @@
     "speabi1": "Run Away", 
     "speabi2": "Early Bird", 
     "speabi3": "Tangled Feet", 
-    "level": null, 
+    "level": "31", 
     "gender_ratio": ["0", "1"]
   }, 
   "86": {
@@ -1113,7 +1113,7 @@
     "speabi1": "Thick Fat", 
     "speabi2": "Hydration", 
     "speabi3": "Thick Fat", 
-    "level": null, 
+    "level": "34", 
     "gender_ratio": ["0", "1"]
   }, 
   "88": {
@@ -1140,7 +1140,7 @@
     "speabi1": "Stench", 
     "speabi2": "Sticky Hold", 
     "speabi3": "Poison Touch", 
-    "level": null, 
+    "level": "38", 
     "gender_ratio": ["0", "1"]
   }, 
   "90": {
@@ -1167,7 +1167,7 @@
     "speabi1": "Shell Armor", 
     "speabi2": "Skill Link", 
     "speabi3": "Shell Armor", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "92": {
@@ -1194,7 +1194,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "1"]
   }, 
   "94": {
@@ -1205,7 +1205,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "1"]
   }, 
   "95": {
@@ -1248,7 +1248,7 @@
     "speabi1": "Insomnia", 
     "speabi2": "Forewarn", 
     "speabi3": "Insomnia", 
-    "level": null, 
+    "level": "26", 
     "gender_ratio": ["0", "1"]
   }, 
   "98": {
@@ -1275,7 +1275,7 @@
     "speabi1": "Hyper Cutter", 
     "speabi2": "Shell Armor", 
     "speabi3": "Sheer Force", 
-    "level": null, 
+    "level": "28", 
     "gender_ratio": ["0", "1"]
   }, 
   "100": {
@@ -1302,7 +1302,7 @@
     "speabi1": "Soundproof", 
     "speabi2": "Static", 
     "speabi3": "Aftermath", 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["2"]
   }, 
   "102": {
@@ -1329,7 +1329,7 @@
     "speabi1": "Chlorophyll", 
     "speabi2": null, 
     "speabi3": "Harvest", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "104": {
@@ -1356,7 +1356,7 @@
     "speabi1": "Rock Head", 
     "speabi2": "Lightning Rod", 
     "speabi3": "Battle Armor", 
-    "level": null, 
+    "level": "28", 
     "gender_ratio": ["0", "1"]
   }, 
   "106": {
@@ -1367,7 +1367,7 @@
     "speabi1": "Limber", 
     "speabi2": "Reckless", 
     "speabi3": "Limber", 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0"]
   }, 
   "107": {
@@ -1378,7 +1378,7 @@
     "speabi1": "Keen Eye", 
     "speabi2": "Iron Fist", 
     "speabi3": "Keen Eye", 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0"]
   }, 
   "108": {
@@ -1421,7 +1421,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "35", 
     "gender_ratio": ["0", "1"]
   }, 
   "111": {
@@ -1453,7 +1453,7 @@
       { "move_ID": "355", "move_name": "Roost"      }, 
       { "move_ID": "314", "move_name": "Air Cutter" }
     ], 
-    "level": null, 
+    "level": "42", 
     "gender_ratio": ["0", "1"]
   }, 
   "113": {
@@ -1528,7 +1528,7 @@
     "speabi1": "Poison Point", 
     "speabi2": "Sniper", 
     "speabi3": "Poison Point", 
-    "level": null, 
+    "level": "32", 
     "gender_ratio": ["0", "1"]
   }, 
   "118": {
@@ -1592,7 +1592,7 @@
       { "move_ID": "185", "move_name": "Feint Attack" }, 
       { "move_ID": "211", "move_name": "Steel Wing"   }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "122": {
@@ -1640,7 +1640,7 @@
       { "move_ID": "355", "move_name": "Roost"      }, 
       { "move_ID": "314", "move_name": "Air Cutter" }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["1"]
   }, 
   "125": {
@@ -1656,7 +1656,7 @@
       { "move_ID": "355", "move_name": "Roost"      }, 
       { "move_ID": "314", "move_name": "Air Cutter" }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "0", "0", "1"]
   }, 
   "126": {
@@ -1672,7 +1672,7 @@
       { "move_ID": "355", "move_name": "Roost"      }, 
       { "move_ID": "314", "move_name": "Air Cutter" }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "0", "0", "1"]
   }, 
   "127": {
@@ -1731,7 +1731,7 @@
     "speabi1": "Intimidate", 
     "speabi2": null, 
     "speabi3": "Moxie", 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0", "1"]
   }, 
   "131": {
@@ -1763,7 +1763,7 @@
       { "move_ID": "68" , "move_name": "Counter"    }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "133": {
@@ -1790,7 +1790,7 @@
     "speabi1": "Water Absorb", 
     "speabi2": null, 
     "speabi3": "Hydration", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "135": {
@@ -1801,7 +1801,7 @@
     "speabi1": "Volt Absorb", 
     "speabi2": null, 
     "speabi3": "Quick Feet", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "136": {
@@ -1812,7 +1812,7 @@
     "speabi1": "Flash Fire", 
     "speabi2": null, 
     "speabi3": "Guts", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "137": {
@@ -1828,7 +1828,7 @@
       { "move_ID": "257", "move_name": "Heat Wave"  }, 
       { "move_ID": "399", "move_name": "Dark Pulse" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "138": {
@@ -1855,7 +1855,7 @@
     "speabi1": "Swift Swim", 
     "speabi2": "Shell Armor", 
     "speabi3": "Weak Armor", 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "140": {
@@ -1887,7 +1887,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"   }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "142": {
@@ -1930,7 +1930,7 @@
     "speabi1": "Pressure", 
     "speabi2": null, 
     "speabi3": "Snow Cloak", 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["2"]
   }, 
   "145": {
@@ -1941,7 +1941,7 @@
     "speabi1": "Pressure", 
     "speabi2": null, 
     "speabi3": "Lightning Rod", 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["2"]
   }, 
   "146": {
@@ -1957,7 +1957,7 @@
       { "move_ID": "440", "move_name": "Cross Poison" }, 
       { "move_ID": "235", "move_name": "Synthesis"    }
     ], 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["2"]
   }, 
   "147": {
@@ -1989,7 +1989,7 @@
       { "move_ID": "226", "move_name": "Baton Pass" }, 
       { "move_ID": "285", "move_name": "Skill Swap" }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "1"]
   }, 
   "149": {
@@ -2000,7 +2000,7 @@
     "speabi1": "Inner Focus", 
     "speabi2": null, 
     "speabi3": "Multiscale", 
-    "level": null, 
+    "level": "55", 
     "gender_ratio": ["0", "1"]
   }, 
   "150": {
@@ -2016,7 +2016,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "446", "move_name": "Stealth Rock" }
     ], 
-    "level": null, 
+    "level": "70", 
     "gender_ratio": ["2"]
   }, 
   "151": {
@@ -2032,7 +2032,7 @@
       { "move_ID": "314", "move_name": "Air Cutter"  }, 
       { "move_ID": "210", "move_name": "Fury Cutter" }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["2"]
   }, 
   "152": {
@@ -2048,7 +2048,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"     }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "153": {
@@ -2064,7 +2064,7 @@
       { "move_ID": "314", "move_name": "Air Cutter"  }, 
       { "move_ID": "210", "move_name": "Fury Cutter" }
     ], 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "154": {
@@ -2080,7 +2080,7 @@
       { "move_ID": "227", "move_name": "Encore"      }, 
       { "move_ID": "362", "move_name": "Brine"       }
     ], 
-    "level": null, 
+    "level": "32", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "155": {
@@ -2096,7 +2096,7 @@
       { "move_ID": "314", "move_name": "Air Cutter"  }, 
       { "move_ID": "210", "move_name": "Fury Cutter" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "156": {
@@ -2112,7 +2112,7 @@
       { "move_ID": "179", "move_name": "Reversal"      }, 
       { "move_ID": "9"  , "move_name": "Thunder Punch" }
     ], 
-    "level": null, 
+    "level": "14", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "157": {
@@ -2128,7 +2128,7 @@
       { "move_ID": "314", "move_name": "Air Cutter"  }, 
       { "move_ID": "210", "move_name": "Fury Cutter" }
     ], 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "158": {
@@ -2144,7 +2144,7 @@
       { "move_ID": "34" , "move_name": "Body Slam" }, 
       { "move_ID": "203", "move_name": "Endure"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "159": {
@@ -2160,7 +2160,7 @@
       { "move_ID": "314", "move_name": "Air Cutter"  }, 
       { "move_ID": "210", "move_name": "Fury Cutter" }
     ], 
-    "level": null, 
+    "level": "18", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "160": {
@@ -2176,7 +2176,7 @@
       { "move_ID": "54" , "move_name": "Mist"       }, 
       { "move_ID": "214", "move_name": "Sleep Talk" }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "161": {
@@ -2208,7 +2208,7 @@
       { "move_ID": "211", "move_name": "Steel Wing"   }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "15", 
     "gender_ratio": ["0", "1"]
   }, 
   "163": {
@@ -2240,7 +2240,7 @@
       { "move_ID": "211", "move_name": "Steel Wing"   }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0", "1"]
   }, 
   "165": {
@@ -2272,7 +2272,7 @@
       { "move_ID": "418", "move_name": "Bullet Punch" }, 
       { "move_ID": "270", "move_name": "Helping Hand" }
     ], 
-    "level": null, 
+    "level": "18", 
     "gender_ratio": ["0", "1"]
   }, 
   "167": {
@@ -2304,7 +2304,7 @@
       { "move_ID": "211", "move_name": "Steel Wing"   }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "22", 
     "gender_ratio": ["0", "1"]
   }, 
   "169": {
@@ -2320,7 +2320,7 @@
       { "move_ID": "235", "move_name": "Synthesis" }, 
       { "move_ID": "402", "move_name": "Seed Bomb" }
     ], 
-    "level": null, 
+    "level": "23", 
     "gender_ratio": ["0", "1"]
   }, 
   "170": {
@@ -2347,7 +2347,7 @@
     "speabi1": "Volt Absorb", 
     "speabi2": "Illuminate", 
     "speabi3": "Water Absorb", 
-    "level": null, 
+    "level": "27", 
     "gender_ratio": ["0", "1"]
   }, 
   "172": {
@@ -2363,7 +2363,7 @@
       { "move_ID": "367", "move_name": "Acupressure" }, 
       { "move_ID": "202", "move_name": "Giga Drain"  }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "173": {
@@ -2422,7 +2422,7 @@
     "speabi1": "Hustle", 
     "speabi2": "Serene Grace", 
     "speabi3": "Super Luck", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "177": {
@@ -2449,7 +2449,7 @@
     "speabi1": "Synchronize", 
     "speabi2": "Early Bird", 
     "speabi3": "Magic Bounce", 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "1"]
   }, 
   "179": {
@@ -2476,7 +2476,7 @@
     "speabi1": "Static", 
     "speabi2": null, 
     "speabi3": "Plus", 
-    "level": null, 
+    "level": "15", 
     "gender_ratio": ["0", "1"]
   }, 
   "181": {
@@ -2492,7 +2492,7 @@
       { "move_ID": "278", "move_name": "Recycle"     }, 
       { "move_ID": "356", "move_name": "Gravity"     }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "1"]
   }, 
   "182": {
@@ -2503,7 +2503,7 @@
     "speabi1": "Chlorophyll", 
     "speabi2": null, 
     "speabi3": "Healer", 
-    "level": null, 
+    "level": "21", 
     "gender_ratio": ["0", "1"]
   }, 
   "183": {
@@ -2535,7 +2535,7 @@
       { "move_ID": "175", "move_name": "Flail" }, 
       { "move_ID": "355", "move_name": "Roost" }
     ], 
-    "level": null, 
+    "level": "18", 
     "gender_ratio": ["0", "1"]
   }, 
   "185": {
@@ -2567,7 +2567,7 @@
       { "move_ID": "333", "move_name": "Icicle Spear" }, 
       { "move_ID": "214", "move_name": "Sleep Talk"   }
     ], 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "1"]
   }, 
   "187": {
@@ -2599,7 +2599,7 @@
       { "move_ID": "114", "move_name": "Haze"         }, 
       { "move_ID": "425", "move_name": "Shadow Sneak" }
     ], 
-    "level": null, 
+    "level": "18", 
     "gender_ratio": ["0", "1"]
   }, 
   "189": {
@@ -2610,7 +2610,7 @@
     "speabi1": "Chlorophyll", 
     "speabi2": "Leaf Guard", 
     "speabi3": "Chlorophyll", 
-    "level": null, 
+    "level": "27", 
     "gender_ratio": ["0", "1"]
   }, 
   "190": {
@@ -2658,7 +2658,7 @@
       { "move_ID": "50" , "move_name": "Disable"     }, 
       { "move_ID": "482", "move_name": "Sludge Wave" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "193": {
@@ -2706,7 +2706,7 @@
       { "move_ID": "446", "move_name": "Stealth Rock" }, 
       { "move_ID": "431", "move_name": "Rock Climb"   }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0", "1"]
   }, 
   "196": {
@@ -2722,7 +2722,7 @@
       { "move_ID": "427", "move_name": "Psycho Cut"  }, 
       { "move_ID": "409", "move_name": "Drain Punch" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "197": {
@@ -2738,7 +2738,7 @@
       { "move_ID": "382", "move_name": "Me First"     }, 
       { "move_ID": "231", "move_name": "Iron Tail"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "198": {
@@ -2770,7 +2770,7 @@
       { "move_ID": "382", "move_name": "Me First"     }, 
       { "move_ID": "231", "move_name": "Iron Tail"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "200": {
@@ -2799,7 +2799,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-b": {
@@ -2812,7 +2812,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-c": {
@@ -2825,7 +2825,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-d": {
@@ -2838,7 +2838,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-e": {
@@ -2851,7 +2851,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-f": {
@@ -2864,7 +2864,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-g": {
@@ -2877,7 +2877,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-h": {
@@ -2890,7 +2890,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-i": {
@@ -2903,7 +2903,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-j": {
@@ -2916,7 +2916,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-k": {
@@ -2929,7 +2929,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-l": {
@@ -2942,7 +2942,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-m": {
@@ -2955,7 +2955,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-n": {
@@ -2968,7 +2968,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-o": {
@@ -2981,7 +2981,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-p": {
@@ -2994,7 +2994,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-q": {
@@ -3007,7 +3007,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-r": {
@@ -3020,7 +3020,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-s": {
@@ -3033,7 +3033,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-t": {
@@ -3046,7 +3046,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-u": {
@@ -3059,7 +3059,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-v": {
@@ -3072,7 +3072,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-w": {
@@ -3085,7 +3085,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-x": {
@@ -3098,7 +3098,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-y": {
@@ -3111,7 +3111,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-z": {
@@ -3124,7 +3124,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-exclamation": {
@@ -3137,7 +3137,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "201-question": {
@@ -3150,7 +3150,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "202": {
@@ -3209,7 +3209,7 @@
     "speabi1": "Sturdy", 
     "speabi2": null, 
     "speabi3": "Overcoat", 
-    "level": null, 
+    "level": "31", 
     "gender_ratio": ["0", "1"]
   }, 
   "206": {
@@ -3252,7 +3252,7 @@
     "speabi1": "Rock Head", 
     "speabi2": "Sturdy", 
     "speabi3": "Sheer Force", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "209": {
@@ -3284,7 +3284,7 @@
       { "move_ID": "185", "move_name": "Feint Attack" }, 
       { "move_ID": "211", "move_name": "Steel Wing"   }
     ], 
-    "level": null, 
+    "level": "23", 
     "gender_ratio": ["0", "1", "1", "1"]
   }, 
   "211": {
@@ -3316,7 +3316,7 @@
       { "move_ID": "185", "move_name": "Feint Attack" }, 
       { "move_ID": "211", "move_name": "Steel Wing"   }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "213": {
@@ -3396,7 +3396,7 @@
       { "move_ID": "185", "move_name": "Feint Attack" }, 
       { "move_ID": "211", "move_name": "Steel Wing"   }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "1"]
   }, 
   "218": {
@@ -3428,7 +3428,7 @@
       { "move_ID": "185", "move_name": "Feint Attack" }, 
       { "move_ID": "211", "move_name": "Steel Wing"   }
     ], 
-    "level": null, 
+    "level": "38", 
     "gender_ratio": ["0", "1"]
   }, 
   "220": {
@@ -3460,7 +3460,7 @@
       { "move_ID": "185", "move_name": "Feint Attack" }, 
       { "move_ID": "211", "move_name": "Steel Wing"   }
     ], 
-    "level": null, 
+    "level": "33", 
     "gender_ratio": ["0", "1"]
   }, 
   "222": {
@@ -3503,7 +3503,7 @@
     "speabi1": "Suction Cups", 
     "speabi2": "Sniper", 
     "speabi3": "Suction Cups", 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "1"]
   }, 
   "225": {
@@ -3583,7 +3583,7 @@
       { "move_ID": "389", "move_name": "Sucker Punch" }, 
       { "move_ID": "162", "move_name": "Super Fang"   }
     ], 
-    "level": null, 
+    "level": "24", 
     "gender_ratio": ["0", "1"]
   }, 
   "230": {
@@ -3599,7 +3599,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "399", "move_name": "Dark Pulse"   }
     ], 
-    "level": null, 
+    "level": "32", 
     "gender_ratio": ["0", "1"]
   }, 
   "231": {
@@ -3631,7 +3631,7 @@
       { "move_ID": "68" , "move_name": "Counter"    }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "1"]
   }, 
   "233": {
@@ -3647,7 +3647,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "399", "move_name": "Dark Pulse"   }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "234": {
@@ -3711,7 +3711,7 @@
       { "move_ID": "257", "move_name": "Heat Wave"  }, 
       { "move_ID": "399", "move_name": "Dark Pulse" }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0"]
   }, 
   "238": {
@@ -3786,7 +3786,7 @@
     "speabi1": "Natural Cure", 
     "speabi2": "Serene Grace", 
     "speabi3": "Healer", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["1"]
   }, 
   "243": {
@@ -3802,7 +3802,7 @@
       { "move_ID": "298", "move_name": "Teeter Dance" }, 
       { "move_ID": "202", "move_name": "Giga Drain"   }
     ], 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["2"]
   }, 
   "244": {
@@ -3813,7 +3813,7 @@
     "speabi1": "Pressure", 
     "speabi2": null, 
     "speabi3": "Flash Fire", 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["2"]
   }, 
   "245": {
@@ -3824,7 +3824,7 @@
     "speabi1": "Pressure", 
     "speabi2": null, 
     "speabi3": "Water Absorb", 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["2"]
   }, 
   "246": {
@@ -3851,7 +3851,7 @@
     "speabi1": "Shed Skin", 
     "speabi2": null, 
     "speabi3": "Shed Skin", 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "1"]
   }, 
   "248": {
@@ -3867,7 +3867,7 @@
       { "move_ID": "226", "move_name": "Baton Pass" }, 
       { "move_ID": "285", "move_name": "Skill Swap" }
     ], 
-    "level": null, 
+    "level": "55", 
     "gender_ratio": ["0", "1"]
   }, 
   "249": {
@@ -3878,7 +3878,7 @@
     "speabi1": "Pressure", 
     "speabi2": null, 
     "speabi3": "Multiscale", 
-    "level": null, 
+    "level": "45", 
     "gender_ratio": ["2"]
   }, 
   "250": {
@@ -3894,7 +3894,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "446", "move_name": "Stealth Rock" }
     ], 
-    "level": null, 
+    "level": "45", 
     "gender_ratio": ["2"]
   }, 
   "251": {
@@ -3905,7 +3905,7 @@
     "speabi1": "Natural Cure", 
     "speabi2": null, 
     "speabi3": "Natural Cure", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "252": {
@@ -3921,7 +3921,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"     }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "253": {
@@ -3932,7 +3932,7 @@
     "speabi1": "Overgrow", 
     "speabi2": null, 
     "speabi3": "Unburden", 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "254": {
@@ -3948,7 +3948,7 @@
       { "move_ID": "227", "move_name": "Encore"      }, 
       { "move_ID": "362", "move_name": "Brine"       }
     ], 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "255": {
@@ -3959,7 +3959,7 @@
     "speabi1": "Blaze", 
     "speabi2": null, 
     "speabi3": "Speed Boost", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "256": {
@@ -3975,7 +3975,7 @@
       { "move_ID": "179", "move_name": "Reversal"      }, 
       { "move_ID": "9"  , "move_name": "Thunder Punch" }
     ], 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "257": {
@@ -3986,7 +3986,7 @@
     "speabi1": "Blaze", 
     "speabi2": null, 
     "speabi3": "Speed Boost", 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "258": {
@@ -4002,7 +4002,7 @@
       { "move_ID": "34" , "move_name": "Body Slam" }, 
       { "move_ID": "203", "move_name": "Endure"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "259": {
@@ -4013,7 +4013,7 @@
     "speabi1": "Torrent", 
     "speabi2": null, 
     "speabi3": "Damp", 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "260": {
@@ -4029,7 +4029,7 @@
       { "move_ID": "54" , "move_name": "Mist"       }, 
       { "move_ID": "214", "move_name": "Sleep Talk" }
     ], 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "261": {
@@ -4056,7 +4056,7 @@
     "speabi1": "Intimidate", 
     "speabi2": "Quick Feet", 
     "speabi3": "Intimidate", 
-    "level": null, 
+    "level": "18", 
     "gender_ratio": ["0", "1"]
   }, 
   "263": {
@@ -4083,7 +4083,7 @@
     "speabi1": "Pickup", 
     "speabi2": "Gluttony", 
     "speabi3": "Pickup", 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0", "1"]
   }, 
   "265": {
@@ -4115,7 +4115,7 @@
       { "move_ID": "418", "move_name": "Bullet Punch" }, 
       { "move_ID": "270", "move_name": "Helping Hand" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "267": {
@@ -4126,7 +4126,7 @@
     "speabi1": "Swarm", 
     "speabi2": null, 
     "speabi3": "Rivalry", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "268": {
@@ -4137,7 +4137,7 @@
     "speabi1": "Shed Skin", 
     "speabi2": null, 
     "speabi3": "Shed Skin", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "269": {
@@ -4153,7 +4153,7 @@
       { "move_ID": "235", "move_name": "Synthesis" }, 
       { "move_ID": "402", "move_name": "Seed Bomb" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "270": {
@@ -4185,7 +4185,7 @@
       { "move_ID": "68" , "move_name": "Counter"     }, 
       { "move_ID": "162", "move_name": "Super Fang"  }
     ], 
-    "level": null, 
+    "level": "14", 
     "gender_ratio": ["0", "1"]
   }, 
   "272": {
@@ -4201,7 +4201,7 @@
       { "move_ID": "367", "move_name": "Acupressure" }, 
       { "move_ID": "202", "move_name": "Giga Drain"  }
     ], 
-    "level": null, 
+    "level": "14", 
     "gender_ratio": ["0", "1"]
   }, 
   "273": {
@@ -4233,7 +4233,7 @@
       { "move_ID": "446", "move_name": "Stealth Rock" }, 
       { "move_ID": "431", "move_name": "Rock Climb"   }
     ], 
-    "level": null, 
+    "level": "14", 
     "gender_ratio": ["0", "1"]
   }, 
   "275": {
@@ -4249,7 +4249,7 @@
       { "move_ID": "68" , "move_name": "Counter"     }, 
       { "move_ID": "162", "move_name": "Super Fang"  }
     ], 
-    "level": null, 
+    "level": "14", 
     "gender_ratio": ["0", "1"]
   }, 
   "276": {
@@ -4281,7 +4281,7 @@
       { "move_ID": "37" , "move_name": "Thrash"    }, 
       { "move_ID": "257", "move_name": "Heat Wave" }
     ], 
-    "level": null, 
+    "level": "22", 
     "gender_ratio": ["0", "1"]
   }, 
   "278": {
@@ -4313,7 +4313,7 @@
       { "move_ID": "335", "move_name": "Block" }, 
       { "move_ID": "362", "move_name": "Brine" }
     ], 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "1"]
   }, 
   "280": {
@@ -4345,7 +4345,7 @@
       { "move_ID": "278", "move_name": "Recycle"     }, 
       { "move_ID": "356", "move_name": "Gravity"     }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0", "1"]
   }, 
   "282": {
@@ -4356,7 +4356,7 @@
     "speabi1": "Synchronize", 
     "speabi2": "Trace", 
     "speabi3": "Telepathy", 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "1"]
   }, 
   "283": {
@@ -4388,7 +4388,7 @@
       { "move_ID": "175", "move_name": "Flail" }, 
       { "move_ID": "355", "move_name": "Roost" }
     ], 
-    "level": null, 
+    "level": "22", 
     "gender_ratio": ["0", "1"]
   }, 
   "285": {
@@ -4420,7 +4420,7 @@
       { "move_ID": "333", "move_name": "Icicle Spear" }, 
       { "move_ID": "214", "move_name": "Sleep Talk"   }
     ], 
-    "level": null, 
+    "level": "23", 
     "gender_ratio": ["0", "1"]
   }, 
   "287": {
@@ -4452,7 +4452,7 @@
       { "move_ID": "114", "move_name": "Haze"         }, 
       { "move_ID": "425", "move_name": "Shadow Sneak" }
     ], 
-    "level": null, 
+    "level": "18", 
     "gender_ratio": ["0", "1"]
   }, 
   "289": {
@@ -4463,7 +4463,7 @@
     "speabi1": "Truant", 
     "speabi2": null, 
     "speabi3": "Truant", 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "1"]
   }, 
   "290": {
@@ -4495,7 +4495,7 @@
       { "move_ID": "389", "move_name": "Sucker Punch" }, 
       { "move_ID": "162", "move_name": "Super Fang"   }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0", "1"]
   }, 
   "292": {
@@ -4511,7 +4511,7 @@
       { "move_ID": "50" , "move_name": "Disable"     }, 
       { "move_ID": "482", "move_name": "Sludge Wave" }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["2"]
   }, 
   "293": {
@@ -4543,7 +4543,7 @@
       { "move_ID": "389", "move_name": "Sucker Punch" }, 
       { "move_ID": "162", "move_name": "Super Fang"   }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0", "1"]
   }, 
   "295": {
@@ -4559,7 +4559,7 @@
       { "move_ID": "446", "move_name": "Stealth Rock" }, 
       { "move_ID": "431", "move_name": "Rock Climb"   }
     ], 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0", "1"]
   }, 
   "296": {
@@ -4591,7 +4591,7 @@
       { "move_ID": "389", "move_name": "Sucker Punch" }, 
       { "move_ID": "162", "move_name": "Super Fang"   }
     ], 
-    "level": null, 
+    "level": "24", 
     "gender_ratio": ["0", "0", "0", "1"]
   }, 
   "298": {
@@ -4607,7 +4607,7 @@
       { "move_ID": "133", "move_name": "Amnesia"      }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1", "1", "1"]
   }, 
   "299": {
@@ -4650,7 +4650,7 @@
     "speabi1": "Cute Charm", 
     "speabi2": "Normalize", 
     "speabi3": "Cute Charm", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1", "1", "1"]
   }, 
   "302": {
@@ -4709,7 +4709,7 @@
     "speabi1": "Sturdy", 
     "speabi2": "Rock Head", 
     "speabi3": "Heavy Metal", 
-    "level": null, 
+    "level": "32", 
     "gender_ratio": ["0", "1"]
   }, 
   "306": {
@@ -4720,7 +4720,7 @@
     "speabi1": "Sturdy", 
     "speabi2": "Rock Head", 
     "speabi3": "Heavy Metal", 
-    "level": null, 
+    "level": "42", 
     "gender_ratio": ["0", "1"]
   }, 
   "307": {
@@ -4747,7 +4747,7 @@
     "speabi1": "Pure Power", 
     "speabi2": null, 
     "speabi3": "Telepathy", 
-    "level": null, 
+    "level": "37", 
     "gender_ratio": ["0", "1"]
   }, 
   "309": {
@@ -4774,7 +4774,7 @@
     "speabi1": "Static", 
     "speabi2": "Lightning Rod", 
     "speabi3": "Minus", 
-    "level": null, 
+    "level": "26", 
     "gender_ratio": ["0", "1"]
   }, 
   "311": {
@@ -4881,7 +4881,7 @@
     "speabi1": "Liquid Ooze", 
     "speabi2": "Sticky Hold", 
     "speabi3": "Gluttony", 
-    "level": null, 
+    "level": "26", 
     "gender_ratio": ["0", "1"]
   }, 
   "318": {
@@ -4913,7 +4913,7 @@
       { "move_ID": "382", "move_name": "Me First"     }, 
       { "move_ID": "231", "move_name": "Iron Tail"    }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "1"]
   }, 
   "320": {
@@ -4945,7 +4945,7 @@
       { "move_ID": "68" , "move_name": "Counter"    }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0", "1"]
   }, 
   "322": {
@@ -4977,7 +4977,7 @@
       { "move_ID": "68" , "move_name": "Counter"    }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "33", 
     "gender_ratio": ["0", "1"]
   }, 
   "324": {
@@ -5025,7 +5025,7 @@
       { "move_ID": "68" , "move_name": "Counter"    }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "32", 
     "gender_ratio": ["0", "1"]
   }, 
   "327": {
@@ -5073,7 +5073,7 @@
       { "move_ID": "68" , "move_name": "Counter"    }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "35", 
     "gender_ratio": ["0", "1"]
   }, 
   "330": {
@@ -5084,7 +5084,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "45", 
     "gender_ratio": ["0", "1"]
   }, 
   "331": {
@@ -5116,7 +5116,7 @@
       { "move_ID": "68" , "move_name": "Counter"    }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "32", 
     "gender_ratio": ["0", "1"]
   }, 
   "333": {
@@ -5143,7 +5143,7 @@
     "speabi1": "Natural Cure", 
     "speabi2": null, 
     "speabi3": "Cloud Nine", 
-    "level": null, 
+    "level": "35", 
     "gender_ratio": ["0", "1"]
   }, 
   "335": {
@@ -5234,7 +5234,7 @@
     "speabi1": "Oblivious", 
     "speabi2": "Anticipation", 
     "speabi3": "Oblivious", 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "1"]
   }, 
   "341": {
@@ -5261,7 +5261,7 @@
     "speabi1": "Hyper Cutter", 
     "speabi2": "Shell Armor", 
     "speabi3": "Adaptability", 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "1"]
   }, 
   "343": {
@@ -5288,7 +5288,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["2"]
   }, 
   "345": {
@@ -5320,7 +5320,7 @@
       { "move_ID": "440", "move_name": "Cross Poison" }, 
       { "move_ID": "235", "move_name": "Synthesis"    }
     ], 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "347": {
@@ -5352,7 +5352,7 @@
       { "move_ID": "226", "move_name": "Baton Pass" }, 
       { "move_ID": "285", "move_name": "Skill Swap" }
     ], 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "349": {
@@ -5384,7 +5384,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "446", "move_name": "Stealth Rock" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "351-normal": {
@@ -5420,7 +5420,7 @@
       { "move_ID": "466", "move_name": "Ominous Wind" }, 
       { "move_ID": "352", "move_name": "Water Pulse"  }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "351-rainy": {
@@ -5438,7 +5438,7 @@
       { "move_ID": "466", "move_name": "Ominous Wind" }, 
       { "move_ID": "352", "move_name": "Water Pulse"  }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "351-snow": {
@@ -5456,7 +5456,7 @@
       { "move_ID": "466", "move_name": "Ominous Wind" }, 
       { "move_ID": "352", "move_name": "Water Pulse"  }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "352": {
@@ -5504,7 +5504,7 @@
       { "move_ID": "227", "move_name": "Encore"      }, 
       { "move_ID": "362", "move_name": "Brine"       }
     ], 
-    "level": null, 
+    "level": "37", 
     "gender_ratio": ["0", "1"]
   }, 
   "355": {
@@ -5536,7 +5536,7 @@
       { "move_ID": "179", "move_name": "Reversal"      }, 
       { "move_ID": "9"  , "move_name": "Thunder Punch" }
     ], 
-    "level": null, 
+    "level": "37", 
     "gender_ratio": ["0", "1"]
   }, 
   "357": {
@@ -5600,7 +5600,7 @@
       { "move_ID": "54" , "move_name": "Mist"       }, 
       { "move_ID": "214", "move_name": "Sleep Talk" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "361": {
@@ -5627,7 +5627,7 @@
     "speabi1": "Inner Focus", 
     "speabi2": "Ice Body", 
     "speabi3": "Inner Focus", 
-    "level": null, 
+    "level": "42", 
     "gender_ratio": ["0", "1"]
   }, 
   "363": {
@@ -5654,7 +5654,7 @@
     "speabi1": "Thick Fat", 
     "speabi2": "Ice Body", 
     "speabi3": "Thick Fat", 
-    "level": null, 
+    "level": "32", 
     "gender_ratio": ["0", "1"]
   }, 
   "365": {
@@ -5665,7 +5665,7 @@
     "speabi1": "Thick Fat", 
     "speabi2": "Ice Body", 
     "speabi3": "Thick Fat", 
-    "level": null, 
+    "level": "44", 
     "gender_ratio": ["0", "1"]
   }, 
   "366": {
@@ -5692,7 +5692,7 @@
     "speabi1": "Swift Swim", 
     "speabi2": null, 
     "speabi3": "Water Veil", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "368": {
@@ -5703,7 +5703,7 @@
     "speabi1": "Swift Swim", 
     "speabi2": null, 
     "speabi3": "Hydration", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "369": {
@@ -5767,7 +5767,7 @@
       { "move_ID": "367", "move_name": "Acupressure" }, 
       { "move_ID": "202", "move_name": "Giga Drain"  }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "1"]
   }, 
   "373": {
@@ -5783,7 +5783,7 @@
       { "move_ID": "257", "move_name": "Heat Wave"  }, 
       { "move_ID": "399", "move_name": "Dark Pulse" }
     ], 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["0", "1"]
   }, 
   "374": {
@@ -5815,7 +5815,7 @@
       { "move_ID": "257", "move_name": "Heat Wave"  }, 
       { "move_ID": "399", "move_name": "Dark Pulse" }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["2"]
   }, 
   "376": {
@@ -5831,7 +5831,7 @@
       { "move_ID": "257", "move_name": "Heat Wave"  }, 
       { "move_ID": "399", "move_name": "Dark Pulse" }
     ], 
-    "level": null, 
+    "level": "45", 
     "gender_ratio": ["2"]
   }, 
   "377": {
@@ -5847,7 +5847,7 @@
       { "move_ID": "37" , "move_name": "Thrash"    }, 
       { "move_ID": "257", "move_name": "Heat Wave" }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["2"]
   }, 
   "378": {
@@ -5863,7 +5863,7 @@
       { "move_ID": "257", "move_name": "Heat Wave"  }, 
       { "move_ID": "399", "move_name": "Dark Pulse" }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["2"]
   }, 
   "379": {
@@ -5879,7 +5879,7 @@
       { "move_ID": "335", "move_name": "Block" }, 
       { "move_ID": "362", "move_name": "Brine" }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["2"]
   }, 
   "380": {
@@ -5890,7 +5890,7 @@
     "speabi1": "Levitate", 
     "speabi2": null, 
     "speabi3": "Levitate", 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["1"]
   }, 
   "381": {
@@ -5906,7 +5906,7 @@
       { "move_ID": "278", "move_name": "Recycle"     }, 
       { "move_ID": "356", "move_name": "Gravity"     }
     ], 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0"]
   }, 
   "382": {
@@ -5917,7 +5917,7 @@
     "speabi1": "Drizzle", 
     "speabi2": null, 
     "speabi3": "Drizzle", 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["2"]
   }, 
   "383": {
@@ -5933,7 +5933,7 @@
       { "move_ID": "355", "move_name": "Roost"       }, 
       { "move_ID": "348", "move_name": "Leaf Blade"  }
     ], 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["2"]
   }, 
   "384": {
@@ -5949,7 +5949,7 @@
       { "move_ID": "175", "move_name": "Flail" }, 
       { "move_ID": "355", "move_name": "Roost" }
     ], 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["2"]
   }, 
   "385": {
@@ -5960,7 +5960,7 @@
     "speabi1": "Serene Grace", 
     "speabi2": null, 
     "speabi3": "Serene Grace", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "386-normal": {
@@ -5978,7 +5978,7 @@
       { "move_ID": "333", "move_name": "Icicle Spear" }, 
       { "move_ID": "214", "move_name": "Sleep Talk"   }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["2"]
   }, 
   "386-attack": {
@@ -5996,7 +5996,7 @@
       { "move_ID": "333", "move_name": "Icicle Spear" }, 
       { "move_ID": "214", "move_name": "Sleep Talk"   }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["2"]
   }, 
   "386-defense": {
@@ -6014,7 +6014,7 @@
       { "move_ID": "333", "move_name": "Icicle Spear" }, 
       { "move_ID": "214", "move_name": "Sleep Talk"   }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["2"]
   }, 
   "386-speed": {
@@ -6032,7 +6032,7 @@
       { "move_ID": "333", "move_name": "Icicle Spear" }, 
       { "move_ID": "214", "move_name": "Sleep Talk"   }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["2"]
   }, 
   "387": {
@@ -6043,7 +6043,7 @@
     "speabi1": "Overgrow", 
     "speabi2": null, 
     "speabi3": "Shell Armor", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "388": {
@@ -6059,7 +6059,7 @@
       { "move_ID": "114", "move_name": "Haze"         }, 
       { "move_ID": "425", "move_name": "Shadow Sneak" }
     ], 
-    "level": null, 
+    "level": "18", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "389": {
@@ -6070,7 +6070,7 @@
     "speabi1": "Overgrow", 
     "speabi2": null, 
     "speabi3": "Shell Armor", 
-    "level": null, 
+    "level": "32", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "390": {
@@ -6086,7 +6086,7 @@
       { "move_ID": "112", "move_name": "Barrier"  }, 
       { "move_ID": "196", "move_name": "Icy Wind" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "391": {
@@ -6097,7 +6097,7 @@
     "speabi1": "Blaze", 
     "speabi2": null, 
     "speabi3": "Iron Fist", 
-    "level": null, 
+    "level": "14", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "392": {
@@ -6113,7 +6113,7 @@
       { "move_ID": "50" , "move_name": "Disable"     }, 
       { "move_ID": "482", "move_name": "Sludge Wave" }
     ], 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "393": {
@@ -6124,7 +6124,7 @@
     "speabi1": "Torrent", 
     "speabi2": null, 
     "speabi3": "Defiant", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "394": {
@@ -6135,7 +6135,7 @@
     "speabi1": "Torrent", 
     "speabi2": null, 
     "speabi3": "Defiant", 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "395": {
@@ -6151,7 +6151,7 @@
       { "move_ID": "446", "move_name": "Stealth Rock" }, 
       { "move_ID": "431", "move_name": "Rock Climb"   }
     ], 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "396": {
@@ -6167,7 +6167,7 @@
       { "move_ID": "427", "move_name": "Psycho Cut"  }, 
       { "move_ID": "409", "move_name": "Drain Punch" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "397": {
@@ -6199,7 +6199,7 @@
       { "move_ID": "133", "move_name": "Amnesia"      }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "34", 
     "gender_ratio": ["0", "1"]
   }, 
   "399": {
@@ -6226,7 +6226,7 @@
     "speabi1": "Simple", 
     "speabi2": "Unaware", 
     "speabi3": "Moody", 
-    "level": null, 
+    "level": "15", 
     "gender_ratio": ["0", "1"]
   }, 
   "401": {
@@ -6253,7 +6253,7 @@
     "speabi1": "Swarm", 
     "speabi2": null, 
     "speabi3": "Technician", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "403": {
@@ -6280,7 +6280,7 @@
     "speabi1": "Rivalry", 
     "speabi2": "Intimidate", 
     "speabi3": "Guts", 
-    "level": null, 
+    "level": "15", 
     "gender_ratio": ["0", "1"]
   }, 
   "405": {
@@ -6291,7 +6291,7 @@
     "speabi1": "Rivalry", 
     "speabi2": "Intimidate", 
     "speabi3": "Guts", 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "1"]
   }, 
   "406": {
@@ -6302,7 +6302,7 @@
     "speabi1": "Natural Cure", 
     "speabi2": "Poison Point", 
     "speabi3": "Leaf Guard", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "407": {
@@ -6313,7 +6313,7 @@
     "speabi1": "Natural Cure", 
     "speabi2": "Poison Point", 
     "speabi3": "Technician", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "408": {
@@ -6340,7 +6340,7 @@
     "speabi1": "Mold Breaker", 
     "speabi2": null, 
     "speabi3": "Sheer Force", 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "410": {
@@ -6372,7 +6372,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"   }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "412-plant": {
@@ -6408,7 +6408,7 @@
       { "move_ID": "450", "move_name": "Bug Bite" }, 
       { "move_ID": "173", "move_name": "Snore"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "412-trash": {
@@ -6444,7 +6444,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"   }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["1"]
   }, 
   "413-sandy": {
@@ -6462,7 +6462,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"   }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["1"]
   }, 
   "413-trash": {
@@ -6480,7 +6480,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"   }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["1"]
   }, 
   "414": {
@@ -6496,7 +6496,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"   }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0"]
   }, 
   "415": {
@@ -6528,7 +6528,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"   }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "21", 
     "gender_ratio": ["1"]
   }, 
   "417": {
@@ -6576,7 +6576,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"   }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "26", 
     "gender_ratio": ["0", "1"]
   }, 
   "420": {
@@ -6610,7 +6610,7 @@
       { "move_ID": "185", "move_name": "Feint Attack" }, 
       { "move_ID": "211", "move_name": "Steel Wing"   }
     ], 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "1"]
   }, 
   "421-overcast": {
@@ -6628,7 +6628,7 @@
       { "move_ID": "185", "move_name": "Feint Attack" }, 
       { "move_ID": "211", "move_name": "Steel Wing"   }
     ], 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "1"]
   }, 
   "422-west": {
@@ -6682,7 +6682,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "399", "move_name": "Dark Pulse"   }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "1"]
   }, 
   "423-east": {
@@ -6700,7 +6700,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "399", "move_name": "Dark Pulse"   }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "1"]
   }, 
   "424": {
@@ -6711,7 +6711,7 @@
     "speabi1": "Technician", 
     "speabi2": "Pickup", 
     "speabi3": "Skill Link", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "425": {
@@ -6738,7 +6738,7 @@
     "speabi1": "Aftermath", 
     "speabi2": "Unburden", 
     "speabi3": "Flare Boost", 
-    "level": null, 
+    "level": "28", 
     "gender_ratio": ["0", "1"]
   }, 
   "427": {
@@ -6765,7 +6765,7 @@
     "speabi1": "Cute Charm", 
     "speabi2": "Klutz", 
     "speabi3": "Limber", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "429": {
@@ -6781,7 +6781,7 @@
       { "move_ID": "389", "move_name": "Sucker Punch" }, 
       { "move_ID": "162", "move_name": "Super Fang"   }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "430": {
@@ -6797,7 +6797,7 @@
       { "move_ID": "298", "move_name": "Teeter Dance" }, 
       { "move_ID": "202", "move_name": "Giga Drain"   }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "431": {
@@ -6829,7 +6829,7 @@
       { "move_ID": "298", "move_name": "Teeter Dance" }, 
       { "move_ID": "202", "move_name": "Giga Drain"   }
     ], 
-    "level": null, 
+    "level": "38", 
     "gender_ratio": ["0", "1", "1", "1"]
   }, 
   "433": {
@@ -6845,7 +6845,7 @@
       { "move_ID": "298", "move_name": "Teeter Dance" }, 
       { "move_ID": "202", "move_name": "Giga Drain"   }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "434": {
@@ -6877,7 +6877,7 @@
       { "move_ID": "298", "move_name": "Teeter Dance" }, 
       { "move_ID": "202", "move_name": "Giga Drain"   }
     ], 
-    "level": null, 
+    "level": "34", 
     "gender_ratio": ["0", "1"]
   }, 
   "436": {
@@ -6909,7 +6909,7 @@
       { "move_ID": "298", "move_name": "Teeter Dance" }, 
       { "move_ID": "202", "move_name": "Giga Drain"   }
     ], 
-    "level": null, 
+    "level": "33", 
     "gender_ratio": ["2"]
   }, 
   "438": {
@@ -6925,7 +6925,7 @@
       { "move_ID": "298", "move_name": "Teeter Dance" }, 
       { "move_ID": "202", "move_name": "Giga Drain"   }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "439": {
@@ -6941,7 +6941,7 @@
       { "move_ID": "298", "move_name": "Teeter Dance" }, 
       { "move_ID": "202", "move_name": "Giga Drain"   }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "440": {
@@ -6952,7 +6952,7 @@
     "speabi1": "Natural Cure", 
     "speabi2": "Serene Grace", 
     "speabi3": "Friend Guard", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["1"]
   }, 
   "441": {
@@ -7011,7 +7011,7 @@
     "speabi1": "Sand Veil", 
     "speabi2": null, 
     "speabi3": "Rough Skin", 
-    "level": null, 
+    "level": "24", 
     "gender_ratio": ["0", "1"]
   }, 
   "445": {
@@ -7022,7 +7022,7 @@
     "speabi1": "Sand Veil", 
     "speabi2": null, 
     "speabi3": "Rough Skin", 
-    "level": null, 
+    "level": "48", 
     "gender_ratio": ["0", "1"]
   }, 
   "446": {
@@ -7038,7 +7038,7 @@
       { "move_ID": "440", "move_name": "Cross Poison" }, 
       { "move_ID": "235", "move_name": "Synthesis"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "447": {
@@ -7070,7 +7070,7 @@
       { "move_ID": "226", "move_name": "Baton Pass" }, 
       { "move_ID": "285", "move_name": "Skill Swap" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "449": {
@@ -7102,7 +7102,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "446", "move_name": "Stealth Rock" }
     ], 
-    "level": null, 
+    "level": "34", 
     "gender_ratio": ["0", "1"]
   }, 
   "451": {
@@ -7134,7 +7134,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"     }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0", "1"]
   }, 
   "453": {
@@ -7166,7 +7166,7 @@
       { "move_ID": "227", "move_name": "Encore"      }, 
       { "move_ID": "362", "move_name": "Brine"       }
     ], 
-    "level": null, 
+    "level": "37", 
     "gender_ratio": ["0", "1"]
   }, 
   "455": {
@@ -7209,7 +7209,7 @@
     "speabi1": "Swift Swim", 
     "speabi2": "Storm Drain", 
     "speabi3": "Water Veil", 
-    "level": null, 
+    "level": "31", 
     "gender_ratio": ["0", "1"]
   }, 
   "458": {
@@ -7225,7 +7225,7 @@
       { "move_ID": "34" , "move_name": "Body Slam" }, 
       { "move_ID": "203", "move_name": "Endure"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "459": {
@@ -7257,7 +7257,7 @@
       { "move_ID": "54" , "move_name": "Mist"       }, 
       { "move_ID": "214", "move_name": "Sleep Talk" }
     ], 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0", "1"]
   }, 
   "461": {
@@ -7273,7 +7273,7 @@
       { "move_ID": "114", "move_name": "Haze"        }, 
       { "move_ID": "352", "move_name": "Water Pulse" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "462": {
@@ -7289,7 +7289,7 @@
       { "move_ID": "440", "move_name": "Cross Poison" }, 
       { "move_ID": "235", "move_name": "Synthesis"    }
     ], 
-    "level": null, 
+    "level": "31", 
     "gender_ratio": ["2"]
   }, 
   "463": {
@@ -7305,7 +7305,7 @@
       { "move_ID": "285", "move_name": "Skill Swap" }, 
       { "move_ID": "356", "move_name": "Gravity"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "464": {
@@ -7321,7 +7321,7 @@
       { "move_ID": "440", "move_name": "Cross Poison" }, 
       { "move_ID": "235", "move_name": "Synthesis"    }
     ], 
-    "level": null, 
+    "level": "42", 
     "gender_ratio": ["0", "1"]
   }, 
   "465": {
@@ -7337,7 +7337,7 @@
       { "move_ID": "440", "move_name": "Cross Poison" }, 
       { "move_ID": "235", "move_name": "Synthesis"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "466": {
@@ -7353,7 +7353,7 @@
       { "move_ID": "418", "move_name": "Bullet Punch" }, 
       { "move_ID": "270", "move_name": "Helping Hand" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "1"]
   }, 
   "467": {
@@ -7369,7 +7369,7 @@
       { "move_ID": "440", "move_name": "Cross Poison" }, 
       { "move_ID": "235", "move_name": "Synthesis"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "1"]
   }, 
   "468": {
@@ -7385,7 +7385,7 @@
       { "move_ID": "440", "move_name": "Cross Poison" }, 
       { "move_ID": "235", "move_name": "Synthesis"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "469": {
@@ -7401,7 +7401,7 @@
       { "move_ID": "235", "move_name": "Synthesis" }, 
       { "move_ID": "402", "move_name": "Seed Bomb" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "470": {
@@ -7412,7 +7412,7 @@
     "speabi1": "Leaf Guard", 
     "speabi2": null, 
     "speabi3": "Chlorophyll", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "471": {
@@ -7423,7 +7423,7 @@
     "speabi1": "Snow Cloak", 
     "speabi2": null, 
     "speabi3": "Ice Body", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "472": {
@@ -7439,7 +7439,7 @@
       { "move_ID": "367", "move_name": "Acupressure" }, 
       { "move_ID": "202", "move_name": "Giga Drain"  }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "473": {
@@ -7450,7 +7450,7 @@
     "speabi1": "Oblivious", 
     "speabi2": "Snow Cloak", 
     "speabi3": "Thick Fat", 
-    "level": null, 
+    "level": "34", 
     "gender_ratio": ["0", "1"]
   }, 
   "474": {
@@ -7466,7 +7466,7 @@
       { "move_ID": "446", "move_name": "Stealth Rock" }, 
       { "move_ID": "431", "move_name": "Rock Climb"   }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "475": {
@@ -7477,7 +7477,7 @@
     "speabi1": "Steadfast", 
     "speabi2": null, 
     "speabi3": "Steadfast", 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0"]
   }, 
   "476": {
@@ -7488,7 +7488,7 @@
     "speabi1": "Sturdy", 
     "speabi2": "Magnet Pull", 
     "speabi3": "Sand Force", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "477": {
@@ -7504,7 +7504,7 @@
       { "move_ID": "37" , "move_name": "Thrash"    }, 
       { "move_ID": "257", "move_name": "Heat Wave" }
     ], 
-    "level": null, 
+    "level": "37", 
     "gender_ratio": ["0", "1"]
   }, 
   "478": {
@@ -7515,7 +7515,7 @@
     "speabi1": "Snow Cloak", 
     "speabi2": null, 
     "speabi3": "Cursed Body", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["1"]
   }, 
   "479": {
@@ -7549,7 +7549,7 @@
       { "move_ID": "351", "move_name": "Shock Wave"   }, 
       { "move_ID": "324", "move_name": "Signal Beam"  }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "479-wash": {
@@ -7567,7 +7567,7 @@
       { "move_ID": "351", "move_name": "Shock Wave"   }, 
       { "move_ID": "324", "move_name": "Signal Beam"  }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "479-frost": {
@@ -7585,7 +7585,7 @@
       { "move_ID": "351", "move_name": "Shock Wave"   }, 
       { "move_ID": "324", "move_name": "Signal Beam"  }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "479-fan": {
@@ -7603,7 +7603,7 @@
       { "move_ID": "351", "move_name": "Shock Wave"   }, 
       { "move_ID": "324", "move_name": "Signal Beam"  }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "479-mow": {
@@ -7621,7 +7621,7 @@
       { "move_ID": "351", "move_name": "Shock Wave"   }, 
       { "move_ID": "324", "move_name": "Signal Beam"  }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "480": {
@@ -7637,7 +7637,7 @@
       { "move_ID": "226", "move_name": "Baton Pass" }, 
       { "move_ID": "285", "move_name": "Skill Swap" }
     ], 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["2"]
   }, 
   "481": {
@@ -7653,7 +7653,7 @@
       { "move_ID": "278", "move_name": "Recycle"     }, 
       { "move_ID": "356", "move_name": "Gravity"     }
     ], 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["2"]
   }, 
   "482": {
@@ -7669,7 +7669,7 @@
       { "move_ID": "226", "move_name": "Baton Pass" }, 
       { "move_ID": "285", "move_name": "Skill Swap" }
     ], 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["2"]
   }, 
   "483": {
@@ -7685,7 +7685,7 @@
       { "move_ID": "355", "move_name": "Roost"       }, 
       { "move_ID": "348", "move_name": "Leaf Blade"  }
     ], 
-    "level": null, 
+    "level": "47", 
     "gender_ratio": ["2"]
   }, 
   "484": {
@@ -7701,7 +7701,7 @@
       { "move_ID": "175", "move_name": "Flail" }, 
       { "move_ID": "355", "move_name": "Roost" }
     ], 
-    "level": null, 
+    "level": "47", 
     "gender_ratio": ["2"]
   }, 
   "485": {
@@ -7717,7 +7717,7 @@
       { "move_ID": "226", "move_name": "Baton Pass" }, 
       { "move_ID": "285", "move_name": "Skill Swap" }
     ], 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["0", "1"]
   }, 
   "486": {
@@ -7733,7 +7733,7 @@
       { "move_ID": "333", "move_name": "Icicle Spear" }, 
       { "move_ID": "214", "move_name": "Sleep Talk"   }
     ], 
-    "level": null, 
+    "level": "70", 
     "gender_ratio": ["2"]
   }, 
   "487-altered": {
@@ -7751,7 +7751,7 @@
       { "move_ID": "226", "move_name": "Baton Pass" }, 
       { "move_ID": "285", "move_name": "Skill Swap" }
     ], 
-    "level": null, 
+    "level": "47", 
     "gender_ratio": ["2"]
   }, 
   "487-origin": {
@@ -7769,7 +7769,7 @@
       { "move_ID": "226", "move_name": "Baton Pass" }, 
       { "move_ID": "285", "move_name": "Skill Swap" }
     ], 
-    "level": null, 
+    "level": "47", 
     "gender_ratio": ["2"]
   }, 
   "488": {
@@ -7785,7 +7785,7 @@
       { "move_ID": "114", "move_name": "Haze"         }, 
       { "move_ID": "425", "move_name": "Shadow Sneak" }
     ], 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["1"]
   }, 
   "489": {
@@ -7801,7 +7801,7 @@
       { "move_ID": "226", "move_name": "Baton Pass" }, 
       { "move_ID": "285", "move_name": "Skill Swap" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "490": {
@@ -7817,7 +7817,7 @@
       { "move_ID": "112", "move_name": "Barrier"  }, 
       { "move_ID": "196", "move_name": "Icy Wind" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "491": {
@@ -7828,7 +7828,7 @@
     "speabi1": "Bad Dreams", 
     "speabi2": null, 
     "speabi3": "Bad Dreams", 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["2"]
   }, 
   "492-land": {
@@ -7846,7 +7846,7 @@
       { "move_ID": "50" , "move_name": "Disable"     }, 
       { "move_ID": "482", "move_name": "Sludge Wave" }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["2"]
   }, 
   "492-sky": {
@@ -7864,7 +7864,7 @@
       { "move_ID": "50" , "move_name": "Disable"     }, 
       { "move_ID": "482", "move_name": "Sludge Wave" }
     ], 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["2"]
   }, 
   "493-normal": {
@@ -7877,7 +7877,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-fighting": {
@@ -7890,7 +7890,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-flying": {
@@ -7903,7 +7903,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-poison": {
@@ -7916,7 +7916,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-ground": {
@@ -7929,7 +7929,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-rock": {
@@ -7942,7 +7942,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-bug": {
@@ -7955,7 +7955,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-ghost": {
@@ -7968,7 +7968,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-steel": {
@@ -7981,7 +7981,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-fire": {
@@ -7994,7 +7994,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-water": {
@@ -8007,7 +8007,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-grass": {
@@ -8020,7 +8020,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-electric": {
@@ -8033,7 +8033,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-psychic": {
@@ -8046,7 +8046,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-ice": {
@@ -8059,7 +8059,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-dragon": {
@@ -8072,7 +8072,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "493-dark": {
@@ -8085,7 +8085,7 @@
     "speabi1": "Multitype", 
     "speabi2": null, 
     "speabi3": "Multitype", 
-    "level": null, 
+    "level": "100", 
     "gender_ratio": ["2"]
   }, 
   "494": {
@@ -8096,7 +8096,7 @@
     "speabi1": "Victory Star", 
     "speabi2": null, 
     "speabi3": "Victory Star", 
-    "level": null, 
+    "level": "15", 
     "gender_ratio": ["2"]
   }, 
   "495": {
@@ -8112,7 +8112,7 @@
       { "move_ID": "446", "move_name": "Stealth Rock" }, 
       { "move_ID": "431", "move_name": "Rock Climb"   }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "496": {
@@ -8128,7 +8128,7 @@
       { "move_ID": "427", "move_name": "Psycho Cut"  }, 
       { "move_ID": "409", "move_name": "Drain Punch" }
     ], 
-    "level": null, 
+    "level": "17", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "497": {
@@ -8139,7 +8139,7 @@
     "speabi1": "Overgrow", 
     "speabi2": null, 
     "speabi3": "Contrary", 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "498": {
@@ -8155,7 +8155,7 @@
       { "move_ID": "133", "move_name": "Amnesia"      }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "499": {
@@ -8166,7 +8166,7 @@
     "speabi1": "Blaze", 
     "speabi2": null, 
     "speabi3": "Thick Fat", 
-    "level": null, 
+    "level": "17", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "500": {
@@ -8182,7 +8182,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "446", "move_name": "Stealth Rock" }
     ], 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "501": {
@@ -8198,7 +8198,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "446", "move_name": "Stealth Rock" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "502": {
@@ -8214,7 +8214,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "446", "move_name": "Stealth Rock" }
     ], 
-    "level": null, 
+    "level": "17", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "503": {
@@ -8230,7 +8230,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "446", "move_name": "Stealth Rock" }
     ], 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "504": {
@@ -8246,7 +8246,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "446", "move_name": "Stealth Rock" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "505": {
@@ -8262,7 +8262,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "446", "move_name": "Stealth Rock" }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0", "1"]
   }, 
   "506": {
@@ -8278,7 +8278,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "446", "move_name": "Stealth Rock" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "507": {
@@ -8294,7 +8294,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "446", "move_name": "Stealth Rock" }
     ], 
-    "level": null, 
+    "level": "16", 
     "gender_ratio": ["0", "1"]
   }, 
   "508": {
@@ -8310,7 +8310,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "446", "move_name": "Stealth Rock" }
     ], 
-    "level": null, 
+    "level": "32", 
     "gender_ratio": ["0", "1"]
   }, 
   "509": {
@@ -8326,7 +8326,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "446", "move_name": "Stealth Rock" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "510": {
@@ -8337,7 +8337,7 @@
     "speabi1": "Limber", 
     "speabi2": "Unburden", 
     "speabi3": "Prankster", 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0", "1"]
   }, 
   "511": {
@@ -8348,7 +8348,7 @@
     "speabi1": "Gluttony", 
     "speabi2": null, 
     "speabi3": "Overgrow", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "512": {
@@ -8364,7 +8364,7 @@
       { "move_ID": "355", "move_name": "Roost"      }, 
       { "move_ID": "314", "move_name": "Air Cutter" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "513": {
@@ -8375,7 +8375,7 @@
     "speabi1": "Gluttony", 
     "speabi2": null, 
     "speabi3": "Blaze", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "514": {
@@ -8386,7 +8386,7 @@
     "speabi1": "Gluttony", 
     "speabi2": null, 
     "speabi3": "Blaze", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "515": {
@@ -8402,7 +8402,7 @@
       { "move_ID": "314", "move_name": "Air Cutter"  }, 
       { "move_ID": "210", "move_name": "Fury Cutter" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "516": {
@@ -8418,7 +8418,7 @@
       { "move_ID": "211", "move_name": "Steel Wing"   }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "517": {
@@ -8429,7 +8429,7 @@
     "speabi1": "Forewarn", 
     "speabi2": "Synchronize", 
     "speabi3": "Telepathy", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "518": {
@@ -8440,7 +8440,7 @@
     "speabi1": "Forewarn", 
     "speabi2": "Synchronize", 
     "speabi3": "Telepathy", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "519": {
@@ -8472,7 +8472,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"     }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "21", 
     "gender_ratio": ["0", "1"]
   }, 
   "521": {
@@ -8488,7 +8488,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"     }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "32", 
     "gender_ratio": ["0", "1"]
   }, 
   "522": {
@@ -8504,7 +8504,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"     }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "523": {
@@ -8520,7 +8520,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"     }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "27", 
     "gender_ratio": ["0", "1"]
   }, 
   "524": {
@@ -8536,7 +8536,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"     }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "525": {
@@ -8568,7 +8568,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"     }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "1"]
   }, 
   "527": {
@@ -8584,7 +8584,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"     }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "528": {
@@ -8600,7 +8600,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"     }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "529": {
@@ -8627,7 +8627,7 @@
     "speabi1": "Sand Rush", 
     "speabi2": "Sand Force", 
     "speabi3": "Mold Breaker", 
-    "level": null, 
+    "level": "31", 
     "gender_ratio": ["0", "1"]
   }, 
   "531": {
@@ -8659,7 +8659,7 @@
       { "move_ID": "68" , "move_name": "Counter"    }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "1"]
   }, 
   "533": {
@@ -8686,7 +8686,7 @@
     "speabi1": "Guts", 
     "speabi2": "Sheer Force", 
     "speabi3": "Iron Fist", 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "0", "0", "1"]
   }, 
   "535": {
@@ -8713,7 +8713,7 @@
     "speabi1": "Swift Swim", 
     "speabi2": "Hydration", 
     "speabi3": "Water Absorb", 
-    "level": null, 
+    "level": "25", 
     "gender_ratio": ["0", "1"]
   }, 
   "537": {
@@ -8729,7 +8729,7 @@
       { "move_ID": "257", "move_name": "Heat Wave"  }, 
       { "move_ID": "399", "move_name": "Dark Pulse" }
     ], 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "1"]
   }, 
   "538": {
@@ -8777,7 +8777,7 @@
       { "move_ID": "227", "move_name": "Encore"      }, 
       { "move_ID": "362", "move_name": "Brine"       }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "541": {
@@ -8793,7 +8793,7 @@
       { "move_ID": "227", "move_name": "Encore"      }, 
       { "move_ID": "362", "move_name": "Brine"       }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0", "1"]
   }, 
   "542": {
@@ -8809,7 +8809,7 @@
       { "move_ID": "227", "move_name": "Encore"      }, 
       { "move_ID": "362", "move_name": "Brine"       }
     ], 
-    "level": null, 
+    "level": "20", 
     "gender_ratio": ["0", "1"]
   }, 
   "543": {
@@ -8825,7 +8825,7 @@
       { "move_ID": "227", "move_name": "Encore"      }, 
       { "move_ID": "362", "move_name": "Brine"       }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "544": {
@@ -8841,7 +8841,7 @@
       { "move_ID": "227", "move_name": "Encore"      }, 
       { "move_ID": "362", "move_name": "Brine"       }
     ], 
-    "level": null, 
+    "level": "22", 
     "gender_ratio": ["0", "1"]
   }, 
   "545": {
@@ -8889,7 +8889,7 @@
       { "move_ID": "227", "move_name": "Encore"      }, 
       { "move_ID": "362", "move_name": "Brine"       }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "548": {
@@ -8921,7 +8921,7 @@
       { "move_ID": "227", "move_name": "Encore"      }, 
       { "move_ID": "362", "move_name": "Brine"       }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["1"]
   }, 
   "550-red": {
@@ -8968,7 +8968,7 @@
     "speabi1": "Intimidate", 
     "speabi2": "Moxie", 
     "speabi3": "Anger Point", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "552": {
@@ -8984,7 +8984,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"     }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "29", 
     "gender_ratio": ["0", "1"]
   }, 
   "553": {
@@ -9016,7 +9016,7 @@
       { "move_ID": "227", "move_name": "Encore"      }, 
       { "move_ID": "362", "move_name": "Brine"       }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "555-standard": {
@@ -9029,7 +9029,7 @@
     "speabi1": "Sheer Force", 
     "speabi2": null, 
     "speabi3": "Zen Mode", 
-    "level": null, 
+    "level": "35", 
     "gender_ratio": ["0", "1"]
   }, 
   "555-zen": {
@@ -9042,7 +9042,7 @@
     "speabi1": "Sheer Force", 
     "speabi2": null, 
     "speabi3": "Zen Mode", 
-    "level": null, 
+    "level": "35", 
     "gender_ratio": ["0", "1"]
   }, 
   "556": {
@@ -9069,7 +9069,7 @@
     "speabi1": "Sturdy", 
     "speabi2": "Shell Armor", 
     "speabi3": "Weak Armor", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "558": {
@@ -9117,7 +9117,7 @@
       { "move_ID": "54" , "move_name": "Mist"       }, 
       { "move_ID": "214", "move_name": "Sleep Talk" }
     ], 
-    "level": null, 
+    "level": "39", 
     "gender_ratio": ["0", "1"]
   }, 
   "561": {
@@ -9149,7 +9149,7 @@
       { "move_ID": "179", "move_name": "Reversal"      }, 
       { "move_ID": "9"  , "move_name": "Thunder Punch" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "563": {
@@ -9165,7 +9165,7 @@
       { "move_ID": "285", "move_name": "Skill Swap" }, 
       { "move_ID": "356", "move_name": "Gravity"    }
     ], 
-    "level": null, 
+    "level": "34", 
     "gender_ratio": ["0", "1"]
   }, 
   "564": {
@@ -9197,7 +9197,7 @@
       { "move_ID": "179", "move_name": "Reversal"      }, 
       { "move_ID": "9"  , "move_name": "Thunder Punch" }
     ], 
-    "level": null, 
+    "level": "37", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "566": {
@@ -9213,7 +9213,7 @@
       { "move_ID": "418", "move_name": "Bullet Punch" }, 
       { "move_ID": "270", "move_name": "Helping Hand" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "567": {
@@ -9229,7 +9229,7 @@
       { "move_ID": "179", "move_name": "Reversal"      }, 
       { "move_ID": "9"  , "move_name": "Thunder Punch" }
     ], 
-    "level": null, 
+    "level": "37", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "568": {
@@ -9245,7 +9245,7 @@
       { "move_ID": "179", "move_name": "Reversal"      }, 
       { "move_ID": "9"  , "move_name": "Thunder Punch" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "569": {
@@ -9261,7 +9261,7 @@
       { "move_ID": "235", "move_name": "Synthesis" }, 
       { "move_ID": "402", "move_name": "Seed Bomb" }
     ], 
-    "level": null, 
+    "level": "36", 
     "gender_ratio": ["0", "1"]
   }, 
   "570": {
@@ -9272,7 +9272,7 @@
     "speabi1": "Illusion", 
     "speabi2": null, 
     "speabi3": "Illusion", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "571": {
@@ -9283,7 +9283,7 @@
     "speabi1": "Illusion", 
     "speabi2": null, 
     "speabi3": "Illusion", 
-    "level": null, 
+    "level": "30", 
     "gender_ratio": ["0", "0", "0", "0", "0", "0", "0", "1"]
   }, 
   "572": {
@@ -9299,7 +9299,7 @@
       { "move_ID": "367", "move_name": "Acupressure" }, 
       { "move_ID": "202", "move_name": "Giga Drain"  }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1", "1", "1"]
   }, 
   "573": {
@@ -9310,7 +9310,7 @@
     "speabi1": "Cute Charm", 
     "speabi2": "Technician", 
     "speabi3": "Skill Link", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1", "1", "1"]
   }, 
   "574": {
@@ -9326,7 +9326,7 @@
       { "move_ID": "446", "move_name": "Stealth Rock" }, 
       { "move_ID": "431", "move_name": "Rock Climb"   }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1", "1", "1"]
   }, 
   "575": {
@@ -9337,7 +9337,7 @@
     "speabi1": "Frisk", 
     "speabi2": null, 
     "speabi3": "Frisk", 
-    "level": null, 
+    "level": "32", 
     "gender_ratio": ["0", "1", "1", "1"]
   }, 
   "576": {
@@ -9348,7 +9348,7 @@
     "speabi1": "Frisk", 
     "speabi2": null, 
     "speabi3": "Frisk", 
-    "level": null, 
+    "level": "41", 
     "gender_ratio": ["0", "1", "1", "1"]
   }, 
   "577": {
@@ -9364,7 +9364,7 @@
       { "move_ID": "37" , "move_name": "Thrash"    }, 
       { "move_ID": "257", "move_name": "Heat Wave" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "578": {
@@ -9396,7 +9396,7 @@
       { "move_ID": "335", "move_name": "Block" }, 
       { "move_ID": "362", "move_name": "Brine" }
     ], 
-    "level": null, 
+    "level": "41", 
     "gender_ratio": ["0", "1"]
   }, 
   "580": {
@@ -9428,7 +9428,7 @@
       { "move_ID": "278", "move_name": "Recycle"     }, 
       { "move_ID": "356", "move_name": "Gravity"     }
     ], 
-    "level": null, 
+    "level": "35", 
     "gender_ratio": ["0", "1"]
   }, 
   "582": {
@@ -9444,7 +9444,7 @@
       { "move_ID": "34" , "move_name": "Body Slam" }, 
       { "move_ID": "203", "move_name": "Endure"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "583": {
@@ -9476,7 +9476,7 @@
       { "move_ID": "175", "move_name": "Flail" }, 
       { "move_ID": "355", "move_name": "Roost" }
     ], 
-    "level": null, 
+    "level": "47", 
     "gender_ratio": ["0", "1"]
   }, 
   "585-spring": {
@@ -9494,7 +9494,7 @@
       { "move_ID": "34" , "move_name": "Body Slam" }, 
       { "move_ID": "203", "move_name": "Endure"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "585-summer": {
@@ -9512,7 +9512,7 @@
       { "move_ID": "34" , "move_name": "Body Slam" }, 
       { "move_ID": "203", "move_name": "Endure"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "585-autumn": {
@@ -9530,7 +9530,7 @@
       { "move_ID": "34" , "move_name": "Body Slam" }, 
       { "move_ID": "203", "move_name": "Endure"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "585-winter": {
@@ -9548,7 +9548,7 @@
       { "move_ID": "34" , "move_name": "Body Slam" }, 
       { "move_ID": "203", "move_name": "Endure"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "586-spring": {
@@ -9566,7 +9566,7 @@
       { "move_ID": "333", "move_name": "Icicle Spear" }, 
       { "move_ID": "214", "move_name": "Sleep Talk"   }
     ], 
-    "level": null, 
+    "level": "34", 
     "gender_ratio": ["0", "1"]
   }, 
   "586-summer": {
@@ -9584,7 +9584,7 @@
       { "move_ID": "333", "move_name": "Icicle Spear" }, 
       { "move_ID": "214", "move_name": "Sleep Talk"   }
     ], 
-    "level": null, 
+    "level": "34", 
     "gender_ratio": ["0", "1"]
   }, 
   "586-autumn": {
@@ -9602,7 +9602,7 @@
       { "move_ID": "333", "move_name": "Icicle Spear" }, 
       { "move_ID": "214", "move_name": "Sleep Talk"   }
     ], 
-    "level": null, 
+    "level": "34", 
     "gender_ratio": ["0", "1"]
   }, 
   "586-winter": {
@@ -9620,7 +9620,7 @@
       { "move_ID": "333", "move_name": "Icicle Spear" }, 
       { "move_ID": "214", "move_name": "Sleep Talk"   }
     ], 
-    "level": null, 
+    "level": "34", 
     "gender_ratio": ["0", "1"]
   }, 
   "587": {
@@ -9668,7 +9668,7 @@
       { "move_ID": "34" , "move_name": "Body Slam" }, 
       { "move_ID": "203", "move_name": "Endure"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "590": {
@@ -9684,7 +9684,7 @@
       { "move_ID": "112", "move_name": "Barrier"  }, 
       { "move_ID": "196", "move_name": "Icy Wind" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "591": {
@@ -9695,7 +9695,7 @@
     "speabi1": "Effect Spore", 
     "speabi2": null, 
     "speabi3": "Regenerator", 
-    "level": null, 
+    "level": "39", 
     "gender_ratio": ["0", "1"]
   }, 
   "592": {
@@ -9711,7 +9711,7 @@
       { "move_ID": "50" , "move_name": "Disable"     }, 
       { "move_ID": "482", "move_name": "Sludge Wave" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "593": {
@@ -9722,7 +9722,7 @@
     "speabi1": "Water Absorb", 
     "speabi2": "Cursed Body", 
     "speabi3": "Damp", 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0", "1"]
   }, 
   "594": {
@@ -9754,7 +9754,7 @@
       { "move_ID": "446", "move_name": "Stealth Rock" }, 
       { "move_ID": "431", "move_name": "Rock Climb"   }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "596": {
@@ -9781,7 +9781,7 @@
     "speabi1": "Iron Barbs", 
     "speabi2": null, 
     "speabi3": "Iron Barbs", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "598": {
@@ -9797,7 +9797,7 @@
       { "move_ID": "133", "move_name": "Amnesia"      }, 
       { "move_ID": "290", "move_name": "Secret Power" }
     ], 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0", "1"]
   }, 
   "599": {
@@ -9808,7 +9808,7 @@
     "speabi1": "Plus", 
     "speabi2": "Minus", 
     "speabi3": "Clear Body", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "600": {
@@ -9840,7 +9840,7 @@
       { "move_ID": "54" , "move_name": "Mist"       }, 
       { "move_ID": "214", "move_name": "Sleep Talk" }
     ], 
-    "level": null, 
+    "level": "49", 
     "gender_ratio": ["2"]
   }, 
   "602": {
@@ -9856,7 +9856,7 @@
       { "move_ID": "54" , "move_name": "Mist"       }, 
       { "move_ID": "214", "move_name": "Sleep Talk" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "603": {
@@ -9872,7 +9872,7 @@
       { "move_ID": "54" , "move_name": "Mist"       }, 
       { "move_ID": "214", "move_name": "Sleep Talk" }
     ], 
-    "level": null, 
+    "level": "39", 
     "gender_ratio": ["0", "1"]
   }, 
   "604": {
@@ -9888,7 +9888,7 @@
       { "move_ID": "54" , "move_name": "Mist"       }, 
       { "move_ID": "214", "move_name": "Sleep Talk" }
     ], 
-    "level": null, 
+    "level": "39", 
     "gender_ratio": ["0", "1"]
   }, 
   "605": {
@@ -9920,7 +9920,7 @@
       { "move_ID": "54" , "move_name": "Mist"       }, 
       { "move_ID": "214", "move_name": "Sleep Talk" }
     ], 
-    "level": null, 
+    "level": "42", 
     "gender_ratio": ["0", "1"]
   }, 
   "607": {
@@ -9936,7 +9936,7 @@
       { "move_ID": "54" , "move_name": "Mist"       }, 
       { "move_ID": "214", "move_name": "Sleep Talk" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "608": {
@@ -9952,7 +9952,7 @@
       { "move_ID": "54" , "move_name": "Mist"       }, 
       { "move_ID": "214", "move_name": "Sleep Talk" }
     ], 
-    "level": null, 
+    "level": "41", 
     "gender_ratio": ["0", "1"]
   }, 
   "609": {
@@ -9968,7 +9968,7 @@
       { "move_ID": "54" , "move_name": "Mist"       }, 
       { "move_ID": "214", "move_name": "Sleep Talk" }
     ], 
-    "level": null, 
+    "level": "41", 
     "gender_ratio": ["0", "1"]
   }, 
   "610": {
@@ -10000,7 +10000,7 @@
       { "move_ID": "114", "move_name": "Haze"        }, 
       { "move_ID": "352", "move_name": "Water Pulse" }
     ], 
-    "level": null, 
+    "level": "38", 
     "gender_ratio": ["0", "1"]
   }, 
   "612": {
@@ -10016,7 +10016,7 @@
       { "move_ID": "114", "move_name": "Haze"        }, 
       { "move_ID": "352", "move_name": "Water Pulse" }
     ], 
-    "level": null, 
+    "level": "48", 
     "gender_ratio": ["0", "1"]
   }, 
   "613": {
@@ -10032,7 +10032,7 @@
       { "move_ID": "114", "move_name": "Haze"        }, 
       { "move_ID": "352", "move_name": "Water Pulse" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "614": {
@@ -10048,7 +10048,7 @@
       { "move_ID": "114", "move_name": "Haze"        }, 
       { "move_ID": "352", "move_name": "Water Pulse" }
     ], 
-    "level": null, 
+    "level": "37", 
     "gender_ratio": ["0", "1"]
   }, 
   "615": {
@@ -10064,7 +10064,7 @@
       { "move_ID": "114", "move_name": "Haze"        }, 
       { "move_ID": "352", "move_name": "Water Pulse" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "616": {
@@ -10096,7 +10096,7 @@
       { "move_ID": "114", "move_name": "Haze"        }, 
       { "move_ID": "352", "move_name": "Water Pulse" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "618": {
@@ -10128,7 +10128,7 @@
       { "move_ID": "114", "move_name": "Haze"        }, 
       { "move_ID": "352", "move_name": "Water Pulse" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "620": {
@@ -10139,7 +10139,7 @@
     "speabi1": "Inner Focus", 
     "speabi2": "Regenerator", 
     "speabi3": "Reckless", 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["0", "1"]
   }, 
   "621": {
@@ -10187,7 +10187,7 @@
       { "move_ID": "251", "move_name": "Beat Up"      }, 
       { "move_ID": "399", "move_name": "Dark Pulse"   }
     ], 
-    "level": null, 
+    "level": "43", 
     "gender_ratio": ["2"]
   }, 
   "624": {
@@ -10214,7 +10214,7 @@
     "speabi1": "Defiant", 
     "speabi2": "Inner Focus", 
     "speabi3": "Pressure", 
-    "level": null, 
+    "level": "52", 
     "gender_ratio": ["0", "1"]
   }, 
   "626": {
@@ -10225,7 +10225,7 @@
     "speabi1": "Reckless", 
     "speabi2": "Sap Sipper", 
     "speabi3": "Soundproof", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "627": {
@@ -10241,7 +10241,7 @@
       { "move_ID": "68" , "move_name": "Counter"     }, 
       { "move_ID": "162", "move_name": "Super Fang"  }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0"]
   }, 
   "628": {
@@ -10252,7 +10252,7 @@
     "speabi1": "Keen Eye", 
     "speabi2": "Sheer Force", 
     "speabi3": "Defiant", 
-    "level": null, 
+    "level": "54", 
     "gender_ratio": ["0"]
   }, 
   "629": {
@@ -10268,7 +10268,7 @@
       { "move_ID": "389", "move_name": "Sucker Punch" }, 
       { "move_ID": "162", "move_name": "Super Fang"   }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["1"]
   }, 
   "630": {
@@ -10284,7 +10284,7 @@
       { "move_ID": "285", "move_name": "Skill Swap" }, 
       { "move_ID": "356", "move_name": "Gravity"    }
     ], 
-    "level": null, 
+    "level": "54", 
     "gender_ratio": ["1"]
   }, 
   "631": {
@@ -10332,7 +10332,7 @@
       { "move_ID": "285", "move_name": "Skill Swap" }, 
       { "move_ID": "356", "move_name": "Gravity"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "634": {
@@ -10348,7 +10348,7 @@
       { "move_ID": "285", "move_name": "Skill Swap" }, 
       { "move_ID": "356", "move_name": "Gravity"    }
     ], 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["0", "1"]
   }, 
   "635": {
@@ -10364,7 +10364,7 @@
       { "move_ID": "285", "move_name": "Skill Swap" }, 
       { "move_ID": "356", "move_name": "Gravity"    }
     ], 
-    "level": null, 
+    "level": "64", 
     "gender_ratio": ["0", "1"]
   }, 
   "636": {
@@ -10380,7 +10380,7 @@
       { "move_ID": "285", "move_name": "Skill Swap" }, 
       { "move_ID": "356", "move_name": "Gravity"    }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["0", "1"]
   }, 
   "637": {
@@ -10396,7 +10396,7 @@
       { "move_ID": "285", "move_name": "Skill Swap" }, 
       { "move_ID": "356", "move_name": "Gravity"    }
     ], 
-    "level": null, 
+    "level": "59", 
     "gender_ratio": ["0", "1"]
   }, 
   "638": {
@@ -10412,7 +10412,7 @@
       { "move_ID": "285", "move_name": "Skill Swap" }, 
       { "move_ID": "356", "move_name": "Gravity"    }
     ], 
-    "level": null, 
+    "level": "42", 
     "gender_ratio": ["2"]
   }, 
   "639": {
@@ -10428,7 +10428,7 @@
       { "move_ID": "285", "move_name": "Skill Swap" }, 
       { "move_ID": "356", "move_name": "Gravity"    }
     ], 
-    "level": null, 
+    "level": "42", 
     "gender_ratio": ["2"]
   }, 
   "640": {
@@ -10439,7 +10439,7 @@
     "speabi1": "Justified", 
     "speabi2": null, 
     "speabi3": "Justified", 
-    "level": null, 
+    "level": "42", 
     "gender_ratio": ["2"]
   }, 
   "641": {
@@ -10455,7 +10455,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"   }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0"]
   }, 
   "641-therian": {
@@ -10473,7 +10473,7 @@
       { "move_ID": "95" , "move_name": "Hypnosis"   }, 
       { "move_ID": "162", "move_name": "Super Fang" }
     ], 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0"]
   }, 
   "642": {
@@ -10484,7 +10484,7 @@
     "speabi1": "Prankster", 
     "speabi2": null, 
     "speabi3": "Defiant", 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0"]
   }, 
   "642-therian": {
@@ -10497,7 +10497,7 @@
     "speabi1": "Volt Absorb", 
     "speabi2": null, 
     "speabi3": "Volt Absorb", 
-    "level": null, 
+    "level": "40", 
     "gender_ratio": ["0"]
   }, 
   "643": {
@@ -10513,7 +10513,7 @@
       { "move_ID": "298", "move_name": "Teeter Dance" }, 
       { "move_ID": "202", "move_name": "Giga Drain"   }
     ], 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["2"]
   }, 
   "644": {
@@ -10524,7 +10524,7 @@
     "speabi1": "Teravolt", 
     "speabi2": null, 
     "speabi3": "Teravolt", 
-    "level": null, 
+    "level": "50", 
     "gender_ratio": ["2"]
   }, 
   "645": {
@@ -10535,7 +10535,7 @@
     "speabi1": "Sand Force", 
     "speabi2": null, 
     "speabi3": "Sheer Force", 
-    "level": null, 
+    "level": "70", 
     "gender_ratio": ["0"]
   }, 
   "645-therian": {
@@ -10548,7 +10548,7 @@
     "speabi1": "Intimidate", 
     "speabi2": null, 
     "speabi3": "Intimidate", 
-    "level": null, 
+    "level": "70", 
     "gender_ratio": ["0"]
   }, 
   "646": {
@@ -10564,7 +10564,7 @@
       { "move_ID": "440", "move_name": "Cross Poison" }, 
       { "move_ID": "235", "move_name": "Synthesis"    }
     ], 
-    "level": null, 
+    "level": "75", 
     "gender_ratio": ["2"]
   }, 
   "646-white": {
@@ -10582,7 +10582,7 @@
       { "move_ID": "440", "move_name": "Cross Poison" }, 
       { "move_ID": "235", "move_name": "Synthesis"    }
     ], 
-    "level": null, 
+    "level": "75", 
     "gender_ratio": ["2"]
   }, 
   "646-black": {
@@ -10600,7 +10600,7 @@
       { "move_ID": "440", "move_name": "Cross Poison" }, 
       { "move_ID": "235", "move_name": "Synthesis"    }
     ], 
-    "level": null, 
+    "level": "75", 
     "gender_ratio": ["2"]
   }, 
   "647": {
@@ -10611,7 +10611,7 @@
     "speabi1": "Justified", 
     "speabi2": null, 
     "speabi3": "Justified", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "647-resolute": {
@@ -10624,7 +10624,7 @@
     "speabi1": "Justified", 
     "speabi2": null, 
     "speabi3": "Justified", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "648-aria": {
@@ -10642,7 +10642,7 @@
       { "move_ID": "226", "move_name": "Baton Pass" }, 
       { "move_ID": "285", "move_name": "Skill Swap" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "648-pirouette": {
@@ -10660,7 +10660,7 @@
       { "move_ID": "226", "move_name": "Baton Pass" }, 
       { "move_ID": "285", "move_name": "Skill Swap" }
     ], 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "649": {
@@ -10671,7 +10671,7 @@
     "speabi1": "Download", 
     "speabi2": null, 
     "speabi3": "Download", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "649-douse": {
@@ -10684,7 +10684,7 @@
     "speabi1": "Download", 
     "speabi2": null, 
     "speabi3": "Download", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "649-shock": {
@@ -10697,7 +10697,7 @@
     "speabi1": "Download", 
     "speabi2": null, 
     "speabi3": "Download", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "649-burn": {
@@ -10710,7 +10710,7 @@
     "speabi1": "Download", 
     "speabi2": null, 
     "speabi3": "Download", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }, 
   "649-chill": {
@@ -10723,7 +10723,7 @@
     "speabi1": "Download", 
     "speabi2": null, 
     "speabi3": "Download", 
-    "level": null, 
+    "level": "10", 
     "gender_ratio": ["2"]
   }
 }
