@@ -207,7 +207,7 @@ def handle_dreamland_top(_query):
 
     # --- Encounter builders ---
     def make_pokemon_encounter(pkmn, pdata, obj_id, obj_pkmn_id, category="0"):
-        gender_id  = randint(0, 1)
+        gender_id = choice(pkmn["gender_ratio"])
         gender_key = "male" if gender_id == 0 else "female"
 
         # Use the gender-specific minigame list
