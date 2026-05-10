@@ -16,5 +16,31 @@
     <string id="k_ad_14">k_ad_14</string>
     <string id="k_ad_15">Current garden bed</string>
 
+    <string id="b_ad_4">Berry name</string>
+
+    <!-- no berry planted -->
+    <string id="k_ae_2">Plant a Berry&#xD;in the garden?</string>
+
+    <!-- berry stage 0: soil -->
+    <string id="k_ag_2">[arg0]!&#xD;It's planted!</string>
+
+    <!-- berry stage 1: sprout -->
+    <string id="k_ai_1">[arg0]!&#xD;It's sprouting!</string>
+
+    <!-- berry stage 2: trunk -->
+    <string id="k_aj_1">[arg0]!&#xD;It's growing!</string>
+
+    <!-- berry stage 3: flower -->
+    <string id="k_ak_1">[arg0]!&#xD;It's blooming!</string>
+
+    <!-- berry stage 4: fruit -->
+    <string id="k_al_1">[arg0]!&#xD;It has Berries!</string>
+
+    <string id="k_aff_1">Plant this Berry?</string>
+    <string id="k_afff_1">Planted the&#xD;[arg0].</string>
+    <string id="k_aha_1">The soil is&#xD;very moist.</string>
+    <string id="s_ad_2">Close</string>
+    <string id="k_ag_1">See Details</string>
+
     <string id="h_da_3">Return to your home.</string>
 </data>

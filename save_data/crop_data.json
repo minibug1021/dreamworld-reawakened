@@ -1,0 +1,75 @@
+{
+  "croft_list": [
+    {
+      "my_croft_id": 1000,
+      "x": 1,
+      "y": 1
+    },
+    {
+      "my_croft_id": 1001,
+      "pokeitem_id": 200,
+      "kinomi": "Chilan Berry",
+      "kinomi_id": 52,
+      "dirt_hp": 50,
+      "desc1": "Weakens a Normal-type attack against",
+      "desc2": "the Pokémon holding this berry.",
+      "desc3": "",
+      "kinomi_state": 0,
+      "x": 2,
+      "y": 1
+    },
+    {
+      "my_croft_id": 1002,
+      "pokeitem_id": 200,
+      "kinomi": "Chilan Berry",
+      "kinomi_id": 52,
+      "dirt_hp": 50,
+      "desc1": "Weakens a Normal-type attack against",
+      "desc2": "the Pokémon holding this berry.",
+      "desc3": "",
+      "kinomi_state": 1,
+      "x": 3,
+      "y": 1
+    },
+    {
+      "my_croft_id": 1002,
+      "pokeitem_id": 200,
+      "kinomi": "Chilan Berry",
+      "kinomi_id": 52,
+      "dirt_hp": 50,
+      "desc1": "Weakens a Normal-type attack against",
+      "desc2": "the Pokémon holding this berry.",
+      "desc3": "",
+      "kinomi_state": 2,
+      "x": 1,
+      "y": 2
+    },
+    {
+      "my_croft_id": 1002,
+      "pokeitem_id": 200,
+      "kinomi": "Chilan Berry",
+      "kinomi_id": 52,
+      "dirt_hp": 50,
+      "desc1": "Weakens a Normal-type attack against",
+      "desc2": "the Pokémon holding this berry.",
+      "desc3": "",
+      "kinomi_state": 3,
+      "x": 2,
+      "y": 2
+    },
+    {
+      "my_croft_id": 1002,
+      "pokeitem_id": 200,
+      "kinomi": "Chilan Berry",
+      "kinomi_id": 52,
+      "dirt_hp": 50,
+      "desc1": "Weakens a Normal-type attack against",
+      "desc2": "the Pokémon holding this berry.",
+      "desc3": "",
+      "kinomi_state": 4,
+      "x": 3,
+      "y": 2
+    }
+  ],
+  "diglett_flag": 0
+}

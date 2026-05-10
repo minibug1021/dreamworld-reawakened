@@ -1,0 +1,69 @@
+{
+  "cnt": "8",
+  "list": [
+    {
+      "pokeitem_id": 290,
+      "pokeitem": "Power Belt",
+      "item_cnt": "57",
+      "bunrui_no": "1",
+      "b_hozon_sentou": "1",
+      "date": "2026-05-02"
+    },
+    {
+      "pokeitem_id": 305,
+      "pokeitem": "Earth Plate",
+      "item_cnt": "68",
+      "bunrui_no": "1",
+      "b_hozon_sentou": "1",
+      "date": "2026-05-02"
+    },
+    {
+      "pokeitem_id": 538,
+      "pokeitem": "Eviolite",
+      "item_cnt": "26",
+      "bunrui_no": "1",
+      "b_hozon_sentou": "1",
+      "date": "2026-05-01"
+    },
+    {
+      "pokeitem_id": 106,
+      "pokeitem": "Rare Bone",
+      "item_cnt": "29",
+      "bunrui_no": "1",
+      "b_hozon_sentou": "1",
+      "date": "2026-05-03"
+    },
+    {
+      "pokeitem_id": 54,
+      "pokeitem": "Old Gateau",
+      "item_cnt": "83",
+      "bunrui_no": "1",
+      "b_hozon_sentou": "1",
+      "date": "2026-05-01"
+    },
+    {
+      "pokeitem_id": 200,
+      "pokeitem": "Chilan Berry",
+      "item_cnt": "89",
+      "bunrui_no": "1",
+      "b_hozon_sentou": "1",
+      "date": "2026-05-03"
+    },
+    {
+      "pokeitem_id": 194,
+      "pokeitem": "Tanga Berry",
+      "item_cnt": "35",
+      "bunrui_no": "1",
+      "b_hozon_sentou": "1",
+      "date": "2026-05-03"
+    },
+    {
+      "pokeitem_id": 156,
+      "pokeitem": "Persim Berry",
+      "item_cnt": "45",
+      "bunrui_no": "1",
+      "b_hozon_sentou": "1",
+      "date": "2026-05-03"
+    }
+  ]
+}
