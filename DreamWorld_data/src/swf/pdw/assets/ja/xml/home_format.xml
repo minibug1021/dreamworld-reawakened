@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data locale="en">
+    <string id="dialog_32" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="fr_aa_1" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="fr_aa_2" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="fr_aa_3" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="fr_aa_4" size="14" color="0xffffff" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="fr_aa_5" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="fr_aa_6" size="14" color="0xffffff" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="h_ca_1" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="h_ca_2" size="14" color="0xffffff" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="h_ca_3" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="h_ca_4" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="h_ca_5" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="h_ca_6" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="h_ha_1" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+    <string id="h_ha_2" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+</data>
