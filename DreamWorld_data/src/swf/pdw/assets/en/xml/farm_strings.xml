@@ -16,6 +16,13 @@
     <string id="k_ad_14">k_ad_14</string>
     <string id="k_ad_15">Current garden bed</string>
 
+    <!-- diglett -->
+    <string id="k_as_1">Diglett showed up!</string>
+    <string id="k_at_1">Diglett started plowing&#xD;[arg0]'s garden.</string>
+    <string id="k_au_1">Diglett left the garden.</string>
+    <string id="k_ar_1">A garden bed has been added.</string>
+    <string id="k_asa_1">There are now [arg0] garden beds&#xD;now, thanks to Diglett.</string>
+
     <string id="b_ad_4">Berry name</string>
 
     <!-- no berry planted -->

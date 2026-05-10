@@ -104,12 +104,4 @@
     <string id="h_ee_8">Nature</string>
     <string id="h_ee_9">Poké Ball Used</string>
 
-    <!-- Confirm quit menu -->
-    <string id="dc_aa_1">List of Pokémon to take</string>
-    <string id="dc_aa_2">After using Game Sync to wake up your Pokémon, go to the Entree Forest to meet the Pokémon you took.</string>
-    <string id="dc_aa_3">If there is another Pokémon you'd like to take, click "Back" and check the Friend Board in your home.</string>
-    <string id="dc_aa_4">It may take some time for the Pokémon you wished for at the Tree of Dreams to appear at the Friend Board.</string>
-    <string id="dc_aa_5">Next</string>
-    <string id="dc_aa_6">Back</string>
-
 </data>
