@@ -5,9 +5,7 @@ from random import choice
 from random import choices
 from random import randint
 
-from game_data import player_data, crop_data, chest_data
-from game_data import item_info, pokemon_info, area_info, pokemon_natures
-from game_data import generate_otoken, date_to_unix, get_random_pokemon
+import game_data
 
 encounter_store = {}
 
@@ -15,7 +13,7 @@ def handle_dreamland_top(_query):
     if _query["is_random"]:
         object_list = []
         for _ in range(10):
-            pkmn = get_random_pokemon()
+            pkmn = game_data.get_random_pokemon()
             
             object_list.append(
                 {
@@ -31,7 +29,7 @@ def handle_dreamland_top(_query):
                 "kinomi_count": 0,
                 "pokeitem_id": 0,
                 "object_pokemon_id": 0,
-                "otoken": generate_otoken()
+                "otoken": game_data.generate_otoken()
                 }
             )
         response = {
@@ -41,10 +39,10 @@ def handle_dreamland_top(_query):
         return json.dumps(response).encode()
 
     # --- get player game version ---
-    rom_name      = player_data["member"]["rom_name"]
-    player_points = int(player_data["member"]["point"])
-    player_badges = int(player_data["member"]["player_badge_num"])
-    player_types  = {player_data["member"]["type1"], player_data["member"]["type2"]}
+    rom_name      = game_data.player_data["member"]["rom_name"]
+    player_points = int(game_data.player_data["member"]["point"])
+    player_badges = int(game_data.player_data["member"]["player_badge_num"])
+    player_types  = {game_data.player_data["member"]["type1"], game_data.player_data["member"]["type2"]}
 
     is_bw   = rom_name in ("Pokémon Black Version", "Pokémon White Version")
     is_b2w2 = rom_name in ("Pokémon Black Version 2", "Pokémon White Version 2")
@@ -53,7 +51,7 @@ def handle_dreamland_top(_query):
     # --- select eligible Dream Island area ---
     eligible_areas = []
     area_weights   = []
-    for area_id, area in area_info.items():
+    for area_id, area in game_data.area_info.items():
         if area_id == "50": #we don't have the file for Pokémon Café Forest
             continue
 
@@ -69,7 +67,7 @@ def handle_dreamland_top(_query):
 
     dreamland_area_id = choices(eligible_areas, weights=area_weights, k=1)[0]
 
-    area = area_info[dreamland_area_id]
+    area = game_data.area_info[dreamland_area_id]
 
     # --- filter eligible Pokémon for the chosen area ---
     def get_eligible_pokemon() -> dict:
@@ -90,7 +88,7 @@ def handle_dreamland_top(_query):
         eligible = get_eligible_pokemon()
         natdex = choice(list(eligible.keys()))
         pdata  = eligible[natdex]
-        pkmn_entry = pokemon_info.get(natdex)
+        pkmn_entry = game_data.pokemon_info.get(natdex)
 
         pkmn = {**pkmn_entry, "pokemon_no": natdex}
         return pkmn, pdata
@@ -118,7 +116,7 @@ def handle_dreamland_top(_query):
         encounter_store[str(obj_pkmn_id)] = {"type": "pokemon", "pokemon": pkmn}
         return {
             "object_id":         str(obj_id),
-            "otoken":            generate_otoken(),
+            "otoken":            game_data.generate_otoken(),
             "public_date_from":  None,
             "public_date_to":    None,
             "object_category":   category,
@@ -145,7 +143,7 @@ def handle_dreamland_top(_query):
         encounter_store[str(obj_pkmn_id)] = {"type": "item", "item_id": item_id}
         return {
             "object_id":         str(obj_id),
-            "otoken":            generate_otoken(),
+            "otoken":            game_data.generate_otoken(),
             "public_date_from":  None,
             "public_date_to":    None,
             "object_category":   "2",
@@ -190,7 +188,7 @@ def handle_dreamland_tree_top(_query):
     encount_list = []
     
     for _ in range(count):
-        pkmn = get_random_pokemon()
+        pkmn = game_data.get_random_pokemon()
 
         pokemon_list.append({
             "pokemon_no":        pkmn["pokemon_no"],
@@ -204,7 +202,7 @@ def handle_dreamland_tree_top(_query):
             "type1":             pkmn["type1"],
             "type2":             pkmn["type2"],
             "sex_id":            0,
-            "pokekaku":          choice(pokemon_natures),
+            "pokekaku":          choice(game_data.pokemon_natures),
             "pokeplace":         "Route 1",
             "ball_name":         "Poke Ball"
         }
@@ -250,7 +248,7 @@ def handle_game_clear(_query):
             "pokemon": None,
             "item": {
                 "pokeitem_id":   int(item_id),
-                "pokeitem":      item_info[item_id]["item_name"],
+                "pokeitem":      game_data.item_info[item_id]["item_name"],
                 "poke_item_num": 1,
             },
             "interior": None,

@@ -1,0 +1,386 @@
+{
+  "1": {
+    "name": "Cheri Berry",
+    "grow_time": 18,
+    "max_yield": 5,
+    "drain_rate": 7.5
+  },
+  "2": {
+    "name": "Chesto Berry",
+    "grow_time": 18,
+    "max_yield": 5,
+    "drain_rate": 7.5
+  },
+  "3": {
+    "name": "Pecha Berry",
+    "grow_time": 18,
+    "max_yield": 5,
+    "drain_rate": 7.5
+  },
+  "4": {
+    "name": "Rawst Berry",
+    "grow_time": 18,
+    "max_yield": 5,
+    "drain_rate": 7.5
+  },
+  "5": {
+    "name": "Aspear Berry",
+    "grow_time": 18,
+    "max_yield": 5,
+    "drain_rate": 7.5
+  },
+  "6": {
+    "name": "Leppa Berry",
+    "grow_time": 24,
+    "max_yield": 5,
+    "drain_rate": 7.5
+  },
+  "7": {
+    "name": "Oran Berry",
+    "grow_time": 24,
+    "max_yield": 5,
+    "drain_rate": 7.5
+  },
+  "8": {
+    "name": "Persim Berry",
+    "grow_time": 24,
+    "max_yield": 5,
+    "drain_rate": 7.5
+  },
+  "9": {
+    "name": "Lum Berry",
+    "grow_time": 72,
+    "max_yield": 5,
+    "drain_rate": 4
+  },
+  "10": {
+    "name": "Sitrus Berry",
+    "grow_time": 48,
+    "max_yield": 5,
+    "drain_rate": 3.5
+  },
+  "11": {
+    "name": "Figy Berry",
+    "grow_time": 30,
+    "max_yield": 5,
+    "drain_rate": 5
+  },
+  "12": {
+    "name": "Wiki Berry",
+    "grow_time": 30,
+    "max_yield": 5,
+    "drain_rate": 5
+  },
+  "13": {
+    "name": "Mago Berry",
+    "grow_time": 30,
+    "max_yield": 5,
+    "drain_rate": 5
+  },
+  "14": {
+    "name": "Aguav Berry",
+    "grow_time": 30,
+    "max_yield": 5,
+    "drain_rate": 5
+  },
+  "15": {
+    "name": "Iapapa Berry",
+    "grow_time": 30,
+    "max_yield": 5,
+    "drain_rate": 5
+  },
+  "16": {
+    "name": "Razz Berry",
+    "grow_time": 12,
+    "max_yield": 10,
+    "drain_rate": 17.5
+  },
+  "17": {
+    "name": "Bluk Berry",
+    "grow_time": 12,
+    "max_yield": 10,
+    "drain_rate": 17.5
+  },
+  "18": {
+    "name": "Nanab Berry",
+    "grow_time": 12,
+    "max_yield": 10,
+    "drain_rate": 17.5
+  },
+  "19": {
+    "name": "Wepear Berry",
+    "grow_time": 12,
+    "max_yield": 10,
+    "drain_rate": 17.5
+  },
+  "20": {
+    "name": "Pinap Berry",
+    "grow_time": 12,
+    "max_yield": 10,
+    "drain_rate": 17.5
+  },
+  "21": {
+    "name": "Pomeg Berry",
+    "grow_time": 48,
+    "max_yield": 5,
+    "drain_rate": 4
+  },
+  "22": {
+    "name": "Kelpsy Berry",
+    "grow_time": 48,
+    "max_yield": 5,
+    "drain_rate": 4
+  },
+  "23": {
+    "name": "Qualot Berry",
+    "grow_time": 48,
+    "max_yield": 5,
+    "drain_rate": 4
+  },
+  "24": {
+    "name": "Hondew Berry",
+    "grow_time": 48,
+    "max_yield": 5,
+    "drain_rate": 4
+  },
+  "25": {
+    "name": "Grepa Berry",
+    "grow_time": 48,
+    "max_yield": 5,
+    "drain_rate": 4
+  },
+  "26": {
+    "name": "Tamato Berry",
+    "grow_time": 48,
+    "max_yield": 5,
+    "drain_rate": 4
+  },
+  "27": {
+    "name": "Cornn Berry",
+    "grow_time": 36,
+    "max_yield": 10,
+    "drain_rate": 5
+  },
+  "28": {
+    "name": "Magost Berry",
+    "grow_time": 36,
+    "max_yield": 10,
+    "drain_rate": 5
+  },
+  "29": {
+    "name": "Rabuta Berry",
+    "grow_time": 36,
+    "max_yield": 10,
+    "drain_rate": 5
+  },
+  "30": {
+    "name": "Nomel Berry",
+    "grow_time": 36,
+    "max_yield": 10,
+    "drain_rate": 5
+  },
+  "31": {
+    "name": "Spelon Berry",
+    "grow_time": 90,
+    "max_yield": 15,
+    "drain_rate": 4
+  },
+  "32": {
+    "name": "Pamtre Berry",
+    "grow_time": 90,
+    "max_yield": 15,
+    "drain_rate": 4
+  },
+  "33": {
+    "name": "Watmel Berry",
+    "grow_time": 90,
+    "max_yield": 15,
+    "drain_rate": 4
+  },
+  "34": {
+    "name": "Durin Berry",
+    "grow_time": 90,
+    "max_yield": 15,
+    "drain_rate": 4
+  },
+  "35": {
+    "name": "Belue Berry",
+    "grow_time": 90,
+    "max_yield": 15,
+    "drain_rate": 4
+  },
+  "36": {
+    "name": "Occa Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "37": {
+    "name": "Passho Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "38": {
+    "name": "Wacan Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "39": {
+    "name": "Rindo Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "40": {
+    "name": "Yache Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "41": {
+    "name": "Chople Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "42": {
+    "name": "Kebia Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "43": {
+    "name": "Shuca Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "44": {
+    "name": "Coba Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "45": {
+    "name": "Payapa Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "46": {
+    "name": "Tanga Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "47": {
+    "name": "Charti Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "48": {
+    "name": "Kasib Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "49": {
+    "name": "Haban Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "50": {
+    "name": "Colbur Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "51": {
+    "name": "Babiri Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "52": {
+    "name": "Chilan Berry",
+    "grow_time": 108,
+    "max_yield": 5,
+    "drain_rate": 3
+  },
+  "53": {
+    "name": "Liechi Berry",
+    "grow_time": 144,
+    "max_yield": 5,
+    "drain_rate": 2
+  },
+  "54": {
+    "name": "Ganlon Berry",
+    "grow_time": 144,
+    "max_yield": 5,
+    "drain_rate": 2
+  },
+  "55": {
+    "name": "Salac Berry",
+    "grow_time": 144,
+    "max_yield": 5,
+    "drain_rate": 2
+  },
+  "56": {
+    "name": "Petaya Berry",
+    "grow_time": 144,
+    "max_yield": 5,
+    "drain_rate": 2
+  },
+  "57": {
+    "name": "Apicot Berry",
+    "grow_time": 144,
+    "max_yield": 5,
+    "drain_rate": 2
+  },
+  "58": {
+    "name": "Lansat Berry",
+    "grow_time": 144,
+    "max_yield": 5,
+    "drain_rate": 2
+  },
+  "59": {
+    "name": "Starf Berry",
+    "grow_time": 144,
+    "max_yield": 5,
+    "drain_rate": 2
+  },
+  "60": {
+    "name": "Enigma Berry",
+    "grow_time": 144,
+    "max_yield": 5,
+    "drain_rate": 3.5
+  },
+  "61": {
+    "name": "Micle Berry",
+    "grow_time": 144,
+    "max_yield": 5,
+    "drain_rate": 3.5
+  },
+  "62": {
+    "name": "Custap Berry",
+    "grow_time": 144,
+    "max_yield": 5,
+    "drain_rate": 3.5
+  },
+  "63": {
+    "name": "Jaboca Berry",
+    "grow_time": 144,
+    "max_yield": 5,
+    "drain_rate": 3.5
+  },
+  "64": {
+    "name": "Rowap Berry",
+    "grow_time": 144,
+    "max_yield": 5,
+    "drain_rate": 3.5
+  }
+}

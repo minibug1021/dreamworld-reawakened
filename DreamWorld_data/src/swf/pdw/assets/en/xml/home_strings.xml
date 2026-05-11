@@ -12,6 +12,7 @@
     <!--Footprint Mat-->
     <string id="m_aa_1">Footprint</string> <!--Title when looking at mat-->
     <string id="m_aa_2">See more</string>
+    <string id="m_af_1">See Details</string>
     <string id="m_af_2">Check mat</string>
     <string id="m_af_3">See who visited.</string>
     <string id="m_af_4">Date</string>
@@ -19,6 +20,8 @@
     <string id="m_af_6">Pokémon's Nickname</string>
     <string id="m_af_7">Type</string>
     <string id="m_af_8">Action</string>
+    <string id="m_af_11">Nickname:</string>
+    <string id="m_af_12">PGL Nickname</string>
 
     <!--Garden-->
     <string id="k_ad_1">[arg0]'s garden</string>

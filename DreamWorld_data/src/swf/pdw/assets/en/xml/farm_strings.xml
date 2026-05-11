@@ -43,6 +43,10 @@
     <!-- berry stage 4: fruit -->
     <string id="k_al_1">[arg0]!&#xD;It has Berries!</string>
 
+    <!-- berry get -->
+    <string id="k_am_1">[arg0] Harvested: [arg1]</string>
+    <string id="k_am_3">Berries were put in the Treasure Chest.</string>
+
     <string id="k_aff_1">Plant this Berry?</string>
     <string id="k_afff_1">Planted the&#xD;[arg0].</string>
     <string id="k_aha_1">The soil is&#xD;very moist.</string>

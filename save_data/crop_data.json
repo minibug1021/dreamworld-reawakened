@@ -7,14 +7,6 @@
     },
     {
       "my_croft_id": 1001,
-      "pokeitem_id": 200,
-      "kinomi": "Chilan Berry",
-      "kinomi_id": 52,
-      "dirt_hp": 50,
-      "desc1": "Weakens a Normal-type attack against",
-      "desc2": "the Pokémon holding this berry.",
-      "desc3": "",
-      "kinomi_state": 0,
       "x": 2,
       "y": 1
     },
@@ -23,39 +15,54 @@
       "pokeitem_id": 200,
       "kinomi": "Chilan Berry",
       "kinomi_id": 52,
-      "dirt_hp": 50,
+      "dirt_hp": 0,
       "desc1": "Weakens a Normal-type attack against",
       "desc2": "the Pokémon holding this berry.",
       "desc3": "",
-      "kinomi_state": 1,
+      "kinomi_state": 4,
       "x": 3,
-      "y": 1
+      "y": 1,
+      "server": {
+        "planted_time": 1777785025,
+        "last_update_time": 1778518540,
+        "yield": 5
+      }
     },
     {
       "my_croft_id": 1003,
       "pokeitem_id": 200,
       "kinomi": "Chilan Berry",
       "kinomi_id": 52,
-      "dirt_hp": 100,
+      "dirt_hp": 0,
       "desc1": "Weakens a Normal-type attack against",
       "desc2": "the Pokémon holding this berry.",
       "desc3": "",
-      "kinomi_state": 2,
+      "kinomi_state": 4,
       "x": 1,
-      "y": 2
+      "y": 2,
+      "server": {
+        "planted_time": 1777785025,
+        "last_update_time": 1778518540,
+        "yield": 5
+      }
     },
     {
       "my_croft_id": 1004,
       "pokeitem_id": 200,
       "kinomi": "Chilan Berry",
       "kinomi_id": 52,
-      "dirt_hp": 10,
+      "dirt_hp": 0,
       "desc1": "Weakens a Normal-type attack against",
       "desc2": "the Pokémon holding this berry.",
       "desc3": "",
-      "kinomi_state": 3,
+      "kinomi_state": 4,
       "x": 2,
-      "y": 2
+      "y": 2,
+      "server": {
+        "planted_time": 1777785025,
+        "last_update_time": 1778518540,
+        "yield": 5
+      }
     },
     {
       "my_croft_id": 1005,
@@ -68,7 +75,12 @@
       "desc3": "",
       "kinomi_state": 4,
       "x": 3,
-      "y": 2
+      "y": 2,
+      "server": {
+        "planted_time": 1777785025,
+        "last_update_time": 1778518540,
+        "yield": 5
+      }
     },
     {
       "my_croft_id": 1006,

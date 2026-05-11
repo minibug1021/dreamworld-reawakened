@@ -14,5 +14,8 @@
 
 # Other Info
 
-By default, the player Pokemon will be pulled from `json_data/player_data.json`. If you want your player Pokemon to random, launch the server with `main.py --random`
+Save data will be pulled from the three files in `json_data`, and these can be edited as desired.
+
+Save data that is currently managed by the server:
+- Functionality related to Berries. Planting, watering, and harvesting work as expected. Berries will grow over time and their water level will deplete. When harvesting Berries, they will be placed in the player's Treasure Chest, which will be updated on disk as well.
 

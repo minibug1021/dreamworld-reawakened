@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 import json
+import time
 import argparse
 from pathlib import Path
 from urllib.parse import quote, unquote, parse_qs, urlencode
 
 from server import run
+
+import game_data
 
 ROOT_DIR = Path(__file__).resolve().parent
 
@@ -43,16 +46,51 @@ def inject_htm_playerdata() -> None:
 
     htm_file.write_text(str(htm_data))
 
+def process_berry_growth():
+    current_time = round(time.time())
+
+    for plant in game_data.crop_data["croft_list"]:
+        if "dirt_hp" not in plant:
+            continue
+
+        curr_berry_data = game_data.berry_data[str(plant["kinomi_id"])]
+
+        hours_since_planted = (current_time - plant["server"]["planted_time"]) // 3600
+        hours_since_update = (current_time - plant["server"]["last_update_time"]) // 3600
+
+        single_stage_time = curr_berry_data["grow_time"] / 4
+
+        for hour in range(hours_since_update):
+            total_hours = hours_since_planted + hour
+            plant["kinomi_state"] = min(total_hours // single_stage_time, 4)
+
+            if (plant["dirt_hp"] == 0) and (plant["kinomi_state"] != 4): #remove 1/5th of the berry's max, but no lower than 2 berries
+                #I am also assuming that plants which are ready to harvest will not lose berry yield
+                plant["server"]["yield"] = max(plant["server"]["yield"] - (curr_berry_data["max_yield"] * 0.2), 2)
+            else:
+                plant["dirt_hp"] -= curr_berry_data["drain_rate"]
+        
+        if plant["dirt_hp"] < 0:
+            plant["dirt_hp"] = 0
+
+        plant["server"]["last_update_time"] = current_time
+
+    game_data.save_crops()
+    
+    #print(json.dumps(crop_data, indent=2, ensure_ascii=False))
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Dream Park HTTP server")
     parser.add_argument("port", nargs="?", type=int, default=8080)
     parser.add_argument("--debug", action="store_true")
     parser.add_argument("--random", action="store_true", default=False)
-    parser.add_argument("--run-webpage", default=False)
+    parser.add_argument("--run-webpage", action='store_true', default=False)
     args = parser.parse_args()
 
     if args.run_webpage:
         from bs4 import BeautifulSoup as bs
         inject_htm_playerdata()
+
+    process_berry_growth()
     
     run(port=args.port, debug=args.debug, is_random=args.random)

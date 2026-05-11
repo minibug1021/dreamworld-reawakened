@@ -4,9 +4,7 @@ import json
 from random import choice
 from random import randint
 
-from game_data import player_data, crop_data, chest_data
-from game_data import item_info, pokemon_info, area_info, pokemon_natures
-from game_data import generate_otoken, date_to_unix, get_random_pokemon
+import game_data
 
 from dreamland_handler import handle_dreamland_top, handle_dreamland_tree_top, handle_game_clear
 
@@ -20,7 +18,7 @@ STATIC_GET_RESPONSES = {
     "pgl.top.init":                b"{}",
     "pdw.home.my_bridge":          b"{}",
     "pdw.croft.tutorial_start":    b"{}",
-    "pdw.croft.tutorial_end":      b"{}"
+    "pdw.croft.tutorial_end":      b"{}",
 }
 
 STATIC_POST_RESPONSES = {
@@ -33,11 +31,6 @@ STATIC_POST_RESPONSES = {
 # ---------------------
 # Dynamic API responses
 # ---------------------
-
-def handle_my_croft_list(_query):
-
-    return json.dumps(crop_data).encode()
-
 
 def handle_waterpot_list_GET(_query):
     response = {
@@ -65,12 +58,12 @@ def handle_item_list(_query):
     sort_key = int(_query.get("sort_key", [3])[0])
 
     if item_kind_id == 0: #all items
-        item_list = chest_data["list"]
+        item_list = game_data.chest_data["list"]
     elif item_kind_id == 1: #only berries
-        item_list = [item for item in chest_data["list"] if int(item["pokeitem_id"]) in range(149, 213)]
+        item_list = [item for item in game_data.chest_data["list"] if int(item["pokeitem_id"]) in range(149, 213)]
 
     if sort_key == 1: #date
-        item_list = sorted(item_list, key=lambda x: date_to_unix(x["date"]), reverse=True)
+        item_list = sorted(item_list, key=lambda x: game_data.date_to_unix(x["date"]), reverse=True)
     elif sort_key == 2: #type
         item_list = sorted(
             item_list,
@@ -87,9 +80,9 @@ def handle_item_list(_query):
 
 def handle_my_island(_query):
     if _query["is_random"]:
-        pkmn = get_random_pokemon()
+        pkmn = game_data.get_random_pokemon()
     else:
-        pkmn = player_data["member"]
+        pkmn = game_data.player_data["member"]
 
     response = {
         "pokemon": {
@@ -99,10 +92,10 @@ def handle_my_island(_query):
             "type1":             pkmn["type1"],
             "type2":             pkmn["type2"],
             "pokemon_nickname":  None,
-            "oyaname":           pkmn.get("alter_rom_name", player_data["member"]["pgl_name"]),
+            "oyaname":           pkmn.get("alter_rom_name", game_data.player_data["member"]["pgl_name"]),
             "level":             randint(1, 100),
             "sex":               randint(0, 1),
-            "personality":       choice(pokemon_natures),
+            "personality":       choice(game_data.pokemon_natures),
             "place":             "PlayerName\"s Island",
             "ball_name":         "Poke Ball"
         },
@@ -127,9 +120,10 @@ def handle_footprint_list(_query):
             "is_ds": 0,
             "friend_type": 0,
             "updated_at": "2026/05/06 22:00",
-            "pokemon_nickname": "",
-            "pokemon_name": "Pikachu",
-            "pgl_name": "PlayerName",
+            "pokemon_nickname": "pokemon_nickname",
+            "pokemon_name": "pokemon_name",
+            "pgl_name": "pgl_name",
+            "alter_rom_name": "alter_rom_name",
             "pokemon_no": choice(valid_footprints),
             "form_no": "0"
         }
@@ -137,43 +131,83 @@ def handle_footprint_list(_query):
 
     return json.dumps(footprint_list).encode()
 
+def handle_croft_list(_query):
+    return(json.dumps(game_data.crop_data).encode())
+
 # --------
 
 def handle_kinomi_sowing(_query):
     my_croft_id = int(_query.get("my_croft_id")[0])
     pokeitem_id = _query.get("pokeitem_id")[0]
     
-    for index, plant in enumerate(crop_data["croft_list"]):
-        if plant["my_croft_id"] != my_croft_id:
-            continue
+    for plant in game_data.crop_data["croft_list"]:
+        if plant["my_croft_id"] == my_croft_id:
+            break
 
-        crop_data["croft_list"][index] = {
-            "my_croft_id": my_croft_id,
-            "pokeitem_id": int(pokeitem_id),
-            "kinomi": item_info[pokeitem_id]["item_name"],
-            "kinomi_id": int(pokeitem_id) - 148,
-            "dirt_hp": 0,
-            "desc1": item_info[pokeitem_id]["desc"][0],
-            "desc2": item_info[pokeitem_id]["desc"][1],
-            "desc3": item_info[pokeitem_id]["desc"][2],
-            "kinomi_state": 0,
-            "x": plant["x"],
-            "y": plant["y"]
-        }
+    current_time = round(time.time())
+    berry_id = int(pokeitem_id) - 148
 
-    return json.dumps(crop_data).encode()
+    plant.update({
+        "my_croft_id": my_croft_id,
+        "pokeitem_id": int(pokeitem_id),
+        "kinomi": game_data.item_info[pokeitem_id]["item_name"],
+        "kinomi_id": berry_id,
+        "dirt_hp": 100,
+        "desc1": game_data.item_info[pokeitem_id]["desc"][0],
+        "desc2": game_data.item_info[pokeitem_id]["desc"][1],
+        "desc3": game_data.item_info[pokeitem_id]["desc"][2],
+        "kinomi_state": 0,
+        "x": plant["x"],
+        "y": plant["y"],
+        "server": {"planted_time": current_time, "last_update_time": current_time, "yield": game_data.berry_data[str(berry_id)]["max_yield"]}
+    })
+
+    game_data.save_crops()
+
+    return json.dumps(game_data.crop_data).encode()
 
 
 def handle_kinomi_watering(_query):
     my_croft_id = int(_query.get("my_croft_id")[0])
 
-    for index, plant in enumerate(crop_data["croft_list"]):
-        if plant["my_croft_id"] != my_croft_id:
-            continue
+    for plant in game_data.crop_data["croft_list"]:
+        if plant["my_croft_id"] == my_croft_id:
+            break
 
-        crop_data["croft_list"][index]["dirt_hp"] = 100
+    plant["dirt_hp"] = 100
 
-    return json.dumps(crop_data).encode()
+    game_data.save_crops()
+
+    return json.dumps(game_data.crop_data).encode()
+
+
+def handle_kinomi_harvesting(_query):
+    my_croft_id = int(_query.get("my_croft_id")[0])
+
+    for index, plant in enumerate(game_data.crop_data["croft_list"]):
+        if plant["my_croft_id"] == my_croft_id:
+            break
+
+    for item in game_data.chest_data["list"]:
+        item["item_cnt"] += plant["server"]["yield"]
+
+    response = {
+        "kinomi_id": plant["kinomi_id"],
+        "kinomi": plant["kinomi"],
+        "pokeitem_id": plant["pokeitem_id"],
+        "count": plant["server"]["yield"]
+    }
+
+    game_data.crop_data["croft_list"][index] = {
+        "my_croft_id": plant["my_croft_id"],
+        "x": plant["x"],
+        "y": plant["y"]
+    }
+
+    game_data.save_crops()
+    game_data.save_treasure_chest()
+
+    return json.dumps(response).encode()
 
 
 def handle_waterpot_list_POST(_query):
@@ -190,18 +224,19 @@ def handle_waterpot_list_POST(_query):
     return json.dumps(response).encode()
 
 DYNAMIC_GET_RESPONSES = {
-    "pdw.croft.my_croft_list":   handle_my_croft_list,
     "pdw.croft.waterpot_list":   handle_waterpot_list_GET,
     "pdw.dreamland.top":         handle_dreamland_top,
     "pdw.dreamland.tree_top":    handle_dreamland_tree_top,
     "pdw.item.item_list":        handle_item_list,
     "pdw.home.my_island":        handle_my_island,
-    "pdw.home.footprint_list":   handle_footprint_list
+    "pdw.home.footprint_list":   handle_footprint_list,
+    "pdw.croft.my_croft_list":   handle_croft_list
 }
 
 DYNAMIC_POST_RESPONSES = {
-    "pdw.croft.waterpot_list":   handle_waterpot_list_POST,
-    "pdw.dreamland.game_clear":  handle_game_clear,
-    "pdw.croft.kinomi_sowing":   handle_kinomi_sowing,
-    "pdw.croft.kinomi_watering": handle_kinomi_watering
+    "pdw.dreamland.game_clear":    handle_game_clear,
+    "pdw.croft.kinomi_sowing":     handle_kinomi_sowing,
+    "pdw.croft.kinomi_watering":   handle_kinomi_watering,
+    "pdw.croft.kinomi_harvesting": handle_kinomi_harvesting,
+    "pdw.croft.waterpot_list":     handle_waterpot_list_POST,
 }

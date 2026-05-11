@@ -12,7 +12,9 @@ from datetime import datetime
 
 ROOT_DIR = Path(__file__).resolve().parent
 
-# --- save data ---
+# --------------------
+# Save data
+# --------------------
 
 with open(ROOT_DIR / "save_data" / "player_data.json", encoding="UTF-8") as f:
     player_data = json.load(f)
@@ -23,7 +25,9 @@ with open(ROOT_DIR / "save_data" / "crop_data.json", encoding="UTF-8") as f:
 with open(ROOT_DIR / "save_data" / "chest_data.json", encoding="UTF-8") as f:
     chest_data = json.load(f)
 
-# --- helper data ---
+# --------------------
+# Helper data
+# --------------------
 
 with open(ROOT_DIR / "json_data" / "items.json", encoding="UTF-8") as f:
     item_info = json.load(f)
@@ -31,8 +35,11 @@ with open(ROOT_DIR / "json_data" / "items.json", encoding="UTF-8") as f:
 with open(ROOT_DIR / "json_data" / "pokemon.json", encoding="UTF-8") as f:
     pokemon_info = json.load(f)
 
-with open(ROOT_DIR / "json_data" / "area_data.json", encoding="UTF-8") as f:
+with open(ROOT_DIR / "json_data" / "dream_islands.json", encoding="UTF-8") as f:
     area_info = json.load(f)
+
+with open(ROOT_DIR / "json_data" / "berries.json", encoding="UTF-8") as f:
+    berry_data = json.load(f)
 
 pokemon_natures = ("Adamant","Bashful","Bold","Brave","Calm","Careful","Docile","Gentle","Hardy","Hasty","Impish","Jolly","Lax","Lonely","Mild","Modest","Naive","Naughty","Quiet","Quirky","Rash","Relaxed","Sassy","Serious","Timid")
 
@@ -51,3 +58,15 @@ def get_random_pokemon() -> dict[str: str|None]:
     natdex = pkmn.split("-")[0]
 
     return {**pokemon_info[pkmn], "pokemon_no": natdex}
+
+# --------------------
+# Save functions
+# --------------------
+
+def save_crops():
+    with open(ROOT_DIR / "save_data" / "crop_data.json", "w", encoding="UTF-8") as f:
+        f.write(json.dumps(crop_data, indent=2, ensure_ascii=False))
+
+def save_treasure_chest():
+    with open(ROOT_DIR / "save_data" / "chest_data.json", "w", encoding="UTF-8") as f:
+        f.write(json.dumps(chest_data, indent=2, ensure_ascii=False))
