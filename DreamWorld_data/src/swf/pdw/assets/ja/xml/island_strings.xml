@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data locale="ja">
+    <string id="lo_a_1">読みこみ中です。</string>
+
+    <!--Tree of Dreams Meter-->
+    <string id="y_aa_1">ゆめの木メーター</string>
+    <string id="y_aa_2">ゆめの木まで&#xD;あと[画面数]</string>
+    <string id="y_aa_6">自分のホームにもどる</string>
+    
+    <!--I wanna see if these come up anywhere
+    <string id="y_aa_5">Test1</string>
+    <string id="y_aa_6">Test2</string>
+    <string id="y_aa_7">Test3</string>
+    <string id="y_aa_8">Test4</string>
+    <string id="y_aa_9">Test5</string>
+    <string id="y_aa_10">Test6</string>
+    <string id="y_aa_11">Test7</string>
+    <string id="y_aa_12">Test8</string>
+    <string id="y_aa_13">Test9</string>
+    <string id="y_aa_14">Test10</string>
+    <string id="y_aa_15">Test11</string>-->
+
+    <!--Tree of Dreams Location-->
+    <string id="t_aa_1">ゆめの木</string>
+    <string id="s_aa_2">自分のホームにもどる</string>
+
+    <!--Island Titles-->
+    <string id="y_za_1">ゆめしまについた。「ちいさな森」を進むことにした。</string>
+    <string id="y_aa_3">ゆめしま　「ちいさな森」</string>
+
+    <string id="y_zc_3">ゆめしまについた。「ひらけた空」を進むことにした。</string>
+    <string id="y_aa_5">ゆめしま　「ひらけた空」</string>
+
+    <string id="y_zb_2">ゆめしまについた。「かがやく海」を進むことにした。</string>
+    <string id="y_aa_4">ゆめしま　「かがやく海」</string>
+
+    <string id="y_zc_4">ゆめしまについた。「古びた洋館」を進むことにした。</string>
+    <string id="y_aa_16">ゆめしま　「古びた洋館」</string>
+
+    <string id="y_zc_5">ゆめしまについた。「ごつごつ山」を進むことにした。</string>
+    <string id="y_aa_17">ゆめしま　「ごつごつ山」</string>
+
+    <string id="y_zc_6">ゆめしまについた。「ひんやり穴」を進むことにした。</string>
+    <string id="y_aa_18">ゆめしま　「ひんやり穴」</string>
+
+    <string id="y_zc_7">ゆめしまについた。「ゆめパーク」を進むことにした。</string>
+    <string id="y_aa_19">ゆめしま　「ゆめパーク」</string>
+
+    <!-- item get -->
+    <string id="y_ai_1">[道具名]を見つけた</string>
+    <string id="y_aj_1">[道具名]をたからばこにしまった</string>
+
+    <!-- pokemon get -->
+    <!-- TODO: find out if kanji was changed to kana later on (these are from june 2013)-->
+    <string id="y_af_1">[ポケモン名]となかよくなりました。</string>
+    <string id="y_af_2">ポケモン</string>
+    <string id="y_af_3">特性：</string>
+    <string id="y_af_4">タイプ：</string>
+    <string id="y_af_5">性別：</string>
+    <string id="y_af_6">おぼえているわざ：</string>
+
+    <string id="y_ah_1">y_ah_1</string> <!-- universal failure message, the opposite of string y_af_1 -->
+    
+    <string id="y_af_7">[ポケモン名]はよろこんでいるみたい！</string>
+    <string id="y_ag_9">y_ag_9</string> <!-- looks sad string -->
+
+    <!-- game header -->
+    <string id="y_ad_1">[ポケモン名]だ!</string>
+
+    <!-- game1.swf -->
+    <string id="y_ad_10">[ポケモン名]はまいごを探しているみたい。</string>
+    <string id="y_ad_11">[ポケモン名]とまいごを探しますか？</string>
+    <string id="y_ag_5">y_ag_5</string>
+    <string id="y_ag_6">y_ag_6</string>
+
+    <!-- game2.swf -->
+    <string id="y_ad_2">[ポケモン名]はおなかを空かせているみたい。</string>
+    <string id="y_ad_4">[ポケモン名]とアイスクリームづくりをしますか？</string>
+    <string id="y_ag_1">y_ag_1</string>
+    <string id="y_ag_2">y_ag_2</string>
+
+    <!-- game3.swf -->
+    <string id="y_ad_7">[ポケモン名]は空を飛びたいみたい。</string>
+    <string id="y_ad_8">[ポケモン名]とひこうレースに参加しますか？</string>
+    <string id="y_ag_3">y_ag_3</string>
+    <string id="y_ag_4">y_ag_4</string>
+
+    <!-- game4.swf -->
+    <string id="y_ad_13">[ポケモン名]はホエルオーの背中で遊びたいみたい。</string>
+    <string id="y_ad_14">[ポケモン名]とホエルオーのところに遊びにいきますか？</string>
+    <string id="y_ag_7">y_ag_7</string>
+    <string id="y_ag_8">y_ag_8</string>
+
+    <!-- game5.swf -->
+    <string id="y_ad_15">[ポケモン名]はのどがかわいているみたい。</string> <!-- request (subheader) -->
+    <string id="y_ad_16">[ポケモン名]とドリンクはこびをしますか？</string> <!-- select (line with yes/no) --> 
+    <string id="y_ag_10">y_ag_10</string> <!-- failure -->
+    <string id="y_ag_11">y_ag_11</string> <!-- abort (choose to quit)-->
+
+    <!-- game6.swf -->
+    <string id="y_aa_12">[ポケモン名]は宝箱に興味があるみたい。</string>
+    <string id="y_aa_13">[ポケモン名]と宝箱を開けますか？</string>
+    <string id="y_aa_14">y_aa_14</string>
+    <string id="y_aa_15">y_aa_15</string>
+
+    <!-- game7.swf -->
+    <string id="y_ad_18">[ポケモン名]はきもだめしがしたいみたい。</string>
+    <string id="y_ad_19">[ポケモン名]とろうそく消しをしますか？</string>
+    <string id="y_ag_12">y_ag_12</string>
+    <string id="y_ag_13">y_ag_13</string>
+
+    <!-- game8.swf -->
+    <string id="y_ad_20">[ポケモン名]は宝石をあつめたいみたい。</string>
+    <string id="y_ad_21">[ポケモン名]と宝石あつめをしますか？</string>
+    <string id="y_ag_14">y_ag_14</string>
+    <string id="y_ag_15">y_ag_15</string>
+
+    <!-- game9.swf -->
+    <string id="y_ad_22">[ポケモン名]は氷の上で遊びたいみたい。</string>
+    <string id="y_ad_23">[ポケモン名]と氷の上で遊びますか？</string>
+    <string id="y_ag_16">y_ag_16</string>
+    <string id="y_ag_17">y_ag_17</string>
+
+    <!-- game10.swf -->
+    <string id="y_ad_24">[ポケモン名]は湖で遊びたいみたい。</string>
+    <string id="y_ad_25">[ポケモン名]と湖で遊びますか？</string>
+    <string id="y_ag_18">y_ag_18</string>
+    <string id="y_ag_19">y_ag_19</string>
+
+    <!-- game11.swf -->
+    <string id="y_ad_30">[ポケモン名]はのどがかわいているみたい。</string>
+    <string id="y_ad_31">[ポケモン名]とドリンクはこびをしますか？</string>
+    <string id="y_ad_32">y_ad_32</string>
+    <string id="y_ad_33">y_ad_33</string>
+
+    <!-- game12.swf -->
+    <string id="y_ad_26">[ポケモン名]は宝箱に興味があるみたい。</string>
+    <string id="y_ad_27">[ポケモン名]と宝箱を開けますか？</string>
+    <string id="y_ad_28">y_ad_28</string>
+    <string id="y_ad_29">y_ad_29</string>
+</data>
