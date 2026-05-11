@@ -40,6 +40,10 @@ class S(BaseHTTPRequestHandler):
             return
 
         self.send_response(200)
+        #disable caching
+        self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
+        self.send_header("Pragma", "no-cache")
+        self.send_header("Expires", "0")
         self.end_headers()
         self.wfile.write(body)
 
