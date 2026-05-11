@@ -189,7 +189,8 @@ def handle_kinomi_harvesting(_query):
             break
 
     for item in game_data.chest_data["list"]:
-        item["item_cnt"] += plant["server"]["yield"]
+        if item["pokeitem_id"] == plant["pokeitem_id"]:
+            item["item_cnt"] += plant["server"]["yield"]
 
     response = {
         "kinomi_id": plant["kinomi_id"],
