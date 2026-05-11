@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data locale="ja">
+    <string id="k_ad_1">k_ad_1</string>
+    <string id="k_ad_2">使っているじょうろ</string>
+    <string id="k_ad_3">k_ad_3</string>
+    <string id="k_ad_4">k_ad_4</string>
+    <string id="k_ad_5">k_ad_5</string>
+    <string id="k_ad_6">k_ad_6</string>
+    <string id="k_ad_7">k_ad_7</string>
+    <string id="k_ad_8">k_ad_8</string>
+    <string id="k_ad_9">k_ad_9</string>
+    <string id="k_ad_10">k_ad_10</string>
+    <string id="k_ad_11">k_ad_11</string>
+    <string id="k_ad_12">k_ad_12</string>
+    <string id="k_ad_13">k_ad_13</string>
+    <string id="k_ad_14">k_ad_14</string>
+    <string id="k_ad_15">いまいる、うね</string>
+
+    <!-- diglett -->
+    <string id="k_as_1">ディグダがあらわれた。</string>
+    <string id="k_at_1">k_at_1</string> <!--Diglett started plowing-->
+    <string id="k_au_1">k_au_1</string> <!--Diglett left-->
+    <string id="k_ar_1">k_ar_1</string> <!--Garden bed added-->
+    <string id="k_asa_1">ディグダがはたけをたがやしてくれたので、はたけのうねが[arg0]段になった。</string>
+
+    <string id="b_ad_4">きのみ名</string>
+
+    <!-- no berry planted -->
+    <string id="k_ae_2">ふかふかの土に&#xD;きのみを植えますか？</string>
+
+    <!-- berry stage 0: soil -->
+    <string id="k_ag_2">[arg0]が植えてある！</string>
+
+    <!-- berry stage 1: sprout -->
+    <string id="k_ai_1">k_ai_1</string>
+
+    <!-- berry stage 2: trunk -->
+    <string id="k_aj_1">[arg0]が大きくなってきた！</string>
+
+    <!-- berry stage 3: flower -->
+    <string id="k_ak_1">k_ak_1</string>
+
+    <!-- berry stage 4: fruit -->
+    <string id="k_al_1">[arg0]ができている！</string>
+
+    <string id="k_aff_1">このきのみを植えますか？</string>
+    <string id="k_afff_1">[arg0]を植えました。</string>
+    <string id="k_aha_1">土はじゅうぶん、&#xD;しめっているみたい！</string>
+    <string id="s_ad_2">とじる</string>
+    <string id="k_ag_1">くわしく見る</string>
+
+    <string id="h_da_3">自分のホームにもどる</string>
+</data>
