@@ -23,10 +23,6 @@
     <string id="m_af_11">Nickname:</string>
     <string id="m_af_12">PGL Nickname</string>
 
-    <!--Garden-->
-    <string id="k_ad_1">[arg0]'s garden</string>
-    <string id="k_ad_4">A Watering Can&#xD;to water Berries!</string>
-
     <!--Share Shelf-->
     <string id="s_aa_1">[arg0]'s Share Shelf</string>
 
@@ -53,7 +49,6 @@
     <string id="fr_aa_2">fr_aa_2</string>
     <string id="fr_aa_3">fr_aa_3</string>
     <string id="fr_aa_5">fr_aa_5</string>
-    <string id="fr_aa_6">Check Dream Pal map.</string>
 
     <!-- Misc Dialogue Boxes-->
     <string id="dialog_32">dialog_32</string>
@@ -66,10 +61,6 @@
     <string id="b_aa_4">Send</string>
     <string id="b_aa_5">b_aa_5</string>
     <string id="b_aa_6">Treasure Chest</string>
-    <string id="b_ad_1">Items to be sent to the Entralink</string> <!--This string doesn't belong in this document, apparently?-->
-    <string id="b_ad_6">OK</string>
-    <string id="b_ad_7">Cancel</string>
-    <string id="b_ae_1">Send the item(s) in the list?</string>
     <string id="b_af_2">Choose "Leave the Pokémon Dream World" to wake your Pokemon and go to the Entree Forest. You can receive your item(s) at the entrance.</string>
 
     <!-- Friend Board -->
