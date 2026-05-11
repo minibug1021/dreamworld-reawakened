@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data locale="ja">
+	<fonts>
+		<font id="f01" name="FFF Compact"></font>
+		<font id="f02" name="FFF Corporate Bold"></font>
+	</fonts>
+    <string id="lo_a_1" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+</data>
