@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import time
+import threading
 from pathlib import Path
 from random import choice
 from random import randint
@@ -69,9 +70,11 @@ def get_random_pokemon(restriction_list: list[int] = []) -> dict[str: str|None]:
 # --------------------
 
 def save_crops():
-    with open(ROOT_DIR / "save_data" / "crop_data.json", "w", encoding="UTF-8") as f:
-        f.write(json.dumps(crop_data, indent=2, ensure_ascii=False))
+    with threading.Lock():
+        with open(ROOT_DIR / "save_data" / "crop_data.json", "w", encoding="UTF-8") as f:
+            f.write(json.dumps(crop_data, indent=2, ensure_ascii=False))
 
 def save_treasure_chest():
-    with open(ROOT_DIR / "save_data" / "chest_data.json", "w", encoding="UTF-8") as f:
-        f.write(json.dumps(chest_data, indent=2, ensure_ascii=False))
+    with threading.Lock():
+        with open(ROOT_DIR / "save_data" / "chest_data.json", "w", encoding="UTF-8") as f:
+            f.write(json.dumps(chest_data, indent=2, ensure_ascii=False))

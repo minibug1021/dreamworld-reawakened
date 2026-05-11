@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import logging
+from datetime import datetime
 from random import choice
 from random import choices
 from random import randint
@@ -111,6 +112,7 @@ def handle_dreamland_top(_query):
 
         # Use the gender-specific minigame list
         minigame_pool = pdata["minigames"].get(gender_key)
+        print(json.dumps(pkmn, indent=2))
         minigame_id = "1" if category == "1" else str(choice(minigame_pool))
 
         encounter_store[str(obj_pkmn_id)] = {"type": "pokemon", "pokemon": pkmn}
@@ -225,7 +227,7 @@ def handle_game_clear(_query):
                 "pokemon_no":     pkmn["pokemon_no"],
                 "pokename":       pkmn["pokemon_name"],
                 "form_no":        pkmn.get("form_no", "0"),
-                "gender_id":      str(randint(0, 1)),
+                "sex_id":         pkmn["gender_id"],
                 "waza_name_disp": "Sunny Day" if "special_moves" not in pkmn else choice(pkmn["special_moves"])["move_name"],
                 "waza_count":     4,
                 "action_type":    "1",
@@ -243,17 +245,42 @@ def handle_game_clear(_query):
     #there is an encounter-with-berry branch missing here
     
     elif encounter["type"] == "item":
-        item_id = encounter["item_id"]
+        item_id = int(encounter["item_id"])
         reward = {
             "pokemon": None,
             "item": {
-                "pokeitem_id":   int(item_id),
-                "pokeitem":      game_data.item_info[item_id]["item_name"],
+                "pokeitem_id":   item_id,
+                "pokeitem":      game_data.item_info[str(item_id)]["item_name"],
                 "poke_item_num": 1,
             },
             "interior": None,
             "present":  None,
         }
+
+        current_date = datetime.now().strftime("%Y-%m-%d")
+        chest_item = next((item for item in game_data.chest_data["list"] if item["pokeitem_id"] == item_id), None)
+
+        if chest_item:
+            chest_item["item_cnt"] += 1
+            chest_item["date"] = current_date
+
+        else:
+            curr_item_info = game_data.item_info[str(item_id)]
+            game_data.chest_data["cnt"] += 1
+            new_item = {
+                "pokeitem_id": item_id,
+                "pokeitem": curr_item_info["item_name"],
+                "item_cnt": 1,
+                "bunrui_no": "1",
+                "b_hozon_sentou": "1",
+                "date": current_date,
+                "field_line1": curr_item_info["desc"][0],
+                "field_line2": curr_item_info["desc"][1],
+                "field_line3": curr_item_info["desc"][2]
+            }
+            game_data.chest_data["list"].append(new_item)
+
+        game_data.save_treasure_chest()
  
     logging.info("game_clear response: %s", json.dumps(reward))
     return json.dumps(reward).encode()

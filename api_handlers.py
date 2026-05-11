@@ -148,9 +148,7 @@ def handle_kinomi_sowing(_query):
     my_croft_id = int(_query.get("my_croft_id")[0])
     pokeitem_id = _query.get("pokeitem_id")[0]
     
-    for plant in game_data.crop_data["croft_list"]:
-        if plant["my_croft_id"] == my_croft_id:
-            break
+    plant = [plant for plant in game_data.crop_data["croft_list"] if plant["my_croft_id"] == my_croft_id][0]
 
     current_time = round(time.time())
     berry_id = int(pokeitem_id) - 148
@@ -178,9 +176,7 @@ def handle_kinomi_sowing(_query):
 def handle_kinomi_watering(_query):
     my_croft_id = int(_query.get("my_croft_id")[0])
 
-    for plant in game_data.crop_data["croft_list"]:
-        if plant["my_croft_id"] == my_croft_id:
-            break
+    plant = [plant for plant in game_data.crop_data["croft_list"] if plant["my_croft_id"] == my_croft_id][0]
 
     plant["dirt_hp"] = 100
 
@@ -192,9 +188,8 @@ def handle_kinomi_watering(_query):
 def handle_kinomi_harvesting(_query):
     my_croft_id = int(_query.get("my_croft_id")[0])
 
-    for index, plant in enumerate(game_data.crop_data["croft_list"]):
-        if plant["my_croft_id"] == my_croft_id:
-            break
+    plant = [plant for plant in game_data.crop_data["croft_list"] if plant["my_croft_id"] == my_croft_id][0]
+    index = game_data.crop_data["croft_list"].index(plant)
 
     for item in game_data.chest_data["list"]:
         if item["pokeitem_id"] == plant["pokeitem_id"]:
