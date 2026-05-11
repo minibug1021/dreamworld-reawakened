@@ -166,8 +166,7 @@ def handle_kinomi_harvesting(_query):
     my_croft_id = int(_query.get("my_croft_id")[0])
 
     harvest_result = game_data.crops.harvest(my_croft_id)
-    if harvest_result:
-        game_data.chest.add_item(harvest_result["pokeitem_id"], harvest_result["count"])
+    game_data.chest.add_item(harvest_result["pokeitem_id"], harvest_result["count"])
 
     return json.dumps(harvest_result).encode()
 

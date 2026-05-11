@@ -107,11 +107,10 @@ def handle_dreamland_top(_query):
     # --- Encounter builders ---
     def make_pokemon_encounter(pkmn, pdata, obj_id, obj_pkmn_id, category="0"):
         gender_id = choice(pkmn["gender_ratio"])
-        gender_key = "male" if gender_id == 0 else "female"
+        gender_key = "male" if gender_id == "0" else "female"
 
         # Use the gender-specific minigame list
         minigame_pool = pdata["minigames"].get(gender_key)
-        print(json.dumps(pkmn, indent=2))
         minigame_id = "1" if category == "1" else str(choice(minigame_pool))
 
         encounter_store[str(obj_pkmn_id)] = {"type": "pokemon", "pokemon": pkmn}
@@ -163,7 +162,7 @@ def handle_dreamland_top(_query):
     pkmn, pdata = pick_area_pokemon()
     object_list.append(make_pokemon_encounter(pkmn, pdata, randint(100, 400), base_obj_pkmn_id, category="1"))
 
-    for i in range(1, 10):
+    for i in range(1, 30):
         obj_id = randint(90, 400)
         base_obj_pkmn_id -= i
 
