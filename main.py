@@ -2,6 +2,7 @@
 import json
 import time
 import argparse
+import threading
 from pathlib import Path
 from urllib.parse import quote, unquote, parse_qs, urlencode
 
@@ -10,6 +11,11 @@ from server import run
 import game_data
 
 ROOT_DIR = Path(__file__).resolve().parent
+
+def process_berry_growth() -> None:
+    while True:
+        game_data.crops.process_berry_growth()
+        time.sleep(3600)
 
 def inject_htm_playerdata() -> None:
     """Inject player_data.json into Dream_Park.htm so it displays the correct information on the UI."""
@@ -58,6 +64,6 @@ if __name__ == "__main__":
         from bs4 import BeautifulSoup as bs
         inject_htm_playerdata()
 
-    game_data.crops.process_berry_growth()
+    threading.Thread(target=process_berry_growth, daemon=True).start()
     
     run(port=args.port, debug=args.debug, is_random=args.random)
