@@ -54,13 +54,21 @@ def handle_waterpot_list_GET(_query):
 
 
 def handle_item_list(_query):
-    item_kind_id = int(_query.get("item_kind_id", [0])[0])
-    sort_key = int(_query.get("sort_key", [3])[0])
+    def parse_int(name, default=None):
+        try:
+            return int(_query.get(name, [default])[0])
+        except (TypeError, ValueError, IndexError):
+            return default
+
+    item_kind_id = parse_int("item_kind_id", 0)
+    sort_key = parse_int("sort_key", 3)
 
     if item_kind_id == 0: #all items
         item_list = game_data.chest.data["list"]
     elif item_kind_id == 1: #only berries
         item_list = [item for item in game_data.chest.data["list"] if int(item["pokeitem_id"]) in range(149, 213)]
+    else:
+        item_list = game_data.chest.data["list"]
 
     if sort_key == 1: #date
         item_list = sorted(item_list, key=lambda x: game_data.date_to_unix(x["date"]), reverse=True)
@@ -75,7 +83,22 @@ def handle_item_list(_query):
     elif sort_key == 3: #name
         item_list = sorted(item_list, key=lambda x: x["pokeitem"])
 
-    return json.dumps({"cnt": len(item_list), "list": item_list}).encode()
+    page = parse_int("page") or parse_int("page_no") or parse_int("pageNo") or parse_int("page_idx") or parse_int("pageIndex") or 1
+    if page <= 0:
+        page = 1
+
+    limit = 10
+    if limit <= 0:
+        limit = 20
+
+    offset = parse_int("offset")
+    if offset is not None and offset >= 0:
+        page_list = item_list[offset:offset + limit]
+    else:
+        start = (page - 1) * limit
+        page_list = item_list[start:start + limit]
+
+    return json.dumps({"cnt": len(item_list), "list": page_list}).encode()
 
 
 def handle_my_island(_query):
