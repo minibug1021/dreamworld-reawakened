@@ -119,7 +119,6 @@ def handle_my_island(_query):
             "level":             randint(1, 100),
             "sex":               randint(0, 1),
             "personality":       choice(game_data.pokemon_natures),
-            "place":             "PlayerName\"s Island",
             "ball_name":         "Poke Ball"
         },
         "island_id":               201,

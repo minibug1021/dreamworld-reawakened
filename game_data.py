@@ -178,10 +178,12 @@ class CropManager:
             hours_since_planted = (current_time - plant["server"]["planted_time"]) // 3600
             hours_since_update = (current_time - plant["server"]["last_update_time"]) // 3600
 
+            hours_at_last_update = hours_since_planted - hours_since_update
+
             single_stage_time = curr_berry_data["grow_time"] / 4
 
-            for hour in range(hours_since_update):
-                total_hours = hours_since_planted + hour
+            for hour in range(1, hours_since_update + 1):
+                total_hours = hours_at_last_update + hour
                 plant["kinomi_state"] = min(total_hours // single_stage_time, 4)
 
                 if (plant["dirt_hp"] == 0) and (plant["kinomi_state"] != 4): #remove 1/5th of the berry's max, but no lower than 2 berries
