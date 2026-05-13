@@ -69,25 +69,25 @@
     <!-- game1.swf -->
     <string id="y_ad_10">[ポケモン名] seems to be searching for a hidden Pokémon.</string>
     <string id="y_ad_11">Search for a Pokémon with [ポケモン名]?</string>
-    <string id="y_ag_5">y_ag_5</string>
+    <string id="y_ag_5">I'm sorry you didn't succeed at Pokémon seek.</string>
     <string id="y_ag_6">y_ag_6</string>
 
     <!-- game2.swf -->
     <string id="y_ad_2">[ポケモン名] looks hungry.</string>
     <string id="y_ad_4">Scoop ice cream with [ポケモン名]?</string>
-    <string id="y_ag_1">y_ag_1</string>
+    <string id="y_ag_1">I'm sorry you didn't succeed at Ice Cream Scoop.</string>
     <string id="y_ag_2">y_ag_2</string>
 
     <!-- game3.swf -->
     <string id="y_ad_7">It looks like [ポケモン名] wants you to fly.</string>
     <string id="y_ad_8">Enter the Sky Race for [ポケモン名]?</string>
-    <string id="y_ag_3">y_ag_3</string>
+    <string id="y_ag_3">I'm sorry you didn't complete the Sky Race.</string>
     <string id="y_ag_4">y_ag_4</string>
 
     <!-- game4.swf -->
     <string id="y_ad_13">[ポケモン名] seems interested in playing with Wailord.</string>
     <string id="y_ad_14">Join [ポケモン名] in playing with Wailord?</string>
-    <string id="y_ag_7">y_ag_7</string>
+    <string id="y_ag_7">I'm sorry you didn't succeed at Wailord's Water Spout.</string>
     <string id="y_ag_8">y_ag_8</string>
 
     <!-- game5.swf -->
