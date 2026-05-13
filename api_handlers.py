@@ -9,6 +9,34 @@ import game_data
 from dreamland_handler import handle_dreamland_top, handle_dreamland_tree_top, handle_game_clear
 
 # --------------------
+# Special handler for main.swf injection
+# --------------------
+
+language = {
+    1: "ja.",
+    2: "en.",
+    3: "fr.",
+    4: "it.",
+    5: "de.",
+    7: "es.",
+    8: "ko."
+}
+
+def build_swf_params() -> dict:
+    langcode = game_data.player_data["member"]["langcode"]
+    return {
+        "json": json.dumps({
+            "member": game_data.player_data["member"],
+            "token":  game_data.player_data.get("token", ""),
+            "medals": game_data.player_data.get("medals", []),
+        }),
+        "v":             "2.0",
+        "api_host_name": "/api/",
+        "page":          "SITE_PDW",
+        "lang":          language[langcode],
+    }
+
+# --------------------
 # Static API responses
 # --------------------
 

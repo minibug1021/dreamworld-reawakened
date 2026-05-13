@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from urllib.parse import urlsplit, parse_qs
+from urllib.parse import urlsplit, parse_qs, urlencode
 from html import escape
 
 import logging
@@ -11,6 +11,7 @@ from api_handlers import (
     STATIC_POST_RESPONSES,
     DYNAMIC_GET_RESPONSES,
     DYNAMIC_POST_RESPONSES,
+    build_swf_params
 )
 
 # ---------------
@@ -36,7 +37,7 @@ class S(BaseHTTPRequestHandler):
             logging.warning("Unknown API: %s", api_name)
             self.send_response(501)
             self.end_headers()
-            self.wfile.write(b"")
+            self.wfile.write(b"{}")
             return
 
         self.send_response(200)
@@ -57,6 +58,16 @@ class S(BaseHTTPRequestHandler):
         logging.info("GET %s", self.path)
         parsed = urlsplit(self.path)
         path = escape(parsed.path)
+        
+        if path.endswith("main.swf") and not parsed.query:
+            url_params = build_swf_params()
+            query_string = urlencode(url_params)
+            redirect_url = f"{path}?{query_string}"
+
+            self.send_response(302)
+            self.send_header("Location", redirect_url)
+            self.end_headers()
+            return
 
         if path == "/api/":
             query = {k: v[0] for k, v in parse_qs(parsed.query, strict_parsing=True).items()}

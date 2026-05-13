@@ -1,0 +1,31 @@
+This file documents changes that had to be made to the original .swf files in order to allow this standalone server to work.
+
+## main.swf
+### bfp.main.SoundController.as:23-29
+
+```diff
+- ExternalInterface.addCallback("sendVolume",this.receivedFromJavaScript);
+
++ try
++ {
++     ExternalInterface.addCallback("sendVolume",this.receivedFromJavaScript);
++ }
++     catch(e:Error)
++ {
++ }
+```
+
+### bfp.main.alert.PDWEnterCheck.as:387
+
+```diff
+- var _loc2_:String = "/traffic/";
+
++ var _loc2_:String = "/DreamWorld_data/traffic/";
+```
+
+### bfp.common.PokemonBridge.as:461-462
+
+```diff
++ PDW_API = "http://127.0.0.1:8080/api/";
++ PDW_API_SSL = "http://127.0.0.1:8080/api/";
+```
