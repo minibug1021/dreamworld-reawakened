@@ -1,4 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <entry name="name" lang="*" version="1.0"/>
-</resources>
+<data locale="en">
+  <string id="IDS_START_001">Find the missing {STRAY_NAME}!</string>
+  <string id="IDS_START_002">Strat</string>
+  <string id="IDS_START_003">How to play</string>
+
+  <string id="IDS_HELP_001">How to play</string>
+  <string id="IDS_HELP_002">Click to check the
+  place that's rustling.</string>
+  <string id="IDS_HELP_003">If you can hear a voice,
+  you're close to the Pokémon.</string>
+  <string id="IDS_HELP_004">If you find an item the Pokémon
+  lost, check the area carefully.</string>
+  <string id="IDS_HELP_005">Start</string>
+  <string id="IDS_HELP_006">Back</string>
+  <string id="IDS_HELP_007">Back</string>
+
+  <string id="IDS_HUD_001">You</string>
+  <string id="IDS_HUD_003">Quit game</string>
+  <string id="IDS_HUD_004">Remaining time</string>
+  <string id="IDS_CLICK_001">Too Bad!
+  It was a different Pokémon!</string>
+  <string id="IDS_CLICK_003">The Berry seems familiar
+  to {STRAY_NAME}.</string>
+  <string id="IDS_CLICK_004">Found the Pokémon!</string>
+
+  <string id="IDS_STRAIN_001">You listen carefully.</string>
+  <string id="IDS_STRAIN_002">You listen carefully..</string>
+  <string id="IDS_STRAIN_003">You listen carefully...</string>
+  <string id="IDS_STRAIN_004">You listen carefully....</string>
+  <string id="IDS_STRAIN_005">You can't hear the voice
+  of {STRAY_NAME}.</string>
+  <string id="IDS_STRAIN_006">The voice is faint.
+  {STRAY_NAME} is not far from here!</string>
+  <string id="IDS_STRAIN_007">You can hear the voice.
+  {STRAY_NAME} is near here!</string>
+  <string id="IDS_STRAIN_008">The voice is very close!
+  {STRAY_NAME} must be here!</string>
+  <string id="IDS_STRAIN_009">Close</string>
+
+  <string id="IDS_CLEAR_001">Well done!</string>
+  <string id="IDS_CLEAR_002">Congratulations! {BUDDY_NAME} seems happy 
+  to see {STRAY_NAME}.</string>
+  <string id="IDS_CLEAR_003">Next</string>
+  <string id="IDS_CLEAR_004">Returned the Berry to {STRAY_NAME}.
+  {STRAY_NAME} thanked you politely.</string>
+
+  <string id="IDS_RESULT_001">Results</string>
+  <string id="IDS_RESULT_002">Remaining time</string>
+  <string id="IDS_RESULT_003">The Pokémon's lost item</string>
+  <string id="IDS_RESULT_004">Score</string>
+  <string id="IDS_RESULT_005">Close</string>
+
+  <string id="IDS_QUIT_001">Are you sure you want to quit?</string>
+  <string id="IDS_QUIT_002">Yes</string>
+  <string id="IDS_QUIT_003">No</string>
+
+  <string id="IDS_TIMEUP_002">You didn't find {STRAY_NAME} in time.</string>
+  <string id="IDS_TIMEUP_003">Close</string>
+</data>
