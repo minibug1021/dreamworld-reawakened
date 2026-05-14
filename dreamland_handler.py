@@ -218,12 +218,18 @@ def handle_game_clear(_query):
 
     if encounter["type"] == "pokemon":
         pkmn = encounter["pokemon"]
+        
+        if len(pkmn["gender_ratio"]) > 1:
+            gender_id = choices(["0", "1"], weights=[75, 25], k=1)[0]
+        else:
+            gender_id = pkmn["gender_ratio"][0]
+        
         reward = {
             "pokemon": {
                 "pokemon_no":     pkmn["pokemon_no"],
                 "pokename":       pkmn["pokemon_name"],
                 "form_no":        pkmn.get("form_no", "0"),
-                "sex_id":         choice(pkmn["gender_ratio"]),
+                "sex_id":         gender_id,
                 "waza_name_disp": "Sunny Day" if "special_moves" not in pkmn else choice(pkmn["special_moves"])["move_name"],
                 "waza_count":     4,
                 "action_type":    "1",

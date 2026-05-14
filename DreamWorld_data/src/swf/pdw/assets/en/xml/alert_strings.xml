@@ -1,12 +1,69 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data locale="en">	
 	
-	<!--Availability-->
+	<!-- shared by HOUR_24_TIMER_ALERT, BUSY_PDW_ALERT, DOWNLOAD_PDW_ALERT -->
+	<string id="pg_ame_1">pg_ame_1</string> 
+	<string id="pg_amk_1">pg_amk_1</string>
+
+	<!-- HOUR_24_TIMER_ALERT -->
+	<string id="pg_adi_1">pg_adi_1</string>
+	<string id="pg_adi_2">pg_adi_2</string>
+	<string id="pg_adi_3">pg_adi_3</string>
+	<string id="pg_adi_4">pg_adi_4</string>
+	<string id="pg_adi_5">pg_adi_5</string>
+	<string id="pg_adi_6">pg_adi_6</string>
+	<string id="pg_adi_7">pg_adi_7</string>
+	<string id="pg_ame_1">pg_ame_1</string>
+	<string id="pg_amk_1">pg_amk_1</string>
+
+	<!-- BUSY_PDW_ALERT -->
 	<string id="pg_ade_1">Pokémon Dream World is unavailable.</string>
 	<string id="pg_ade_2">pg_ade_2</string>
 	<string id="pg_ade_3">Pokémon Dream World is currently busy. Please try again later!</string>
 	<string id="pg_ade_4">Close</string>
 	<string id="pg_ade_5">Retry</string>
+	<string id="pg_ame_1">pg_ame_1</string>
+	<string id="pg_amk_1">pg_amk_1</string>
+
+	<!-- ENABLE_ACCESS_TO_PDW -->
+	<string id="pg_amh_1">Welcome to the Pokémon Dream World.</string>
+	<string id="pg_amh_2">You can play in the Pokémon DW for one hour.</string>
+	<string id="pg_amh_3">You can only play for an hour in the Pokémon Dream World, then it&#xD;stops automatically. It's a good idea to stop playing and save your data&#xD;when asked, so you can be sure your data gets saved properly.</string>
+	<string id="pg_amh_4">Continue</string>
+
+	<!-- DOWNLOAD_PDW_ALERT -->
+	<string id="pg_amc_1">pg_amc_1</string>
+	<string id="pg_amc_2">pg_amc_2</string>
+	<string id="pg_amc_3">pg_amc_3</string>
+	<string id="pg_ame_1">pg_ame_1</string>
+	<string id="pg_amk_1">pg_amk_1</string>
+
+	<!-- SLEEPING_PDW_ALERT -->
+	<string id="pg_amd_1">pg_amd_1</string>
+	<string id="pg_amd_2">pg_amd_2</string>
+	<string id="pg_amd_3">pg_amd_3</string>
+
+	<!-- DELAY_BOARD -->
+	<string id="pg_alc_1">Processing your data for the Pokémon Dream World.&#xD;Please wait before trying again.&#xD;It may take five minutes or longer to complete the process.</string>
+	<string id="pg_alc_2">*It may take a while for a Pokémon to start dreaming after you tuck in the Pokémon&#xD;with Game Sync.</string>
+
+	<!-- DELAY_PLAYDATA -->
+	<string id="pg_ald_1">pg_ald_1</string>
+	<string id="pg_ald_2">pg_ald_2</string>
+
+	<!-- ALERT_DONT_WAKEUP -->
+	<string id="pg_alf_1">pg_alf_1</string>
+	<string id="pg_alf_2">pg_alf_2</string>
+	<string id="pg_alf_3">pg_alf_3</string>
+
+	<!-- ALERT_DONT_SLEEP -->
+	<string id="pg_ale_1">pg_ale_1</string>
+	<string id="pg_ale_2">pg_ale_2</string>
+
+	<!-- DELAY_GAMEDATA -->
+	<string id="pg_alg_1">pg_alg_1</string>
+	<string id="pg_alg_2">pg_alg_2</string>
+	<string id="pg_alg_3">pg_alg_3</string>
 
 	<string id="pg_opa_1">Loading</string>
 
@@ -33,12 +90,6 @@
 
 	<!--Leave and stay asleep submenu-->
 	<string id="o_az_1">You have left the Pokémon Dream World.</string>
-
-	<!--Fennel at startup-->
-	<string id="pg_amh_1">Welcome to the Pokémon Dream World.</string>
-	<string id="pg_amh_2">You can play in the Pokémon DW for one hour.</string>
-	<string id="pg_amh_3">You can only play for an hour in the Pokémon Dream World, then it&#xD;stops automatically. It's a good idea to stop playing and save your data&#xD;when asked, so you can be sure your data gets saved properly.</string>
-	<string id="pg_amh_4">Continue</string>
 
 	<!--AFK Pop-Up box-->
 	<string unofficial="true" id="pg_amf_1">A database error has occured.&#xD;You have been disconnected.</string>
