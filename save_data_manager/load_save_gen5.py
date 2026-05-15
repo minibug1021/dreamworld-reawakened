@@ -318,6 +318,9 @@ for char_range in extra_data.valid_char_ranges:
 def _sanitize_str(string: str):
     return "".join(ch if ord(ch) in valid_chars else "?" for ch in string)
 
+def _replace_special_chars(string: str):
+    return "".join(extra_data.special_chars[ch] if ch in extra_data.special_chars else ch for ch in list(string))
+
 # ---------------------------------------------------------------------------
 # Helper function for turning EXP into Level
 # ---------------------------------------------------------------------------
@@ -388,7 +391,7 @@ class DataReader:
 
         out_str = out_str.replace(b'\x00n$', b'\x00@&').replace(b'\x00m$', b'\x00B&').decode('UTF-16-LE')
         
-        return _sanitize_str(out_str)
+        return _replace_special_chars(_sanitize_str(out_str))
 
     def read_int(self, offset: int, length: int, byteorder: str = 'little') -> int:
         return int.from_bytes(self._slice(offset, length), byteorder=byteorder)
