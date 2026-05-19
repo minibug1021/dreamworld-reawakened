@@ -25,26 +25,26 @@
     <string id="s_aa_2">Pagina iniziale</string>
 
     <!--Island Titles-->
-    <string id="y_za_1">Eccoti all'Isola dei sogni. Inizia a esplorare il boschetto.</string> <!-- only official one for the intro of the areas -->
+    <string id="y_za_1">Eccoti all'Isola dei sogni. Inizia a esplorare il boschetto.</string>
     <string id="y_aa_3">Il boschetto dell'Isola del sogni</string>
 
-    <string id="y_zc_3">Eccoti all'Isola dei sogni. Inizia a esplorare il settimo cielo.</string> <!-- unofficial -->
+    <string unofficial="true" id="y_zc_3">Eccoti all'Isola dei sogni. Inizia a esplorare il settimo cielo.</string>
     <string id="y_aa_5">Isola dei sogni, settimo cielo</string>
 
-    <string id="y_zb_2">Eccoti all'Isola dei sogni. Inizia a esplorare il Mar Brillante.</string> <!-- unofficial -->
-    <string id="y_aa_4">Isola dei sogni: Mar Brillante</string> <!-- unofficial -->
+    <string unofficial="true" id="y_zb_2">Eccoti all'Isola dei sogni. Inizia a esplorare il Mar Brillante.</string>
+    <string unofficial="true" id="y_aa_4">Isola dei sogni: Mar Brillante</string>
 
-    <string id="y_zc_4">Eccoti all'Isola dei sogni. Inizia a esplorare il Maniero Antico.</string> <!-- unofficial -->
-    <string id="y_aa_16">Isola dei sogni: Maniero Antico</string> <!-- unofficial -->
+    <string unofficial="true" id="y_zc_4">Eccoti all'Isola dei sogni. Inizia a esplorare il Maniero Antico.</string>
+    <string unofficial="true" id="y_aa_16">Isola dei sogni: Maniero Antico</string>
 
-    <string id="y_zc_5">Eccoti all'Isola dei sogni. Inizia a esplorare il Monte Spigolo.</string> <!-- unofficial -->
+    <string unofficial="true" id="y_zc_5">Eccoti all'Isola dei sogni. Inizia a esplorare il Monte Spigolo.</string>
     <string id="y_aa_17">Isola dei sogni: Monte Spigolo</string>
 
-    <string id="y_zc_6">Eccoti all'Isola dei sogni. Inizia a esplorare la Grotta Refrigerio.</string> <!-- unofficial -->
-    <string id="y_aa_18">Isola dei sogni: Grotta Refrigerio</string>  <!-- unofficial -->
+    <string unofficial="true" id="y_zc_6">Eccoti all'Isola dei sogni. Inizia a esplorare la Grotta Refrigerio.</string>
+    <string unofficial="true" id="y_aa_18">Isola dei sogni: Grotta Refrigerio</string>
 
-    <string id="y_zc_7">Eccoti all'Isola dei sogni. Inizia a esplorare il Parco Incanto.</string> <!-- unofficial -->
-    <string id="y_aa_19">Il Parco Incanto dell'Isola dei Sogni</string> <!-- unofficial -->
+    <string unofficial="true" id="y_zc_7">Eccoti all'Isola dei sogni. Inizia a esplorare il Parco Incanto.</string>
+    <string unofficial="true" id="y_aa_19">Il Parco Incanto dell'Isola dei sogni</string>
 
     <!-- item get -->
     <string id="y_ai_1">Hai trovato [道具名].</string>
@@ -74,66 +74,66 @@
     <!-- game2.swf -->
     <string id="y_ad_2">[ポケモン名] sembra avere fame.</string>
     <string id="y_ad_4">Vuoi fare un gelato assieme a [ポケモン名]?</string>
-    <string id="y_ag_1">I'm sorry you didn't succeed at Ice Cream Scoop.</string>
+    <string unofficial="true" id="y_ag_1">I'm sorry you didn't succeed at Ice Cream Scoop.</string>
     <string id="y_ag_2">y_ag_2</string>
 
     <!-- game3.swf -->
     <string id="y_ad_7">[ポケモン名] ha voglia di volare.</string>
     <string id="y_ad_8">Vuoi fare una Corsa aerea con [ポケモン名]?</string>
-    <string id="y_ag_3">I'm sorry you didn't complete the Sky Race.	</string>
+    <string unofficial="true" id="y_ag_3">I'm sorry you didn't complete the Sky Race.</string>
     <string id="y_ag_4">y_ag_4</string>
 
     <!-- game4.swf -->
     <string id="y_ad_13">[ポケモン名] vuole giocare sulla schiena di Wailord.</string>
     <string id="y_ad_14">Vuoi andare da Wailord con [ポケモン名]?</string>
-    <string id="y_ag_7">I'm sorry you didn't succeed at Wailord's Water Spout.</string>
+    <string unofficial="true" id="y_ag_7">I'm sorry you didn't succeed at Wailord's Water Spout.</string>
     <string id="y_ag_8">y_ag_8</string>
 
     <!-- game5.swf -->
-    <string id="y_ad_15">[ポケモン名] sembra avere sete.</string> <!-- unofficial -->
-    <string id="y_ad_16">Vuoi andare a servire le bevande con [ポケモン名]?</string> <!-- unofficial -->
+    <string unofficial="true" id="y_ad_15">[ポケモン名] sembra avere sete.</string>
+    <string unofficial="true" id="y_ad_16">Vuoi andare a servire le bevande con [ポケモン名]?</string>
     <string id="y_ag_10">y_ag_10</string> <!-- failure -->
     <string id="y_ag_11">y_ag_11</string> <!-- abort (choose to quit)-->
 
     <!-- game6.swf -->
-    <string id="y_aa_12">[ポケモン名] è interessato allo scrigno.</string> <!-- unofficial -->
-    <string id="y_aa_13">Vuoi andare ad aprire lo scrigno con [ポケモン名]?</string> <!-- unofficial -->
+    <string id="y_aa_12">[ポケモン名] è incuriosito dal baule.</string>
+    <string id="y_aa_13">Aiuta [ポケモン名]!</string>
     <string id="y_aa_14">y_aa_14</string>
     <string id="y_aa_15">y_aa_15</string>
 
     <!-- game7.swf -->
-    <string id="y_ad_18">[ポケモン名] vuole mettere alla prova il suo coraggio.</string> <!-- unofficial -->
-    <string id="y_ad_19">Vuoi soffiare le candele con [ポケモン名]?</string> <!-- unofficial -->
+    <string id="y_ad_18">[ポケモン名] vuole fare una prova di coraggio.</string>
+    <string id="y_ad_19">Vuoi provare a spegnere le candele con [ポケモン名]?</string>
     <string id="y_ag_12">y_ag_12</string>
     <string id="y_ag_13">y_ag_13</string>
 
     <!-- game8.swf -->
-    <string id="y_ad_20">[ポケモン名] vuole raccogliere gioielli.</string> <!-- unofficial -->
-    <string id="y_ad_21">Vuoi andare a raccogliere gioielli con [ポケモン名]?</string> <!-- unofficial -->
+    <string unofficial="true" id="y_ad_20">[ポケモン名] vuole raccogliere gioielli.</string>
+    <string unofficial="true" id="y_ad_21">Vuoi andare a raccogliere gioielli con [ポケモン名]?</string>
     <string id="y_ag_14">y_ag_14</string>
     <string id="y_ag_15">y_ag_15</string>
 
     <!-- game9.swf -->
-    <string id="y_ad_22">[ポケモン名] vuole giocare sul ghiaccio.</string> <!-- unofficial -->
-    <string id="y_ad_23">Vuoi giocare sul ghiaccio con [ポケモン名]?</string> <!-- unofficial -->
+    <string unofficial="true" id="y_ad_22">[ポケモン名] vuole giocare sul ghiaccio.</string>
+    <string unofficial="true" id="y_ad_23">Vuoi giocare sul ghiaccio con [ポケモン名]?</string>
     <string id="y_ag_16">y_ag_16</string>
     <string id="y_ag_17">y_ag_17</string>
 
     <!-- game10.swf -->
-    <string id="y_ad_24">[ポケモン名] vuole giocare al lago.</string> <!-- unofficial -->
-    <string id="y_ad_25">Vuoi fare Surf al cielo con [ポケモン名]?</string> <!--unofficial -->
+    <string unofficial="true" id="y_ad_24">[ポケモン名] vuole giocare al lago.</string>
+    <string unofficial="true" id="y_ad_25">Vuoi fare Surf al cielo con [ポケモン名]?</string>
     <string id="y_ag_18">y_ag_18</string>
     <string id="y_ag_19">y_ag_19</string>
 
     <!-- game11.swf -->
-    <string id="y_ad_30">[ポケモン名] sembra avere sete.</string> <!-- unofficial, but the chance of being the same is high -->
-    <string id="y_ad_31">Vuoi andare a servire bevande con [ポケモン名]?</string> <!-- unofficial -->
+    <string unofficial="true" id="y_ad_30">[ポケモン名] sembra avere sete.</string> <!-- there is a chance this may be official -->
+    <string unofficial="true" id="y_ad_31">Vuoi andare a servire bevande con [ポケモン名]?</string>
     <string id="y_ad_32">y_ad_32</string>
     <string id="y_ad_33">y_ad_33</string>
 
     <!-- game12.swf -->
-    <string id="y_ad_26">[ポケモン名] è interessato allo scrigno.</string> <!-- unofficial -->
-    <string id="y_ad_27">Vuoi andare ad aprire lo scrigno con [ポケモン名]?</string> <!-- unofficial -->
+    <string unofficial="true" id="y_ad_26">[ポケモン名] è incuriosito dallo scrigno.</string> <!-- unofficial because the minigame changed name in Italian from game6 -->
+    <string unofficial="true" id="y_ad_27">Vuoi aprire lo scrigno con [ポケモン名]?</string>
     <string id="y_ad_28">y_ad_28</string>
     <string id="y_ad_29">y_ad_29</string>
 </data>

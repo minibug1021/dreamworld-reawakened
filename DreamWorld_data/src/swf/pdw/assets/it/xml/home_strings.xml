@@ -10,7 +10,7 @@
     <string id="fr_aa_4">Entra in casa</string>
 
     <!--Footprint Mat-->
-    <string id="m_aa_1">Footprint</string> <!--Title when looking at mat-->
+    <string id="m_aa_1">Impronta</string> <!--Title when looking at mat-->
     <string id="m_aa_2">See more</string>
     <string id="m_af_2">Check mat</string>
     <string id="m_af_3">See who visited.</string>
@@ -56,12 +56,12 @@
     <string id="b_aa_1">Per data</string>
     <string id="b_aa_2">Per nome</string>
     <string id="b_aa_3">Per tipo</string>
-    <string id="b_aa_4">Invia</string> <!-- Not confirmed, but by how the game is worded in Italian, this is the most likely translation for "Send" in Italian -->
+    <string unofficial="true" id="b_aa_4">Invia</string> <!-- Not confirmed, but by how the game is worded in Italian, this is the most likely translation for "Send" in Italian -->
     <string id="b_aa_5">b_aa_5</string>
     <string id="b_aa_6">Baule</string>
     <string id="b_ad_1">Strumenti da inviare nell'Intramondo</string> <!--This string doesn't belong in this document, apparently?-->
     <string id="b_ad_6">OK</string>
-    <string id="b_ad_7">Annulla</string> <!-- unofficial -->
+    <string unofficial="true" id="b_ad_7">Annulla</string>
     <string id="b_ae_1">Send the item(s) in the list?</string>
     <string id="b_af_2">Dopo aver svegliato il Pokémon con il Sincrogioco, potrai ricevere gli strumenti inviati parlando al ragazzo all'ingresso del Bosco Intramondo.</string>
 

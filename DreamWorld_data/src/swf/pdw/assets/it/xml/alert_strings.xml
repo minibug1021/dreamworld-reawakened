@@ -5,13 +5,13 @@
 	<string id="pg_ade_1">Pokémon Dream World is unavailable.</string>
 	<string id="pg_ade_2">pg_ade_2</string>
 	<string id="pg_ade_3">Pokémon Dream World is currently busy. Please try again later!</string>
-	<string id="pg_ade_4">Chiudi</string> <!-- unofficial -->
-	<string id="pg_ade_5">Riprova</string> <!-- unofficial -->
+	<string unofficial="true" id="pg_ade_4">Chiudi</string>
+	<string unofficial="true" id="pg_ade_5">Riprova</string>
 
 	<string id="pg_opa_1">Caricamento</string>
 
 	<!--Leave the Pokemon Dream World Options-->
-	<string id="da_aa_1">Uscita dal Pokémon Dream World in corso.</string>
+	<string id="da_aa_1">Uscita dal Pokémon Dream World in corso.</string> <!-- corso is a guess, but it's the only word that can make sense in Italian, I'll consider it official -->
 	<string id="da_aa_2">Prepara il Pokémon al risveglio ed esci</string>
 	<string id="da_aa_3">In questo modo uscirai dal Pokémon Dream World&#xD;salvando i tuoi progressi. Potrai così svegliare senza&#xD;problemi il tuo Pokémon tramite il Sincrogioco e&#xD;recuperare gli strumenti e i Pokémon inviati&#xD;nell'Intramondo.</string>
 	<string id="da_aa_4">Esci senza svegliare il Pokémon</string>
@@ -19,7 +19,7 @@
 	<string id="da_aa_6">Esci senza svegliare il Pokémon</string>
 	<string id="da_ab_1">Usa questa opzione per uscire temporaneamente dal&#xD;Pokémon DW.</string>
 	<string id="da_ab_2">Se continui a giocare dopo aver espresso un desiderio&#xD;all'albero dei sogni, non troverai più l'arcobaleno che&#xD;conduce all'Isola dei sogni.</string>
-	<string id="da_ab_3">Attenzione: sarai automaticamente disconnesso dal Pokémon DW dopo un'ora di gioco.</string> <!-- half official, the rest of the words are a guess -->
+	<string unofficial="true" id="da_ab_3">Attenzione: sarai automaticamente disconnesso dal Pokémon Dream World dopo un'ora di gioco.</string> <!-- "Dream World dopo un'ora di gioco." is a guess, but the chance of being that is high -->
 	<string id="da_ab_4">Continua a giocare nel Pokémon DW</string>
 
 	<!--Leave And Wake Up Submenu-->
@@ -32,16 +32,16 @@
 	<!--It should go to list of items next but as of time of writing, pressing "Next" (or "Back") softlocks-->
 
 	<!--Leave and stay asleep submenu-->
-	<string id="o_az_1">Fine della visita al Pokémon DW.</string>
+	<string unofficial="true" id="o_az_1">Fine della visita al Pokémon DW.</string> <!-- Marking this as unofficial because it's a guess from the variant that wakes the Pokémon up -->
 
 	<!--One hour alert-->
-	<string id="da_ad_1">Stai giocando al Dream World da quasi un'ora.</string>
+	<string id="da_ad_1">Stai giocando al Pokémon Dream World da quasi un'ora.</string>
 	<string id="da_ad_2">É quasi trascorsa un'ora da quando hai iniziato a giocare nel Pokémon Dream World. Scegli un'opzione ed esci dal&#xD;Pokémon Dream World.</string>
 	<string id="da_ad_6">Usa questa opzione per uscire temporaneamente dal&#xD;Pokémon DW.</string>
 
-	<!--Final alert, unofficial strings-->
-	<string id="da_af_1">La visita al Dream World è terminata</string>
-	<string id="da_af_2">É trascorsa un'ora da quando hai iniziato a giocare nel Pokémon Dream World. Scegli un'opzione ed esci dal&#xD;Pokémon Dream World.</string>
+	<!--Final alert-->
+	<string unofficial="true" id="da_af_1">Stai giocando al Pokémon Dream World da un'ora.</string>
+	<string unofficial="true" id="da_af_2">É trascorsa un'ora da quando hai iniziato a giocare nel Pokémon Dream World. Scegli un'opzione ed esci dal&#xD;Pokémon Dream World.</string>
 
 	<!--Fennel at startup-->
 	<string id="pg_amh_1">Ciao! Sei nel Pokémon Dream World!</string>
@@ -49,9 +49,9 @@
 	<string id="pg_amh_3">Dopo un'ora di gioco, il Pokémon Dream World si chiude&#xD;automaticamente.&#xD;Quando questo accade, i dati del gioco potrebbero non essere salvati.&#xD;Esci quando compare l'annuncio che il tempo è scaduto.</string>
 	<string id="pg_amh_4">Chiudi</string>
 
-	<!--AFK Pop-Up box - Unofficial text substitution, real text unknown-->
-	<string id="pg_amf_1">A database error has occured.&#xD;You have been disconnected.</string>
-	<string id="pg_ay_2">OK</string>
+	<!--AFK Pop-Up box - real text unknown-->
+	<string unofficial="true" id="pg_amf_1">A database error has occured.&#xD;You have been disconnected.</string>
+	<string unofficial="true" id="pg_ay_2">OK</string>
 
 	<!--You have been disconnected due to inactivity.-->
 </data>

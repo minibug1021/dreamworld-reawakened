@@ -1,8 +1,102 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<data locale="en">	
-	<string id="pg_ade_1" size="14" color="0x000000" kerning="true" letterSpacing="-0.2" />
-	<string id="pg_ade_2" size="14" color="0x000000" kerning="true" letterSpacing="-0.2" />
-	<string id="pg_ade_3" size="14" color="0x000000" kerning="true" letterSpacing="-0.2" />
-	<string id="pg_ade_4" size="14" color="0xffffff" kerning="true" letterSpacing="-0.2" />
-	<string id="pg_ade_5" size="14" color="0xffffff" kerning="true" letterSpacing="-0.2" />
+<data locale="en">  
+    
+    <!-- shared by HOUR_24_TIMER_ALERT, BUSY_PDW_ALERT, and DOWNLOAD_PDW_ALERT -->
+    <string id="pg_ame_1" size="12" letterSpacing="1"/> <!-- pg_ame_1 -->
+    <string id="pg_amk_1" size="12" letterSpacing="1"/> <!-- pg_amk_1 -->
+
+    <!-- HOUR_24_TIMER_ALERT -->
+    <string id="pg_adi_1" size="12" letterSpacing="1"/> <!-- pg_adi_1 -->
+    <string id="pg_adi_2" size="12" letterSpacing="1"/> <!-- pg_adi_2 -->
+    <string id="pg_adi_3" size="12" letterSpacing="1"/> <!-- pg_adi_3 -->
+    <string id="pg_adi_4" size="12" letterSpacing="1"/> <!-- pg_adi_4 -->
+    <string id="pg_adi_5" size="12" letterSpacing="1"/> <!-- pg_adi_5 -->
+    <string id="pg_adi_6" size="12" letterSpacing="1"/> <!-- pg_adi_6 -->
+    <string id="pg_adi_7" size="12" letterSpacing="1"/> <!-- pg_adi_7 -->
+
+    <!-- BUSY_PDW_ALERT -->
+    <string id="pg_ade_1" size="12" letterSpacing="1"/> <!-- Pokémon Dream World is unavailable. -->
+    <string id="pg_ade_2" size="12" letterSpacing="1"/> <!-- pg_ade_2 -->
+    <string id="pg_ade_3" size="12" letterSpacing="1"/> <!-- Pokémon Dream World is currently busy. Please try again later! -->
+    <string id="pg_ade_4" size="12" letterSpacing="1"/> <!-- Close -->
+    <string id="pg_ade_5" size="12" letterSpacing="1"/> <!-- Retry -->
+
+    <!-- ENABLE_ACCESS_TO_PDW -->
+    <string id="pg_amh_1" size="16" color="#000000" letterSpacing="1" bold="true"/> <!-- Welcome to the Pokémon Dream World. -->
+    <string id="pg_amh_2" size="12" color="#656565" letterSpacing="1" bold="true"/> <!-- You can play in the Pokémon DW for one hour. -->
+    <string id="pg_amh_3" size="12" color="#969696" letterSpacing="0.52" bold="true" leading="1"/> <!-- You can only play for an hour in the Pokémon Dream World, then it&#xD;stops automatically. It's a good idea to stop playing and save your data&#xD;when asked, so you can be sure your data gets saved properly. -->
+    <string id="pg_amh_4" size="14" color="#FFFFFF" letterSpacing="1" bold="true"/> <!-- Continue -->
+
+    <!-- DOWNLOAD_PDW_ALERT -->
+    <string id="pg_amc_1" size="12" letterSpacing="1"/> <!-- pg_amc_1 -->
+    <string id="pg_amc_2" size="12" letterSpacing="1"/> <!-- pg_amc_2 -->
+    <string id="pg_amc_3" size="12" letterSpacing="1"/> <!-- pg_amc_3 -->
+
+    <!-- SLEEPING_PDW_ALERT -->
+    <string id="pg_amd_1" size="12" letterSpacing="1"/> <!-- pg_amd_1 -->
+    <string id="pg_amd_2" size="12" letterSpacing="1"/> <!-- pg_amd_2 -->
+    <string id="pg_amd_3" size="12" letterSpacing="1"/> <!-- pg_amd_3 -->
+
+    <!-- DELAY_BOARD -->
+    <string id="pg_alc_1" size="12" letterSpacing="1"/> <!-- Processing your data for the Pokémon Dream World.&#xD;Please wait before trying again.&#xD;It may take five minutes or longer to complete the process. -->
+    <string id="pg_alc_2" size="12" letterSpacing="1"/> <!-- *It may take a while for a Pokémon to start dreaming after you tuck in the Pokémon&#xD;with Game Sync. -->
+
+    <!-- DELAY_PLAYDATA -->
+    <string id="pg_ald_1" size="12" letterSpacing="1"/> <!-- pg_ald_1 -->
+    <string id="pg_ald_2" size="12" letterSpacing="1"/> <!-- pg_ald_2 -->
+
+    <!-- ALERT_DONT_WAKEUP -->
+    <string id="pg_alf_1" size="12" letterSpacing="1"/> <!-- pg_alf_1 -->
+    <string id="pg_alf_2" size="12" letterSpacing="1"/> <!-- pg_alf_2 -->
+    <string id="pg_alf_3" size="12" letterSpacing="1"/> <!-- pg_alf_3 -->
+
+    <!-- ALERT_DONT_SLEEP -->
+    <string id="pg_ale_1" size="12" letterSpacing="1"/> <!-- pg_ale_1 -->
+    <string id="pg_ale_2" size="12" letterSpacing="1"/> <!-- pg_ale_2 -->
+
+    <!-- DELAY_GAMEDATA -->
+    <string id="pg_alg_1" size="12" letterSpacing="1"/> <!-- pg_alg_1 -->
+    <string id="pg_alg_2" size="12" letterSpacing="1"/> <!-- pg_alg_2 -->
+    <string id="pg_alg_3" size="12" letterSpacing="1"/> <!-- pg_alg_3 -->
+
+    <string id="pg_opa_1" size="12" letterSpacing="1"/> <!-- Loading -->
+
+    <!--Leave the Pokemon Dream World Options-->
+    <string id="da_aa_1" size="12" bold="true" letterSpacing="1"/> <!-- Your time in the Pokémon Dream World is about to end. -->
+    <string id="da_aa_2" size="12" bold="true" letterSpacing="1"/> <!-- Exit and prepare to wake up -->
+    <string id="da_aa_3" size="12" bold="true" letterSpacing="1"/> <!-- Prepare to exit the Pokémon DW&#xD;and use Game Sync to wake up&#xD;your Pokémon. You can check the&#xD;Pokémon and items you're&#xD;sending to your Entralink. -->
+    <string id="da_aa_4" size="12" bold="true" letterSpacing="1"/> <!-- Exit and continue sleeping -->
+    <string id="da_aa_5" size="12" bold="true" letterSpacing="1"/> <!-- Exit the Pokémon DW and wake up -->
+    <string id="da_aa_6" size="12" bold="true" letterSpacing="1"/> <!-- Exit the Pokémon DW without waking -->
+    <string id="da_ab_1" size="12" bold="true" letterSpacing="1"/> <!-- Choose this option to exit the&#xD;Pokémon DW temporarily. -->
+    <string id="da_ab_2" size="12" bold="true" letterSpacing="0.5" leading="-0.75"/> <!-- If the Pokémon you wished for at the Tree of Dreams is on the board, the rainbow to the Island of Dreams won't appear! -->
+    <string id="da_ab_3" size="12" bold="true" letterSpacing="1"/> <!-- The Pokémon DW will automatically end one hour after you start playing. -->
+    <string id="da_ab_4" size="12" bold="true" letterSpacing="1"/> <!-- Keep playing in the Pokémon DW -->
+
+    <!--One hour alert-->
+    <string id="da_ad_1" size="16" bold="true" letterSpacing="1"/> <!-- Stai giocando al Dream World da quasi un'ora. -->
+    <string id="da_ad_2" size="12" bold="true" letterSpacing="1"/> <!-- É quasi trascorsa un'ora da quando hai iniziato a giocare nel Pokémon Dream World. Scegli un'opzione ed esci dal&#xD;Pokémon Dream World. -->
+    <string id="da_ad_6" size="12" bold="true" letterSpacing="1"/> <!-- Usa questa opzione per uscire temporaneamente dal&#xD;Pokémon DW. -->
+
+    <!--Final alert, unofficial strings-->
+    <string id="da_af_1" size="16" bold="true" letterSpacing="1"/> <!-- Stai giocando al Dream World da un'ora. -->
+    <string id="da_af_2" size="12" bold="true" letterSpacing="1"/> <!-- É trascorsa un'ora da quando hai iniziato a giocare nel Pokémon Dream World. Scegli un'opzione ed esci dal&#xD;Pokémon Dream World. -->
+
+    <!--Leave And Wake Up Submenu-->
+    <string id="dc_aa_1" size="12" letterSpacing="1"/> <!-- List of Pokémon to take -->
+    <string id="dc_aa_2" size="12" letterSpacing="1"/> <!-- After using Game Sync to wake up your Pokémon, go to the Entree Forest to meet the Pokémon you took. -->
+    <string id="dc_aa_3" size="12" letterSpacing="1"/> <!-- If there is another Pokémon you'd like to take, click "Back" and check the Friend Board in your home. -->
+    <string id="dc_aa_4" size="12" letterSpacing="1"/> <!-- It may take some time for the Pokémon you wished for at the Tree of Dreams to appear on the Friend Board. -->
+    <string id="dc_aa_5" size="12" letterSpacing="1"/> <!-- Next -->
+    <string id="dc_aa_6" size="12" letterSpacing="1"/> <!-- Back -->
+    <!--It should go to list of items next but as of time of writing, pressing "Next" (or "Back") softlocks-->
+
+    <!--Leave and stay asleep submenu-->
+    <string id="o_az_1" size="12" letterSpacing="1"/> <!-- You have left the Pokémon Dream World. -->
+
+    <!--AFK Pop-Up box-->
+    <string unofficial="true" id="pg_amf_1">A database error has occured.&#xD;You have been disconnected.</string>
+    <string unofficial="true" id="pg_ay_2">OK</string>
+
+    <!--You have been disconnected due to inactivity.-->
 </data>

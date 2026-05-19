@@ -58,7 +58,7 @@
     <string id="y_af_5">Gender:</string>
     <string id="y_af_6">Learned moves:</string>
 
-    <string id="y_ah_1">[ポケモン名] disappeared</string> <!-- universal failure message, the opposite of string y_af_1 -->
+    <string id="y_ah_1">[ポケモン名] disappeared.</string> <!-- universal failure message, the opposite of string y_af_1 -->
     
     <string id="y_af_7">[ポケモン名] looks happy.</string>
     <string id="y_ag_9">[ポケモン名] looks disappointed.</string>
@@ -98,7 +98,7 @@
 
     <!-- game6.swf -->
     <string id="y_aa_12">[ポケモン名] is interested in the treasure box.</string>
-    <string id="y_aa_13">Open the treasure box with [ポケモン名]?</string>
+    <string id="y_aa_13">Help [ポケモン名]!</string> <!-- Victini minigame-->
     <string id="y_aa_14">y_aa_14</string>
     <string id="y_aa_15">y_aa_15</string>
 

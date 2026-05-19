@@ -1,18 +1,99 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data locale="en">
-    <string id="dialog_32" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
-    <string id="fr_aa_1" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
-    <string id="fr_aa_2" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
-    <string id="fr_aa_3" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
-    <string id="fr_aa_4" size="14" color="0xffffff" kerning="true" letterSpacing="0" bold="true"/>
-    <string id="fr_aa_5" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
-    <string id="fr_aa_6" size="14" color="0xffffff" kerning="true" letterSpacing="0" bold="true"/>
-    <string id="h_ca_1" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
-    <string id="h_ca_2" size="14" color="0xffffff" kerning="true" letterSpacing="0" bold="true"/>
-    <string id="h_ca_3" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
-    <string id="h_ca_4" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
-    <string id="h_ca_5" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
-    <string id="h_ca_6" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
-    <string id="h_ha_1" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
-    <string id="h_ha_2" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true"/>
+
+    <!--Your Home-->
+    <string id="h_ca_1" size="18" color="#333333" bold="true"/> <!-- [PGLニックネーム]'s home -->
+    <string id="h_ca_7" size="12" letterSpacing="1"/> <!-- Enter room. -->
+    <string id="h_ca_8" size="12" letterSpacing="1"/> <!-- Footprint Mat -->
+    <string id="fr_aa_6" size="14" color="#FFFFFF" bold="true"/> <!-- Check Dream Pal map. -->
+    <string id="h_ca_2" size="14" color="#FFFFFF" bold="true"/> <!-- Check Footprint Mat. -->
+    <string id="fr_aa_4" size="14" color="#FFFFFF" bold="true"/> <!-- Enter room. -->
+
+    <!--Footprint Mat-->
+    <string id="m_aa_1" size="12" letterSpacing="1"/> <!-- Footprint -->
+    <string id="m_aa_2" size="12" letterSpacing="1"/> <!-- See more -->
+    <string id="m_af_1" size="12" letterSpacing="1"/> <!-- See Details -->
+    <string id="m_af_2" size="12" letterSpacing="1"/> <!-- Check mat -->
+    <string id="m_af_3" size="12" letterSpacing="1"/> <!-- See who visited. -->
+    <string id="m_af_4" size="12" letterSpacing="1"/> <!-- Date -->
+    <string id="m_af_5" size="12" letterSpacing="1"/> <!-- Pokémon -->
+    <string id="m_af_6" size="12" letterSpacing="1"/> <!-- Pokémon's Nickname -->
+    <string id="m_af_7" size="12" letterSpacing="1"/> <!-- Type -->
+    <string id="m_af_8" size="12" letterSpacing="1"/> <!-- Action -->
+    <string id="m_af_11" size="12" letterSpacing="1"/> <!-- Nickname: -->
+    <string id="m_af_12" size="12" letterSpacing="1"/> <!-- PGL Nickname -->
+
+    <!--Share Shelf-->
+    <string id="s_aa_1" size="12" letterSpacing="1"/> <!-- [arg0]'s Share Shelf -->
+
+    <!--Dream Bridge -->
+    <string id="h_cb_1" size="12" letterSpacing="1"/> <!-- Return to your home. -->
+    <string id="h_cb_2" size="12" letterSpacing="1"/> <!-- Dream Bridge -->
+    <string id="h_cb_3" size="12" letterSpacing="1"/> <!-- Go to the Island of Dreams. -->
+    <string id="h_cc_1" size="12" letterSpacing="1"/> <!-- Go to the Island of Dreams? -->
+    <string id="h_cc_2" letterSpacing="1"/> <!-- Yes -->
+    <string id="h_cc_3" letterSpacing="1"/> <!-- No -->
+    <string id="h_cc_4" size="12" letterSpacing="1"/> <!-- Go to the Island of Dreams. -->
+
+    <!--Left and Right Arrows-->
+    <string id="h_ha_1" size="18" color="#333333" bold="true"/> <!-- Home -->
+    <string id="h_ha_2" size="18" color="#333333" bold="true"/> <!-- Dream Bridge -->
+    <string id="h_ca_6" size="18" color="#333333" letterSpacing="0" bold="true"/> <!-- Share Shelf -->
+    <string id="h_ca_5" size="18" color="#333333" bold="true"/> <!-- Garden -->
+
+    <!--Buttons In Top Right-->
+    <string id="h_ca_9" size="12" letterSpacing="1"/> <!-- Check info. -->
+    <string id="h_ca_10" size="12" letterSpacing="1"/> <!-- Leave the Pokémon Dream World. -->
+    
+    <string id="fr_aa_1" size="12" letterSpacing="1"/> <!-- fr_aa_1 -->
+    <string id="fr_aa_2" size="12" letterSpacing="1"/> <!-- fr_aa_2 -->
+    <string id="fr_aa_3" size="12" letterSpacing="1"/> <!-- fr_aa_3 -->
+    <string id="fr_aa_5" size="12" letterSpacing="1"/> <!-- fr_aa_5 -->
+
+    <!-- Misc Dialogue Boxes-->
+    <string id="dialog_32" size="12" letterSpacing="1"/> <!-- dialog_32 -->
+    <string id="dialog_35" size="12" letterSpacing="1"/> <!-- Close -->
+
+    <!-- Treasure Chest -->
+    <string id="b_aa_1" size="12" letterSpacing="1"/> <!-- By date -->
+    <string id="b_aa_2" size="12" letterSpacing="1"/> <!-- By name -->
+    <string id="b_aa_3" size="12" letterSpacing="1"/> <!-- By type -->
+    <string id="b_aa_4" size="12" letterSpacing="1"/> <!-- Send -->
+    <string id="b_aa_5" size="12" letterSpacing="1"/> <!-- b_aa_5 -->
+    <string id="b_aa_6" size="16" letterSpacing="1"/> <!-- Treasure Chest -->
+    <string id="b_af_2" size="12" bold="true" letterSpacing="1"/> <!-- Choose "Leave the Pokémon Dream World" to wake&#xD;your Pokémon and go to the Entree Forest.&#xD;You can receive your item(s) at the entrance. -->
+
+    <!-- Friend Board -->
+    <string id="p_aa_1" size="12" letterSpacing="1"/> <!-- Friend Board -->
+    <string id="p_ah_1" size="12" letterSpacing="1"/> <!-- No Pokémon have joined you. -->
+    <string id="p_aa_4" size="12" letterSpacing="1"/> <!-- POKÉMON YOU WANT&#xD;TO TAKE -->
+    <string id="p_aa_5" size="12" letterSpacing="1"/> <!-- Pokémon already sent -->
+    <string id="p_aa_6" size="12" letterSpacing="1"/> <!-- Pokémon to take -->
+
+    <!--Dream Catalogue-->
+    <string id="i_ab_3" size="12" letterSpacing="1"/> <!-- Dream Catalogue -->
+
+    <string id="h_ea_1" size="12" letterSpacing="1"/> <!-- Redecorate -->
+    <string id="h_ea_2" size="12" letterSpacing="1"/> <!-- Check Treasure Chest -->
+    <string id="h_ea_3" size="12" letterSpacing="1"/> <!-- Check Dream Catalogue -->
+    <string id="h_ea_4" size="12" letterSpacing="1"/> <!-- Check Friend Board -->
+    <string id="h_ea_5" size="12" letterSpacing="1"/> <!-- Go outside -->
+    <string id="h_ea_6" size="12" letterSpacing="1"/> <!-- Check Dream Catalogue -->
+    <string id="h_ea_7" size="12" letterSpacing="1"/> <!-- Check Treasure Chest -->
+    <string id="h_ea_8" size="12" letterSpacing="1"/> <!-- Check Friend Board -->
+    <string id="h_ea_9" size="12" letterSpacing="1"/> <!-- Go outside -->
+    <string id="h_ea_10" size="12" letterSpacing="1"/> <!-- Next wall -->
+    <string id="h_ea_11" size="12" letterSpacing="1"/> <!-- [arg0]'s room -->
+
+    <!-- Pokemon Info-->
+    <string id="h_ee_1" size="12" letterSpacing="1"/> <!-- Pokémon Nickname -->
+    <string id="h_ee_2" size="12" letterSpacing="1"/> <!-- PGL Nickname -->
+    <string id="h_ee_3" size="12" letterSpacing="1"/> <!-- Pokémon -->
+    <string id="h_ee_4" size="12" letterSpacing="1"/> <!-- O.T. -->
+    <string id="h_ee_5" size="12" letterSpacing="1"/> <!-- Lv. -->
+    <string id="h_ee_6" size="12" letterSpacing="1"/> <!-- Type -->
+    <string id="h_ee_7" size="12" letterSpacing="1"/> <!-- Gender -->
+    <string id="h_ee_8" size="12" letterSpacing="1"/> <!-- Nature -->
+    <string id="h_ee_9" size="12" letterSpacing="1"/> <!-- Poké Ball Used -->
+
 </data>

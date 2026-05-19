@@ -3,7 +3,7 @@
     <string id="k_ad_1">L'orto di [arg0]</string>
     <string id="k_ad_2">Annaffiatoio in uso</string>
     <string id="k_ad_3">k_ad_3</string>
-    <string id="k_ad_4">Usa l'Annaffiatoio per&#xD;annaffiare le Bacche!</string> <!-- unofficial -->
+    <string unofficial="true" id="k_ad_4">Usa l'Annaffiatoio per&#xD;annaffiare le Bacche!</string>
     <string id="k_ad_5">k_ad_5</string>
     <string id="k_ad_6">k_ad_6</string>
     <string id="k_ad_7">k_ad_7</string>
@@ -42,6 +42,10 @@
 
     <!-- berry stage 4: fruit -->
     <string id="k_al_1">È tempo di raccogliere&#xD;[arg0]!</string>
+
+    <!-- berry get -->
+    <string id="k_am_1">Hai raccolto [arg0] x [arg1] .</string>
+    <string id="k_am_3">Le bacche raccolte sono nel baule.</string>
 
     <string id="k_aff_1">Vuoi piantare la bacca?</string>
     <string id="k_afff_1">Hai piantato [arg0].</string>

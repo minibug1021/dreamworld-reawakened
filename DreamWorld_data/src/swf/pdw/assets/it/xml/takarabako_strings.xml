@@ -6,7 +6,7 @@
     <string id="b_ad_2">Strumento</string> <!-- Most likely translation, Item is Strumento -->
     <string id="b_ad_3">N.</string>
     <string id="b_ad_6">OK</string>
-    <string id="b_ad_7">Cancel</string>
+    <string unofficial="true" id="b_ad_7">Annulla</string>
     <string id="b_az_1">Chiudi</string>
 
     <string id="b_af_2">Dopo aver svegliato il Pokémon con il Sincrogioco, potrai ricevere gli strumenti inviati parlando al ragazzo all'ingresso del Bosco Intramondo.</string>
