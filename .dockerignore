@@ -1,0 +1,9 @@
+.venv
+__pycache__/
+.gitignore
+.gitmodules
+.python-version
+.DS_Store
+# save_data/ # Should initialise this when not found in code.
+.changes.md
+.readme.md

@@ -1,7 +1,16 @@
 import sys
 import json
 from pathlib import Path
-from PyQt5 import QtWidgets, QtGui, QtCore, uic
+try:
+    from PyQt5 import QtWidgets, QtGui, QtCore, uic
+except ImportError:
+    PyQt5 = None
+    try:
+        from PyQt6 import QtWidgets, QtGui, QtCore, uic
+        from PyQt6.QtWidgets import QLabel
+    except ImportError:
+        print("Error: PyQt5 or PyQt6 is required to run this application.")
+        sys.exit(1)
 
 import extra_data
 import load_save_gen5
@@ -334,4 +343,4 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     window = MyApp()
     window.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec_() if PyQt5 else app.exec())

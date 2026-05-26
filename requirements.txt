@@ -1,3 +1,0 @@
-psutil
-tzdata
-beautifulsoup4
