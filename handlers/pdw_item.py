@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import utility
+from config import args
 
 # ---------------------
 # GET API calls
@@ -37,10 +38,14 @@ def GET_item_list(_query):
     status       = int(_query.get("status", 0))
 
     if status == 2:
-        item_list = utility.read_entralink_data("items")
-        for item in item_list:
-            item["pokeitem"] = utility.lookup_str("item", item["pokeitem_id"])
-        return json.dumps({"cnt": len(item_list), "list": item_list}).encode()
+        if args.game_sync:
+            item_list = utility.read_entralink_data("items")
+            for item in item_list:
+                item["pokeitem"] = utility.lookup_str("item", item["pokeitem_id"])
+            return json.dumps({"cnt": len(item_list), "list": item_list}).encode()
+
+        else:
+            return b'{}'
 
     if item_kind_id == 0:
         item_list = utility.chest.data["list"]
@@ -84,7 +89,8 @@ def POST_item_delivery_update(_query):
             )
         utility.chest.remove_item(int(item_id), int(item_count))
 
-    utility.write_entralink_data(item_list, "items")
+    if args.game_sync:
+        utility.write_entralink_data(item_list, "items")
 
     return b'{}'
 
