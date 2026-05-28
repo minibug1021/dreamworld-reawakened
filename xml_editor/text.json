@@ -1496,7 +1496,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Sí",
+                "is_translation": false
+            },
             "ko": {},
             "source": [
                 "pdw_island/windowManager.as",
@@ -1518,7 +1521,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "No",
+                "is_translation": false
+            },
             "ko": {},
             "source": [
                 "pdw_island/windowManager.as",
@@ -1615,7 +1621,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Pokémon",
+                "is_translation": false
+            },
             "ko": {},
             "source": []
         },
@@ -1691,7 +1700,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Sexo",
+                "is_translation": false
+            },
             "ko": {},
             "source": []
         },
@@ -1742,7 +1754,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "¿Quieres pedir un deseo? Necesitas una Baya.",
+                "is_translation": false
+            },
             "ko": {},
             "source": []
         }
@@ -1821,7 +1836,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Volver a mi casa",
+                "is_translation": false
+            },
             "ko": {},
             "source": [
                 "pdw_farm/BackHomeBtn.as",
@@ -3593,7 +3611,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Ir a Isla Ensueño",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "size": "12",
@@ -3616,7 +3637,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "¿Ir a Isla Ensueño?",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "size": "12",
@@ -3639,7 +3663,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Sí",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "letterSpacing": "1"
@@ -3663,7 +3690,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "No",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "letterSpacing": "1"
@@ -3687,7 +3717,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Ir a Isla Ensueño",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "size": "12",
@@ -3985,7 +4018,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Apodo del Pokémon",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "size": "12",
@@ -4010,7 +4046,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Apodo en PGL",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "size": "12",
@@ -4035,7 +4074,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Pokémon",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "size": "12",
@@ -4060,7 +4102,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Entrenador original",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "size": "12",
@@ -4085,7 +4130,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Nivel",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "size": "12",
@@ -4110,7 +4158,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Tipo",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "size": "12",
@@ -4135,7 +4186,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Sexo",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "size": "12",
@@ -4160,7 +4214,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Naturaleza",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "size": "12",
@@ -4185,7 +4242,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Poké Ball usada",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "size": "12",
@@ -4762,7 +4822,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Volver a mi casa",
+                "is_translation": false
+            },
             "ko": {},
             "source": []
         },
@@ -4781,7 +4844,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Árbol de los Sueños",
+                "is_translation": false
+            },
             "ko": {},
             "source": []
         },
@@ -4800,7 +4866,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Árbol de los Sueños",
+                "is_translation": false
+            },
             "ko": {},
             "source": [
                 "pdw_island/main.as"
@@ -4971,7 +5040,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Hasta el Árbol de los Sueños te quedan: [画面数]",
+                "is_translation": false
+            },
             "ko": {},
             "source": [
                 "pdw_island/main.as"
@@ -5055,7 +5127,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Volver a mi casa",
+                "is_translation": false
+            },
             "ko": {},
             "source": [
                 "pdw_island/main.as"
@@ -6334,7 +6409,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Este es el mundo de los sueños Pokémon",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "size": "18",
@@ -6361,7 +6439,10 @@
                 "is_translation": false
             },
             "de": {},
-            "es": {},
+            "es": {
+                "string": "Saltar animación",
+                "is_translation": false
+            },
             "ko": {},
             "format": {
                 "size": "12",
