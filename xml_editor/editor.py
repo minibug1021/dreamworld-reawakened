@@ -93,7 +93,6 @@ class XMLLineEditWidget(QWidget):
         self.text_size = QSpinBox()
         self.text_size.setToolTip("The size in pixels of text in this text format.")
         self.text_size.setRange(0, 30)
-        self.text_size.setFixedWidth(55)
 
         # --- letter spacing ---
         self.letter_spacing = QDoubleSpinBox()
@@ -101,13 +100,11 @@ class XMLLineEditWidget(QWidget):
         self.letter_spacing.setRange(-999.0, 999.0)
         self.letter_spacing.setSingleStep(0.05)
         self.letter_spacing.setDecimals(2)
-        self.letter_spacing.setFixedWidth(75)
 
         # --- leading ---
         self.leading = QSpinBox()
         self.leading.setToolTip("An integer representing the amount of vertical space (called leading) between lines.")
         self.leading.setRange(-999, 999)
-        self.leading.setFixedWidth(65)
 
         # --- text color ---
         self.text_color = QLineEdit()
