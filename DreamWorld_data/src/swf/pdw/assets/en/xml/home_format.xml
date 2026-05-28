@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data locale="en">
-	<string id="b_aa_5" size="12" letterSpacing="1.0" />
-	<string id="dialog_32" size="12" letterSpacing="1.0" />
-	<string id="dialog_35" size="12" letterSpacing="1.0" />
-	<string id="fr_aa_1" size="12" letterSpacing="1.0" />
-	<string id="fr_aa_2" size="12" letterSpacing="1.0" />
-	<string id="fr_aa_3" size="12" letterSpacing="1.0" />
-	<string id="fr_aa_4" size="14" color="#FFFFFF" bold="true" />
-	<string id="fr_aa_5" size="12" letterSpacing="1.0" />
-	<string id="fr_aa_6" size="14" color="#FFFFFF" bold="true" />
 	<string id="h_ca_1" size="18" color="#333333" bold="true" />
-	<string id="h_ca_10" size="12" letterSpacing="1.0" />
-	<string id="h_ca_2" size="14" color="#FFFFFF" bold="true" />
-	<string id="h_ca_5" size="18" color="#333333" bold="true" />
-	<string id="h_ca_6" size="18" color="#333333" bold="true" />
 	<string id="h_ca_7" size="12" letterSpacing="1.0" />
 	<string id="h_ca_8" size="12" letterSpacing="1.0" />
-	<string id="h_ca_9" size="12" letterSpacing="1.0" />
+	<string id="fr_aa_6" size="14" color="#FFFFFF" bold="true" />
+	<string id="h_ca_2" size="14" color="#FFFFFF" bold="true" />
+	<string id="fr_aa_4" size="14" color="#FFFFFF" bold="true" />
+	<string id="m_aa_1" size="12" letterSpacing="1.0" />
+	<string id="m_aa_2" size="12" letterSpacing="1.0" />
+	<string id="m_af_1" size="12" letterSpacing="1.0" />
+	<string id="m_af_2" size="12" letterSpacing="1.0" />
+	<string id="m_af_3" size="12" letterSpacing="1.0" />
+	<string id="m_af_4" size="12" letterSpacing="1.0" />
+	<string id="m_af_5" size="12" letterSpacing="1.0" />
+	<string id="m_af_6" size="12" letterSpacing="1.0" />
+	<string id="m_af_7" size="12" letterSpacing="1.0" />
+	<string id="m_af_8" size="12" letterSpacing="1.0" />
+	<string id="m_af_11" size="12" letterSpacing="1.0" />
+	<string id="m_af_12" size="12" letterSpacing="1.0" />
+	<string id="s_aa_1" size="12" letterSpacing="1.0" />
 	<string id="h_cb_1" size="12" letterSpacing="1.0" />
 	<string id="h_cb_2" size="12" letterSpacing="1.0" />
 	<string id="h_cb_3" size="12" letterSpacing="1.0" />
@@ -24,9 +26,26 @@
 	<string id="h_cc_2" letterSpacing="1.0" />
 	<string id="h_cc_3" letterSpacing="1.0" />
 	<string id="h_cc_4" size="12" letterSpacing="1.0" />
+	<string id="h_ha_1" size="18" color="#333333" bold="true" />
+	<string id="h_ha_2" size="18" color="#333333" bold="true" />
+	<string id="h_ca_6" size="18" color="#333333" bold="true" />
+	<string id="h_ca_5" size="18" color="#333333" bold="true" />
+	<string id="h_ca_9" size="12" letterSpacing="1.0" />
+	<string id="h_ca_10" size="12" letterSpacing="1.0" />
+	<string id="fr_aa_1" size="12" letterSpacing="1.0" />
+	<string id="fr_aa_2" size="12" letterSpacing="1.0" />
+	<string id="fr_aa_3" size="12" letterSpacing="1.0" />
+	<string id="fr_aa_5" size="12" letterSpacing="1.0" />
+	<string id="dialog_32" size="12" letterSpacing="1.0" />
+	<string id="dialog_35" size="12" letterSpacing="1.0" />
+	<string id="b_aa_5" size="12" letterSpacing="1.0" />
+	<string id="p_aa_1" size="12" letterSpacing="1.0" />
+	<string id="p_ah_1" size="12" letterSpacing="1.0" />
+	<string id="p_aa_4" size="12" letterSpacing="1.0" />
+	<string id="p_aa_5" size="12" letterSpacing="1.0" />
+	<string id="p_aa_6" size="12" letterSpacing="1.0" />
+	<string id="i_ab_3" size="12" letterSpacing="1.0" />
 	<string id="h_ea_1" size="12" letterSpacing="1.0" />
-	<string id="h_ea_10" size="12" letterSpacing="1.0" />
-	<string id="h_ea_11" size="12" letterSpacing="1.0" />
 	<string id="h_ea_2" size="12" letterSpacing="1.0" />
 	<string id="h_ea_3" size="12" letterSpacing="1.0" />
 	<string id="h_ea_4" size="12" letterSpacing="1.0" />
@@ -35,6 +54,8 @@
 	<string id="h_ea_7" size="12" letterSpacing="1.0" />
 	<string id="h_ea_8" size="12" letterSpacing="1.0" />
 	<string id="h_ea_9" size="12" letterSpacing="1.0" />
+	<string id="h_ea_10" size="12" letterSpacing="1.0" />
+	<string id="h_ea_11" size="12" letterSpacing="1.0" />
 	<string id="h_ee_1" size="12" letterSpacing="1.0" />
 	<string id="h_ee_2" size="12" letterSpacing="1.0" />
 	<string id="h_ee_3" size="12" letterSpacing="1.0" />
@@ -44,25 +65,4 @@
 	<string id="h_ee_7" size="12" letterSpacing="1.0" />
 	<string id="h_ee_8" size="12" letterSpacing="1.0" />
 	<string id="h_ee_9" size="12" letterSpacing="1.0" />
-	<string id="h_ha_1" size="18" color="#333333" bold="true" />
-	<string id="h_ha_2" size="18" color="#333333" bold="true" />
-	<string id="i_ab_3" size="12" letterSpacing="1.0" />
-	<string id="m_aa_1" size="12" letterSpacing="1.0" />
-	<string id="m_aa_2" size="12" letterSpacing="1.0" />
-	<string id="m_af_1" size="12" letterSpacing="1.0" />
-	<string id="m_af_11" size="12" letterSpacing="1.0" />
-	<string id="m_af_12" size="12" letterSpacing="1.0" />
-	<string id="m_af_2" size="12" letterSpacing="1.0" />
-	<string id="m_af_3" size="12" letterSpacing="1.0" />
-	<string id="m_af_4" size="12" letterSpacing="1.0" />
-	<string id="m_af_5" size="12" letterSpacing="1.0" />
-	<string id="m_af_6" size="12" letterSpacing="1.0" />
-	<string id="m_af_7" size="12" letterSpacing="1.0" />
-	<string id="m_af_8" size="12" letterSpacing="1.0" />
-	<string id="p_aa_1" size="12" letterSpacing="1.0" />
-	<string id="p_aa_4" size="12" letterSpacing="1.0" />
-	<string id="p_aa_5" size="12" letterSpacing="1.0" />
-	<string id="p_aa_6" size="12" letterSpacing="1.0" />
-	<string id="p_ah_1" size="12" letterSpacing="1.0" />
-	<string id="s_aa_1" size="12" letterSpacing="1.0" />
 </data>

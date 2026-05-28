@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data locale="ja">
-	<string id="dialog_32" size="18" color="0x33333" bold="true" />
+	<string id="h_ca_1" size="18" color="0x33333" bold="true" />
+	<string id="fr_aa_6" size="14" color="0xfffff" bold="true" />
+	<string id="h_ca_2" size="14" color="0xfffff" bold="true" />
+	<string id="fr_aa_4" size="14" color="0xfffff" bold="true" />
+	<string id="h_ha_1" size="18" color="0x33333" bold="true" />
+	<string id="h_ha_2" size="18" color="0x33333" bold="true" />
+	<string id="h_ca_6" size="18" color="0x33333" bold="true" />
+	<string id="h_ca_5" size="18" color="0x33333" bold="true" />
 	<string id="fr_aa_1" size="18" color="0x33333" bold="true" />
 	<string id="fr_aa_2" size="18" color="0x33333" bold="true" />
 	<string id="fr_aa_3" size="18" color="0x33333" bold="true" />
-	<string id="fr_aa_4" size="14" color="0xfffff" bold="true" />
 	<string id="fr_aa_5" size="18" color="0x33333" bold="true" />
-	<string id="fr_aa_6" size="14" color="0xfffff" bold="true" />
-	<string id="h_ca_1" size="18" color="0x33333" bold="true" />
-	<string id="h_ca_2" size="14" color="0xfffff" bold="true" />
-	<string id="h_ca_5" size="18" color="0x33333" bold="true" />
-	<string id="h_ca_6" size="18" color="0x33333" bold="true" />
-	<string id="h_ha_1" size="18" color="0x33333" bold="true" />
-	<string id="h_ha_2" size="18" color="0x33333" bold="true" />
+	<string id="dialog_32" size="18" color="0x33333" bold="true" />
 </data>
