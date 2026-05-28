@@ -1,5 +1,4 @@
 import sys
-import json
 from pathlib import Path
 import xml.etree.ElementTree as ET
 from PyQt6 import uic
@@ -29,16 +28,36 @@ class XMLLineEditWidget(QWidget):
         self.load(self.entry)
 
     def load(self, entry: StringEntry):
-        self.string_id.setText(entry.string_id)
-        self.text_string.setPlainText(entry.text_string)
-        if self.has_comparison_str:
-            self.text_comparison.setPlainText(self.comparison_text)
-        self.text_size.setValue(int(entry.size))
-        self.letter_spacing.setValue(float(entry.letterSpacing))
-        self.leading.setValue(int(entry.leading))
-        self.text_color.setText(entry.color)
-        self.is_translated.setChecked(entry.is_translated)
-        self.is_text_bold.setChecked(entry.bold)
+            self.entry = entry
+
+            # group the input widgets to block their signals
+            input_widgets = [
+                self.text_string, self.text_size, self.letter_spacing,
+                self.leading, self.text_color, self.is_translated, self.is_text_bold
+            ]
+
+            for w in input_widgets:
+                w.blockSignals(True)
+
+            # update UI
+            self.string_id.setText(entry.string_id)
+            self.text_string.setPlainText(entry.text_string)
+
+            # toggle visibility of comparison panel
+            self.text_comparison.setVisible(self.has_comparison_str)
+            if self.has_comparison_str:
+                self.text_comparison.setPlainText(self.comparison_text)
+
+            self.text_size.setValue(int(entry.size))
+            self.letter_spacing.setValue(float(entry.letterSpacing))
+            self.leading.setValue(int(entry.leading))
+            self.text_color.setText(entry.color)
+            self.is_translated.setChecked(entry.is_translated)
+            self.is_text_bold.setChecked(entry.bold)
+
+            # unblock signals
+            for w in input_widgets:
+                w.blockSignals(False)
 
     def _setup_ui(self):
         main_layout = QVBoxLayout(self)
@@ -54,24 +73,25 @@ class XMLLineEditWidget(QWidget):
         self.is_text_bold.checkStateChanged.connect(lambda v: setattr(self.entry, "bold", v == Qt.CheckState.Checked))
 
     def _build_top_row(self) -> QHBoxLayout:
-        layout = QHBoxLayout()
-        layout.setSpacing(4)
+            layout = QHBoxLayout()
+            layout.setSpacing(4)
 
-        # --- text editor ---
-        self.text_string = QTextEdit()
-        self.text_string.setFixedHeight(90)
+            # --- text editor ---
+            self.text_string = QTextEdit()
+            self.text_string.setFixedHeight(90)
+            layout.addWidget(self.text_string)
 
-        layout.addWidget(self.text_string)
-
-        # --- text comparison widget ---
-        if self.has_comparison_str:
+            # --- text comparison widget ---
             self.text_comparison = QTextEdit()
             self.text_comparison.setFixedHeight(90)
             self.text_comparison.setReadOnly(True)
             self.text_comparison.setStyleSheet("QTextEdit { color: gray }")
             layout.addWidget(self.text_comparison)
 
-        return layout
+            # hide by default
+            self.text_comparison.setVisible(self.has_comparison_str)
+
+            return layout
 
     def _build_toolbar_row(self) -> QHBoxLayout:
         layout = QHBoxLayout()
@@ -166,11 +186,16 @@ class XMLLineEditWidget(QWidget):
             self.text_color.blockSignals(False)
 
 class MainWindow(QMainWindow):
+    SOURCE_ROOTS = [
+        "../DreamWorld_data/src/swf/pdw/assets/{lang}/xml",
+        "../DreamWorld_data/src/swf/theme/assets/{lang}/xml",
+    ]
+
     def __init__(self):
         super().__init__()
         uic.loadUi("xml.ui", self)
 
-        # dict[file][string_id][lang] -> StringEntry
+        # dict[file_key][string_id][lang_code] -> StringEntry
         self.entry_list = {}
 
         self.languages = {
@@ -183,28 +208,20 @@ class MainWindow(QMainWindow):
             "Korean": "ko"
         }
 
-        self.string_entry_defaults = {
-            "size": 0,
-            "letterSpacing": 0.0,
-            "leading": 0,
-            "color": "",
-            "bold": False,
-        }
+        self.default_entry = StringEntry()
 
         self.container = QWidget()
         self.layout = QVBoxLayout(self.container)
 
-        with open("text.json", "r", encoding="UTF-8") as f:
-            self.text_data = json.load(f)
+        self._init_cache()
 
-        for xml_file in self.text_data.keys():
-            self.sel_file.addItem(xml_file)
+        for file_key in self.entry_list.keys():
+            self.sel_file.addItem(file_key)
 
         for language in self.languages.keys():
             self.sel_language.addItem(language)
             self.sel_ref_language.addItem(language)
 
-        self._init_cache()
         self._add_widgets()
 
         self.sel_file.currentTextChanged.connect(self._refresh_widgets)
@@ -212,44 +229,166 @@ class MainWindow(QMainWindow):
         self.sel_ref_language.currentTextChanged.connect(self._refresh_widgets)
 
         self.save_btn.pressed.connect(self.export_entries)
-        self.save_btn.pressed.connect(self.save_json)
 
-    def _init_cache(self):
+    # -------------------
+    # XML loading helpers
+    # -------------------
 
-        for file, strings in self.text_data.items():
-            self.entry_list[file] = {}
+    @staticmethod
+    def _fix_color_str(color: str) -> str:
+        if color == "#000000": return "00000000"
+        if color == "00000000": return "#000000"
 
-            for string_id, string_data in strings.items():
-                if string_id == "path":
+        return f"0x{color[1:]}" if color.startswith("#") else f"#{color[2:]}"
+
+    @staticmethod
+    def _parse_strings_xml(path: Path) -> dict[str, dict]:
+        result = {}
+        try:
+            root = ET.parse(path).getroot()
+
+        except ET.ParseError:
+            return result
+
+        for el in root.findall("string"):
+            sid = el.get("id", "")
+
+            if not sid:
+                continue
+
+            result[sid] = {
+                "string": el.text or "",
+                "is_translation": el.get("unofficial", "false").lower() == "true",
+            }
+
+        return result
+
+    @staticmethod
+    def _parse_format_xml(path: Path) -> dict[str, dict]:
+        result = {}
+        try:
+            root = ET.parse(path).getroot()
+
+        except ET.ParseError:
+            return result
+
+        for el in root.findall("string"):
+            sid = el.get("id", "")
+
+            if not sid:
+                continue
+
+            fmt = {}
+
+            if el.get("size") is not None:
+                fmt["size"] = int(el.get("size"))
+
+            if el.get("letterSpacing") is not None:
+                fmt["letterSpacing"] = float(el.get("letterSpacing"))
+
+            if el.get("leading") is not None:
+                fmt["leading"] = int(el.get("leading"))
+
+            if el.get("color") is not None:
+                fmt["color"] = MainWindow._fix_color_str(el.get("color"))
+
+            if el.get("bold") is not None:
+                fmt["bold"] = el.get("bold").lower() == "true"
+
+            result[sid] = fmt
+
+        return result
+
+    def _init_cache(self) -> None:
+        lang_codes = list(self.languages.values())
+
+        for root_template in self.SOURCE_ROOTS:
+            en_dir = Path(root_template.format(lang="en"))
+            if not en_dir.is_dir():
+                continue
+
+            for en_file in sorted(en_dir.glob("*strings.xml")):
+                # skip loading empty files
+                try:
+                    en_root = ET.parse(en_file).getroot()
+                except ET.ParseError:
+                    continue
+                if not en_root.findall("string"):
                     continue
 
-                self.entry_list[file][string_id] = {}
+                stem = en_file.stem
 
-                for lang_code in self.languages.values():
+                # skip if already loaded from another root
+                if stem in self.entry_list:
+                    continue
 
-                    if not string_data[lang_code]:
-                        entry = StringEntry(string_id=string_id)
-                    else:
+                self.entry_list[stem] = {}
+
+                # collect the list of string IDs from the English file
+                en_string_ids = [el.get("id") for el in en_root.findall("string") if el.get("id")]
+
+                # derive the format filename
+                format_stem = stem.replace("strings", "format")
+
+                for string_id in en_string_ids:
+                    self.entry_list[stem][string_id] = {}
+
+                    for lang_code in lang_codes:
+                        lang_dir = Path(root_template.format(lang=lang_code))
+                        xml_path = lang_dir / en_file.name
+
+                        # relative path stored on the entry so export_entries can write it
+                        rel_path = xml_path.relative_to(Path("../DreamWorld_data"))
+
+                        str_data = self._parse_strings_xml(xml_path) if xml_path.exists() else {}
+                        row = str_data.get(string_id, {})
                         entry = StringEntry(
                             string_id=string_id,
-                            text_string=string_data[lang_code]["string"],
-                            is_translated=string_data[lang_code]["is_translation"]
+                            text_string=row.get("string", ""),
+                            is_translated=row.get("is_translation", False),
+                            path=str(rel_path)
                         )
 
-                    if "path" in strings:
-                        entry.path = strings["path"].replace("/../", f"/{lang_code}/")
+                        # apply formatting from the companion _format file
+                        fmt_path = lang_dir / (format_stem + en_file.suffix)
+                        if fmt_path.exists():
+                            fmt_data = self._parse_format_xml(fmt_path)
+                            for field, value in fmt_data.get(string_id, {}).items():
+                                setattr(entry, field, value)
 
-                    if "format" in string_data:
-                        for field, value in string_data["format"].items():
-                            setattr(entry, field, value)
+                        self.entry_list[stem][string_id][lang_code] = entry
 
-                    self.entry_list[file][string_id][lang_code] = entry
+    def _refresh_widgets(self) -> None:
+        file = self.sel_file.currentText()
+        sel_lang = self.languages[self.sel_language.currentText()]
+        ref_lang = self.languages[self.sel_ref_language.currentText()]
+        show_comparison = sel_lang != ref_lang
 
-    def _refresh_widgets(self):
-        self._clear_widgets()
-        self._add_widgets()
+        entries = list(self.entry_list[file].values())
 
-    def _add_widgets(self):
+        # update existing widgets or add new ones
+        for i, lang_entries in enumerate(entries):
+            entry = lang_entries[sel_lang]
+            comparison_text = lang_entries[ref_lang].text_string if show_comparison else ""
+
+            # if a widget already exists at this index, load the new data
+            if i < self.layout.count():
+                widget = self.layout.itemAt(i).widget()
+                widget.has_comparison_str = show_comparison
+                widget.comparison_text = comparison_text
+                widget.load(entry)
+            else:
+                # else create a new one
+                widget = XMLLineEditWidget(entry, comparison_text if show_comparison else None)
+                self.layout.addWidget(widget)
+
+        # remove any excess widgets if the new file has fewer strings
+        while self.layout.count() > len(entries):
+            item = self.layout.takeAt(self.layout.count() - 1)
+            if item.widget():
+                item.widget().deleteLater()
+
+    def _add_widgets(self) -> None:
         file = self.sel_file.currentText()
         sel_lang = self.languages[self.sel_language.currentText()]
         ref_lang = self.languages[self.sel_ref_language.currentText()]
@@ -263,100 +402,107 @@ class MainWindow(QMainWindow):
 
         self.scrollArea.setWidget(self.container)
 
-    def _clear_widgets(self):
+    def _clear_widgets(self) -> None:
         while self.layout.count():
             item = self.layout.takeAt(0)
             if item.widget():
                 item.widget().deleteLater()
 
-    def export_entries(self):
+    def export_entries(self) -> None:
         BASE_PATH = Path("../DreamWorld_data")
 
-        entries_by_path: dict[str, list[StringEntry]] = {}
+        # group entries by their *_strings.xml path
+        entries_by_strings_path: dict[str, list[StringEntry]] = {}
 
-        for string_ids in self.entry_list.values():
-            for lang_entries in string_ids.values():
-                for entry in lang_entries.values():
-                    if not entry.path:
-                        continue
-                    entries_by_path.setdefault(entry.path, []).append(entry)
+        all_entries = (
+            entry
+            for file_dict in self.entry_list.values()
+            for id_dict in file_dict.values()
+            for entry in id_dict.values()
+        )
 
-        for rel_path, entries in entries_by_path.items():
-            output_path = BASE_PATH / rel_path
-            output_path.parent.mkdir(parents=True, exist_ok=True)
+        for entry in all_entries:
+            if not entry.path:
+                continue
+            strings_path = entry.path.replace("format.xml", "strings.xml")
+            entries_by_strings_path.setdefault(strings_path, []).append(entry)
 
-            lang_code = Path(rel_path).parts[-3]
+        for rel_strings_path, entries in entries_by_strings_path.items():
+            strings_output_path = BASE_PATH / rel_strings_path
+            strings_output_path.parent.mkdir(parents=True, exist_ok=True)
+
+            format_output_path = strings_output_path.with_name(
+                strings_output_path.name.replace("strings.xml", "format.xml")
+            )
+
+            lang_code = Path(rel_strings_path).parts[-3]
             locale = lang_code
 
-            is_format_file = "format" in output_path.stem
+            # -----------
+            # STRINGS XML
+            # -----------
 
-            root = ET.Element("data", locale=locale)
+            strings_root = ET.Element("data", locale=locale)
 
             for entry in entries:
-                el = ET.SubElement(root, "string", id=entry.string_id)
+                el = ET.SubElement(strings_root, "string", id=entry.string_id)
 
-                if is_format_file:
-                    # only write attributes that differ from their defaults
-                    if entry.size != self.string_entry_defaults["size"]:
-                        el.set("size", str(entry.size))
-                    if entry.letterSpacing != self.string_entry_defaults["letterSpacing"]:
-                        el.set("letterSpacing", str(entry.letterSpacing))
-                    if entry.leading != self.string_entry_defaults["leading"]:
-                        el.set("leading", str(entry.leading))
-                    if entry.color != self.string_entry_defaults["color"]:
-                        el.set("color", entry.color)
-                    if entry.bold != self.string_entry_defaults["bold"]:
-                        el.set("bold", "true")
-                else:
-                    if entry.is_translated:
-                        el.set("unofficial", "true")
-                    # fall back to string_id if text is empty
-                    el.text = entry.text_string or entry.string_id
+                if entry.is_translated:
+                    el.set("unofficial", "true")
 
-            ET.indent(root, space="\t")
+                # fall back to string_id if text is empty
+                el.text = entry.text_string or entry.string_id
 
-            with output_path.open("w", encoding="utf-8") as f:
+            ET.indent(strings_root, space="\t")
+
+            with strings_output_path.open("w", encoding="utf-8") as f:
                 f.write('<?xml version="1.0" encoding="utf-8" ?>\n')
-                f.write(ET.tostring(root, encoding="unicode", short_empty_elements=is_format_file))
+                f.write(ET.tostring(strings_root, encoding="unicode"))
 
-    def save_json(self):
-        for file, string_ids in self.entry_list.items():
-            for string_id, lang_entries in string_ids.items():
-                for lang_code, entry in lang_entries.items():
-                    string_data = self.text_data[file][string_id]
+            # ----------
+            # FORMAT XML
+            # ----------
 
-                    #existing text update
-                    if string_data[lang_code]:
-                        #if the string is cleared, clear the JSON as well
-                        if entry.text_string == "":
-                            string_data[lang_code] = {}
+            format_root = ET.Element("data", locale=locale)
 
-                        else:
-                            string_data[lang_code]["string"] = entry.text_string
-                            string_data[lang_code]["is_translation"] = entry.is_translated
+            for entry in entries:
+                attrs = {}
 
-                    #new text addition
-                    elif entry.text_string:
-                        string_data[lang_code] = {
-                            "string": entry.text_string,
-                            "is_translation": entry.is_translated,
-                        }
+                if entry.size != self.default_entry.size:
+                    attrs["size"] = str(entry.size)
 
-                    # update format fields, removing any that have reverted to their default
-                    string_data.setdefault("format", {})
-                    for field in ("size", "letterSpacing", "leading", "color", "bold"):
-                        value = getattr(entry, field)
-                        if value != self.string_entry_defaults[field]:
-                            string_data["format"][field] = value
-                        else:
-                            string_data["format"].pop(field, None)
+                if entry.letterSpacing != self.default_entry.letterSpacing:
+                    attrs["letterSpacing"] = str(entry.letterSpacing)
 
-                    # remove the format block entirely if nothing is set
-                    if not string_data["format"]:
-                        string_data.pop("format", None)
+                if entry.leading != self.default_entry.leading:
+                    attrs["leading"] = str(entry.leading)
 
-        with open("text.json", "w", encoding="UTF-8") as f:
-            json.dump(self.text_data, f, ensure_ascii=False, indent=4)
+                if entry.color != self.default_entry.color:
+                    attrs["color"] = self._fix_color_str(entry.color)
+
+                if entry.bold != self.default_entry.bold:
+                    attrs["bold"] = "true"
+
+                # skip empty format entries
+                if not attrs:
+                    continue
+
+                el = ET.SubElement(format_root, "string", id=entry.string_id)
+
+                for key, value in attrs.items():
+                    el.set(key, value)
+
+            ET.indent(format_root, space="\t")
+
+            with format_output_path.open("w", encoding="utf-8") as f:
+                f.write('<?xml version="1.0" encoding="utf-8" ?>\n')
+                f.write(
+                    ET.tostring(
+                        format_root,
+                        encoding="unicode",
+                        short_empty_elements=True
+                    )
+                )
 
 
 def main():

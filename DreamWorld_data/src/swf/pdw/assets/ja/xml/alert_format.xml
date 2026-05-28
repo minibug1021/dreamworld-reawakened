@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<data locale="en">	
-	<string id="pg_ade_1" size="14" color="0x000000" kerning="true" letterSpacing="-0.2" />
-	<string id="pg_ade_2" size="14" color="0x000000" kerning="true" letterSpacing="-0.2" />
-	<string id="pg_ade_3" size="14" color="0x000000" kerning="true" letterSpacing="-0.2" />
-	<string id="pg_ade_4" size="14" color="0xffffff" kerning="true" letterSpacing="-0.2" />
-	<string id="pg_ade_5" size="14" color="0xffffff" kerning="true" letterSpacing="-0.2" />
+<data locale="ja">
+	<string id="pg_ade_1" size="14" letterSpacing="-0.2" color="0x00000" />
+	<string id="pg_ade_2" size="14" letterSpacing="-0.2" color="0x00000" />
+	<string id="pg_ade_3" size="14" letterSpacing="-0.2" color="0x00000" />
+	<string id="pg_ade_4" size="14" letterSpacing="-0.2" color="0xfffff" />
+	<string id="pg_ade_5" size="14" letterSpacing="-0.2" color="0xfffff" />
 </data>

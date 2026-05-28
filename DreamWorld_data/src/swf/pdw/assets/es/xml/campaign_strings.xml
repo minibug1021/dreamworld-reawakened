@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data locale="es">
+	<string id="c_ad_1">Promociones</string>
+	<string id="c_ad_2">Fecha</string>
+	<string id="c_ad_3">Estado</string>
+	<string id="c_ad_4">Título</string>
+	<string id="c_ad_11">Cómo participar en la promoción</string>
+	<string id="c_aa_1">Información detallada</string>
+	<string id="c_aa_3">Siguiente</string>
+	<string id="c_aa_4">A los participantes en la promoción:</string>
+	<string id="c_bb_3">
+Período de la promoción: del [DD1]-[MM1]-[YYYY1] [hh1]:[mm1] al [DD2]-[MM2]-[YYYY2] [hh2]:[mm2]
+</string>
+	<string id="c_ba_1">
+Para participar en la promoción, es necesario tener una cuenta del Club de Entrenadores Pokémon. Si ya tienes una cuenta, inicia sesión desde la página de inicio.
+</string>
+	<string id="c_ba_2">Para usuarios nuevos</string>
+	<string id="c_ba_3">Registrarse</string>
+	<string id="c_bb_1">
+Para participar en la promoción, es necesario obtener permiso en el Club de Entrenadores Pokémon. Compruébalo en el sitio web oficial.
+</string>
+	<string id="c_bb_7">Atrás</string>
+	<string id="c_bd_1">Esta promoción estará disponible muy pronto.</string>
+	<string id="c_be_1">Esta promoción ha concluido.</string>
+	<string id="c_bf_1">Gracias por participar en esta promoción.</string>
+	<string id="c_bg_1">
+Para participar en esta promoción, necesitas un ID para Sincronizar de Pokémon Edición Negra.
+</string>
+	<string id="c_bh_1">
+Para participar en esta promoción, necesitas un ID para Sincronizar de Pokémon Edición Blanca.
+</string>
+	<string id="c_bi_1">
+Para participar en esta promoción, necesitas un ID para Sincronizar de Pokémon Edición Negra o Pokémon Edición Blanca.
+</string>
+	<string id="c_bj_1">
+Tu Tablón de Pokémon amigos está lleno. Transfiere un Pokémon a la Zona Nexo y vuelve a intentarlo.
+</string>
+	<string id="c_bk_1">
+El Bosque Nexo está lleno, por lo que no puedes transferir más Pokémon. Dirígete al Bosque Nexo para encontrarte con un Pokémon y vuelve a intentarlo.
+</string>
+	<string id="c_bl_1">No hay promociones en curso.</string>
+</data>

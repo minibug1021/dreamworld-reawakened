@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<data locale="ja">
-    <string id="lo_a_1">Loading...</string>
+<data locale="en">
+	<string id="c_ad_1">c_ad_1</string>
+	<string id="c_ad_2">c_ad_2</string>
+	<string id="c_ad_3">c_ad_3</string>
+	<string id="c_ad_4">c_ad_4</string>
+	<string id="c_ad_11">c_ad_11</string>
+	<string id="c_aa_1">c_aa_1</string>
+	<string id="c_aa_3">c_aa_3</string>
+	<string id="c_aa_4">c_aa_4</string>
+	<string id="c_bb_3">c_bb_3</string>
+	<string id="c_ba_1">c_ba_1</string>
+	<string id="c_ba_2">c_ba_2</string>
+	<string id="c_ba_3">c_ba_3</string>
+	<string id="c_bb_1">c_bb_1</string>
+	<string id="c_bb_7">c_bb_7</string>
+	<string id="c_bd_1">c_bd_1</string>
+	<string id="c_be_1">c_be_1</string>
+	<string id="c_bf_1">c_bf_1</string>
+	<string id="c_bg_1">c_bg_1</string>
+	<string id="c_bh_1">c_bh_1</string>
+	<string id="c_bi_1">c_bi_1</string>
+	<string id="c_bj_1">c_bj_1</string>
+	<string id="c_bk_1">c_bk_1</string>
+	<string id="c_bl_1">c_bl_1</string>
 </data>

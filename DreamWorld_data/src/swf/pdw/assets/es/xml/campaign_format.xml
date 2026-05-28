@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data locale="es">
+	<string id="c_ad_1" size="18" color="#333333" bold="true" />
+	<string id="c_ad_2" size="10" color="#FFFFFF" />
+	<string id="c_ad_3" size="10" color="#FFFFFF" />
+	<string id="c_ad_4" size="10" color="#FFFFFF" />
+	<string id="c_ad_11" size="12" color="#FFFFFF" />
+	<string id="c_aa_1" size="10" color="#FFFFFF" />
+	<string id="c_aa_3" size="13" color="#FFFFFF" />
+	<string id="c_aa_4" size="13" color="#FFFFFF" bold="true" />
+	<string id="c_ba_1" size="15" color="#E98C22" bold="true" />
+	<string id="c_ba_2" size="10" letterSpacing="0.4" color="#F95D18" />
+	<string id="c_ba_3" size="13" color="#FFFFFF" />
+	<string id="c_bb_1" size="15" color="#E98C22" bold="true" />
+	<string id="c_bb_7" size="13" color="#FFFFFF" />
+	<string id="c_bd_1" size="15" color="#E98C22" bold="true" />
+	<string id="c_be_1" size="15" color="#E98C22" bold="true" />
+	<string id="c_bf_1" size="15" color="#E98C22" bold="true" />
+	<string id="c_bg_1" size="15" color="#E98C22" bold="true" />
+	<string id="c_bh_1" size="15" color="#E98C22" bold="true" />
+	<string id="c_bi_1" size="15" color="#E98C22" bold="true" />
+	<string id="c_bj_1" size="15" color="#E98C22" bold="true" />
+	<string id="c_bk_1" size="15" color="#E98C22" bold="true" />
+	<string id="c_bl_1" size="16" color="#000000" />
+</data>
