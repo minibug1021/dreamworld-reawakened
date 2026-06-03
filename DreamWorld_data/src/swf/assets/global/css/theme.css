@@ -1,0 +1,455 @@
+
+@import "dialog.css";
+
+body, p, h1, h2, h3, h4, h5, h6, form, input, select, ul, ol, li  {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS P Gothic', sans-serif;
+  background-color: #c6c6c6;
+}
+
+a img {
+  border: 0;
+}
+
+/*
+.clearfix, #main {
+  width:100%;
+}
+.clearfix:after, #main:after {
+  content: ""; 
+  display: block; 
+  clear: both;
+}
+*/
+
+.logged-in-black a {
+  color: #3c3c3c;
+}
+.logged-in-white a {
+  color: #3c3c3c;
+}
+.logged-in-black2 a {
+  color: #0052eb;
+}
+.logged-in-white2 a {
+  color: #ff371e;
+}
+.trial a {
+  color: #78785a;
+}
+
+html {
+  background: #BDBDBD url(../images/body-bg.png) center top repeat;
+}
+#wrapper {
+  background: url(../images/wrapper-bg.png) center top repeat-x;
+}
+#container {
+  background-color: #78786e;
+  width: 1003px;
+  margin: 0 auto;
+}
+.logged-in-black #container {
+  background-color: #b4b4aa;
+}
+
+
+#header {
+  position: relative;
+  width: 1003px;
+  height: 123px;
+  z-index: 1000;
+}
+.not-logged-in #header {
+  height: 110px;
+}
+
+
+#header #logo {
+  float: left;
+  width: 192px;
+  height: 110px;
+  text-align: center;
+}
+#header #logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  text-indent: -9000px;
+}
+
+
+#header #logged-in-info {
+  float: left;
+  width: 811px;
+  height: 53px;
+  margin-bottom: -10px;
+  font-size: 11px;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+#header-avatar, #header-pgln, #header-rom, #header-volume {
+  float: left;
+}
+#header-rom-change, #header-logout {
+  position: absolute;
+}
+#header-avatar {
+  margin-left: 2px;
+  margin-top: 9px;
+  width: 25px;
+  height: 25px;
+}
+#header-avatar img {
+  width: 25px;
+  height: 25px;
+}
+#header-pgln {
+  width: 185px;
+  margin-top: 15px;
+  padding: 0 10px;
+  font-size: 9px;
+  line-height: 1.1;
+}
+#header-pglname {
+  font-size: 11px;
+}
+#header-rom {
+  margin-left: 1px;
+  margin-top: 15px;
+  height: 28px;
+  width: 202px;
+  padding-left: 28px;
+  font-size: 9px;
+  overflow: hidden;
+  line-height: 1.1;
+}
+#header-romname {
+  font-size: 11px;
+}
+#header-rom-change {
+  width: 115px;
+  right: 116px;
+  top: 0;
+}
+#header-rom-change a {
+  width: 115px;
+  height: 53px;
+  display: block;
+  text-indent: -9000px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+#header-rom-change a.disabled {
+  cursor: default;
+}
+#header-rom-change a:hover {
+  height: 63px;
+}
+#header-rom-change a.disabled:hover {
+  height: 53px;
+}
+#header-volume {
+  width: 115px;
+  height: 32px;
+  margin-left: 1px;
+}
+#header-volume-swf {
+  margin-left: 27px;
+  margin-top: 12px;
+}
+.not-logged-in #header-volume {
+  position: absolute;
+  left: 623px;
+  top: 10px;
+}
+.not-logged-in #header-volume-swf {
+  margin: 0;
+}
+#header-logout {
+  width: 115px;
+  right: 0;
+  top: 0;
+}
+#header-logout a {
+  width: 115px;
+  height: 53px;
+  display: block;
+  text-indent: -9000px;
+  background-repeat: no-repeat;
+  background-position: -348px bottom;
+}
+#header-logout a:hover {
+  height: 63px;
+}
+
+.logged-in-black #header #logged-in-info, .logged-in-black2 #header #logged-in-info {
+  color: #fff;
+}
+
+#header-back-to-top {
+  display: none;
+}
+.not-logged-in #header-back-to-top {
+  display: block;
+}
+#header-back-to-top a {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 120px;
+  height: 40px;
+  display: block;
+  text-indent: -9000px;
+  background-repeat: no-repeat;
+  background-position: -883px 0;
+}
+
+#head-menu {
+  position: absolute;
+  right: 0px;
+  width: 811px;
+  top: 43px;
+  height: 80px;
+}
+.not-logged-in #head-menu {
+  display: none;
+}
+
+#head-menu li {
+  list-style: none;
+  position: absolute;
+  top: 0;
+  width: 116px;
+  height: 80px;
+}
+
+#head-menu li a {
+  display: block;
+  width: 116px;
+  height: 80px;
+  color: #fff;
+  text-indent: -9000px;
+  background-repeat: no-repeat;
+}
+
+#head-menu li#head-menu-profile {
+  left: 0;
+  width: 115px;
+}
+#head-menu li#head-menu-campaign {
+  left: 115px;
+}
+#head-menu li#head-menu-customize {
+  left: 231px;
+}
+#head-menu li#head-menu-pdw {
+  left: 347px;
+}
+#head-menu li#head-menu-report {
+  left: 463px;
+}
+#head-menu li#head-menu-wifi {
+  left: 579px;
+}
+#head-menu li#head-menu-support {
+  left: 695px;
+}
+
+
+#head-menu li#head-menu-profile a {
+  width: 115px;
+  background-position: -192px -43px;
+}
+#head-menu li#head-menu-profile a:hover {
+  background-position: -192px -166px;
+}
+#head-menu li#head-menu-profile.selected a {
+  background-position: -192px -289px;
+}
+
+#head-menu li#head-menu-campaign a {
+  background-position: -307px -43px;
+}
+#head-menu li#head-menu-campaign a:hover {
+  background-position: -307px -166px;
+}
+#head-menu li#head-menu-campaign.selected a {
+  background-position: -307px -289px;
+}
+
+#head-menu li#head-menu-customize a {
+  background-position: -423px -43px;
+}
+#head-menu li#head-menu-customize a:hover {
+  background-position: -423px -166px;
+}
+#head-menu li#head-menu-customize.selected a {
+  background-position: -423px -289px;
+}
+
+#head-menu li#head-menu-pdw a {
+  background-position: -539px -43px;
+}
+#head-menu li#head-menu-pdw a:hover {
+  background-position: -539px -166px;
+}
+#head-menu li#head-menu-pdw.selected a {
+  background-position: -539px -289px;
+}
+
+#head-menu li#head-menu-report a {
+  background-position: -655px -43px;
+}
+#head-menu li#head-menu-report a:hover {
+  background-position: -655px -166px;
+}
+#head-menu li#head-menu-report.selected a {
+  background-position: -655px -289px;
+}
+
+#head-menu li#head-menu-wifi a {
+  background-position: -771px -43px;
+}
+#head-menu li#head-menu-wifi a:hover {
+  background-position: -771px -166px;
+}
+#head-menu li#head-menu-wifi.selected a {
+  background-position: -771px -289px;
+}
+
+#head-menu li#head-menu-support a {
+  background-position: -887px -43px;
+}
+#head-menu li#head-menu-support a:hover {
+  background-position: -887px -166px;
+}
+#head-menu li#head-menu-support.selected a {
+  background-position: -887px -289px;
+}
+
+
+
+
+#footer {
+  clear: both;
+  height: 200px;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+}
+.logged-in-white #footer, .logged-in-white2 #footer {
+  color: #000;
+  background-color: #fff;
+}
+
+#footer a {
+  color: #fff;
+  text-decoration: none;
+}
+.logged-in-white #footer a, .logged-in-white2 #footer a {
+  color: #000;
+}
+
+#footer #copyright {
+  padding: 10px;
+  font-size: 11px;
+}
+
+#footer li {
+  list-style: none;
+  float: left;
+  padding-left: 20px;
+}
+
+#footer .trafficy {
+  display: none;
+}
+
+#footer #footer-links {
+  padding: 10px;
+  height: 15px;
+  width: 970px;
+}
+
+.language-de #footer-links li,
+.language-es #footer-links li {
+  padding-left: 10px;
+}
+
+#footer #select-language {
+  padding: 10px;
+  height: 15px;
+  background-color: #dcdcbe;
+  color: #000;
+}
+.logged-in-white #footer #select-language {
+  color: #fff;
+  background-color: #000;
+}
+.logged-in-black #footer #select-language {
+  color: #fff;
+  background-color: #373737;
+}
+.logged-in-white2 #footer #select-language {
+  color: #fff;
+  background-color: #d7000f;
+}
+.logged-in-black2 #footer #select-language {
+  color: #fff;
+  background-color: #006ed2;
+}
+
+
+#footer #select-language a {
+  color: #000;
+}
+.logged-in-white #footer #select-language a,
+.logged-in-black #footer #select-language a,
+.logged-in-white2 #footer #select-language a,
+.logged-in-black2 #footer #select-language a {
+  color: #fff;
+}
+
+#footer #badges {
+  text-align: center;
+  background: #000;
+  padding: 10px;
+  height: 105px;
+}
+#footer #badges img {
+  vertical-align: middle;
+  margin: 0 5px;
+}
+
+
+.logged-in {
+  display: none;
+}
+
+
+.language-en .game-card-name,
+.language-fr .game-card-name,
+.language-it .game-card-name,
+.language-de .game-card-name,
+.language-es .game-card-name {
+  font-style: italic;
+}
+
+
+#gus {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 56px;
+}

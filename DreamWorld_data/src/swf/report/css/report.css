@@ -1,0 +1,258 @@
+/* AUTO-GENERATED PGL STUB: /cdn2.pokemon-gl.com/src/swf/report/css/report.css */
+/* offline report layout fallback for missing asset /cdn2.pokemon-gl.com/src/swf/report/css/report.css */
+#report {
+  margin-top: 14px;
+  color: #222;
+  font-size: 14px;
+  line-height: 1.35;
+}
+#report * {
+  box-sizing: border-box;
+}
+#report a {
+  color: #3f5568;
+  text-decoration: underline;
+}
+#report a:hover {
+  color: #223748;
+}
+#report h2 {
+  margin: 0 0 10px;
+  padding: 0;
+  color: #111;
+  font-size: 44px;
+  line-height: 1;
+}
+#report h3 {
+  margin: 0 0 8px;
+  padding: 0;
+  color: #111;
+}
+#report-header {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border: 1px solid #9f9f9f;
+  background: #d6d6d6;
+}
+#report-header h1 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  line-height: 1;
+}
+#report-header .nav a {
+  display: inline-block;
+  margin-right: 8px;
+  margin-bottom: 6px;
+  padding: 6px 10px;
+  border: 1px solid #7f7f7f;
+  border-radius: 2px;
+  background: #efefef;
+  color: #1f1f1f;
+  text-decoration: none;
+}
+#report-header .nav a.selected,
+#report-header .nav a:hover {
+  background: #111;
+  border-color: #111;
+  color: #fff;
+}
+#report-contents > div {
+  margin-bottom: 14px;
+  padding: 12px;
+  border: 1px solid #b7b7b7;
+  background: #f2f2ef;
+}
+#report .updated-at {
+  margin-bottom: 8px;
+  text-align: right;
+  color: #555;
+}
+#report .nav-back {
+  margin-top: 10px;
+}
+#report .map {
+  margin-bottom: 12px;
+  min-height: 210px;
+  border: 1px solid #9a9a9a;
+  border-radius: 2px;
+  background: #cdd3d8;
+}
+#gts-top-trade {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.gts-top-trade-deposit {
+  flex: 1 1 360px;
+  padding: 10px;
+  border: 1px solid #a7a7a7;
+  background: #fff;
+}
+.gts-top-trade-deposit .pokemon {
+  position: relative;
+  min-height: 130px;
+  padding-right: 110px;
+}
+.gts-top-trade-deposit .pokemon .name {
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.gts-top-trade-deposit .pokemon .image {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 96px;
+  height: 96px;
+  border: 1px solid #c3c3c3;
+  background: #efefef;
+}
+.gts-top-trade-deposit .pokemon .level,
+.gts-top-trade-deposit .pokemon .nickname,
+.gts-top-trade-deposit .pokemon .nature,
+.gts-top-trade-deposit .user .name,
+.gts-top-trade-deposit .user .area,
+.gts-top-trade-deposit .deposited-at {
+  margin-bottom: 4px;
+}
+.gts-top-trade-deposit .types ol,
+.gts-top-trade-deposit .moves {
+  margin: 0 0 5px;
+  padding-left: 18px;
+}
+#gts-top-stats {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+}
+#gts-top-stats > div {
+  min-height: 54px;
+  padding: 8px 10px;
+  border: 1px solid #a0a0a0;
+  background: #787b79;
+  color: #fff;
+}
+#gts-top-stats .value {
+  display: block;
+  margin-top: 2px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+#gts-ranking-selector {
+  margin: 8px 0 12px;
+}
+#gts-ranking-selector a {
+  display: inline-block;
+  margin: 0 6px 6px 0;
+  padding: 6px 10px;
+  border: 1px solid #9a9a9a;
+  background: #e5e5e5;
+  color: #222;
+  text-decoration: none;
+}
+#gts-ranking-selector a.selected,
+#gts-ranking-selector a:hover {
+  background: #222;
+  border-color: #222;
+  color: #fff;
+}
+.pokemon-ranking {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pokemon-ranking .ranking-entry {
+  position: relative;
+  width: calc(20% - 8px);
+  min-width: 180px;
+  min-height: 72px;
+  padding: 8px 8px 8px 50px;
+  border: 1px solid #a6a6a6;
+  background: #fff;
+}
+.pokemon-ranking .ranking {
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.pokemon-ranking .image {
+  width: 64px;
+  height: 64px;
+  border: 1px solid #d1d1d1;
+  background: #f1f1f1;
+}
+.pokemon-ranking .name {
+  margin-top: 4px;
+  font-weight: 700;
+}
+#gts-pokemon-pokemon,
+#gts-area-area,
+#gts-area-rankings,
+#gts-area-deposits,
+#wifi-comp-list,
+#wifi-comp-detail,
+#global-records,
+#gbu-top,
+#gbu-season-ranking,
+#gbu-season-trend {
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #a7a7a7;
+  background: #fff;
+}
+#gts-pokemon-pokemon .image img {
+  max-width: 160px;
+  max-height: 160px;
+}
+#gts-area-rankings ol,
+#gts-area-deposits ol,
+#wifi-comp-list ol,
+#global-records ol,
+#gbu-season-ranking ol,
+#gbu-season-trend ol {
+  margin: 0;
+  padding-left: 22px;
+}
+#global-records-control .dropdown,
+#dialog-pokemon-selector,
+#dialog-area-selector,
+#dialog-ranking-selector,
+#dialog-gbu-records {
+  border: 1px solid #757575;
+  background: #ececec;
+}
+#dialog-pokemon-selector .scroller,
+#dialog-area-selector .scroller {
+  max-height: 360px;
+}
+.balloon {
+  position: absolute;
+  z-index: 901;
+  padding: 8px;
+  border: 1px solid #6f6f6f;
+  background: #fff;
+}
+#report .date-from {
+  margin-top: 8px;
+  color: #444;
+}
+@media (max-width: 1100px) {
+  .pokemon-ranking .ranking-entry {
+    width: calc(25% - 8px);
+  }
+}
+@media (max-width: 900px) {
+  #gts-top-stats {
+    grid-template-columns: 1fr;
+  }
+  .pokemon-ranking .ranking-entry {
+    width: calc(33.333% - 8px);
+    min-width: 150px;
+  }
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data locale="es">		
+	<!-- キャンペーン一覧 -->
+	<string id="c_ad_1" size="18" color="0x333333" kerning="true" letterSpacing="0" bold="true" />
+	<!-- 日付 -->
+	<string id="c_ad_2" size="10" color="0xFFFFFF" kerning="true" letterSpacing="0" baselineShift="1" />
+	<!-- ステータス -->
+	<string id="c_ad_3" size="10" color="0xFFFFFF" kerning="true" letterSpacing="0" baselineShift="1" />
+	<!-- タイトル -->
+	<string id="c_ad_4" size="10" color="0xFFFFFF" kerning="true" letterSpacing="0" baselineShift="1" />
+	<!-- 日付[サーバ] -->
+	<string id="c_ad_6" size="8" color="0xF95C18" kerning="true" letterSpacing="0" />
+	<!-- キャンペーンに参加する方法 -->
+	<string id="c_ad_11" size="12" color="0xFFFFFF" kerning="true" letterSpacing="0" baselineShift="1" />
+	
+	<!-- くわしくはこちら -->
+	<string id="c_aa_1" size="10" color="0xFFFFFF" kerning="true" letterSpacing="0" />
+	<!-- つぎへ -->
+	<string id="c_aa_3" size="13" color="0xFFFFFF" kerning="true" letterSpacing="0" />
+	<!-- キャンペーンへ参加の方へ -->
+	<string id="c_aa_4" size="13" color="0xFFFFFF" kerning="true" letterSpacing="0" bold="true" />
+	
+	<!-- キャンペーンに参加いただくためにはポケモンだいすきクラブメンバーIDが必要です。すでにポケモンだいすきクラブメンバーIDをおもちのかたは下のログインウインドウからログインしてください。 -->
+	<string id="c_ba_1" size="15" color="0xE98C22" kerning="true" letterSpacing="0" bold="true" />
+	<!-- はじめてのご利用のかたはこちら -->
+	<string id="c_ba_2" size="10" color="0xF95D18" kerning="true" letterSpacing="0.4" />
+	<!-- 新規メンバー登録 -->
+	<string id="c_ba_3" size="13" color="0xFFFFFF" kerning="true" letterSpacing="0" />
+	
+	<!-- キャンペーンに参加いただくためにはポケモンだいすきクラブで参加けんりをかくとくするひつようがあります。ポケモンだいすきクラブで確認してください。 -->
+	<string id="c_bb_1" size="15" color="0xE98C22" kerning="true" letterSpacing="0" bold="true" />
+	<!-- もどる -->
+	<string id="c_bb_7" size="13" color="0xFFFFFF" kerning="true" letterSpacing="0" />
+	
+	<!-- このキャンペーンはもうすぐ開催予定です。 -->
+	<string id="c_bd_1" size="15" color="0xE98C22" kerning="true" letterSpacing="0" bold="true" />
+	
+	<!-- このキャンペーンは終了しました。 -->
+	<string id="c_be_1" size="15" color="0xE98C22" kerning="true" letterSpacing="0" bold="true" />
+	
+	<!-- キャンペーンに参加いただきありがとうございました。 -->
+	<string id="c_bf_1" size="15" color="0xE98C22" kerning="true" letterSpacing="0" bold="true" />
+	
+	<!-- このキャンペーンに参加いただくためにはポケットモンスターブラックのゲームシンクIDコードがひつようです。 -->
+	<string id="c_bg_1" size="15" color="0xE98C22" kerning="true" letterSpacing="0" bold="true" />
+	
+	<!-- このキャンペーンに参加いただくためにはポケットモンスターホワイトのゲームシンクIDコードがひつようです。 -->
+	<string id="c_bh_1" size="15" color="0xE98C22" kerning="true" letterSpacing="0" bold="true" />
+	
+	<!-- このキャンペーンに参加いただくためにはポケットモンスターブラックまたはホワイトのゲームシンクIDコードがひつようです。 -->
+	<string id="c_bi_1" size="15" color="0xE98C22" kerning="true" letterSpacing="0" bold="true" />
+	
+	<!-- なかよしボードがいっぱいです。ポケモンをハイリンクへつれて行ってください。 -->
+	<string id="c_bj_1" size="15" color="0xE98C22" kerning="true" letterSpacing="0" bold="true" />
+	
+	<!-- ハイリンクの森がいっぱいでこれ以上ポケモンをつれていけません。	ハイリンクの森でポケモンと出会ってください。 -->
+	<string id="c_bk_1" size="15" color="0xE98C22" kerning="true" letterSpacing="0" bold="true" />
+	
+	<!-- キャンペーンのゲームがみつかりません。 -->
+	<string id="c_bl_1" size="16" color="0x000000" kerning="true" letterSpacing="0" />
+</data>

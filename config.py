@@ -5,7 +5,6 @@ ROOT_DIR = Path(__file__).resolve().parent
 
 parser = argparse.ArgumentParser(description="Dream World HTTP server")
 parser.add_argument("--debug", action="store_true")
-parser.add_argument("--run-webpage", action='store_true', default=False)
 
 args = parser.parse_args()
 

@@ -2,29 +2,29 @@
 <data locale="it">
 	<string id="f_af_1">f_af_1</string>
 	<string id="f_af_2">f_af_2</string>
-	<string id="f_af_3">f_af_3</string>
-	<string id="f_af_4">f_af_4</string>
+	<string id="f_af_3" unofficial="true">Soprannome</string>
+	<string id="f_af_4" unofficial="true">Soprannome PGL</string>
 	<string id="f_af_6">f_af_6</string>
-	<string id="f_af_7">f_af_7</string>
-	<string id="f_af_8">f_af_8</string>
-	<string id="f_af_9">f_af_9</string>
-	<string id="f_af_10">f_af_10</string>
-	<string id="f_af_13">f_af_13</string>
+	<string id="f_af_7">Lv.</string>
+	<string id="f_af_8">Tipo</string>
+	<string id="f_af_9">Sesso</string>
+	<string id="f_af_10">Natura</string>
+	<string id="f_af_13">Attività</string>
 	<string id="f_af_14">f_af_14</string>
 	<string id="f_af_15">f_af_15</string>
-	<string id="f_af_16">f_af_16</string>
-	<string id="f_af_17">f_af_17</string>
+	<string id="f_af_16">Scambio</string>
+	<string id="f_af_17">Chiudi</string>
 	<string id="f_af_18">f_af_18</string>
 	<string id="m_ac_1">m_ac_1</string>
 	<string id="m_ac_2">m_ac_2</string>
-	<string id="m_ac_3">m_ac_3</string>
-	<string id="m_ac_4">m_ac_4</string>
+	<string id="m_ac_3" unofficial="true">Soprannome</string>
+	<string id="m_ac_4" unofficial="true">Soprannome PGL</string>
 	<string id="m_ac_6">m_ac_6</string>
-	<string id="m_ac_7">m_ac_7</string>
-	<string id="m_ac_8">m_ac_8</string>
-	<string id="m_ac_9">m_ac_9</string>
-	<string id="m_ac_10">m_ac_10</string>
-	<string id="m_ac_12">m_ac_12</string>
+	<string id="m_ac_7">Lv.</string>
+	<string id="m_ac_8">Tipo</string>
+	<string id="m_ac_9">Sesso</string>
+	<string id="m_ac_10">Natura</string>
+	<string id="m_ac_12" unofficial="true">Attività</string>
 	<string id="m_ac_16">m_ac_16</string>
-	<string id="m_ac_17">m_ac_17</string>
+	<string id="m_ac_17">Chiudi</string>
 </data>

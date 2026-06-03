@@ -1,6 +1,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlsplit, parse_qs, urlencode
 from html import escape
+from enum import StrEnum
 
 import logging
 from pathlib import Path
@@ -10,6 +11,7 @@ from api.routes import (
     POST_RESPONSES
 )
 
+from utils import language
 from utils.swf import build_swf_params
 
 # ---------------
@@ -18,7 +20,23 @@ from utils.swf import build_swf_params
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 
+class ANSIColor(StrEnum):
+    RED = "\033[31m"
+    RESET = "\033[0m"
+
+class ColoredFormatter(logging.Formatter):
+    def format(self, record):
+        message = super().format(record)
+
+        if "404" in message:
+            return f"{ANSIColor.RED}{message}{ANSIColor.RESET}"
+
+        return message
+
 class S(BaseHTTPRequestHandler):
+
+    def log_message(self, format, *args):
+        logging.info("%s - - %s", self.address_string(), format % args)
 
     def _dispatch_api(self, api_name, query, api_map):
         """Look up api_name in the dispatch tables and write the response."""
@@ -34,6 +52,7 @@ class S(BaseHTTPRequestHandler):
 
         self.send_response(200)
         #disable caching
+        self.send_header("Content-Type", "application/json")
         self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
         self.send_header("Pragma", "no-cache")
         self.send_header("Expires", "0")
@@ -71,6 +90,7 @@ class S(BaseHTTPRequestHandler):
         if path == "/":
             with open(ROOT_DIR / "DreamWorld_data" / "Dream_Park.htm", "rb") as f:
                 data = f.read()
+                data = data.replace(b"%%LANG%%", language.player_language.encode())
 
             self.send_response(200)
             self.send_header("Content-Length", str(len(data)))
@@ -78,7 +98,7 @@ class S(BaseHTTPRequestHandler):
             self.wfile.write(data)
             return
 
-        if "flash" not in self.headers.get("User-Agent").lower():
+        if not path.startswith("/DreamWorld_data/"):
             file_path = ROOT_DIR / "DreamWorld_data" / path.lstrip("/")
         else:
             file_path = ROOT_DIR / path.lstrip("/")
@@ -88,6 +108,14 @@ class S(BaseHTTPRequestHandler):
 
             with open(file_path, "rb") as f:
                 data = f.read()
+
+            if file_path.name == "swfembed2.js":
+                data = data.replace(
+                    b"lang:window.location",
+                    f"lang:'http://{language.player_language}.pokemon-gl.com/'".encode()
+                )
+
+            data = data.replace(b"cdn2.pokemon-gl.com", b"DreamWorld_data")
 
             self.send_response(200)
             self.send_header("Content-Length", str(len(data)))
@@ -113,14 +141,13 @@ class S(BaseHTTPRequestHandler):
         self._log_referrer(f"POST:{api_name}")
         self._dispatch_api(api_name, query, POST_RESPONSES)
 
-
 # ------------
 # Server start
 # ------------
 
 def run(server_class=HTTPServer, handler_class=S, port=8080, debug=False):
 
-    server_address = ("0.0.0.0", port)
+    server_address = ("127.0.0.1", port)
     httpd = server_class(server_address, handler_class)
 
     httpd.app_config = {
@@ -129,8 +156,15 @@ def run(server_class=HTTPServer, handler_class=S, port=8080, debug=False):
 
     log_level = logging.DEBUG if httpd.app_config["debug"] else logging.INFO
 
-    logging.basicConfig(level=log_level)
-    logging.info("Server started!%s\n", " (debug mode)" if httpd.app_config["debug"] else "")
+    console_handler = logging.StreamHandler()
+    log_format = "%(asctime)s - %(levelname)s - %(message)s" if debug else "%(message)s"
+    console_handler.setFormatter(ColoredFormatter(log_format))
+
+    logger = logging.getLogger()
+    logger.setLevel(log_level)
+    logger.addHandler(console_handler)
+
+    logging.info("Server started!%s\n", " (debug mode)" if debug else "")
 
     try:
         httpd.serve_forever()

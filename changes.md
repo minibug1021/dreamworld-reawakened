@@ -15,14 +15,6 @@ This file documents changes that had to be made to the original .swf files in or
 + }
 ```
 
-### bfp.main.alert.PDWEnterCheck.as:387
-
-```diff
-- var _loc2_:String = "/traffic/";
-
-+ var _loc2_:String = "/DreamWorld_data/traffic/";
-```
-
 ### bfp.common.PokemonBridge.as:461-462
 
 ```diff

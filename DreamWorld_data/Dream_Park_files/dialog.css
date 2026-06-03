@@ -1,0 +1,126 @@
+
+.dialog {
+	display: none;
+	background-color: #fff;
+	text-align: left;
+	width: 500px;
+	box-shadow: 0 8px 16px #222;
+}
+.dialog2 {
+  display: none;
+  background-color: #fff;
+}
+.dialog .dialog-header {
+	color: #FFF;
+	background-color: #4D4D4D;
+	height: 30px;
+	padding-left: 20px;
+	padding-right: 30px;
+	padding-top: 10px;
+	font-size: 16px;
+	letter-spacing: 8px;
+	position: relative;
+}
+.dialog .dialog-close {
+	background: url(/assets/global/images/dialog-close.png) no-repeat;
+	width: 17px;
+	height: 17px;
+	cursor: pointer;
+	text-indent: -9000px;
+	position: absolute;
+	right: 12px;
+	top: 10px;
+}
+.dialog .dialog-lead {
+  padding: 13px 20px;
+  font-size: 11px;
+}
+
+.dialog .dialog-help {
+  margin: 3px 20px;
+  text-align: right;
+  font-size: 12px;
+}
+.dialog .dialog-help a {
+  color: #333;
+}
+
+.dialog.alert {
+	border-radius: 10px;
+	padding: 20px 20px 0;
+	font-size: 14px;
+	text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* buttons */
+
+.dialog-buttons {
+  padding: 20px 0;
+  text-align: center;
+}
+.dialog-buttons-ok,
+.dialog-buttons-register,
+.dialog-buttons-close,
+.dialog-buttons-cancel,
+.dialog-buttons-back,
+.dialog-buttons-wakeup,
+.dialog-buttons-details {
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 30px;
+  cursor: pointer;
+  margin: 0 5px;
+  
+  text-indent: -9000px;
+  display: inline-block;
+  
+  /* IE7 */
+  /display: inline;
+  /zoom: 1;
+  /font-size: 0;
+  /text-indent: 0;
+}
+  
+
+.dialog-buttons-ok {
+	background-position: 0 0;
+}
+.dialog-buttons-back,
+.dialog-buttons-cancel {
+	background-position: -150px 0;
+}
+.dialog-buttons-wakeup {
+	background-position: -300px 0;
+}
+.dialog-buttons-register {
+	background-position: -450px 0;
+}
+.dialog-buttons-close {
+	background-position: -600px 0;
+}
+.dialog-buttons-details {
+	background-position: -750px 0;
+}
+.dialog-buttons-ok:hover {
+	background-position: 0 bottom;
+}
+.dialog-buttons-back:hover,
+.dialog-buttons-cancel:hover {
+	background-position: -150px bottom;
+}
+.dialog-buttons-wakeup:hover {
+	background-position: -300px bottom;
+}
+.dialog-buttons-register:hover {
+	background-position: -450px bottom;
+}
+.dialog-buttons-close:hover {
+	background-position: -600px bottom;
+}
+.dialog-buttons-details:hover {
+	background-position: -750px bottom;
+}
+

@@ -1,7 +1,7 @@
-﻿function login( path, str, ini ) 
-{		
+﻿function login( path, str, ini )
+{
 	var arr = window.location.href.split(".");
-	
+
 	if( arr[0].length == 9 ) {
 		path = "http://cdn2.pokemon-gl.com" + path;
 	}
@@ -10,40 +10,40 @@
 			path = "http://cdn2.pokemon-gl.com" + path;
 		}
 	}
-	
-	
+
+
 	if (swfobject.hasFlashPlayerVersion("10.0.2"))
-	{		
+	{
 
 		var para = location.search;
 		var s = para.split("&");
 		var v = s[0].split("=");
-		
+
 		if( s.length > 1 ) {
 			var q = s[1].split("=");
 		}
-		
+
 		var vars1;
 		if( v[0] == "?shortcut" ) {
 			vars1 = v[1];
 		}
-		
+
 		var vars2;
 		if( v[0] == "?mailto" ) {
 			vars2 = v[1];
 		}
-		
+
 		var vars3;
 		if( v[0] == "?rankingto" ) {
 			vars3 = v[1];
 		}
-		
+
 		var vars4;
 		if( v[0] == "?infoto" ) {
 			vars4 = v[1];
 		}
-		
-		
+
+
 		var flashvars = { shortcut:vars1, mailto:vars2, rankingto:vars3, infoto:vars4, api_host_name:"/api/", page:str, json:ini, v:"2.0", lang:window.location };
 		var param = {
 			allowFullScreen:"true",
@@ -101,11 +101,11 @@
 	}
 	else
 	{
-		// install flash player		
+		// install flash player
 		$( "#plugin" ).css( "display", "block" );
 	}
 }
-	
+
 function thisMovie(movieName) {
 	if (navigator.appName.indexOf("Microsoft") != -1) {
 		return window[movieName];

@@ -1,0 +1,1174 @@
+
+@import url(http://fonts.googleapis.com/css?family=Lato:700);
+
+html {
+  background: transparent;
+}
+body {
+  background: #000;
+}
+
+#main {
+  overflow: hidden; /* map cropping */
+  min-width: 1003px;
+  background: #FFF;
+  position: relative;
+}
+#map-container {
+  position: relative;
+  top: -300px;
+  padding: 400px 0;
+  background: #FFF url(../images/map-frame.jpg) repeat-x 0 0;
+}
+#map-container .gts-area {
+  position: absolute;
+  width: 200px;
+  text-align: center;
+  font-size: 16;
+  font-weight: bold;
+  color: #78E82C;
+}
+#map {
+  position: relative;
+  height: 800px;
+  background-color: #FFF;
+  background-repeat: repeat-x;
+}
+#map-canvas {
+  position: absolute;
+  top: 400px;
+}
+
+#report {
+  position: absolute;
+  left: 280px;
+  top: 200px;
+  width: 560px;
+  height: 560px;
+  font-family: Lato, Verdana, '�q���M�m�p�S Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, '���C���I', Meiryo, '�l�r �o�S�V�b�N', 'MS P Gothic', sans-serif;
+}
+.not-logged-in #report {
+  top: 10px;
+}
+#report-gts {
+  display: none;
+}
+#report-gbu {
+  display: none;
+}
+#report-records {
+  display: none;
+}
+
+
+
+#report h2 {
+  height: 22px;
+  padding-left: 6px;
+  padding-top: 3px;
+  font-size: 16px;
+  color: #FF3C2A;
+  background: url(../images/report-bg.png);
+  border: 1px solid #FF3C2A;
+}
+
+#report-gts .trade-deposit {
+  display: none;
+  position: absolute;
+  top: 34px;
+  width: 180px;
+  height: 115px;
+  color: #FFF;
+  background: url(../images/report-bg.png) 0 0;
+  border: 1px solid #FF3C2A;
+  border-radius: 4px;
+}
+#report-gts #trade-deposit-1 {
+  left: 0px;
+}
+#report-gts #trade-deposit-2 {
+  right: 0px;
+}
+
+
+#report-gts .trade-deposit .pokemon .image img {
+  position: absolute;
+  left: 40px;
+  top: -10px;
+  width: 100px;
+  height: 100px;
+}
+#report-gts .trade-deposit .pokemon .pokedex {
+  position: absolute;
+  left: 8px;
+  top: 83px;
+  font-size: 10px;
+}
+#report-gts .trade-deposit .pokemon .name {
+  position: absolute;
+  left: 7px;
+  top: 93px;
+  top: 96px\9; /* IE8 */
+  font-size: 15px;
+  font-weight: bold;
+}
+#report-gts .trade-deposit .level {
+  position: absolute;
+  right: 25px;
+  top: 94px;
+  font-size: 10px;
+}
+#report-gts .trade-deposit .level .value {
+  font-size: 14px;
+  font-weight: bold;
+}
+#report-gts .trade-deposit .sex {
+  position: absolute;
+  right: 5px;
+  top: 94px;
+  width: 16px;
+  height: 16px;
+  cursor: default;
+  background-image: url(/cdn2.pokemon-gl.com/src/swf/report/images/sex-icon.png);
+  text-indent: -9000px;
+}
+#report-gts .trade-deposit .sex-0 {
+  background-position: left top;
+}
+#report-gts .trade-deposit .sex-1 {
+  background-position: right top;
+}
+#report-gts .trade-deposit .sex-2 {
+  display: none;
+}
+#report-gts .trade-deposit .iso-3166-1 {
+  position: absolute;
+  right: 5px;
+  top: 77px;
+  width: 30px;
+  height: 13px;
+  font-size: 10px;
+  text-align: center;
+  border: 1px solid #FFF;
+  border-radius: 4px;
+}
+
+#report-gbu #report-gbu-format {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 34px;
+  height: 38px;
+  color: #FFF;
+  background: url(../images/report-bg.png) 0 0;
+  border: 1px solid #FF3C2A;
+  border-radius: 4px;
+}
+#report-gbu #report-gbu-format .icon {
+  width: 23px;
+  height: 18px;
+  background: url(../images/report-gbu-format-icon.png);
+  margin-left: 10px;
+  margin-top: 9px;
+  float: left;
+}
+#report-gbu #report-gbu-format .name {
+  margin-left: 50px;
+  margin-top: 8px;
+  font-size: 18px;
+  color: #FF3C2A;
+}
+
+#report-gbu #battle-user {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 478px;
+  width: 370px;
+  height: 80px;
+  color: #FFF;
+  background: url(../images/report-bg.png) 0 0;
+  border: 1px solid #FF3C2A;
+  border-radius: 4px;
+}
+#report-gbu #battle-user .avatar {
+  position: absolute;
+  left: 4px;
+  top: 8px;
+}
+#report-gbu #battle-user .result {
+  position: absolute;
+  left: 72px;
+  top: 10px;
+  color: #FFF;
+  border-radius: 3px;
+  font-size: 12px;
+  width: 72px;
+  padding: 1px 3px;
+  text-align: center;
+}
+#report-gbu #battle-user.win .result {
+  background: #A81818;
+}
+#report-gbu #battle-user.lose .result {
+  background: #1818A8;
+}
+#report-gbu #battle-user.draw .result {
+  background: #18A818;
+}
+#report-gbu #battle-user .pglname {
+  position: absolute;
+  left: 72px;
+  top: 30px;
+  color: #FF3C2A;
+  font-size: 14px;
+  width: 120px;
+}
+#report-gbu #battle-user .country {
+  position: absolute;
+  left: 72px;
+  top: 56px;
+  font-size: 10px;
+  width: 30px;
+  height: 13px;
+  border: 1px solid #FFF;
+  border-radius: 3px;
+  text-align: center;
+}
+#report-gbu #battle-user table {
+  position: absolute;
+  left: 196px;
+  top: 6px;
+  border: 1px red;
+  font-size: 11px;
+  line-height: 90%;
+}
+#report-gbu #battle-user table tr {
+  height: 19px;
+}
+#report-gbu #battle-user table th {
+  color: #CCC;
+  width: 72px;
+  text-align: left;
+  font-weight: 700px;
+}
+#report-gbu #battle-user table td {
+  width: 78px;
+}
+#report-gbu #battle-user .rating,
+#report-gbu #battle-user .ranking,
+#report-gbu #battle-user .trainername {
+  left: 200px;
+  right: 20px;
+  text-align: right;
+}
+#report-gbu #battle-user .rating .label,
+#report-gbu #battle-user .ranking .label,
+#report-gbu #battle-user .trainername .label {
+  position: absolute;
+  left: 0;
+}
+#report-gbu #battle-user .trainername .value {
+  color: #FF3C2A;
+}
+
+
+#report-records #report-records-title {
+  margin-top: 8px;
+  height: 38px;
+  color: #FFF;
+  background: url(../images/report-bg.png) 0 0;
+  border: 1px solid #FF3C2A;
+  border-radius: 4px;
+}
+#report-records #report-records-title .icon {
+  width: 24px;
+  height: 17px;
+  background: url(../images/report-records-title-icon.png);
+  margin-left: 10px;
+  margin-top: 10px;
+  float: left;
+}
+#report-records #report-records-title .name {
+  margin-left: 40px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #FFF;
+}
+#report-records .area {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 478px;
+  width: 180px;
+  height: 80px;
+  color: #FFF;
+  background: url(../images/report-bg.png) 0 0;
+  border: 1px solid #FF3C2A;
+  border-radius: 4px;
+}
+#report-records .area .name {
+  position: absolute;
+  left: 6px;
+  right: 3px;
+  top: 7px;
+  font-size: 17px;
+  font-weight: bold;
+}
+#report-records .area .tzname {
+  position: absolute;
+  left: 7px;
+  top: 30px;
+  font-size: 10px;
+}
+#report-records .area .time {
+  position: absolute;
+  left: 7px;
+  top: 42px;
+  font-size: 10px;
+}
+#report-records .area .census-result {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 53px;
+  font-size: 10px;
+  text-align: right;
+}
+#report-records .area .census-result .value {
+  font-size: 18px;
+  color: #FF3C2A;
+}
+#report-records .most-slept-pokemon {
+  display: none;
+  position: absolute;
+  left: 190px;
+  top: 478px;
+  width: 370px;
+  height: 80px;
+  color: #FFF;
+  background: url(../images/report-bg.png) 0 0;
+  border: 1px solid #FF3C2A;
+  border-radius: 4px;
+}
+#report-records .most-slept-pokemon h3 {
+  border-bottom: 1px solid #FF3C2A;
+  font-size: 13px;
+  font-weight: normal;
+  padding: 5px;
+  padding-right: 110px;
+  line-height: 100%;
+}
+.language-it #report-records .most-slept-pokemon h3,
+.language-de #report-records .most-slept-pokemon h3,
+.language-es #report-records .most-slept-pokemon h3 {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+#report-records .most-slept-pokemon .image {
+  position: absolute;
+  right: 9px;
+  top: -48px;
+  width: 100px;
+  height: 100px;
+}
+#report-records .most-slept-pokemon .image img {
+  width: 100px;
+  height: 100px;
+}
+#report-records .most-slept-pokemon .pokedex {
+  position: absolute;
+  left: 7px;
+  top: 36px;
+  font-size: 10px;
+}
+#report-records .most-slept-pokemon .name {
+  position: absolute;
+  left: 6px;
+  top: 51px;
+  font-size: 16px;
+}
+#report-records .most-slept-pokemon .types {
+  position: absolute;
+  left: 260px;
+  top: 55px;
+}
+#report-records .most-slept-pokemon .types li {
+  float: left;
+  width: 50px;
+  height: 17px;
+  margin-right: 2px;
+  list-style-type: none;
+  text-indent: -9000px;
+}
+#report-records .most-slept-pokemon .height,
+#report-records .most-slept-pokemon .weight {
+  position: absolute;
+  left: 122px;
+  width: 85px;
+  font-size: 10px;
+}
+#report-records .most-slept-pokemon .height {
+  top: 38px;
+}
+#report-records .most-slept-pokemon .weight {
+  top: 56px;
+}
+#report-records .most-slept-pokemon .footprint {
+  position: absolute;
+  left: 212px;
+  top: 35px;
+  border: 1px solid #FFF;
+  border-radius: 2px;
+  width: 35px;
+  height: 35px;
+}
+#report-records .most-slept-pokemon .height .value,
+#report-records .most-slept-pokemon .weight .value {
+  position: absolute;
+  color: #FF3C2A;
+}
+#report-records .most-slept-pokemon .height .value {
+  right: 1px;
+}
+#report-records .most-slept-pokemon .weight .value {
+  right: 0px;
+}
+
+
+
+
+
+#login-control {
+  color: #fff;
+  background: url(../images/login-control-bg.png);
+  width: 231px;
+  height: 727px;
+  padding-left: 26px;
+  border-right: 13px solid #BEBE6E;
+  border-bottom: 13px solid #BEBE6E;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.not-logged-in #login-control {
+  height: 537px;
+}
+.logged-in-black #login-control {
+  border-color: #474747;
+}
+.logged-in-white #login-control {
+  border-color: #FFFFFF;
+}
+.logged-in-black2 #login-control {
+  border-color: #00E9FE;
+}
+.logged-in-white2 #login-control {
+  border-color: #FF9E1C;
+}
+
+
+#login-control h1 {
+  text-indent: -9000px;
+  height: 143px;
+  background-repeat: no-repeat;
+  background-position: 15px top;
+}
+#login-control .login-frame {
+  width: 210px;
+  height: 354px;
+}
+
+
+#information li {
+  list-style: none;
+}
+
+#information li a {
+  display: block;
+  width: 180px;
+  height: 180px;
+  text-decoration: none;
+}
+
+.box {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  margin: 0 10px 10px 0;
+}
+
+
+#pdw,
+#wifi,
+#campaign,
+#support,
+#report-link {
+  display: none;
+}
+#information li #pdw,
+#information li #wifi,
+#information li #campaign,
+#information li #support,
+#information li #report-link {
+  display: block;
+  position: relative;
+  left: -10px;
+  top: -10px;
+  padding: 10px;
+  width: 180px;
+  height: 180px;
+}
+#pdw h2,
+#wifi h2,
+#campaign h2,
+#report-link h2 {
+  font-size: 10px;
+  text-indent: -9000px;
+  height: 0;
+}
+#support h2 {
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  top: 68px;
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+  line-height: 100%;
+}
+.language-fr #support h2 {
+  top: 56px;
+}
+
+
+#pdw-link-message,
+#wifi-link-message {
+  margin: 80px 0 0 7px;
+  height: 20px;
+  width: 165px;
+  font-size: 14px;
+}
+#pdw-link-message {
+  color: #ffb43c;
+}
+#wifi-link-message {
+  color: #00ffdc;
+}
+
+
+.content-link .caption {
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  top: 118px;
+  color: #FFF;
+  font-size: 11px;
+  text-align: center;
+}
+#pdw .caption {
+  color: #DCCCE2;
+}
+#wifi .caption {
+  color: #CCD9E3;
+}
+#campaign .caption {
+  color: #E9E6CC;
+  top: 105px;
+}
+#support .caption {
+  color: #000;
+  top: 105px;
+}
+
+
+.information {
+  /*
+  background: url(../images/information-bg.png) repeat;
+  */
+}
+
+.information a {
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.information .date {
+  position: absolute;
+  left: 0;
+  right: 0px;
+  bottom: 49px;
+  height: 14px;
+  color: #fff;
+  background: url(../images/info-text-bg/8.png) repeat 0 0;
+  line-height: 1.2;
+  font-size: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  padding: 5px 0 0 79px;
+
+}
+.information .title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45px;
+  color: #fff;
+  background: url(../images/info-text-bg/8.png) repeat 0 0;
+  line-height: 1.2;
+  font-size: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  padding: 2px 10px;
+}
+.information .information-icon {
+  position: absolute;
+  left: 10px;
+  top: 118px;
+  width: 64px;
+  height: 11px;
+  z-index: 100;
+}
+.information .information-icon-new {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 50px;
+  height: 11px;
+  z-index: 100;
+}
+
+.information .information-category-8 .date,
+.information .information-category-8 .title {
+  background: url(../images/info-text-bg/8.png) repeat 0 0;
+}
+.information .information-category-9 .date,
+.information .information-category-9 .title {
+  background: url(../images/info-text-bg/9.png) repeat 0 0;
+}
+.information .information-category-10 .date,
+.information .information-category-10 .title {
+  background: url(../images/info-text-bg/10.png) repeat 0 0;
+}
+.information .information-category-11 .date,
+.information .information-category-11 .title {
+  background: url(../images/info-text-bg/11.png) repeat 0 0;
+}
+.information .information-category-12 .date, 
+.information .information-category-12 .title {
+  background: url(../images/info-text-bg/12.png) repeat 0 0;
+}
+.information .information-category-13 .date,
+.information .information-category-13 .title {
+  background: url(../images/info-text-bg/13.png) repeat 0 0;
+}
+.information .information-category-14 .date,
+.information .information-category-14 .title {
+  background: url(../images/info-text-bg/14.png) repeat 0 0;
+}
+.information .information-category-15 .date,
+.information .information-category-15 .title {
+  background: url(../images/info-text-bg/15.png) repeat 0 0;
+}
+.information .information-category-16 .date,
+.information .information-category-16 .title {
+  background: url(../images/info-text-bg/16.png) repeat 0 0;
+}
+.information .information-category-17 .date,
+.information .information-category-17 .title {
+  background: url(../images/info-text-bg/17.png) repeat 0 0;
+}
+
+#information .loading {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 40px 20px;
+  background: url(../images/report-bg.png);
+  text-align: center;
+  color: #FFF;
+}
+
+
+.login-menu-profile {
+  display: block;
+  width: 205px;
+  height: 35px;
+  text-indent: -9000px;
+  margin: 10px 0;
+}
+.login-menu-profile:hover {
+  background-position: 0 bottom;
+}
+
+.login-menu-mailer {
+  display: block;
+  width: 205px;
+  height: 35px;
+  text-indent: -9000px;
+  margin: 10px 0;
+  text-decoration: none;
+  position: relative;
+}
+.login-menu-mailer .unread {
+  display: block;
+  position: absolute;
+  background: url(../images/mailer-unread.png) no-repeat 0 0;
+  width: 18px;
+  height: 14px;
+  text-align: center;
+  font-size: 10px;
+  text-indent: 0;
+  line-height: 1;
+  color: #fff;
+  top: 9px;
+  right: 10px;
+  padding-top: 4px;
+}
+.logged-in-white2 .login-menu-mailer .unread {
+  color: #000;
+  background-image: url(../images/mailer-unread-w2.png);
+}
+
+.login-menu-mailer:hover {
+  background-position: 0 bottom;
+}
+
+.login-menu-customize {
+  display: block;
+  width: 205px;
+  height: 35px;
+  text-indent: -9000px;
+  margin: 5px 0 ;
+}
+.login-menu-customize:hover {
+  background-position: 0 bottom;
+}
+
+.login-menu-customize-desc {
+  display: block;
+  font-size: 10px;
+  /*letter-spacing: -1px;*/
+  text-align: center;
+  line-height: 1;
+  color: #78786e;
+  transform: scale(0.9,1);
+  -o-transform: scale(0.9,1);
+  -moz-transform: scale(0.9,1);
+  -webkit-transform: scale(0.9,1);
+  margin: 0 -14px;
+}
+.logged-in-white .login-menu-customize-desc {
+  color: #fff;
+}
+.logged-in-black .login-menu-customize-desc {
+  color: #fff;
+}
+.logged-in-white2 .login-menu-customize-desc {
+  color: #d7000f;
+}
+.logged-in-black2 .login-menu-customize-desc {
+  color: #006ed2;
+}
+
+
+
+.member-info {
+  width: 205px;
+}
+.member-info-pgl {
+  height: 48px;
+  font-size: 11px;
+  position: relative;
+}
+.member-info-pglname {
+  font-size: 14px;
+  border: 1px solid #fff;
+  background-color: #505050;
+  height: 20px;
+  width: 145px;
+  text-align: center;
+  padding: 4px 3px;
+  position: absolute;
+  top: 18px;
+  left: 0;
+}
+.member-info-avatar {
+  border: 1px solid #fff;
+  margin-left: 5px;
+  margin-top: -1px;
+  padding: 4px 0 0 4px;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 3px;
+  right: 0;
+  background-color: #505050;
+}
+.member-info-rom {
+  margin-top: 30px;
+  height: 135px;
+  font-size: 11px;
+}
+.member-info-rom-change {
+  display: block;
+  width: 205px;
+  height: 35px;
+  text-indent: -9000px;
+  margin: 5px 0;
+}
+.member-info-rom-change:hover {
+  background-position: 0 bottom;
+}
+.member-info-rom-register {
+  display: block;
+  width: 205px;
+  height: 35px;
+  text-indent: -9000px;
+  margin: 5px 0;
+  cursor: default;
+}
+/*
+.member-info-rom-register:hover {
+  background-position: 0 bottom;
+}
+*/
+.member-info-rom-image {
+  height: 75px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.member-info-pdw {
+  height: 155px;
+  font-size: 11px;
+  margin: 18px 0 32px;
+}
+.member-info-pdw,
+.login-menu-customize,
+.login-menu-customize-desc {
+  display: none;
+}
+.logged-in-black .member-info-pdw,
+.logged-in-black .login-menu-customize,
+.logged-in-black .login-menu-customize-desc,
+.logged-in-white .member-info-pdw,
+.logged-in-white .login-menu-customize,
+.logged-in-white .login-menu-customize-desc,
+.logged-in-black2 .member-info-pdw,
+.logged-in-black2 .login-menu-customize,
+.logged-in-black2 .login-menu-customize-desc,
+.logged-in-white2 .member-info-pdw,
+.logged-in-white2 .login-menu-customize,
+.logged-in-white2 .login-menu-customize-desc {
+  display: block;
+}
+.signup-prompt {
+  display: none;
+  background: #3C3C3C;
+  font-size: 13px;
+  line-height: 150%;
+  padding: 0 10px;
+  margin: 10px 0 30px;
+  border: 1px solid #BEBE6E;
+  height: 210px;
+}
+.trial .signup-prompt {
+  display: block;
+}
+.member-info-pdw-pokemon, .member-info-pdw-slepttime {
+  border: 1px solid #fff;
+  height: 25px;
+  padding-top: 5px;
+  background-color: #505050;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.member-info-pdw-wakeup {
+  display: block;
+  width: 205px;
+  height: 35px;
+  text-indent: -9000px;
+  margin: 10px 0;
+}
+.member-info-pdw-wakeup:hover {
+  background-position: 0 -35px;
+}
+.member-info-pdw-wakeup.disabled, .member-info-pdw-wakeup.disabled:hover {
+  background-position: 0 bottom;
+}
+
+#right-buttons {
+  position: absolute;
+  height: 190px;
+  width: 180px;
+}
+.ticker {
+  overflow: hidden;
+}
+
+#right-buttons .login-menu-logout {
+  float: right;
+  height: 60px;
+  width: 90px;
+}
+#right-buttons .login-menu-logout a {
+  display: block;
+  text-indent: -9000px;
+  height: 60px;
+  width: 90px;
+  background-position: 0 bottom;
+}
+#right-buttons .login-menu-logout a:hover {
+  height: 70px;
+}
+
+#right-buttons .menu-volume {
+  display: block;
+  height: 58px;
+  width: 90px;
+  float: right;
+  background: url(../images/volume-t.png) no-repeat 0 -2px;
+}
+.logged-in-black #right-buttons .menu-volume {
+  background-image: url(../images/volume-b.png);
+}
+.logged-in-white #right-buttons .menu-volume {
+  background-image: url(../images/volume-w.png);
+}
+.logged-in-black2 #right-buttons .menu-volume {
+  background-image: url(../images/volume-b2.png);
+}
+.logged-in-white2 #right-buttons .menu-volume {
+  background-image: url(../images/volume-w2.png);
+}
+#right-buttons .menu-volume #header-volume-swf {
+  margin-left: 13px;
+  margin-top: 13px;
+}
+#right-buttons #pgl-member-count {
+  position: absolute;
+  left: -1px;
+  bottom: 0;
+  width: 170px;
+  height: 30px;
+  padding: 85px 5px 0;
+  text-align: right;
+  background: url(../images/pgl-member-count-bg.png);
+  border: 1px solid #FF3C2A;
+  border-radius: 4px;
+}
+#right-buttons #pgl-member-count .label {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+#right-buttons #pgl-member-count .value {
+  display: inline;
+  color: #FF1E1E;
+  font-size: 22px;
+}
+
+/*
+#right-buttons .login-menu-rom-register2 {
+  display: block;
+  text-indent: -9000px;
+  height: 60px;
+  width: 90px;
+  float: left;
+  background: url(../images/rom-register2-t.png) no-repeat 0 0;
+}
+#right-buttons .login-menu-rom-register2:hover {
+  background-position: 0 bottom;
+}
+.logged-in-black #right-buttons .login-menu-rom-register2 {
+  background-image: url(../images/rom-register2-b.png);
+}
+.logged-in-white #right-buttons .login-menu-rom-register2 {
+  background-image: url(../images/rom-register2-w.png);
+}
+.logged-in-black2 #right-buttons .login-menu-rom-register2 {
+  background-image: url(../images/rom-register2-b2.png);
+}
+.logged-in-white2 #right-buttons .login-menu-rom-register2 {
+  background-image: url(../images/rom-register2-w2.png);
+}
+
+#right-buttons .login-menu-rom-change2 {
+  display: block;
+  text-indent: -9000px;
+  height: 60px;
+  width: 90px;
+  background: url(../images/rom-change2-b.png) no-repeat 0 0;
+  float: left;
+}
+#right-buttons .login-menu-rom-change2:hover {
+  background-position: 0 bottom;
+}
+.logged-in-black #right-buttons .login-menu-rom-change2 {
+  background-image: url(../images/rom-change2-b.png);
+}
+.logged-in-white #right-buttons .login-menu-rom-change2 {
+  background-image: url(../images/rom-change2-w.png);
+}
+.logged-in-black2 #right-buttons .login-menu-rom-change2 {
+  background-image: url(../images/rom-change2-b2.png);
+}
+.logged-in-white2 #right-buttons .login-menu-rom-change2 {
+  background-image: url(../images/rom-change2-w2.png);
+}
+*/
+
+#footer {
+  position: relative;
+  min-width: 1003px;
+  z-index: 1;
+}
+
+#footer #footer-links {
+}
+
+#footer #select-language {
+}
+
+#copyright {
+  font-size: 10px;
+  margin: 5px 0 0 30px;
+  
+}
+
+#personal-information {
+  height: 18px;
+  color: #333536;
+  padding: 3px 10px 0 30px;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 10;
+  background: #B3B9BB url(../images/personal-information.png);
+}
+
+
+.type-1 { background-position: 0 -0px; }
+.type-2 { background-position: 0 -17px; }
+.type-3 { background-position: 0 -34px; }
+.type-4 { background-position: 0 -68px; }
+.type-5 { background-position: 0 -51px; }
+.type-6 { background-position: 0 -204px; }
+.type-7 { background-position: 0 -136px; }
+.type-8 { background-position: 0 -85px; }
+.type-9 { background-position: 0 -119px; }
+.type-10 { background-position: 0 -170px; }
+.type-11 { background-position: 0 -102px; }
+.type-12 { background-position: 0 -153px; }
+.type-13 { background-position: 0 -187px; }
+.type-14 { background-position: 0 -221px; }
+.type-15 { background-position: 0 -238px; }
+.type-16 { background-position: 0 -255px; }
+.type-17 { background-position: 0 -272px; }
+.type-0 { background-position: 0 -289px; }
+
+
+.dialog-information {
+  background: #FFF;
+  width: 765px;
+  border-radius: 10px;
+  text-align: left;
+  overflow: hidden;
+}
+.dialog-information-head {
+  position: relative;
+  border-bottom: 2px solid black;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.dialog-information-image {
+  float: right;
+  width: 180px;
+  margin: 0 10px 10px;
+  text-align: center;
+}
+.dialog-information-body {
+  padding: 0 20px 20px 20px;
+}
+.dialog-information.has-image .dialog-information-body {
+  margin-right: 180px;
+}
+.dialog-information .description {
+  font-size: 12px;
+  line-height: 150%;
+}
+.dialog-information .dialog-buttons {
+  clear: right;
+}
+
+.dialog-information h3 {
+  min-height: 22px;
+  font-size: 17px;
+  font-weight: normal;
+  padding: 0 35px 1px 84px;
+  border-left: solid 7px red;
+}
+.dialog-information .category {
+  position: absolute;
+  display: table-cell;
+  vertical-align: middle;
+  left: 11px;
+  top: 10px;
+  width: 72px;
+  height: 14px;
+  padding-top: 5px;
+  border: 2px solid #F00;
+  border-radius: 4px;
+  font-size: 10px;
+  text-align: center;
+  line-height: 80%;
+}
+.language-fr .dialog-information.information-category-15 .category {
+  height: 18px;
+  padding-top: 1px;
+}
+.dialog-information .close {
+  position: absolute;
+  right: 9px;
+  top: 9px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  background: url(../images/information-close.png);
+  text-indent: -9000px;
+}
+
+.dialog-information.information-category-8 .category { border-color: #747474; }
+.dialog-information.information-category-9 .category { border-color: #2C63DD; }
+.dialog-information.information-category-10 .category { border-color: #3FC3DD; }
+.dialog-information.information-category-11 .category { border-color: #5D4040; }
+.dialog-information.information-category-12 .category { border-color: #42CC40; }
+.dialog-information.information-category-13 .category { border-color: #C640FC; }
+.dialog-information.information-category-14 .category { border-color: #FF3F40; }
+.dialog-information.information-category-15 .category { border-color: #EC6242; }
+.dialog-information.information-category-8 h3 { border-color: #747474; }
+.dialog-information.information-category-9 h3 { border-color: #2C63DD; }
+.dialog-information.information-category-10 h3 { border-color: #3FC3DD; }
+.dialog-information.information-category-11 h3 { border-color: #5D4040; }
+.dialog-information.information-category-12 h3 { border-color: #42CC40; }
+.dialog-information.information-category-13 h3 { border-color: #C640FC; }
+.dialog-information.information-category-14 h3 { border-color: #FF3F40; }
+.dialog-information.information-category-15 h3 { border-color: #EC6242; }
+
+
+

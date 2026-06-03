@@ -1,5 +1,6 @@
 import json
 import psutil
+import threading
 from zoneinfo import ZoneInfo
 from datetime import datetime
 from random import choice, randint
@@ -98,7 +99,7 @@ def GET_pdw_end(_query):
 
     for proc in psutil.process_iter():
         if "flashplayer" in proc.name():
-            proc.kill()
+            threading.Timer(2.5, proc.kill).start()
 
     return b'{}'
 

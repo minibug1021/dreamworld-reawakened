@@ -1,0 +1,202 @@
+#login-control h1 {
+  background-image: url(../images/logo.png);
+}
+
+#pdw {
+  background: url(../images/pdw.png) no-repeat;
+}
+
+#wifi {
+  background: url(../images/wifi.png) no-repeat;
+}
+
+#campaign {
+  background: url(../images/campaign.png) no-repeat;
+}
+
+#support {
+  background: url(../images/support.png) no-repeat;
+}
+
+#report-link {
+  background: url(../images/report.png) no-repeat;
+}
+
+.information .information-icon-new {
+  background-image: url(../images/new.png);
+}
+.information .information-category-8 .information-icon {
+  background: url(../images/cat-info.png) no-repeat 0 0;
+}
+.information .information-category-9 .information-icon {
+  background: url(../images/cat-wifi.png) no-repeat 0 0;
+}
+.information .information-category-10 .information-icon {
+  background: url(../images/cat-news.png) no-repeat 0 0;
+}
+.information .information-category-11 .information-icon {
+  background: url(../images/cat-interior.png) no-repeat 0 0;
+}
+.information .information-category-12 .information-icon {
+  background: url(../images/cat-cgear.png) no-repeat 0 0;
+}
+.information .information-category-13 .information-icon {
+  background: url(../images/cat-zukan.png) no-repeat 0 0;
+}
+.information .information-category-14 .information-icon {
+  background: url(../images/cat-pokemon.png) no-repeat 0 0;
+}
+.information .information-category-15 .information-icon {
+  background: url(../images/cat-musical.png) no-repeat 0 0;
+}
+.information .information-category-16 .information-icon {
+  background: url(../images/cat-maintenance.png) no-repeat 0 0;
+}
+.information .information-category-17 .information-icon {
+  background: url(../images/cat-serverdown.png) no-repeat 0 0;
+}
+
+.login-menu-profile {
+  background: url(../images/profile-t.png) no-repeat 0 0;;
+}
+.logged-in-white .login-menu-profile {
+  background-image: url(../images/profile-bw.png);
+}
+.logged-in-black .login-menu-profile {
+  background-image: url(../images/profile-bw.png);
+}
+.logged-in-white2 .login-menu-profile {
+  background-image: url(../images/profile-w2.png);
+}
+.logged-in-black2 .login-menu-profile {
+  background-image: url(../images/profile-b2.png);
+}
+
+.login-menu-mailer {
+  background: url(../images/mailer-t.png) no-repeat 0 0;;
+}
+.logged-in-white .login-menu-mailer {
+  background-image: url(../images/mailer-bw.png);
+}
+.logged-in-black .login-menu-mailer {
+  background-image: url(../images/mailer-bw.png);
+}
+.logged-in-white2 .login-menu-mailer {
+  background-image: url(../images/mailer-w2.png);
+}
+.logged-in-black2 .login-menu-mailer {
+  background-image: url(../images/mailer-b2.png);
+}
+
+.login-menu-customize {
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.logged-in-white .login-menu-customize {
+  background-image: url(../images/customize-bw.png);
+}
+.logged-in-black .login-menu-customize {
+  background-image: url(../images/customize-bw.png);
+}
+.logged-in-white2 .login-menu-customize {
+  background-image: url(../images/customize-w2.png);
+}
+.logged-in-black2 .login-menu-customize {
+  background-image: url(../images/customize-b2.png);
+}
+
+.member-info-rom-change {
+  background: url(../images/rom-change-bw.png) no-repeat 0 0;;
+}
+.logged-in-white .member-info-rom-change {
+  background-image: url(../images/rom-change-bw.png);
+}
+.logged-in-black .member-info-rom-change {
+  background-image: url(../images/rom-change-bw.png);
+}
+.logged-in-white2 .member-info-rom-change {
+  background-image: url(../images/rom-change-w2.png);
+}
+.logged-in-black2 .member-info-rom-change {
+  background-image: url(../images/rom-change-b2.png);
+}
+.member-info-rom-register {
+  background: url(../images/rom-register-t.png) no-repeat 0 0;;
+}
+.logged-in-white .member-info-rom-register {
+  background-image: url(../images/rom-register-bw.png);
+}
+.logged-in-black .member-info-rom-register {
+  background-image: url(../images/rom-register-bw.png);
+}
+.logged-in-white2 .member-info-rom-register {
+  background-image: url(../images/rom-register-w2.png);
+}
+.logged-in-black2 .member-info-rom-register {
+  background-image: url(../images/rom-register-b2.png);
+}
+
+.trial .member-info-rom-image {
+  background-image: url(../images/rom-image-t.png);
+}
+.logged-in-white .member-info-rom-image {
+  background-image: url(../images/rom-image-w.png);
+}
+.logged-in-black .member-info-rom-image {
+  background-image: url(../images/rom-image-b.png);
+}
+.logged-in-white2 .member-info-rom-image {
+  background-image: url(../images/rom-image-w2.png);
+}
+.logged-in-black2 .member-info-rom-image {
+  background-image: url(../images/rom-image-b2.png);
+}
+
+.member-info-pdw-wakeup {
+  background: url(../images/wakeup-t.png) no-repeat 0 0;;
+}
+.logged-in-white .member-info-pdw-wakeup {
+  background-image: url(../images/wakeup-bw.png);
+}
+.logged-in-black .member-info-pdw-wakeup {
+  background-image: url(../images/wakeup-bw.png);
+}
+.logged-in-white2 .member-info-pdw-wakeup {
+  background-image: url(../images/wakeup-w2.png);
+}
+.logged-in-black2 .member-info-pdw-wakeup {
+  background-image: url(../images/wakeup-b2.png);
+}
+
+#right-buttons .login-menu-logout a {
+  background-image: url(../images/logout-t.png);
+}
+.logged-in-black #right-buttons .login-menu-logout a {
+  background-image: url(../images/logout-b.png);
+}
+.logged-in-white #right-buttons .login-menu-logout a {
+  background-image: url(../images/logout-w.png);
+}
+.logged-in-black2 #right-buttons .login-menu-logout a {
+  background-image: url(../images/logout-b2.png);
+}
+.logged-in-white2 #right-buttons .login-menu-logout a {
+  background-image: url(../images/logout-w2.png);
+}
+
+
+
+#report-gts .trade-deposit .pokemon .types li {
+  background-image: url(../images/types-large.png);
+}
+#report-gts .trade-deposit .moves li .type {
+  background-image: url(../images/types-small.png);
+}
+#report-records .most-slept-pokemon .types li {
+  background-image: url(../images/types-small.png);
+}
+
+
+
+
+

@@ -95,6 +95,7 @@ PGL.prototype = {
       PGL.Utils.packText($('#header-pglname').text(this.data.member.pgl_name));
       PGL.Utils.packText($('#header-romname').text(this.data.member.rom_name));
       var rombutton = $('<a></a>');
+      console.log("gsid_count: ", this.data.member.gsid_count);
       if (this.data.member.gsid_count < 1) {
         rombutton
           .attr('href', '/profile/#/register-gsid/')
