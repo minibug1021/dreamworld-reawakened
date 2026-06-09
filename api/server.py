@@ -1,5 +1,7 @@
 import re
+import os
 import atexit
+import logging
 import mimetypes
 from pathlib import Path
 from urllib.parse import parse_qs
@@ -38,6 +40,7 @@ NO_CACHE_HEADERS = {
 # ---------------
 
 app = Flask(__name__)
+app.logger.setLevel(logging.INFO)
 
 # ---------------
 # Helpers
@@ -45,8 +48,13 @@ app = Flask(__name__)
 
 def read_and_patch(file_path: Path) -> bytes:
     data = file_path.read_bytes()
+
     if file_path.suffix.lower() in PATCHABLE_EXTENSIONS:
         data = apply_substitutions(data, file_path.name)
+
+    if file_path.suffix.lower() == ".xml":
+        data = data.replace(b"&amp;#xD;", os.linesep.encode())
+
     return data
 
 def send_file(file_path: Path) -> Response:
@@ -98,7 +106,7 @@ def rewrite_incoming_path():
 def api_get():
     query    = {k: v[0] for k, v in parse_qs(request.query_string.decode(), strict_parsing=True).items()}
     api_name = query.get("p")
-    app.logger.info("API GET: %s", api_name)
+    app.logger.info("API GET: %s %s", api_name, query)
 
     if api_name not in GET_RESPONSES:
         app.logger.warning("Unknown API: %s", api_name)
@@ -113,7 +121,7 @@ def api_post():
     body_params = {k: v[0] for k, v in parse_qs(request.get_data(as_text=True), strict_parsing=True).items()}
     query       = {**qs_params, **body_params}
     api_name    = query.get("p")
-    app.logger.info("API POST: %s", api_name)
+    app.logger.info("API POST: %s %s", api_name, query)
 
     if api_name not in POST_RESPONSES:
         app.logger.warning("Unknown API: %s", api_name)
@@ -125,6 +133,9 @@ def api_post():
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 def catch_all(path: str):
+    if "&" in path:
+        path = path.split("&")[0]
+
     full_path = f"/{path}"
     filename  = Path(path).name
 

@@ -133,10 +133,16 @@ _Home_patch = dedent("""\
 """)
 
 # the original code checks to see if we are connecting from localhost
-# and tries to load it from a different path if we are.
+# and tries to load it from a different path if we are
 _Garden_patch = "this._exteriorLoader.load(new URLRequest(path + \"../../theme/assets/global/parts/interior/\" + islandId + \".swf\" + cacheBuster + version));"
 
+# not actually sure if this is needed but its pretty much the same
+# as the above
 _PDW_patch_2 = "PDWBridge.isLocal = false;"
+
+# ffdec decompiles this part of the code incorrectly andleaves behind
+# an empty switch statement we have to remove
+_closeMoveAlert_fix = ""
 
 # ---------------
 # Ruffle compatability patches
@@ -184,6 +190,7 @@ INSERTIONS = {
         Insertion("bfp.tpc.pdw.pdw.PDW",      (729, 730), _PDW_patch),
         Insertion("bfp.tpc.pdw.pdw.PDW",      (582, 583), _PDW_patch_2),
         Insertion("bfp.tpc.pdw.dialog.Alert", (141, 142), _Alert_patch),
+        Insertion("bfp.tpc.pdw.pdw.PDW",      (176, 179), _closeMoveAlert_fix),
     ),
     "pdw_garden.swf": (
         Insertion("bfp.tpc.pdw.garden.Garden", (367, 375), _Garden_patch),
