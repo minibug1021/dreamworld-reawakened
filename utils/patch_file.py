@@ -72,6 +72,7 @@ JS_PATCHES: dict[str, tuple[Substitution]] = {
 # substitutions applied to every patchable file
 _GLOBAL_SUBS: tuple[Substitution] = (
     Substitution(b"http://cdn2.pokemon-gl.com", b""),
+    Substitution(f"http://gus.pokemon.com/{LANG}".encode(), f"/pgl-363/{LANG}".encode()),
     Substitution(b"src:gus_src", f"src:'/pgl-363/{LANG}'".encode()),
     Substitution(b"en.pokemon-gl.com", f"{LANG}.pokemon-gl.com".encode()),
     Substitution(b'oncontextmenu="return false"', b""),

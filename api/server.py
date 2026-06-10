@@ -53,7 +53,8 @@ def read_and_patch(file_path: Path) -> bytes:
         data = apply_substitutions(data, file_path.name)
 
     if file_path.suffix.lower() == ".xml":
-        data = data.replace(b"&amp;#xD;", os.linesep.encode())
+        if "Basilisk" not in request.headers.get("User-Agent"):
+            data = data.replace(b"&amp;#xD;", os.linesep.encode())
 
     return data
 
@@ -164,4 +165,4 @@ def catch_all(path: str):
 
 def run(port: int = 8080, debug: bool = False):
     app.logger.info("Server started!%s\n", " (debug mode)" if debug else "")
-    app.run(host="127.0.0.1", port=port, debug=debug, use_reloader=False)
+    app.run(host="0.0.0.0", port=port, debug=debug, use_reloader=False)

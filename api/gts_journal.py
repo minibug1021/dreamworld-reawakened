@@ -1,55 +1,67 @@
+import re
 import json
+from pathlib import Path
+from random import choice
+from random import randint
+from utils import language
+from utils.pokemon import get_random_pokemon
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+LANG = language.player_language
+
+def load_areas() -> dict:
+    file_path = ROOT_DIR / "dreamworld_assets" / "shared.pokemon-gl.com" / "report" / "assets" / "js" / "areas.js"
+    text = open(file_path, encoding="UTF-8").read()
+
+    match = re.search(r"var a = (\[.*?\]);", text, re.DOTALL)
+    raw = match.group(1)
+
+    quoted = re.sub(r'(?<=[{,])\s*([a-zA-Z_]\w*)\s*:', r'"\1":', raw)
+
+    areas = json.loads(quoted)
+    return {entry["gts"]: entry for entry in areas if entry["gts"] is not None}
 
 # ---------------------
 # GET API calls
 # ---------------------
 
 def GET_trade_list(_query):
-    result = {"trade_list":[]}
-    
+
+    trade_list = []
+
+    areas = load_areas()
+
     # Dummy data
-    dummy_trade1 = {
-        "trade1": {
-          "country_id": 220,
-          "country_name": "United States of America",
-          "monsno": 644,
-          "form_no": 0,
-          "poke_level": 100,
-          "sex": 2 
-        },
-        "trade2": {
-          "country_id": 105,
-          "country_name": "Japan",
-          "monsno": 643,
-          "form_no": 0,
-          "poke_level": 100,
-          "sex": 2
+    for _ in range(100):
+        pkmn_one = get_random_pokemon()
+        pkmn_two = get_random_pokemon()
+
+        country_one = choice(list(areas.keys()))
+        country_two = choice(list(areas.keys()))
+
+        trade = {
+            "trade1": {
+            "country_id": country_one,
+            "country_name": areas[country_one]["names"][LANG],
+            "monsno": pkmn_one["pokemon_no"],
+            "form_no": pkmn_one.get("form_no", 0),
+            "poke_level": randint(1, 100),
+            "sex": choice(pkmn_one["gender_ratio"])
+            },
+
+            "trade2": {
+            "country_id": country_two,
+            "country_name": areas[country_two]["names"][LANG],
+            "monsno": pkmn_two["pokemon_no"],
+            "form_no": pkmn_two.get("form_no", 0),
+            "poke_level": randint(1, 100),
+            "sex": choice(pkmn_two["gender_ratio"])
+            }
         }
-    }
-    
-    # Test gender icons
-    dummy_trade2 = {
-        "trade1": {
-          "country_id": 170,
-          "country_name": "South Korea",
-          "monsno": 628,
-          "form_no": 0,
-          "poke_level": 54,
-          "sex": 0 
-        },
-        "trade2": {
-          "country_id": 195,
-          "country_name": "Spain",
-          "monsno": 630,
-          "form_no": 0,
-          "poke_level": 54,
-          "sex": 1
-        }
-    }
-    
-    result["trade_list"].append(dummy_trade1)
-    result["trade_list"].append(dummy_trade2)
-    return json.dumps(result).encode()
+
+        trade_list.append(trade)
+
+    return json.dumps({"trade_list":trade_list}).encode()
 
 # ---------------------
 # POST API calls
