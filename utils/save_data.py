@@ -39,7 +39,7 @@ def write_player_data(data: dict, game_sync_id: str = None):
 
 # game sync data
 
-def read_entralink_data() -> list:
+def read_entralink_data() -> dict:
     return db.read(gscd, "game_sync") or {}
 
 def write_entralink_data(data: List[dict], data_type: str):

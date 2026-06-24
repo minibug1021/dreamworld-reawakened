@@ -78,19 +78,34 @@ def GET_item_list(_query):
 def POST_item_delivery_update(_query):
     print(json.dumps(_query, indent=2))
 
-    item_list = []
+    # Build the new queue from the request
+    new_queue = {}
     for k, item_pair in _query.items():
         if not k.startswith("item_id"):
             continue
-
         item_id, item_count = item_pair.split("_")
-        item_list.append(
-                {
-                "pokeitem_id":int(item_id),
-                "item_cnt":int(item_count)
-                }
-            )
-        managers.chest.remove_item(int(item_id), int(item_count))
+        new_queue[int(item_id)] = int(item_count)
+
+    # Build the old queue from whatever is currently staged
+    old_queue = {
+        item["pokeitem_id"]: item["item_cnt"]
+        for item in save_data.read_entralink_data().get("items", [])
+    }
+
+    # Determine the delta to add/subtract Chest items
+    all_ids = set(new_queue) | set(old_queue)
+    for item_id in all_ids:
+        delta = new_queue.get(item_id, 0) - old_queue.get(item_id, 0)
+        if delta > 0:
+            managers.chest.remove_item(item_id, delta)
+        elif delta < 0:
+            managers.chest.add_item(item_id, -delta)
+
+    # Save the new queue state
+    item_list = [
+        {"pokeitem_id": item_id, "item_cnt": item_cnt}
+        for item_id, item_cnt in new_queue.items()
+    ]
 
     if args.game_sync:
         save_data.write_entralink_data(item_list, "items")

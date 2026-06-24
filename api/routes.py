@@ -34,7 +34,7 @@ GET_RESPONSES = {
     "pdw.home.pdw_end":              pdw_home.GET_pdw_end,
     "pdw.item.item_list":            pdw_item.GET_item_list,
     "pgl.journal.census":            pgl_journal.GET_census,
-    "pgl.member.profile.pdw_end_by_pgl":            pgl_member.GET_profile_pdw_end_by_pgl,
+    "pgl.member.profile.customize":                 pgl_member.GET_profile_customize, # custom API call - not original
     "pgl.member.profile.friend_friend_list":        pgl_member.GET_profile_friend_friend_list,
     "pgl.member.profile.friend_gbu_profile":        pgl_member.GET_profile_friend_gbu_profile,
     "pgl.member.profile.friend_list":               pgl_member.GET_profile_friend_list,
@@ -47,6 +47,7 @@ GET_RESPONSES = {
     "pgl.member.profile.my_profile":                pgl_member.GET_profile_my_profile,
     "pgl.member.profile.my_state":                  pgl_member.GET_profile_my_state,
     "pgl.member.profile.pdw_friend_list":           pgl_member.GET_profile_pdw_friend_list,
+    "pgl.member.profile.pdw_end_by_pgl":            pgl_member.GET_profile_pdw_end_by_pgl,
     "pgl.member.profile.video_delete":              pgl_member.GET_profile_video_delete,
     "pgl.member.profile.video_regist":              pgl_member.GET_profile_video_regist,
     "pgl.news.information_list":     pgl_news.GET_information_list,

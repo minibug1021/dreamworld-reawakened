@@ -6,11 +6,12 @@ from utils import pokemon
 from utils import managers
 from utils import save_data
 
+encounter_store = {}
+
 # ---------------------
 # GET API calls
 # ---------------------
 
-encounter_store = {}
 def GET_top(_query):
     """Processes the Dream Island encounter logic based on player information.
 

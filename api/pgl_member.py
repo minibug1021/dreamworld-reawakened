@@ -9,9 +9,19 @@ from game_sync_server.entralinked.utility.db_manager import db
 # GET API calls
 # ---------------------
 
-def GET_profile_pdw_end_by_pgl(_query):
-    save_data.update_gamesync_status(save_data.PlayerStatus.WAKE_READY)
-    return b"{}"
+def GET_profile_customize(_query):
+    response = {
+    "selected": {
+        "cgear":   "01",
+        "pokedex": "01",
+        "musical": "01"
+    },
+    "cgear":   ["01", "02", "03"],
+    "pokedex": ["01", "02"],
+    "musical": ["01", "02", "03"]
+    }
+
+    return json.dumps(response).encode()
 
 
 def GET_profile_friend_friend_list(_query):
@@ -116,6 +126,11 @@ def GET_profile_my_state(_query):
 
 
 def GET_profile_pdw_friend_list(_query):
+    return b"{}"
+
+
+def GET_profile_pdw_end_by_pgl(_query):
+    save_data.update_gamesync_status(save_data.PlayerStatus.WAKE_READY)
     return b"{}"
 
 
