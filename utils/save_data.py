@@ -37,6 +37,11 @@ def write_player_data(data: dict, game_sync_id: str = None):
     player_data.setdefault("member", {}).update(data)
     db.write(game_sync_id or gscd, "player_data", player_data)
 
+# sleeping pokemons
+
+def read_sleeping_pokemon(game_sync_id: str = None) -> dict:
+    return db.read(game_sync_id or gscd, "sleeping_pokemon") or {}
+
 # game sync data
 
 def read_entralink_data() -> dict:
