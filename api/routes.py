@@ -33,6 +33,9 @@ GET_RESPONSES = {
     "pdw.home.my_island_area":       pdw_home.GET_my_island_area,
     "pdw.home.pdw_end":              pdw_home.GET_pdw_end,
     "pdw.item.item_list":            pdw_item.GET_item_list,
+    "pdw.item.item_return_update":   pdw_item.GET_item_return_update,
+    "pdw.item.item_exhibit_update":   pdw_item.GET_item_exhibit_update,
+    "pdw.item.item_trade_update":   pdw_item.GET_item_trade_update,
     "pgl.journal.census":            pgl_journal.GET_census,
     "pgl.member.profile.customize":                 pgl_member.GET_profile_customize, # custom API call - not original
     "pgl.member.profile.friend_friend_list":        pgl_member.GET_profile_friend_friend_list,

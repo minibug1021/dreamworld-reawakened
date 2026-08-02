@@ -5,6 +5,7 @@ from config import args
 from utils import text
 from utils import managers
 from utils import save_data
+from flask import request
 
 def date_to_unix(datetime_string: str):
     return datetime.strptime(datetime_string, "%Y-%m-%d").timestamp()
@@ -71,6 +72,53 @@ def GET_item_list(_query):
 
     return json.dumps({"cnt": len(managers.chest.data["list"]), "list": item_list}).encode()
 
+def GET_item_return_update(_query):
+    material_id = request.args.get("material_id")
+
+    x = request.args.get("x")
+
+    y = request.args.get("y")
+
+    share_result = managers.share.share_to_chest(material_id)
+
+    item_id = share_result["pokeitem_id"]
+
+    managers.chest.add_item(item_id, 1)
+
+    return json.dumps(share_result).encode()
+ 
+def GET_item_exhibit_update(_query):
+    x = int(_query.get("x"))
+
+    y = int(_query.get("y"))
+
+    item_id = int(_query.get("item_id"))
+
+    place_result = managers.share.place( x, y, item_id)
+
+    managers.chest.remove_item(item_id, 1)
+
+    return json.dumps(place_result).encode()
+
+def GET_item_trade_update(_query):
+    almost_material_id = int(_query.get("other_material_id"))
+
+    material_id = json.dumps(almost_material_id)
+
+    member_savedata_id = int(_query.get("other_member_id"))
+
+    item_id = int(_query.get("item_id"))
+
+    swap_result = managers.share.switch_swap(material_id, member_savedata_id, item_id)
+
+    old_item_id = swap_result["old_item_id"]
+
+    managers.chest.remove_item(item_id, 1)
+
+    managers.chest.add_item(old_item_id, 1)
+
+    return json.dumps(managers.share.data).encode()
+
 # ---------------------
 # POST API calls
 # ---------------------
@@ -112,30 +160,7 @@ def POST_item_delivery_update(_query):
 
     return b'{}'
 
-
 def POST_item_trade_list(_query):
-    response = [
-        {
-            "material_id":"None",
-            "item_id":"None",
-            "pokeitem":"None",
-            "x":1,
-            "y":1,
-            "history_id":"None",
-            "old_member_savedata_id":"None",
-            "pokemon_no":"None",
-            "form_no":"None",
-            "pokename":"None",
-            "pgl_name":"None",
-            "nickname":"None",
-            "poke_nickname":"None",
-            "field_line1":"None",
-            "field_line2":"None",
-            "field_line3":"None",
-            "created_at":"",
-            "old_item_id":"None",
-            "new_item_id":"None",
-            "old_item_name":"None"
-        }
-    ]
+    response = managers.share.data["share_list"]
+
     return json.dumps(response).encode()
