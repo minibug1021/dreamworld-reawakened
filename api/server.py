@@ -53,7 +53,7 @@ def read_and_patch(file_path: Path) -> bytes:
         data = apply_substitutions(data, file_path.name)
 
     if file_path.suffix.lower() == ".xml":
-        if "Basilisk" not in request.headers.get("User-Agent"):
+        if "Mozilla" not in request.headers.get("User-Agent"):
             data = data.replace(b"&amp;#xD;", os.linesep.encode())
 
     return data
