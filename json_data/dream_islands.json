@@ -3,7 +3,6 @@
     "area_name": "Pleasant Forest", 
     "req_points": {"bw": 0, "b2w2": 3000}, 
     "req_badges": {"bw": 0, "b2w2": 8}, 
-    "favored_types": ["Bug", "Electric", "Grass", "Poison"], 
     "pokemon": [
       {
         "natdex": 19, 
@@ -329,7 +328,6 @@
     "area_name": "Sparkling Sea", 
     "req_points": {"bw": 5000, "b2w2": 0}, 
     "req_badges": {"bw": 8, "b2w2": 0}, 
-    "favored_types": ["Water"], 
     "pokemon": [
       {
         "natdex": 72, 
@@ -592,7 +590,6 @@
     "area_name": "Windswept Sky", 
     "req_points": {"bw": 2500, "b2w2": 1500}, 
     "req_badges": {"bw": 4, "b2w2": 4}, 
-    "favored_types": ["Flying"], 
     "pokemon": [
       {
         "natdex": 12, 
@@ -765,7 +762,6 @@
     "area_name": "Rugged Mountain", 
     "req_points": {"bw": 0, "b2w2": 3000}, 
     "req_badges": {"bw": 0, "b2w2": 8}, 
-    "favored_types": ["Fire", "Fighting", "Ground", "Rock", "Steel"], 
     "pokemon": [
       {
         "natdex": 56, 
@@ -983,7 +979,6 @@
     "area_name": "Spooky Manor", 
     "req_points": {"bw": 0, "b2w2": 1500}, 
     "req_badges": {"bw": 0, "b2w2": 4}, 
-    "favored_types": ["Dark", "Ghost", "Psychic"], 
     "pokemon": [
       {
         "natdex": 52, 
@@ -1199,7 +1194,6 @@
     "area_name": "Icy Cave", 
     "req_points": {"bw": 0, "b2w2": 0}, 
     "req_badges": {"bw": 0, "b2w2": 0}, 
-    "favored_types": ["Ground", "Ice", "Rock", "Steel"], 
     "pokemon": [
       {
         "natdex": 27, 
@@ -1421,7 +1415,6 @@
     "area_name": "Dream Park", 
     "req_points": {"bw": 0, "b2w2": 0}, 
     "req_badges": {"bw": 0, "b2w2": 0}, 
-    "favored_types": ["Normal"], 
     "pokemon": [
       {
         "natdex": 15, 
@@ -1657,7 +1650,6 @@
     "area_name": "Pokémon Café Forest", 
     "req_points": {"bw": 0, "b2w2": 0}, 
     "req_badges": {"bw": 0, "b2w2": 0}, 
-    "favored_types": [], 
     "pokemon": [
       {
         "natdex": 61, 

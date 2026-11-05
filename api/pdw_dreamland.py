@@ -1,276 +1,260 @@
-import json
-from random import choice, choices, randint
+"""pdw.dreamland.*: Dream Island visits (pdw_island.swf) and their minigame rewards."""
+import hashlib
+import logging
+from collections.abc import Sequence
+from random import choices, randint, sample
+from typing import Any, TypeVar
 
-from utils import text
-from utils import pokemon
-from utils import managers
-from utils import save_data
+from flask import session
 
-encounter_store = {}
+from api.routes import Query, endpoint, query_int
+from utils import managers, pokemon, save_data, text
+from utils.constants import NATURE_COUNT, is_b2w2
+from utils.data import load_json_data
+from utils.models import Member
 
-# ---------------------
-# GET API calls
-# ---------------------
+logger = logging.getLogger(__name__)
 
-def GET_top(_query):
-    """Processes the Dream Island encounter logic based on player information.
+T = TypeVar("T")
 
-    The Dream Island area selected is filtered based on the player's total Dream Points,
-    number of badges in-game, and the type of the Pokémon being brought to the island.
+# area id -> unlock requirements, Pokémon and items (type preferences: _FAVORED_AREA_SHARE)
+_AREA_INFO: dict[str, dict[str, Any]] = load_json_data("dream_islands")
+# Not post-processing any of the raw data for now.
+_DREAMLAND = load_json_data("dreamland_objects")
+_SLOTS = {int(object_id): slot for object_id, slot in _DREAMLAND["objects"].items()}
+_CONTENTS = {c["object_pokemon_id"]: c for slot in _SLOTS.values() for c in slot["contents"]}
 
-    The Pokémon encountered are filtered based on the player's total Dream Points,
-    number of badges in-game, and the game that was connected (BW vs B2W2).
+OBJECTS_PER_VISIT = 17
+B2W2_AREA_OFFSET = 100  # B2W2 use areas 103-109
+MINIGAME_POINTS = 20
+SPECIAL_MOVE_COUNT = 4  # waza_count: every live capture says 4
 
-    The items encountered are filtered based on the player's total Dream Points.
+# Minigame rank (1 best - 5 worst) -> % chance of the Pokémon's special move A, B, or C.
+# Ranks 2, 3, and 4's odds are estimated. Rank 0 is a failure.
+MOVE_CHANCES = {
+    0: (0, 0, 0),
+    1: (0, 50, 50),
+    2: (20, 40, 40),
+    3: (40, 32, 28),
+    4: (60, 25, 15),
+    5: (70, 20, 10),
+}
+_VISIT_TOKENS = "dreamland_otokens"  # session key: {object_pokemon_id: otoken} for this visit
 
-    Returns:
-        A JSON-encoded bytes object representing the generated Dream Island
-        encounters and its populated objects (Pokémon and items).
+# Tucked-in Pokémon type id -> {area id: share of visits}. A type sends this share of visits to
+# its favored area(s) and splits the rest evenly across every other area. A dual type averages
+# its two types' tables, and areas the player can't enter yet are skipped.
+_FAVORED_AREA_SHARE: dict[int, dict[str, float]] = {
+    0:  {"9": 0.50},             # Normal: Dream Park (estimate)
+    1:  {"6": 0.50},             # Fighting: Rugged Mountain
+    2:  {"5": 0.70},             # Flying: Windswept Sky
+    3:  {"3": 0.50},             # Poison: Pleasant Forest
+    4:  {"6": 0.35, "8": 0.35},  # Ground: Rugged Mountain, Icy Cave
+    5:  {"6": 0.35, "8": 0.35},  # Rock: Rugged Mountain, Icy Cave
+    6:  {"3": 0.50},             # Bug: Pleasant Forest
+    7:  {"7": 0.70},             # Ghost: Spooky Manor
+    8:  {"6": 0.35, "8": 0.40},  # Steel: Rugged Mountain, Icy Cave
+    9:  {"6": 0.50},             # Fire: Rugged Mountain
+    10: {"4": 0.70},             # Water: Sparkling Sea
+    11: {"3": 0.70},             # Grass: Pleasant Forest
+    12: {"3": 0.50},             # Electric: Pleasant Forest
+    13: {"7": 0.50},             # Psychic: Spooky Manor
+    14: {"8": 0.70},             # Ice: Icy Cave
+    15: {},                      # Dragon: no preference
+    16: {"7": 0.50},             # Dark: Spooky Manor
+}
+
+
+def _weighted_choice(options: Sequence[T], weights: Sequence[float]) -> T:
+    return choices(options, weights=weights, k=1)[0]
+
+
+def _pokemon_fields(content: dict) -> dict:
+    """Pokémon-related fields which are sent by both pdw.dreamland.top and game_clear."""
+    info = pokemon.info(content["pokemon_no"], content["form_no"])
+    return {
+        "pokemon_no": content["pokemon_no"],
+        "form_no":    content["form_no"],
+        "pokename":   text.lookup_str("pokemon", content["pokemon_no"]),
+        "sex_id":     content["sex_id"],
+        "type1":      text.lookup_str("type", info["type1"]),
+        "type2":      text.lookup_str("type", info["type2"]),
+        "speabi1":    text.lookup_str("ability", info["speabi1"]),
+        "speabi2":    text.lookup_str("ability", info["speabi2"]),
+        "speabi3":    text.lookup_str("ability", info["speabi3"]),
+    }
+
+
+def _area_weights(type_ids: Sequence[int | None], area_ids: Sequence[str]) -> dict[str, float]:
+    """Chance of each area (summing to 1) for a tucked-in Pokémon of these types. See _FAVORED_AREA_SHARE."""
+    types = list(dict.fromkeys(t for t in type_ids if t is not None))  # a mono-type has type1 == type2
+    weights = dict.fromkeys(area_ids, 0.0)
+    for type_id in types:
+        favored = {a: share for a, share in _FAVORED_AREA_SHARE[type_id].items() if a in weights}
+        rest = (1 - sum(favored.values())) / (len(area_ids) - len(favored))
+        for area_id in area_ids:
+            weights[area_id] += favored.get(area_id, rest) / len(types)
+    return weights
+
+
+def _pick_area(player: Member, game_key: str) -> str:
+    """Return a random area ID (3-9) from the ones accessible to the player.
+
+    The pick is weighted by the tucked-in Pokémon's types.
     """
+    points, badges = player["experiment_point"], player["player_badge_num"] or 0
+    # Pokémon Café Forest has no data for now
+    island_areas = [area_id for area_id in _AREA_INFO if area_id in _DREAMLAND["areas"]]
+    weights = _area_weights([player["type1"], player["type2"]], island_areas)
+    areas = [area_id for area_id in island_areas
+             if points >= _AREA_INFO[area_id]["req_points"][game_key]
+             and badges >= _AREA_INFO[area_id]["req_badges"][game_key]]
+    return _weighted_choice(areas, [weights[area_id] for area_id in areas])
 
-    # --- get player game version ---
-    player_data = save_data.read_player_data()["member"]
 
-    rom_name      = player_data["rom_name"]
-    player_points = int(player_data["experiment_point"])
-    player_badges = int(player_data["player_badge_num"])
-    player_types  = {player_data["type1"], player_data["type2"]}
+def _object_entry(object_id: int, slot: dict, world_id: int) -> dict:
+    """Build an encounter object, which is either a Pokémon with a mini-game or an item."""
+    content = _weighted_choice(slot["contents"], [c["weight"] for c in slot["contents"]])
+    entry = {
+        "object_id":         object_id,
+        "otoken":            save_data.generate_otoken(world_id),
+        "public_date_from":  None,
+        "public_date_to":    None,
+        "object_category":   slot["object_category"],
+        "minigame_id":       slot["minigame_id"],
+        "kinomi_id":         0,
+        "kinomi_count":      0,
+        "pokeitem_id":       0,
+        "object_pokemon_id": content["object_pokemon_id"],
+    }
+    if "pokemon_no" in content:
+        entry["pokemon"] = {**_pokemon_fields(content), "action_type": content["action_type"]}
+    return entry
 
-    is_bw   = rom_name in ("Pokémon Black Version", "Pokémon White Version")
-    is_b2w2 = rom_name in ("Pokémon Black Version 2", "Pokémon White Version 2")
-    game_key = "bw" if is_bw else "b2w2"
 
-    # --- select eligible Dream Island area ---
-    eligible_areas = []
-    area_weights   = []
-    for area_id, area in pokemon.area_info.items():
-        if area_id == "50": #we don't have the file for Pokémon Café Forest
-            continue
+def _minigame_rank(object_pokemon_id: str, result: str) -> int | None:
+    """Return the mini-game rank that `result` encodes, or None if it matches none.
 
-        if player_points < area["req_points"][game_key]:
-            continue
+    pdw_island.swf sends result = md5(str(rank) + otoken + object_pokemon_id).
+    """
+    otoken = session.get(_VISIT_TOKENS, {}).get(object_pokemon_id)
+    if otoken is None:
+        return None
+    for rank in MOVE_CHANCES:
+        if hashlib.md5(f"{rank}{otoken}{object_pokemon_id}".encode()).hexdigest() == result:
+            return rank
+    return None
 
-        if player_badges < area["req_badges"][game_key]:
-            continue
 
-        eligible_areas.append(area_id)
+def _special_move(content: dict, rank: int | None) -> int | None:
+    """Pick special move A, B, or C by MOVE_CHANCES for the rank.
 
-        # Bulbapedia says Pokemon with a "favored type" bring you to certain areas more often, so for right now its a 25% boost
-        weight = 1.25 if player_types & set(area["favored_types"]) else 1.0
-        area_weights.append(weight)
+    An unknown rank counts as rank 0. Return None if no move has a chance.
+    """
+    chances = MOVE_CHANCES[0 if rank is None else rank]
+    possible = [(move, chance) for move, chance in zip(content["special_moves"], chances, strict=False)
+                if move is not None and chance > 0]
+    if not possible:
+        return None
+    moves, weights = zip(*possible, strict=True)
+    return _weighted_choice(moves, weights)
 
-    dreamland_area_id = choices(eligible_areas, weights=area_weights, k=1)[0]
 
-    area = pokemon.area_info[dreamland_area_id]
+@endpoint("pdw.dreamland.top")
+def top(_query: Query) -> dict:
+    """Build a Dream Island visit.
 
-    # --- filter eligible Pokémon for the chosen area ---
-    def get_eligible_pokemon() -> dict:
-        eligible = {}
-        for pdata in area["pokemon"]:
-            if player_points < pdata["req_points"]:
-                continue
-            req_game = pdata.get("req_game")
-            if req_game == "bw" and not is_bw:
-                continue
-            if req_game == "b2w2" and not is_b2w2:
-                continue
-            eligible[pdata["natdex"]] = pdata
-        return eligible
+    The island is picked by the player's Dream Points, badges, and Pokémon types. Each island
+    has a fixed set of object slots, unlocked by Dream Points (base pool plus expansions).
+    A visit shows OBJECTS_PER_VISIT of the unlocked slots at random.
+    """
+    player = save_data.read_member()
+    b2w2 = is_b2w2(player["rom_id"])
+    points = player["experiment_point"]
 
-    # --- pick one eligible Pokémon from the area ---
-    def pick_area_pokemon():
-        eligible = get_eligible_pokemon()
-        natdex = choice(list(eligible.keys()))
-        pdata  = eligible[natdex]
+    area_id = _pick_area(player, "b2w2" if b2w2 else "bw")
+    if b2w2:
+        area_id = str(int(area_id) + B2W2_AREA_OFFSET)
 
-        form_name = pdata.get("form")
-        lookup_key = f"{natdex}-{form_name}" if form_name else str(natdex)
+    unlocked = [object_id for object_id in _DREAMLAND["areas"][area_id]
+                if _SLOTS[object_id]["min_points"] <= points]
+    visit = sample(unlocked, min(OBJECTS_PER_VISIT, len(unlocked)))
 
-        pkmn_entry = pokemon.pokemon_info.get(lookup_key)
+    object_list = [_object_entry(object_id, _SLOTS[object_id], player["world_id"]) for object_id in visit]
+    # game_clear needs each object's otoken to read the minigame rank out of `result`
+    session[_VISIT_TOKENS] = {str(o["object_pokemon_id"]): o["otoken"] for o in object_list}
 
-        pkmn = {**pkmn_entry, "pokemon_no": natdex}
-        return pkmn, pdata
-
-    # --- pick one eligible item from the area ---
-    def pick_area_item():
-        eligible = [iid for iid, ipoints in area["items"] if player_points >= ipoints]
-
-        item_id = choice(eligible)
-
-        #items do not all show up at the same frequency, but i dont know if we have enough data to determine what the rarities are.
-        #its probably at least partially based on the req_points to unlock those items
-        return item_id
-
-    # --- Encounter builders ---
-    def make_pokemon_encounter(pkmn, pdata, obj_id, obj_pkmn_id, category=0):
-        gender_id = choice(pkmn["gender_ratio"])
-        gender_key = "m" if gender_id == 0 else "f"
-
-        # Use the gender-specific minigame list
-        minigame_pool = pdata["minigames"].get(gender_key)
-        minigame_id = 1 if category == 1 else choice(minigame_pool)
-
-        encounter_store[obj_pkmn_id] = {"type": "pokemon", "pokemon": pkmn}
-        return {
-            "object_id":         obj_id,
-            "otoken":            save_data.generate_otoken(),
-            "public_date_from":  None,
-            "public_date_to":    None,
-            "object_category":   category,
-            "minigame_id":       minigame_id,
-            "kinomi_id":         0,
-            "kinomi_count":      0,
-            "pokeitem_id":       0,
-            "object_pokemon_id": obj_pkmn_id,
-            "pokemon": {
-                "pokemon_no":  pkmn["pokemon_no"],
-                "form_no":     pkmn.get("form_no", 0),
-                "pokename":    text.lookup_str("pokemon", pkmn["pokemon_no"]),
-                "sex_id":      gender_id,
-                "action_type": 1,
-                "type1":       text.lookup_str("type", pkmn["type1"]),
-                "type2":       text.lookup_str("type", pkmn["type2"]),
-                "speabi1":     text.lookup_str("ability", pkmn["speabi1"]),
-                "speabi2":     text.lookup_str("ability", pkmn["speabi2"]),
-                "speabi3":     text.lookup_str("ability", pkmn["speabi3"])
-            }
-        }
-
-    def make_item_encounter(item_id, obj_id, obj_pkmn_id):
-        encounter_store[obj_pkmn_id] = {"type": "item", "item_id": item_id}
-        return {
-            "object_id":         obj_id,
-            "otoken":            save_data.generate_otoken(),
-            "public_date_from":  None,
-            "public_date_to":    None,
-            "object_category":   2,
-            "minigame_id":       0,
-            "kinomi_id":         0,
-            "kinomi_count":      0,
-            "pokeitem_id":       0,
-            "object_pokemon_id": obj_pkmn_id,
-        }
-
-    # --- Build the object list ---
-    object_list       = []
-    base_obj_pkmn_id  = randint(3700, 4000)
-
-    # First entry is always the special Pokémon (category 1)
-    pkmn, pdata = pick_area_pokemon()
-    object_list.append(make_pokemon_encounter(pkmn, pdata, randint(100, 400), base_obj_pkmn_id, category=1))
-
-    for i in range(1, 30):
-        obj_id = randint(90, 400)
-        base_obj_pkmn_id -= i
-
-        if randint(1, 2) == 1:  # ratio of pokemon/items is about 50/50
-            item_id = pick_area_item()
-            object_list.append(make_item_encounter(item_id, obj_id, base_obj_pkmn_id))
-            continue
-
-        pkmn, pdata = pick_area_pokemon()
-        object_list.append(make_pokemon_encounter(pkmn, pdata, obj_id, base_obj_pkmn_id))
-
-    response = {
-        "dreamland_area_id": dreamland_area_id,
+    return {
+        "dreamland_area_id": int(area_id),
         "object_list":       object_list,
     }
-    return json.dumps(response).encode()
 
 
-def GET_tree_top(_query):
-    count = randint(1, 10)
-
+@endpoint("pdw.dreamland.tree_top")
+def tree_top(_query: Query) -> dict:
+    """Return placeholder random Pokémon from made-up players."""
     pokemon_list = []
-    encount_list = []
-
-    for _ in range(count):
+    for _ in range(randint(1, 10)):
         pkmn = pokemon.get_random_pokemon()
-
         pokemon_list.append({
-            "pokemon_no":        pkmn["pokemon_no"],
-            "form_no":           pkmn.get("form_no", 0),
-            "pgl_name":          "PGLName",
+            "pokemon_no":         pkmn["pokemon_no"],
+            "form_no":            pkmn.get("form_no", 0),
+            "pgl_name":           "PGLName",
             "member_savedata_id": 123,
-            "nickname":          None,
-            "pokename":          text.lookup_str("pokemon", pkmn["pokemon_no"]),
-            "oyaname":           "PlayerName",
-            "level":             randint(1, 100),
-            "type1":             text.lookup_str("type", pkmn["type1"]),
-            "type2":             text.lookup_str("type", pkmn["type2"]),
-            "sex_id":            0,
-            "pokekaku":          text.lookup_str("nature", randint(0, 24)),
-            "pokeplace":         "Route 1",
-            "ball_name":         text.lookup_str("ball", 4)
-        }
-    )
+            "nickname":           None,
+            "pokename":           text.lookup_str("pokemon", pkmn["pokemon_no"]),
+            "oyaname":            "PlayerName",
+            "level":              randint(1, 100),
+            "type1":              text.lookup_str("type", pkmn["type1"]),
+            "type2":              text.lookup_str("type", pkmn["type2"]),
+            "sex_id":             0,
+            "pokekaku":           text.lookup_str("nature", randint(0, NATURE_COUNT - 1)),
+            "pokeplace":          "Route 1",
+            "ball_name":          text.lookup_str("ball", 4),
+        })
+    return {"pokemon_list": pokemon_list, "encount_list": []}
 
-    response = {"pokemon_list": pokemon_list, "encount_list": encount_list}
-    return json.dumps(response).encode()
 
-# ---------------------
-# POST API calls
-# ---------------------
+@endpoint("pdw.dreamland.game_clear", methods=("POST",))
+def game_clear(query: Query) -> dict:
+    """Process item rewards now, otherwise send the Pokémon reward data forward.
 
-def POST_game_clear(_query):
-    """Handles processing data for collected items and post-minigame Pokémon.
+    The query holds `object_pokemon_id` (which content slot it was), `pokeitem_id`, and
+    `result`. `pokeitem_id` is always 0 unless minigame 2 (Ice Cream Scoop) was played.
+    Then it is the item id of the Berry that was used up. `result` is an MD5 of the game
+    result (0 failure/abort, 1-5 success), the token, and object_pokemon_id.
 
-    The result parameter of _query should be used to determine which of the three,
-    if any, special moves the Pokémon will have. The better moves are rarer, but
-    the exact probabilities are unknown.
-
-    For Pokémon encounters, the following is handled by the server:
-        waza_name_disp: Name of the special move
-        waza_count: Total number of moves the Pokémon knows
-
-    Args:
-        _query: A dict of request parameters. Possible params:
-            object_pokemon_id: Used for indexing into encount_list.
-            pokeitem_id: Always 0 unless minigame 2 was played (Ice Cream Scoop).
-                Will have the item ID of the Berry that was consumed.
-            result: MD5 hash of the following:
-                Game result (0 if failure/abort, 1-5 if success)
-                token
-                object_pokemon_id
-
-    Returns:
-        A JSON-encoded bytes object representing the reward data.
+    The special move (waza_name_disp) depends on the minigame rank read from result (see
+    _special_move and MOVE_CHANCES). Return the reward, which is a Pokémon or an item.
     """
-    print(json.dumps(_query, indent=2))
+    logger.debug("game_clear %s", query)
 
-    encounter = encounter_store[int(_query["object_pokemon_id"])]
+    content = _CONTENTS.get(int(query["object_pokemon_id"]))
+    if content is None:
+        raise ValueError(f"Unknown object_pokemon_id: {query['object_pokemon_id']}")
 
-    if encounter["type"] == "pokemon":
-        pkmn = encounter["pokemon"]
+    if "pokemon_no" in content:
+        pokeitem_id = query_int(query, "pokeitem_id", 0)
+        if pokeitem_id:
+            managers.get_chest().remove_item(pokeitem_id, 1)
 
-        if len(pkmn["gender_ratio"]) > 1: #DW pokemon are always 66/33 male/female regardless of normal gender ratios
-            gender_id = choices([0, 1], weights=[2/3, 1/3], k=1)[0]
-        else:
-            gender_id = pkmn["gender_ratio"][0]
+        save_data.award_points(MINIGAME_POINTS)
 
+        rank = _minigame_rank(query["object_pokemon_id"], query.get("result", ""))
+        move_id = _special_move(content, rank)
         reward = {
             "pokemon": {
-                "pokemon_no":     pkmn["pokemon_no"],
-                "pokename":       text.lookup_str("pokemon", pkmn["pokemon_no"]),
-                "form_no":        pkmn.get("form_no", 0),
-                "sex_id":         gender_id,
-                "waza_name_disp": None if "special_moves" not in pkmn else text.lookup_str("move", choice(pkmn["special_moves"])),
-                "waza_count":     4,
-                "type1":       text.lookup_str("type", pkmn["type1"]),
-                "type2":       text.lookup_str("type", pkmn["type2"]),
-                "speabi1":     text.lookup_str("ability", pkmn["speabi1"]),
-                "speabi2":     text.lookup_str("ability", pkmn["speabi2"]),
-                "speabi3":     text.lookup_str("ability", pkmn["speabi3"])
+                **_pokemon_fields(content),
+                "waza_name_disp": text.lookup_str("move", move_id),
+                "waza_count":     SPECIAL_MOVE_COUNT,
             },
             "item":     None,
             "interior": None,
             "present":  None,
         }
 
-    #there is an encounter-with-berry branch missing here
-
-    elif encounter["type"] == "item":
-        item_id = encounter["item_id"]
+    else:
+        item_id = content["item_id"]
         reward = {
             "pokemon": None,
             "item": {
@@ -282,9 +266,6 @@ def POST_game_clear(_query):
             "present":  None,
         }
 
-        managers.chest.add_item(item_id, 1)
+        managers.get_chest().add_item(item_id, 1)
 
-    else:
-        raise ValueError(f"Unknown encounter type: {encounter['type']}")
-
-    return json.dumps(reward).encode()
+    return reward

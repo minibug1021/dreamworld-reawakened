@@ -1,68 +1,43 @@
-import re
+"""gts.journal.*: Global Trade Station (GTS)."""
 import json
-from pathlib import Path
-from random import choice
-from random import randint
-from utils import language
+import re
+from functools import cache
+from random import choice, randint
+
+from api.routes import Query, endpoint
+from config import LANG, ROOT_DIR
 from utils.pokemon import get_random_pokemon
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
-LANG = language.player_language
+AREAS_JS = ROOT_DIR / "dreamworld_assets" / "shared.pokemon-gl.com" / "report" / "assets" / "js" / "areas.js"
 
-def load_areas() -> dict:
-    file_path = ROOT_DIR / "dreamworld_assets" / "shared.pokemon-gl.com" / "report" / "assets" / "js" / "areas.js"
-    text = open(file_path, encoding="UTF-8").read()
 
-    match = re.search(r"var a = (\[.*?\]);", text, re.DOTALL)
-    raw = match.group(1)
+@cache
+def load_areas() -> dict[int, dict]:
+    """GTS country id -> area entry from the site's areas.js."""
+    match = re.search(r"var a = (\[.*?\]);", AREAS_JS.read_text(encoding="utf-8"), re.DOTALL)
+    if match is None:
+        raise ValueError(f"No area list found in {AREAS_JS}")
+    quoted = re.sub(r"(?<=[{,])\s*([a-zA-Z_]\w*)\s*:", r'"\1":', match.group(1))
+    return {entry["gts"]: entry for entry in json.loads(quoted) if entry["gts"] not in (0, None)}
 
-    quoted = re.sub(r'(?<=[{,])\s*([a-zA-Z_]\w*)\s*:', r'"\1":', raw)
 
-    areas = json.loads(quoted)
-    return {entry["gts"]: entry for entry in areas if entry["gts"] is not None}
+def _random_trade_side(areas: dict[int, dict]) -> dict:
+    """One random Pokémon and the country it was traded from."""
+    pkmn = get_random_pokemon()
+    country_id = choice(list(areas))
+    return {
+        "country_id":   country_id,
+        "country_name": areas[country_id]["names"][LANG],
+        "monsno":       pkmn["pokemon_no"],
+        "form_no":      pkmn.get("form_no", 0),
+        "poke_level":   randint(1, 100),
+        "sex":          choice(pkmn["gender_ratio"]),
+    }
 
-# ---------------------
-# GET API calls
-# ---------------------
 
-def GET_trade_list(_query):
-
-    trade_list = []
-
+@endpoint("gts.journal.trade_list")
+def trade_list(_query: Query) -> dict:
+    """Return a placeholder list of 100 random trades."""
     areas = load_areas()
-
-    # Dummy data
-    for _ in range(100):
-        pkmn_one = get_random_pokemon()
-        pkmn_two = get_random_pokemon()
-
-        country_one = choice(list(areas.keys()))
-        country_two = choice(list(areas.keys()))
-
-        trade = {
-            "trade1": {
-            "country_id": country_one,
-            "country_name": areas[country_one]["names"][LANG],
-            "monsno": pkmn_one["pokemon_no"],
-            "form_no": pkmn_one.get("form_no", 0),
-            "poke_level": randint(1, 100),
-            "sex": choice(pkmn_one["gender_ratio"])
-            },
-
-            "trade2": {
-            "country_id": country_two,
-            "country_name": areas[country_two]["names"][LANG],
-            "monsno": pkmn_two["pokemon_no"],
-            "form_no": pkmn_two.get("form_no", 0),
-            "poke_level": randint(1, 100),
-            "sex": choice(pkmn_two["gender_ratio"])
-            }
-        }
-
-        trade_list.append(trade)
-
-    return json.dumps({"trade_list":trade_list}).encode()
-
-# ---------------------
-# POST API calls
-# ---------------------
+    return {"trade_list": [{"trade1": _random_trade_side(areas), "trade2": _random_trade_side(areas)}
+                           for _ in range(100)]}

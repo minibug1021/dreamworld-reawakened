@@ -2,3 +2,15 @@ __pycache__/
 
 save_data/
 tools/
+
+email_config.json
+
+patches/*
+!patches/*.patched.swf
+json_data/customize.json
+json_data/mail_strings_ja.json
+utils/build_catalog.py
+api/pgl_present.py
+utils/build_dreamland.py
+tests/
+json_data/promotions.json

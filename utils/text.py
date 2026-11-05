@@ -1,34 +1,35 @@
-from pathlib import Path
+"""Localized strings from raw_text/<lang>/<type>.txt.
 
-from utils import language
+Line N of each file holds the string with id N, counting from 0. A blank line means that id
+has no string.
+"""
+from functools import cache
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
+from config import LANG, ROOT_DIR
 
-def lookup_str(str_type: str, index: int):
-    if str_type == "game":
-        index -= 20
+DESCRIPTION_LINES = 3  # *_descriptions entries have up to 3 lines, separated by a literal \n
 
-    try:
-        return raw_text[language.player_language][str_type][index]
 
-    except KeyError:
+@cache
+def _strings(str_type: str) -> list[str] | None:
+    path = ROOT_DIR / "raw_text" / LANG / f"{str_type}.txt"
+    return path.read_text(encoding="utf-8").splitlines() if path.is_file() else None
+
+
+def lookup_str(str_type: str, string_id: int | None) -> str | None:
+    """Return the string with this id, or None if the type or id has none."""
+    strings = _strings(str_type)
+    if string_id is None or strings is None or not 0 <= string_id < len(strings):
         return None
+    return strings[string_id] or None
 
-raw_text = {k: {} for k in language.lang_index.values()}
-for folder in (ROOT_DIR / "raw_text").iterdir():
-    for file in folder.iterdir():
-        with open(ROOT_DIR / "raw_text" / folder.stem / file, "r", encoding="UTF-8") as f:
-            strings = f.read().splitlines()
 
-        if file.stem.endswith("_descriptions"):
-            raw_text[folder.stem][file.stem] = {}
+def lookup_description(str_type: str, string_id: int | None) -> list[str | None]:
+    """Return a *_descriptions entry split into lines.
 
-            for i, val in enumerate(strings):
-                string = val.split("\\n")
-                res = [None, None, None]
-                res[:len(string)] = string
-
-                raw_text[folder.stem][file.stem][i] = res
-
-        else:
-            raw_text[folder.stem][file.stem] = {i: val for i, val in enumerate(strings)}
+    The list is padded with None to at least DESCRIPTION_LINES (all None if the id
+    doesn't exist).
+    """
+    entry = lookup_str(str_type, string_id)
+    lines: list[str | None] = list(entry.split("\\n")) if entry is not None else []
+    return lines + [None] * (DESCRIPTION_LINES - len(lines))

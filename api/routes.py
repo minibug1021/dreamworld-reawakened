@@ -1,74 +1,46 @@
-from api import (
-    gbu_journal,
-    gbu_worldbattle,
-    gts_journal,
-    gts_profile,
-    hb,
-    pdw_croft,
-    pdw_dreamland,
-    pdw_home,
-    pdw_item,
-    pgl_journal,
-    pgl_member,
-    pgl_news,
-    pgl_top
-)
+"""Registry of the ?p=<endpoint> API.
 
-GET_RESPONSES = {
-    "gbu.journal.season_list":       gbu_journal.GET_season_list,
-    "gts.journal.trade_list":        gts_journal.GET_trade_list,
-    "gbu.worldbattle.get_battle_history": gbu_worldbattle.GET_get_battle_history,
-    "gts.profile.gts_history":       gts_profile.GET_gts_history,
-    "hb":                            hb.GET_hb,
-    "pdw.croft.my_croft_list":       pdw_croft.GET_my_croft_list,
-    "pdw.croft.tutorial_end":        pdw_croft.GET_tutorial_end,
-    "pdw.croft.tutorial_start":      pdw_croft.GET_tutorial_start,
-    "pdw.croft.waterpot_list":       pdw_croft.GET_waterpot_list,
-    "pdw.dreamland.top":             pdw_dreamland.GET_top,
-    "pdw.dreamland.tree_top":        pdw_dreamland.GET_tree_top,
-    "pdw.home.board_pokemon_list":   pdw_home.GET_board_pokemon_list,
-    "pdw.home.footprint_list":       pdw_home.GET_footprint_list,
-    "pdw.home.my_bridge":            pdw_home.GET_my_bridge,
-    "pdw.home.my_island":            pdw_home.GET_my_island,
-    "pdw.home.my_island_area":       pdw_home.GET_my_island_area,
-    "pdw.home.pdw_end":              pdw_home.GET_pdw_end,
-    "pdw.item.item_list":            pdw_item.GET_item_list,
-    "pgl.journal.census":            pgl_journal.GET_census,
-    "pgl.member.profile.customize":                 pgl_member.GET_profile_customize, # custom API call - not original
-    "pgl.member.profile.friend_friend_list":        pgl_member.GET_profile_friend_friend_list,
-    "pgl.member.profile.friend_gbu_profile":        pgl_member.GET_profile_friend_gbu_profile,
-    "pgl.member.profile.friend_list":               pgl_member.GET_profile_friend_list,
-    "pgl.member.profile.friend_pdw_friend_list":    pgl_member.GET_profile_friend_pdw_friend_list,
-    "pgl.member.profile.friend_pdw_profile_by_pgl": pgl_member.GET_profile_friend_pdw_profile_by_pgl,
-    "pgl.member.profile.friend_profile":            pgl_member.GET_profile_friend_profile,
-    "pgl.member.profile.gsid_list":                 pgl_member.GET_profile_gsid_list,
-    "pgl.member.profile.my_gbu_profile":            pgl_member.GET_profile_my_gbu_profile,
-    "pgl.member.profile.my_pdw_profile_by_pgl":     pgl_member.GET_profile_my_pdw_profile_by_pgl,
-    "pgl.member.profile.my_profile":                pgl_member.GET_profile_my_profile,
-    "pgl.member.profile.my_state":                  pgl_member.GET_profile_my_state,
-    "pgl.member.profile.pdw_friend_list":           pgl_member.GET_profile_pdw_friend_list,
-    "pgl.member.profile.pdw_end_by_pgl":            pgl_member.GET_profile_pdw_end_by_pgl,
-    "pgl.member.profile.video_delete":              pgl_member.GET_profile_video_delete,
-    "pgl.member.profile.video_regist":              pgl_member.GET_profile_video_regist,
-    "pgl.news.information_list":     pgl_news.GET_information_list,
-    "pgl.news.news_list":            pgl_news.GET_news_list,
-    "pgl.top.index":                 pgl_top.GET_index,
-    "pgl.top.init":                  pgl_top.GET_init
-}
+Handler modules in api/ register themselves with @endpoint and load_handlers() imports
+every module in the package.
+"""
+import importlib
+import logging
+import pkgutil
+from collections.abc import Callable, Iterable
+from typing import Any
 
-POST_RESPONSES = {
-    "pdw.croft.kinomi_harvesting":   pdw_croft.POST_kinomi_harvesting,
-    "pdw.croft.kinomi_sowing":       pdw_croft.POST_kinomi_sowing,
-    "pdw.croft.kinomi_watering":     pdw_croft.POST_kinomi_watering,
-    "pdw.croft.waterpot_list":       pdw_croft.POST_waterpot_list,
-    "pdw.dreamland.game_clear":      pdw_dreamland.POST_game_clear,
-    "pdw.home.pdw_start":            pdw_home.POST_pdw_start,
-    "pdw.home.pdw_timecheck":        pdw_home.POST_pdw_timecheck,
-    "pdw.item.item_delivery_update": pdw_item.POST_item_delivery_update,
-    "pdw.item.item_trade_list":      pdw_item.POST_item_trade_list,
-    "pgl.member.profile.avator_list":            pgl_member.POST_profile_avator_list,
-    "pgl.member.profile.avator_select":          pgl_member.POST_profile_avator_select,
-    "pgl.member.profile.disclosure_switch":      pgl_member.POST_profile_disclosure_switch,
-    "pgl.member.profile.list_disclosure_switch": pgl_member.POST_profile_list_disclosure_switch,
-    "pgl.member.profile.pdw_login":              pgl_member.POST_profile_pdw_login
-}
+logger = logging.getLogger(__name__)
+
+Query = dict[str, str]
+Handler = Callable[[Query], Any]
+
+HANDLERS: dict[str, dict[str, Handler]] = {"GET": {}, "POST": {}}
+
+GET_AND_POST = ("GET", "POST")
+
+
+def endpoint(name: str, *, methods: Iterable[str] = ("GET",)) -> Callable[[Handler], Handler]:
+    """Register the decorated function as the handler for `?p=<name>`."""
+    def register(handler: Handler) -> Handler:
+        for method in methods:
+            if name in HANDLERS[method]:
+                raise ValueError(f"{method} {name} is registered twice")
+            HANDLERS[method][name] = handler
+        return handler
+
+    return register
+
+
+def query_int(query: Query, name: str, default: int) -> int:
+    """Return an integer request parameter, or `default` if it wasn't sent."""
+    return int(query.get(name, default))
+
+
+def load_handlers() -> None:
+    """Import every module in api/, which registers the endpoints of the handler modules."""
+    import api
+
+    for module in pkgutil.iter_modules(api.__path__):
+        importlib.import_module(f"api.{module.name}")
+
+    logger.info("%d GET and %d POST endpoints", len(HANDLERS["GET"]), len(HANDLERS["POST"]))

@@ -1,141 +1,131 @@
-import json
-from datetime import datetime
+"""pdw.item.*: the Treasure Chest (pdw_item_list.swf) and the items queued for the Entralink."""
+import logging
+from collections.abc import Callable
+from enum import IntEnum
+from operator import itemgetter
+from typing import Any
 
-from config import args
-from utils import text
-from utils import managers
-from utils import save_data
+from api.routes import Query, endpoint, query_int
+from utils import managers, save_data, text
+from utils.berries import is_berry
+from utils.models import ChestItem, EntralinkItem
 
-def date_to_unix(datetime_string: str):
-    return datetime.strptime(datetime_string, "%Y-%m-%d").timestamp()
+logger = logging.getLogger(__name__)
 
-# ---------------------
-# GET API calls
-# ---------------------
 
-def GET_item_list(_query):
-    """Returns a filtered/sorted/paginated list of the player's items.
+class ItemKind(IntEnum):
+    """item_kind_id: which items item_list shows."""
 
-    Args:
-        _query: A dict of request parameters. Possible params:
-            item_kind_id: Filters the item list by category.
-                0 returns all items (default).
-                1 returns only berries.
-            sort_key: Determines the sort order of the results.
-                1 sorts by acquisition date, descending.
-                2 sorts by type (bunrui_no, then b_hozon_sentou).
-                3 sorts alphabetically by item name (default).
-            offset: Number of items to skip for pagination.
-                Defaults to 0.
-            rowcount: Maximum number of items to return.
-                Defaults to 9999.
-            status: If set to 2, returns the list of items
-                being sent to the Entralink. Defaults to 0.
+    ALL = 0
+    BERRIES = 1
 
-    Returns:
-        A JSON-encoded bytes object. 'cnt' is the total number of
-        items before filtering.
+
+ENTRALINK_QUEUE_STATUS = 2  # status: list the Entralink queue instead of the chest
+DEFAULT_SORT_KEY = 3
+DEFAULT_ROWCOUNT = 9999
+
+# sort_key -> (sort key, newest first?)
+SORT_KEYS: dict[int, tuple[Callable[[ChestItem], Any], bool]] = {
+    1: (itemgetter("date"), True),                          # acquisition date ("%Y-%m-%d")
+    2: (itemgetter("bunrui_no", "b_hozon_sentou"), False),  # item category
+    3: (lambda item: item["pokeitem"] or "", False),        # name
+}
+
+
+@endpoint("pdw.item.item_list")
+def item_list(query: Query) -> dict:
+    """Return the player's items, filtered, sorted, and paginated.
+
+    Params:
+        item_kind_id: 0 all items (default), 1 only Berries.
+        sort_key: 1 newest first, 2 by category, 3 by name (default).
+        offset: items to skip (default 0).
+        rowcount: maximum items to return (default 9999).
+        status: 2 returns the items queued for the Entralink instead.
+
+    'cnt' in the response is the number of items before filtering.
     """
+    if query_int(query, "status", 0) == ENTRALINK_QUEUE_STATUS:
+        queued = save_data.read_game_sync().get("items", [])
+        listed = [{**item, "pokeitem": text.lookup_str("item", item["pokeitem_id"])} for item in queued]
+        return {"cnt": len(listed), "list": listed}
 
-    item_kind_id = int(_query.get("item_kind_id", 0))
-    sort_key     = int(_query.get("sort_key", 3))
-    offset       = int(_query.get("offset", 0))
-    rowcount     = int(_query.get("rowcount", 9999))
-    status       = int(_query.get("status", 0))
+    chest = managers.get_chest().data["list"]
+    items = chest
+    if query_int(query, "item_kind_id", ItemKind.ALL) == ItemKind.BERRIES:
+        items = [item for item in chest if is_berry(item["pokeitem_id"])]
 
-    if status == 2:
-        item_list = save_data.read_entralink_data()["items"]
-        for item in item_list:
-            item["pokeitem"] = text.lookup_str("item", item["pokeitem_id"])
-        return json.dumps({"cnt": len(item_list), "list": item_list}).encode()
+    sort_key = SORT_KEYS.get(query_int(query, "sort_key", DEFAULT_SORT_KEY))
+    if sort_key:
+        key, newest_first = sort_key
+        items = sorted(items, key=key, reverse=newest_first)
 
-    if item_kind_id == 0:
-        item_list = managers.chest.data["list"]
-    elif item_kind_id == 1:
-        item_list = [item for item in managers.chest.data["list"] if item["pokeitem_id"] in range(149, 213)]
-
-    if sort_key == 1:
-        item_list = sorted(item_list, key=lambda x: date_to_unix(x["date"]), reverse=True)
-    elif sort_key == 2:
-        item_list = sorted(
-            item_list,
-            key=lambda x: (
-                x["bunrui_no"],
-                x["b_hozon_sentou"]
-            )
-        )
-    elif sort_key == 3:
-        item_list = sorted(item_list, key=lambda x: x["pokeitem"])
-
-    item_list = item_list[offset:offset+rowcount]
-
-    return json.dumps({"cnt": len(managers.chest.data["list"]), "list": item_list}).encode()
-
-# ---------------------
-# POST API calls
-# ---------------------
-
-def POST_item_delivery_update(_query):
-    print(json.dumps(_query, indent=2))
-
-    # Build the new queue from the request
-    new_queue = {}
-    for k, item_pair in _query.items():
-        if not k.startswith("item_id"):
-            continue
-        item_id, item_count = item_pair.split("_")
-        new_queue[int(item_id)] = int(item_count)
-
-    # Build the old queue from whatever is currently staged
-    old_queue = {
-        item["pokeitem_id"]: item["item_cnt"]
-        for item in save_data.read_entralink_data().get("items", [])
-    }
-
-    # Determine the delta to add/subtract Chest items
-    all_ids = set(new_queue) | set(old_queue)
-    for item_id in all_ids:
-        delta = new_queue.get(item_id, 0) - old_queue.get(item_id, 0)
-        if delta > 0:
-            managers.chest.remove_item(item_id, delta)
-        elif delta < 0:
-            managers.chest.add_item(item_id, -delta)
-
-    # Save the new queue state
-    item_list = [
-        {"pokeitem_id": item_id, "item_cnt": item_cnt}
-        for item_id, item_cnt in new_queue.items()
-    ]
-
-    if args.game_sync:
-        save_data.write_entralink_data(item_list, "items")
-
-    return b'{}'
+    offset = query_int(query, "offset", 0)
+    rowcount = query_int(query, "rowcount", DEFAULT_ROWCOUNT)
+    return {"cnt": len(chest), "list": items[offset:offset + rowcount]}
 
 
-def POST_item_trade_list(_query):
-    response = [
+def parse_delivery_queue(query: Query) -> dict[int, int]:
+    """Parse item_id[N]=<item id>_<count> params into {item id: count}.
+
+    An empty queue is sent as a single empty item_id[] param.
+    """
+    queue = {}
+    for key, value in query.items():
+        if key.startswith("item_id") and value:
+            item_id, count = value.split("_")
+            queue[int(item_id)] = int(count)
+    return queue
+
+
+@endpoint("pdw.item.item_delivery_update", methods=("POST",))
+def item_delivery_update(query: Query) -> dict:
+    """Set the items to send to the Entralink.
+
+    Items move between the Treasure Chest and the queue by the difference from the
+    previous queue, so re-sending the same queue changes nothing.
+    """
+    logger.debug("item_delivery_update %s", query)
+
+    requested = parse_delivery_queue(query)
+    old_queue = {item["pokeitem_id"]: item["item_cnt"] for item in save_data.read_game_sync().get("items", [])}
+    item_ids = requested.keys() | old_queue.keys()
+
+    # what the queue gains, the chest loses, and only what the chest actually has is queued
+    to_chest = {item_id: old_queue.get(item_id, 0) - requested.get(item_id, 0) for item_id in item_ids}
+    moved = managers.get_chest().move_items(to_chest)
+    queue = {item_id: old_queue.get(item_id, 0) - moved.get(item_id, 0) for item_id in item_ids}
+
+    save_data.write_entralink_items([
+        EntralinkItem(pokeitem_id=item_id, item_cnt=count) for item_id, count in queue.items() if count > 0
+    ])
+    return {}
+
+
+@endpoint("pdw.item.item_trade_list", methods=("POST",))
+def item_trade_list(_query: Query) -> list:
+    """Return one placeholder made-up trade."""
+    return [
         {
-            "material_id":"None",
-            "item_id":"None",
-            "pokeitem":"None",
-            "x":1,
-            "y":1,
-            "history_id":"None",
-            "old_member_savedata_id":"None",
-            "pokemon_no":"None",
-            "form_no":"None",
-            "pokename":"None",
-            "pgl_name":"None",
-            "nickname":"None",
-            "poke_nickname":"None",
-            "field_line1":"None",
-            "field_line2":"None",
-            "field_line3":"None",
-            "created_at":"",
-            "old_item_id":"None",
-            "new_item_id":"None",
-            "old_item_name":"None"
+            "material_id":            "None",
+            "item_id":                "None",
+            "pokeitem":               "None",
+            "x":                      1,
+            "y":                      1,
+            "history_id":             "None",
+            "old_member_savedata_id": "None",
+            "pokemon_no":             "None",
+            "form_no":                "None",
+            "pokename":               "None",
+            "pgl_name":               "None",
+            "nickname":               "None",
+            "poke_nickname":          "None",
+            "field_line1":            "None",
+            "field_line2":            "None",
+            "field_line3":            "None",
+            "created_at":             "",
+            "old_item_id":            "None",
+            "new_item_id":            "None",
+            "old_item_name":          "None",
         }
     ]
-    return json.dumps(response).encode()

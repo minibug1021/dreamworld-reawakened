@@ -1,0 +1,77 @@
+"""Find-and-replace patches for the site's text assets (JS, HTML, CSS).
+
+They are applied each time a file is served (utils/assets.py).
+"""
+from dataclasses import dataclass
+
+from config import LANG
+
+
+@dataclass(frozen=True)
+class Substitution:
+    """A simple find-and-replace patch for text assets."""
+
+    old: bytes
+    new: bytes
+
+
+# point the SWF embed at the local language host instead of window.location
+_SWF_EMBED_PATCHES = (
+    Substitution(
+        b"lang:window.location",
+        f"lang:'http://{LANG}.pokemon-gl.com/'".encode(),
+    ),
+)
+
+# file name -> substitutions for just that file
+JS_PATCHES: dict[str, tuple[Substitution, ...]] = {
+    "pgl.js": (
+        Substitution(
+            b"(location.href.match(/\\W(ja|en|fr|it|de|es|ko)\\./) || [null, 'ja'])[1];",
+            f"'{LANG}';".encode(),
+        ),
+        Substitution(
+            b"var result = { check: 'https://' + this.getComDomain() + '/pglcheck' };",
+            b"return { check: '/pglcheck', form: '/login/pgl.html' };"
+        )
+    ),
+    "swfembed2.js": _SWF_EMBED_PATCHES,
+    "swfembed3.js": _SWF_EMBED_PATCHES,
+    "top.js": (
+        # use Intl.DateTimeFormat so the time respects DST
+        Substitution(
+            b"d.setTime(d.getTime() + area.tz.offset * 60 * 60 * 1000);\r\n"
+            b"        $('#report-records .area .tzname').text(area.tz.name);\r\n"
+            b"        $('#report-records .area .time').text(PGL.Utils.zerofill(d.getUTCHours(), 2) + ':' + PGL.Utils.zerofill(d.getUTCMinutes(), 2));",
+
+            b"var _tz_adj = new Intl.DateTimeFormat('en-GB', { timeZone: area.tz.name, hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());\r\n"
+            b"        $('#report-records .area .tzname').text(area.tz.name);\r\n"
+            b"        $('#report-records .area .time').text(_tz_adj.find(function(p){return p.type==='hour';}).value + ':' + _tz_adj.find(function(p){return p.type==='minute';}).value);",
+        ),
+        Substitution(
+            b"checkUrl = $.makeArray(checkUrl);",
+            b"return $.Deferred().resolve().promise();"
+        ),
+    ),
+}
+
+# substitutions applied to every patchable file
+_GLOBAL_SUBS: tuple[Substitution, ...] = (
+    Substitution(b"http://cdn2.pokemon-gl.com", b""),
+    Substitution(f"http://gus.pokemon.com/{LANG}".encode(), f"/pgl-363/{LANG}".encode()),
+    Substitution(b"https://assets.pokemon.com", b"/assets.pokemon.com"),
+    Substitution(b"https://www.pokemon.com", b"/www.pokemon.com"),
+    Substitution(f"https://edgecastcdn.net/002759/origin/gus.pokemon/{LANG}/".encode(), f"/pgl-363/{LANG}/".encode()),
+    Substitution(b"src:gus_src", f"src:'/pgl-363/{LANG}'".encode()),
+    Substitution(b"en.pokemon-gl.com", f"{LANG}.pokemon-gl.com".encode()),
+    Substitution(b'oncontextmenu="return false"', b""),
+    Substitution(b'ondragstart="return false"',   b""),
+    Substitution(b'onselectstart="return false"', b""),
+)
+
+
+def apply_substitutions(data: bytes, filename: str) -> bytes:
+    """Apply global substitutions, then file-specific ones."""
+    for sub in (*_GLOBAL_SUBS, *JS_PATCHES.get(filename, ())):
+        data = data.replace(sub.old, sub.new)
+    return data

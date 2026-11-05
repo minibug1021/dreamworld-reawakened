@@ -2,36 +2,41 @@
 
 ## Tutorial
 
+Both servers are run with [uv](https://docs.astral.sh/uv/), which also downloads a suitable version of Python if you don't have one.
+
 ### Windows
 
-- Install the newest version of Python
+- Press the Windows key, type "PowerShell", and open a PowerShell window. Run the command `winget install --id astral-sh.uv -e` to install uv
 - If you are on Windows 10, install the git command from the official download [here](https://github.com/git-for-windows/git/releases/download/v2.54.0.windows.1/Git-2.54.0-64-bit.exe)
-- If you are on Windows 11, press the Windows key and type "PowerShell", and open a PowerShell window. Run the command `winget install --id Git.Git -e --source winget`
+- If you are on Windows 11, run the command `winget install --id Git.Git -e --source winget` in the PowerShell window
+- Close the PowerShell window, so the next one can find the commands you just installed
 - Navigate to the folder you want to install the server to
 - Hold down shift and right-click in the folder (the empty space, not on a file/folder) and select "open PowerShell window here"
 - Run the command `git clone --recursive https://github.com/minibug1021/dreamworld-reawakened.git`
+- Navigate into the `dreamworld-reawakened` folder, open a PowerShell window there, and run the command `uv sync`. This installs everything both servers need.
 
 For the Game Sync server (for connecting your DS to the Dream World server, must be done first):
-- Navigate into the extracted `dreamworld-reawakened/game_sync_server` folder
-- Open a new PowerShell window here
-- In the PowerShell window, run the command `python -m pip install -r requirements.txt`
-- Run `python server.py` to start the server
+- In a PowerShell window in the `dreamworld-reawakened` folder, run `uv run game_sync_server/server.py` to start the server
 - The server will give you a DNS, which you can change from the "Nintendo WFC Settings" menu located on the save file select screen of the Gen5 game.
 - Connect to the Game Sync in-game and tuck in a Pokémon.
 
 For the Dream World server (the Pokémon Global Link site):
-- Navigate into the `dreamworld-reawakened` folder
-- Open a new PowerShell window here
-- In the PowerShell window, run the command `python -m pip install -r requirements.txt`
-- Run `python main.py` to start the server
+- Open a second PowerShell window in the `dreamworld-reawakened` folder
+- Run `uv run main.py` to start the server. It always runs on port 8080.
 
 ### Linux
-- Same as above, but the Game Sync server must be run as root, as one of the ports used (53) is privileged and cannot be opened by a non-root user.
+
+- Install uv with `curl -LsSf https://astral.sh/uv/install.sh | sh`.
+- Install git with your distribution's package manager
+- Run `git clone --recursive https://github.com/minibug1021/dreamworld-reawakened.git`, then `cd dreamworld-reawakened` and `uv sync`
+- The Game Sync server must be run as root, because the ports it uses (53 and 443) are privileged. Start it with `sudo .venv/bin/python game_sync_server/server.py` from the `dreamworld-reawakened` folder.
+- Start the Dream World server as your normal user with `uv run main.py`
 
 ## Flash browser setup
+Install the [Ruffle browser extension](https://ruffle.rs/), which will allow the Dream World to run on modern browsers such as Firefox and Chrome.
 
-**Ruffle will not work.**
-Ruffle currently cannot emulate the Dream World correctly.
+Be mindful that Ruffle is not perfect and will still have issues. Please report new issues as they come up so we can pass them on to the Ruffle team for further investigation.
+
 
 ### Windows
 

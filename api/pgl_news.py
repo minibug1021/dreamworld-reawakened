@@ -1,18 +1,8 @@
-import json
-
-# ---------------------
-# GET API calls
-# ---------------------
-
-def GET_information_list(_query):
-    response = {"list":[], "total_count":0}
-    return json.dumps(response).encode()
+"""pgl.news.*: PGL news and announcements."""
+from api.routes import Query, endpoint
 
 
-def GET_news_list(_query):
-    print(json.dumps(_query, indent=2))
-    return b'{}'
-
-# ---------------------
-# POST API calls
-# ---------------------
+@endpoint("pgl.news.information_list")
+def information_list(_query: Query) -> dict:
+    """Return a placeholder with no announcements."""
+    return {"list": [], "total_count": 0}

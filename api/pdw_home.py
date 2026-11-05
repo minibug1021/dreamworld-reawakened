@@ -1,146 +1,125 @@
-import json
-from zoneinfo import ZoneInfo
-from datetime import datetime
+"""pdw.home.*: the player's house and island (pdw_home.swf, pdw_room.swf)."""
+import time
 from random import choice, randint
 
-from utils import text
-from utils import pokemon
-from utils import save_data
-from game_sync_server.entralinked.utility.db_manager import db
-
-# ---------------------
-# GET API calls
-# ---------------------
-
-def GET_board_pokemon_list(_query):
-    print(json.dumps(_query, indent=2))
-
-    return b'{}'
+from api.routes import Query, endpoint
+from utils import pokemon, save_data, text
+from utils.constants import NATURE_COUNT, PlayerStatus
+from utils.decor import HOUSE_ISLAND_IDS, HOUSE_SHELF_IDS, arranged_decor
+from utils.models import Member
 
 
-def GET_footprint_list(_query):
-    footprint_list = {"list":[]}
-
-    # This is an arbitrary subset of "interesting" (non-empty) footprints
-    valid_footprints = [598,25,85,623,2,32,183,428,648,636,616,609,594,593,574,564,558,547,543,520,518,491,474,421,420,406,121,120,13,10,647]
-
+@endpoint("pdw.home.footprint_list")
+def footprint_list(_query: Query) -> dict:
+    """Return placeholder random footprints from made-up visitors."""
+    footprints = []
     for _ in range(10):
-        pkmn = pokemon.get_random_pokemon(valid_footprints)
-        footprint = {
-            "is_pdw": randint(0, 1),
-            "is_gts": randint(0, 1),
-            "is_ds": randint(0, 1),
-            "friend_type": randint(0, 2),
-            "updated_at": "2026/05/06 22:00",
+        pkmn = pokemon.get_random_pokemon()
+        footprints.append({
+            "is_pdw":           randint(0, 1),
+            "is_gts":           randint(0, 1),
+            "is_ds":            randint(0, 1),
+            "friend_type":      randint(0, 2),
+            "updated_at":       "2026/05/06 22:00",
             "pokemon_nickname": "pokemon_nickname",
+            "pokemon_name":     text.lookup_str("pokemon", pkmn["pokemon_no"]),
+            "pgl_name":         "pgl_name",
+            "pokemon_no":       pkmn["pokemon_no"],
+            "form_no":          pkmn.get("form_no", 0),
+            # the rest is used for the popup menu
+            "oyaname":          "oyaname",
+            "level":            pkmn["level"],
+            "type1":            text.lookup_str("type", pkmn["type1"]),
+            "type2":            text.lookup_str("type", pkmn["type2"]),
+            "sex_id":           choice(pkmn["gender_ratio"]),
+            "personality":      text.lookup_str("nature", randint(0, NATURE_COUNT - 1)),
+            "exchange_flag":    randint(0, 1),
+            "water_flag":       randint(0, 1),
+        })
+    return {"list": footprints}
+
+
+def _randomize_house() -> Member:
+    """Give the player a random house and shelf, and return the updated member."""
+    return save_data.update_member({"island_id": choice(HOUSE_ISLAND_IDS), "shelf_id": choice(HOUSE_SHELF_IDS)})
+
+
+@endpoint("pdw.home.my_island")
+def my_island(_query: Query) -> dict:
+    """Return the player's island with their house, its furniture, and the tucked-in Pokémon."""
+    member = _randomize_house()
+    pkmn = pokemon.get_sleeper()
+    return {
+        "pokemon": {
+            **pkmn,
             "pokemon_name": text.lookup_str("pokemon", pkmn["pokemon_no"]),
-            "pgl_name": "pgl_name",
-            "pokemon_no": pkmn["pokemon_no"],
-            "form_no": pkmn.get("form_no", 0), #below this is used for the popup menu
-            "oyaname": "oyaname",
-            "level": pkmn["level"],
-            "type1": text.lookup_str("type", pkmn["type1"]),
-            "type2": text.lookup_str("type", pkmn["type2"]),
-            "sex_id": choice(pkmn["gender_ratio"]),
-            "personality": text.lookup_str("nature", randint(0, 24)),
-            "exchange_flag": randint(0, 1),
-            "water_flag": randint(0, 1)
+            "type1":        text.lookup_str("type", pkmn["type1"]),
+            "type2":        text.lookup_str("type", pkmn["type2"]),
+            "personality":  text.lookup_str("nature", pkmn["personality"]),
+            "ball_name":    text.lookup_str("ball", pkmn["ball_name"]),
+            "shiny":        pokemon.shows_shiny(pkmn.get("is_shiny", False)),
+        },
+        "island_id":              member["island_id"],
+        "point":                  0,
+        "trial_flag":             0,
+        "arranged_interior_list": arranged_decor(),
+        "requested_flag":         False,
+        "shelf_id":               member["shelf_id"],
+        "item_deleted_flag":      member.get("item_deleted_flag", 0),
+    }
+
+
+@endpoint("pdw.home.my_island_area")
+def my_island_area(_query: Query) -> dict:
+    """Return a placeholder of the player's island with made-up neighbors."""
+    friends = [
+        {
+            "pgl_name":           "OtherPlayerName",
+            "member_id":          randint(1, 50000),
+            "member_savedata_id": randint(1, 50000),
+            "island_id":          choice(HOUSE_ISLAND_IDS),
+            "country_id":         randint(1, 190),
+            "is_ds":              randint(0, 1),
+            "is_gts":             randint(0, 1),
+            "is_pdw":             randint(0, 1),
         }
-        footprint_list["list"].append(footprint)
-
-    return json.dumps(footprint_list).encode()
-
-
-def GET_my_bridge(_query):
-    return b'{}'
+        for _ in range(5)
+    ]
+    return {"island_id": save_data.read_member()["island_id"], "friend_list": friends}
 
 
-def GET_my_island(_query):
-    pkmn = pokemon.sleeper
-
-    response = {
-        "pokemon":                 {**pkmn},
-        "island_id":               201,
-        "point":                   0,
-        "trial_flag":              0,
-        "arranged_interior_list":  [{"my_interior_id":1,"interior_id":1,"x":10,"y":10,"interior_size":1,"interior_category_id":1,"rotation":0}],
-        "requested_flag":          False,
-        "shelf_id":                301
-    }
-    return json.dumps(response).encode()
+@endpoint("pdw.home.pdw_end")
+def pdw_end(_query: Query) -> dict:
+    """End the Dream World session so the Pokémon can be woken."""
+    save_data.set_play_status(PlayerStatus.WAKE_READY)
+    return {}
 
 
-def GET_my_island_area(_query):
-    player_data = save_data.read_player_data()
+@endpoint("pdw.home.pdw_start", methods=("POST",))
+def pdw_start(_query: Query) -> dict:
+    """Start a Dream World session."""
+    timestamp = int(time.time())
+    member = save_data.read_member()
 
-    friend_list = []
-    for _ in range(5):
-        friend = {
-            "pgl_name": "OtherPlayerName",
-            "member_id": randint(1,50000),
-            "member_savedata_id": randint(1,50000),
-            "island_id": 201,
-            "country_id": 176,
-            "is_ds": randint(0, 1),
-            "is_gts": randint(0, 1),
-            "is_pdw": randint(0, 1)
-        }
-        friend_list.append(friend)
-    response = {
-        "island_id": player_data["member"]["island_id"],
-        "friend_list": friend_list
-    }
+    save_data.record_session_start(timestamp)
+    update: Member = {"pokemon_name": text.lookup_str("pokemon", member["pokemon_no"]), "point": 0}
+    if member.get("first_flag") == 0:
+        update["first_flag"] = 1
+    save_data.update_member(update)
 
-    return(json.dumps(response).encode())
+    return {"started_at": timestamp}
 
 
-def GET_pdw_end(_query):
-    save_data.update_gamesync_status(save_data.PlayerStatus.WAKE_READY)
-
-    return b'{}'
-
-# ---------------------
-# POST API calls
-# ---------------------
-
-def POST_pdw_start(_query):
-    now_local = datetime.now().astimezone()
-    now_japan = now_local.astimezone(ZoneInfo("Asia/Tokyo"))
-
-    pokemon_no = save_data.read_player_data()["member"]["pokemon_no"]
-
-    data = {
-        "last_started_at": int(now_japan.timestamp()),
-        "last_logined_at": int(now_japan.timestamp()),
-        "last_started_at_timezone": int(now_local.timestamp()),
-        "pokemon_name": text.lookup_str("pokemon", pokemon_no)
-    }
-
-    save_data.write_player_data(data)
-
-    pkmn = db.read(save_data.gscd, "sleeping_pokemon")
-
-    species_name = text.lookup_str("pokemon", pkmn["pokemon_no"])
-
-    pkmn_data = {
-        "pokemon_no":       pkmn["pokemon_no"],
-        "pokemon_name":     species_name,
-        "form_no":          pkmn["form_no"],
-        "type1":            text.lookup_str("type", pkmn["type1"]),
-        "type2":            text.lookup_str("type", pkmn["type2"]),
-        "pokemon_nickname": pkmn["pokemon_nickname"],
-        "oyaname":          pkmn["oyaname"],
-        "level":            pkmn["level"],
-        "sex":              pkmn["sex"],
-        "personality":      text.lookup_str("nature", pkmn["personality"]),
-        "ball_name":        text.lookup_str("ball", pkmn["ball_name"]),
-    }
-
-    pokemon.sleeper = pkmn_data
-
-    response = {"started_at":int(now_local.timestamp())}
-    return json.dumps(response).encode()
+@endpoint("pdw.home.pdw_timecheck", methods=("POST",))
+def pdw_timecheck(_query: Query) -> dict:
+    """Save how long is left before the next session can start."""
+    save_data.update_member({"nextstart_remaintime": save_data.get_nextstart_remaintime()})
+    return {}
 
 
-def POST_pdw_timecheck(_query):
-    return b'{}'
+@endpoint("pdw.home.item_deleted_check", methods=("POST",))
+def item_deleted_check(_query: Query) -> dict:
+    """Shown once after Berries were converted to Dream Points (see pgl_top._check_item_deletion)."""
+    exchange_point = save_data.read_member().get("item_deleted_point", 0)
+    save_data.update_member({"item_deleted_flag": 0, "item_deleted_point": 0})
+    return {"exchange_point": exchange_point}

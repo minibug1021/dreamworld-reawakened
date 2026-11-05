@@ -1,0 +1,57 @@
+[project]
+name = "dreamworld-reawakened"
+version = "0.1.0"
+description = "Revival server for the Pokémon Global Link and Pokémon Dream World"
+readme = "readme.md"
+requires-python = ">=3.11"
+dependencies = [
+    "flask>=3.1,<4",
+    "tzdata>=2024.1",
+    # the Game Sync server (game_sync_server/)
+    "dnslib>=0.9.26,<1",
+    "tlslite-ng>=0.8.2,<0.9"
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.15",
+    "mypy>=1.15",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+extend-exclude = ["dreamworld_assets", "game_sync_server/venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "UP", "SIM", "RET", "PTH", "I", "RUF", "ANN2"]
+ignore = [
+    "E501",     # long data literals and ActionScript patches
+    "RUF001",   # Japanese text in strings
+    "RUF003",   # and in comments
+]
+
+[tool.ruff.lint.per-file-ignores]
+"utils/patching/swf_patches.py" = ["W291", "W293"]  # whitespace inside ActionScript patch text
+
+"tests/*" = ["ANN"]
+"utils/build_*.py" = ["ANN"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["api", "utils", "config", "game_sync_server"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["api", "utils", "scripts", "config.py", "main.py", "tests", "game_sync_server/server.py", "game_sync_server/entralinked"]
+explicit_package_bases = true
+exclude = ["utils/build_catalog\\.py", "utils/build_dreamland\\.py"]
+ignore_missing_imports = true
+follow_imports = "silent"
+check_untyped_defs = true
+warn_unused_ignores = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "tests"]
+addopts = "-q"

@@ -1,33 +1,112 @@
-import json
+"""pgl.top.*: the PGL home page's site stats, login, and the logged-in player's state."""
+import time
 
-from utils import text
-from utils import language
-from utils import save_data
+from flask import session
+from werkzeug.security import check_password_hash
 
-# ---------------------
-# GET API calls
-# ---------------------
+from api.routes import Query, endpoint
+from utils import language, managers, save_data, text
+from utils.account_manager import accounts
+from utils.auth import log_in
+from utils.constants import SECONDS_PER_DAY, SECONDS_PER_HOUR
+from utils.messages import message
+from utils.models import Member
 
-def GET_index(_query):
-    response = {
-        "stats": {
-            "pgl_population": 1
-        }
-    }
-    return json.dumps(response).encode()
+DAYS_UNTIL_ITEM_DELETION = 100
+BERRY_DREAM_POINTS       = 20
+
+# TEMPORARY: bypass the 1-hour PDW play limit (and the 20-hour re-entry
+# cooldown). Set to False to restore the original behavior.
+DISABLE_PLAY_TIME_LIMIT     = True
+NO_LIMIT_HOUR_TIMER_SECONDS = 2_000_000
+NO_LIMIT_REMAINTIME         = 19 * SECONDS_PER_HOUR + NO_LIMIT_HOUR_TIMER_SECONDS
 
 
-def GET_init(_query):
+@endpoint("pgl.top.index")
+def index(_query: Query) -> dict:
+    """Site statistics."""
+    return {"stats": {"pgl_population": accounts.count_accounts()}}
+
+
+def _check_item_deletion(member: Member) -> None:
+    """If it's been 100+ days since the last login, convert Berries to Dream Points."""
+    if member.get("item_deleted_flag"):
+        return
+
+    last_started_at = member.get("last_started_at")
+    if last_started_at is None:
+        return
+
+    days_away = (time.time() - last_started_at) / SECONDS_PER_DAY
+    if days_away < DAYS_UNTIL_ITEM_DELETION:
+        return
+
+    exchange_point = managers.get_chest().convert_stale_berries(BERRY_DREAM_POINTS)
+    if not exchange_point:
+        return
+
+    changes: Member = {"item_deleted_flag": 1, "item_deleted_point": exchange_point}
+    member.update(changes)
+    save_data.update_member(changes)
+
+
+@endpoint("pgl.top.init")
+def init(_query: Query) -> dict:
+    """Return the logged-in player's data.
+
+    The client reads the login state from the following:
+
+    - no "member" key: not logged in (PGL.NOT_LOGGED_IN).
+    - "member" without a pgl_name: logged in, but the player hasn't submitted the register
+      page yet, which links a Game Sync ID and sets the PGL nickname (PGL.NOT_SIGNED_UP).
+    """
+    if "username" not in session:
+        return {}
+
+    if "gscd" not in session:
+        return {"member": {}}
+
     response = save_data.read_player_data()
+    member = response.get("member")
 
-    response["member"].update({
-        "pokemon_name": text.lookup_str("pokemon", response["member"]["pokemon_no"]),
-        "rom_name": text.lookup_str("game", response["member"]["rom_id"]),
-        "last_up_time": language.localize_last_up_time(response["member"]["last_started_at_timezone"])
-    })
+    if not member:
+        return {"member": {}}
 
-    return json.dumps(response).encode()
+    _check_item_deletion(member)
 
-# ---------------------
-# POST API calls
-# ---------------------
+    if member.get("pokemon_no") is not None:
+        member["pokemon_name"] = text.lookup_str("pokemon", member["pokemon_no"])
+
+    if member.get("rom_id") is not None:
+        member["rom_name"] = text.lookup_str("game", member["rom_id"])
+
+    tz_timestamp = member.get("last_started_at_timezone")
+    if tz_timestamp is not None:
+        member["last_up_time"] = language.localize_last_up_time(tz_timestamp)
+
+    # only the response is changed, the saved nextstart_remaintime is untouched
+    if DISABLE_PLAY_TIME_LIMIT:
+        member["nextstart_remaintime"] = NO_LIMIT_REMAINTIME
+    else:
+        member["nextstart_remaintime"] = save_data.get_nextstart_remaintime()
+
+    return dict(response)
+
+
+@endpoint("pgl.top.login", methods=("POST",))  # custom API call - not original
+def login(query: Query) -> dict:
+    """Check a username and password and log the browser session in."""
+    username = query.get("username", "")
+    password = query.get("password", "")
+
+    account = accounts.get_account_by_username(username)
+
+    if account is None or not check_password_hash(account["password_hash"], password):
+        return {"error": message("bad_login")}
+
+    if not account["activated"]:
+        return {"error": message("not_activated")}
+
+    log_in(account)
+    return {}
+

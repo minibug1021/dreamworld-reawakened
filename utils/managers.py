@@ -1,114 +1,193 @@
-import json
+"""The player's Treasure Chest and Berry garden.
+
+Managers are loaded fresh from the database by get_chest()/get_crops() on every call.
+Every change goes through change(), which re-reads the column, edits it, and writes it
+back. `data` is then reloaded, with the display fields the client wants (names,
+descriptions, sort keys) added. Those are never stored.
+"""
 import time
-from pathlib import Path
-from datetime import datetime
+from collections.abc import Callable
+from typing import Any, ClassVar
 
-from utils import text
-from utils import save_data
 from game_sync_server.entralinked.utility.db_manager import db
+from utils import save_data, text
+from utils.berries import is_berry, to_berry_id
+from utils.constants import SECONDS_PER_HOUR
+from utils.data import load_json_data
+from utils.models import ChestData, ChestItem, CropData, Plot
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
+ITEM_INFO: dict[str, dict] = load_json_data("items")
+BERRY_INFO: dict[str, dict] = load_json_data("berries")  # its keys are kinomi_id values written as strings
 
-with open(ROOT_DIR / "json_data" / "items.json", encoding="UTF-8") as f:
-    item_info = json.load(f)
 
-with open(ROOT_DIR / "json_data" / "berries.json", encoding="UTF-8") as f:
-    berry_data = json.load(f)
+class _ColumnManager:
+    """One JSON column of a player's save.
 
-class ChestManager:
-    """Manages the player's Treasure Chest.
-
-    Attributes:
-        data: A dictionary containing the loaded chest inventory data.
+    `data` is the column plus display fields.
     """
 
-    def __init__(self):
-        self._redundant_fields = {"pokeitem", "bunrui_no", "b_hozon_sentou", "field_line1", "field_line2", "field_line3"}
-        self.data = db.read(save_data.gscd, "chest_data")
+    COLUMN: ClassVar[str]
 
-    def update_json(self):
-        for item in self.data["list"]:
-            pokeitem_id = item["pokeitem_id"]
+    def __init__(self, gscd: str) -> None:
+        self._gscd = gscd
+        self.data = self._with_display_fields(db.read(gscd, self.COLUMN))
 
-            item_desc = text.lookup_str("item_descriptions", pokeitem_id)
+    def _with_display_fields(self, stored: Any) -> Any:
+        """Add the display fields to freshly read data, in place, and return it."""
+        raise NotImplementedError
 
-            item["pokeitem"] = text.lookup_str("item", pokeitem_id)
+    def _update_counters(self, stored: Any) -> None:
+        """Fix the counters stored in the column after an edit."""
 
-            item_sort_data = item_info[str(pokeitem_id)]
+    def change(self, edit: Callable[[Any], Any]) -> Any:
+        """Apply `edit` to the column and save it in a single write.
 
-            item["bunrui_no"] = item_sort_data["first_sort"]
-            item["b_hozon_sentou"] = item_sort_data["second_sort"]
+        `edit` sees the column as it is in the database right now (without display fields).
+        Return what `edit` returned. Nothing is saved if it raises. `data` is reloaded
+        afterwards.
+        """
+        result = None
 
-            item["field_line1"] = item_desc[0]
-            item["field_line2"] = item_desc[1]
-            item["field_line3"] = item_desc[2]
+        def apply(stored: dict) -> None:
+            nonlocal result
+            result = edit(stored)
+            self._update_counters(stored)
 
-    def save(self):
-        chest_data = {
-            "cnt": len(self.data["list"]),
-            "list": [
-                {k: v for k, v in item.items() if k not in self._redundant_fields}
-                for item in self.data["list"]
-            ]
-        }
-
-        db.write(save_data.gscd, "chest_data", chest_data)
-
-    def fetch_item_by_id(self, item_id):
-        return next((item for item in self.data["list"] if item["pokeitem_id"] == item_id), None)
-
-    def add_item(self, item_id, count):
-        current_date = datetime.now().strftime("%Y-%m-%d")
-
-        chest_item = self.fetch_item_by_id(item_id)
-
-        if chest_item:
-            chest_item["item_cnt"] += count
-            chest_item["date"] = current_date
-
-        else:
-            curr_item_info = item_info[str(item_id)]
-            self.data["cnt"] += 1
-
-            item_desc = text.lookup_str("item_descriptions", item_id)
-            new_item = {
-                "pokeitem_id": item_id,
-                "pokeitem": text.lookup_str("item", item_id),
-                "item_cnt": count,
-                "bunrui_no": curr_item_info["first_sort"],
-                "b_hozon_sentou": curr_item_info["second_sort"],
-                "date": current_date,
-                "field_line1": item_desc[0],
-                "field_line2": item_desc[1],
-                "field_line3": item_desc[2]
-            }
-            self.data["list"].append(new_item)
-
-        self.save()
-
-    def remove_item(self, item_id, count):
-        current_date = datetime.now().strftime("%Y-%m-%d")
-        chest_item = self.fetch_item_by_id(item_id)
-
-        chest_item["item_cnt"] -= count
-        chest_item["date"] = current_date
-
-        if chest_item["item_cnt"] <= 0:
-            item_index = self.data["list"].index(chest_item)
-            del self.data["list"][item_index]
-            self.data["cnt"] -= 1
-
-        self.save()
+        self.data = self._with_display_fields(db.update(self._gscd, self.COLUMN, apply))
+        return result
 
 
-class CropManager:
-    """Manages the player's Berry garden.
+def _stack_of(chest: ChestData, item_id: int) -> ChestItem | None:
+    return next((item for item in chest["list"] if item["pokeitem_id"] == item_id), None)
 
-    Attributes:
-        data: A dictionary containing the loaded Berry plot data.
-    """
 
-    EXPANSION_THRESHOLDS = {
+class ChestManager(_ColumnManager):
+    """The player's Treasure Chest."""
+
+    COLUMN = "chest_data"
+    data: ChestData
+
+    def _update_counters(self, stored: ChestData) -> None:
+        stored["cnt"] = len(stored["list"])
+
+    def _with_display_fields(self, stored: ChestData) -> ChestData:
+        for item in stored["list"]:
+            item_id = item["pokeitem_id"]
+            sort_info = ITEM_INFO[str(item_id)]
+            line1, line2, line3, *_ = text.lookup_description("item_descriptions", item_id)
+            item.update({
+                "pokeitem":       text.lookup_str("item", item_id),
+                "bunrui_no":      sort_info["first_sort"],
+                "b_hozon_sentou": sort_info["second_sort"],
+                "field_line1":    line1,
+                "field_line2":    line2,
+                "field_line3":    line3,
+            })
+        return stored
+
+    def fetch_item_by_id(self, item_id: int) -> ChestItem | None:
+        """Return the chest's stack of this item, if it has any."""
+        return _stack_of(self.data, item_id)
+
+    def add_item(self, item_id: int, count: int) -> None:
+        """Add `count` of an item."""
+        self.move_items({item_id: count})
+
+    def move_items(self, changes: dict[int, int]) -> dict[int, int]:
+        """Add items (positive counts) and take items out (negative counts) in a single write.
+
+        Taking out cannot remove more than the chest has.
+        """
+        def move(chest: ChestData) -> dict[int, int]:
+            today = save_data.today_jst_str()
+            moved = {}
+            for item_id, count in changes.items():
+                stack = _stack_of(chest, item_id)
+                if count < 0:
+                    count = -min(-count, stack["item_cnt"] if stack else 0)
+                if not count:
+                    continue
+                if stack is None:
+                    stack = {"pokeitem_id": item_id, "item_cnt": 0}
+                    chest["list"].append(stack)
+                stack["item_cnt"] += count
+                stack["date"] = today
+                if stack["item_cnt"] <= 0:
+                    chest["list"].remove(stack)
+                moved[item_id] = count
+            return moved
+
+        return self.change(move)
+
+    def remove_item(self, item_id: int, count: int) -> None:
+        """Remove `count` of an item.
+
+        Raise ValueError, and remove nothing, if the chest has fewer than that.
+        """
+        self.remove_items(((item_id, count),))
+
+    def remove_items(self, counts: tuple[tuple[int, int], ...]) -> None:
+        """Remove several items at once.
+
+        `counts` holds (item id, count) pairs, and counts of 0 are ignored. Raise ValueError,
+        and remove nothing, if the chest has too few of any item.
+        """
+        def remove(chest: ChestData) -> None:
+            stacks: list[tuple[ChestItem, int]] = []
+            for item_id, count in counts:
+                if not count:
+                    continue
+                stack = _stack_of(chest, item_id)
+                have = stack["item_cnt"] if stack else 0
+                if stack is None or have < count:
+                    raise ValueError(f"Has {have} of item {item_id}, needs {count}")
+                stacks.append((stack, count))
+
+            for stack, count in stacks:
+                stack["item_cnt"] -= count
+                stack["date"] = save_data.today_jst_str()
+                if stack["item_cnt"] <= 0:
+                    chest["list"].remove(stack)
+
+        self.change(remove)
+
+    def convert_stale_berries(self, points_per_berry: int) -> int:
+        """Reduce every Berry stack down to 1, converting the surplus to Dream Points.
+
+        Return the Dream Points awarded.
+        """
+        def convert(chest: ChestData) -> int:
+            berries_converted = 0
+            for item in chest["list"]:
+                surplus = item["item_cnt"] - 1
+                if is_berry(item["pokeitem_id"]) and surplus > 0:
+                    berries_converted += surplus
+                    item["item_cnt"] = 1
+            return berries_converted
+
+        return self.change(convert) * points_per_berry
+
+
+def _plot_of(garden: CropData, my_croft_id: int) -> Plot:
+    plot = next((p for p in garden["croft_list"] if p["my_croft_id"] == my_croft_id), None)
+    if plot is None:
+        raise ValueError(f"No garden plot {my_croft_id}")
+    return plot
+
+
+class CropManager(_ColumnManager):
+    """The player's Berry garden (the crop_data column)."""
+
+    COLUMN = "crop_data"
+    data: CropData
+    PLOTS_PER_ROW = 3
+    GROWTH_STAGES = 4
+    FULL_DIRT_HP = 100
+    FULL_BERRY_HP = 5
+    HOURS_PER_DRAIN = 3  # the soil loses the Berry's whole drain_rate every 3rd hour
+    MIN_YIELD = 2
+    # rows of plots -> Dream Points needed for Diglett to add the next row
+    EXPANSION_THRESHOLDS: ClassVar[dict[int, int]] = {
         3: 900,
         4: 2_100,
         5: 3_500,
@@ -116,131 +195,162 @@ class CropManager:
         7: 20_000,
         8: 30_000,
         9: 50_000,
-        10: 100_000,
+        10: 100_000
     }
 
-    def __init__(self):
-        self._redundant_fields = {"kinomi", "kinomi_id", "desc1", "desc2", "desc3"}
-        self.data = db.read(save_data.gscd, "crop_data")
+    def _with_display_fields(self, stored: CropData) -> CropData:
+        for plot in stored["croft_list"]:
+            if "pokeitem_id" in plot:
+                item_id = plot["pokeitem_id"]
+                desc1, desc2, desc3, *_ = text.lookup_description("item_descriptions", item_id)
+                plot.update({
+                    "kinomi":    text.lookup_str("item", item_id),
+                    "kinomi_id": to_berry_id(item_id),
+                    "desc1":     desc1,
+                    "desc2":     desc2,
+                    "desc3":     desc3,
+                })
+        return stored
 
-    def update_json(self):
-        for crop in self.data["croft_list"]:
-            if "pokeitem_id" not in crop:
-                continue
+    def fetch_plot_by_id(self, my_croft_id: int) -> Plot:
+        """Return the plot with this id. Raise ValueError if the garden has no such plot."""
+        return _plot_of(self.data, my_croft_id)
 
-            berry_desc = text.lookup_str("item_descriptions", crop["pokeitem_id"])
+    def water_plot(self, my_croft_id: int) -> None:
+        """Refill a plot's soil. Raise ValueError if nothing is planted in it."""
+        def water(garden: CropData) -> None:
+            plot = _plot_of(garden, my_croft_id)
+            if "server" not in plot:
+                raise ValueError(f"Nothing is planted in garden plot {my_croft_id}")
 
-            crop["kinomi"] = text.lookup_str("item", crop["pokeitem_id"])
-            crop["kinomi_id"] = crop["pokeitem_id"] - 148
+            self._grow_all(garden)  # count the hours it spent dry before resetting the clock
+            plot["dirt_hp"] = self.FULL_DIRT_HP
+            plot["server"]["watered_at"] = round(time.time())
 
-            crop["desc1"] = berry_desc[0]
-            crop["desc2"] = berry_desc[1]
-            crop["desc3"] = berry_desc[2]
+        self.change(water)
 
-    def save(self):
-        crop_data = {
-            "croft_list": [
-                {k: v for k, v in crop.items() if k not in self._redundant_fields}
-                for crop in self.data["croft_list"]
-            ],
-            "diglett_flag": 0
-        }
+    def sow(self, my_croft_id: int, pokeitem_id: int) -> None:
+        """Plants a Berry in a freshly watered plot."""
+        def plant(garden: CropData) -> None:
+            now = round(time.time())
+            _plot_of(garden, my_croft_id).update({
+                "pokeitem_id":  pokeitem_id,
+                "dirt_hp":      self.FULL_DIRT_HP,
+                "kinomi_state": 0,
+                "server": {"planted_at": now, "updated_at": now, "watered_at": now,
+                           "berry_hp": self.FULL_BERRY_HP},
+            })
 
-        db.write(save_data.gscd, "crop_data", crop_data)
+        self.change(plant)
 
-    def fetch_plot_by_id(self, my_croft_id: int):
-        return next((p for p in self.data["croft_list"] if p["my_croft_id"] == my_croft_id), None)
+    def harvest(self, my_croft_id: int) -> dict:
+        """Empty a plot and return what it gave (the kinomi_harvesting response).
 
-    def water_plot(self, my_croft_id):
-        plot = self.fetch_plot_by_id(my_croft_id)
-        plot["dirt_hp"] = 100
+        Raise ValueError if nothing is planted in it.
+        """
+        def pick(garden: CropData) -> dict:
+            plot = _plot_of(garden, my_croft_id)
+            if "pokeitem_id" not in plot:
+                raise ValueError(f"Nothing is planted in garden plot {my_croft_id}")
 
-        self.save()
+            pokeitem_id = plot["pokeitem_id"]
+            harvest_data = {
+                "kinomi_id":   to_berry_id(pokeitem_id),
+                "kinomi":      text.lookup_str("item", pokeitem_id),
+                "pokeitem_id": pokeitem_id,
+                "count":       self.harvest_yield(plot),
+            }
+            empty_plot: Plot = {"my_croft_id": my_croft_id, "x": plot["x"], "y": plot["y"]}
+            garden["croft_list"][garden["croft_list"].index(plot)] = empty_plot
+            return harvest_data
 
-    def sow(self, my_croft_id: int, pokeitem_id: int):
-        plot = self.fetch_plot_by_id(my_croft_id)
+        return self.change(pick)
 
-        current_time = round(time.time())
+    def check_garden_expansion(self) -> None:
+        """Set diglett_flag in the response data if Diglett can add a row of plots.
 
-        berry_id = pokeitem_id - 148
-
-        berry_desc = text.lookup_str("item_descriptions", pokeitem_id)
-
-        plot.update({
-            "my_croft_id": my_croft_id,
-            "pokeitem_id": pokeitem_id,
-            "kinomi": text.lookup_str("item", pokeitem_id),
-            "kinomi_id": berry_id,
-            "dirt_hp": 100,
-            "kinomi_state": 0,
-            "desc1": berry_desc[0],
-            "desc2": berry_desc[1],
-            "desc3": berry_desc[2],
-            "x": plot["x"],
-            "y": plot["y"],
-            "server": {"planted_at": current_time, "updated_at": current_time, "yield": berry_data[str(berry_id)]["max_yield"]}
-        })
-
-        self.save()
-
-    def harvest(self, my_croft_id: int):
-        plot = self.fetch_plot_by_id(my_croft_id)
-        plot_index = self.data["croft_list"].index(plot)
-
-        harvest_data = {
-            "kinomi_id": plot["kinomi_id"],
-            "kinomi": plot["kinomi"],
-            "pokeitem_id": plot["pokeitem_id"],
-            "count": plot["server"]["yield"]
-        }
-
-        self.data["croft_list"][plot_index] = {"my_croft_id": my_croft_id, "x": plot["x"], "y": plot["y"]}
-
-        self.save()
-
-        return harvest_data
-
-
-    def do_garden_expansion(self):
-        dream_points = save_data.read_player_data()["member"]["experiment_point"]
-        num_crop_rows = len(self.data["croft_list"]) // 3
-
-        threshold = self.EXPANSION_THRESHOLDS.get(num_crop_rows)
+        That is when the player has enough Dream Points for the next row.
+        """
+        dream_points = save_data.read_member(self._gscd).get("experiment_point") or 0
+        threshold = self.EXPANSION_THRESHOLDS.get(len(self.data["croft_list"]) // self.PLOTS_PER_ROW)
         if threshold is not None and dream_points >= threshold:
-            db.write(save_data.gscd, "crop_data", {"diglett_flag": 1})
+            self.data["diglett_flag"] = 1
+
+    @classmethod
+    def hours_until_dry(cls, drain_rate: int) -> int:
+        """Whole hours after watering until the soil reaches 0."""
+        drains_needed = -(-cls.FULL_DIRT_HP // drain_rate)  # rounded up
+        return drains_needed * cls.HOURS_PER_DRAIN
+
+    @classmethod
+    def harvest_yield(cls, plot: Plot) -> int:
+        """Return the number of Berries a plot gives.
+
+        That is an equal share of max_yield for each point of berry HP left, at least
+        MIN_YIELD.
+        """
+        berry = BERRY_INFO[str(to_berry_id(plot["pokeitem_id"]))]
+        return max(berry["max_yield"] // cls.FULL_BERRY_HP * plot["server"]["berry_hp"], cls.MIN_YIELD)
+
+    def process_berry_growth(self) -> None:
+        """Advances every planted Berry by the whole hours since its last update.
+
+        The soil loses the Berry's whole drain_rate every 3rd hour after watering, and (as
+        in Platinum) each whole hour it spends dry costs 1 of the Berry's 5 HP. Once the
+        Berry fruits, the soil stops drying and its HP (and so its yield) is fixed.
+        """
+        self.change(self._grow_all)
+
+    def _grow_all(self, garden: CropData) -> None:
+        now = round(time.time())
+        for plot in garden["croft_list"]:
+            if "dirt_hp" in plot:
+                self._grow(plot, now)
+
+    def _grow(self, plot: Plot, now: int) -> None:
+        """Advances one planted Berry to `now`.
+
+        dirt_hp and the dry hours are worked out from the time since watering rather than
+        subtracted step by step, so the leftover part-hours between updates are never lost.
+        """
+        growth = plot["server"]
+        hours = (now - growth["updated_at"]) // SECONDS_PER_HOUR
+        if hours <= 0:
+            return
+        processed_until = growth["updated_at"] + hours * SECONDS_PER_HOUR
+
+        berry = BERRY_INFO[str(to_berry_id(plot["pokeitem_id"]))]
+        hours_since_planted = (now - growth["planted_at"]) // SECONDS_PER_HOUR
+        hours_per_stage = berry["grow_time"] / self.GROWTH_STAGES
+        plot["kinomi_state"] = min(int(hours_since_planted // hours_per_stage), self.GROWTH_STAGES)
+
+        # nothing dries once it has fruited
+        fruited_at = growth["planted_at"] + berry["grow_time"] * SECONDS_PER_HOUR
+        drying_until = min(now, fruited_at)
+
+        drain_rate = berry["drain_rate"]
+        hours_since_watered = max((drying_until - growth["watered_at"]) // SECONDS_PER_HOUR, 0)
+        drains = hours_since_watered // self.HOURS_PER_DRAIN
+        plot["dirt_hp"] = max(self.FULL_DIRT_HP - drains * drain_rate, 0)
+
+        dry_at = growth["watered_at"] + self.hours_until_dry(drain_rate) * SECONDS_PER_HOUR
+
+        def dry_hours_by(timestamp: int) -> int:
+            """Whole hours the soil had been dry for at `timestamp`."""
+            return max((min(timestamp, fruited_at) - dry_at) // SECONDS_PER_HOUR, 0)
+
+        newly_dry = dry_hours_by(processed_until) - dry_hours_by(growth["updated_at"])
+        growth["berry_hp"] = max(growth["berry_hp"] - newly_dry, 0)
+
+        # keep the leftover part of an hour for next time
+        growth["updated_at"] = processed_until
 
 
-    def process_berry_growth(self):
-        current_time = round(time.time())
+def get_chest(gscd: str | None = None) -> ChestManager:
+    """Return the Treasure Chest of `gscd`, or of the logged-in player."""
+    return ChestManager(save_data.require_gscd(gscd))
 
-        for plant in self.data["croft_list"]:
-            if "dirt_hp" not in plant:
-                continue
 
-            curr_berry_data = berry_data[str(plant["kinomi_id"])]
-
-            hours_since_planted = (current_time - plant["server"]["planted_at"]) // 3600
-            hours_since_update = (current_time - plant["server"]["updated_at"]) // 3600
-
-            hours_at_last_update = hours_since_planted - hours_since_update
-
-            single_stage_time = curr_berry_data["grow_time"] / 4
-
-            for hour in range(1, hours_since_update + 1):
-                total_hours = hours_at_last_update + hour
-                plant["kinomi_state"] = min(total_hours // single_stage_time, 4)
-
-                if plant["dirt_hp"] == 0: #remove 1/5th of the berry's max, but no lower than 2 berries
-                    plant["server"]["yield"] = max(plant["server"]["yield"] - (curr_berry_data["max_yield"] * 0.2), 2)
-                else:
-                    plant["dirt_hp"] -= curr_berry_data["drain_rate"]
-
-            if plant["dirt_hp"] < 0:
-                plant["dirt_hp"] = 0
-
-            plant["server"]["updated_at"] = current_time
-
-        self.save()
-
-chest = ChestManager()
-crops = CropManager()
+def get_crops(gscd: str | None = None) -> CropManager:
+    """Return the Berry garden of `gscd`, or of the logged-in player."""
+    return CropManager(save_data.require_gscd(gscd))

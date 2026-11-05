@@ -1,195 +1,202 @@
-import json
+"""pgl.member.profile.*: avatar, privacy settings, Game Sync ID linking, and profile pages."""
+from itertools import chain
 
-from utils import text
-from utils import pokemon
-from utils import save_data
+from flask import session
+
+from api.routes import Query, endpoint, query_int
 from game_sync_server.entralinked.utility.db_manager import db
+from utils import pokemon, save_data, text
+from utils.account_manager import accounts
+from utils.badwords import contains_bad_word
+from utils.constants import PlayerStatus
+from utils.messages import message
+from utils.models import Member
 
-# ---------------------
-# GET API calls
-# ---------------------
+GSCD_LENGTH = 10
 
-def GET_profile_customize(_query):
-    response = {
-    "selected": {
-        "cgear":   "01",
-        "pokedex": "01",
-        "musical": "01"
-    },
-    "cgear":   ["01", "02", "03"],
-    "pokedex": ["01", "02"],
-    "musical": ["01", "02", "03"]
+# The avatar picker offers these avator_id values. New accounts could pick ids up to 200.
+AVATAR_IDS = tuple(chain(
+    range(2, 5), range(30, 34), [35, 37, 78], range(149, 159), range(184, 201),
+    range(651, 856), range(859, 868), range(901, 908), range(911, 916), [920, 1025],
+))
+
+
+def _field_error(field: str, message_id: str, **values: object) -> dict:
+    """Return the response that makes the form show a message next to `field`."""
+    return {"error": {"details": {field: message(message_id, **values)}}}
+
+
+@endpoint("pgl.member.profile.friend_list")
+def friend_list(_query: Query) -> dict:
+    """Return a placeholder friend list with the player as their own only friend."""
+    member = save_data.read_member()
+    return {
+        "list": [{
+            "avator_id":          member["avator_id"],
+            "pgl_name":           member["pgl_name"],
+            "member_savedata_id": str(member["member_savedata_id"]),
+            "disable_flag":       str(member["disable_flag"] or 0),
+            "is_ds":              True,
+            "country_code":       "US",
+            "is_blocked":         "0",
+        }],
+        "cnt": 1,
     }
 
-    return json.dumps(response).encode()
+
+@endpoint("pgl.member.profile.init_create_confirm")
+def init_create_confirm(query: Query) -> dict:
+    """Validate the sign-up form before init_create."""
+    gscd = query.get("gscd", "").strip()
+
+    if contains_bad_word(query.get("pgl_name", "")):
+        return _field_error("pgl_name", "bad_nickname")
+
+    if gscd and len(gscd) != GSCD_LENGTH:
+        return _field_error("gscd", "bad_gscd_length", length=GSCD_LENGTH)
+
+    return {}
 
 
-def GET_profile_friend_friend_list(_query):
-    return b"{}"
-
-
-def GET_profile_friend_gbu_profile(_query):
-    return b"{}"
-
-
-def GET_profile_friend_list(_query):
-    m = save_data.read_player_data()["member"]
-    friend_template = {
-        "avator_id":          m["avator_id"],
-        "pgl_name":           m["pgl_name"],
-        "member_savedata_id": str(m["member_savedata_id"]),
-        "disable_flag":       str(m["disable_flag"] or 0),
-        "is_ds":              True,
-        "country_code":       "US",
-        "is_blocked":         "0",
-    }
-    response = {
-        "list": [friend_template],
-        "cnt":  1,
-    }
-    return json.dumps(response).encode()
-
-
-def GET_profile_friend_pdw_friend_list(_query):
-    return b"{}"
-
-
-def GET_profile_friend_pdw_profile_by_pgl(_query):
-    return b"{}"
-
-
-def GET_profile_friend_profile(_query):
-    return b"{}"
-
-
-def GET_profile_gsid_list(_query):
-    return b"{}"
-
-
-def GET_profile_my_gbu_profile(_query):
-    return b"{}"
-
-
-def GET_profile_my_pdw_profile_by_pgl(_query):
-    m  = save_data.read_player_data()["member"]
-    sp = pokemon.sleeper
-    response = {
-        "island_id":        m["island_id"],
-        "experiment_point": m["experiment_point"],
-        "pokemon_name":     text.lookup_str("pokemon", m["pokemon_no"]),
-        "pokemon_nickname": sp["pokemon_nickname"],
-        "level":            sp["level"],
-        "sex_id":           sp["sex"],
-        "pokemon_no":       m["pokemon_no"],
-        "form_no":          m["form_no"],
-        "oyaname":          sp["oyaname"],
-        "type1":            text.lookup_str("type", m["type1"]),
-        "type2":            text.lookup_str("type", m["type2"]),
-        "personality":      text.lookup_str("nature", sp["personality"]),
+@endpoint("pgl.member.profile.my_pdw_profile_by_pgl")
+def my_pdw_profile(_query: Query) -> dict:
+    """Return the player's Dream World profile with their island and tucked-in Pokémon."""
+    member = save_data.read_member()
+    sleeper = pokemon.get_sleeper()
+    return {
+        "island_id":        member["island_id"],
+        "experiment_point": member["experiment_point"],
+        "pokemon_name":     text.lookup_str("pokemon", member["pokemon_no"]),
+        "pokemon_nickname": sleeper["pokemon_nickname"],
+        "level":            sleeper["level"],
+        "sex_id":           sleeper["sex"],
+        "pokemon_no":       member["pokemon_no"],
+        "form_no":          member["form_no"],
+        "oyaname":          sleeper["oyaname"],
+        "type1":            text.lookup_str("type", member["type1"]),
+        "type2":            text.lookup_str("type", member["type2"]),
+        "personality":      text.lookup_str("nature", sleeper["personality"]),
+        "shiny":            pokemon.shows_shiny(sleeper.get("is_shiny", False)),
         "encount_pokemons": [],
     }
-    return json.dumps(response).encode()
 
 
-def GET_profile_my_profile(_query):
-    p = save_data.read_player_data()
-    m = p["member"]
-    g = save_data.read_entralink_data()
+@endpoint("pgl.member.profile.my_profile")
+def my_profile(_query: Query) -> dict:
+    """Return the player's PGL profile page."""
+    player_data = save_data.read_player_data()
+    member = player_data["member"]
+    game_sync = save_data.read_game_sync()
+    country_id = accounts.get_country_id(session.get("username"))
 
-    playtime_str = f"{g['hours_played']:02}:{g['minutes_played']:02}"
-
-    response = {
-        "avator_id":           m["avator_id"],
-        "pgl_name":            m["pgl_name"],
-        "country_name":        text.lookup_str("country", m["country_id"]),
-        "rom_name":            text.lookup_str("game", m["rom_id"]),
-        "rom_id":              str(m["rom_id"]),
-        "trial_flag":          str(m["trial_flag"]),
-        "player_badge_num":    m["player_badge_num"],
-        "langcode":            m["langcode"],
-        "trainer_name":        m["player_name"],
-        "playtime":            playtime_str,
-        "disclosure_flag":     m["disclosure_flag"],
-        "list_disclosure_flag": m["list_disclosure_flag"],
-        "friends":             [],
-        "friends_count":       0,
-        "medals":              p.get("medals", []),
+    return {
+        "avator_id":            member["avator_id"],
+        "pgl_name":             member["pgl_name"],
+        "country_name":         text.lookup_str("country", country_id),
+        "rom_name":             text.lookup_str("game", member["rom_id"]),
+        "rom_id":               str(member["rom_id"]),
+        "trial_flag":           str(member["trial_flag"]),
+        "player_badge_num":     member["player_badge_num"],
+        "langcode":             member["langcode"],
+        "trainer_name":         member["player_name"],
+        "playtime":             f"{game_sync['hours_played']:02}:{game_sync['minutes_played']:02}",
+        "disclosure_flag":      member["disclosure_flag"],
+        "list_disclosure_flag": member["list_disclosure_flag"],
+        "friends":              [],
+        "friends_count":        0,
+        "medals":               save_data.read_medals(),
     }
 
-    return json.dumps(response).encode()
+
+@endpoint("pgl.member.profile.my_state")
+def my_state(_query: Query) -> dict:
+    """Make the tucked-in Pokémon start dreaming."""
+    save_data.set_play_status(PlayerStatus.DREAMING)
+    return {}
 
 
-def GET_profile_my_state(_query):
-    save_data.update_gamesync_status(save_data.PlayerStatus.DREAMING)
-
-    return b"{}"
-
-
-def GET_profile_pdw_friend_list(_query):
-    return b"{}"
+@endpoint("pgl.member.profile.pdw_end_by_pgl")
+def pdw_end_by_pgl(_query: Query) -> dict:
+    """End the Dream World session so the Pokémon can be woken up."""
+    save_data.set_play_status(PlayerStatus.WAKE_READY)
+    return {}
 
 
-def GET_profile_pdw_end_by_pgl(_query):
-    save_data.update_gamesync_status(save_data.PlayerStatus.WAKE_READY)
-    return b"{}"
+@endpoint("pgl.member.profile.rom_check")
+def rom_check(query: Query) -> dict:
+    """Which game a Game Sync ID belongs to (rom_id is null if it's unknown)."""
+    gscd = query.get("gscd", "").strip()
+    return {"rom_id": save_data.read_member(gscd).get("rom_id") if gscd else None}
 
 
-def GET_profile_video_delete(_query):
-    return b"{}"
+@endpoint("pgl.member.profile.avator_list", methods=("POST",))
+def avatar_list(_query: Query) -> dict:
+    """Return the avatars the picker offers."""
+    return {"avator_list": [{"avator_id": avatar_id, "avator_name": "Placeholder"} for avatar_id in AVATAR_IDS]}
 
 
-def GET_profile_video_regist(_query):
-    return b"{}"
-
-# ---------------------
-# POST API calls
-# ---------------------
-
-def POST_profile_avator_list(_query):
-    valid_pfps = (
-        list(range(2, 5))
-        + list(range(30, 34))
-        + [35]
-        + [37]
-        + [78]
-        + list(range(149, 159))
-        + list(range(184, 201)) # 200 is the cutoff for PFPs available to new accounts
-        + list(range(651, 856))
-        + list(range(859, 868))
-        + list(range(901, 908))
-        + list(range(911, 916))
-        + [920]
-        + [1025]
-    )
-
-    response = [
-        {
-            "avator_id": profile_id,
-            "avator_name": "Placeholder"
-        }
-        for profile_id in valid_pfps
-    ]
-
-    return json.dumps({"avator_list": response}).encode()
+@endpoint("pgl.member.profile.avator_select", methods=("POST",))
+def avatar_select(query: Query) -> dict:
+    """Change the player's avatar."""
+    save_data.update_member({"avator_id": int(query["avator_id"])})
+    return {}
 
 
-def POST_profile_avator_select(_query):
-    selected_pfp = _query["avator_id"]
-
-    save_data.write_player_data({"avator_id": selected_pfp})
-
-
-def POST_profile_disclosure_switch(_query):
-    flag = int(_query.get("disclosure_flag", 0))
-    save_data.write_player_data({"disclosure_flag": flag})
-    return b"{}"
+@endpoint("pgl.member.profile.disclosure_switch", methods=("POST",))
+def disclosure_switch(query: Query) -> dict:
+    """Save the disclosure_flag privacy setting."""
+    save_data.update_member({"disclosure_flag": query_int(query, "disclosure_flag", 0)})
+    return {}
 
 
-def POST_profile_list_disclosure_switch(_query):
-    flag = int(_query.get("list_disclosure_flag", 0))
-    save_data.write_player_data({"list_disclosure_flag": flag})
-    return b"{}"
+@endpoint("pgl.member.profile.list_disclosure_switch", methods=("POST",))
+def list_disclosure_switch(query: Query) -> dict:
+    """Save the list_disclosure_flag privacy setting."""
+    save_data.update_member({"list_disclosure_flag": query_int(query, "list_disclosure_flag", 0)})
+    return {}
 
 
-def POST_profile_pdw_login(_query):
-    return b"{}"
+def _link_gscd(username: str, gscd: str) -> dict | None:
+    """Link a Game Sync ID to the account.
+
+    Return a field error, and link nothing, if the Game Sync ID doesn't exist or is
+    already linked to any account, this one included. Return None once it's linked.
+    """
+    if not db.gscd_exists(gscd):
+        return _field_error("gscd", "gscd_not_found")
+
+    owner = accounts.get_gscd_owner(gscd)
+    if owner == username:
+        return _field_error("gscd", "gscd_already_yours")
+    if owner is not None:
+        return _field_error("gscd", "gscd_already_taken")
+
+    accounts.link_gscd(username, gscd)
+    account = accounts.get_account_by_username(username)
+    session["gscd"] = account["active_gscd"] if account else gscd
+
+    linked_gscds = accounts.get_gscds_for_account(username)
+    for linked_gscd in linked_gscds:
+        save_data.update_member({"gsid_count": len(linked_gscds)}, linked_gscd)
+    return None
+
+
+@endpoint("pgl.member.profile.init_create", methods=("POST",))
+def init_create(query: Query) -> dict:
+    """Finish sign-up by linking a Game Sync ID (if given) and setting the PGL nickname."""
+    gscd = query.get("gscd", "").strip()
+    username = session.get("username")
+
+    if gscd and username:
+        error = _link_gscd(username, gscd)
+        if error:
+            return error
+
+    if session.get("gscd"):
+        changes: Member = {"pgl_name": query.get("pgl_name", ""), "trial_flag": 0}
+        country_id = accounts.get_country_id(username)
+        if country_id is not None:
+            changes["country_id"] = country_id
+        save_data.update_member(changes)
+
+    return {"flg": 2 if session.get("gscd") else 0}

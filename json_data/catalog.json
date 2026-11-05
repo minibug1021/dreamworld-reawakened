@@ -1,0 +1,3954 @@
+{
+ "1": {
+  "catalog_id": 1,
+  "catalog_type": 2,
+  "cost": [],
+  "size_w": null,
+  "size_h": null,
+  "place_type": null,
+  "arrangement_flag": null,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "201": {
+  "catalog_id": 1,
+  "catalog_type": 1,
+  "cost": [],
+  "size_w": 0,
+  "size_h": 0,
+  "place_type": 0,
+  "arrangement_flag": 0,
+  "movable_flag": 0,
+  "is_ds": 0
+ },
+ "202": {
+  "catalog_id": 1,
+  "catalog_type": 1,
+  "cost": [
+   {
+    "berry_id": 5,
+    "count": 150
+   },
+   {
+    "berry_id": 8,
+    "count": 150
+   },
+   {
+    "berry_id": 10,
+    "count": 150
+   }
+  ],
+  "size_w": 0,
+  "size_h": 0,
+  "place_type": 0,
+  "arrangement_flag": 0,
+  "movable_flag": 0,
+  "is_ds": 0
+ },
+ "203": {
+  "catalog_id": 1,
+  "catalog_type": 1,
+  "cost": [
+   {
+    "berry_id": 4,
+    "count": 220
+   },
+   {
+    "berry_id": 2,
+    "count": 220
+   },
+   {
+    "berry_id": 7,
+    "count": 220
+   }
+  ],
+  "size_w": 0,
+  "size_h": 0,
+  "place_type": 0,
+  "arrangement_flag": 0,
+  "movable_flag": 0,
+  "is_ds": 0
+ },
+ "301": {
+  "catalog_id": 1,
+  "catalog_type": 3,
+  "cost": [],
+  "size_w": 0,
+  "size_h": 0,
+  "place_type": 0,
+  "arrangement_flag": 0,
+  "movable_flag": 0,
+  "is_ds": 0
+ },
+ "1036": {
+  "catalog_id": 1,
+  "catalog_type": 10,
+  "cost": [
+   {
+    "berry_id": 7,
+    "count": 10
+   }
+  ],
+  "size_w": 12,
+  "size_h": 6,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1037": {
+  "catalog_id": 1,
+  "catalog_type": 10,
+  "cost": [
+   {
+    "berry_id": 15,
+    "count": 15
+   },
+   {
+    "berry_id": 11,
+    "count": 15
+   }
+  ],
+  "size_w": 15,
+  "size_h": 7,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1038": {
+  "catalog_id": 1,
+  "catalog_type": 10,
+  "cost": [
+   {
+    "berry_id": 4,
+    "count": 40
+   },
+   {
+    "berry_id": 13,
+    "count": 40
+   }
+  ],
+  "size_w": 7,
+  "size_h": 6,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 1
+ },
+ "1039": {
+  "catalog_id": 1,
+  "catalog_type": 11,
+  "cost": [
+   {
+    "berry_id": 7,
+    "count": 5
+   }
+  ],
+  "size_w": 4,
+  "size_h": 6,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1040": {
+  "catalog_id": 1,
+  "catalog_type": 11,
+  "cost": [
+   {
+    "berry_id": 14,
+    "count": 10
+   },
+   {
+    "berry_id": 11,
+    "count": 10
+   }
+  ],
+  "size_w": 7,
+  "size_h": 10,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1041": {
+  "catalog_id": 1,
+  "catalog_type": 11,
+  "cost": [
+   {
+    "berry_id": 2,
+    "count": 25
+   },
+   {
+    "berry_id": 14,
+    "count": 25
+   }
+  ],
+  "size_w": 3,
+  "size_h": 3,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 1
+ },
+ "1042": {
+  "catalog_id": 1,
+  "catalog_type": 23,
+  "cost": [
+   {
+    "berry_id": 12,
+    "count": 35
+   },
+   {
+    "berry_id": 8,
+    "count": 35
+   },
+   {
+    "berry_id": 11,
+    "count": 35
+   }
+  ],
+  "size_w": 52,
+  "size_h": 3,
+  "place_type": 3,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1043": {
+  "catalog_id": 1,
+  "catalog_type": 23,
+  "cost": [
+   {
+    "berry_id": 13,
+    "count": 35
+   },
+   {
+    "berry_id": 8,
+    "count": 35
+   },
+   {
+    "berry_id": 11,
+    "count": 35
+   }
+  ],
+  "size_w": 52,
+  "size_h": 8,
+  "place_type": 3,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 1
+ },
+ "1044": {
+  "catalog_id": 1,
+  "catalog_type": 25,
+  "cost": [
+   {
+    "berry_id": 11,
+    "count": 15
+   }
+  ],
+  "size_w": 5,
+  "size_h": 5,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1045": {
+  "catalog_id": 1,
+  "catalog_type": 22,
+  "cost": [
+   {
+    "berry_id": 12,
+    "count": 70
+   },
+   {
+    "berry_id": 15,
+    "count": 70
+   }
+  ],
+  "size_w": 7,
+  "size_h": 6,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 1
+ },
+ "1046": {
+  "catalog_id": 1,
+  "catalog_type": 13,
+  "cost": [
+   {
+    "berry_id": 10,
+    "count": 20
+   },
+   {
+    "berry_id": 1,
+    "count": 40
+   },
+   {
+    "berry_id": 3,
+    "count": 40
+   }
+  ],
+  "size_w": 15,
+  "size_h": 7,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1047": {
+  "catalog_id": 1,
+  "catalog_type": 24,
+  "cost": [
+   {
+    "berry_id": 10,
+    "count": 5
+   }
+  ],
+  "size_w": 6,
+  "size_h": 5,
+  "place_type": 1,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 1
+ },
+ "1048": {
+  "catalog_id": 1,
+  "catalog_type": 12,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 45
+   },
+   {
+    "berry_id": 3,
+    "count": 45
+   }
+  ],
+  "size_w": 13,
+  "size_h": 5,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1049": {
+  "catalog_id": 1,
+  "catalog_type": 4,
+  "cost": [
+   {
+    "berry_id": 7,
+    "count": 10
+   },
+   {
+    "berry_id": 3,
+    "count": 15
+   }
+  ],
+  "size_w": 7,
+  "size_h": 7,
+  "place_type": 1,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1050": {
+  "catalog_id": 1,
+  "catalog_type": 4,
+  "cost": [
+   {
+    "berry_id": 14,
+    "count": 40
+   },
+   {
+    "berry_id": 15,
+    "count": 40
+   }
+  ],
+  "size_w": 7,
+  "size_h": 8,
+  "place_type": 1,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1051": {
+  "catalog_id": 1,
+  "catalog_type": 4,
+  "cost": [
+   {
+    "berry_id": 12,
+    "count": 50
+   },
+   {
+    "berry_id": 13,
+    "count": 50
+   }
+  ],
+  "size_w": 9,
+  "size_h": 9,
+  "place_type": 1,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1055": {
+  "catalog_id": 1,
+  "catalog_type": 16,
+  "cost": [
+   {
+    "berry_id": 7,
+    "count": 10
+   },
+   {
+    "berry_id": 1,
+    "count": 15
+   }
+  ],
+  "size_w": 5,
+  "size_h": 5,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1056": {
+  "catalog_id": 1,
+  "catalog_type": 10,
+  "cost": [
+   {
+    "berry_id": 7,
+    "count": 8
+   }
+  ],
+  "size_w": 11,
+  "size_h": 6,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1057": {
+  "catalog_id": 1,
+  "catalog_type": 22,
+  "cost": [
+   {
+    "berry_id": 5,
+    "count": 100
+   },
+   {
+    "berry_id": 10,
+    "count": 100
+   }
+  ],
+  "size_w": 5,
+  "size_h": 5,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1058": {
+  "catalog_id": 1,
+  "catalog_type": 22,
+  "cost": [
+   {
+    "berry_id": 8,
+    "count": 65
+   },
+   {
+    "berry_id": 10,
+    "count": 65
+   }
+  ],
+  "size_w": 5,
+  "size_h": 5,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1069": {
+  "catalog_id": 7,
+  "catalog_type": 23,
+  "cost": [
+   {
+    "berry_id": 15,
+    "count": 0
+   }
+  ],
+  "size_w": 52,
+  "size_h": 8,
+  "place_type": 3,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1070": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 15,
+    "count": 0
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1071": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 15,
+    "count": 0
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1072": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 15,
+    "count": 0
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1073": {
+  "catalog_id": 7,
+  "catalog_type": 15,
+  "cost": [
+   {
+    "berry_id": 15,
+    "count": 0
+   }
+  ],
+  "size_w": 7,
+  "size_h": 8,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1074": {
+  "catalog_id": 7,
+  "catalog_type": 16,
+  "cost": [
+   {
+    "berry_id": 15,
+    "count": 0
+   }
+  ],
+  "size_w": 6,
+  "size_h": 7,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1075": {
+  "catalog_id": 7,
+  "catalog_type": 16,
+  "cost": [
+   {
+    "berry_id": 15,
+    "count": 0
+   }
+  ],
+  "size_w": 10,
+  "size_h": 7,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1076": {
+  "catalog_id": 8,
+  "catalog_type": 11,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 6,
+  "size_h": 6,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1077": {
+  "catalog_id": 8,
+  "catalog_type": 12,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 12,
+  "size_h": 7,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1078": {
+  "catalog_id": 8,
+  "catalog_type": 13,
+  "cost": [
+   {
+    "berry_id": 8,
+    "count": 0
+   }
+  ],
+  "size_w": 16,
+  "size_h": 7,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1079": {
+  "catalog_id": 8,
+  "catalog_type": 4,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 12,
+  "size_h": 7,
+  "place_type": 1,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1080": {
+  "catalog_id": 8,
+  "catalog_type": 24,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 5,
+  "size_h": 5,
+  "place_type": 1,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1081": {
+  "catalog_id": 8,
+  "catalog_type": 25,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 7,
+  "size_h": 3,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1082": {
+  "catalog_id": 8,
+  "catalog_type": 1,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 0,
+  "size_h": 0,
+  "place_type": 0,
+  "arrangement_flag": 0,
+  "movable_flag": 0,
+  "is_ds": 0
+ },
+ "1083": {
+  "catalog_id": 8,
+  "catalog_type": 10,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 11,
+  "size_h": 5,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1084": {
+  "catalog_id": 8,
+  "catalog_type": 23,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 52,
+  "size_h": 8,
+  "place_type": 3,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1086": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1087": {
+  "catalog_id": 21,
+  "catalog_type": 15,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 4,
+  "size_h": 4,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1088": {
+  "catalog_id": 21,
+  "catalog_type": 15,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 3,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1089": {
+  "catalog_id": 21,
+  "catalog_type": 15,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 3,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1090": {
+  "catalog_id": 21,
+  "catalog_type": 15,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 3,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1091": {
+  "catalog_id": 21,
+  "catalog_type": 25,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 6,
+  "size_h": 6,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1092": {
+  "catalog_id": 21,
+  "catalog_type": 23,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 0,
+  "size_h": 0,
+  "place_type": 3,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1093": {
+  "catalog_id": 21,
+  "catalog_type": 10,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 10,
+  "size_h": 4,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1094": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1096": {
+  "catalog_id": 1,
+  "catalog_type": 23,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 52,
+  "size_h": 8,
+  "place_type": 3,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1097": {
+  "catalog_id": 1,
+  "catalog_type": 24,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 7,
+  "size_h": 7,
+  "place_type": 1,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1099": {
+  "catalog_id": 1,
+  "catalog_type": 1,
+  "cost": [
+   {
+    "berry_id": 16,
+    "count": 250
+   },
+   {
+    "berry_id": 17,
+    "count": 250
+   },
+   {
+    "berry_id": 18,
+    "count": 250
+   }
+  ],
+  "size_w": 0,
+  "size_h": 0,
+  "place_type": 0,
+  "arrangement_flag": 0,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1100": {
+  "catalog_id": 1,
+  "catalog_type": 12,
+  "cost": [
+   {
+    "berry_id": 16,
+    "count": 45
+   },
+   {
+    "berry_id": 17,
+    "count": 45
+   }
+  ],
+  "size_w": 12,
+  "size_h": 7,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1101": {
+  "catalog_id": 1,
+  "catalog_type": 13,
+  "cost": [
+   {
+    "berry_id": 9,
+    "count": 20
+   },
+   {
+    "berry_id": 17,
+    "count": 40
+   },
+   {
+    "berry_id": 18,
+    "count": 40
+   }
+  ],
+  "size_w": 17,
+  "size_h": 7,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1102": {
+  "catalog_id": 1,
+  "catalog_type": 16,
+  "cost": [
+   {
+    "berry_id": 9,
+    "count": 15
+   },
+   {
+    "berry_id": 17,
+    "count": 20
+   }
+  ],
+  "size_w": 11,
+  "size_h": 6,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1103": {
+  "catalog_id": 1,
+  "catalog_type": 25,
+  "cost": [
+   {
+    "berry_id": 16,
+    "count": 20
+   }
+  ],
+  "size_w": 4,
+  "size_h": 4,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1104": {
+  "catalog_id": 1,
+  "catalog_type": 25,
+  "cost": [
+   {
+    "berry_id": 18,
+    "count": 20
+   }
+  ],
+  "size_w": 6,
+  "size_h": 4,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1105": {
+  "catalog_id": 1,
+  "catalog_type": 15,
+  "cost": [
+   {
+    "berry_id": 9,
+    "count": 10
+   }
+  ],
+  "size_w": 4,
+  "size_h": 6,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1106": {
+  "catalog_id": 1,
+  "catalog_type": 1,
+  "cost": [
+   {
+    "berry_id": 19,
+    "count": 270
+   },
+   {
+    "berry_id": 20,
+    "count": 270
+   },
+   {
+    "berry_id": 27,
+    "count": 270
+   }
+  ],
+  "size_w": 0,
+  "size_h": 0,
+  "place_type": 0,
+  "arrangement_flag": 0,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1107": {
+  "catalog_id": 1,
+  "catalog_type": 4,
+  "cost": [
+   {
+    "berry_id": 19,
+    "count": 70
+   },
+   {
+    "berry_id": 20,
+    "count": 70
+   }
+  ],
+  "size_w": 7,
+  "size_h": 7,
+  "place_type": 1,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1108": {
+  "catalog_id": 1,
+  "catalog_type": 23,
+  "cost": [
+   {
+    "berry_id": 20,
+    "count": 35
+   },
+   {
+    "berry_id": 27,
+    "count": 35
+   },
+   {
+    "berry_id": 28,
+    "count": 35
+   }
+  ],
+  "size_w": 52,
+  "size_h": 8,
+  "place_type": 3,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1109": {
+  "catalog_id": 1,
+  "catalog_type": 26,
+  "cost": [
+   {
+    "berry_id": 28,
+    "count": 10
+   }
+  ],
+  "size_w": 7,
+  "size_h": 7,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1110": {
+  "catalog_id": 23,
+  "catalog_type": 10,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 13,
+  "size_h": 6,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1111": {
+  "catalog_id": 23,
+  "catalog_type": 4,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 6,
+  "size_h": 7,
+  "place_type": 1,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1112": {
+  "catalog_id": 23,
+  "catalog_type": 26,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 4,
+  "size_h": 5,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1113": {
+  "catalog_id": 1,
+  "catalog_type": 1,
+  "cost": [
+   {
+    "berry_id": 6,
+    "count": 300
+   },
+   {
+    "berry_id": 35,
+    "count": 300
+   },
+   {
+    "berry_id": 34,
+    "count": 300
+   }
+  ],
+  "size_w": 0,
+  "size_h": 0,
+  "place_type": 0,
+  "arrangement_flag": 0,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1114": {
+  "catalog_id": 1,
+  "catalog_type": 1,
+  "cost": [
+   {
+    "berry_id": 6,
+    "count": 300
+   },
+   {
+    "berry_id": 33,
+    "count": 300
+   },
+   {
+    "berry_id": 34,
+    "count": 300
+   }
+  ],
+  "size_w": 0,
+  "size_h": 0,
+  "place_type": 0,
+  "arrangement_flag": 0,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1115": {
+  "catalog_id": 1,
+  "catalog_type": 26,
+  "cost": [
+   {
+    "berry_id": 35,
+    "count": 20
+   }
+  ],
+  "size_w": 3,
+  "size_h": 3,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1116": {
+  "catalog_id": 1,
+  "catalog_type": 22,
+  "cost": [
+   {
+    "berry_id": 34,
+    "count": 100
+   },
+   {
+    "berry_id": 6,
+    "count": 60
+   }
+  ],
+  "size_w": 8,
+  "size_h": 8,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1117": {
+  "catalog_id": 1,
+  "catalog_type": 11,
+  "cost": [
+   {
+    "berry_id": 34,
+    "count": 40
+   },
+   {
+    "berry_id": 35,
+    "count": 40
+   }
+  ],
+  "size_w": 10,
+  "size_h": 5,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1118": {
+  "catalog_id": 1,
+  "catalog_type": 14,
+  "cost": [
+   {
+    "berry_id": 33,
+    "count": 40
+   },
+   {
+    "berry_id": 6,
+    "count": 20
+   }
+  ],
+  "size_w": 5,
+  "size_h": 8,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1119": {
+  "catalog_id": 1,
+  "catalog_type": 23,
+  "cost": [
+   {
+    "berry_id": 35,
+    "count": 35
+   },
+   {
+    "berry_id": 34,
+    "count": 35
+   },
+   {
+    "berry_id": 33,
+    "count": 35
+   }
+  ],
+  "size_w": 52,
+  "size_h": 8,
+  "place_type": 3,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1120": {
+  "catalog_id": 1,
+  "catalog_type": 26,
+  "cost": [
+   {
+    "berry_id": 33,
+    "count": 80
+   },
+   {
+    "berry_id": 35,
+    "count": 60
+   }
+  ],
+  "size_w": 14,
+  "size_h": 3,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1121": {
+  "catalog_id": 1,
+  "catalog_type": 26,
+  "cost": [
+   {
+    "berry_id": 35,
+    "count": 40
+   },
+   {
+    "berry_id": 6,
+    "count": 20
+   }
+  ],
+  "size_w": 4,
+  "size_h": 5,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1122": {
+  "catalog_id": 1,
+  "catalog_type": 15,
+  "cost": [
+   {
+    "berry_id": 6,
+    "count": 20
+   }
+  ],
+  "size_w": 5,
+  "size_h": 3,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1123": {
+  "catalog_id": 1,
+  "catalog_type": 15,
+  "cost": [
+   {
+    "berry_id": 33,
+    "count": 20
+   },
+   {
+    "berry_id": 34,
+    "count": 20
+   }
+  ],
+  "size_w": 10,
+  "size_h": 5,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1124": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 12,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1125": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 4,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1126": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 13,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1127": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 12,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1128": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 2,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1129": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 4,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1130": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 12,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1131": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 4,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1132": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 2,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1133": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 13,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1134": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1135": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 6,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1136": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 33,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1137": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 33,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1138": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 34,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1139": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 35,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1140": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 35,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1141": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 33,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1142": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 35,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1143": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 34,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1144": {
+  "catalog_id": 2,
+  "catalog_type": 21,
+  "cost": [
+   {
+    "berry_id": 6,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1145": {
+  "catalog_id": 2,
+  "catalog_type": 21,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1146": {
+  "catalog_id": 2,
+  "catalog_type": 21,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1147": {
+  "catalog_id": 1,
+  "catalog_type": 14,
+  "cost": [
+   {
+    "berry_id": 14,
+    "count": 40
+   },
+   {
+    "berry_id": 24,
+    "count": 10
+   },
+   {
+    "berry_id": 26,
+    "count": 10
+   }
+  ],
+  "size_w": 13,
+  "size_h": 6,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1148": {
+  "catalog_id": 1,
+  "catalog_type": 14,
+  "cost": [
+   {
+    "berry_id": 15,
+    "count": 15
+   },
+   {
+    "berry_id": 21,
+    "count": 10
+   }
+  ],
+  "size_w": 5,
+  "size_h": 6,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1149": {
+  "catalog_id": 1,
+  "catalog_type": 14,
+  "cost": [
+   {
+    "berry_id": 15,
+    "count": 15
+   },
+   {
+    "berry_id": 22,
+    "count": 10
+   }
+  ],
+  "size_w": 5,
+  "size_h": 6,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1150": {
+  "catalog_id": 1,
+  "catalog_type": 26,
+  "cost": [
+   {
+    "berry_id": 8,
+    "count": 20
+   },
+   {
+    "berry_id": 23,
+    "count": 10
+   }
+  ],
+  "size_w": 4,
+  "size_h": 4,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1151": {
+  "catalog_id": 1,
+  "catalog_type": 10,
+  "cost": [
+   {
+    "berry_id": 5,
+    "count": 40
+   },
+   {
+    "berry_id": 25,
+    "count": 10
+   }
+  ],
+  "size_w": 12,
+  "size_h": 8,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1152": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 9,
+    "count": 20
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1153": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 17,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1154": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 16,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1155": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 18,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1156": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 9,
+    "count": 20
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1157": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 16,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1158": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 16,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1159": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 18,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1160": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 17,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1161": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 18,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1162": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1163": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 8,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1164": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 15,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1165": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 42,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1166": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 14,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1167": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 5,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1168": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 15,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1169": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 5,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1170": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 8,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1171": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 14,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1172": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 8,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1173": {
+  "catalog_id": 2,
+  "catalog_type": 21,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1174": {
+  "catalog_id": 2,
+  "catalog_type": 21,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1175": {
+  "catalog_id": 2,
+  "catalog_type": 21,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1176": {
+  "catalog_id": 1,
+  "catalog_type": 1,
+  "cost": [
+   {
+    "berry_id": 7,
+    "count": 300
+   },
+   {
+    "berry_id": 1,
+    "count": 300
+   },
+   {
+    "berry_id": 3,
+    "count": 300
+   }
+  ],
+  "size_w": 0,
+  "size_h": 0,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1177": {
+  "catalog_id": 1,
+  "catalog_type": 10,
+  "cost": [
+   {
+    "berry_id": 10,
+    "count": 40
+   },
+   {
+    "berry_id": 11,
+    "count": 30
+   }
+  ],
+  "size_w": 8,
+  "size_h": 5,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1178": {
+  "catalog_id": 1,
+  "catalog_type": 10,
+  "cost": [
+   {
+    "berry_id": 3,
+    "count": 40
+   },
+   {
+    "berry_id": 1,
+    "count": 40
+   }
+  ],
+  "size_w": 9,
+  "size_h": 8,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1179": {
+  "catalog_id": 1,
+  "catalog_type": 15,
+  "cost": [
+   {
+    "berry_id": 7,
+    "count": 30
+   }
+  ],
+  "size_w": 4,
+  "size_h": 7,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1180": {
+  "catalog_id": 1,
+  "catalog_type": 4,
+  "cost": [
+   {
+    "berry_id": 10,
+    "count": 70
+   },
+   {
+    "berry_id": 11,
+    "count": 70
+   }
+  ],
+  "size_w": 7,
+  "size_h": 8,
+  "place_type": 1,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1181": {
+  "catalog_id": 1,
+  "catalog_type": 23,
+  "cost": [
+   {
+    "berry_id": 7,
+    "count": 35
+   },
+   {
+    "berry_id": 1,
+    "count": 35
+   },
+   {
+    "berry_id": 10,
+    "count": 35
+   }
+  ],
+  "size_w": 52,
+  "size_h": 8,
+  "place_type": 3,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1182": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 28,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1183": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 20,
+    "count": 200
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1184": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 37,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1185": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 19,
+    "count": 100
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1186": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 27,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1187": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 19,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1188": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 27,
+    "count": 100
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1189": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 20,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1190": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 28,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1191": {
+  "catalog_id": 2,
+  "catalog_type": 21,
+  "cost": [
+   {
+    "berry_id": 48,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1192": {
+  "catalog_id": 2,
+  "catalog_type": 21,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 0
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1193": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 38,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1194": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1195": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 3,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1196": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 11,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1197": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 7,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1198": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 10,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1199": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 36,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1200": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 3,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1201": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 1,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1202": {
+  "catalog_id": 2,
+  "catalog_type": 21,
+  "cost": [
+   {
+    "berry_id": 7,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1203": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1204": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1205": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1206": {
+  "catalog_id": 1,
+  "catalog_type": 1,
+  "cost": [
+   {
+    "berry_id": 31,
+    "count": 350
+   },
+   {
+    "berry_id": 32,
+    "count": 350
+   },
+   {
+    "berry_id": 29,
+    "count": 350
+   }
+  ],
+  "size_w": 0,
+  "size_h": 0,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1207": {
+  "catalog_id": 1,
+  "catalog_type": 10,
+  "cost": [
+   {
+    "berry_id": 29,
+    "count": 40
+   },
+   {
+    "berry_id": 30,
+    "count": 40
+   }
+  ],
+  "size_w": 26,
+  "size_h": 5,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1208": {
+  "catalog_id": 1,
+  "catalog_type": 16,
+  "cost": [
+   {
+    "berry_id": 32,
+    "count": 15
+   },
+   {
+    "berry_id": 30,
+    "count": 20
+   }
+  ],
+  "size_w": 10,
+  "size_h": 5,
+  "place_type": 2,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1209": {
+  "catalog_id": 1,
+  "catalog_type": 24,
+  "cost": [
+   {
+    "berry_id": 31,
+    "count": 10
+   }
+  ],
+  "size_w": 4,
+  "size_h": 9,
+  "place_type": 1,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1210": {
+  "catalog_id": 1,
+  "catalog_type": 22,
+  "cost": [
+   {
+    "berry_id": 31,
+    "count": 80
+   },
+   {
+    "berry_id": 30,
+    "count": 80
+   }
+  ],
+  "size_w": 5,
+  "size_h": 5,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1211": {
+  "catalog_id": 1,
+  "catalog_type": 26,
+  "cost": [
+   {
+    "berry_id": 29,
+    "count": 20
+   }
+  ],
+  "size_w": 4,
+  "size_h": 3,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1212": {
+  "catalog_id": 1,
+  "catalog_type": 26,
+  "cost": [
+   {
+    "berry_id": 30,
+    "count": 20
+   }
+  ],
+  "size_w": 4,
+  "size_h": 3,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1213": {
+  "catalog_id": 1,
+  "catalog_type": 26,
+  "cost": [
+   {
+    "berry_id": 31,
+    "count": 20
+   }
+  ],
+  "size_w": 4,
+  "size_h": 3,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1214": {
+  "catalog_id": 1,
+  "catalog_type": 23,
+  "cost": [
+   {
+    "berry_id": 32,
+    "count": 35
+   },
+   {
+    "berry_id": 29,
+    "count": 40
+   },
+   {
+    "berry_id": 30,
+    "count": 40
+   }
+  ],
+  "size_w": 52,
+  "size_h": 8,
+  "place_type": 3,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1215": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 29,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1216": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 31,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1217": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 32,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1218": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 44,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1219": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 30,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1220": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 29,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1221": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 51,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1222": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 32,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1223": {
+  "catalog_id": 2,
+  "catalog_type": 21,
+  "cost": [
+   {
+    "berry_id": 31,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1224": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1225": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1226": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1227": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1228": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1229": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1230": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1231": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1232": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1233": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1234": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 49,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1235": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 27,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1236": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 47,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1237": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 29,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1238": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 18,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1239": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 34,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1240": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 41,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1241": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 4,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1242": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 5,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1243": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1244": {
+  "catalog_id": 1,
+  "catalog_type": 26,
+  "cost": [
+   {
+    "berry_id": 10,
+    "count": 200
+   }
+  ],
+  "size_w": 10,
+  "size_h": 8,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1245": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 8,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1246": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 33,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1247": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 39,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1248": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 3,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1249": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 16,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1250": {
+  "catalog_id": 2,
+  "catalog_type": 21,
+  "cost": [
+   {
+    "berry_id": 2,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1251": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1252": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1253": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1254": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 35,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1255": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 7,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1256": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 31,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1257": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 46,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1258": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 20,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1259": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 12,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1260": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1261": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1262": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 14,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1263": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [
+   {
+    "berry_id": 50,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1264": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 32,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1265": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 43,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1266": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 28,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1267": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 17,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1268": {
+  "catalog_id": 24,
+  "catalog_type": 1,
+  "cost": [],
+  "size_w": 0,
+  "size_h": 0,
+  "place_type": 0,
+  "arrangement_flag": 0,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1269": {
+  "catalog_id": 24,
+  "catalog_type": 14,
+  "cost": [],
+  "size_w": 5,
+  "size_h": 6,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1270": {
+  "catalog_id": 24,
+  "catalog_type": 26,
+  "cost": [],
+  "size_w": 4,
+  "size_h": 3,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1271": {
+  "catalog_id": 24,
+  "catalog_type": 26,
+  "cost": [],
+  "size_w": 4,
+  "size_h": 3,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1272": {
+  "catalog_id": 24,
+  "catalog_type": 15,
+  "cost": [],
+  "size_w": 4,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1273": {
+  "catalog_id": 24,
+  "catalog_type": 25,
+  "cost": [],
+  "size_w": 6,
+  "size_h": 4,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1274": {
+  "catalog_id": 24,
+  "catalog_type": 23,
+  "cost": [],
+  "size_w": 52,
+  "size_h": 8,
+  "place_type": 3,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1275": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1276": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1277": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [
+   {
+    "berry_id": 11,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1278": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 6,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1279": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 9,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1280": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 40,
+    "count": 15
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1281": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [
+   {
+    "berry_id": 45,
+    "count": 10
+   },
+   {
+    "berry_id": 52,
+    "count": 10
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1282": {
+  "catalog_id": 2,
+  "catalog_type": 20,
+  "cost": [
+   {
+    "berry_id": 13,
+    "count": 50
+   }
+  ],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1283": {
+  "catalog_id": 2,
+  "catalog_type": 17,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1284": {
+  "catalog_id": 2,
+  "catalog_type": 18,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1285": {
+  "catalog_id": 2,
+  "catalog_type": 19,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "1286": {
+  "catalog_id": 2,
+  "catalog_type": 21,
+  "cost": [],
+  "size_w": 2,
+  "size_h": 2,
+  "place_type": 0,
+  "arrangement_flag": 1,
+  "movable_flag": 1,
+  "is_ds": 0
+ },
+ "9990001": {
+  "catalog_id": 1,
+  "catalog_type": 26,
+  "cost": [],
+  "size_w": null,
+  "size_h": null,
+  "place_type": null,
+  "arrangement_flag": null,
+  "movable_flag": null,
+  "is_ds": null
+ },
+ "9990002": {
+  "catalog_id": 1,
+  "catalog_type": 26,
+  "cost": [],
+  "size_w": null,
+  "size_h": null,
+  "place_type": null,
+  "arrangement_flag": null,
+  "movable_flag": null,
+  "is_ds": null
+ },
+ "9990003": {
+  "catalog_id": 1,
+  "catalog_type": 26,
+  "cost": [],
+  "size_w": null,
+  "size_h": null,
+  "place_type": null,
+  "arrangement_flag": null,
+  "movable_flag": null,
+  "is_ds": null
+ }
+}

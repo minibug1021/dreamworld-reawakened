@@ -1,168 +1,134 @@
-import re
-import os
+"""The Flask app.
+
+It serves the ?p=<endpoint> API (api/routes.py), Trainer Club sign-up
+(api/signup.py), and the mirrored site assets with their patches (utils/assets.py).
+"""
 import atexit
+import json
 import logging
-import mimetypes
 from pathlib import Path
 from urllib.parse import parse_qs
-from flask import Flask, request, redirect, Response
 
-from utils import language
-from utils.patch_file import apply_substitutions, get_cached, SWF_PATHS
+from flask import Blueprint, Flask, Response, current_app, redirect, request
+from werkzeug.wrappers import Response as WerkzeugResponse
+
+from api.routes import HANDLERS, Query, load_handlers
+from api.signup import signup
+from config import get_secret_key
 from game_sync_server.entralinked.utility.db_manager import db
-from api.routes import GET_RESPONSES, POST_RESPONSES
+from utils.account_manager import accounts
+from utils.assets import SITE_DIR, not_found, path_inside, resolve_static, serve_file
+from utils.patching import SWF_PATHS, get_patched_swf
 
-# ---------------
-# Config
-# ---------------
-
-atexit.register(db.close)
-
-PATCHED_SWFS = set(SWF_PATHS.keys())
-LANG = language.player_language
-
-ROOT_DIR   = Path(__file__).resolve().parent.parent
-SITE_DIR   = ROOT_DIR / "dreamworld_assets" / f"{LANG}.pokemon-gl.com"
-SHARED_DIR = ROOT_DIR / "dreamworld_assets" / "shared.pokemon-gl.com"
-
-# file extensions that should be patched before serving
-# binary assets (images, fonts, etc.) are served as-is
-PATCHABLE_EXTENSIONS = {".js", ".html", ".css"}
-
+# Copied from a real pdw1.pokemon-gl.com /api/ response
 NO_CACHE_HEADERS = {
-    "Cache-Control": "no-cache, no-store, must-revalidate",
+    "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "Cache-Control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
     "Pragma": "no-cache",
-    "Expires": "0",
 }
 
-# ---------------
-# App
-# ---------------
+site = Blueprint("site", __name__)
 
-app = Flask(__name__)
-app.logger.setLevel(logging.INFO)
 
 # ---------------
-# Helpers
+# Before every request
 # ---------------
 
-def read_and_patch(file_path: Path) -> bytes:
-    data = file_path.read_bytes()
-
-    if file_path.suffix.lower() in PATCHABLE_EXTENSIONS:
-        data = apply_substitutions(data, file_path.name)
-
-    if file_path.suffix.lower() == ".xml":
-        if "Basilisk" not in request.headers.get("User-Agent"):
-            data = data.replace(b"&amp;#xD;", os.linesep.encode())
-
-    return data
-
-def send_file(file_path: Path) -> Response:
-    data = read_and_patch(file_path)
-    content_type, _ = mimetypes.guess_type(file_path)
-    return Response(data, content_type=content_type or "application/octet-stream")
-
-def send_bytes(data: bytes, content_type: str) -> Response:
-    """Serve raw bytes for patched SWF assets."""
-    return Response(data, content_type=content_type)
-
-def resolve_static(path: str) -> Path | None:
-    """Return the filesystem path for a static asset, checking site dir, then shared dir as a fallback."""
-    relative = path.lstrip("/")
-
-    # site-specific first
-    site_path = SITE_DIR / relative
-    if site_path.is_file():
-        return site_path
-
-    # shared fallback, strip language prefix (e.g. /en/ → /)
-    shared_relative = re.sub(r"/(ja|en|fr|it|de|es|ko)/", "/", relative)
-    shared_path = SHARED_DIR / shared_relative
-    if shared_path.is_file():
-        return shared_path
-
+@site.before_app_request
+def rewrite_incoming_path() -> WerkzeugResponse | None:
+    """Enforce a trailing slash on paths that map to a site directory."""
+    path = request.path
+    site_path = path_inside(SITE_DIR, path.lstrip("/"))
+    if not path.endswith("/") and site_path and site_path.is_dir():
+        return redirect(f"{path}/", 301)
     return None
 
 
-def not_found(path: str) -> Response:
-    app.logger.info("404 %s", path)
-    return Response("Error: Not found", status=404, content_type="text/html")
-
 # ---------------
-# Routes
+# The ?p=<endpoint> API
 # ---------------
 
-@app.before_request
-def rewrite_incoming_path():
-    """Apply path rewrites and enforce trailing slash on directory paths."""
-    path = request.path
-
-    # enforce trailing slash for paths that map to a site directory
-    if not path.endswith("/") and (SITE_DIR / path.lstrip("/")).is_dir():
-        return redirect(f"{path}/", 301)
+def _params(data: str) -> Query:
+    return {name: values[0] for name, values in parse_qs(data, strict_parsing=True).items()}
 
 
-@app.route("/api/", methods=["GET"])
-def api_get():
-    query    = {k: v[0] for k, v in parse_qs(request.query_string.decode(), strict_parsing=True).items()}
+def _call_api(method: str, query: Query) -> Response:
     api_name = query.get("p")
-    app.logger.info("API GET: %s %s", api_name, query)
+    logged_query = {name: "***" if "password" in name else value for name, value in query.items()}
+    current_app.logger.info("API %s: %s %s", method, api_name, logged_query)
 
-    if api_name not in GET_RESPONSES:
-        app.logger.warning("Unknown API: %s", api_name)
-        return Response("{}", status=501, content_type="application/json")
+    handler = HANDLERS[method].get(api_name or "")
+    if handler is None:
+        current_app.logger.warning("Unknown API: %s %s", method, api_name)
+        return Response("{}", status=501, content_type="application/json; charset=utf-8")
 
-    return Response(GET_RESPONSES[api_name](query), content_type="application/json", headers=NO_CACHE_HEADERS)
-
-
-@app.route("/api/", methods=["POST"])
-def api_post():
-    qs_params   = {k: v[0] for k, v in parse_qs(request.query_string.decode(), strict_parsing=True).items()}
-    body_params = {k: v[0] for k, v in parse_qs(request.get_data(as_text=True), strict_parsing=True).items()}
-    query       = {**qs_params, **body_params}
-    api_name    = query.get("p")
-    app.logger.info("API POST: %s %s", api_name, query)
-
-    if api_name not in POST_RESPONSES:
-        app.logger.warning("Unknown API: %s", api_name)
-        return Response("{}", status=501, content_type="application/json")
-
-    return Response(POST_RESPONSES[api_name](query), content_type="application/json", headers=NO_CACHE_HEADERS)
+    return Response(json.dumps(handler(query)), content_type="application/json; charset=utf-8", headers=NO_CACHE_HEADERS)
 
 
-@app.route("/", defaults={"path": ""})
-@app.route("/<path:path>")
-def catch_all(path: str):
-    if "&" in path:
-        path = path.split("&")[0]
+@site.get("/api/")
+def api_get() -> Response:
+    """Handle an API call with its parameters in the query string."""
+    return _call_api("GET", _params(request.query_string.decode()))
 
+
+@site.post("/api/")
+def api_post() -> Response:
+    """Handle an API call with parameters in the query string and the form body."""
+    return _call_api("POST", {**_params(request.query_string.decode()), **_params(request.get_data(as_text=True))})
+
+
+# ---------------
+# Site files
+# ---------------
+
+@site.route("/", defaults={"path": ""})
+@site.route("/<path:path>")
+def catch_all(path: str) -> Response:
+    """Serve a patched SWF, a site directory's page, or a static asset for any other path."""
+    path = path.split("&")[0]
     full_path = f"/{path}"
-    filename  = Path(path).name
 
     # return patched SWFs from our cache
-    if filename in PATCHED_SWFS:
-        return send_bytes(get_cached(filename), "application/x-shockwave-flash")
+    filename = Path(path).name
+    if filename in SWF_PATHS:
+        return Response(get_patched_swf(filename), content_type="application/x-shockwave-flash")
 
     # find first HTML file inside given directory
-    dir_path = SITE_DIR / path
-    if dir_path.is_dir():
-        index = next(iter(sorted(dir_path.glob("*.html"))), None)
+    dir_path = path_inside(SITE_DIR, path)
+    if dir_path and dir_path.is_dir():
+        index = min(dir_path.glob("*.html"), default=None)
         if index is None:
             return not_found(full_path)
-        return send_file(index)
+        return serve_file(index)
 
     # static asset
     file_path = resolve_static(full_path)
     if file_path is None:
         return not_found(full_path)
 
-    return send_file(file_path)
+    return serve_file(file_path)
+
 
 # ---------------
-# Entry point
+# App
 # ---------------
 
-def run(port: int = 8080, debug: bool = False):
-    app.logger.info("Server started!%s\n", " (debug mode)" if debug else "")
-    app.run(host="0.0.0.0", port=port, debug=debug, use_reloader=False)
+def create_app() -> Flask:
+    """Create the Flask app."""
+    load_handlers()
+
+    app = Flask(__name__)
+    app.logger.setLevel(logging.DEBUG if logging.getLogger().isEnabledFor(logging.DEBUG) else logging.INFO)
+    app.secret_key = get_secret_key()
+    app.register_blueprint(signup)
+    app.register_blueprint(site)
+
+    @app.teardown_appcontext
+    def close_connections(_exc: BaseException | None) -> None:
+        # each request runs on its own thread, so its connections can't be reused
+        db.close()
+        accounts.close()
+
+    atexit.register(db.close)
+    atexit.register(accounts.close)
+    return app
