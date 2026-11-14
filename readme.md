@@ -65,8 +65,6 @@ Be mindful that Ruffle is not perfect and will still have issues. Please report 
 
 # Things that are not working
 
-- The minigames Pokémon Bistro and Blow Out Candles
 - Making a wish at the Tree of Dreams
 - Sending back Pokémon through the Entralink
-- Dream Catalogue
 - Share Shelf
