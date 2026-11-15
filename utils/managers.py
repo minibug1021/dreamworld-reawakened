@@ -186,7 +186,7 @@ class CropManager(_ColumnManager):
     FULL_BERRY_HP = 5
     HOURS_PER_DRAIN = 3  # the soil loses the Berry's whole drain_rate every 3rd hour
     MIN_YIELD = 2
-    # rows of plots -> Dream Points needed for Diglett to add the next row
+    # row number -> Dream Points needed for Diglett to add that row (a garden starts with 2)
     EXPANSION_THRESHOLDS: ClassVar[dict[int, int]] = {
         3: 900,
         4: 2_100,
@@ -199,6 +199,7 @@ class CropManager(_ColumnManager):
     }
 
     def _with_display_fields(self, stored: CropData) -> CropData:
+        stored["diglett_flag"] = 0  # check_garden_expansion sets it to 1 on the load that adds a row
         for plot in stored["croft_list"]:
             if "pokeitem_id" in plot:
                 item_id = plot["pokeitem_id"]
@@ -266,14 +267,32 @@ class CropManager(_ColumnManager):
 
         return self.change(pick)
 
-    def check_garden_expansion(self) -> None:
-        """Set diglett_flag in the response data if Diglett can add a row of plots.
+    @staticmethod
+    def _row_count(garden: CropData) -> int:
+        """Count the rows as the largest y of any plot."""
+        return max((plot["y"] for plot in garden["croft_list"]), default=0)
 
-        That is when the player has enough Dream Points for the next row.
-        """
+    def check_garden_expansion(self) -> None:
+        """Add a row of empty plots if the player has enough Dream Points for the next one.       """
+        new_row = self._row_count(self.data) + 1
+        threshold = self.EXPANSION_THRESHOLDS.get(new_row)
         dream_points = save_data.read_member(self._gscd).get("experiment_point") or 0
-        threshold = self.EXPANSION_THRESHOLDS.get(len(self.data["croft_list"]) // self.PLOTS_PER_ROW)
-        if threshold is not None and dream_points >= threshold:
+        if threshold is None or dream_points < threshold:
+            return
+
+        croft_ids = db.next_id("my_croft_id", self.PLOTS_PER_ROW)
+
+        def add_row(garden: CropData) -> bool:
+            if self._row_count(garden) + 1 != new_row:
+                return False  # another request already added this row
+
+            garden["croft_list"] += [
+                {"my_croft_id": croft_id, "x": x, "y": new_row}
+                for x, croft_id in enumerate(croft_ids, start=1)
+            ]
+            return True
+
+        if self.change(add_row):
             self.data["diglett_flag"] = 1
 
     @classmethod

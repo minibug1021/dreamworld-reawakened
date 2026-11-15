@@ -203,7 +203,8 @@ class CropData(TypedDict, total=False):
     """The crop_data column."""
 
     croft_list: list[Plot]
-    diglett_flag: int
+    # added on load by CropManager
+    diglett_flag: int  # 1 only in the response that added a row
 
 
 # who can see a Trainer Club account's PGL or Dream World profile
