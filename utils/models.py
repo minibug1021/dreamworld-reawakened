@@ -130,6 +130,8 @@ class GameSync(TypedDict, total=False):
     """What the DS gets at the next Game Sync (written by both servers)."""
 
     levels_gained: int
+    country: int | None  # country and region IDs
+    region: int | None
     hours_played: int
     minutes_played: int
     cgear_skin: str | None
