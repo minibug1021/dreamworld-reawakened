@@ -1,10 +1,10 @@
 
 Annaffiatoio
 
+Squirtbottle
 
 
-
-
+Sprayduck
 
 
 
@@ -1053,7 +1053,7 @@ Finestrone
 
 
 
-Plain Shelf
+Scaffale
 Tavolinetto
 Piantapunte
 Piantabella
@@ -1174,8 +1174,8 @@ Bambola Minccino
 Bambola Kyurem Nero
 Bambola Kyurem Bianco
 Bambola Keldeo
-Casa di Marzapagne
-Tavolino Gotico
+Casa di marzapagne
+Tavolino gotico
 Pettiniera Gotica
 Lampada Gotica
 Finestra Gotica

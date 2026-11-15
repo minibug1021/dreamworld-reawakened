@@ -2,7 +2,7 @@
 Case e isole
 Annaffiatoi
 Dispense
-Windows
+Finestre
 
 
 
@@ -12,8 +12,8 @@ Tavoli
 Sedie
 Divani
 Letti
-Appliances
-Everyday Stuff
+Elettrodomestici
+Oggetti d'uso quotidiano
 Scaffali
 Pokédex No. 001–150
 Pokédex No. 151–300

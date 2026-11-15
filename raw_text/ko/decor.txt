@@ -1,10 +1,10 @@
 
-보증을뿌리개
+보통물뿌리개
+
+Squirtbottle
 
 
-
-
-
+Sprayduck
 
 
 
@@ -1036,17 +1036,17 @@
 
 보통책상
 특대책상
-Design Table
-Plain Chair
-Huge Chair
-Design Stool
+포켓몬책상
+보통의자
+특대의자
+포켓몬의자
 Bolt Rug
 Cuddle Rug
 Soft Pillow
-Flower Vase
-Plain Bed
-Wall Poster
-버치열매
+컬러풀 화초
+보통침대
+볼포스터
+보통소파
 보통창문
 나무창문
 현대식창문
@@ -1055,8 +1055,8 @@ Wall Poster
 
 Plain Shelf
 어린이책상
-Spiky Plant
-Leafy Plant
+뾰족잎사귀
+무성잎사귀
 
 
 
@@ -1101,7 +1101,7 @@ Party Painting
 서양식소파
 서양식침대
 서양식선반
-길쭉한쿠션
+서양식 쿠션
 길쭉한쿠션
 셰이드
 로켓형집
@@ -1113,15 +1113,15 @@ Party Painting
 스노우피카츄
 나무위 오두막
 리조트하우스
-Basket
-House Plant
-Rocking Chair
-Phonograph
-Poké Ball Rug
-Bathtub
-Shower Stand
-Soap and Shampoo
-Flower Bath Mat
+바구니
+관상용식물
+안락의자
+축음기
+몬스터볼매트
+욕조
+샤워기
+샴프&린스
+플라워매트
 포켓몬인형 이상해씨
 포켓몬인형 고라파덕
 포켓몬인형 슈륙챙이
@@ -1270,7 +1270,7 @@ Juice Bar
 Flat-screen TV
 달막화 인형
 관람차 모형
-레기통
+쓰레기통
 연한 파란색 쿠션
 마스터볼 매트
 포켓몬인형 루기아

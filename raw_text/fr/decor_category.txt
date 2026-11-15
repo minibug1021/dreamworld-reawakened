@@ -2,7 +2,7 @@
 Maisons et îles
 Systèmes d’arrosage
 Étagères de partage
-Windows
+Fenêtres
 
 
 
@@ -12,8 +12,8 @@ Tables
 Chaises
 Canapés
 Lits
-Appliances
-Everyday Stuff
+Appareils électriques
+Articles du quotidien
 Étagères
 Pokédex No. 001–150
 Pokédex No. 151–300

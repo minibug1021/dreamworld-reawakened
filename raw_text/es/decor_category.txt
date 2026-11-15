@@ -2,7 +2,7 @@
 Casas e islas
 Sistemas de riego
 Estanterías compartidas
-Windows
+Ventanas
 
 
 
@@ -12,8 +12,8 @@ Mesas
 Sillas
 Sofás
 Camas
-Appliances
-Everyday Stuff
+Electrodomésticos
+Menaje y hogar
 Estanterías
 Pokédex No. 001–150
 Pokédex No. 151–300
@@ -22,6 +22,6 @@ Pokédex No. 451–600
 Pokédex No. 601–
 Plantas
 Alfombras
-Posters
+Pósteres
 Cojines
 Varios

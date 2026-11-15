@@ -1,10 +1,10 @@
 
 Arrosoir
 
+Squirtbottle
 
 
-
-
+Sprayduck
 
 
 
@@ -1071,14 +1071,14 @@ Tapis
 Poupée Vipélierre
 Poupée Gruikui
 Poupée Moustillon
-Pink Polo Shirt
-Small Shop Shelf
-Large Shop Shelf
+Polo rose
+Petite étagère de magasin
+Grande étagère de magasin
 Chaise Ailée
 Canapé de Rêve
 Lit de Rêve
 Fenêtre de Château
-Stardust Decoration
+Décoration Poussière d'Étoile
 Coussin Ruban
 Château de Rêve
 Bureau Duveteux
@@ -1242,7 +1242,7 @@ Poupée Laporeille
 Poupée Flotajou
 Poupée Zébibron
 Poupée Arceus
-Poupée De Remplacement
+Poupée Clonage
 Poupée Élekid
 Poupée Magby
 Poupée Gobou

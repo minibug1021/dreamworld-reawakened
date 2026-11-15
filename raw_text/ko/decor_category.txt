@@ -1,7 +1,7 @@
 
 집과 섬
 물뿌리개
-Share Shelves
+나눠주기선반
 Windows
 
 
@@ -12,8 +12,8 @@ Windows
 의자
 소파
 침대
-Appliances
-Everyday Stuff
+전자제품
+생활용품
 장
 포켓컴 No. 001–150
 포켓컴 No. 151–300
@@ -22,6 +22,6 @@ Everyday Stuff
 포켓컴 No. 601–
 화분
 매트
-Posters
+포스터
 쿠션
 기타

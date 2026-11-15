@@ -1,10 +1,10 @@
 
 Regadera
 
+Squirtbottle
 
 
-
-
+Sprayduck
 
 
 
@@ -1205,14 +1205,14 @@ Muñeco Kyogre
 Muñeco Groudon
 Muñeco Rayquaza
 Fortaleza
-Heated Table
-Stepped Bookcase
-Wall Scroll
-Bonsai Plant
-Grass Fan
-Fire Fan
-Water Fan
-Alf. Ultraball*
+Mesa camilla
+Mueble escalonado
+Rollo vertical
+Bonsái
+Abanico Planta
+Abanico Fuego
+Abanico Agua
+Alfombra Ultraball
 Muñeco Seel
 Muñeco Delibird
 Muñeco Smoochum
