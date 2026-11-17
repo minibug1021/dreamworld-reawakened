@@ -150,8 +150,10 @@ def pdw_end_by_pgl(_query: Query) -> dict:
 
 @endpoint("pgl.member.profile.rom_check")
 def rom_check(query: Query) -> dict:
-    """Which game a Game Sync ID belongs to (rom_id is null if it's unknown)."""
+    """Which game a Game Sync ID belongs to."""
     gscd = query.get("gscd", "").strip()
+    if gscd and not db.gscd_exists(gscd):
+        return _field_error("gscd", "gscd_not_found")
     return {"rom_id": save_data.read_member(gscd).get("rom_id") if gscd else None}
 
 
