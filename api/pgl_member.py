@@ -7,12 +7,12 @@ from api.routes import Query, endpoint, query_int
 from game_sync_server.entralinked.utility.db_manager import db
 from utils import pokemon, save_data, text
 from utils.account_manager import accounts
-from utils.badwords import contains_bad_word
 from utils.constants import PlayerStatus
 from utils.messages import message
 from utils.models import Member
 
 GSCD_LENGTH = 10
+DEMO_AVATAR_ID = 4
 
 # The avatar picker offers these avator_id values. New accounts could pick ids up to 200.
 AVATAR_IDS = tuple(chain(
@@ -49,9 +49,6 @@ def init_create_confirm(query: Query) -> dict:
     """Validate the sign-up form before init_create."""
     gscd = query.get("gscd", "").strip()
 
-    if contains_bad_word(query.get("pgl_name", "")):
-        return _field_error("pgl_name", "bad_nickname")
-
     if gscd and len(gscd) != GSCD_LENGTH:
         return _field_error("gscd", "bad_gscd_length", length=GSCD_LENGTH)
 
@@ -60,7 +57,12 @@ def init_create_confirm(query: Query) -> dict:
 
 @endpoint("pgl.member.profile.my_pdw_profile_by_pgl")
 def my_pdw_profile(_query: Query) -> dict:
-    """Return the player's Dream World profile with their island and tucked-in Pokémon."""
+    """Return the player's Dream World profile with their island and tucked-in Pokémon.
+
+    A demo player uses Fennel's Munna.
+    """
+    if not session.get("gscd"):
+        return {}
     member = save_data.read_member()
     sleeper = pokemon.get_sleeper()
     return {
@@ -81,9 +83,33 @@ def my_pdw_profile(_query: Query) -> dict:
     }
 
 
+def _demo_profile() -> dict:
+    """The profile of a demo player, who has an account but no Game Sync ID."""
+    account = accounts.get_account_by_username(session.get("username"))
+    return {
+        "avator_id":            DEMO_AVATAR_ID,
+        "pgl_name":             account["username"] if account else "",
+        "country_name":         text.lookup_str("country", account["country"] if account else None),
+        "rom_name":             "",
+        "rom_id":               "",
+        "trial_flag":           "1",
+        "player_badge_num":     0,
+        "langcode":             None,
+        "trainer_name":         "",
+        "playtime":             "",
+        "disclosure_flag":      0,
+        "list_disclosure_flag": 0,
+        "friends":              [],
+        "friends_count":        0,
+        "medals":               [],
+    }
+
+
 @endpoint("pgl.member.profile.my_profile")
 def my_profile(_query: Query) -> dict:
     """Return the player's PGL profile page."""
+    if not session.get("gscd"):
+        return _demo_profile()
     player_data = save_data.read_player_data()
     member = player_data["member"]
     game_sync = save_data.read_game_sync()
@@ -186,17 +212,20 @@ def init_create(query: Query) -> dict:
     """Finish sign-up by linking a Game Sync ID (if given) and setting the PGL nickname."""
     gscd = query.get("gscd", "").strip()
     username = session.get("username")
+    if not username:
+        return {"flg": 0}
 
-    if gscd and username:
+    if gscd:
         error = _link_gscd(username, gscd)
         if error:
             return error
 
     if session.get("gscd"):
-        changes: Member = {"pgl_name": query.get("pgl_name", ""), "trial_flag": 0}
+        changes: Member = {"pgl_name": username, "trial_flag": 0}
         country_id = accounts.get_country_id(username)
         if country_id is not None:
             changes["country_id"] = country_id
         save_data.update_member(changes)
+    accounts.mark_registered(username)
 
     return {"flg": 2 if session.get("gscd") else 0}

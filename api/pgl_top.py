@@ -10,7 +10,7 @@ from utils.account_manager import accounts
 from utils.auth import log_in
 from utils.constants import SECONDS_PER_DAY, SECONDS_PER_HOUR
 from utils.messages import message
-from utils.models import Member
+from utils.models import Account, Member
 
 DAYS_UNTIL_ITEM_DELETION = 100
 BERRY_DREAM_POINTS       = 20
@@ -59,12 +59,24 @@ def init(_query: Query) -> dict:
     - no "member" key: not logged in (PGL.NOT_LOGGED_IN).
     - "member" without a pgl_name: logged in, but the player hasn't submitted the register
       page yet, which links a Game Sync ID and sets the PGL nickname (PGL.NOT_SIGNED_UP).
-    """
+    - "member" with trial_flag 1: registered without a Game Sync ID and uses demo (PGL.TRIAL)."""
     if "username" not in session:
         return {}
 
+    account = accounts.get_account_by_username(session["username"])
+    if account is None:
+        session.clear()  # the account is gone, so the session is logged out
+        return {}
+
+    return {**_member_data(account), "username": account["username"]}
+
+
+def _member_data(account: Account) -> dict:
+    """The "member" part of pgl.top.init for a logged-in account."""
     if "gscd" not in session:
-        return {"member": {}}
+        if not account["registered"]:
+            return {"member": {}}
+        return {"member": {"pgl_name": account["username"], "trial_flag": 1, "gsid_count": 0}}
 
     response = save_data.read_player_data()
     member = response.get("member")

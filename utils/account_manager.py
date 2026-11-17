@@ -24,7 +24,8 @@ class AccountManager(SQLiteStore):
             activation_token TEXT,
             active_gscd TEXT,
             last_daily_bonus_date TEXT,
-            shows_shiny INTEGER NOT NULL DEFAULT 1
+            shows_shiny INTEGER NOT NULL DEFAULT 1,
+            registered INTEGER NOT NULL DEFAULT 0
         )""",
         """
         CREATE TABLE IF NOT EXISTS account_gscds (
@@ -100,6 +101,10 @@ class AccountManager(SQLiteStore):
         """
         account = self.get_account_by_username(username)
         return bool(account["shows_shiny"]) if account else True
+
+    def mark_registered(self, username: str) -> None:
+        """Record that the account has registered their username."""
+        self._execute("UPDATE accounts SET registered = 1 WHERE username = ?", username)
 
     def get_gscds_for_account(self, username: str) -> list[str]:
         """Return the account's linked Game Sync IDs, oldest link first."""

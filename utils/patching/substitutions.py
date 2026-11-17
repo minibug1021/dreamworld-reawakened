@@ -35,6 +35,14 @@ JS_PATCHES: dict[str, tuple[Substitution, ...]] = {
             b"return { check: '/pglcheck', form: '/login/pgl.html' };"
         )
     ),
+    "register.js": (
+        # Enforce that the PGL nickname is the same as the Trainer Club name.
+        Substitution(
+            b"  $('#header-back-to-top').hide();\n",
+            b"  $('#header-back-to-top').hide();\n"
+            b"  $('input[name=pgl_name]').val(this.data.username).prop('readonly', true);\n",
+        ),
+    ),
     "swfembed2.js": _SWF_EMBED_PATCHES,
     "swfembed3.js": _SWF_EMBED_PATCHES,
     "top.js": (

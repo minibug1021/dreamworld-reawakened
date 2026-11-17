@@ -12,6 +12,7 @@ from config import LANG, EmailNotConfiguredError
 from utils import text
 from utils.account_manager import accounts
 from utils.assets import ASSETS_DIR, not_found, serve_file
+from utils.badwords import contains_bad_word
 from utils.email_sender import send_activation_email
 from utils.models import Privacy
 
@@ -23,8 +24,8 @@ SIGNUP_FORM_FIELDS = (
     "country", "birth_month", "username", "password",
     "password_confirm", "email", "pgl_privacy", "dw_privacy",
 )
-PASSWORD_LENGTH = range(6, 16)
-USERNAME_PATTERN = re.compile(r"[A-Za-z0-9_]{3,15}")
+PASSWORD_MIN_LENGTH = 6
+USERNAME_PATTERN = re.compile(r"[A-Za-z0-9]{4,15}")
 EMAIL_PATTERN = re.compile(r"[^@\s]{1,64}@[^@\s]+\.[^@\s]+")
 EMAIL_MAX_LENGTH = 254
 BIRTH_MONTHS = {str(month) for month in range(1, 13)}
@@ -42,8 +43,9 @@ def _form_is_valid(form: dict[str, str]) -> bool:
     """Whether a sign-up form submission can become an account, apart from the username being free."""
     return (all(form.values())
             and USERNAME_PATTERN.fullmatch(form["username"]) is not None
+            and not contains_bad_word(form["username"])
             and form["password"] == form["password_confirm"]
-            and len(form["password"]) in PASSWORD_LENGTH
+            and len(form["password"]) >= PASSWORD_MIN_LENGTH
             and len(form["email"]) <= EMAIL_MAX_LENGTH
             and EMAIL_PATTERN.fullmatch(form["email"]) is not None
             and _is_country_id(form["country"])
