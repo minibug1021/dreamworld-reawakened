@@ -1,12 +1,13 @@
-"""The player's Treasure Chest and Berry garden.
+"""The player's Treasure Chest, Berry garden, and Share Shelf.
 
-Managers are loaded fresh from the database by get_chest()/get_crops() on every call.
+Managers are loaded fresh from the database by get_chest()/get_crops()/get_shelf() on every call.
 Every change goes through change(), which re-reads the column, edits it, and writes it
 back. `data` is then reloaded, with the display fields the client wants (names,
 descriptions, sort keys) added. Those are never stored.
 """
 import time
 from collections.abc import Callable
+from datetime import datetime
 from typing import Any, ClassVar
 
 from game_sync_server.entralinked.utility.db_manager import db
@@ -14,7 +15,7 @@ from utils import save_data, text
 from utils.berries import is_berry, to_berry_id
 from utils.constants import SECONDS_PER_HOUR
 from utils.data import load_json_data
-from utils.models import ChestData, ChestItem, CropData, Plot
+from utils.models import ChestData, ChestItem, CropData, Plot, ShareData, ShareSlot
 
 ITEM_INFO: dict[str, dict] = load_json_data("items")
 BERRY_INFO: dict[str, dict] = load_json_data("berries")  # its keys are kinomi_id values written as strings
@@ -365,6 +366,102 @@ class CropManager(_ColumnManager):
         growth["updated_at"] = processed_until
 
 
+def _slot_of(shelf: ShareData, material_id: int) -> ShareSlot:
+    slot = next((s for s in shelf["share_list"] if s["material_id"] == material_id), None)
+    if slot is None:
+        raise ValueError(f"No Share Shelf item {material_id}")
+    return slot
+
+
+class ShareManager(_ColumnManager):
+    """A player's Share Shelf (the share_data column).
+
+    Its owner places items from their Treasure Chest on it, and any visitor can swap one of
+    their own items for one of them.
+    """
+
+    COLUMN = "share_data"
+    data: ShareData
+
+    def _update_counters(self, stored: ShareData) -> None:
+        stored["cnt"] = len(stored["share_list"])
+
+    def _with_display_fields(self, stored: ShareData) -> ShareData:
+        for slot in stored["share_list"]:
+            line1, line2, line3, *_ = text.lookup_description("item_descriptions", slot["item_id"])
+            slot.update({
+                "pokeitem":      text.lookup_str("item", slot["item_id"]),
+                "pokename":      text.lookup_str("pokemon", slot["pokemon_no"]) if slot.get("pokemon_no") else None,
+                "old_item_name": text.lookup_str("item", slot["old_item_id"]),
+                "field_line1":   line1,
+                "field_line2":   line2,
+                "field_line3":   line3,
+            })
+        return stored
+
+    def place(self, x: int, y: int, item_id: int, placed_by: str) -> int:
+        """Put an item in the empty slot at (x, y) and return its new material_id.
+
+        `placed_by` is the Game Sync ID of the shelf's owner. Raise ValueError if the slot
+        already holds an item.
+        """
+        trader = _trader_fields(placed_by)
+        material_id = db.next_id("material_id")[0]
+
+        def put(shelf: ShareData) -> None:
+            if any(slot["x"] == x and slot["y"] == y for slot in shelf["share_list"]):
+                raise ValueError(f"Share Shelf slot ({x}, {y}) is taken")
+            shelf["share_list"].append({
+                "material_id": material_id, "item_id": item_id, "x": x, "y": y, "history_id": None,
+                **trader, "old_item_id": item_id, "new_item_id": "",
+            })
+
+        self.change(put)
+        return material_id
+
+    def take_back(self, material_id: int) -> int:
+        """Empty a slot and return the id of the item that was in it."""
+        def take(shelf: ShareData) -> int:
+            slot = _slot_of(shelf, material_id)
+            shelf["share_list"].remove(slot)
+            return slot["item_id"]
+
+        return self.change(take)
+
+    def swap(self, material_id: int, item_id: int, swapped_by: str) -> int:
+        """Put an item in place of a shelf item and return the id of the item it replaced.
+
+        `swapped_by` is the Game Sync ID of whoever made the swap. The new item gets a new
+        material_id.
+        """
+        trader = _trader_fields(swapped_by)
+        new_material_id = db.next_id("material_id")[0]
+
+        def trade(shelf: ShareData) -> int:
+            slot = _slot_of(shelf, material_id)
+            old_item_id = slot["item_id"]
+            slot.update({**trader, "material_id": new_material_id, "item_id": item_id,
+                         "old_item_id": old_item_id, "new_item_id": item_id})
+            return old_item_id
+
+        return self.change(trade)
+
+
+def _trader_fields(gscd: str) -> ShareSlot:
+    """The fields of a shelf slot that describe the player who put an item there."""
+    member = save_data.read_member(gscd)
+    pkmn = db.read(gscd, "sleeping_pokemon") or {}
+    return {
+        "old_member_savedata_id": member.get("member_savedata_id"),
+        "pokemon_no":             pkmn.get("pokemon_no"),
+        "form_no":                pkmn.get("form_no"),
+        "pgl_name":               member.get("pgl_name"),
+        "nickname":               member.get("player_name"),
+        "poke_nickname":          pkmn.get("pokemon_nickname"),
+        "created_at":             datetime.now(save_data.JST).strftime("%Y-%m-%d %H:%M"),
+    }
+
+
 def get_chest(gscd: str | None = None) -> ChestManager:
     """Return the Treasure Chest of `gscd`, or of the logged-in player."""
     return ChestManager(save_data.require_gscd(gscd))
@@ -373,3 +470,8 @@ def get_chest(gscd: str | None = None) -> ChestManager:
 def get_crops(gscd: str | None = None) -> CropManager:
     """Return the Berry garden of `gscd`, or of the logged-in player."""
     return CropManager(save_data.require_gscd(gscd))
+
+
+def get_shelf(gscd: str | None = None) -> ShareManager:
+    """Return the Share Shelf of `gscd`, or of the logged-in player."""
+    return ShareManager(save_data.require_gscd(gscd))

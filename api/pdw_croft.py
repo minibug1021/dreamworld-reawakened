@@ -1,6 +1,6 @@
 """pdw.croft.*: the Berry garden (pdw_farm.swf)."""
 from api.routes import GET_AND_POST, Query, endpoint
-from utils import managers, save_data
+from utils import managers, save_data, visits
 from utils.decor import WATERINGCAN_ID, get_decor, owned_wateringcans
 from utils.models import CropData
 
@@ -60,3 +60,21 @@ def water(query: Query) -> CropData:
     crops = managers.get_crops()
     crops.water_plot(int(query["my_croft_id"]))
     return crops.data
+
+
+@endpoint("pdw.croft.friend_croft_list")
+def friend_croft_list(query: Query) -> dict:
+    """Return another player's Berry garden, and how many times the player can still water it today."""
+    crops = managers.get_crops(visits.find_player(int(query["member_savedata_id"])))
+    crops.process_berry_growth()
+    return {**crops.data, "remains_watering": visits.friend_waterings_left()}
+
+
+@endpoint("pdw.croft.friend_kinomi_watering", methods=("POST",))
+def friend_water(query: Query) -> dict:
+    """Waters a plot in another player's garden, using up one of today's waterings."""
+    if visits.friend_waterings_left() <= 0:
+        raise ValueError("No waterings left today")
+    crops = managers.get_crops(visits.find_player(int(query["member_savedata_id"])))
+    crops.water_plot(int(query["my_croft_id"]))
+    return {**crops.data, "remains_watering": visits.use_friend_watering()}

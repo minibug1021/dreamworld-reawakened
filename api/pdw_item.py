@@ -1,4 +1,4 @@
-"""pdw.item.*: the Treasure Chest (pdw_item_list.swf) and the items queued for the Entralink."""
+"""pdw.item.*: the Treasure Chest (pdw_item_list.swf), the items queued for the Entralink, and the Share Shelf."""
 import logging
 from collections.abc import Callable
 from enum import IntEnum
@@ -6,9 +6,9 @@ from operator import itemgetter
 from typing import Any
 
 from api.routes import Query, endpoint, query_int
-from utils import managers, save_data, text
+from utils import managers, save_data, text, visits
 from utils.berries import is_berry
-from utils.models import ChestItem, EntralinkItem
+from utils.models import ChestItem, EntralinkItem, ShareSlot
 
 logger = logging.getLogger(__name__)
 
@@ -103,29 +103,53 @@ def item_delivery_update(query: Query) -> dict:
 
 
 @endpoint("pdw.item.item_trade_list", methods=("POST",))
-def item_trade_list(_query: Query) -> list:
-    """Return one placeholder made-up trade."""
-    return [
-        {
-            "material_id":            "None",
-            "item_id":                "None",
-            "pokeitem":               "None",
-            "x":                      1,
-            "y":                      1,
-            "history_id":             "None",
-            "old_member_savedata_id": "None",
-            "pokemon_no":             "None",
-            "form_no":                "None",
-            "pokename":               "None",
-            "pgl_name":               "None",
-            "nickname":               "None",
-            "poke_nickname":          "None",
-            "field_line1":            "None",
-            "field_line2":            "None",
-            "field_line3":            "None",
-            "created_at":             "",
-            "old_item_id":            "None",
-            "new_item_id":            "None",
-            "old_item_name":          "None",
-        }
-    ]
+def item_trade_list(_query: Query) -> list[ShareSlot]:
+    """Return the player's Share Shelf."""
+    return managers.get_shelf().data["share_list"]
+
+
+@endpoint("pdw.item.friend_trade_list")
+def friend_trade_list(query: Query) -> list[ShareSlot]:
+    """Return another player's Share Shelf."""
+    return managers.get_shelf(visits.find_player(int(query["other_member_savedata_id"]))).data["share_list"]
+
+
+@endpoint("pdw.item.item_exhibit_update")
+def item_exhibit_update(query: Query) -> list[ShareSlot]:
+    """Move one of an item from the Treasure Chest to an empty slot of the Share Shelf."""
+    item_id = int(query["item_id"])
+    shelf = managers.get_shelf()
+    material_id = shelf.place(int(query["x"]), int(query["y"]), item_id, save_data.require_gscd())
+    try:
+        managers.get_chest().remove_item(item_id, 1)
+    except ValueError:
+        shelf.take_back(material_id)
+        raise
+    return shelf.data["share_list"]
+
+
+@endpoint("pdw.item.item_return_update")
+def item_return_update(query: Query) -> list[ShareSlot]:
+    """Move an item from the Share Shelf back to the Treasure Chest."""
+    shelf = managers.get_shelf()
+    managers.get_chest().add_item(shelf.take_back(int(query["material_id"])), 1)
+    return shelf.data["share_list"]
+
+
+@endpoint("pdw.item.item_trade_update")
+def item_trade_update(query: Query) -> list[ShareSlot]:
+    """Swap one of an item from the Treasure Chest for an item on a Share Shelf.
+
+    The shelf can be the player's own or another player's.
+    """
+    item_id = int(query["item_id"])
+    shelf = managers.get_shelf(visits.find_player(int(query["other_member_id"])))
+    chest = managers.get_chest()
+    chest.remove_item(item_id, 1)
+    try:
+        old_item_id = shelf.swap(int(query["other_material_id"]), item_id, save_data.require_gscd())
+    except ValueError:
+        chest.add_item(item_id, 1)
+        raise
+    chest.add_item(old_item_id, 1)
+    return shelf.data["share_list"]

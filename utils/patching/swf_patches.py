@@ -30,11 +30,9 @@ class Insertion:
 # ---------------
 
 
-# This address has to match the port main.py listens on (main.PORT). After changing it,
-# delete patches/main.patched.swf so prewarm() builds it again.
 _PokemonBridge_patch = dedent("""\
-    PDW_API = "http://127.0.0.1:8080/api/";
-    PDW_API_SSL = "http://127.0.0.1:8080/api/";
+    PDW_API = "../api/";
+    PDW_API_SSL = "../api/";
 
     Logger.log("PATH : " + PokemonBridge.PATH);
     Logger.log("API : " + PDW_API);

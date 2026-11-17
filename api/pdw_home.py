@@ -3,10 +3,12 @@ import time
 from random import choice, randint
 
 from api.routes import Query, endpoint
-from utils import pokemon, save_data, text
+from utils import pokemon, save_data, text, visits
 from utils.constants import NATURE_COUNT, PlayerStatus
 from utils.decor import HOUSE_ISLAND_IDS, HOUSE_SHELF_IDS, arranged_decor
-from utils.models import Member
+from utils.models import Member, SleepingPokemon
+
+SHARE_SHELF_ID = 301
 
 
 @endpoint("pdw.home.footprint_list")
@@ -44,21 +46,25 @@ def _randomize_house() -> Member:
     return save_data.update_member({"island_id": choice(HOUSE_ISLAND_IDS), "shelf_id": choice(HOUSE_SHELF_IDS)})
 
 
+def _island_pokemon(pkmn: SleepingPokemon) -> dict:
+    """A tucked-in Pokémon."""
+    return {
+        **pkmn,
+        "pokemon_name": text.lookup_str("pokemon", pkmn["pokemon_no"]),
+        "type1":        text.lookup_str("type", pkmn["type1"]),
+        "type2":        text.lookup_str("type", pkmn["type2"]),
+        "personality":  text.lookup_str("nature", pkmn["personality"]),
+        "ball_name":    text.lookup_str("ball", pkmn["ball_name"]),
+        "shiny":        pokemon.shows_shiny(pkmn.get("is_shiny", False)),
+    }
+
+
 @endpoint("pdw.home.my_island")
 def my_island(_query: Query) -> dict:
-    """Return the player's island with their house, its furniture, and the tucked-in Pokémon."""
+    """Return the player's island with their house, furniture, and the tucked-in Pokémon."""
     member = _randomize_house()
-    pkmn = pokemon.get_sleeper()
     return {
-        "pokemon": {
-            **pkmn,
-            "pokemon_name": text.lookup_str("pokemon", pkmn["pokemon_no"]),
-            "type1":        text.lookup_str("type", pkmn["type1"]),
-            "type2":        text.lookup_str("type", pkmn["type2"]),
-            "personality":  text.lookup_str("nature", pkmn["personality"]),
-            "ball_name":    text.lookup_str("ball", pkmn["ball_name"]),
-            "shiny":        pokemon.shows_shiny(pkmn.get("is_shiny", False)),
-        },
+        "pokemon":                _island_pokemon(pokemon.get_sleeper()),
         "island_id":              member["island_id"],
         "point":                  0,
         "trial_flag":             0,
@@ -69,23 +75,51 @@ def my_island(_query: Query) -> dict:
     }
 
 
-@endpoint("pdw.home.my_island_area")
-def my_island_area(_query: Query) -> dict:
-    """Return a placeholder of the player's island with made-up neighbors."""
+def _island_area(gscd: str) -> dict:
+    """Return the map around a player's island: their island and the players they can visit."""
     friends = [
         {
-            "pgl_name":           "OtherPlayerName",
-            "member_id":          randint(1, 50000),
-            "member_savedata_id": randint(1, 50000),
-            "island_id":          choice(HOUSE_ISLAND_IDS),
-            "country_id":         randint(1, 190),
-            "is_ds":              randint(0, 1),
-            "is_gts":             randint(0, 1),
-            "is_pdw":             randint(0, 1),
+            "pgl_name":           member.get("pgl_name"),
+            "member_id":          member.get("member_id"),
+            "member_savedata_id": member.get("member_savedata_id"),
+            "island_id":          member.get("island_id"),
+            "country_id":         member.get("country_id"),
+            "is_ds":              0,
+            "is_gts":             0,
+            "is_pdw":             1,
         }
-        for _ in range(5)
+        for member in visits.neighbors(gscd)
     ]
-    return {"island_id": save_data.read_member()["island_id"], "friend_list": friends}
+    return {"island_id": save_data.read_member(gscd)["island_id"], "friend_list": friends}
+
+
+@endpoint("pdw.home.my_island_area")
+def my_island_area(_query: Query) -> dict:
+    """Return the map around the player's own island."""
+    return _island_area(save_data.require_gscd())
+
+
+@endpoint("pdw.home.friend_island_area")
+def friend_island_area(query: Query) -> dict:
+    """Return the map around another player's island, which the player is visiting."""
+    return _island_area(visits.find_player(int(query["friend_member_savedata_id"])))
+
+
+@endpoint("pdw.home.friend_island")
+def friend_island(query: Query) -> dict:
+    """Return another player's island."""
+    friend = visits.find_player(int(query["friend_member_savedata_id"]))
+    member = save_data.read_member(friend)
+    return {
+        "pokemon":                _island_pokemon(pokemon.get_sleeper()),
+        "friend_pokemon":         _island_pokemon(pokemon.get_sleeper(friend)),
+        "island_id":              member["island_id"],
+        "point":                  0,
+        "trial_flag":             0,
+        "arranged_interior_list": arranged_decor(friend),
+        "requested_flag":         False,
+        "shelf_id":               SHARE_SHELF_ID,
+    }
 
 
 @endpoint("pdw.home.pdw_end")
@@ -119,7 +153,7 @@ def pdw_timecheck(_query: Query) -> dict:
 
 @endpoint("pdw.home.item_deleted_check", methods=("POST",))
 def item_deleted_check(_query: Query) -> dict:
-    """Shown once after Berries were converted to Dream Points (see pgl_top._check_item_deletion)."""
+    """Shown once after Berries are converted to Dream Points (see pgl_top._check_item_deletion)."""
     exchange_point = save_data.read_member().get("item_deleted_point", 0)
     save_data.update_member({"item_deleted_flag": 0, "item_deleted_point": 0})
     return {"exchange_point": exchange_point}

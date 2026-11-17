@@ -1,9 +1,9 @@
 """Structure of the stored data, and a glossary of the names the original API uses.
 
 Everything except Account is JSON stored per Game Sync ID in game_sync_server's
-player_saves table. These are TypedDicts so the data stays plain JSON-compatible dicts
-while a type checker catches misspelled keys. The ones declared total=False describe data
-whose fields may be absent (a fresh account, an empty garden plot, ...).
+player_saves table. These are TypedDicts so the data stays JSON compatible.
+The ones declared total=False describe data whose fields may be absent (a fresh
+account, an empty garden plot, ...).
 """
 from typing import Literal, NotRequired, TypedDict
 
@@ -76,6 +76,9 @@ class Member(TypedDict, total=False):
     island_id: int
     shelf_id: int
     wateringpot_id: int  # the selected Watering Can's interior_id
+    # how often the player can still water other players' gardens today (JST)
+    friend_waterings_left: int
+    friend_waterings_date: str  # "%Y-%m-%d"
     my_interior_list: list[OwnedDecor]  # the room's arranged_interior_list is built from this
     # timestamps
     last_started_at: int | None
@@ -166,6 +169,46 @@ class ChestData(TypedDict):
 
     cnt: int
     list: list[ChestItem]
+
+
+class ShareSlot(TypedDict, total=False):
+    """An item on a Share Shelf.
+
+    The trainer and Pokémon fields describe whoever put the item there last, by placing or
+    swapping it.
+    """
+
+    material_id: int  # unique across all players (db.next_id),
+    item_id: int
+    x: int
+    y: int
+    history_id: str | None  # None until the item has a trade history
+    old_member_savedata_id: int | None
+    pokemon_no: int | None
+    form_no: int | None
+    pgl_name: str | None
+    nickname: str | None  # the Trainer's name
+    poke_nickname: str | None
+    created_at: str  # "%Y-%m-%d %H:%M"
+    old_item_id: int  # the item that was swapped away
+    new_item_id: int | str  # item_id after a swap
+    # added on load by ShareManager, not saved
+    pokeitem: str | None
+    pokename: str | None
+    old_item_name: str | None
+    field_line1: str | None
+    field_line2: str | None
+    field_line3: str | None
+
+
+class ShareData(TypedDict):
+    """The share_data column.
+
+    cnt is len(share_list).
+    """
+
+    cnt: int
+    share_list: list[ShareSlot]
 
 
 class GrowthState(TypedDict):
