@@ -1,0 +1,875 @@
+{
+ "C003": {
+  "type": "CGEAR",
+  "id": 3,
+  "data": {
+   "ja": ["お花畑のムンナ", "CGEAR/J/mun_decal01.bin", "33/m4c625da9.png"],
+   "en": ["Meadow Munna", "CGEAR/E/C003_munna_1_en.bin", "124/m4d562f32.png"],
+   "fr": ["Munna dans la prairie", "CGEAR/F/C003_munna_2_fr.bin", "124/m4d562f32.png"],
+   "it": ["Munna tra i fiori", "CGEAR/I/C003_munna_3_it.bin", "124/m4d562f32.png"],
+   "de": ["Somniam", "CGEAR/G/C003_munna_4_ge.bin", "124/m4d562f32.png"],
+   "es": ["Munna", "CGEAR/S/C003_munna_5_sp.bin", "124/m4d562f32.png"],
+   "ko": ["꽃밭의 몽나", "CGEAR/K/C003_munna_6_ko.bin", "123/m4d562f7b.png"]
+  }
+ },
+ "C003-2": {
+  "type": "CGEAR2",
+  "id": 3,
+  "data": {
+   "ja": ["お花畑のムンナ", "CGEAR2/J/C003-2_munna_0_j.bin", "200/m4fd5594f.png"],
+   "en": ["Meadow Munna", "CGEAR2/E/C003-2_munna_1_en.bin", "233/m50664c05.png"],
+   "fr": ["Munna dans la prairie", "CGEAR2/F/C003-2_munna_2_fr.bin", "233/m50664c05.png"],
+   "it": ["Munna tra i fiori", "CGEAR2/I/C003-2_munna_3_it.bin", "233/m50664c05.png"],
+   "de": ["Somniam", "CGEAR2/G/C003-2_munna_4_ge.bin", "233/m50664c05.png"],
+   "es": ["Munna", "CGEAR2/S/C003-2_munna_5_sp.bin", "233/m50664c05.png"],
+   "ko": ["꽃밭의 몽나", "CGEAR2/K/BW2_C003_munna_0_j.bin", "242/m50a4b641.png"]
+  }
+ },
+ "C004": {
+  "type": "CGEAR",
+  "id": 4,
+  "data": {
+   "ja": [null, null, null],
+   "en": ["Aim for the Top", "CGEAR/E/C004_pikachu_1_e.bin", "210/m4f9a7504.png"],
+   "fr": ["Vers la victoire !", "CGEAR/F/C004_pikachu_2_f.bin", "210/m4f9a7504.png"],
+   "it": ["Dritti alla vetta!", "CGEAR/I/C004_pikachu_3_i.bin", "210/m4f9a7504.png"],
+   "de": ["Auf zum Sieg!", "CGEAR/G/C004_pikachu_4_g.bin", "210/m4f9a7504.png"],
+   "es": ["Hacia la cima", "CGEAR/S/C004_pikachu_5_s.bin", "210/m4f9a7504.png"],
+   "ko": [null, "CGEAR/K/C004_pikachu_6_k.bin", null]
+  }
+ },
+ "C004-J": {
+  "type": "CGEAR",
+  "id": 4,
+  "data": {
+   "ja": ["てっぺんめざす！", "CGEAR/J/c_pikachu_decal02_.bin", "117/m4cae8dc0.png"],
+   "en": ["Aim for the Top", null, "151/m4ddc7446.png"],
+   "fr": ["Vers la victoire!", null, "151/m4ddc7446.png"],
+   "it": ["Dritti alla vetta!", null, "151/m4ddc7446.png"],
+   "de": ["Auf zum Sieg!", null, "151/m4ddc7446.png"],
+   "es": ["Hacia la cima", null, "151/m4ddc7446.png"],
+   "ko": ["정상을 노려라!", null, "147/m4db147b1.png"]
+  }
+ },
+ "C005": {
+  "type": "CGEAR",
+  "id": 5,
+  "data": {
+   "ja": ["キラ☆チラーミィ", "CGEAR/J/c005_chirami_decal03.bin", "118/m4cae8c9a.png"],
+   "en": ["Twinkle☆Minccino", "CGEAR/E/C005_chirami_1_e.bin", "152/m4ddc778e.png"],
+   "fr": ["Chinchidou la star ☆", "CGEAR/F/C005_chirami_2_f.bin", "152/m4ddc778e.png"],
+   "it": ["Brilla☆Minccino", "CGEAR/I/C005_chirami_3_i.bin", "152/m4ddc778e.png"],
+   "de": ["Super ☆ Picochilla", "CGEAR/G/C005_chirami_4_g.bin", "152/m4ddc778e.png"],
+   "es": ["Minccino ☆ radiante", "CGEAR/S/C005_chirami_5_s.bin", "152/m4ddc778e.png"],
+   "ko": ["반짝☆치라미", "CGEAR/K/C005_chirami_6_k.bin", "146/m4db14538.png"]
+  }
+ },
+ "C006": {
+  "type": "CGEAR",
+  "id": 6,
+  "data": {
+   "ja": ["ギザ★ポケスマ！", "CGEAR/J/C006_pokesuma_decal04.bin", "119/m4cecabf9.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": [null, null, "206/m4d5918df.png"]
+  }
+ },
+ "C007": {
+  "type": "CGEAR",
+  "id": 7,
+  "data": {
+   "ja": ["くるりん♪タブンネ", "CGEAR/J/C007_tabunne_decal05.bin", "120/m4cf8bdfe.png"],
+   "en": ["Earful Audino ♪", "CGEAR/E/C007_tabunne_1_e.bin", "161/m4e1abb9d.png"],
+   "fr": ["Nanméouïe danseur ♪", "CGEAR/F/C007_tabunne_2_f.bin", "161/m4e1abb9d.png"],
+   "it": ["Audino ♪ sbarazzino", "CGEAR/I/C007_tabunne_3_i.bin", "161/m4e1abb9d.png"],
+   "de": ["Kringeling ♪ Ohrdoch", "CGEAR/G/C007_tabunne_4_g.bin", "161/m4e1abb9d.png"],
+   "es": ["Audino feliz ♪", "CGEAR/S/C007_tabunne_5_s.bin", "161/m4e1abb9d.png"],
+   "ko": [null, null, "205/m4d591218.png"]
+  }
+ },
+ "C008": {
+  "type": "CGEAR",
+  "id": 8,
+  "data": {
+   "ja": ["ポッチャマごきげん", "CGEAR/J/C008_pocchama_decal06_ja.bin", "121/m4d984c96.png"],
+   "en": ["Happy Piplup", "CGEAR/E/C008_pocchama_1_e.bin", "192/m4f34ce12.png"],
+   "fr": ["Tiplouf est content", "CGEAR/F/C008_pocchama_2_f.bin", "192/m4f34ce12.png"],
+   "it": ["Piplup allegro", "CGEAR/I/C008_pocchama_3_i.bin", "192/m4f34ce12.png"],
+   "de": ["Wonneproppen Plinfa", "CGEAR/G/C008_pocchama_4_g.bin", "192/m4f34ce12.png"],
+   "es": ["Piplup alegre", "CGEAR/S/C008_pocchama_5_s.bin", "192/m4f34ce12.png"],
+   "ko": ["팽도리 기분 최고♪", "CGEAR/K/C008_pocchama_6_k.bin", "159/m4e1a721f.png"]
+  }
+ },
+ "C009": {
+  "type": "CGEAR",
+  "id": 9,
+  "data": {
+   "ja": ["どくづきのアイツ", "CGEAR/J/C009_guregguru_decal08_ja.bin", "122/m4d984cbd.png"],
+   "en": ["Poison Jab Croagunk", "CGEAR/E/C009_guregguru_1_e.bin", "155/m4df96d5a.png"],
+   "fr": ["Cradopaud", "CGEAR/F/C009_guregguru_2_f.bin", "155/m4df96d5a.png"],
+   "it": ["Croagunk sputaveleno", "CGEAR/I/C009_guregguru_3_i.bin", "155/m4df96d5a.png"],
+   "de": ["Glibunkels Gifthieb", "CGEAR/G/C009_guregguru_4_g.bin", "155/m4df96d5a.png"],
+   "es": ["Croagunk al ataque", "CGEAR/S/C009_guregguru_5_s.bin", "155/m4df96d5a.png"],
+   "ko": ["독찌르기의 그 녀석", "CGEAR/K/C009_guregguru_6_k.bin", "160/m4e1a72b3.png"]
+  }
+ },
+ "C010": {
+  "type": "CGEAR",
+  "id": 10,
+  "data": {
+   "ja": ["フシギバナ！", "CGEAR/J/C010_fushigibana_decal09_ja.bin", "125/m4d984ce3.png"],
+   "en": ["Venusaur!", "CGEAR/E/C010_fushigibana_1_e.bin", "166/m4e40b105.png"],
+   "fr": ["Florizarre !", "CGEAR/F/C010_fushigibana_2_f.bin", "166/m4e40b105.png"],
+   "it": ["Venusaur!", "CGEAR/I/C010_fushigibana_3_i.bin", "166/m4e40b105.png"],
+   "de": ["Bisaflor!", "CGEAR/G/C010_fushigibana_4_g.bin", "166/m4e40b105.png"],
+   "es": ["¡Venusaur!", "CGEAR/S/C010_fushigibana_5_s.bin", "166/m4e40b105.png"],
+   "ko": ["이상해꽃！", "CGEAR/K/C010_fushigibana_6_k.bin", "212/m4ffe8a79.png"]
+  }
+ },
+ "C010-2": {
+  "type": "CGEAR2",
+  "id": 10,
+  "data": {
+   "ja": ["フシギバナ！", "CGEAR2/J/C010-2_fusigibana_j.bin", "253/m511e001b.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": [null, null, null]
+  }
+ },
+ "C011": {
+  "type": "CGEAR",
+  "id": 11,
+  "data": {
+   "ja": ["リザードン！", "CGEAR/J/C011_rizadon_decal10_ja.bin", "126/m4d984d02.png"],
+   "en": ["Charizard!", "CGEAR/E/C011_rizadon_1_e.bin", "172/m4e69d541.png"],
+   "fr": ["Dracaufeu!", "CGEAR/F/C011_rizadon_2_f.bin", "172/m4e69d541.png"],
+   "it": ["Charizard!", "CGEAR/I/C011_rizadon_3_i.bin", "172/m4e69d541.png"],
+   "de": ["Glurak!", "CGEAR/G/C011_rizadon_4_g.bin", "172/m4e69d541.png"],
+   "es": ["¡Charizard!", "CGEAR/S/C011_rizadon_5_s.bin", "172/m4e69d541.png"],
+   "ko": ["리자몽！", "CGEAR/K/C011_rizadon_6_k.bin", "213/m4ffe8aad.png"]
+  }
+ },
+ "C011-2": {
+  "type": "CGEAR2",
+  "id": 11,
+  "data": {
+   "ja": ["リザードン！", "CGEAR2/J/C011-2_riza-don_j.bin", "254/m511e004e.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": [null, null, null]
+  }
+ },
+ "C012": {
+  "type": "CGEAR",
+  "id": 12,
+  "data": {
+   "ja": ["カメックス！", "CGEAR/J/C012_kamekkusu_decal11_ja.bin", "127/m4d984d2c.png"],
+   "en": ["Blastoise!", "CGEAR/E/C012_kamekkusu_1_e.bin", "179/m4e8d39c8.png"],
+   "fr": ["Tortank !", "CGEAR/F/C012_kamekkusu_2_f.bin", "179/m4e8d39c8.png"],
+   "it": ["Blastoise!", "CGEAR/I/C012_kamekkusu_3_i.bin", "179/m4e8d39c8.png"],
+   "de": ["Turtok!", "CGEAR/G/C012_kamekkusu_4_g.bin", "179/m4e8d39c8.png"],
+   "es": ["¡Blastoise!", "CGEAR/S/C012_kamekkusu_5_s.bin", "179/m4e8d39c8.png"],
+   "ko": ["거북왕！", "CGEAR/K/C012_kamekkusu_6_k.bin", "214/m4ffe8b6f.png"]
+  }
+ },
+ "C012-2": {
+  "type": "CGEAR2",
+  "id": 12,
+  "data": {
+   "ja": ["カメックス！", "CGEAR2/J/C012-2_kamekkusu_j.bin", "255/m511e0089.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": [null, null, null]
+  }
+ },
+ "C013": {
+  "type": "CGEAR",
+  "id": 13,
+  "data": {
+   "ja": ["くろきえいゆう", "CGEAR/J/C013_zekurom_0_j_v02.bin", "158/m4e07e9e1.png"],
+   "en": ["Hero Zekrom", "CGEAR/E/C013_zekurom_1_e_v02.bin", "190/m4eaf4f17.png"],
+   "fr": ["Zekrom le Héros", "CGEAR/F/C013_zekurom_2_f_v02.bin", "190/m4eaf4f17.png"],
+   "it": ["Eroe Zekrom", "CGEAR/I/C013_zekurom_3_i_v02.bin", "190/m4eaf4f17.png"],
+   "de": ["Der Held Zekrom", "CGEAR/G/C013_zekurom_4_g_v02.bin", "190/m4eaf4f17.png"],
+   "es": ["Héroe Zekrom", "CGEAR/S/C013_zekurom_5_s_v02.bin", "190/m4eaf4f17.png"],
+   "ko": ["흑의 영웅", "CGEAR/K/C013_zekurom_6_k_v02.bin", "186/m4ecf1347.png"]
+  }
+ },
+ "C013-2": {
+  "type": "CGEAR2",
+  "id": 13,
+  "data": {
+   "ja": ["くろきえいゆう", "CGEAR2/J/C013-2_zekrom.bin", "227/m50597233.png"],
+   "en": ["Hero Zekrom", "CGEAR2/E/C013-2_zekrom_1_e.bin", "248/m50dbeb10.png"],
+   "fr": ["Zekrom le Héros", "CGEAR2/F/C013-2_zekrom_2_f.bin", "248/m50dbeb10.png"],
+   "it": ["Eroe Zekrom", "CGEAR2/I/C013-2_zekrom_3_i.bin", "248/m50dbeb10.png"],
+   "de": ["Der Held Zekrom", "CGEAR2/G/C013-2_zekrom_4_g.bin", "248/m50dbeb10.png"],
+   "es": ["Héroe Zekrom", "CGEAR2/S/C013-2_zekrom_5_s.bin", "248/m50dbeb10.png"],
+   "ko": ["흑의 영웅", "CGEAR2/K/C013-2_zekrom_6_k.bin", "236/m5080d04b.png"]
+  }
+ },
+ "C014": {
+  "type": "CGEAR",
+  "id": 14,
+  "data": {
+   "ja": ["しろきえいゆう", "CGEAR/J/C014_reshiram_0_j.bin", "157/m4e07e9a3.png"],
+   "en": ["Hero Reshiram", "CGEAR/E/C014_reshiram_1_e.bin", "191/m4eaf4f7a.png"],
+   "fr": ["Reshiram le Héros", "CGEAR/F/C014_reshiram_2_f.bin", "191/m4eaf4f7a.png"],
+   "it": ["Eroe Reshiram", "CGEAR/I/C014_reshiram_3_i.bin", "191/m4eaf4f7a.png"],
+   "de": ["Der Held Reshiram", "CGEAR/G/C014_reshiram_4_g.bin", "191/m4eaf4f7a.png"],
+   "es": ["Héroe Reshiram", "CGEAR/S/C014_reshiram_5_s.bin", "191/m4eaf4f7a.png"],
+   "ko": ["백의 영웅", "CGEAR/K/C014_reshiram_6_k.bin", "187/m4ecf147c.png"]
+  }
+ },
+ "C014-2": {
+  "type": "CGEAR2",
+  "id": 14,
+  "data": {
+   "ja": ["しろきえいゆう", "CGEAR2/J/C014-2_reshiram.bin", "228/m505972bd.png"],
+   "en": ["Hero Reshiram", "CGEAR2/E/C014-2_reshiram_1_e.bin", "249/m50dbeb8d.png"],
+   "fr": ["Reshiram le Héros", "CGEAR2/F/C014-2_reshiram_2_f.bin", "249/m50dbeb8d.png"],
+   "it": ["Eroe Reshiram", "CGEAR2/I/C014-2_reshiram_3_i.bin", "249/m50dbeb8d.png"],
+   "de": ["Der Held Reshiram", "CGEAR2/G/C014-2_reshiram_4_g.bin", "249/m50dbeb8d.png"],
+   "es": ["Héroe Reshiram", "CGEAR2/S/C014-2_reshiram_5_s.bin", "249/m50dbeb8d.png"],
+   "ko": ["백의 영웅", "CGEAR2/K/C014-2_reshiram_6_k.bin", "237/m5080d083.png"]
+  }
+ },
+ "C015": {
+  "type": "CGEAR",
+  "id": 15,
+  "data": {
+   "ja": ["しょうりのVサイン", "CGEAR/J/C015_vikutini_0_j.bin", "144/m4da66f51.png"],
+   "en": ["V for Victory!", "CGEAR/E/C015_vikutini_1_e.bin", "177/m4e8d2892.png"],
+   "fr": ["Le V de la Victoire", "CGEAR/F/C015_vikutini_2_f.bin", "177/m4e8d2892.png"],
+   "it": ["V di vittoria", "CGEAR/I/C015_vikutini_3_i.bin", "177/m4e8d2892.png"],
+   "de": ["Veni, Vidi, Victini!", "CGEAR/G/C015_vikutini_4_g.bin", "177/m4e8d2892.png"],
+   "es": ["La V de la victoria", "CGEAR/S/C015_vikutini_5_s.bin", "177/m4e8d2892.png"],
+   "ko": ["승리의 V사인", "CGEAR/K/C015_vikutini_6_k.bin", "175/m4e71a97f.png"]
+  }
+ },
+ "C015-2": {
+  "type": "CGEAR2",
+  "id": 15,
+  "data": {
+   "ja": ["しょうりのVサイン", "CGEAR2/J/C015-2_victini.bin", "229/m505972f4.png"],
+   "en": ["V for Victory!", "CGEAR2/E/C015-2_victini_1_e.bin", "250/m50dbec06.png"],
+   "fr": ["Le V de la Victoire", "CGEAR2/F/C015-2_victini_2_f.bin", "250/m50dbec06.png"],
+   "it": ["V di vittoria", "CGEAR2/I/C015-2_victini_3_i.bin", "250/m50dbec06.png"],
+   "de": ["Veni, Vidi, Victini!", "CGEAR2/G/C015-2_victini_4_g.bin", "250/m50dbec06.png"],
+   "es": ["La V de la victoria", "CGEAR2/S/C015-2_victini_5_s.bin", "250/m50dbec06.png"],
+   "ko": ["승리의 V사인", "CGEAR2/K/C015-2_victini_6_k.bin", "238/m5080d0dd.png"]
+  }
+ },
+ "C016": {
+  "type": "CGEAR",
+  "id": 16,
+  "data": {
+   "ja": ["ポケモンカフェ", "CGEAR/J/C016_cafe_0_j.bin", "148/m4dc3b002.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": [null, null, null]
+  }
+ },
+ "C017": {
+  "type": "CGEAR",
+  "id": 17,
+  "data": {
+   "ja": ["バーチャルポケモン", "CGEAR/J/C017_porigonz_0_j.bin", "145/m4dc3af8f.png"],
+   "en": ["Virtual Pokémon", "CGEAR/E/C017_porigonz_0_e.bin", "203/m4fdeba14.png"],
+   "fr": ["Pokémon Virtuel", "CGEAR/F/C017_porigonz_0_f.bin", "203/m4fdeba14.png"],
+   "it": ["Pokémon Virtuale", "CGEAR/I/C017_porigonz_0_i.bin", "203/m4fdeba14.png"],
+   "de": ["Virtuell-Pokémon", "CGEAR/G/C017_porigonz_0_g.bin", "203/m4fdeba14.png"],
+   "es": ["Pokémon Virtual", "CGEAR/S/C017_porigonz_0_s.bin", "203/m4fdeba14.png"],
+   "ko": ["가상포켓몬", "CGEAR/K/C017_porigonz_6_k.bin", "169/m4e4ccfa1.png"]
+  }
+ },
+ "C018": {
+  "type": "CGEAR",
+  "id": 18,
+  "data": {
+   "ja": ["めざせ！せかいを", "CGEAR/J/C018_WCS_0_j_02.bin", "163/m4e3a3778.png"],
+   "en": ["2011 Worlds C-Gear", "CGEAR/E/C018_WCS_1_e.bin", "162/m4e27d454.png"],
+   "fr": ["Championnats 2011", "CGEAR/F/C018_WCS_2_f.bin", "162/m4e27d454.png"],
+   "it": ["Campionati 2011", "CGEAR/I/C018_WCS_3_i.bin", "162/m4e27d454.png"],
+   "de": ["Meisterschaften 2011", "CGEAR/G/C018_WCS_4_g.bin", "162/m4e27d454.png"],
+   "es": ["Campeonato 2011", "CGEAR/S/C018_WCS_5_s.bin", "162/m4e27d454.png"],
+   "ko": ["세계를 향하여!", "CGEAR/K/C018_WCS_6_k_02.bin", "167/m4e41f9df.png"]
+  }
+ },
+ "C019": {
+  "type": "CGEAR",
+  "id": 19,
+  "data": {
+   "ja": ["はるのすがた", "CGEAR/J/C019_shikijikaharu_0_j.bin", "170/m4e55fb03.png"],
+   "en": ["Spring Deerling", "CGEAR/E/C019_shikijikaharu_1_e.bin", "165/m4e40ae97.png"],
+   "fr": ["Vivaldaim Printemps", "CGEAR/F/C019_shikijikaharu_2_f.bin", "165/m4e40ae97.png"],
+   "it": ["Deerling in primavera", "CGEAR/I/C019_shikijikaharu_3_i.bin", "165/m4e40ae97.png"],
+   "de": ["Frühling-Sesokitz", "CGEAR/G/C019_shikijikaharu_4_g.bin", "165/m4e40ae97.png"],
+   "es": ["Deerling Primavera", "CGEAR/S/C019_shikijikaharu_5_s.bin", "165/m4e40ae97.png"],
+   "ko": ["봄의 모습", "CGEAR/K/C019_shikijikaharu_6_k.bin", "168/m4e41fefe.png"]
+  }
+ },
+ "C020": {
+  "type": "CGEAR",
+  "id": 20,
+  "data": {
+   "ja": ["なつのすがた", "CGEAR/J/C020_shikijikanatu_0_j.bin", "176/m4e798606.png"],
+   "en": ["Summer Deerling", "CGEAR/E/C020_shikijikanatu_1_e.bin", "173/m4e69d780.png"],
+   "fr": ["Vivaldaim Été", "CGEAR/F/C020_shikijikanatu_2_f.bin", "173/m4e69d780.png"],
+   "it": ["Deerling in estate", "CGEAR/I/C020_shikijikanatu_3_i.bin", "173/m4e69d780.png"],
+   "de": ["Sommer-Sesokitz", "CGEAR/G/C020_shikijikanatu_4_g.bin", "173/m4e69d780.png"],
+   "es": ["Deerling Verano", "CGEAR/S/C020_shikijikanatu_5_s.bin", "173/m4e69d780.png"],
+   "ko": ["여름의 모습", "CGEAR/K/C020_shikijikanatu_6_k.bin", "174/m4e71a5c9.png"]
+  }
+ },
+ "C021": {
+  "type": "CGEAR",
+  "id": 21,
+  "data": {
+   "ja": ["あきのすがた", "CGEAR/J/C021_shikijikaaki_0_j.bin", "182/m4ea4ce76.png"],
+   "en": ["Autumn Deerling", "CGEAR/E/C021_shikijikaaki_1_e.bin", "178/m4e8d3666.png"],
+   "fr": ["Vivaldaim Automne", "CGEAR/F/C021_shikijikaaki_2_f.bin", "178/m4e8d3666.png"],
+   "it": ["Deerling in autunno", "CGEAR/I/C021_shikijikaaki_3_i.bin", "178/m4e8d3666.png"],
+   "de": ["Herbst-Sesokitz", "CGEAR/G/C021_shikijikaaki_4_g.bin", "178/m4e8d3666.png"],
+   "es": ["Deerling Otoño", "CGEAR/S/C021_shikijikaaki_5_s.bin", "178/m4e8d3666.png"],
+   "ko": ["가을의 모습", "CGEAR/K/C021_shikijikaaki_0_j.bin", "181/m4e9beb3f.png"]
+  }
+ },
+ "C022": {
+  "type": "CGEAR",
+  "id": 22,
+  "data": {
+   "ja": ["ふゆのすがた", "CGEAR/J/C022_shikijikafuyu_0_j.bin", "183/m4ec5f1d2.png"],
+   "en": ["Winter Deerling", "CGEAR/E/C022_shikijikafuyu_1_e.bin", "180/m4e8d5330.png"],
+   "fr": ["Vivaldaim Hiver", "CGEAR/F/C022_shikijikafuyu_2_f.bin", "180/m4e8d5330.png"],
+   "it": ["Deerling in inverno", "CGEAR/I/C022_shikijikafuyu_3_i.bin", "180/m4e8d5330.png"],
+   "de": ["Winter-Sesokitz", "CGEAR/G/C022_shikijikafuyu_4_g.bin", "180/m4e8d5330.png"],
+   "es": ["Deerling Invierno", "CGEAR/S/C022_shikijikafuyu_5_s.bin", "180/m4e8d5330.png"],
+   "ko": ["겨울의 모습", "CGEAR/K/C022_shikijikafuyu_6_k.bin", "185/m4eca071f.png"]
+  }
+ },
+ "C023": {
+  "type": "CGEAR",
+  "id": 23,
+  "data": {
+   "ja": ["ちかいぞ！ イワパレス", "CGEAR/J/C023_iwaparesu_0_j.bin", "188/m4efabcdf.png"],
+   "en": ["CRUSTLE!", "CGEAR/E/C023_iwaparesu_1_e.bin", "217/m5007b73c.png"],
+   "fr": ["CRABARAQUE", "CGEAR/F/C023_iwaparesu_2_f.bin", "217/m5007b73c.png"],
+   "it": ["CRUSTLE", "CGEAR/I/C023_iwaparesu_3_i.bin", "217/m5007b73c.png"],
+   "de": ["CASTELLITH", "CGEAR/G/C023_iwaparesu_4_g.bin", "217/m5007b73c.png"],
+   "es": ["CRUSTLE", "CGEAR/S/C023_iwaparesu_5_s.bin", "217/m5007b73c.png"],
+   "ko": ["바위집! 암팰리스", "CGEAR/K/C023_iwaparesu_6_k.bin", "207/m4fe2dde2.png"]
+  }
+ },
+ "C024": {
+  "type": "CGEAR",
+  "id": 24,
+  "data": {
+   "ja": ["ゾロアーク！", "CGEAR/J/C024_zoroark_0_j.bin", "184/m4ec5f2e1.png"],
+   "en": ["Zoroark!", "CGEAR/E/C024_zoroark_1_e.bin", "164/m4e3b956b.png"],
+   "fr": ["Zoroark !", "CGEAR/F/C024_zoroark_2_f.bin", "164/m4e3b956b.png"],
+   "it": ["Zoroark!", "CGEAR/I/C024_zoroark_3_i.bin", "164/m4e3b956b.png"],
+   "de": ["Zoroark!", "CGEAR/G/C024_zoroark_4_g.bin", "164/m4e3b956b.png"],
+   "es": ["Zoroark!", "CGEAR/S/C024_zoroark_5_s.bin", "164/m4e3b956b.png"],
+   "ko": ["일루전! 조로아크", "CGEAR/K/C024_zoroark_6_k.bin", "195/m4f83fbaf.png"]
+  }
+ },
+ "C025": {
+  "type": "CGEAR",
+  "id": 25,
+  "data": {
+   "ja": ["つながる！ ギアル", "CGEAR/J/C025_giaru_0_j.bin", "189/m4f1ce136.png"],
+   "en": ["KLINK!", "CGEAR/E/C025_giaru_1_e.bin", "218/m5007b7cb.png"],
+   "fr": ["TIC", "CGEAR/F/C025_giaru_2_f.bin", "218/m5007b7cb.png"],
+   "it": ["KLINK", "CGEAR/I/C025_giaru_3_i.bin", "218/m5007b7cb.png"],
+   "de": ["KLIKK", "CGEAR/G/C025_giaru_4_g.bin", "218/m5007b7cb.png"],
+   "es": ["KLINK", "CGEAR/S/C025_giaru_5_s.bin", "218/m5007b7cb.png"],
+   "ko": ["맞물려라! 기어르", "CGEAR/K/C025_giaru_6_k.bin", "194/m4f754bf7.png"]
+  }
+ },
+ "C026": {
+  "type": "CGEAR",
+  "id": 26,
+  "data": {
+   "ja": ["なかよしコアルヒー", "CGEAR/J/C026_koaruhi_0_j.bin", "193/m4f430b61.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": ["사이 좋은 꼬지보리", "CGEAR/K/C026_koaruhi_6_k.bin", "222/m50346b84.png"]
+  }
+ },
+ "C027": {
+  "type": "CGEAR",
+  "id": 27,
+  "data": {
+   "ja": ["しるべのコバルオン", "CGEAR/J/C027_kobaruon_0_j.bin", "196/m4f8bad38.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": ["코바르온", "CGEAR/K/C027_kobaruon_6_k.bin", "204/m4fe2d78a.png"]
+  }
+ },
+ "C028": {
+  "type": "CGEAR",
+  "id": 28,
+  "data": {
+   "ja": ["しれんのテラキオン", "CGEAR/J/C028_terakion_0_j.bin", "197/m4f8bad98.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": ["테라키온", "CGEAR/K/C028_terakion_6_k.bin", "205/m4fe2d8db.png"]
+  }
+ },
+ "C029": {
+  "type": "CGEAR",
+  "id": 29,
+  "data": {
+   "ja": ["しさくのビリジオン", "CGEAR/J/C029_birijion_0_j.bin", "198/m4f8bae0a.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": ["비리디온", "CGEAR/K/C029_birijion_6_k.bin", "206/m4fe2d989.png"]
+  }
+ },
+ "C030": {
+  "type": "CGEAR",
+  "id": 30,
+  "data": {
+   "ja": ["", "CGEAR/J/C030-1_kerudhio_j.bin", "201/m4fdd9198.png"],
+   "en": ["Keldeo—Ordinary", "CGEAR/E/C030_kerudhio_1_en.bin", "230/m5061425e.png"],
+   "fr": ["", "CGEAR/F/C030_kerudhio_2_fr.bin", "230/m5061425e.png"],
+   "it": ["", "CGEAR/I/C030_kerudhio_3_it.bin", "230/m5061425e.png"],
+   "de": ["", "CGEAR/G/C030_kerudhio_4_ge.bin", "230/m5061425e.png"],
+   "es": ["", "CGEAR/S/C030_kerudhio_5_sp.bin", "230/m5061425e.png"],
+   "ko": ["", "CGEAR/K/C030_kerudhio_6_kr.bin", "234/m5080ce98.png"]
+  }
+ },
+ "C030-2": {
+  "type": "CGEAR2",
+  "id": 30,
+  "data": {
+   "ja": ["", "CGEAR2/J/C030-2_kerudhio_j.bin", "202/m4fdd91d5.png"],
+   "en": ["Keldeo—Resolute", "CGEAR2/E/C030-2_kerudhio_1_en.bin", "231/m50614310.png"],
+   "fr": ["", "CGEAR2/F/C030-2_kerudhio_2_fr.bin", "231/m50614310.png"],
+   "it": ["", "CGEAR2/I/C030-2_kerudhio_3_it.bin", "231/m50614310.png"],
+   "de": ["", "CGEAR2/G/C030-2_kerudhio_4_ge.bin", "231/m50614310.png"],
+   "es": ["", "CGEAR2/S/C030-2_kerudhio_5_sp.bin", "231/m50614310.png"],
+   "ko": ["", "CGEAR2/K/C030-2_kerudhio_6_kr.bin", "235/m5080cefa.png"]
+  }
+ },
+ "C031-1": {
+  "type": "CGEAR",
+  "id": 31,
+  "data": {
+   "ja": ["よぞらのうたごえ", "CGEAR/J/C031-1_meroetta_0_j.bin", "209/m4ffa9e01.png"],
+   "en": [null, "CGEAR/E/C031-1_meroetta_1_e.bin", null],
+   "fr": [null, "CGEAR/F/C031-1_meroetta_2_f.bin", null],
+   "it": [null, "CGEAR/I/C031-1_meroetta_3_i.bin", null],
+   "de": [null, "CGEAR/G/C031-1_meroetta_4_g.bin", null],
+   "es": [null, "CGEAR/S/C031-1_meroetta_5_s.bin", null],
+   "ko": ["밤하늘의 노랫소리", "CGEAR/K/C031-1_meroetta_6_k.bin", "243/m50a5b3fd.png"]
+  }
+ },
+ "C031-2": {
+  "type": "CGEAR2",
+  "id": 31,
+  "data": {
+   "ja": ["よぞらのうたごえ", "CGEAR2/J/C031-2_meroetta_0_j.bin", "210/m4ffa9e31.png"],
+   "en": ["Meloetta—Aria", "CGEAR2/E/C031-2_meroetta_1_e.bin", "257/m51302019.png"],
+   "fr": ["", "CGEAR2/F/C031-2_meroetta_2_f.bin", "257/m51302019.png"],
+   "it": ["", "CGEAR2/I/C031-2_meroetta_3_i.bin", "257/m51302019.png"],
+   "de": ["", "CGEAR2/G/C031-2_meroetta_4_g.bin", "257/m51302019.png"],
+   "es": ["", "CGEAR2/S/C031-2_meroetta_5_s.bin", "257/m51302019.png"],
+   "ko": ["밤하늘의 노랫소리", "CGEAR2/K/C031-2_meroetta_6_k.bin", "244/m50a5b44c.png"]
+  }
+ },
+ "C032-1": {
+  "type": "CGEAR",
+  "id": 32,
+  "data": {
+   "ja": [null, null, null],
+   "en": ["2012 Worlds C-Gear", "CGEAR/E/C032-1_wcs2012_1_e.bin", "219/m5007b862.png"],
+   "fr": ["Championnats 2012", "CGEAR/F/C032-1_wcs2012_2_f.bin", "219/m5007b862.png"],
+   "it": ["Campionati 2012", "CGEAR/I/C032-1_wcs2012_3_i.bin", "219/m5007b862.png"],
+   "de": ["Meisterschaften 2012", "CGEAR/G/C032-1_wcs2012_4_g.bin", "219/m5007b862.png"],
+   "es": ["Campeonato 2012", "CGEAR/S/C032-1_wcs2012_5_s.bin", "219/m5007b862.png"],
+   "ko": ["세계를 향하여!", "CGEAR/K/C032-1_wcs2012.bin", "221/m50346b26.png"]
+  }
+ },
+ "C032-2": {
+  "type": "CGEAR2",
+  "id": 32,
+  "data": {
+   "ja": ["TRO☆PIKA☆L", "CGEAR2/J/C032-2_wcs2012.bin", "220/m50239568.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": [null, null, null]
+  }
+ },
+ "C033": {
+  "type": "CGEAR2",
+  "id": 33,
+  "data": {
+   "ja": ["ハロウィン", "CGEAR2/J/C033_halloween.bin", "225/m50497925.png"],
+   "en": ["Pumpkin Pikachu", "CGEAR2/E/C033_halloween_1_en.bin", "226/m504979af.png"],
+   "fr": ["Pikachu Citrouille", "CGEAR2/F/C033_halloween_2_fr.bin", "226/m504979af.png"],
+   "it": ["Zucca Pikachu", "CGEAR2/I/C033_halloween_3_it.bin", "226/m504979af.png"],
+   "de": ["Kürbis-Pikachu", "CGEAR2/G/C033_halloween_4_ge.bin", "226/m504979af.png"],
+   "es": ["Calabaza Pikachu", "CGEAR2/S/C033_halloween_5_sp.bin", "226/m504979af.png"],
+   "ko": [null, null, null]
+  }
+ },
+ "C034": {
+  "type": "CGEAR2",
+  "id": 34,
+  "data": {
+   "ja": ["おねむりイーブイ", "CGEAR2/J/C034_ev.bin", "239/m508f6f41.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": ["잠자는 이브이", "CGEAR2/K/C034_ev.bin", "258/m51483c0b.png"]
+  }
+ },
+ "C035": {
+  "type": "CGEAR2",
+  "id": 35,
+  "data": {
+   "ja": ["ブラックキュレム", "CGEAR2/J/C035_BK.bin", "265/m5174e520.png"],
+   "en": ["", "CGEAR2/E/C035_BK_1_e.bin", "270/m519ae12b.png"],
+   "fr": ["", "CGEAR2/F/C035_BK_2_f.bin", "270/m519ae12b.png"],
+   "it": ["", "CGEAR2/I/C035_BK_3_i.bin", "270/m519ae12b.png"],
+   "de": ["", "CGEAR2/G/C035_BK_4_g.bin", "270/m519ae12b.png"],
+   "es": ["", "CGEAR2/S/C035_BK_5_s.bin", "270/m519ae12b.png"],
+   "ko": ["", "CGEAR2/K/C035_BK_6_k.bin", "268/m51931cdb.png"]
+  }
+ },
+ "C036": {
+  "type": "CGEAR2",
+  "id": 36,
+  "data": {
+   "ja": ["ホワイトキュレム", "CGEAR2/J/C036_WK.bin", "266/m5174e560.png"],
+   "en": ["", "CGEAR2/E/C036_WK_1_e.bin", "271/m519ae1ed.png"],
+   "fr": ["", "CGEAR2/F/C036_WK_2_f.bin", "271/m519ae1ed.png"],
+   "it": ["", "CGEAR2/I/C036_WK_3_i.bin", "271/m519ae1ed.png"],
+   "de": ["", "CGEAR2/G/C036_WK_4_g.bin", "271/m519ae1ed.png"],
+   "es": ["", "CGEAR2/S/C036_WK_5_s.bin", "271/m519ae1ed.png"],
+   "ko": ["", "CGEAR2/K/C036_WK_6_k.bin", "269/m51931d18.png"]
+  }
+ },
+ "C037-1": {
+  "type": "CGEAR",
+  "id": 37,
+  "data": {
+   "ja": ["赤いゲノセクト！", "CGEAR/J/C037-1_G.bin", "263/m5167c6c3.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": [null, "CGEAR/K/C037-1_G_6_k.bin", "272/m51b1797e.png"]
+  }
+ },
+ "C037-2": {
+  "type": "CGEAR2",
+  "id": 37,
+  "data": {
+   "ja": ["赤いゲノセクト！", "CGEAR2/J/C037-2_G.bin", "264/m5167c708.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": [null, "CGEAR2/K/C037-2_G_6_k.bin", "273/m51b179bd.png"]
+  }
+ },
+ "C100": {
+  "type": "CGEAR",
+  "id": 100,
+  "default": true,
+  "data": {
+   "ja": ["デフォルト", "CGEAR/J/mun_decal00.bin", "31/m4c625e61.png"],
+   "en": ["Basic Skin", "CGEAR/E/C100_defo_1_en.bin", "121/m4d56341b.png"],
+   "fr": ["", "CGEAR/F/C100_defo_2_fr.bin", "121/m4d56341b.png"],
+   "it": ["", "CGEAR/I/C100_defo_3_it.bin", "121/m4d56341b.png"],
+   "de": ["", "CGEAR/G/C100_defo_4_ge.bin", "121/m4d56341b.png"],
+   "es": ["", "CGEAR/S/C100_defo_5_sp.bin", "121/m4d56341b.png"],
+   "ko": ["기본", "CGEAR/K/C100_defo_6_ko.bin", "122/m4d56330b.png"]
+  }
+ },
+ "C100-2": {
+  "type": "CGEAR2",
+  "id": 100,
+  "default": true,
+  "data": {
+   "ja": ["", "CGEAR2/J/C100-2_default_0_j.bin", "199/m4fdad184.png"],
+   "en": ["Basic Skin", "CGEAR2/E/C100-2_default_1_e.bin", "232/m50664a9b.png"],
+   "fr": ["", "CGEAR2/F/C100-2_default_2_f.bin", "232/m50664a9b.png"],
+   "it": ["", "CGEAR2/I/C100-2_default_3_i.bin", "232/m50664a9b.png"],
+   "de": ["", "CGEAR2/G/C100-2_default_4_g.bin", "232/m50664a9b.png"],
+   "es": ["", "CGEAR2/S/C100-2_default_5_s.bin", "232/m50664a9b.png"],
+   "ko": ["기본", "CGEAR2/K/BW2_C100_default_6_k.bin", "241/m50a4b5ab.png"]
+  }
+ },
+ "CGEAR2_DEFAULT": {
+  "type": "CGEAR2",
+  "id": 100,
+  "default": true,
+  "data": {
+   "ja": ["", "CGEAR2/J/C100-2_default_0_j.bin", "220/m4fa9012b.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": [null, null, null]
+  }
+ },
+ "M010": {
+  "type": "MUSICAL",
+  "id": 10,
+  "data": {
+   "ja": ["メロメロ★ムンナ", "MUSICAL/J/mus_prog_data_01.bin", "107/m4c6419e1.png"],
+   "en": ["Charming Munna", "MUSICAL/E/M010_munna_1_e_02.bin", "130/m4d65cf01.png"],
+   "fr": ["Le Munna Amoureux", "MUSICAL/F/M010_munna_2_f_02.bin", "130/m4d65cf01.png"],
+   "it": ["Munna che passione★", "MUSICAL/I/M010_munna_3_i_02.bin", "130/m4d65cf01.png"],
+   "de": ["Somniam in Love", "MUSICAL/G/M010_munna_4_g_02.bin", "130/m4d65cf01.png"],
+   "es": ["Munna enamorado", "MUSICAL/S/M010_munna_5_s_02.bin", "130/m4d65cf01.png"],
+   "ko": ["헤롱헤롱★몽나", "MUSICAL/K/M010_munna_6_k_02.bin", "137/m4d5632c0.png"]
+  }
+ },
+ "M011": {
+  "type": "MUSICAL",
+  "id": 11,
+  "data": {
+   "ja": ["ポケモンスマッシュ！", "MUSICAL/J/M011_pokesuma_0_j_03.bin", "143/m4dde11a9.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": ["포켓몬 파티!", "MUSICAL/K/M011_pokeparty_6_k.bin", "208/m4fe2e56a.png"]
+  }
+ },
+ "M012": {
+  "type": "MUSICAL",
+  "id": 12,
+  "data": {
+   "ja": ["ﾎﾟｹﾓﾝｾﾝﾀｰDEｵｼｬﾚ♪", "MUSICAL/J/M012_pokesen_0_j_04.bin", "139/m4e00122c.png"],
+   "en": ["Carnival Pokémon", "MUSICAL/E/M012_pokesen_1_e_05.bin", "171/m4e5c6f24.png"],
+   "fr": ["Carnaval Pokémon", "MUSICAL/F/M012_pokesen_2_f_03.bin", "171/m4e5c6f24.png"],
+   "it": ["Carnevale Pokémon", "MUSICAL/I/M012_pokesen_3_i_03.bin", "171/m4e5c6f24.png"],
+   "de": ["Pokémon-Karneval", "MUSICAL/G/M012_pokesen_4_g_03.bin", "171/m4e5c6f24.png"],
+   "es": ["Carnaval Pokémon", "MUSICAL/S/M012_pokesen_5_s_03.bin", "171/m4e5c6f24.png"],
+   "ko": ["포켓몬센터♪멋쟁이", "MUSICAL/K/M012_pokecen_6_k.bin", "223/m503470ef.png"]
+  }
+ },
+ "M013": {
+  "type": "MUSICAL",
+  "id": 13,
+  "data": {
+   "ja": ["MELOETTAAA!!!", "MUSICAL/J/mus_prog_data_05.bin", "211/m4ffa9fca.png"],
+   "en": ["MELOETTAAA!!!", "MUSICAL/E/M013_meloetta_1_e.bin", "256/m51301f77.png"],
+   "fr": ["MELOETTAAA!!!", "MUSICAL/F/M013_meloetta_2_f.bin", "256/m51301f77.png"],
+   "it": ["MELOETTAAA!!!", "MUSICAL/I/M013_meloetta_3_i.bin", "256/m51301f77.png"],
+   "de": ["MELOETTAAA!!!", "MUSICAL/G/M013_meloetta_4_g.bin", "256/m51301f77.png"],
+   "es": ["MELOETTAAA!!!", "MUSICAL/S/M013_meloetta_5_s.bin", "256/m51301f77.png"],
+   "ko": ["MELOETTAAA!!!", "MUSICAL/K/M013_meloetta_6_k.bin", "245/m50a5b4f7.png"]
+  }
+ },
+ "M014": {
+  "type": "MUSICAL",
+  "id": 14,
+  "data": {
+   "ja": ["カーニバルンパッパ！", "MUSICAL/J/M014_runpa_0_j.bin", "240/m50a08561.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": ["뮤지컬 로파파", "MUSICAL/K/M014_runpa_6_k.bin", "259/m51483c8c.png"]
+  }
+ },
+ "Z003": {
+  "type": "ZUKAN",
+  "id": 3,
+  "gender": "female",
+  "data": {
+   "ja": ["旅立ちの仲間", "ZUKAN/J/zukan01.bin", "1/m4c625f68.png"],
+   "en": ["Starter Pals", "ZUKAN/E/Z003_BWsyokigirl_1_en.bin", "131/m4d96c753.png"],
+   "fr": ["Compagnons de voyage", "ZUKAN/F/Z003_BWsyokigirl_2_fr.bin", "131/m4d96c753.png"],
+   "it": ["Compagni di viaggio", "ZUKAN/I/Z003_BWsyokigirl_3_it.bin", "131/m4d96c753.png"],
+   "de": ["Freunde auf Reisen", "ZUKAN/G/Z003_BWsyokigirl_4_ge.bin", "131/m4d96c753.png"],
+   "es": ["Compañeros de viaje", "ZUKAN/S/Z003_BWsyokigirl_5_sp.bin", "131/m4d96c753.png"],
+   "ko": ["여행파트너", "ZUKAN/K/Z003_BWsyokigirl_6_ko.bin", "136/m4c58f0fc.png"]
+  }
+ },
+ "Z004": {
+  "type": "ZUKAN",
+  "id": 4,
+  "gender": "male",
+  "data": {
+   "ja": ["旅立ちの仲間", "ZUKAN/J/zukan02.bin", "30/m4c6260da.png"],
+   "en": ["Starter Pals", "ZUKAN/E/Z004_BWsyokiboy_1_en.bin", "129/m4d562fd5.png"],
+   "fr": ["Compagnons de voyage", "ZUKAN/F/Z004_BWsyokiboy_2_fr.bin", "129/m4d562fd5.png"],
+   "it": ["Compagni di viaggio", "ZUKAN/I/Z004_BWsyokiboy_3_it.bin", "129/m4d562fd5.png"],
+   "de": ["Freunde auf Reisen", "ZUKAN/G/Z004_BWsyokiboy_4_ge.bin", "129/m4d562fd5.png"],
+   "es": ["Compañeros de viaje", "ZUKAN/S/Z004_BWsyokiboy_5_sp.bin", "129/m4d562fd5.png"],
+   "ko": ["여행파트너", "ZUKAN/K/Z004_BWsyokiboy_6_ko.bin", "137/m4d96cbac.png"]
+  }
+ },
+ "Z005": {
+  "type": "ZUKAN",
+  "id": 5,
+  "gender": "female",
+  "data": {
+   "ja": ["カントーのさんびき", "ZUKAN/J/Z005_akamidori_fema_ja.bin", "124/m4d984c13.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": ["관동의 세 마리", "ZUKAN/K/Z005_akamidori_fema_6_k.bin", "216/m4ffe9291.png"]
+  }
+ },
+ "Z006": {
+  "type": "ZUKAN",
+  "id": 6,
+  "gender": "male",
+  "data": {
+   "ja": ["カントーのさんびき", "ZUKAN/J/Z006_akamidori_male_ja.bin", "123/m4d984bee.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": ["관동의 세 마리", "ZUKAN/K/Z006_akamidori_male_6_k.bin", "215/m4ffe924c.png"]
+  }
+ },
+ "Z007": {
+  "type": "ZUKAN",
+  "id": 7,
+  "data": {
+   "ja": ["ライバル", "ZUKAN/J/Z007_hyuu.bin", "224/m50497795.png"],
+   "en": ["Hugh", "ZUKAN/E/Z007_hyuu_1_en.bin", "260/m51540000.png"],
+   "fr": ["Matis", "ZUKAN/F/Z007_hyuu_2_fr.bin", "260/m51540000.png"],
+   "it": ["Toni", "ZUKAN/I/Z007_hyuu_3_it.bin", "260/m51540000.png"],
+   "de": ["Matisse", "ZUKAN/G/Z007_hyuu_4_ge.bin", "260/m51540000.png"],
+   "es": ["Matís", "ZUKAN/S/Z007_hyuu_5_sp.bin", "260/m51540000.png"],
+   "ko": ["라이벌", "ZUKAN/K/Z007_hyuu_6_kr.bin", "247/m50daae5a.png"]
+  }
+ },
+ "Z008": {
+  "type": "ZUKAN",
+  "id": 8,
+  "data": {
+   "ja": ["ベル", "ZUKAN/J/Z008_bell.bin", "246/m50b3373e.png"],
+   "en": ["Bianca", "ZUKAN/E/Z008_bell_1_e.bin", "261/m51637f8d.png"],
+   "fr": ["Bianca", "ZUKAN/F/Z008_bell_2_f.bin", "261/m51637f8d.png"],
+   "it": ["Belle", "ZUKAN/I/Z008_bell_3_i.bin", "261/m51637f8d.png"],
+   "de": ["Bell", "ZUKAN/G/Z008_bell_4_g.bin", "261/m51637f8d.png"],
+   "es": ["Bel", "ZUKAN/S/Z008_bell_5_s.bin", "261/m51637f8d.png"],
+   "ko": ["벨", "ZUKAN/K/Z008_bell_6_k.bin", "252/m511dfa07.png"]
+  }
+ },
+ "Z009": {
+  "type": "ZUKAN",
+  "id": 9,
+  "data": {
+   "ja": ["チェレン", "ZUKAN/J/Z009_tyeren.bin", "251/m510761a1.png"],
+   "en": ["Cheren", "ZUKAN/E/Z009_tyeren_1_e.bin", "262/m51637fd8.png"],
+   "fr": ["Tcheren", "ZUKAN/F/Z009_tyeren_2_f.bin", "262/m51637fd8.png"],
+   "it": ["Komor", "ZUKAN/I/Z009_tyeren_3_i.bin", "262/m51637fd8.png"],
+   "de": ["Cheren", "ZUKAN/G/Z009_tyeren_4_g.bin", "262/m51637fd8.png"],
+   "es": ["Cheren", "ZUKAN/S/Z009_tyeren_5_s.bin", "262/m51637fd8.png"],
+   "ko": ["체렌", "ZUKAN/K/Z009_tyeren_6_k.bin", "267/m517f3d31.png"]
+  }
+ },
+ "Z100": {
+  "type": "ZUKAN",
+  "id": 100,
+  "default": true,
+  "gender": "female",
+  "data": {
+   "ja": ["デフォルト", "ZUKAN/J/zukan00.bin", "34/m4c626121.png"],
+   "en": ["Basic Skin", "ZUKAN/E/Z100_defogirl_1_en.bin", "126/m4d5633d7.png"],
+   "fr": ["", "ZUKAN/F/Z100_defogirl_2_fr.bin", "126/m4d5633d7.png"],
+   "it": ["", "ZUKAN/I/Z100_defogirl_3_it.bin", "126/m4d5633d7.png"],
+   "de": ["", "ZUKAN/G/Z100_defogirl_4_ge.bin", "126/m4d5633d7.png"],
+   "es": ["", "ZUKAN/S/Z100_defogirl_5_sp.bin", "126/m4d5633d7.png"],
+   "ko": ["기본", "ZUKAN/K/Z100_defogirl_6_ko.bin", "135/m4c58f0a2.png"]
+  }
+ },
+ "ZUKAN_DEFAULT_PINK": {
+  "type": "ZUKAN",
+  "id": 100,
+  "default": true,
+  "gender": "female",
+  "data": {
+   "ja": ["デフォルト", "ZUKAN/J/zukan00.bin", "111/m4f87e208.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": [null, null, null]
+  }
+ },
+ "Z101": {
+  "type": "ZUKAN",
+  "id": 101,
+  "default": true,
+  "gender": "male",
+  "data": {
+   "ja": ["デフォルト", "ZUKAN/J/zukanff.bin", "36/m4c6261ba.png"],
+   "en": ["Basic Skin", "ZUKAN/E/Z101_defoboy_1_en.bin", "127/m4d56347b.png"],
+   "fr": ["", "ZUKAN/F/Z101_defoboy_2_fr.bin", "127/m4d56347b.png"],
+   "it": ["", "ZUKAN/I/Z101_defoboy_3_it.bin", "127/m4d56347b.png"],
+   "de": ["", "ZUKAN/G/Z101_defoboy_4_ge.bin", "127/m4d56347b.png"],
+   "es": ["", "ZUKAN/S/Z101_defoboy_5_sp.bin", "127/m4d56347b.png"],
+   "ko": ["기본", "ZUKAN/K/Z101_defoboy_6_ko.bin", "134/m4c58f028.png"]
+  }
+ },
+ "ZUKAN_DEFAULT_RED": {
+  "type": "ZUKAN",
+  "id": 101,
+  "default": true,
+  "gender": "male",
+  "data": {
+   "ja": ["デフォルト", "ZUKAN/J/zukanff.bin", "112/m4f87e12f.png"],
+   "en": [null, null, null],
+   "fr": [null, null, null],
+   "it": [null, null, null],
+   "de": [null, null, null],
+   "es": [null, null, null],
+   "ko": [null, null, null]
+  }
+ }
+}

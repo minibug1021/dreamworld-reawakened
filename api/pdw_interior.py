@@ -34,10 +34,7 @@ def interior_catalog_list(_query: Query) -> list[dict]:
 @endpoint("pdw.interior.interior_list", methods=GET_AND_POST)
 def interior_list(query: Query) -> list[dict]:
     """Every item in the requested catalog (param: interior_catalog_id, default 1)."""
-    try:
-        catalog_id = int(query.get("interior_catalog_id") or DEFAULT_CATALOG_ID)
-    except ValueError:
-        catalog_id = DEFAULT_CATALOG_ID
+    catalog_id = int(query.get("interior_catalog_id") or DEFAULT_CATALOG_ID)
 
     my_ids: dict[int, int] = {}  # interior_id -> the first copy the player owns
     for owned in owned_decor():
@@ -60,10 +57,7 @@ def interior_layout_update(query: Query) -> dict:
     for key, value in query.items():
         if not key.startswith("interior["):
             continue
-        try:
-            my_id, x, y, arranged = (int(part) for part in value.split("_"))
-        except ValueError:
-            continue
+        my_id, x, y, arranged = (int(part) for part in value.split("_"))
         if arranged == 1:
             placed[my_id] = (x, y)
 

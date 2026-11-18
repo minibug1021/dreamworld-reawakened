@@ -103,9 +103,6 @@ def prewarm() -> None:
         logger.info("Patching %s", swf_name)
         _PATCHED_CACHE[swf_name] = _patch_swf(swf_name)
 
-    # remove ffdec's temp export dir and the downloaded zip, but keep the
-    # .swf outputs, the ffdec.jar itself, and its lib/ dependencies
-    shutil.rmtree(SCRIPTS_DIR, ignore_errors=True)
     FFDEC_ZIP.unlink(missing_ok=True)
 
 

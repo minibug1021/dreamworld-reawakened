@@ -11,15 +11,14 @@ DESCRIPTION_LINES = 3  # *_descriptions entries have up to 3 lines, separated by
 
 
 @cache
-def _strings(str_type: str) -> list[str] | None:
-    path = ROOT_DIR / "raw_text" / LANG / f"{str_type}.txt"
-    return path.read_text(encoding="utf-8").splitlines() if path.is_file() else None
+def _strings(str_type: str) -> list[str]:
+    return (ROOT_DIR / "raw_text" / LANG / f"{str_type}.txt").read_text(encoding="utf-8").splitlines()
 
 
 def lookup_str(str_type: str, string_id: int | None) -> str | None:
-    """Return the string with this id, or None if the type or id has none."""
+    """Return the string with this id, or None if the id has none."""
     strings = _strings(str_type)
-    if string_id is None or strings is None or not 0 <= string_id < len(strings):
+    if string_id is None or not 0 <= string_id < len(strings):
         return None
     return strings[string_id] or None
 

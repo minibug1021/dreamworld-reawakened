@@ -21,17 +21,9 @@ class DecorCategory(IntEnum):
     HOUSE = 1
     WATERINGCAN = 2
     SHELF = 3
-    MISC = 26
 
 
-class PlaceType(IntEnum):
-    """place_type: where in the room a piece of decor can go."""
-
-    ANYWHERE = 0
-    WALL = 1
-    FLOOR = 2
-    MAT = 3
-
+PLACE_ANYWHERE = 0  # place_type: the decor can go anywhere in the room
 
 WATERINGCAN_ID = 1
 
@@ -87,13 +79,13 @@ class Decor:
             "interior_size_w":      size_w,
             "interior_size_h":      size_h,
             "interior_category_id": self.category_id,
-            "place_type":           PlaceType.ANYWHERE if self.place_type is None else self.place_type,
+            "place_type":           PLACE_ANYWHERE if self.place_type is None else self.place_type,
         }
 
     def cost_fields(self) -> dict:
         """kinomi_id/kinomi/price for up to 3 berries. An empty slot has a null kinomi_id."""
         fields: dict = {}
-        for suffix, cost in zip_longest(COST_SLOTS, self.cost[:len(COST_SLOTS)]):
+        for suffix, cost in zip_longest(COST_SLOTS, self.cost):
             if cost is None:
                 fields.update({f"kinomi_id{suffix}": None, f"kinomi{suffix}": "", f"price{suffix}": 0})
                 continue
@@ -129,17 +121,8 @@ def catalog_name(catalog_id: int) -> str:
 
 
 def get_decor(decor_id: int) -> Decor:
-    """Return the catalog data for an id.
-
-    Ids not sold by any catalog (some houses) get just a category.
-    """
-    if decor_id in CATALOG:
-        return CATALOG[decor_id]
-    if decor_id in HOUSE_ISLAND_IDS:
-        return Decor(decor_id, DecorCategory.HOUSE)
-    if decor_id in HOUSE_SHELF_IDS:
-        return Decor(decor_id, DecorCategory.SHELF)
-    return Decor(decor_id, DecorCategory.MISC)
+    """Return the catalog data for an id."""
+    return CATALOG[decor_id]
 
 
 def owned_decor(gscd: str | None = None) -> list[OwnedDecor]:
@@ -147,30 +130,30 @@ def owned_decor(gscd: str | None = None) -> list[OwnedDecor]:
     return save_data.read_member(gscd).get("my_interior_list") or []
 
 
-def find_owned(my_decor_id: int, gscd: str | None = None) -> OwnedDecor:
+def find_owned(my_decor_id: int) -> OwnedDecor:
     """Return the player's copy with this id. Raise ValueError if they don't own it."""
-    owned = next((o for o in owned_decor(gscd) if o["my_interior_id"] == my_decor_id), None)
+    owned = next((o for o in owned_decor() if o["my_interior_id"] == my_decor_id), None)
     if owned is None:
         raise ValueError(f"No owned decor {my_decor_id}")
     return owned
 
 
-def charge_for_decor(decor_id: int, gscd: str | None = None) -> None:
+def charge_for_decor(decor_id: int) -> None:
     """Deduct the cost of a decor item from the player's chest.
 
     Raise ValueError, and deduct nothing, if they can't afford it.
     """
     decor = get_decor(decor_id)
     cost = tuple((to_item_id(berry_id), count) for berry_id, count in decor.cost)
-    managers.get_chest(gscd).remove_items(cost)
+    managers.get_chest().remove_items(cost)
 
 
-def grant_decor(decor_id: int, gscd: str | None = None) -> int:
+def grant_decor(decor_id: int) -> int:
     """Give the player a new copy of `decor_id`.
 
     Return its new (globally unique) my_interior_id.
     """
-    gscd = save_data.require_gscd(gscd)
+    gscd = save_data.require_gscd()
     [my_decor_id] = db.next_id("my_interior_id")
     owned: OwnedDecor = {"my_interior_id": my_decor_id, "interior_id": decor_id}
 

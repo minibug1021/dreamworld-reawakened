@@ -46,15 +46,7 @@ def shows_shiny(is_shiny: bool) -> bool:
     return is_shiny and accounts.get_shows_shiny(session.get("username"))
 
 
-def get_random_pokemon(restriction_list: list[int] | None = None) -> dict[str, Any]:
-    """Return a random Pokémon's POKEMON_INFO entry, plus its National Dex number as 'pokemon_no'.
-
-    restriction_list holds the National Dex numbers to pick from. None means any Pokémon.
-    """
-    if restriction_list is None:
-        options = list(POKEMON_INFO)
-    else:
-        options = [key for key in POKEMON_INFO if natdex(key) in restriction_list]
-
-    key = choice(options)
+def get_random_pokemon() -> dict[str, Any]:
+    """Return a random Pokémon's POKEMON_INFO entry, plus its National Dex number as 'pokemon_no'."""
+    key = choice(list(POKEMON_INFO))
     return {**POKEMON_INFO[key], "pokemon_no": natdex(key)}

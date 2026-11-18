@@ -200,8 +200,7 @@ def _link_gscd(username: str, gscd: str) -> dict | None:
         return _field_error("gscd", "gscd_already_taken")
 
     accounts.link_gscd(username, gscd)
-    account = accounts.get_account_by_username(username)
-    session["gscd"] = account["active_gscd"] if account else gscd
+    session.setdefault("gscd", gscd)
 
     linked_gscds = accounts.get_gscds_for_account(username)
     for linked_gscd in linked_gscds:

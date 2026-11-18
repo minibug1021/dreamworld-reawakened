@@ -274,7 +274,7 @@ class CropManager(_ColumnManager):
         return max((plot["y"] for plot in garden["croft_list"]), default=0)
 
     def check_garden_expansion(self) -> None:
-        """Add a row of empty plots if the player has enough Dream Points for the next one.       """
+        """Add a row of empty plots if the player has enough Dream Points for the next one."""
         new_row = self._row_count(self.data) + 1
         threshold = self.EXPANSION_THRESHOLDS.get(new_row)
         dream_points = save_data.read_member(self._gscd).get("experiment_point") or 0

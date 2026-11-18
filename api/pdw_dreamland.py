@@ -3,7 +3,7 @@ import hashlib
 import logging
 from collections.abc import Sequence
 from random import choices, randint, sample
-from typing import Any, TypeVar
+from typing import TypeVar
 
 from flask import session
 
@@ -17,10 +17,11 @@ logger = logging.getLogger(__name__)
 
 T = TypeVar("T")
 
-# area id -> unlock requirements, Pokémon and items (type preferences: _FAVORED_AREA_SHARE)
-_AREA_INFO: dict[str, dict[str, Any]] = load_json_data("dream_islands")
 # Not post-processing any of the raw data for now.
-_DREAMLAND = load_json_data("dreamland_objects")
+_DREAMLAND = load_json_data("dream_islands")
+# island area id (3-9) -> {"req_points": {"bw", "b2w2"}, "req_badges": {"bw", "b2w2"}}
+# (type preferences: _FAVORED_AREA_SHARE)
+_UNLOCKS: dict[str, dict[str, dict[str, int]]] = _DREAMLAND["unlocks"]
 _SLOTS = {int(object_id): slot for object_id, slot in _DREAMLAND["objects"].items()}
 _CONTENTS = {c["object_pokemon_id"]: c for slot in _SLOTS.values() for c in slot["contents"]}
 
@@ -103,12 +104,11 @@ def _pick_area(player: Member, game_key: str) -> str:
     The pick is weighted by the tucked-in Pokémon's types.
     """
     points, badges = player["experiment_point"], player["player_badge_num"] or 0
-    # Pokémon Café Forest has no data for now
-    island_areas = [area_id for area_id in _AREA_INFO if area_id in _DREAMLAND["areas"]]
+    island_areas = list(_UNLOCKS)
     weights = _area_weights([player["type1"], player["type2"]], island_areas)
     areas = [area_id for area_id in island_areas
-             if points >= _AREA_INFO[area_id]["req_points"][game_key]
-             and badges >= _AREA_INFO[area_id]["req_badges"][game_key]]
+             if points >= _UNLOCKS[area_id]["req_points"][game_key]
+             and badges >= _UNLOCKS[area_id]["req_badges"][game_key]]
     return _weighted_choice(areas, [weights[area_id] for area_id in areas])
 
 
