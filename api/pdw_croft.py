@@ -1,7 +1,8 @@
 """pdw.croft.*: the Berry garden (pdw_farm.swf)."""
 from api.routes import GET_AND_POST, Query, endpoint
 from utils import managers, save_data, visits
-from utils.decor import WATERINGCAN_ID, get_decor, owned_wateringcans
+from utils.constants import WATERINGCAN_ID
+from utils.decor import get_decor, owned_wateringcans
 from utils.models import CropData
 
 

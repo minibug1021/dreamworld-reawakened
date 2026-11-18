@@ -6,6 +6,10 @@ from config import SAVE_DIR
 from game_sync_server.entralinked.utility.sqlite_store import SQLiteStore
 from utils.models import Account, Privacy
 
+# generate_password_hash("testpass")
+_TEST_PASSWORD_HASH = ("scrypt:32768:8:1$jZODhHVaqfKNahLu$671ff90e1738953e87edfa84abcc5fe3148409a7b37a207b9bb15fb02a96062b"
+                       "bfe1195be50503b1c3058cdbfbf3a9c9d824beace12898add8ae2e55fa83e99a")
+
 
 class AccountManager(SQLiteStore):
     """The accounts table (one row per login) and account_gscds (gscd -> owner)."""
@@ -32,6 +36,12 @@ class AccountManager(SQLiteStore):
             gscd TEXT PRIMARY KEY,
             username TEXT NOT NULL
         )""",
+        # activated test accounts
+        f"""
+        INSERT INTO accounts (username, password_hash, email, country, birth_month, pgl_privacy, dw_privacy, activated)
+        SELECT column1, '{_TEST_PASSWORD_HASH}', 'a@example.com', 1, 1, 'everyone', 'everyone', 1
+        FROM (VALUES ('Test'), ('TestMulti'))
+        WHERE NOT EXISTS (SELECT 1 FROM accounts)""",
     )
 
     def _fetch_one(self, query: str, *params: object) -> sqlite3.Row | None:

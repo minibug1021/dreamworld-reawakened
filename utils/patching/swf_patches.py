@@ -135,16 +135,18 @@ _IPokemonRenderer_loadToScene_patch = "function loadToScene(param1:int, param2:i
 # make the same call)
 _myPokemon_load_patch = "pokemon.load(PDWHomeData.myPokemonNo,PDWHomeData.myPokemonFormNo,0.55,PDWHomeData.myPokemonShiny);"
 
-_FarmData_pokemonShiny_field_patch = dedent("""\
+# the Garden's FarmData and the Share Shelf's ShareData manage the Pokémon the same way
+_pokemonShiny_field_patch = dedent("""\
     public var pokemonFormID:Number = 0;
     public var pokemonShiny:Boolean = false;""")
 
 
-_Farm_Main_pokemonShiny_patch = dedent("""\
+_Main_pokemonShiny_patch = dedent("""\
     this.data.pokemonFormID = PDWHomeData.myPokemonFormNo;
     this.data.pokemonShiny = PDWHomeData.myPokemonShiny;""")
 
 _PokemonFiledArea_loadToScene_patch = "this.pokemonObj.loadToScene(this.data.pokemonID,this.data.pokemonFormID,PokemonRendererScene.CROFT,this.data.pokemonShiny);"
+_ShareArea_loadToScene_patch = "this.pokemonObj.loadToScene(this.data.pokemonID,this.data.pokemonFormID,PokemonRendererScene.SHARING_SHELF,this.data.pokemonShiny);"
 
 
 _RCData_myPokemonShiny_field_patch = dedent("""\
@@ -199,6 +201,7 @@ SWF_PATHS = {
     "pdw_arc.swf":    _SWF_DIR / "pdw" / "assets" / "pdw_arc.swf",
     "pdw_farm.swf":   _SWF_DIR / "pdw" / "assets" / "pdw_farm.swf",
     "pdw_room.swf":   _SWF_DIR / "pdw" / "assets" / "pdw_room.swf",
+    "pdw_share.swf":  _SWF_DIR / "pdw" / "assets" / "pdw_share.swf",
 }
 
 def _pokemon_renderer_patches(package: str) -> tuple[Insertion, ...]:
@@ -285,8 +288,16 @@ INSERTIONS: dict[str, tuple[Insertion, ...]] = {
                   "this.pokemonObj.loadToScene(this.data.pokemonID,this.data.pokemonFormID,"
                   "PokemonRendererScene.CROFT);", _PokemonFiledArea_loadToScene_patch),
         Insertion("bfp.pdw.farm.document.Main", "this.data.pokemonFormID = PDWHomeData.myPokemonFormNo;",
-                  _Farm_Main_pokemonShiny_patch),
-        Insertion("bfp.pdw.farm.FarmData", "public var pokemonFormID:Number = 0;", _FarmData_pokemonShiny_field_patch),
+                  _Main_pokemonShiny_patch),
+        Insertion("bfp.pdw.farm.FarmData", "public var pokemonFormID:Number = 0;", _pokemonShiny_field_patch),
+    ),
+    "pdw_share.swf": (
+        Insertion("bfp.pdw.share.view.PokemonArea",
+                  "this.pokemonObj.loadToScene(this.data.pokemonID,this.data.pokemonFormID,"
+                  "PokemonRendererScene.SHARING_SHELF);", _ShareArea_loadToScene_patch),
+        Insertion("bfp.pdw.share.document.Main", "this.data.pokemonFormID = PDWHomeData.myPokemonFormNo;",
+                  _Main_pokemonShiny_patch),
+        Insertion("bfp.pdw.share.ShareData", "public var pokemonFormID:Number = 0;", _pokemonShiny_field_patch),
     ),
     "pdw_room.swf": (
         Insertion("bfp.pdw.room.objects.PokemonArea",

@@ -5,6 +5,10 @@ SECONDS_PER_MINUTE = 60
 SECONDS_PER_HOUR = 60 * SECONDS_PER_MINUTE
 SECONDS_PER_DAY = 24 * SECONDS_PER_HOUR
 
+# decor ids (catalog.json)
+WATERINGCAN_ID = 1
+SHARE_SHELF_ID = 301
+
 
 class Rom(IntEnum):
     """member.rom_id: which cartridge the Game Sync ID belongs to (raw_text/*/game.txt order)."""

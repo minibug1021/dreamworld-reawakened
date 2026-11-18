@@ -4,11 +4,9 @@ from random import choice, randint
 
 from api.routes import Query, endpoint
 from utils import pokemon, save_data, text, visits
-from utils.constants import NATURE_COUNT, PlayerStatus
+from utils.constants import NATURE_COUNT, SHARE_SHELF_ID, PlayerStatus
 from utils.decor import HOUSE_ISLAND_IDS, HOUSE_SHELF_IDS, arranged_decor
 from utils.models import Member, SleepingPokemon
-
-SHARE_SHELF_ID = 301
 
 
 @endpoint("pdw.home.footprint_list")

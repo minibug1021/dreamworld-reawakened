@@ -25,8 +25,6 @@ class DecorCategory(IntEnum):
 
 PLACE_ANYWHERE = 0  # place_type: the decor can go anywhere in the room
 
-WATERINGCAN_ID = 1
-
 # Houses and shelves. 302 is unused.
 HOUSE_ISLAND_IDS = (201, 202, 203, 1082, 1099, 1106, 1113, 1114, 1176, 1206, 1268)
 HOUSE_SHELF_IDS  = (301, 302)
@@ -165,16 +163,9 @@ def grant_decor(decor_id: int) -> int:
 
 
 def owned_wateringcans() -> list[OwnedDecor]:
-    """Return the player's Watering Cans.
-
-    A player who has none is given the basic one first.
-    """
-    wateringcans = [owned for owned in owned_decor()
-                    if get_decor(owned["interior_id"]).category_id == DecorCategory.WATERINGCAN]
-    if not wateringcans:
-        grant_decor(WATERINGCAN_ID)
-        wateringcans = [owned for owned in owned_decor() if owned["interior_id"] == WATERINGCAN_ID]
-    return wateringcans
+    """Return the player's Watering Cans."""
+    return [owned for owned in owned_decor()
+            if get_decor(owned["interior_id"]).category_id == DecorCategory.WATERINGCAN]
 
 
 def catalog_entry(decor: Decor, my_decor_id: int | None) -> dict:
