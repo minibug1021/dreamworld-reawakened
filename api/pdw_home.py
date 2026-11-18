@@ -5,7 +5,7 @@ from random import choice, randint
 from api.routes import Query, endpoint
 from utils import pokemon, save_data, text, visits
 from utils.constants import NATURE_COUNT, SHARE_SHELF_ID, PlayerStatus
-from utils.decor import HOUSE_ISLAND_IDS, HOUSE_SHELF_IDS, arranged_decor
+from utils.decor import arranged_decor
 from utils.models import Member, SleepingPokemon
 
 
@@ -39,11 +39,6 @@ def footprint_list(_query: Query) -> dict:
     return {"list": footprints}
 
 
-def _randomize_house() -> Member:
-    """Give the player a random house and shelf, and return the updated member."""
-    return save_data.update_member({"island_id": choice(HOUSE_ISLAND_IDS), "shelf_id": choice(HOUSE_SHELF_IDS)})
-
-
 def _island_pokemon(pkmn: SleepingPokemon) -> dict:
     """A tucked-in Pokémon."""
     return {
@@ -60,7 +55,7 @@ def _island_pokemon(pkmn: SleepingPokemon) -> dict:
 @endpoint("pdw.home.my_island")
 def my_island(_query: Query) -> dict:
     """Return the player's island with their house, furniture, and the tucked-in Pokémon."""
-    member = _randomize_house()
+    member = save_data.read_member()
     return {
         "pokemon":                _island_pokemon(pokemon.get_sleeper()),
         "island_id":              member["island_id"],

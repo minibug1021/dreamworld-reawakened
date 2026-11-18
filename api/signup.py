@@ -131,7 +131,7 @@ def trainer_club_signup() -> Response | WerkzeugResponse:
     activation_url = request.host_url.rstrip("/") + ACTIVATION_URL.replace("<token>", activation_token)
 
     try:
-        send_activation_email(form["email"], form["username"], activation_url, request.host_url)
+        send_activation_email(form["email"], activation_url)
     except (EmailNotConfiguredError, OSError, smtplib.SMTPException) as e:
         current_app.logger.warning("Could not send activation email: %s", e)
 

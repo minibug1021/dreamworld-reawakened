@@ -1,4 +1,6 @@
 """Visiting other players' islands."""
+from flask import session
+
 from game_sync_server.entralinked.utility.db_manager import db
 from utils import save_data
 from utils.account_manager import accounts
@@ -12,10 +14,19 @@ def _visible(gscd: str) -> bool:
     return bool(account and account["dw_privacy"] == "everyone" and db.read(gscd, "sleeping_pokemon"))
 
 
+def _own_gscds() -> set[str]:
+    """Return every Game Sync ID linked to the logged-in account."""
+    username = session.get("username")
+    own = set(accounts.get_gscds_for_account(username)) if username else set()
+    current = save_data.get_current_gscd()
+    return own | {current} if current else own
+
+
 def neighbors(gscd: str | None = None) -> list[Member]:
-    """Every player that the player can visit."""
-    me = save_data.require_gscd(gscd)
-    return [save_data.read_member(other) for other in db.get_all_gscds() if other != me and _visible(other)]
+    """Return every player shown on the map around `gscd`'s island."""
+    left_out = {save_data.require_gscd(gscd)} | _own_gscds()
+    return [save_data.read_member(other) for other in db.get_all_gscds()
+            if other not in left_out and _visible(other)]
 
 
 def find_player(member_savedata_id: int, gscd: str | None = None) -> str:

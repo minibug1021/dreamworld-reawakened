@@ -9,7 +9,6 @@ import os
 
 logger = logging.getLogger(__name__)
 
-# the PokemonBridge patch in utils/patching/swf_patches.py has this port in its API address
 PORT = 8080
 SERVER_THREADS = 16  # waitress's default of 4 makes page loads wait on each other
 
@@ -54,7 +53,8 @@ def main() -> None:
     patching.prewarm()
     app = create_app()
     app.logger.info("Server started!%s", " (debug mode)" if args.debug else "")
-    serve(app, host="0.0.0.0", port=PORT, threads=SERVER_THREADS)
+    serve(app, host="0.0.0.0", port=PORT, threads=SERVER_THREADS,
+          trusted_proxy="127.0.0.1", trusted_proxy_headers={"x-forwarded-proto"}, clear_untrusted_proxy_headers=True)
 
 
 if __name__ == "__main__":

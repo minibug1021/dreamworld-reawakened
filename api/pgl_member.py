@@ -12,6 +12,7 @@ from utils.messages import message
 from utils.models import Member
 
 GSCD_LENGTH = 10
+MAX_LINKED_GSCDS = 4  # one for each of Black, White, Black 2 and White 2
 DEMO_AVATAR_ID = 4
 
 # The avatar picker offers these avator_id values. New accounts could pick ids up to 200.
@@ -199,6 +200,12 @@ def _link_gscd(username: str, gscd: str) -> dict | None:
     if owner is not None:
         return _field_error("gscd", "gscd_already_taken")
 
+    # the profile page shows one Game Sync ID per game
+    linked = accounts.get_gscds_for_account(username)
+    rom_id = save_data.read_member(gscd).get("rom_id")
+    if len(linked) >= MAX_LINKED_GSCDS or any(save_data.read_member(other).get("rom_id") == rom_id for other in linked):
+        return _field_error("gscd", "gscd_game_already_linked")
+
     accounts.link_gscd(username, gscd)
     session.setdefault("gscd", gscd)
 
@@ -222,11 +229,33 @@ def init_create(query: Query) -> dict:
             return error
 
     if session.get("gscd"):
-        changes: Member = {"pgl_name": username, "trial_flag": 0}
-        country_id = accounts.get_country_id(username)
-        if country_id is not None:
-            changes["country_id"] = country_id
-        save_data.update_member(changes)
+        _set_up_member(username, session["gscd"])
     accounts.mark_registered(username)
 
     return {"flg": 2 if session.get("gscd") else 0}
+
+
+def _set_up_member(username: str, gscd: str) -> None:
+    """Give a newly linked Game Sync ID's save the account's PGL nickname and country."""
+    changes: Member = {"pgl_name": username, "trial_flag": 0}
+    country_id = accounts.get_country_id(username)
+    if country_id is not None:
+        changes["country_id"] = country_id
+    save_data.update_member(changes, gscd)
+
+
+@endpoint("pgl.member.profile.gsid_create", methods=("POST",))
+def gsid_create(query: Query) -> dict:
+    """Link another Game Sync ID to the account, from the profile page.
+
+    A trial player becomes a full member.
+    """
+    username = session.get("username")
+    if not username:
+        return _field_error("gscd", "gscd_not_found")
+    gscd = query.get("gscd", "").strip()
+    error = _link_gscd(username, gscd)
+    if error:
+        return error
+    _set_up_member(username, gscd)
+    return {}

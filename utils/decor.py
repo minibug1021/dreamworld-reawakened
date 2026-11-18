@@ -25,10 +25,6 @@ class DecorCategory(IntEnum):
 
 PLACE_ANYWHERE = 0  # place_type: the decor can go anywhere in the room
 
-# Houses and shelves. 302 is unused.
-HOUSE_ISLAND_IDS = (201, 202, 203, 1082, 1099, 1106, 1113, 1114, 1176, 1206, 1268)
-HOUSE_SHELF_IDS  = (301, 302)
-
 # The swf adds the treasure chest (9990001) and friend board (9990003) to the default
 # catalog itself, and the Dream Catalogue (9990002) isn't something you buy.
 MASTER_IDS = frozenset({9990001, 9990002, 9990003})
