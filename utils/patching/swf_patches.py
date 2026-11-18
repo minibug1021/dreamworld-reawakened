@@ -176,6 +176,14 @@ _InitPDWHomeData_myPokemon_reset_patch = dedent("""\
     PDWHomeData.myPokemonBall = "";
     PDWHomeData.myPokemonShiny = false;""")
 
+# Ruffle: keep main.swf's copy of the defaultVolume SharedObject up to date.
+_SoundController_sendVolume_patch = dedent("""\
+    ExternalInterface.addCallback("sendVolume",function(param1:*):void
+    {
+       my_so.data.defaultVolume = param1;
+       receivedFromJavaScript(param1);
+    });""")
+
 # ---------------
 # SWF paths / insertions
 # ---------------
@@ -233,6 +241,8 @@ INSERTIONS: dict[str, tuple[Insertion, ...]] = {
                   _PokemonBridge_patch),
         Insertion("bfp.main.MainScene", "VersionManager.xml = this._assetmanager.getAsset(this.versionXML).data;",
                   _MainScene_versionXML_patch),
+        Insertion("bfp.main.SoundController", 'ExternalInterface.addCallback("sendVolume",this.receivedFromJavaScript);',
+                  _SoundController_sendVolume_patch),
     ),
     "pdw_home.swf": (
         # InitPDWHomeData copies the API response into PDWHomeData, so the shiny flag needs
