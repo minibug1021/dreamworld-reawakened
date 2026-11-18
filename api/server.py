@@ -125,7 +125,7 @@ def create_app() -> Flask:
 
     @app.teardown_appcontext
     def close_connections(_exc: BaseException | None) -> None:
-        # each request runs on its own thread, so its connections can't be reused
+        # close the request thread's connections
         db.close()
         accounts.close()
 

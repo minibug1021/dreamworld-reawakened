@@ -11,12 +11,13 @@ logger = logging.getLogger(__name__)
 
 # the PokemonBridge patch in utils/patching/swf_patches.py has this port in its API address
 PORT = 8080
+SERVER_THREADS = 16  # waitress's default of 4 makes page loads wait on each other
 
 
 def build_parser() -> argparse.ArgumentParser:
     """Build the command-line options."""
     parser = argparse.ArgumentParser(description="Dream World HTTP server")
-    parser.add_argument("--debug", action="store_true", help="debug logging and Flask debug mode")
+    parser.add_argument("--debug", action="store_true", help="debug logging")
     parser.add_argument("--lang", help="site language (ja, en, fr, it, de, es, ko); "
                                        "defaults to $DW_LANG, else en")
     return parser
@@ -36,6 +37,8 @@ def main() -> None:
 
     logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO,
                         format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
+    # a page load asks for dozens of files at once, so waitress queues some of them
+    logging.getLogger("waitress.queue").setLevel(logging.ERROR)
 
     # ask for the Gmail details now, on the first run only
     try:
@@ -43,13 +46,15 @@ def main() -> None:
     except EmailNotConfiguredError as e:
         logger.info("Activation emails are off: %s", e)
 
+    from waitress import serve
+
     from api.server import create_app
     from utils import patching
 
     patching.prewarm()
     app = create_app()
     app.logger.info("Server started!%s", " (debug mode)" if args.debug else "")
-    app.run(host="0.0.0.0", port=PORT, debug=args.debug, use_reloader=False)
+    serve(app, host="0.0.0.0", port=PORT, threads=SERVER_THREADS)
 
 
 if __name__ == "__main__":

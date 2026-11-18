@@ -7,9 +7,10 @@ requires-python = ">=3.11"
 dependencies = [
     "flask>=3.1,<4",
     "tzdata>=2024.1",
+    "waitress>=3.0,<4",
     # the Game Sync server (game_sync_server/)
     "dnslib>=0.9.26,<1",
-    "tlslite-ng>=0.8.2,<0.9"
+    "tlslite-ng>=0.8.2,<0.9",
 ]
 
 [dependency-groups]
