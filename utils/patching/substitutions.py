@@ -16,12 +16,16 @@ class Substitution:
 
 
 # point the SWF embed at the local language host instead of window.location
-_SWF_EMBED_PATCHES = (
-    Substitution(
+_SWF_EMBED_PATCHES = Substitution(
         b"lang:window.location",
         f"lang:'http://{LANG}.pokemon-gl.com/'".encode(),
-    ),
-)
+    )
+
+# patch for Ruffle breaking the volume slider
+_VOLUME_SLIDER_PATCHES = Substitution(
+        b"return document[movieName];",
+        b"return document.getElementById(movieName);",
+    )
 
 # file name -> substitutions for just that file
 JS_PATCHES: dict[str, tuple[Substitution, ...]] = {
@@ -43,8 +47,8 @@ JS_PATCHES: dict[str, tuple[Substitution, ...]] = {
             b"  $('input[name=pgl_name]').val(this.data.username).prop('readonly', true);\n",
         ),
     ),
-    "swfembed2.js": _SWF_EMBED_PATCHES,
-    "swfembed3.js": _SWF_EMBED_PATCHES,
+    "swfembed2.js": (_SWF_EMBED_PATCHES, _VOLUME_SLIDER_PATCHES),
+    "swfembed3.js": (_SWF_EMBED_PATCHES, _VOLUME_SLIDER_PATCHES),
     "top.js": (
         # use Intl.DateTimeFormat so the time respects DST
         Substitution(
