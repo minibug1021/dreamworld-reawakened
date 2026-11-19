@@ -3,8 +3,9 @@ import time
 from random import choice, randint
 
 from api.routes import Query, endpoint
+from game_sync_server.entralinked.utility.db_manager import db
 from utils import pokemon, save_data, text, visits
-from utils.constants import NATURE_COUNT, SHARE_SHELF_ID, PlayerStatus
+from utils.constants import NATURE_COUNT, SHARE_SHELF_ID, DreamPalStatus, PlayerStatus
 from utils.decor import arranged_decor
 from utils.models import Member, SleepingPokemon
 
@@ -70,6 +71,7 @@ def my_island(_query: Query) -> dict:
 
 def _island_area(gscd: str) -> dict:
     """Return the map around a player's island: their island and the players they can visit."""
+    pals = {save_data.read_member(pal)["member_savedata_id"] for pal in db.dream_pals(gscd, DreamPalStatus.PALS)}
     friends = [
         {
             "pgl_name":           member.get("pgl_name"),
@@ -79,7 +81,7 @@ def _island_area(gscd: str) -> dict:
             "country_id":         member.get("country_id"),
             "is_ds":              0,
             "is_gts":             0,
-            "is_pdw":             1,
+            "is_pdw":             int(member.get("member_savedata_id") in pals),  # the Dream Pal bridge
         }
         for member in visits.neighbors(gscd)
     ]
@@ -101,11 +103,14 @@ def friend_island_area(query: Query) -> dict:
 @endpoint("pdw.home.friend_island")
 def friend_island(query: Query) -> dict:
     """Return another player's island."""
+    me = save_data.require_gscd()
     friend = visits.find_player(int(query["friend_member_savedata_id"]))
     member = save_data.read_member(friend)
     return {
         "pokemon":                _island_pokemon(pokemon.get_sleeper()),
         "friend_pokemon":         _island_pokemon(pokemon.get_sleeper(friend)),
+        "friend_status":          db.dream_pal_status(me, friend),
+        "visit_count":            db.record_dream_pal_visit(me, friend, save_data.today_jst_str()),
         "island_id":              member["island_id"],
         "point":                  0,
         "trial_flag":             0,
@@ -113,6 +118,26 @@ def friend_island(query: Query) -> dict:
         "requested_flag":         False,
         "shelf_id":               SHARE_SHELF_ID,
     }
+
+
+def _send_request(other_id: str) -> bool:
+    """Send a Dream Pal request and return whether the two players are now Dream Pals."""
+    me = save_data.require_gscd()
+    other = visits.find_player(int(other_id))
+    return db.request_dream_pal(me, other, save_data.now_jst_str())
+
+
+@endpoint("pdw.home.friend_request", methods=("POST",))
+def friend_request(query: Query) -> dict:
+    """Send a Dream Pal request to another player."""
+    return {"joined": int(_send_request(query["friend_member_savedata_id"]))}
+
+
+@endpoint("pdw.home.friend_accept", methods=("POST",))
+def friend_accept(query: Query) -> dict:
+    """Accept a Dream Pal request from another player."""
+    _send_request(query["visitor_member_savedata_id"])
+    return {}
 
 
 @endpoint("pdw.home.pdw_end")

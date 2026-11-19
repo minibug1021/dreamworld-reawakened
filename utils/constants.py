@@ -33,4 +33,13 @@ class PlayerStatus(IntEnum):
     WAKE_READY = 3
 
 
+class DreamPalStatus(IntEnum):
+    """How one player stands with another."""
+
+    NONE = 0
+    REQUESTING = 1  # the player sent a request
+    REQUESTED = 2   # the other player sent the player a request
+    PALS = 3
+
+
 NATURE_COUNT = 25  # nature ids 0-24 (raw_text/*/nature.txt)
