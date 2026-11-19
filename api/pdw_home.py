@@ -5,9 +5,12 @@ from random import choice, randint
 from api.routes import Query, endpoint
 from game_sync_server.entralinked.utility.db_manager import db
 from utils import pokemon, save_data, text, visits
+from utils.account_manager import accounts
 from utils.constants import DREAMLAND_VISITS_PER_SESSION, NATURE_COUNT, SHARE_SHELF_ID, DreamPalStatus, PlayerStatus
 from utils.decor import arranged_decor
 from utils.models import Member, SleepingPokemon
+
+DAILY_BONUS_POINTS = 50
 
 
 @endpoint("pdw.home.footprint_list")
@@ -149,9 +152,13 @@ def pdw_end(_query: Query) -> dict:
 
 @endpoint("pdw.home.pdw_start", methods=("POST",))
 def pdw_start(_query: Query) -> dict:
-    """Start a Dream World session."""
+    """Start a Dream World session.
+
+    The first session of the day (JST) for each account also gives the daily bonus.
+    """
     timestamp = int(time.time())
-    member = save_data.read_member()
+    gscd = save_data.require_gscd()
+    member = save_data.read_member(gscd)
 
     save_data.record_session_start(timestamp)
     update: Member = {"pokemon_name": text.lookup_str("pokemon", member["pokemon_no"]), "point": 0,
@@ -159,6 +166,11 @@ def pdw_start(_query: Query) -> dict:
     if member.get("first_flag") == 0:
         update["first_flag"] = 1
     save_data.update_member(update)
+
+    # after the reset above, so the bonus counts toward this session's points
+    owner = accounts.get_gscd_owner(gscd)
+    if owner and accounts.claim_daily_bonus(owner, save_data.today_jst_str()):
+        save_data.award_points(DAILY_BONUS_POINTS, gscd)
 
     return {"started_at": timestamp}
 

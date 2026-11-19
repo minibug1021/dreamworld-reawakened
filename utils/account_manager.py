@@ -144,12 +144,12 @@ class AccountManager(SQLiteStore):
         Return True (and record `today`) the first time this is called for `username` on a
         given day. False if today's bonus was already claimed.
         """
-        row = self._fetch_one("SELECT last_daily_bonus_date FROM accounts WHERE username = ?", username)
-        if row is None or row["last_daily_bonus_date"] == today:
-            return False
-
-        self._execute("UPDATE accounts SET last_daily_bonus_date = ? WHERE username = ?", today, username)
-        return True
+        with self._conn:
+            cursor = self._conn.execute(
+                """UPDATE accounts SET last_daily_bonus_date = ?
+                   WHERE username = ? AND last_daily_bonus_date IS NOT ?""",
+                (today, username, today))
+        return cursor.rowcount == 1
 
 
 accounts = AccountManager(SAVE_DIR / "pokemon_saves.db")
