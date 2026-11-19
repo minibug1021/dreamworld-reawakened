@@ -29,7 +29,7 @@ For the Dream World server (the Pokémon Global Link site):
 - Install uv with `curl -LsSf https://astral.sh/uv/install.sh | sh`.
 - Install git with your distribution's package manager
 - Run `git clone --recursive https://github.com/minibug1021/dreamworld-reawakened.git`, then `cd dreamworld-reawakened` and `uv sync`
-- The Game Sync server must be run as root, because the ports it uses (53 and 443) are privileged. Start it with `sudo .venv/bin/python game_sync_server/server.py` from the `dreamworld-reawakened` folder.
+- The Game Sync server must be run as root, because the ports it uses (53, 80, and 443) are privileged. Start it with `sudo .venv/bin/python game_sync_server/server.py` from the `dreamworld-reawakened` folder.
 - Start the Dream World server as your normal user with `uv run main.py`
 
 ## Flash browser setup
@@ -65,6 +65,11 @@ Be mindful that Ruffle is not perfect and will still have issues. Please report 
 
 # Things that are not working
 
-- Making a wish at the Tree of Dreams
-- Sending back Pokémon through the Entralink
-- Share Shelf
+- Storing Tree of Dreams Pokémon
+- Logging befriended Pokémon
+- Sending Dream Pal requests
+- Logout
+- Promotions
+- E-Z Mail
+- GBU
+- Reports
