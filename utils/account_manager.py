@@ -57,7 +57,7 @@ class AccountManager(SQLiteStore):
 
     def count_accounts(self) -> int:
         """Return the number of accounts."""
-        return self._conn.execute("SELECT COUNT(*) FROM accounts").fetchone()[0]
+        return self._conn.execute("SELECT COUNT(*) FROM accounts WHERE registered == 1").fetchone()[0]
 
     def create_account(self, username: str, password_hash: str, email: str, country: int,
                        birth_month: int, pgl_privacy: Privacy, dw_privacy: Privacy,

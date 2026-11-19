@@ -92,9 +92,10 @@ def _member_data(account: Account) -> dict:
     if member.get("rom_id") is not None:
         member["rom_name"] = text.lookup_str("game", member["rom_id"])
 
-    tz_timestamp = member.get("last_started_at_timezone")
-    if tz_timestamp is not None:
-        member["last_up_time"] = language.localize_last_up_time(tz_timestamp)
+    # last_up_time_strict is only set at tuck-in
+    tucked_in_at = member.get("last_up_time_strict")
+    if tucked_in_at:
+        member["last_up_time"] = language.localize_last_up_time(save_data.parse_jst_str(tucked_in_at))
 
     # only the response is changed, the saved nextstart_remaintime is untouched
     if DISABLE_PLAY_TIME_LIMIT:

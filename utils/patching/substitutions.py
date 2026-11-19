@@ -30,6 +30,15 @@ _VOLUME_SLIDER_PATCHES = Substitution(
 # file name -> substitutions for just that file
 JS_PATCHES: dict[str, tuple[Substitution, ...]] = {
     "pgl.js": (
+        # Ruffle only starts a SWF once the browser allows sound, and otherwise shows a play
+        # button, which is invisible on the 1x1 music player and covers the volume slider.
+        Substitution(
+            b"var PGL = function() {\n",
+            b"window.RufflePlayer = window.RufflePlayer || {};\n"
+            b"window.RufflePlayer.config = $.extend({}, window.RufflePlayer.config, { autoplay: 'on', unmuteOverlay: 'hidden' });\n"
+            b"\n"
+            b"var PGL = function() {\n",
+        ),
         Substitution(
             b"(location.href.match(/\\W(ja|en|fr|it|de|es|ko)\\./) || [null, 'ja'])[1];",
             f"'{LANG}';".encode(),
@@ -50,6 +59,24 @@ JS_PATCHES: dict[str, tuple[Substitution, ...]] = {
     "swfembed2.js": (_SWF_EMBED_PATCHES, _VOLUME_SLIDER_PATCHES),
     "swfembed3.js": (_SWF_EMBED_PATCHES, _VOLUME_SLIDER_PATCHES),
     "top.js": (
+        # Browsers only allow sound once the visitor has interacted with the page, so if that
+        # hasn't happened yet, the front page music starts on their first click or key press.
+        Substitution(
+            b"    $('<div id=\"sound\"></div>').appendTo(document.body);\n"
+            b"    swfobject.embedSWF('/top/assets/swf/sound.swf', 'sound', '1', '1', '9.0.0');\n",
+            b"    var startMusic = function () {\n"
+            b"      $(document).off('mousedown keydown touchend', startMusic);\n"
+            b"      $('<div id=\"sound\"></div>').appendTo(document.body);\n"
+            b"      swfobject.embedSWF('/top/assets/swf/sound.swf', 'sound', '1', '1', '9.0.0');\n"
+            b"    };\n"
+            b"    var soundCheck = new AudioContext();\n"
+            b"    if (soundCheck.state === 'running') {\n"
+            b"      startMusic();\n"
+            b"    } else {\n"
+            b"      $(document).on('mousedown keydown touchend', startMusic);\n"
+            b"    }\n"
+            b"    soundCheck.close();\n",
+        ),
         # use Intl.DateTimeFormat so the time respects DST
         Substitution(
             b"d.setTime(d.getTime() + area.tz.offset * 60 * 60 * 1000);\r\n"

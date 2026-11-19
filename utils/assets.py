@@ -48,6 +48,26 @@ def path_inside(base: Path, relative: str) -> Path | None:
     return path if path.is_relative_to(base) else None
 
 
+def find_file(path: Path | None) -> Path | None:
+    """Return path if it's a file, else a file in the same directory whose name matches ignoring case.
+
+    Some files are cased differently on the backend vs. what the game requests.
+    """
+    if path is None:
+        return None
+    if path.is_file():
+        return path
+    if not path.parent.is_dir():
+        return None
+
+    name = path.name.lower()
+    for candidate in path.parent.iterdir():
+        if candidate.name.lower() == name and candidate.is_file():
+            return candidate
+
+    return None
+
+
 def resolve_static(path: str) -> Path | None:
     """Return the file for a static asset URL.
 
@@ -63,13 +83,9 @@ def resolve_static(path: str) -> Path | None:
         if host_path and host_path.is_dir():
             return host_path / "index.html"
 
-    site_path = path_inside(SITE_DIR, relative)
-    if site_path and site_path.is_file():
+    site_path = find_file(path_inside(SITE_DIR, relative))
+    if site_path:
         return site_path
 
     # the shared mirror has no language prefix (e.g. /en/ -> /)
-    shared_path = path_inside(SHARED_DIR, _LANG_SEGMENT.sub("/", relative))
-    if shared_path and shared_path.is_file():
-        return shared_path
-
-    return None
+    return find_file(path_inside(SHARED_DIR, _LANG_SEGMENT.sub("/", relative)))

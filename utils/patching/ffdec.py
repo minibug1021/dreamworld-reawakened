@@ -14,7 +14,8 @@ from urllib.request import urlretrieve
 from zipfile import ZipFile
 
 from config import ROOT_DIR
-from utils.patching.swf_patches import INSERTIONS, SWF_PATHS, Insertion
+from utils.patching.swf_patches import FIRST_FRAME_ONLY, INSERTIONS, SWF_PATHS, Insertion
+from utils.patching.timeline import keep_first_frame
 
 logger = logging.getLogger(__name__)
 
@@ -165,6 +166,9 @@ def _patch_swf(swf_name: str) -> bytes:
         )
 
         out_bytes = out_path.read_bytes()
+        if swf_name in FIRST_FRAME_ONLY:
+            out_bytes = keep_first_frame(out_bytes)
+            out_path.write_bytes(out_bytes)
     except Exception:
         # out_path is a bogus (unpatched, or partially-patched) copy at this
         # point - remove it so a failed run can never be mistaken for a

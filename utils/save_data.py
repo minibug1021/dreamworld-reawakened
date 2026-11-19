@@ -36,6 +36,11 @@ def now_jst_str() -> str:
     return datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")
 
 
+def parse_jst_str(value: str) -> int:
+    """Return the epoch timestamp of a time formatted by now_jst_str."""
+    return int(datetime.strptime(value, "%Y-%m-%d %H:%M:%S").replace(tzinfo=JST).timestamp())
+
+
 def today_jst_str() -> str:
     """Return the current server date (JST), used to gate the once-per-day login bonus."""
     return datetime.now(JST).strftime("%Y-%m-%d")

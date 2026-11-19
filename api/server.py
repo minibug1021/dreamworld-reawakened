@@ -123,6 +123,13 @@ def create_app() -> Flask:
     app.register_blueprint(signup)
     app.register_blueprint(site)
 
+    @app.after_request
+    def upgrade_insecure_requests(response: Response) -> Response:
+        # Force HTTPS everywhere.
+        if request.is_secure:
+            response.headers["Content-Security-Policy"] = "upgrade-insecure-requests"
+        return response
+
     @app.teardown_appcontext
     def close_connections(_exc: BaseException | None) -> None:
         # close the request thread's connections

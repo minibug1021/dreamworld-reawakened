@@ -38,10 +38,6 @@ _PokemonBridge_patch = dedent("""\
     Logger.log("API : " + PDW_API);
 """)
 
-# AssetManager loads .xml files as text, but VersionManager.xml takes an XML, so MainScene
-# parses the text itself.
-_MainScene_versionXML_patch = "VersionManager.xml = new XML(this._assetmanager.getAsset(this.versionXML).data);"
-
 # the original code checks to see if we are connecting from localhost and tries to load
 # it from a different path if we are
 _Garden_patch = "this._exteriorLoader.load(new URLRequest(path + \"../../theme/assets/global/parts/interior/\" + islandId + \".swf\" + cacheBuster + version));"
@@ -178,6 +174,13 @@ _InitPDWHomeData_myPokemon_reset_patch = dedent("""\
     PDWHomeData.myPokemonBall = "";
     PDWHomeData.myPokemonShiny = false;""")
 
+# The Dream Pal map counts the islands to draw before it takes the island the player came
+# from out of the list, so with 4 or fewer islands it reads past the end of the list.
+_World_moveCount_patch = dedent("""\
+    json.friend_list.splice(i,1);
+    max = Math.min(4,json.friend_list.length);
+    break;""")
+
 # Ruffle: keep main.swf's copy of the defaultVolume SharedObject up to date.
 _SoundController_sendVolume_patch = dedent("""\
     ExternalInterface.addCallback("sendVolume",function(param1:*):void
@@ -202,6 +205,7 @@ SWF_PATHS = {
     "pdw_farm.swf":   _SWF_DIR / "pdw" / "assets" / "pdw_farm.swf",
     "pdw_room.swf":   _SWF_DIR / "pdw" / "assets" / "pdw_room.swf",
     "pdw_share.swf":  _SWF_DIR / "pdw" / "assets" / "pdw_share.swf",
+    "pdw_world.swf":  _SWF_DIR / "pdw" / "assets" / "pdw_world.swf",
 }
 
 def _pokemon_renderer_patches(package: str) -> tuple[Insertion, ...]:
@@ -242,8 +246,6 @@ INSERTIONS: dict[str, tuple[Insertion, ...]] = {
         Insertion("bfp.common.PokemonBridge",
                   'Logger.log("PATH : " + PokemonBridge.PATH);\nLogger.log("API : " + PDW_API);',
                   _PokemonBridge_patch),
-        Insertion("bfp.main.MainScene", "VersionManager.xml = this._assetmanager.getAsset(this.versionXML).data;",
-                  _MainScene_versionXML_patch),
         Insertion("bfp.main.SoundController", 'ExternalInterface.addCallback("sendVolume",this.receivedFromJavaScript);',
                   _SoundController_sendVolume_patch),
     ),
@@ -315,4 +317,10 @@ INSERTIONS: dict[str, tuple[Insertion, ...]] = {
         Insertion("bfp.pdw.common_y.RCData", "public var myPokemonFormID:Number = 0;",
                   _RCData_myPokemonShiny_field_patch),
     ),
+    "pdw_world.swf": (
+        Insertion("bfp.tpc.pdw.world.World", "json.friend_list.splice(i,1);\nbreak;", _World_moveCount_patch),
+    ),
 }
+
+# SWFs whose main timeline is cut to its first frame (see timeline.py)
+FIRST_FRAME_ONLY = {"pdw_world.swf"}
