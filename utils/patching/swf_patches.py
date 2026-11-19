@@ -164,7 +164,7 @@ _Room_Main_friendPokemonShiny_patch = dedent("""\
 _PokemonArea_myPokemon_loadToScene_patch = "this.myPokemonObj.loadToScene(this.rcData.myPokemonID,this.rcData.myPokemonFormID,PokemonRendererScene.ROOM,this.rcData.myPokemonShiny);"
 _PokemonArea_friendPokemon_loadToScene_patch = "this.friendPokemonObj.loadToScene(this.rcData.friendPokemonID,this.rcData.friendPokemonFormID,PokemonRendererScene.ROOM,this.rcData.friendPokemonShiny);"
 
-_DialogPokemonList_patch = "pokemon.loadToArea(data.pokemon_list[i].pokemon_no,data.pokemon_list[i].form_no,82,82,data.pokemon_list[i].shiny);"
+_DialogPokemonList_patch = "pokemon.loadToArea(data.pokemon_list[i].pokemon_no,data.pokemon_list[i].form_no,82,82,true,data.pokemon_list[i].shiny);"
 
 _InitPDWHomeData_myPokemon_patch = dedent("""\
     PDWHomeData.myPokemonBall = json.pokemon.ball_name;
@@ -173,6 +173,20 @@ _InitPDWHomeData_myPokemon_patch = dedent("""\
 _InitPDWHomeData_myPokemon_reset_patch = dedent("""\
     PDWHomeData.myPokemonBall = "";
     PDWHomeData.myPokemonShiny = false;""")
+
+# the same for the Pokémon of the player being visited
+_InitPDWHomeData_anotherPokemon_patch = dedent("""\
+    PDWHomeData.anotherPokemonBall = json.friend_pokemon.ball_name;
+    PDWHomeData.anotherPokemonShiny = Boolean(json.friend_pokemon.shiny);""")
+
+_InitPDWHomeData_anotherPokemon_reset_patch = dedent("""\
+    PDWHomeData.anotherPokemonBall = "";
+    PDWHomeData.anotherPokemonShiny = false;""")
+
+# the Dream Pal request dialogs show the visited player's Pokémon
+_DialogFriend_anotherPokemon_patch = \
+    "pokemon.loadToArea(PDWHomeData.anotherPokemonNo,PDWHomeData.anotherPokemonFormNo,180,180,true," \
+    "PDWHomeData.anotherPokemonShiny);"
 
 # The Dream Pal map counts the islands to draw before it takes the island the player came
 # from out of the list, so with 4 or fewer islands it reads past the end of the list.
@@ -258,6 +272,14 @@ INSERTIONS: dict[str, tuple[Insertion, ...]] = {
                   _InitPDWHomeData_myPokemon_reset_patch),
         Insertion("bfp.tpc.pdw.home.InitPDWHomeData", "PDWHomeData.myPokemonBall = json.pokemon.ball_name;",
                   _InitPDWHomeData_myPokemon_patch),
+        Insertion("bfp.tpc.pdw.home.InitPDWHomeData", 'PDWHomeData.anotherPokemonBall = "";',
+                  _InitPDWHomeData_anotherPokemon_reset_patch),
+        Insertion("bfp.tpc.pdw.home.InitPDWHomeData", "PDWHomeData.anotherPokemonBall = json.friend_pokemon.ball_name;",
+                  _InitPDWHomeData_anotherPokemon_patch),
+        *(Insertion(f"bfp.tpc.pdw.dialog.{dialog}",
+                    "pokemon.loadToArea(PDWHomeData.anotherPokemonNo,PDWHomeData.anotherPokemonFormNo,180,180);",
+                    _DialogFriend_anotherPokemon_patch)
+          for dialog in ("DialogInviteFriend", "DialogBecomeFriend")),
     ),
     "pdw.swf": (
         Insertion("bfp.tpc.pdw.pdw.PDW",
