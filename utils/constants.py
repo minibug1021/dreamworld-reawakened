@@ -42,4 +42,8 @@ class DreamPalStatus(IntEnum):
     PALS = 3
 
 
+# How many Dream Island visits with encounters a player can get per session. Both ends are
+# inclusive. Once all the visits are used up, the islands are empty until the next session.
+DREAMLAND_VISITS_PER_SESSION = (10, 12)
+
 NATURE_COUNT = 25  # nature ids 0-24 (raw_text/*/nature.txt)

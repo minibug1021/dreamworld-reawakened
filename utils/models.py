@@ -69,6 +69,7 @@ class Member(TypedDict, total=False):
     sleep_pokemon_count: int
     send_pokemon_count: int
     play_status: int  # utils.constants.PlayerStatus
+    dreamland_visits_left: int  # Dream Island visits with encounters left this session
     # Dream Points
     point: int
     experiment_point: int

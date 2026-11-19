@@ -5,7 +5,7 @@ from random import choice, randint
 from api.routes import Query, endpoint
 from game_sync_server.entralinked.utility.db_manager import db
 from utils import pokemon, save_data, text, visits
-from utils.constants import NATURE_COUNT, SHARE_SHELF_ID, DreamPalStatus, PlayerStatus
+from utils.constants import DREAMLAND_VISITS_PER_SESSION, NATURE_COUNT, SHARE_SHELF_ID, DreamPalStatus, PlayerStatus
 from utils.decor import arranged_decor
 from utils.models import Member, SleepingPokemon
 
@@ -154,7 +154,8 @@ def pdw_start(_query: Query) -> dict:
     member = save_data.read_member()
 
     save_data.record_session_start(timestamp)
-    update: Member = {"pokemon_name": text.lookup_str("pokemon", member["pokemon_no"]), "point": 0}
+    update: Member = {"pokemon_name": text.lookup_str("pokemon", member["pokemon_no"]), "point": 0,
+                      "dreamland_visits_left": randint(*DREAMLAND_VISITS_PER_SESSION)}
     if member.get("first_flag") == 0:
         update["first_flag"] = 1
     save_data.update_member(update)

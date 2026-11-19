@@ -131,6 +131,20 @@ def award_points(amount: int, gscd: str | None = None) -> None:
     change_member(add, gscd)
 
 
+def use_dreamland_visit(gscd: str | None = None) -> bool:
+    """Use up a Dream Island visit if the session has one, and return whether it did."""
+    used = False
+
+    def use(member: Member) -> None:
+        nonlocal used
+        if member.get("dreamland_visits_left", 0) > 0:
+            member["dreamland_visits_left"] -= 1
+            used = True
+
+    change_member(use, gscd)
+    return used
+
+
 def record_session_start(timestamp: int, gscd: str | None = None) -> None:
     """Record that a Dream World session started.
 

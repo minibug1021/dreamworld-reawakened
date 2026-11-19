@@ -166,7 +166,8 @@ def top(_query: Query) -> dict:
 
     The island is picked by the player's Dream Points, badges, and Pokémon types. Each island
     has a fixed set of object slots, unlocked by Dream Points (base pool plus expansions).
-    A visit shows OBJECTS_PER_VISIT of the unlocked slots at random.
+    A visit shows OBJECTS_PER_VISIT of the unlocked slots at random. Once the session's
+    visits (dreamland_visits_left) are used up, the island is empty.
     """
     player = save_data.read_member()
     b2w2 = is_b2w2(player["rom_id"])
@@ -175,6 +176,10 @@ def top(_query: Query) -> dict:
     area_id = _pick_area(player, "b2w2" if b2w2 else "bw")
     if b2w2:
         area_id = str(int(area_id) + B2W2_AREA_OFFSET)
+
+    if not save_data.use_dreamland_visit():
+        session.pop(_VISIT_TOKENS, None)
+        return {"dreamland_area_id": int(area_id), "object_list": []}
 
     unlocked = [object_id for object_id in _DREAMLAND["areas"][area_id]
                 if _SLOTS[object_id]["min_points"] <= points]
