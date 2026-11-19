@@ -195,6 +195,52 @@ _World_moveCount_patch = dedent("""\
     max = Math.min(4,json.friend_list.length);
     break;""")
 
+# The room loads its Decor one item at a time, each waiting for the last, so a room with a
+# several hundred items takes many seconds to appear. This starts every load at once and
+# loads each kind of Decor once.
+_FirstInteriorLoader_fields_patch = dedent("""\
+    private var loadCount:Number = 0;
+    private var loadTotal:Number = 0;""")
+_FirstInteriorLoader_startLoad_patch = dedent("""\
+    private function startLoad() : *
+    {
+       var seen:Object = {};
+       var unique:Array = [];
+       var i:int = 0;
+       var infoObj:* = undefined;
+       var loader:InteriorLoader = null;
+       for(i = 0; i < this.rcData.arrangedInteriorList.length; i++)
+       {
+          infoObj = this.rcData.arrangedInteriorList[i];
+          if(seen[infoObj.interior_id] == undefined)
+          {
+             seen[infoObj.interior_id] = true;
+             unique.push(infoObj);
+          }
+       }
+       this.loadTotal = unique.length;
+       if(this.loadTotal == 0)
+       {
+          dispatchEvent(new CustomEvent("onFirstInteriorLoadComplete"));
+          return;
+       }
+       for(i = 0; i < unique.length; i++)
+       {
+          loader = new InteriorLoader();
+          loader.addEventListener("onItenriorRoomLoaderComplete",this.onItenriorRoomLoaderComplete);
+          loader.load(unique[i].interior_id,unique[i].interior_category_id);
+       }
+    }""")
+_FirstInteriorLoader_complete_patch = dedent("""\
+    private function onItenriorRoomLoaderComplete(evt:CustomEvent) : *
+    {
+       ++this.loadCount;
+       if(this.loadCount == this.loadTotal)
+       {
+          dispatchEvent(new CustomEvent("onFirstInteriorLoadComplete"));
+       }
+    }""")
+
 # Ruffle: keep main.swf's copy of the defaultVolume SharedObject up to date.
 _SoundController_sendVolume_patch = dedent("""\
     ExternalInterface.addCallback("sendVolume",function(param1:*):void
@@ -338,6 +384,13 @@ INSERTIONS: dict[str, tuple[Insertion, ...]] = {
                   _RCData_friendPokemonShiny_field_patch),
         Insertion("bfp.pdw.common_y.RCData", "public var myPokemonFormID:Number = 0;",
                   _RCData_myPokemonShiny_field_patch),
+        Insertion("bfp.pdw.room.net.FirstInteriorLoader", "private var loadCount:Number = 0;",
+                  _FirstInteriorLoader_fields_patch),
+        Insertion("bfp.pdw.room.net.FirstInteriorLoader", "private function startLoad() : *",
+                  _FirstInteriorLoader_startLoad_patch, block=True),
+        Insertion("bfp.pdw.room.net.FirstInteriorLoader",
+                  "private function onItenriorRoomLoaderComplete(evt:CustomEvent) : *",
+                  _FirstInteriorLoader_complete_patch, block=True),
     ),
     "pdw_world.swf": (
         Insertion("bfp.tpc.pdw.world.World", "json.friend_list.splice(i,1);\nbreak;", _World_moveCount_patch),
