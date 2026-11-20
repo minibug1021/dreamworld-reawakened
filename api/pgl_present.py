@@ -1,16 +1,15 @@
 """pgl.present.*: the Customize page (present.swf) for picking C-Gear skins, Pokédex skins, and Musicals."""
-from pathlib import PurePosixPath
+from functools import cache
+from pathlib import Path, PurePosixPath
 from typing import Literal
 
 from api.routes import Query, endpoint
-from config import LANG, ROOT_DIR
+from config import ROOT_DIR
 from utils import save_data
 from utils.constants import is_b2w2
 from utils.data import load_json_data
+from utils.language import current_language
 from utils.models import GameSync, Member
-
-_IMG_DIR = (ROOT_DIR / "dreamworld_assets" / f"{LANG}.pokemon-gl.com"
-            / "src" / "swf" / "customize" / "assets" / LANG / "img")
 
 _PRESENTS: dict[str, dict] = load_json_data("customize")
 
@@ -25,16 +24,26 @@ _CATEGORIES: dict[str, _SkinField] = {
 }
 
 
-def _musical_file(entry: dict) -> str | None:
+def _img_dir(lang: str) -> Path:
+    """Return the folder with the language's present thumbnails and Musical mp3s."""
+    return (ROOT_DIR / "dreamworld_assets" / f"{lang}.pokemon-gl.com"
+            / "src" / "swf" / "customize" / "assets" / lang / "img")
+
+
+def _musical_file(entry: dict, lang: str) -> str | None:
     """Return the URL of the Musical's mp3, which sits next to its thumbnail."""
-    thumb = entry["data"][LANG][2]
+    thumb = entry["data"][lang][2]
     if entry["type"] != "MUSICAL" or not thumb:
         return None
-    mp3 = min((_IMG_DIR / thumb).parent.glob("*.mp3"), default=None)
-    return "/" + mp3.relative_to(_IMG_DIR).as_posix() if mp3 else None
+    img_dir = _img_dir(lang)
+    mp3 = min((img_dir / thumb).parent.glob("*.mp3"), default=None)
+    return "/" + mp3.relative_to(img_dir).as_posix() if mp3 else None
 
 
-_MUSICAL_FILES = {present_id: _musical_file(entry) for present_id, entry in _PRESENTS.items()}
+@cache
+def _musical_files(lang: str) -> dict[str, str | None]:
+    """Present id -> the URL of the Musical's mp3 in that language (None for other presents)."""
+    return {present_id: _musical_file(entry, lang) for present_id, entry in _PRESENTS.items()}
 
 
 def _dlc_filenames(entry: dict) -> list[str]:
@@ -43,11 +52,11 @@ def _dlc_filenames(entry: dict) -> list[str]:
 
 
 def _dlc_filename(entry: dict) -> str | None:
-    """Return the file name in the site language.
+    """Return the file name in the visitor's language.
 
     Return None otherwise.
     """
-    file = entry["data"][LANG][1]
+    file = entry["data"][current_language()][1]
     return PurePosixPath(file).name if file else None
 
 
@@ -65,15 +74,15 @@ def _offered(entry: dict, category: str, member: Member) -> bool:
 
 
 def _name(entry: dict) -> str:
-    """Return the DLC's name in the site language, else in English."""
-    return entry["data"][LANG][0] or entry["data"]["en"][0]
+    """Return the DLC's name in the visitor's language, else in English."""
+    return entry["data"][current_language()][0] or entry["data"]["en"][0]
 
 
 def _entry(present_id: str, entry: dict) -> dict | None:
     """Build the DLC's present_list item.
 
-    Return None if the site language lacks its file or thumbnail."""
-    thumb = entry["data"][LANG][2]
+    Return None if the visitor's language lacks its file or thumbnail."""
+    thumb = entry["data"][current_language()][2]
     if thumb is None or _dlc_filename(entry) is None:
         return None
     item = {
@@ -82,7 +91,7 @@ def _entry(present_id: str, entry: dict) -> dict | None:
         "present_name": _name(entry),
         "is_select":    "0",
     }
-    if musical_file := _MUSICAL_FILES[present_id]:
+    if musical_file := _musical_files(current_language())[present_id]:
         item["musical_file"] = musical_file
     return item
 

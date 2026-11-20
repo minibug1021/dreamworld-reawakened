@@ -3,7 +3,8 @@
 MESSAGES is keyed by site language, then message id.
 A message that a language doesn't have, or has as an empty string, falls back to English.
 """
-from config import DEFAULT_LANGUAGE, LANG
+from config import DEFAULT_LANGUAGE
+from utils.language import current_language
 
 MESSAGES: dict[str, dict[str, str]] = {
     "en": {
@@ -137,7 +138,10 @@ MESSAGES: dict[str, dict[str, str]] = {
 }
 
 
-def message(message_id: str, **values: object) -> str:
-    """Return the message in the site language, with any {placeholders} filled in from `values`."""
-    template = MESSAGES.get(LANG, {}).get(message_id) or MESSAGES[DEFAULT_LANGUAGE][message_id]
+def message(message_id: str, lang: str | None = None, **values: object) -> str:
+    """Return the message in `lang`, with any {placeholders} filled in from `values`.
+
+    A `lang` of None means the visitor's language.
+    """
+    template = MESSAGES.get(lang or current_language(), {}).get(message_id) or MESSAGES[DEFAULT_LANGUAGE][message_id]
     return template.format(**values)

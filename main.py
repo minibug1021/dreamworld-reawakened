@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Starts the Dream World server with `uv run main.py [--lang en] [--debug]`.
 
-config.py reads the site language from $DW_LANG when it's first imported.
+config.py reads the default site language from $DW_LANG when it's first imported. Visitors
+can pick another with the language links on the site.
 """
 import argparse
 import logging
@@ -17,13 +18,13 @@ def build_parser() -> argparse.ArgumentParser:
     """Build the command-line options."""
     parser = argparse.ArgumentParser(description="Dream World HTTP server")
     parser.add_argument("--debug", action="store_true", help="debug logging")
-    parser.add_argument("--lang", help="site language (ja, en, fr, it, de, es, ko); "
-                                       "defaults to $DW_LANG, else en")
+    parser.add_argument("--lang", help="default site language for visitors who haven't picked one "
+                                       "(ja, en, fr, it, de, es, ko); defaults to $DW_LANG, else en")
     return parser
 
 
 def main() -> None:
-    """Set up the language and logging, patch the SWFs if needed, then run the app."""
+    """Set up the default language and logging, patch the SWFs if needed, then run the app."""
     parser = build_parser()
     args = parser.parse_args()
     if args.lang:

@@ -7,17 +7,18 @@ import atexit
 import json
 import logging
 from pathlib import Path
-from urllib.parse import parse_qs
+from urllib.parse import parse_qs, urlsplit
 
 from flask import Blueprint, Flask, Response, current_app, redirect, request
 from werkzeug.wrappers import Response as WerkzeugResponse
 
 from api.routes import HANDLERS, Query, load_handlers
 from api.signup import signup
-from config import get_secret_key
+from config import SUPPORTED_LANGUAGES, get_secret_key
 from game_sync_server.entralinked.utility.db_manager import db
 from utils.account_manager import accounts
-from utils.assets import SITE_DIR, not_found, path_inside, resolve_static, serve_file
+from utils.assets import not_found, path_inside, resolve_static, serve_file, site_dir
+from utils.language import LANGUAGE_COOKIE, current_language
 from utils.patching import SWF_PATHS, get_patched_swf
 
 # Copied from a real pdw1.pokemon-gl.com /api/ response
@@ -38,7 +39,7 @@ site = Blueprint("site", __name__)
 def rewrite_incoming_path() -> WerkzeugResponse | None:
     """Enforce a trailing slash on paths that map to a site directory."""
     path = request.path
-    site_path = path_inside(SITE_DIR, path.lstrip("/"))
+    site_path = path_inside(site_dir(current_language()), path.lstrip("/"))
     if not path.endswith("/") and site_path and site_path.is_dir():
         return redirect(f"{path}/", 301)
     return None
@@ -78,6 +79,31 @@ def api_post() -> Response:
 
 
 # ---------------
+# Language links
+# ---------------
+
+LANGUAGE_COOKIE_MAX_AGE = 365 * 24 * 60 * 60  # a year
+
+
+@site.get("/language/<lang>")
+def choose_language(lang: str) -> Response | WerkzeugResponse:
+    """Remember the visitor's site language and go back to the page they were on.
+
+    It only goes back to a page on this site. Otherwise it goes to the front page.
+    """
+    if lang not in SUPPORTED_LANGUAGES:
+        return not_found(request.path)
+    referrer = urlsplit(request.referrer or "")
+    back = "/"
+    if referrer.netloc == request.host:
+        back = "/" + referrer.path.lstrip("/\\") + (f"?{referrer.query}" if referrer.query else "")
+    response = redirect(back)
+    response.set_cookie(LANGUAGE_COOKIE, lang, max_age=LANGUAGE_COOKIE_MAX_AGE, samesite="Lax",
+                        secure=request.is_secure)
+    return response
+
+
+# ---------------
 # Site files
 # ---------------
 
@@ -94,7 +120,7 @@ def catch_all(path: str) -> Response:
         return Response(get_patched_swf(filename), content_type="application/x-shockwave-flash")
 
     # find first HTML file inside given directory
-    dir_path = path_inside(SITE_DIR, path)
+    dir_path = path_inside(site_dir(current_language()), path)
     if dir_path and dir_path.is_dir():
         index = min(dir_path.glob("*.html"), default=None)
         if index is None:
@@ -102,11 +128,11 @@ def catch_all(path: str) -> Response:
         return serve_file(index)
 
     # static asset
-    file_path = resolve_static(full_path)
-    if file_path is None:
+    found = resolve_static(full_path)
+    if found is None:
         return not_found(full_path)
-
-    return serve_file(file_path)
+    file_path, per_visitor = found
+    return serve_file(file_path, per_visitor=per_visitor)
 
 
 # ---------------

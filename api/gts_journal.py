@@ -5,7 +5,8 @@ from functools import cache
 from random import choice, randint
 
 from api.routes import Query, endpoint
-from config import LANG, ROOT_DIR
+from config import ROOT_DIR
+from utils.language import current_language
 from utils.pokemon import get_random_pokemon
 
 AREAS_JS = ROOT_DIR / "dreamworld_assets" / "shared.pokemon-gl.com" / "report" / "assets" / "js" / "areas.js"
@@ -27,7 +28,7 @@ def _random_trade_side(areas: dict[int, dict]) -> dict:
     country_id = choice(list(areas))
     return {
         "country_id":   country_id,
-        "country_name": areas[country_id]["names"][LANG],
+        "country_name": areas[country_id]["names"][current_language()],
         "monsno":       pkmn["pokemon_no"],
         "form_no":      pkmn.get("form_no", 0),
         "poke_level":   randint(1, 100),

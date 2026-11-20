@@ -8,6 +8,7 @@ from game_sync_server.entralinked.utility.db_manager import db
 from utils import pokemon, save_data, text
 from utils.account_manager import accounts
 from utils.constants import PlayerStatus
+from utils.language import game_language
 from utils.messages import message
 from utils.models import Member
 
@@ -69,7 +70,7 @@ def my_pdw_profile(_query: Query) -> dict:
     return {
         "island_id":        member["island_id"],
         "experiment_point": member["experiment_point"],
-        "pokemon_name":     text.lookup_str("pokemon", member["pokemon_no"]),
+        "pokemon_name":     text.lookup_str("pokemon", member["pokemon_no"], game_language(member.get("langcode"))),
         "pokemon_nickname": sleeper["pokemon_nickname"],
         "level":            sleeper["level"],
         "sex_id":           sleeper["sex"],

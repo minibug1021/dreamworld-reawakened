@@ -4,13 +4,13 @@ import os
 import re
 from pathlib import Path
 
-from flask import Response, current_app
+from flask import Response, current_app, request
 
-from config import LANG, ROOT_DIR, SUPPORTED_LANGUAGES
+from config import ROOT_DIR, SUPPORTED_LANGUAGES
+from utils.language import current_language
 from utils.patching import apply_substitutions
 
 ASSETS_DIR = ROOT_DIR / "dreamworld_assets"
-SITE_DIR   = ASSETS_DIR / f"{LANG}.pokemon-gl.com"
 SHARED_DIR = ASSETS_DIR / "shared.pokemon-gl.com"
 HOST_MIRRORS = ("assets.pokemon.com", "www.pokemon.com")
 _LANG_SEGMENT = re.compile(rf"/({'|'.join(SUPPORTED_LANGUAGES)})/")
@@ -30,10 +30,27 @@ def read_and_patch(file_path: Path) -> bytes:
     return data
 
 
-def serve_file(file_path: Path) -> Response:
+def serve_file(file_path: Path, *, per_visitor: bool = False) -> Response:
     """Return a response with the patched file and a content type guessed from its name."""
     content_type, _ = mimetypes.guess_type(file_path)
-    return Response(read_and_patch(file_path), content_type=content_type or "application/octet-stream")
+    response = Response(read_and_patch(file_path), content_type=content_type or "application/octet-stream")
+    if per_visitor or file_path.suffix.lower() in PATCHABLE_EXTENSIONS:
+        response.headers["Cache-Control"] = "private, no-cache"
+        response.vary.add("Cookie")
+        response.add_etag()
+        response = response.make_conditional(request)
+    return response
+
+
+def site_dir(lang: str) -> Path:
+    """Return the language's site mirror."""
+    return ASSETS_DIR / f"{lang}.pokemon-gl.com"
+
+
+def url_language(path: str) -> str | None:
+    """Return the language of the first language folder in a URL path (like /it/), or None."""
+    match = _LANG_SEGMENT.search(path)
+    return match.group(1) if match else None
 
 
 def not_found(path: str) -> Response:
@@ -68,24 +85,26 @@ def find_file(path: Path | None) -> Path | None:
     return None
 
 
-def resolve_static(path: str) -> Path | None:
-    """Return the file for a static asset URL.
+def resolve_static(path: str) -> tuple[Path, bool] | None:
+    """Return the file for a static asset URL, and whether it depends on the visitor's language.
 
-    Look in a host mirror, else the site directory, else the shared directory. Return
-    None if there's no such file.
+    Look in a host mirror, else a site mirror, else the shared directory. Return None
+    if there's no such file.
     """
     relative = path.lstrip("/")
 
     if relative.startswith(tuple(f"{host}/" for host in HOST_MIRRORS)):
         host_path = path_inside(ASSETS_DIR, relative)
         if host_path and host_path.is_file():
-            return host_path
+            return host_path, False
         if host_path and host_path.is_dir():
-            return host_path / "index.html"
+            return host_path / "index.html", False
 
-    site_path = find_file(path_inside(SITE_DIR, relative))
+    url_lang = url_language(path)
+    site_path = find_file(path_inside(site_dir(url_lang or current_language()), relative))
     if site_path:
-        return site_path
+        return site_path, url_lang is None
 
     # the shared mirror has no language prefix (e.g. /en/ -> /)
-    return find_file(path_inside(SHARED_DIR, _LANG_SEGMENT.sub("/", relative)))
+    shared_path = find_file(path_inside(SHARED_DIR, _LANG_SEGMENT.sub("/", relative)))
+    return (shared_path, False) if shared_path else None

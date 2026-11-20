@@ -87,7 +87,8 @@ def _member_data(account: Account) -> dict:
     _check_item_deletion(member)
 
     if member.get("pokemon_no") is not None:
-        member["pokemon_name"] = text.lookup_str("pokemon", member["pokemon_no"])
+        member["pokemon_name"] = text.lookup_str("pokemon", member["pokemon_no"],
+                                                 language.game_language(member.get("langcode")))
 
     if member.get("rom_id") is not None:
         member["rom_name"] = text.lookup_str("game", member["rom_id"])

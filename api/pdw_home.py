@@ -8,6 +8,7 @@ from utils import pokemon, save_data, text, visits
 from utils.account_manager import accounts
 from utils.constants import DREAMLAND_VISITS_PER_SESSION, NATURE_COUNT, SHARE_SHELF_ID, DreamPalStatus, PlayerStatus
 from utils.decor import arranged_decor
+from utils.language import game_language
 from utils.models import Member, SleepingPokemon
 
 DAILY_BONUS_POINTS = 50
@@ -43,11 +44,11 @@ def footprint_list(_query: Query) -> dict:
     return {"list": footprints}
 
 
-def _island_pokemon(pkmn: SleepingPokemon) -> dict:
+def _island_pokemon(pkmn: SleepingPokemon, langcode: int | None) -> dict:
     """A tucked-in Pokémon."""
     return {
         **pkmn,
-        "pokemon_name": text.lookup_str("pokemon", pkmn["pokemon_no"]),
+        "pokemon_name": text.lookup_str("pokemon", pkmn["pokemon_no"], game_language(langcode)),
         "type1":        text.lookup_str("type", pkmn["type1"]),
         "type2":        text.lookup_str("type", pkmn["type2"]),
         "personality":  text.lookup_str("nature", pkmn["personality"]),
@@ -61,7 +62,7 @@ def my_island(_query: Query) -> dict:
     """Return the player's island with their house, furniture, and the tucked-in Pokémon."""
     member = save_data.read_member()
     return {
-        "pokemon":                _island_pokemon(pokemon.get_sleeper()),
+        "pokemon":                _island_pokemon(pokemon.get_sleeper(), member.get("langcode")),
         "island_id":              member["island_id"],
         "point":                  0,
         "trial_flag":             0,
@@ -110,8 +111,8 @@ def friend_island(query: Query) -> dict:
     friend = visits.find_player(int(query["friend_member_savedata_id"]))
     member = save_data.read_member(friend)
     return {
-        "pokemon":                _island_pokemon(pokemon.get_sleeper()),
-        "friend_pokemon":         _island_pokemon(pokemon.get_sleeper(friend)),
+        "pokemon":                _island_pokemon(pokemon.get_sleeper(), save_data.read_member(me).get("langcode")),
+        "friend_pokemon":         _island_pokemon(pokemon.get_sleeper(friend), member.get("langcode")),
         "friend_status":          db.dream_pal_status(me, friend),
         "visit_count":            db.record_dream_pal_visit(me, friend, save_data.today_jst_str()),
         "island_id":              member["island_id"],
@@ -161,7 +162,8 @@ def pdw_start(_query: Query) -> dict:
     member = save_data.read_member(gscd)
 
     save_data.record_session_start(timestamp)
-    update: Member = {"pokemon_name": text.lookup_str("pokemon", member["pokemon_no"]), "point": 0,
+    pokemon_name = text.lookup_str("pokemon", member["pokemon_no"], game_language(member.get("langcode")))
+    update: Member = {"pokemon_name": pokemon_name, "point": 0,
                       "dreamland_visits_left": randint(*DREAMLAND_VISITS_PER_SESSION)}
     if member.get("first_flag") == 0:
         update["first_flag"] = 1

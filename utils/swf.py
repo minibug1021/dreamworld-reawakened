@@ -1,8 +1,8 @@
 """Parameters for embedding the Dream World SWF."""
 import json
 
-from config import LANG
 from utils import save_data
+from utils.language import current_language
 
 
 def build_swf_params() -> dict:
@@ -17,5 +17,5 @@ def build_swf_params() -> dict:
         "v":             "2.0",
         "api_host_name": "/api/",
         "page":          "SITE_PDW",
-        "lang":          f"{LANG}.",
+        "lang":          f"{current_language()}.",
     }

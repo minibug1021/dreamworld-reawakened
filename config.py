@@ -19,12 +19,11 @@ EMAIL_CONFIG_PATH = ROOT_DIR / "email_config.json"
 SUPPORTED_LANGUAGES = ("ja", "en", "fr", "it", "de", "es", "ko")
 DEFAULT_LANGUAGE = "en"
 
-# The site language picks the dreamworld_assets/<lang>.pokemon-gl.com
-# mirror, the patched host names, and the raw_text strings. Set it with the DW_LANG
+# The site language for visitors who haven't picked one. Set it with the DW_LANG
 # environment variable or `main.py --lang`.
-LANG = os.environ.get("DW_LANG", DEFAULT_LANGUAGE)
-if LANG not in SUPPORTED_LANGUAGES:
-    raise ValueError(f"DW_LANG must be one of {', '.join(SUPPORTED_LANGUAGES)}, not {LANG!r}")
+DEFAULT_SITE_LANGUAGE = os.environ.get("DW_LANG", DEFAULT_LANGUAGE)
+if DEFAULT_SITE_LANGUAGE not in SUPPORTED_LANGUAGES:
+    raise ValueError(f"DW_LANG must be one of {', '.join(SUPPORTED_LANGUAGES)}, not {DEFAULT_SITE_LANGUAGE!r}")
 
 
 def get_secret_key() -> str:

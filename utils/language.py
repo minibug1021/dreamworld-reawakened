@@ -4,7 +4,9 @@ LANGCODES is also used by the game-sync server.
 """
 from datetime import datetime
 
-from config import LANG
+from flask import has_request_context, request
+
+from config import DEFAULT_LANGUAGE, DEFAULT_SITE_LANGUAGE, SUPPORTED_LANGUAGES
 
 # DS cartridge langcode -> site language
 LANGCODES = {
@@ -28,6 +30,23 @@ _LAST_UP_TIME_FORMATS = {
 }
 
 
+LANGUAGE_COOKIE = "dw_lang"  # set by the language links (api/server.py)
+
+
+def current_language() -> str:
+    """Return the visitor's site language."""
+    if has_request_context():
+        chosen = request.cookies.get(LANGUAGE_COOKIE)
+        if chosen in SUPPORTED_LANGUAGES:
+            return chosen
+    return DEFAULT_SITE_LANGUAGE
+
+
+def game_language(langcode: int | None) -> str:
+    """Return the language of a cartridge."""
+    return LANGCODES.get(langcode, DEFAULT_LANGUAGE)
+
+
 def localize_last_up_time(timestamp: int) -> str:
-    """Format an epoch as a date and time in the site language's format."""
-    return datetime.fromtimestamp(timestamp).strftime(_LAST_UP_TIME_FORMATS[LANG])
+    """Format an epoch as a date and time in the visitor's language's format."""
+    return datetime.fromtimestamp(timestamp).strftime(_LAST_UP_TIME_FORMATS[current_language()])
