@@ -91,6 +91,22 @@ JS_PATCHES: dict[str, tuple[Substitution, ...]] = {
             b"checkUrl = $.makeArray(checkUrl);",
             b"return $.Deferred().resolve().promise();"
         ),
+        # show the Last Tucked-in Time in the player's time zone
+        Substitution(
+            b"$('#login-control .member-info-pdw-slepttime').text(data.member.last_up_time);",
+            b"$('#login-control .member-info-pdw-slepttime').text(data.member.last_up_time_strict ? "
+            b"PGL.Utils.formatTime(Date.parse(data.member.last_up_time_strict.replace(' ', 'T') + '+09:00') / 1000, "
+            b"{ format:'SHORT' }) : data.member.last_up_time);",
+        ),
+    ),
+    "profile.js": (
+        # show the Last Tucked-in Time in the player's time zone
+        Substitution(
+            b"$('#soft-synctime .value').text(this.data.member.last_up_time);",
+            b"$('#soft-synctime .value').text(this.data.member.last_up_time_strict ? "
+            b"PGL.Utils.formatTime(Date.parse(this.data.member.last_up_time_strict.replace(' ', 'T') + '+09:00') / 1000, "
+            b"{ format:'SHORT' }) : this.data.member.last_up_time);",
+        ),
     ),
 }
 
