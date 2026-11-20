@@ -2,10 +2,11 @@ import json
 from zoneinfo import ZoneInfo
 from datetime import datetime
 from random import choice, randint
-
+from api import pdw_croft
 from utils import text
 from utils import pokemon
 from utils import save_data
+from utils import managers
 from game_sync_server.entralinked.utility.db_manager import db
 
 # ---------------------
@@ -74,11 +75,82 @@ def GET_my_island_area(_query):
     player_data = save_data.read_player_data()
 
     friend_list = []
-    for _ in range(5):
+    for _ in range(2):
         friend = {
-            "pgl_name": "OtherPlayerName",
-            "member_id": randint(1,50000),
-            "member_savedata_id": randint(1,50000),
+            "pgl_name": "name_here",
+            "member_id": id_here,
+            "member_savedata_id": id_here,
+            "island_id": 201,
+            "country_id": 176,
+            "is_ds": randint(0, 1),
+            "is_gts": randint(0, 1),
+            "is_pdw": randint(0, 1)
+        }
+        friend2 = {
+            "pgl_name": "name_here",
+            "member_id": id_here,
+            "member_savedata_id": id_here,
+            "island_id": 201,
+            "country_id": 999,
+            "is_ds": randint(0, 1),
+            "is_gts": randint(0, 1),
+            "is_pdw": randint(0, 1)
+        }
+        friend_list.append(friend)
+        friend_list.append(friend2)
+    response = {
+        "island_id": player_data["member"]["island_id"],
+        "friend_list": friend_list
+    }
+    return(json.dumps(response).encode())
+
+def GET_friend_island(_query):
+    pkmn = pokemon.sleeper
+
+    member_id = int(_query.get("friend_member_savedata_id"))
+
+    f_pkmn = db.f_read(member_id, "sleeping_pokemon")
+
+    species_name = text.lookup_str("pokemon", f_pkmn["pokemon_no"])
+
+    f_pkmn_data = {
+        "pokemon_no":       f_pkmn["pokemon_no"],
+        "pokemon_name":     species_name,
+        "form_no":          f_pkmn["form_no"],
+        "type1":            text.lookup_str("type", f_pkmn["type1"]),
+        "type2":            text.lookup_str("type", f_pkmn["type2"]),
+        "pokemon_nickname": f_pkmn["pokemon_nickname"],
+        "oyaname":          f_pkmn["oyaname"],
+        "level":            f_pkmn["level"],
+        "sex":              f_pkmn["sex"],
+        "personality":      text.lookup_str("nature", f_pkmn["personality"]),
+        "ball_name":        text.lookup_str("ball", f_pkmn["ball_name"]),
+    }
+
+    pdw_croft.f_growth(member_id)
+
+    response = {
+        "pokemon":                 {**pkmn},
+        "friend_pokemon":          {**f_pkmn_data},
+        "island_id":               201,
+        "point":                   0,
+        "trial_flag":              0,
+        "arranged_interior_list":  [{"my_interior_id":1,"interior_id":1,"x":10,"y":10,"interior_size":1,"interior_category_id":1,"rotation":0}],
+        "requested_flag":          False,
+        "shelf_id":                301
+    }
+    return json.dumps(response).encode()
+
+
+def GET_friend_island_area(_query):
+    player_data = save_data.read_player_data()
+
+    friend_list = []
+    for _ in range(1):
+        friend = {
+            "pgl_name": "name_here",
+            "member_id": id_here,
+            "member_savedata_id": id_here,
             "island_id": 201,
             "country_id": 176,
             "is_ds": randint(0, 1),

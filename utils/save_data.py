@@ -3,11 +3,12 @@ from typing import List
 from pathlib import Path
 from random import randint
 from enum import Enum, auto
-
+from flask import request
 from game_sync_server.entralinked.utility.db_manager import db
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 _GSCD_PATH = ROOT_DIR / "save_data" / "gscd.txt"
+_MEMID_PATH = ROOT_DIR / "save_data" / "memid.txt"
 
 def _load_gscd() -> str:
     _GSCD_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -37,6 +38,13 @@ def write_player_data(data: dict, game_sync_id: str = None):
     player_data.setdefault("member", {}).update(data)
     db.write(game_sync_id or gscd, "player_data", player_data)
 
+
+
+# sleeping pokemons
+
+def read_sleeping_pokemon(game_sync_id: str = None) -> dict:
+    return db.read(game_sync_id or gscd, "sleeping_pokemon") or {}
+
 # game sync data
 
 def read_entralink_data() -> dict:
@@ -52,3 +60,8 @@ def update_gamesync_status(status: PlayerStatus):
         raise ValueError("A sleeping Pokémon must be tucked to bed first.")
 
     write_player_data({"play_status": status.value})
+
+# crop data
+
+def read_crop_data(game_sync_id: str = None) -> dict:
+    return db.read(game_sync_id or gscd, "crop_data") or {}

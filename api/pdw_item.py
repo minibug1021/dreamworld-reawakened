@@ -1,10 +1,21 @@
 import json
 from datetime import datetime
-
+from pathlib import Path
 from config import args
 from utils import text
 from utils import managers
 from utils import save_data
+from flask import request
+from api import pdw_item
+from game_sync_server.entralinked.utility.db_manager import db
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+
+with open(ROOT_DIR / "json_data" / "items.json", encoding="UTF-8") as f:
+    item_info = json.load(f)
+
+with open(ROOT_DIR / "json_data" / "berries.json", encoding="UTF-8") as f:
+    berry_data = json.load(f)
 
 def date_to_unix(datetime_string: str):
     return datetime.strptime(datetime_string, "%Y-%m-%d").timestamp()
@@ -71,6 +82,85 @@ def GET_item_list(_query):
 
     return json.dumps({"cnt": len(managers.chest.data["list"]), "list": item_list}).encode()
 
+def GET_item_return_update(_query):
+    material_id = request.args.get("material_id")
+
+    x = request.args.get("x")
+
+    y = request.args.get("y")
+
+    share_result = managers.share.share_to_chest(material_id)
+
+    item_id = share_result["pokeitem_id"]
+
+    managers.chest.add_item(item_id, 1)
+
+    result = managers.share.data["share_list"]
+
+    return json.dumps(result).encode()
+ 
+def GET_item_exhibit_update(_query):
+    x = int(_query.get("x"))
+
+    y = int(_query.get("y"))
+
+    item_id = int(_query.get("item_id"))
+
+    place_result = managers.share.place( x, y, item_id)
+
+    managers.chest.remove_item(item_id, 1)
+
+    result = managers.share.data["share_list"]
+
+    return json.dumps(result).encode()
+
+def GET_item_trade_update(_query):
+    almost_material_id = int(_query.get("other_material_id"))
+
+    material_id = json.dumps(almost_material_id)
+
+    other_member_savedata_id = int(_query.get("other_member_id"))
+
+    member_id = other_member_savedata_id
+
+    member_savedata_id = db.read(save_data.gscd, "member_id")
+
+    item_id = int(_query.get("item_id"))
+
+    print(other_member_savedata_id)
+
+    if other_member_savedata_id == member_savedata_id:
+        swap_result = managers.share.switch_swap(material_id, member_savedata_id, item_id)
+    else:
+        swap_result = switch_swap(material_id, member_savedata_id, item_id, member_id)
+
+    old_item_id = swap_result["old_item_id"]
+
+    managers.chest.remove_item(item_id, 1)
+
+    managers.chest.add_item(old_item_id, 1)
+
+    if other_member_savedata_id == member_savedata_id:
+        result = managers.share.data["share_list"]
+    else:
+        s_data = db.f_read(member_id, "share_data")
+        result = s_data["share_list"]
+
+    return json.dumps(result).encode()
+
+def GET_friend_trade_list(_query):
+    global member_id
+
+    member_id = int(_query.get("other_member_savedata_id"))
+
+    print(member_id)
+
+    s_data = db.f_read(member_id, "share_data")
+
+    response = s_data["share_list"]
+
+    return json.dumps(response).encode()
+
 # ---------------------
 # POST API calls
 # ---------------------
@@ -112,30 +202,61 @@ def POST_item_delivery_update(_query):
 
     return b'{}'
 
-
 def POST_item_trade_list(_query):
-    response = [
-        {
-            "material_id":"None",
-            "item_id":"None",
-            "pokeitem":"None",
-            "x":1,
-            "y":1,
-            "history_id":"None",
-            "old_member_savedata_id":"None",
-            "pokemon_no":"None",
-            "form_no":"None",
-            "pokename":"None",
-            "pgl_name":"None",
-            "nickname":"None",
-            "poke_nickname":"None",
-            "field_line1":"None",
-            "field_line2":"None",
-            "field_line3":"None",
-            "created_at":"",
-            "old_item_id":"None",
-            "new_item_id":"None",
-            "old_item_name":"None"
-        }
-    ]
+    response = managers.share.data["share_list"]
+
     return json.dumps(response).encode()
+
+# ---------------------
+# Friend Share Shelf Code
+# ---------------------
+
+def fetch_plot_by_id(material_id: int, member_id: int):
+    s_data = db.f_read(member_id, "share_data")
+    return next((p for p in s_data["share_list"] if p["material_id"] == material_id), None)
+
+def switch_swap(material_id: int, member_savedata_id: int, item_id: int, member_id: int):
+    s_data = db.f_read(member_id, "share_data")
+
+    plot = fetch_plot_by_id(material_id, member_id)
+
+    plot_index = s_data["share_list"].index(plot)
+
+    old_item_id = plot["item_id"]
+
+    item_desc = text.lookup_str("item_descriptions", item_id)
+
+    pgl_name = save_data.read_player_data()["member"]["pgl_name"]
+
+    player_name = save_data.read_player_data()["member"]["player_name"]
+
+    pokemon_name = save_data.read_player_data()["member"]["pokemon_name"]
+
+    pokemon_no = save_data.read_sleeping_pokemon()["pokemon_no"]
+
+    pokemon_nickname = save_data.read_sleeping_pokemon()["pokemon_nickname"]
+
+    form_no = save_data.read_sleeping_pokemon()["form_no"]
+
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M")
+
+    switch_swap_data = {
+        "item_id": item_id,
+        "old_item_id": old_item_id,
+        "count": 1
+    }
+
+    s_data["share_list"][plot_index] = {"material_id": material_id, "item_id": item_id, "pokeitem": text.lookup_str("item", item_id), "x": plot["x"], "y": plot["y"], "history_id": "" , "old_member_savedata_id": member_savedata_id, "pokemon_no": pokemon_no, "form_no": form_no, "pokename": pokemon_name, "pgl_name": pgl_name, "nickname": player_name, "poke_nickname": pokemon_nickname, "field_line1": item_desc[0], "field_line2": item_desc[1], "field_line3": item_desc[2], "created_at": current_time, "old_item_id": old_item_id, "new_item_id": item_id , "old_item_name": text.lookup_str("item", old_item_id)}
+
+    redundant_fields = {"kinomi", "kinomi_id"}
+    share_data = {
+        "cnt": len(s_data["share_list"]),
+        "share_list": [
+            {k: v for k, v in item.items() if k not in redundant_fields}
+            for item in s_data["share_list"]
+        ]
+    }
+
+    db.f_write(member_id, "share_data", share_data)
+
+    return switch_swap_data
