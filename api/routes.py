@@ -11,6 +11,7 @@ from api import (
     pgl_journal,
     pgl_member,
     pgl_news,
+    pgl_mail,
     pgl_top
 )
 
@@ -57,6 +58,12 @@ GET_RESPONSES = {
     "pgl.member.profile.pdw_end_by_pgl":            pgl_member.GET_profile_pdw_end_by_pgl,
     "pgl.member.profile.video_delete":              pgl_member.GET_profile_video_delete,
     "pgl.member.profile.video_regist":              pgl_member.GET_profile_video_regist,
+    "pgl.mail.mail_question_list":                  pgl_mail.GET_mail_question_list,
+    "pgl.mail.mail_receive_list":                   pgl_mail.GET_mail_receive_list,
+    "pgl.mail.mail_template_list":                  pgl_mail.GET_mail_template_list,
+    "pgl.mail.mail_template_choice":                pgl_mail.GET_mail_template_choice_list,
+    "pgl.mail.friend_list":                         pgl_mail.GET_friend_list,
+    "pgl.mail.pdw_friend_list":                     pgl_mail.GET_pdw_friend_list,
     "pgl.news.information_list":     pgl_news.GET_information_list,
     "pgl.news.news_list":            pgl_news.GET_news_list,
     "pgl.top.index":                 pgl_top.GET_index,
@@ -72,11 +79,16 @@ POST_RESPONSES = {
     "pdw.dreamland.game_clear":      pdw_dreamland.POST_game_clear,
     "pdw.home.pdw_start":            pdw_home.POST_pdw_start,
     "pdw.home.pdw_timecheck":        pdw_home.POST_pdw_timecheck,
+    "pdw.home.friend_request":       pdw_home.POST_friend_request,
+    "pdw.home.friend_accept":        pdw_home.POST_friend_accept,
     "pdw.item.item_delivery_update": pdw_item.POST_item_delivery_update,
     "pdw.item.item_trade_list":      pdw_item.POST_item_trade_list,
     "pgl.member.profile.avator_list":            pgl_member.POST_profile_avator_list,
     "pgl.member.profile.avator_select":          pgl_member.POST_profile_avator_select,
     "pgl.member.profile.disclosure_switch":      pgl_member.POST_profile_disclosure_switch,
     "pgl.member.profile.list_disclosure_switch": pgl_member.POST_profile_list_disclosure_switch,
-    "pgl.member.profile.pdw_login":              pgl_member.POST_profile_pdw_login
+    "pgl.member.profile.pdw_login":              pgl_member.POST_profile_pdw_login,
+    "pgl.mail.mail_genre_list":                  pgl_mail.POST_mail_genre_list,
+    "pgl.mail.mail_send_list":                   pgl_mail.POST_mail_send_list,
+    "pgl.mail.mail_send_insert":                 pgl_mail.POST_mail_send_insert
 }

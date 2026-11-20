@@ -126,7 +126,22 @@ def GET_profile_my_state(_query):
 
 
 def GET_profile_pdw_friend_list(_query):
-    return b"{}"
+    m = save_data.read_player_data()["member"]
+    p_f_data = db.read(save_data.gscd, "friend_data")
+    friend_template = {
+        "avator_id":          m["avator_id"],
+        "pgl_name":           m["pgl_name"],
+        "member_savedata_id": str(m["member_savedata_id"]),
+        "disable_flag":       str(m["disable_flag"] or 0),
+        "is_ds":              True,
+        "country_code":       "US",
+        "is_blocked":         "0",
+    }
+    response = {
+        "list": p_f_data["friend_list"],
+        "cnt":   len(p_f_data["friend_list"]),
+    }
+    return json.dumps(response).encode()
 
 
 def GET_profile_pdw_end_by_pgl(_query):

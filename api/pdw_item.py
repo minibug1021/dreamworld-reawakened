@@ -7,6 +7,7 @@ from utils import managers
 from utils import save_data
 from flask import request
 from api import pdw_item
+from api import pdw_home
 from game_sync_server.entralinked.utility.db_manager import db
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -143,6 +144,7 @@ def GET_item_trade_update(_query):
     if other_member_savedata_id == member_savedata_id:
         result = managers.share.data["share_list"]
     else:
+        pdw_home.swapped_footprint_plot(member_id)
         s_data = db.f_read(member_id, "share_data")
         result = s_data["share_list"]
 

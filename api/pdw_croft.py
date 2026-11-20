@@ -6,6 +6,7 @@ from flask import request
 from utils import text
 from utils import save_data
 from utils import managers
+from api import pdw_home
 from game_sync_server.entralinked.utility.db_manager import db
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -94,6 +95,8 @@ def POST_friend_kinomi_watering(_query):
     member_id = int(_query.get("member_savedata_id"))
 
     water_f_plot(my_croft_id, member_id)
+    
+    pdw_home.watered_footprint_plot(member_id)   
 
     c_data = listloader(member_id)
 
