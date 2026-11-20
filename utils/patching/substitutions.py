@@ -81,6 +81,17 @@ def _file_subs(lang: str) -> dict[str, tuple[Substitution, ...]]:
         "swfembed2.js": (_swf_embed_patch(lang), _VOLUME_SLIDER_PATCHES),
         "swfembed3.js": (_swf_embed_patch(lang), _VOLUME_SLIDER_PATCHES),
         "top.js": (
+            # For now we force JA/KO to use the same login flow as the EU languages.
+            Substitution(
+                b"      if (PGL.language == 'ja') {\n"
+                b"        loginUrl = this.host.getPdcLoginUrl();\n"
+                b"      } else if (PGL.language == 'ko') {\n"
+                b"        loginUrl = this.host.getPkiLoginUrl();\n"
+                b"      } else {\n"
+                b"        loginUrl= this.host.getComLoginUrl();\n"
+                b"      }\n",
+                b"      loginUrl = this.host.getComLoginUrl();\n"
+            ),
             # Browsers only allow sound once the visitor has interacted with the page, so if that
             # hasn't happened yet, the front page music starts on their first click or key press.
             Substitution(
