@@ -71,6 +71,23 @@ _Alert_patch = dedent("""\
     this.root.transform.perspectiveProjection.projectionCenter = new Point(int(1003 / 2),int(528 / 2));
 """)
 
+# Ruffle throws a null reference error somewhere in setting the projection center on
+# pdw_home's root, even when a new PerspectiveProjection is assigned first.
+_Dialog_patch = dedent("""\
+    try
+    {
+        this.root.transform.perspectiveProjection.projectionCenter = new Point(int(1003 / 2),int(528 / 2));
+    }
+    catch(error:Error)
+    {
+    }
+""")
+
+_Dialog_insertion = Insertion(
+    "bfp.tpc.pdw.dialog.Dialog",
+    "this.root.transform.perspectiveProjection.projectionCenter = new Point(int(1003 / 2),int(528 / 2));",
+    _Dialog_patch)
+
 # jp.feb19.utils.Tracer calls a shitton of text rendering functions that are really
 # expensive in Ruffle and cause the game to freeze for several seconds during init.
 # Its an invisible debug panel, so we can just gate that code against its visibility.
@@ -266,6 +283,7 @@ SWF_PATHS = {
     "pdw_room.swf":   _SWF_DIR / "pdw" / "assets" / "pdw_room.swf",
     "pdw_share.swf":  _SWF_DIR / "pdw" / "assets" / "pdw_share.swf",
     "pdw_world.swf":  _SWF_DIR / "pdw" / "assets" / "pdw_world.swf",
+    "pdw_footprint.swf": _SWF_DIR / "pdw" / "assets" / "pdw_footprint.swf",
 }
 
 def _pokemon_renderer_patches(package: str) -> tuple[Insertion, ...]:
@@ -326,6 +344,10 @@ INSERTIONS: dict[str, tuple[Insertion, ...]] = {
                     "pokemon.loadToArea(PDWHomeData.anotherPokemonNo,PDWHomeData.anotherPokemonFormNo,180,180);",
                     _DialogFriend_anotherPokemon_patch)
           for dialog in ("DialogInviteFriend", "DialogBecomeFriend")),
+        _Dialog_insertion,
+    ),
+    "pdw_footprint.swf": (
+        _Dialog_insertion,
     ),
     "pdw.swf": (
         Insertion("bfp.tpc.pdw.pdw.PDW",
