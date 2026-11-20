@@ -617,10 +617,10 @@
   "data": {
    "ja": ["デフォルト", "CGEAR/J/mun_decal00.bin", "31/m4c625e61.png"],
    "en": ["Basic Skin", "CGEAR/E/C100_defo_1_en.bin", "121/m4d56341b.png"],
-   "fr": ["", "CGEAR/F/C100_defo_2_fr.bin", "121/m4d56341b.png"],
+   "fr": ["Défaut", "CGEAR/F/C100_defo_2_fr.bin", "121/m4d56341b.png"],
    "it": ["", "CGEAR/I/C100_defo_3_it.bin", "121/m4d56341b.png"],
    "de": ["", "CGEAR/G/C100_defo_4_ge.bin", "121/m4d56341b.png"],
-   "es": ["", "CGEAR/S/C100_defo_5_sp.bin", "121/m4d56341b.png"],
+   "es": ["Predeterminado", "CGEAR/S/C100_defo_5_sp.bin", "121/m4d56341b.png"],
    "ko": ["기본", "CGEAR/K/C100_defo_6_ko.bin", "122/m4d56330b.png"]
   }
  },
@@ -629,12 +629,12 @@
   "id": 100,
   "default": true,
   "data": {
-   "ja": ["", "CGEAR2/J/C100-2_default_0_j.bin", "199/m4fdad184.png"],
+   "ja": ["デフォルト", "CGEAR2/J/C100-2_default_0_j.bin", "199/m4fdad184.png"],
    "en": ["Basic Skin", "CGEAR2/E/C100-2_default_1_e.bin", "232/m50664a9b.png"],
-   "fr": ["", "CGEAR2/F/C100-2_default_2_f.bin", "232/m50664a9b.png"],
+   "fr": ["Défaut", "CGEAR2/F/C100-2_default_2_f.bin", "232/m50664a9b.png"],
    "it": ["", "CGEAR2/I/C100-2_default_3_i.bin", "232/m50664a9b.png"],
    "de": ["", "CGEAR2/G/C100-2_default_4_g.bin", "232/m50664a9b.png"],
-   "es": ["", "CGEAR2/S/C100-2_default_5_s.bin", "232/m50664a9b.png"],
+   "es": ["Predeterminado", "CGEAR2/S/C100-2_default_5_s.bin", "232/m50664a9b.png"],
    "ko": ["기본", "CGEAR2/K/BW2_C100_default_6_k.bin", "241/m50a4b5ab.png"]
   }
  },
@@ -643,7 +643,7 @@
   "id": 100,
   "default": true,
   "data": {
-   "ja": ["", "CGEAR2/J/C100-2_default_0_j.bin", "220/m4fa9012b.png"],
+   "ja": ["デフォルト", "CGEAR2/J/C100-2_default_0_j.bin", "220/m4fa9012b.png"],
    "en": [null, null, null],
    "fr": [null, null, null],
    "it": [null, null, null],
@@ -820,10 +820,10 @@
   "data": {
    "ja": ["デフォルト", "ZUKAN/J/zukan00.bin", "34/m4c626121.png"],
    "en": ["Basic Skin", "ZUKAN/E/Z100_defogirl_1_en.bin", "126/m4d5633d7.png"],
-   "fr": ["", "ZUKAN/F/Z100_defogirl_2_fr.bin", "126/m4d5633d7.png"],
+   "fr": ["Défaut", "ZUKAN/F/Z100_defogirl_2_fr.bin", "126/m4d5633d7.png"],
    "it": ["", "ZUKAN/I/Z100_defogirl_3_it.bin", "126/m4d5633d7.png"],
    "de": ["", "ZUKAN/G/Z100_defogirl_4_ge.bin", "126/m4d5633d7.png"],
-   "es": ["", "ZUKAN/S/Z100_defogirl_5_sp.bin", "126/m4d5633d7.png"],
+   "es": ["Predeterminado", "ZUKAN/S/Z100_defogirl_5_sp.bin", "126/m4d5633d7.png"],
    "ko": ["기본", "ZUKAN/K/Z100_defogirl_6_ko.bin", "135/m4c58f0a2.png"]
   }
  },
@@ -850,10 +850,10 @@
   "data": {
    "ja": ["デフォルト", "ZUKAN/J/zukanff.bin", "36/m4c6261ba.png"],
    "en": ["Basic Skin", "ZUKAN/E/Z101_defoboy_1_en.bin", "127/m4d56347b.png"],
-   "fr": ["", "ZUKAN/F/Z101_defoboy_2_fr.bin", "127/m4d56347b.png"],
+   "fr": ["Défaut", "ZUKAN/F/Z101_defoboy_2_fr.bin", "127/m4d56347b.png"],
    "it": ["", "ZUKAN/I/Z101_defoboy_3_it.bin", "127/m4d56347b.png"],
    "de": ["", "ZUKAN/G/Z101_defoboy_4_ge.bin", "127/m4d56347b.png"],
-   "es": ["", "ZUKAN/S/Z101_defoboy_5_sp.bin", "127/m4d56347b.png"],
+   "es": ["Predeterminado", "ZUKAN/S/Z101_defoboy_5_sp.bin", "127/m4d56347b.png"],
    "ko": ["기본", "ZUKAN/K/Z101_defoboy_6_ko.bin", "134/m4c58f028.png"]
   }
  },
