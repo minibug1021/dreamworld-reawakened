@@ -125,7 +125,7 @@ def item_exhibit_update(query: Query) -> list[ShareSlot]:
     except ValueError:
         shelf.take_back(material_id)
         raise
-    return shelf.data["share_list"]
+    return [shelf.slot(material_id)]
 
 
 @endpoint("pdw.item.item_return_update")
@@ -140,16 +140,18 @@ def item_return_update(query: Query) -> list[ShareSlot]:
 def item_trade_update(query: Query) -> list[ShareSlot]:
     """Swap one of an item from the Treasure Chest for an item on a Share Shelf.
 
-    The shelf can be the player's own or another player's.
+    The shelf can be the player's own or another player's. Return a list holding only the
+    changed slot.
     """
     item_id = int(query["item_id"])
     shelf = managers.get_shelf(visits.find_player(int(query["other_member_id"])))
     chest = managers.get_chest()
     chest.remove_item(item_id, 1)
     try:
-        old_item_id = shelf.swap(int(query["other_material_id"]), item_id, save_data.require_gscd())
+        material_id = shelf.swap(int(query["other_material_id"]), item_id, save_data.require_gscd())
     except ValueError:
         chest.add_item(item_id, 1)
         raise
-    chest.add_item(old_item_id, 1)
-    return shelf.data["share_list"]
+    slot = shelf.slot(material_id)
+    chest.add_item(slot["old_item_id"], 1)
+    return [slot]

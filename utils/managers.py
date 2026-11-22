@@ -419,6 +419,10 @@ class ShareManager(_ColumnManager):
         self.change(put)
         return material_id
 
+    def slot(self, material_id: int) -> ShareSlot:
+        """Return the slot holding this item."""
+        return _slot_of(self.data, material_id)
+
     def take_back(self, material_id: int) -> int:
         """Empty a slot and return the id of the item that was in it."""
         def take(shelf: ShareData) -> int:
@@ -429,22 +433,21 @@ class ShareManager(_ColumnManager):
         return self.change(take)
 
     def swap(self, material_id: int, item_id: int, swapped_by: str) -> int:
-        """Put an item in place of a shelf item and return the id of the item it replaced.
+        """Put an item in place of a shelf item and return the new item's material_id.
 
-        `swapped_by` is the Game Sync ID of whoever made the swap. The new item gets a new
-        material_id.
+        `swapped_by` is the Game Sync ID of whoever made the swap. The replaced item's id is
+        in the slot's old_item_id.
         """
         trader = _trader_fields(swapped_by)
         new_material_id = db.next_id("material_id")[0]
 
-        def trade(shelf: ShareData) -> int:
+        def trade(shelf: ShareData) -> None:
             slot = _slot_of(shelf, material_id)
-            old_item_id = slot["item_id"]
             slot.update({**trader, "material_id": new_material_id, "item_id": item_id,
-                         "old_item_id": old_item_id, "new_item_id": item_id})
-            return old_item_id
+                         "old_item_id": slot["item_id"], "new_item_id": item_id})
 
-        return self.change(trade)
+        self.change(trade)
+        return new_material_id
 
 
 def _trader_fields(gscd: str) -> ShareSlot:
