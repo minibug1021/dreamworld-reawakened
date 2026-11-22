@@ -113,6 +113,7 @@ def login(query: Query) -> dict:
     username = query.get("username", "")
     password = query.get("password", "")
 
+    accounts.delete_expired_accounts()
     account = accounts.get_account_by_username(username)
 
     if account is None or not check_password_hash(account["password_hash"], password):

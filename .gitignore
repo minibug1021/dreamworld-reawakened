@@ -12,6 +12,4 @@ utils/build_catalog.py
 utils/build_dreamland.py
 tests/
 json_data/promotions.json
-scripts/pull_server_db.sh
-scripts/sync_to_server.sh
-scripts/convert_to_row_tables.py
+scripts/

@@ -1,5 +1,6 @@
 """Trainer Club accounts and the Game Sync IDs linked to them (an SQLite database)."""
 import sqlite3
+import time
 from typing import cast
 
 from config import SAVE_DIR
@@ -9,6 +10,9 @@ from utils.models import Account, Privacy
 # generate_password_hash("testpass")
 _TEST_PASSWORD_HASH = ("scrypt:32768:8:1$jZODhHVaqfKNahLu$671ff90e1738953e87edfa84abcc5fe3148409a7b37a207b9bb15fb02a96062b"
                        "bfe1195be50503b1c3058cdbfbf3a9c9d824beace12898add8ae2e55fa83e99a")
+
+# An account that isn't activated within a week is deleted.
+UNACTIVATED_ACCOUNT_LIFETIME = 7 * 24 * 60 * 60
 
 
 class AccountManager(SQLiteStore):
@@ -29,7 +33,8 @@ class AccountManager(SQLiteStore):
             active_gscd TEXT,
             last_daily_bonus_date TEXT,
             shows_shiny INTEGER NOT NULL DEFAULT 1,
-            registered INTEGER NOT NULL DEFAULT 0
+            registered INTEGER NOT NULL DEFAULT 0,
+            created_at INTEGER NOT NULL DEFAULT 0
         )""",
         """
         CREATE TABLE IF NOT EXISTS account_gscds (
@@ -67,20 +72,32 @@ class AccountManager(SQLiteStore):
         Return False and create nothing if the username is taken.
         """
         with self._conn:
+            self._delete_expired_accounts()
             cursor = self._conn.execute(
                 """
                 INSERT INTO accounts
-                    (username, password_hash, email, country, birth_month, pgl_privacy, dw_privacy, activation_token)
-                SELECT ?, ?, ?, ?, ?, ?, ?, ?
+                    (username, password_hash, email, country, birth_month, pgl_privacy, dw_privacy, activation_token,
+                     created_at)
+                SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?
                 WHERE NOT EXISTS (SELECT 1 FROM accounts WHERE username = ? COLLATE NOCASE)
                 """,
                 (username, password_hash, email, country, birth_month, pgl_privacy, dw_privacy, activation_token,
-                 username),
+                 int(time.time()), username),
             )
         return cursor.rowcount == 1
 
+    def _delete_expired_accounts(self) -> None:
+        self._conn.execute("DELETE FROM accounts WHERE activated = 0 AND created_at < ?",
+                           (int(time.time()) - UNACTIVATED_ACCOUNT_LIFETIME,))
+
+    def delete_expired_accounts(self) -> None:
+        """Delete the accounts that weren't activated within UNACTIVATED_ACCOUNT_LIFETIME."""
+        with self._conn:
+            self._delete_expired_accounts()
+
     def get_account_by_activation_token(self, token: str) -> Account | None:
         """Return the account with this activation token, if any."""
+        self.delete_expired_accounts()
         return self._fetch_account("SELECT * FROM accounts WHERE activation_token = ?", token)
 
     def get_account_by_username(self, username: str | None) -> Account | None:

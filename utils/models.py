@@ -272,3 +272,4 @@ class Account(TypedDict):
     last_daily_bonus_date: str | None  # JST "%Y-%m-%d"
     shows_shiny: int
     registered: int  # 1 once the /register page has been submitted
+    created_at: int
