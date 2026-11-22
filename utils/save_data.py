@@ -164,12 +164,25 @@ def get_nextstart_remaintime(gscd: str | None = None) -> int:
     return max(0, next_start_at - int(time.time()))
 
 
+def sleeping_flag(status: PlayerStatus) -> int:
+    """Return 1 while the Pokémon is still asleep, and 0 once it's awake or ready to wake."""
+    return int(status in (PlayerStatus.PLAY_READY, PlayerStatus.DREAMING))
+
+
+def is_dreaming(gscd: str | None = None) -> bool:
+    """Returns whether the player's Pokémon is tucked in and not ready to wake yet, so it can visit the Dream World."""
+    gscd = gscd or get_current_gscd()
+    status = read_member(gscd).get("play_status") if gscd else None
+    return bool(gscd and db.read(gscd, "sleeping_pokemon") and status is not None
+                and sleeping_flag(PlayerStatus(status)))
+
+
 def set_play_status(status: PlayerStatus) -> None:
     """Change the state of a tucked-in Pokémon."""
     gscd = get_current_gscd()
     if not gscd or not db.read(gscd, "game_sync"):
         raise ValueError("A sleeping Pokémon must be tucked to bed first.")
-    update_member({"play_status": status.value})
+    update_member({"play_status": status.value, "sleeping_flag": sleeping_flag(status)})
 
 
 # ---------------

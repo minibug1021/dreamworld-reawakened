@@ -67,21 +67,27 @@ def my_pdw_profile(_query: Query) -> dict:
         return {}
     member = save_data.read_member()
     sleeper = pokemon.get_sleeper()
-    return {
+    profile = {
         "island_id":        member["island_id"],
         "experiment_point": member["experiment_point"],
+        "encount_pokemons": []
+    }
+    if not save_data.is_dreaming():
+        return {**profile, **dict.fromkeys(("pokemon_name", "pokemon_nickname", "level", "sex_id", "pokemon_no",
+                                            "form_no", "oyaname", "type1", "type2", "personality", "shiny"))}
+    return {
+        **profile,
         "pokemon_name":     text.lookup_str("pokemon", member["pokemon_no"], game_language(member.get("langcode"))),
-        "pokemon_nickname": sleeper["pokemon_nickname"],
-        "level":            sleeper["level"],
-        "sex_id":           sleeper["sex"],
+        "pokemon_nickname": sleeper.get("pokemon_nickname"),
+        "level":            sleeper.get("level"),
+        "sex_id":           sleeper.get("sex"),
         "pokemon_no":       member["pokemon_no"],
         "form_no":          member["form_no"],
-        "oyaname":          sleeper["oyaname"],
+        "oyaname":          sleeper.get("oyaname"),
         "type1":            text.lookup_str("type", member["type1"]),
         "type2":            text.lookup_str("type", member["type2"]),
-        "personality":      text.lookup_str("nature", sleeper["personality"]),
-        "shiny":            pokemon.shows_shiny(sleeper.get("is_shiny", False)),
-        "encount_pokemons": [],
+        "personality":      text.lookup_str("nature", sleeper.get("personality")),
+        "shiny":            pokemon.shows_shiny(sleeper.get("is_shiny", False))
     }
 
 

@@ -71,6 +71,10 @@ def _file_subs(lang: str) -> dict[str, tuple[Substitution, ...]]:
             )
         ),
         "register.js": (
+            Substitution(
+                b"var src = '../../src/swf/top/assets/' + PGL.language + '/images/rom-image-'",
+                b"var src = '/src/swf/top/' + PGL.language + '/images/rom-image-'"
+            ),
             # Enforce that the PGL nickname is the same as the Trainer Club name.
             Substitution(
                 b"  $('#header-back-to-top').hide();\n",
@@ -133,6 +137,10 @@ def _file_subs(lang: str) -> dict[str, tuple[Substitution, ...]]:
             ),
         ),
         "profile.js": (
+            Substitution(
+                b"var src = '/top/assets/' + PGL.language + '/images/rom-image-'",
+                b"var src = '/src/swf/top/' + PGL.language + '/images/rom-image-'"
+            ),
             # show the Last Tucked-in Time in the player's time zone
             Substitution(
                 b"$('#soft-synctime .value').text(this.data.member.last_up_time);",

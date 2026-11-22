@@ -159,6 +159,8 @@ def pdw_start(_query: Query) -> dict:
     """
     timestamp = int(time.time())
     gscd = save_data.require_gscd()
+    if not save_data.is_dreaming(gscd):
+        raise ValueError("No Pokémon is dreaming")
     member = save_data.read_member(gscd)
 
     save_data.record_session_start(timestamp)
