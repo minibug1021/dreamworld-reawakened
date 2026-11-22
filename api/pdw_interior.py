@@ -8,6 +8,7 @@ from utils.decor import (
     CATALOG,
     MASTER_IDS,
     DecorCategory,
+    arrange_decor,
     catalog_entry,
     catalog_name,
     charge_for_decor,
@@ -16,7 +17,6 @@ from utils.decor import (
     grant_decor,
     owned_decor,
 )
-from utils.models import Member
 
 DEFAULT_CATALOG_ID = 1
 
@@ -61,19 +61,7 @@ def interior_layout_update(query: Query) -> dict:
         if arranged == 1:
             placed[my_id] = (x, y)
 
-    def arrange(member: Member) -> None:
-        owned_list = member.get("my_interior_list") or []
-        unowned = placed.keys() - {owned["my_interior_id"] for owned in owned_list}
-        if unowned:
-            raise ValueError(f"No owned decor {min(unowned)}")
-        for owned in owned_list:
-            if owned["my_interior_id"] in placed:
-                owned["x"], owned["y"] = placed[owned["my_interior_id"]]
-            else:
-                owned.pop("x", None)
-                owned.pop("y", None)
-
-    save_data.change_member(arrange)
+    arrange_decor(placed)
     return {}
 
 

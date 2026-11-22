@@ -1,75 +1,110 @@
 """The player's Treasure Chest, Berry garden, and Share Shelf.
 
 Managers are loaded fresh from the database by get_chest()/get_crops()/get_shelf() on every call.
-Every change goes through change(), which re-reads the column, edits it, and writes it
-back. `data` is then reloaded, with the display fields the client wants (names,
+The chest is a JSON column of the player's save. The garden and the shelf are rows in the
+garden_plots and share_slots tables, which their managers turn into the dicts the client
+reads. Every change goes through change(), which re-reads the stored data, edits it, and
+writes it back. `data` is then reloaded, with the display fields the client wants (names,
 descriptions, sort keys) added. Those are never stored.
 """
 import time
 from collections.abc import Callable
 from datetime import datetime
-from typing import Any, ClassVar
+from typing import Any, ClassVar, cast
 
 from game_sync_server.entralinked.utility.db_manager import db
 from utils import save_data, text
 from utils.berries import is_berry, to_berry_id
 from utils.constants import SECONDS_PER_HOUR
 from utils.data import load_json_data
-from utils.models import ChestData, ChestItem, CropData, Plot, ShareData, ShareSlot
+from utils.models import ChestData, ChestItem, CropData, GrowthState, Plot, ShareData, ShareSlot
 
 ITEM_INFO: dict[str, dict] = load_json_data("items")
 BERRY_INFO: dict[str, dict] = load_json_data("berries")  # its keys are kinomi_id values written as strings
 
 
-class _ColumnManager:
-    """One JSON column of a player's save.
+class _Manager:
+    """Some of a player's stored data.
 
-    `data` is the column plus display fields.
+    `data` is the stored data plus display fields.
     """
-
-    COLUMN: ClassVar[str]
 
     def __init__(self, gscd: str) -> None:
         self._gscd = gscd
-        self.data = self._with_display_fields(db.read(gscd, self.COLUMN))
+        self.data = self._with_display_fields(self._read())
+
+    def _read(self) -> Any:
+        """Return the stored data."""
+        raise NotImplementedError
+
+    def _update(self, apply: Callable[[Any], None]) -> Any:
+        """Apply `apply` to the stored data in a single write transaction and return the result."""
+        raise NotImplementedError
 
     def _with_display_fields(self, stored: Any) -> Any:
         """Add the display fields to freshly read data, in place, and return it."""
         raise NotImplementedError
 
-    def _update_counters(self, stored: Any) -> None:
-        """Fix the counters stored in the column after an edit."""
-
     def change(self, edit: Callable[[Any], Any]) -> Any:
-        """Apply `edit` to the column and save it in a single write.
+        """Apply `edit` to the stored data and save it in a single write.
 
-        `edit` sees the column as it is in the database right now (without display fields).
+        `edit` sees the data as it is in the database right now (without display fields).
         Return what `edit` returned. Nothing is saved if it raises. `data` is reloaded
         afterwards.
         """
         result = None
 
-        def apply(stored: dict) -> None:
+        def apply(stored: Any) -> None:
             nonlocal result
             result = edit(stored)
-            self._update_counters(stored)
 
-        self.data = self._with_display_fields(db.update(self._gscd, self.COLUMN, apply))
+        self.data = self._with_display_fields(self._update(apply))
         return result
+
+
+class _RowsManager(_Manager):
+    """The rows associated with a player in one of db.ROW_TABLES."""
+
+    TABLE: ClassVar[str]
+
+    def _from_rows(self, rows: list[dict]) -> Any:
+        """Return the dict the rows comprise."""
+        raise NotImplementedError
+
+    def _to_rows(self, stored: Any) -> list[dict]:
+        """Turn a dict from _from_rows back into table rows. Each row has every column of the table."""
+        raise NotImplementedError
+
+    def _read(self) -> Any:
+        return self._from_rows(db.read_rows(self.TABLE, self._gscd))
+
+    def _update(self, apply: Callable[[Any], None]) -> Any:
+        def edit(rows: list[dict]) -> None:
+            stored = self._from_rows(rows)
+            apply(stored)
+            rows[:] = self._to_rows(stored)
+
+        return self._from_rows(db.update_rows(self.TABLE, self._gscd, edit))
 
 
 def _stack_of(chest: ChestData, item_id: int) -> ChestItem | None:
     return next((item for item in chest["list"] if item["pokeitem_id"] == item_id), None)
 
 
-class ChestManager(_ColumnManager):
+class ChestManager(_Manager):
     """The player's Treasure Chest."""
 
-    COLUMN = "chest_data"
     data: ChestData
 
-    def _update_counters(self, stored: ChestData) -> None:
-        stored["cnt"] = len(stored["list"])
+    def _read(self) -> ChestData:
+        return cast(ChestData, db.read(self._gscd, "chest_data"))
+
+    def _update(self, apply: Callable[[ChestData], None]) -> ChestData:
+        def apply_and_count(stored: dict) -> None:
+            apply(cast(ChestData, stored))
+            stored["cnt"] = len(stored["list"])
+
+        return cast(ChestData, db.update(self._gscd, "chest_data", apply_and_count))
 
     def _with_display_fields(self, stored: ChestData) -> ChestData:
         for item in stored["list"]:
@@ -176,10 +211,39 @@ def _plot_of(garden: CropData, my_croft_id: int) -> Plot:
     return plot
 
 
-class CropManager(_ColumnManager):
-    """The player's Berry garden (the crop_data column)."""
+_GROWTH_FIELDS = ("planted_at", "updated_at", "watered_at", "berry_hp")
 
-    COLUMN = "crop_data"
+
+def _plot_from_row(row: dict) -> Plot:
+    """Return a garden_plots row as a Plot."""
+    plot: Plot = {"my_croft_id": row["my_croft_id"], "x": row["x"], "y": row["y"]}
+    if row["pokeitem_id"] is not None:
+        plot.update({
+            "pokeitem_id":  row["pokeitem_id"],
+            "dirt_hp":      row["dirt_hp"],
+            "kinomi_state": row["kinomi_state"],
+            "server":       cast(GrowthState, {field: row[field] for field in _GROWTH_FIELDS}),
+        })
+    return plot
+
+
+def _plot_to_row(plot: Plot) -> dict:
+    growth = plot.get("server", {})
+    return {
+        "my_croft_id":  plot["my_croft_id"],
+        "x":            plot["x"],
+        "y":            plot["y"],
+        "pokeitem_id":  plot.get("pokeitem_id"),
+        "dirt_hp":      plot.get("dirt_hp"),
+        "kinomi_state": plot.get("kinomi_state"),
+        **{field: growth.get(field) for field in _GROWTH_FIELDS}
+    }
+
+
+class CropManager(_RowsManager):
+    """The player's Berry garden (their garden_plots rows)."""
+
+    TABLE = "garden_plots"
     data: CropData
     PLOTS_PER_ROW = 3
     GROWTH_STAGES = 4
@@ -198,6 +262,12 @@ class CropManager(_ColumnManager):
         9: 50_000,
         10: 100_000
     }
+
+    def _from_rows(self, rows: list[dict]) -> CropData:
+        return {"croft_list": [_plot_from_row(row) for row in rows]}
+
+    def _to_rows(self, stored: CropData) -> list[dict]:
+        return [_plot_to_row(plot) for plot in stored["croft_list"]]
 
     def _with_display_fields(self, stored: CropData) -> CropData:
         stored["diglett_flag"] = 0  # check_garden_expansion sets it to 1 on the load that adds a row
@@ -373,18 +443,26 @@ def _slot_of(shelf: ShareData, material_id: int) -> ShareSlot:
     return slot
 
 
-class ShareManager(_ColumnManager):
-    """A player's Share Shelf (the share_data column).
+# the stored fields of a ShareSlot
+_SLOT_FIELDS = ("material_id", "x", "y", "item_id", "history_id", "old_member_savedata_id", "pokemon_no",
+                "form_no", "pgl_name", "nickname", "poke_nickname", "created_at", "old_item_id", "new_item_id")
+
+
+class ShareManager(_RowsManager):
+    """A player's Share Shelf (their share_slots rows).
 
     Its owner places items from their Treasure Chest on it, and any visitor can swap one of
     their own items for one of them.
     """
 
-    COLUMN = "share_data"
+    TABLE = "share_slots"
     data: ShareData
 
-    def _update_counters(self, stored: ShareData) -> None:
-        stored["cnt"] = len(stored["share_list"])
+    def _from_rows(self, rows: list[dict]) -> ShareData:
+        return {"cnt": len(rows), "share_list": cast(list[ShareSlot], rows)}
+
+    def _to_rows(self, stored: ShareData) -> list[dict]:
+        return [{field: slot.get(field) for field in _SLOT_FIELDS} for slot in stored["share_list"]]
 
     def _with_display_fields(self, stored: ShareData) -> ShareData:
         for slot in stored["share_list"]:

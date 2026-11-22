@@ -1,8 +1,7 @@
 """The Dream Catalogue (json_data/catalog.json) and the decor a player owns.
 
 Decor is anything the catalog sells: furniture, houses, shelves, and Watering Cans. The
-game's API calls it "interior". A player's copies live in member["my_interior_list"]
-(models.OwnedDecor).
+game's API calls it "interior".
 """
 from dataclasses import dataclass
 from enum import IntEnum
@@ -12,7 +11,7 @@ from game_sync_server.entralinked.utility.db_manager import db
 from utils import managers, save_data, text
 from utils.berries import to_item_id
 from utils.data import load_json_data
-from utils.models import Member, OwnedDecor
+from utils.models import OwnedDecor
 
 
 class DecorCategory(IntEnum):
@@ -119,9 +118,18 @@ def get_decor(decor_id: int) -> Decor:
     return CATALOG[decor_id]
 
 
+def _owned_from_row(row: dict) -> OwnedDecor:
+    """Return an owned_decor row as an OwnedDecor, which has no x and y while it isn't placed."""
+    owned: OwnedDecor = {"my_interior_id": row["my_interior_id"], "interior_id": row["interior_id"]}
+    if row["x"] is not None:
+        owned["x"], owned["y"] = row["x"], row["y"]
+    return owned
+
+
 def owned_decor(gscd: str | None = None) -> list[OwnedDecor]:
     """All the decor the player owns, placed in the room or not."""
-    return save_data.read_member(gscd).get("my_interior_list") or []
+    gscd = save_data.resolve_gscd(gscd)
+    return [_owned_from_row(row) for row in db.read_rows("owned_decor", gscd)] if gscd else []
 
 
 def find_owned(my_decor_id: int) -> OwnedDecor:
@@ -147,15 +155,25 @@ def grant_decor(decor_id: int) -> int:
 
     Return its new (globally unique) my_interior_id.
     """
-    gscd = save_data.require_gscd()
     [my_decor_id] = db.next_id("my_interior_id")
-    owned: OwnedDecor = {"my_interior_id": my_decor_id, "interior_id": decor_id}
-
-    def add(member: Member) -> None:
-        member.setdefault("my_interior_list", []).append(owned)
-
-    save_data.change_member(add, gscd)
+    db.update_rows("owned_decor", save_data.require_gscd(), lambda rows: rows.append(
+        {"my_interior_id": my_decor_id, "interior_id": decor_id, "x": None, "y": None}))
     return my_decor_id
+
+
+def arrange_decor(placed: dict[int, tuple[int, int]]) -> None:
+    """Set the room layout.
+
+    Raise ValueError if the player doesn't own something in `placed`.
+    """
+    def arrange(rows: list[dict]) -> None:
+        unowned = placed.keys() - {row["my_interior_id"] for row in rows}
+        if unowned:
+            raise ValueError(f"No owned decor {min(unowned)}")
+        for row in rows:
+            row["x"], row["y"] = placed.get(row["my_interior_id"], (None, None))
+
+    db.update_rows("owned_decor", save_data.require_gscd(), arrange)
 
 
 def owned_wateringcans() -> list[OwnedDecor]:

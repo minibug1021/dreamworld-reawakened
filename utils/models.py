@@ -1,7 +1,9 @@
 """Structure of the stored data, and a glossary of the names the original API uses.
 
-Everything except Account is JSON stored per Game Sync ID in game_sync_server's
-player_saves table. These are TypedDicts so the data stays JSON compatible.
+Most of it is JSON stored per Game Sync ID in game_sync_server's player_saves table.
+Garden plots, Share Shelf items, and owned decor are rows of their own tables, and
+Account is a row of the accounts table. These are TypedDicts so the data stays JSON
+compatible.
 The ones declared total=False describe data whose fields may be absent (a fresh
 account, an empty garden plot, ...).
 """
@@ -80,7 +82,6 @@ class Member(TypedDict, total=False):
     # how often the player can still water other players' gardens today (JST)
     friend_waterings_left: int
     friend_waterings_date: str  # "%Y-%m-%d"
-    my_interior_list: list[OwnedDecor]  # the room's arranged_interior_list is built from this
     # timestamps
     last_started_at: int | None
     last_logined_at: int | None
@@ -203,7 +204,7 @@ class ShareSlot(TypedDict, total=False):
 
 
 class ShareData(TypedDict):
-    """The share_data column.
+    """A player's Share Shelf.
 
     cnt is len(share_list).
     """
@@ -244,7 +245,7 @@ class Plot(TypedDict, total=False):
 
 
 class CropData(TypedDict, total=False):
-    """The crop_data column."""
+    """A player's Berry garden."""
 
     croft_list: list[Plot]
     # added on load by CropManager
