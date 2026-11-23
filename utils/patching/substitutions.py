@@ -136,6 +136,30 @@ def _file_subs(lang: str) -> dict[str, tuple[Substitution, ...]]:
                 b"{ format:'SHORT' }) : data.member.last_up_time);",
             ),
         ),
+        # Certain levels of Windows scaling has issues where lines break when selected.
+        "dialog.css": (
+            Substitution(
+                b"#dialog-avatar #dialog-avatar-list ul {\n"
+                b"  overflow: hidden;\n"
+                b"  list-style-type: none;\n"
+                b"}",
+                b"#dialog-avatar #dialog-avatar-list ul {\n"
+                b"  overflow: hidden;\n"
+                b"  list-style-type: none;\n"
+                b"  display: grid;\n"
+                b"  grid-template-columns: repeat(8, auto);\n"
+                b"  justify-content: start;\n"
+                b"}",
+            ),
+            Substitution(
+                b"#dialog-avatar #dialog-avatar-list li.selected {\n"
+                b"  border: 1px solid red;\n"
+                b"  padding: 0;\n",
+                b"#dialog-avatar #dialog-avatar-list li.selected {\n"
+                b"  outline: 1px solid red;\n"
+                b"  outline-offset: -1px;\n",
+            ),
+        ),
         "profile.js": (
             Substitution(
                 b"var src = '/top/assets/' + PGL.language + '/images/rom-image-'",

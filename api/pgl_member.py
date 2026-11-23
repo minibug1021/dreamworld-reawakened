@@ -168,7 +168,8 @@ def rom_check(query: Query) -> dict:
 @endpoint("pgl.member.profile.avator_list", methods=("POST",))
 def avatar_list(_query: Query) -> dict:
     """Return the avatars the picker offers."""
-    return {"avator_list": [{"avator_id": avatar_id, "avator_name": "Placeholder"} for avatar_id in AVATAR_IDS]}
+    return {"avator_list": [{"avator_id": avatar_id, "avator_name": text.lookup_str("avatar", avatar_id)}
+                            for avatar_id in AVATAR_IDS]}
 
 
 @endpoint("pgl.member.profile.avator_select", methods=("POST",))

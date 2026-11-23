@@ -1,6 +1,7 @@
 __pycache__/
 
 save_data/
+saves/
 tools/
 
 email_config.json
