@@ -6,6 +6,7 @@ from operator import itemgetter
 from typing import Any
 
 from api.routes import Query, endpoint, query_int
+from game_sync_server.entralinked.utility.db_manager import db
 from utils import managers, save_data, text, visits
 from utils.berries import is_berry
 from utils.models import ChestItem, EntralinkItem, ShareSlot
@@ -144,14 +145,18 @@ def item_trade_update(query: Query) -> list[ShareSlot]:
     changed slot.
     """
     item_id = int(query["item_id"])
-    shelf = managers.get_shelf(visits.find_player(int(query["other_member_id"])))
+    me = save_data.require_gscd()
+    owner = visits.find_player(int(query["other_member_id"]))
+    shelf = managers.get_shelf(owner)
     chest = managers.get_chest()
     chest.remove_item(item_id, 1)
     try:
-        material_id = shelf.swap(int(query["other_material_id"]), item_id, save_data.require_gscd())
+        material_id = shelf.swap(int(query["other_material_id"]), item_id, me)
     except ValueError:
         chest.add_item(item_id, 1)
         raise
     slot = shelf.slot(material_id)
     chest.add_item(slot["old_item_id"], 1)
+    if owner != me:
+        db.mark_footprint(owner, me, "swapped", save_data.now_jst_str())
     return [slot]

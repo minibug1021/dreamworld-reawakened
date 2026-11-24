@@ -8,7 +8,7 @@ from api.routes import Query, endpoint, query_int
 from game_sync_server.entralinked.utility.db_manager import db
 from utils import pokemon, save_data, text
 from utils.account_manager import accounts
-from utils.constants import PlayerStatus
+from utils.constants import DreamPalStatus, PlayerStatus
 from utils.language import game_language
 from utils.messages import message
 from utils.models import Member
@@ -45,6 +45,50 @@ def friend_list(_query: Query) -> dict:
         }],
         "cnt": 1,
     }
+
+
+def _dream_pal_list(status: DreamPalStatus, query: Query) -> dict:
+    """Return a page of players the player has `status` with.
+
+    sort 2 orders them by name and dir 1 reverses the order.
+    """
+    me = save_data.get_current_gscd()
+    others = [save_data.read_member(other) for other in db.dream_pals(me, status)] if me else []
+    if query_int(query, "sort", 1) == 2:
+        others.sort(key=lambda member: (member.get("pgl_name") or "").casefold())
+    if query_int(query, "dir", 0) == 1:
+        others.reverse()
+    offset = query_int(query, "offset", 0)
+    page = others[offset:offset + query_int(query, "rowcount", 5)]
+    return {
+        "list": [{
+            "avator_id":          member.get("avator_id"),
+            "pgl_name":           member.get("pgl_name"),
+            "member_savedata_id": str(member.get("member_savedata_id")),
+            "disable_flag":       str(member.get("disable_flag") or 0),
+            "is_ds":              0,
+            "country_code":       text.lookup_str("country", member.get("country_id")),
+        } for member in page],
+        "cnt": len(others),
+    }
+
+
+@endpoint("pgl.member.profile.pdw_friend_list")
+def pdw_friend_list(query: Query) -> dict:
+    """Return a page of the player's Dream Pals."""
+    return _dream_pal_list(DreamPalStatus.PALS, query)
+
+
+@endpoint("pgl.member.profile.pdw_friend_requesting_list")
+def pdw_friend_requesting_list(query: Query) -> dict:
+    """Return a page of the players the player sent a Dream Pal request to."""
+    return _dream_pal_list(DreamPalStatus.REQUESTING, query)
+
+
+@endpoint("pgl.member.profile.pdw_friend_requested_list")
+def pdw_friend_requested_list(query: Query) -> dict:
+    """Return a page of the players who sent the player a Dream Pal request."""
+    return _dream_pal_list(DreamPalStatus.REQUESTED, query)
 
 
 @endpoint("pgl.member.profile.init_create_confirm")

@@ -1,5 +1,6 @@
 """pdw.croft.*: the Berry garden (pdw_farm.swf)."""
 from api.routes import GET_AND_POST, Query, endpoint
+from game_sync_server.entralinked.utility.db_manager import db
 from utils import managers, save_data, visits
 from utils.constants import WATERINGCAN_ID
 from utils.decor import get_decor, owned_wateringcans
@@ -76,6 +77,9 @@ def friend_water(query: Query) -> dict:
     """Waters a plot in another player's garden, using up one of today's waterings."""
     if visits.friend_waterings_left() <= 0:
         raise ValueError("No waterings left today")
-    crops = managers.get_crops(visits.find_player(int(query["member_savedata_id"])))
+    friend = visits.find_player(int(query["member_savedata_id"]))
+    crops = managers.get_crops(friend)
     crops.water_plot(int(query["my_croft_id"]))
-    return {**crops.data, "remains_watering": visits.use_friend_watering()}
+    left = visits.use_friend_watering()
+    db.mark_footprint(friend, save_data.require_gscd(), "watered", save_data.now_jst_str())
+    return {**crops.data, "remains_watering": left}

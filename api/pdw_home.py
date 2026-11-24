@@ -1,12 +1,12 @@
 """pdw.home.*: the player's house and island (pdw_home.swf, pdw_room.swf)."""
 import time
-from random import choice, randint
+from random import randint
 
-from api.routes import Query, endpoint
+from api.routes import Query, endpoint, query_int
 from game_sync_server.entralinked.utility.db_manager import db
 from utils import pokemon, save_data, text, visits
 from utils.account_manager import accounts
-from utils.constants import DREAMLAND_VISITS_PER_SESSION, NATURE_COUNT, SHARE_SHELF_ID, DreamPalStatus, PlayerStatus
+from utils.constants import DREAMLAND_VISITS_PER_SESSION, SHARE_SHELF_ID, DreamPalStatus, PlayerStatus
 from utils.decor import arranged_decor
 from utils.language import game_language
 from utils.models import Member, SleepingPokemon
@@ -14,34 +14,47 @@ from utils.models import Member, SleepingPokemon
 DAILY_BONUS_POINTS = 50
 
 
+def _footprint(island_gscd: str, row: dict) -> dict:
+    """Return a visitor's footprint data."""
+    visitor = save_data.read_member(row["visitor_gscd"])
+    pkmn = pokemon.get_sleeper(row["visitor_gscd"])
+    status = db.dream_pal_status(island_gscd, row["visitor_gscd"])
+    return {
+        "visitor_member_savedata_id": visitor.get("member_savedata_id"),
+        "member_id":        visitor.get("member_id"),
+        "pgl_name":         visitor.get("pgl_name"),
+        "player_name":      visitor.get("player_name"),
+        "island_id":        visitor.get("island_id"),
+        "country_id":       visitor.get("country_id"),
+        "is_pdw":           int(status == DreamPalStatus.PALS),
+        "is_gts":           0,
+        "is_ds":            0,
+        # 1 shows the visitor's Dream Pal request, 2 that they're a Dream Pal
+        "friend_type":      {DreamPalStatus.REQUESTED: 1, DreamPalStatus.PALS: 2}.get(status, 0),
+        "updated_at":       row["visited_at"][:16],
+        "exchange_flag":    row["swapped"],
+        "water_flag":       row["watered"],
+        "pokemon_no":       pkmn["pokemon_no"],
+        "form_no":          pkmn.get("form_no", 0),
+        "pokemon_name":     text.lookup_str("pokemon", pkmn["pokemon_no"], game_language(visitor.get("langcode"))),
+        "pokemon_nickname": pkmn["pokemon_nickname"],
+        "oyaname":          pkmn["oyaname"],
+        "level":            pkmn["level"],
+        "type1":            text.lookup_str("type", pkmn["type1"]),
+        "type2":            text.lookup_str("type", pkmn["type2"]),
+        "sex_id":           pkmn["sex"],
+        "personality":      text.lookup_str("nature", pkmn["personality"]),
+    }
+
+
 @endpoint("pdw.home.footprint_list")
-def footprint_list(_query: Query) -> dict:
-    """Return placeholder random footprints from made-up visitors."""
-    footprints = []
-    for _ in range(10):
-        pkmn = pokemon.get_random_pokemon()
-        footprints.append({
-            "is_pdw":           randint(0, 1),
-            "is_gts":           randint(0, 1),
-            "is_ds":            randint(0, 1),
-            "friend_type":      randint(0, 2),
-            "updated_at":       "2026/05/06 22:00",
-            "pokemon_nickname": "pokemon_nickname",
-            "pokemon_name":     text.lookup_str("pokemon", pkmn["pokemon_no"]),
-            "pgl_name":         "pgl_name",
-            "pokemon_no":       pkmn["pokemon_no"],
-            "form_no":          pkmn.get("form_no", 0),
-            # the rest is used for the popup menu
-            "oyaname":          "oyaname",
-            "level":            pkmn["level"],
-            "type1":            text.lookup_str("type", pkmn["type1"]),
-            "type2":            text.lookup_str("type", pkmn["type2"]),
-            "sex_id":           choice(pkmn["gender_ratio"]),
-            "personality":      text.lookup_str("nature", randint(0, NATURE_COUNT - 1)),
-            "exchange_flag":    randint(0, 1),
-            "water_flag":       randint(0, 1),
-        })
-    return {"list": footprints}
+def footprint_list(query: Query) -> dict:
+    """Return a page of the players who visited the player's island."""
+    me = save_data.require_gscd()
+    rows = [row for row in db.footprints(me) if visits.is_visible(row["visitor_gscd"])]
+    offset = query_int(query, "offset", 0)
+    page = rows[offset:offset + query_int(query, "rowcount", 12)]
+    return {"list": [_footprint(me, row) for row in page], "cnt": len(rows)}
 
 
 def _island_pokemon(pkmn: SleepingPokemon, langcode: int | None) -> dict:
@@ -110,6 +123,8 @@ def friend_island(query: Query) -> dict:
     me = save_data.require_gscd()
     friend = visits.find_player(int(query["friend_member_savedata_id"]))
     member = save_data.read_member(friend)
+    if friend != me:
+        db.record_footprint(friend, me, save_data.now_jst_str())
     return {
         "pokemon":                _island_pokemon(pokemon.get_sleeper(), save_data.read_member(me).get("langcode")),
         "friend_pokemon":         _island_pokemon(pokemon.get_sleeper(friend), member.get("langcode")),

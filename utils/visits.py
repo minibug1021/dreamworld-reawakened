@@ -9,7 +9,8 @@ from utils.models import Member
 FRIEND_WATERINGS_PER_DAY = 20
 
 
-def _visible(gscd: str) -> bool:
+def is_visible(gscd: str) -> bool:
+    """Return whether other players can visit `gscd`'s island."""
     account = accounts.get_account_by_username(accounts.get_gscd_owner(gscd))
     return bool(account and account["dw_privacy"] == "everyone" and db.read(gscd, "sleeping_pokemon"))
 
@@ -26,7 +27,7 @@ def neighbors(gscd: str | None = None) -> list[Member]:
     """Return every player shown on the map around `gscd`'s island."""
     left_out = {save_data.require_gscd(gscd)} | _own_gscds()
     return [save_data.read_member(other) for other in db.get_all_gscds()
-            if other not in left_out and _visible(other)]
+            if other not in left_out and is_visible(other)]
 
 
 def find_player(member_savedata_id: int, gscd: str | None = None) -> str:
@@ -37,7 +38,7 @@ def find_player(member_savedata_id: int, gscd: str | None = None) -> str:
     """
     me = save_data.require_gscd(gscd)
     other = db.find_gscd(member_savedata_id)
-    if other is None or (other != me and not _visible(other)):
+    if other is None or (other != me and not is_visible(other)):
         raise ValueError(f"No visible player with member_savedata_id {member_savedata_id}")
     return other
 

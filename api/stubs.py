@@ -21,7 +21,6 @@ EMPTY_STUBS = {
         "pgl.member.profile.friend_pdw_profile_by_pgl",
         "pgl.member.profile.friend_profile",
         "pgl.member.profile.my_gbu_profile",
-        "pgl.member.profile.pdw_friend_list",
         "pgl.member.profile.video_delete",
         "pgl.member.profile.video_regist",
         "pgl.news.news_list",
