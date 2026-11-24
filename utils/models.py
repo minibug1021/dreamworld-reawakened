@@ -146,6 +146,7 @@ class GameSync(TypedDict, total=False):
     items: list[EntralinkItem]
     avenue_visitors: list[dict]
     loblolly_decor: int | None  # the id of the Loblolly item picked on the DS
+    friend_code: int | None  # 12-digit Friend Code
 
 
 class ChestItem(TypedDict, total=False):

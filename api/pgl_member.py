@@ -6,7 +6,7 @@ from flask import session
 from api.pgl_top import last_up_time_text
 from api.routes import Query, endpoint, query_int
 from game_sync_server.entralinked.utility.db_manager import db
-from utils import pokemon, save_data, text, visits
+from utils import pokemon, save_data, text
 from utils.account_manager import accounts
 from utils.constants import DreamPalStatus, PlayerStatus
 from utils.language import game_language
@@ -50,12 +50,10 @@ def friend_list(_query: Query) -> dict:
 def _dream_pal_list(status: DreamPalStatus, query: Query) -> dict:
     """Return a page of players the player has `status` with.
 
-    Players who switched to another game are left out until they switch back. sort 2
-    orders them by name and dir 1 reverses the order.
+    sort 2 orders them by name and dir 1 reverses the order.
     """
     me = save_data.get_current_gscd()
-    pals = [other for other in db.dream_pals(me, status) if visits.is_active(other)] if me else []
-    others = [save_data.read_member(other) for other in pals]
+    others = [save_data.read_member(other) for other in db.dream_pals(me, status)] if me else []
     if query_int(query, "sort", 1) == 2:
         others.sort(key=lambda member: (member.get("pgl_name") or "").casefold())
     if query_int(query, "dir", 0) == 1:

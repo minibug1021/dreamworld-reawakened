@@ -1,59 +1,45 @@
 """Visiting other players' islands."""
-from flask import session
-
 from game_sync_server.entralinked.utility.db_manager import db
 from utils import save_data
 from utils.account_manager import accounts
-from utils.models import Account, Member
+from utils.constants import DreamPalStatus
+from utils.models import Member
 
 FRIEND_WATERINGS_PER_DAY = 20
 
 
-def _active_owner(gscd: str) -> Account | None:
-    """Return the account whose active Game Sync ID is `gscd`, or None if no account has it active."""
-    account = accounts.get_account_by_username(accounts.get_gscd_owner(gscd))
-    return account if account and account["active_gscd"] == gscd else None
-
-
-def is_active(gscd: str) -> bool:
-    """Return whether `gscd` is its account's active Game Sync ID.
-
-    Other players only see an account's active Game Sync ID, so a player who links several
-    games has one island and one profile.
-    """
-    return _active_owner(gscd) is not None
-
-
-def is_visible(gscd: str) -> bool:
-    """Return whether other players can visit `gscd`'s island."""
-    account = _active_owner(gscd)
-    return bool(account and account["dw_privacy"] == "everyone" and db.read(gscd, "sleeping_pokemon"))
-
-
-def _own_gscds() -> set[str]:
-    """Return every Game Sync ID linked to the logged-in account."""
-    username = session.get("username")
-    own = set(accounts.get_gscds_for_account(username)) if username else set()
-    current = save_data.get_current_gscd()
-    return own | {current} if current else own
+def can_see(viewer: str, other: str) -> bool:
+    """Return whether the player `viewer` can see and visit `other`'s island."""
+    if other == viewer or not db.read(other, "sleeping_pokemon"):
+        return False
+    owner = accounts.get_gscd_owner(other)
+    account = accounts.get_account_by_username(owner)
+    if not account:
+        return False
+    if owner == accounts.get_gscd_owner(viewer):
+        return True
+    if account["dw_privacy"] != "everyone":
+        return False
+    return account["active_gscd"] == other or db.dream_pal_status(viewer, other) != DreamPalStatus.NONE
 
 
 def neighbors(gscd: str | None = None) -> list[Member]:
     """Return every player shown on the map around `gscd`'s island."""
-    left_out = {save_data.require_gscd(gscd)} | _own_gscds()
+    center = save_data.require_gscd(gscd)
+    left_out = {center, save_data.get_current_gscd()}
     return [save_data.read_member(other) for other in db.get_all_gscds()
-            if other not in left_out and is_visible(other)]
+            if other not in left_out and can_see(center, other)]
 
 
 def find_player(member_savedata_id: int, gscd: str | None = None) -> str:
     """Return the Game Sync ID of the player with this member_savedata_id.
 
-    Raise ValueError if no player has it, or if it belongs to someone else that the
-    player can't visit. The player's own id is always allowed.
+    Raise ValueError if no player has it, or if it belongs to someone the player can't
+    visit. The player's own id is always allowed.
     """
     me = save_data.require_gscd(gscd)
     other = db.find_gscd(member_savedata_id)
-    if other is None or (other != me and not is_visible(other)):
+    if other is None or (other != me and not can_see(me, other)):
         raise ValueError(f"No visible player with member_savedata_id {member_savedata_id}")
     return other
 

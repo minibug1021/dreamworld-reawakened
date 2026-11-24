@@ -51,7 +51,7 @@ def _footprint(island_gscd: str, row: dict) -> dict:
 def footprint_list(query: Query) -> dict:
     """Return a page of the players who visited the player's island."""
     me = save_data.require_gscd()
-    rows = [row for row in db.footprints(me) if visits.is_visible(row["visitor_gscd"])]
+    rows = [row for row in db.footprints(me) if visits.can_see(me, row["visitor_gscd"])]
     offset = query_int(query, "offset", 0)
     page = rows[offset:offset + query_int(query, "rowcount", 12)]
     return {"list": [_footprint(me, row) for row in page], "cnt": len(rows)}
