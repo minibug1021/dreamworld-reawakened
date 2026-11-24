@@ -5,6 +5,7 @@ from flask import session
 from werkzeug.security import check_password_hash
 
 from api.routes import Query, endpoint
+from game_sync_server.entralinked.utility.db_manager import db
 from utils import language, managers, save_data, text
 from utils.account_manager import accounts
 from utils.auth import log_in
@@ -13,7 +14,7 @@ from utils.messages import message
 from utils.models import Account, Member
 
 DAYS_UNTIL_ITEM_DELETION = 100
-BERRY_DREAM_POINTS       = 20
+BERRY_DREAM_POINTS       = 10
 
 # TEMPORARY: bypass the 1-hour PDW play limit (and the 20-hour re-entry
 # cooldown). Set to False to restore the original behavior.
@@ -63,6 +64,7 @@ def init(_query: Query) -> dict:
     if "username" not in session:
         return {}
 
+    db.expire_stale(save_data.now_jst_str())
     account = accounts.get_account_by_username(session["username"])
     if account is None:
         session.clear()  # the account is gone, so the session is logged out

@@ -178,6 +178,7 @@ def pdw_start(_query: Query) -> dict:
         raise ValueError("No Pokémon is dreaming")
     member = save_data.read_member(gscd)
 
+    db.expire_stale(save_data.now_jst_str())
     save_data.record_session_start(timestamp)
     pokemon_name = text.lookup_str("pokemon", member["pokemon_no"], game_language(member.get("langcode")))
     update: Member = {"pokemon_name": pokemon_name, "point": 0,

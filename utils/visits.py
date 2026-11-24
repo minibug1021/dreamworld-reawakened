@@ -16,9 +16,12 @@ def can_see(viewer: str, other: str) -> bool:
     account = accounts.get_account_by_username(owner)
     if not account:
         return False
-    if owner == accounts.get_gscd_owner(viewer):
+    viewer_owner = accounts.get_gscd_owner(viewer)
+    if owner == viewer_owner:
         return True
-    if account["dw_privacy"] != "everyone":
+    viewer_account = accounts.get_account_by_username(viewer_owner)
+    # the stricter of the two privacy settings applies to both players
+    if account["dw_privacy"] != "everyone" or not viewer_account or viewer_account["dw_privacy"] != "everyone":
         return False
     return account["active_gscd"] == other or db.dream_pal_status(viewer, other) != DreamPalStatus.NONE
 
