@@ -4,14 +4,29 @@ from flask import session
 from game_sync_server.entralinked.utility.db_manager import db
 from utils import save_data
 from utils.account_manager import accounts
-from utils.models import Member
+from utils.models import Account, Member
 
 FRIEND_WATERINGS_PER_DAY = 20
 
 
+def _active_owner(gscd: str) -> Account | None:
+    """Return the account whose active Game Sync ID is `gscd`, or None if no account has it active."""
+    account = accounts.get_account_by_username(accounts.get_gscd_owner(gscd))
+    return account if account and account["active_gscd"] == gscd else None
+
+
+def is_active(gscd: str) -> bool:
+    """Return whether `gscd` is its account's active Game Sync ID.
+
+    Other players only see an account's active Game Sync ID, so a player who links several
+    games has one island and one profile.
+    """
+    return _active_owner(gscd) is not None
+
+
 def is_visible(gscd: str) -> bool:
     """Return whether other players can visit `gscd`'s island."""
-    account = accounts.get_account_by_username(accounts.get_gscd_owner(gscd))
+    account = _active_owner(gscd)
     return bool(account and account["dw_privacy"] == "everyone" and db.read(gscd, "sleeping_pokemon"))
 
 
