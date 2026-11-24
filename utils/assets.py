@@ -105,6 +105,6 @@ def resolve_static(path: str) -> tuple[Path, bool] | None:
     if site_path:
         return site_path, url_lang is None
 
-    # the shared mirror has no language prefix (e.g. /en/ -> /)
+    # the shared mirror has no language folders (e.g. /en/ -> /)
     shared_path = find_file(path_inside(SHARED_DIR, _LANG_SEGMENT.sub("/", relative)))
     return (shared_path, False) if shared_path else None

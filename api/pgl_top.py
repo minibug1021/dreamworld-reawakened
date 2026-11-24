@@ -71,6 +71,14 @@ def init(_query: Query) -> dict:
     return {**_member_data(account), "username": account["username"]}
 
 
+def last_up_time_text(member: Member) -> str | None:
+    """Return the last tucked-in time."""
+    tucked_in_at = member.get("last_up_time_strict")  # only set at tuck-in
+    if tucked_in_at:
+        return language.localize_last_up_time(save_data.parse_jst_str(tucked_in_at))
+    return member.get("last_up_time")
+
+
 def _member_data(account: Account) -> dict:
     """The "member" part of pgl.top.init for a logged-in account."""
     if "gscd" not in session:
@@ -93,10 +101,7 @@ def _member_data(account: Account) -> dict:
     if member.get("rom_id") is not None:
         member["rom_name"] = text.lookup_str("game", member["rom_id"])
 
-    # last_up_time_strict is only set at tuck-in
-    tucked_in_at = member.get("last_up_time_strict")
-    if tucked_in_at:
-        member["last_up_time"] = language.localize_last_up_time(save_data.parse_jst_str(tucked_in_at))
+    member["last_up_time"] = last_up_time_text(member)
 
     # only the response is changed, the saved nextstart_remaintime is untouched
     if DISABLE_PLAY_TIME_LIMIT:

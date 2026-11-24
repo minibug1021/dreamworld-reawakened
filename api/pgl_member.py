@@ -3,6 +3,7 @@ from itertools import chain
 
 from flask import session
 
+from api.pgl_top import last_up_time_text
 from api.routes import Query, endpoint, query_int
 from game_sync_server.entralinked.utility.db_manager import db
 from utils import pokemon, save_data, text
@@ -266,4 +267,33 @@ def gsid_create(query: Query) -> dict:
     if error:
         return error
     _set_up_member(username, gscd)
+    return {}
+
+
+@endpoint("pgl.member.profile.gsid_list")
+def gsid_list(_query: Query) -> dict:
+    """List the account's Game Sync IDs."""
+    username = session.get("username")
+    if not username:
+        return {"gsid_list": []}
+    gsid_list = []
+    for gscd in accounts.get_gscds_for_account(username):
+        member = save_data.read_member(gscd)
+        gsid_list.append({
+            "gscd": gscd,
+            "rom_id": member.get("rom_id"),
+            "rom_name": text.lookup_str("game", member.get("rom_id")),
+            "last_up_time": last_up_time_text(member),
+        })
+    return {"gsid_list": gsid_list}
+
+
+@endpoint("pgl.member.profile.gsid_switch", methods=("POST",))
+def gsid_switch(query: Query) -> dict:
+    """Switch an account's active Game Sync ID."""
+    username = session.get("username")
+    gscd = query.get("gscd", "").strip()
+    if not username or not accounts.set_active_gscd(username, gscd):
+        return _field_error("gscd", "gscd_not_found")
+    session["gscd"] = gscd
     return {}

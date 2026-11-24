@@ -160,10 +160,20 @@ def _file_subs(lang: str) -> dict[str, tuple[Substitution, ...]]:
                 b"  outline-offset: -1px;\n",
             ),
         ),
+        "theme.js": (
+            Substitution(
+                b"(location.href.match(/\\W(ja|en|fr|it|de|es|ko)\\./) || [null, 'ja'])[1];",
+                f"'{lang}';".encode(),
+            ),
+        ),
         "profile.js": (
             Substitution(
                 b"var src = '/top/assets/' + PGL.language + '/images/rom-image-'",
                 b"var src = '/src/swf/top/' + PGL.language + '/images/rom-image-'"
+            ),
+            Substitution(
+                b"src:'/top/assets/' + PGL.language + '/images/' + logo",
+                b"src:'/src/swf/top/' + PGL.language + '/images/' + logo"
             ),
             # show the Last Tucked-in Time in the player's time zone
             Substitution(

@@ -134,7 +134,7 @@ class AccountManager(SQLiteStore):
         self._execute("UPDATE accounts SET registered = 1 WHERE username = ?", username)
 
     def get_gscds_for_account(self, username: str) -> list[str]:
-        """Return the account's linked Game Sync IDs, oldest link first."""
+        """Return the account's linked Game Sync IDs."""
         cursor = self._conn.execute("SELECT gscd FROM account_gscds WHERE username = ? ORDER BY rowid", (username,))
         return [row["gscd"] for row in cursor.fetchall()]
 
@@ -154,6 +154,18 @@ class AccountManager(SQLiteStore):
                 "UPDATE accounts SET active_gscd = ? WHERE username = ? AND active_gscd IS NULL",
                 (gscd, username),
             )
+
+    def set_active_gscd(self, username: str, gscd: str) -> bool:
+        """Change the account's active Game Sync ID to `gscd`.
+
+        Return False if `gscd` isn't linked to this account.
+        """
+        with self._conn:
+            cursor = self._conn.execute(
+                """UPDATE accounts SET active_gscd = ? WHERE username = ?
+                   AND EXISTS (SELECT 1 FROM account_gscds WHERE gscd = ? AND username = ?)""",
+                (gscd, username, gscd, username))
+        return cursor.rowcount == 1
 
     def claim_daily_bonus(self, username: str, today: str) -> bool:
         """Claim `username`'s daily bonus for `today`.
