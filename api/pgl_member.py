@@ -6,7 +6,7 @@ from flask import session
 from api.pgl_top import last_up_time_text
 from api.routes import Query, endpoint, query_int
 from game_sync_server.entralinked.utility.db_manager import db
-from utils import pokemon, save_data, text
+from utils import areas, pokemon, save_data, text
 from utils.account_manager import accounts
 from utils.constants import DreamPalStatus, PlayerStatus
 from utils.language import game_language
@@ -40,7 +40,7 @@ def friend_list(_query: Query) -> dict:
             "member_savedata_id": str(member["member_savedata_id"]),
             "disable_flag":       str(member["disable_flag"] or 0),
             "is_ds":              True,
-            "country_code":       "US",
+            "country_code":       areas.country_code(member.get("country_id")),
             "is_blocked":         "0",
         }],
         "cnt": 1,
@@ -67,7 +67,7 @@ def _dream_pal_list(status: DreamPalStatus, query: Query) -> dict:
             "member_savedata_id": str(member.get("member_savedata_id")),
             "disable_flag":       str(member.get("disable_flag") or 0),
             "is_ds":              0,
-            "country_code":       text.lookup_str("country", member.get("country_id")),
+            "country_code":       areas.country_code(member.get("country_id")),
         } for member in page],
         "cnt": len(others),
     }

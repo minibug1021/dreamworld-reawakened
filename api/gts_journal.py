@@ -1,34 +1,19 @@
 """gts.journal.*: Global Trade Station (GTS)."""
-import json
-import re
-from functools import cache
 from random import choice, randint
 
 from api.routes import Query, endpoint
-from config import ROOT_DIR
+from utils import areas
 from utils.language import current_language
 from utils.pokemon import get_random_pokemon
 
-AREAS_JS = ROOT_DIR / "dreamworld_assets" / "shared.pokemon-gl.com" / "report" / "assets" / "js" / "areas.js"
 
-
-@cache
-def load_areas() -> dict[int, dict]:
-    """GTS country id -> area entry from the site's areas.js."""
-    match = re.search(r"var a = (\[.*?\]);", AREAS_JS.read_text(encoding="utf-8"), re.DOTALL)
-    if match is None:
-        raise ValueError(f"No area list found in {AREAS_JS}")
-    quoted = re.sub(r"(?<=[{,])\s*([a-zA-Z_]\w*)\s*:", r'"\1":', match.group(1))
-    return {entry["gts"]: entry for entry in json.loads(quoted) if entry["gts"] not in (0, None)}
-
-
-def _random_trade_side(areas: dict[int, dict]) -> dict:
-    """One random Pokémon and the country it was traded from."""
+def _random_trade_side(by_gts_id: dict[int, dict]) -> dict:
+    """Return a random trade for the GTS journal."""
     pkmn = get_random_pokemon()
-    country_id = choice(list(areas))
+    country_id = choice(list(by_gts_id))
     return {
         "country_id":   country_id,
-        "country_name": areas[country_id]["names"][current_language()],
+        "country_name": by_gts_id[country_id]["names"][current_language()],
         "monsno":       pkmn["pokemon_no"],
         "form_no":      pkmn.get("form_no", 0),
         "poke_level":   randint(1, 100),
@@ -39,6 +24,6 @@ def _random_trade_side(areas: dict[int, dict]) -> dict:
 @endpoint("gts.journal.trade_list")
 def trade_list(_query: Query) -> dict:
     """Return a placeholder list of 100 random trades."""
-    areas = load_areas()
-    return {"trade_list": [{"trade1": _random_trade_side(areas), "trade2": _random_trade_side(areas)}
+    by_gts_id = areas.by_gts_id()
+    return {"trade_list": [{"trade1": _random_trade_side(by_gts_id), "trade2": _random_trade_side(by_gts_id)}
                            for _ in range(100)]}
