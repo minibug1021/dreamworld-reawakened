@@ -72,7 +72,7 @@ def _island_pokemon(pkmn: SleepingPokemon, langcode: int | None) -> dict:
 
 @endpoint("pdw.home.my_island")
 def my_island(_query: Query) -> dict:
-    """Return the player's island with their house, furniture, and the tucked-in Pokémon."""
+    """Return the player's island data."""
     member = save_data.read_member()
     return {
         "pokemon":                _island_pokemon(pokemon.get_sleeper(), member.get("langcode")),
@@ -86,23 +86,52 @@ def my_island(_query: Query) -> dict:
     }
 
 
+def _map_island(member: Member, is_dream_pal: bool) -> dict:
+    """Return another player's island."""
+    return {
+        "pgl_name":           member.get("pgl_name"),
+        "member_id":          member.get("member_id"),
+        "member_savedata_id": member.get("member_savedata_id"),
+        "island_id":          member.get("island_id"),
+        "country_id":         member.get("country_id"),
+        "is_ds":              0,
+        "is_gts":             0,
+        "is_pdw":             int(is_dream_pal),
+    }
+
+
 def _island_area(gscd: str) -> dict:
-    """Return the map around a player's island: their island and the players they can visit."""
+    """Return the map around a player's island."""
     pals = {save_data.read_member(pal)["member_savedata_id"] for pal in db.dream_pals(gscd, DreamPalStatus.PALS)}
-    friends = [
-        {
-            "pgl_name":           member.get("pgl_name"),
-            "member_id":          member.get("member_id"),
-            "member_savedata_id": member.get("member_savedata_id"),
-            "island_id":          member.get("island_id"),
-            "country_id":         member.get("country_id"),
-            "is_ds":              0,
-            "is_gts":             0,
-            "is_pdw":             int(member.get("member_savedata_id") in pals),  # the Dream Pal bridge
-        }
-        for member in visits.neighbors(gscd)
-    ]
+    friends = [_map_island(member, member.get("member_savedata_id") in pals) for member in visits.neighbors(gscd)]
     return {"island_id": save_data.read_member(gscd)["island_id"], "friend_list": friends}
+
+
+@endpoint("pdw.home.friend_list")
+def friend_list(query: Query) -> dict:
+    """Return a page of the Dream Pal list on the player's map.
+
+    sort 1 orders them by how many days the player has visited them, 2 by name, and
+    3 by region. dir 1 reverses the order.
+    """
+    me = save_data.require_gscd()
+    visit_counts = db.dream_pal_visit_counts(me)
+    pals = [(save_data.read_member(pal), visit_counts[pal]) for pal in db.dream_pals(me, DreamPalStatus.PALS)]
+    def by_name(pal: tuple[Member, int]) -> str:
+        return (pal[0].get("pgl_name") or "").casefold()
+
+    match query_int(query, "sort", 1):
+        case 1:
+            pals.sort(key=lambda pal: (pal[1], by_name(pal)))
+        case 2:
+            pals.sort(key=by_name)
+        case 3:
+            pals.sort(key=lambda pal: (pal[0].get("country_id") or 0, by_name(pal)))
+    if query_int(query, "dir", 0) == 1:
+        pals.reverse()
+    offset = query_int(query, "offset", 0)
+    page = pals[offset:offset + query_int(query, "rowcount", 11)]
+    return {"list": [_map_island(member, True) for member, _ in page], "cnt": len(pals)}
 
 
 @endpoint("pdw.home.my_island_area")

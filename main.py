@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 
 PORT = 8080
 SERVER_THREADS = 16  # waitress's default of 4 makes page loads wait on each other
+CONNECTION_LIMIT = 500
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -54,7 +55,7 @@ def main() -> None:
     patching.prewarm()
     app = create_app()
     app.logger.info("Server started!%s", " (debug mode)" if args.debug else "")
-    serve(app, host="0.0.0.0", port=PORT, threads=SERVER_THREADS,
+    serve(app, host="0.0.0.0", port=PORT, threads=SERVER_THREADS, connection_limit=CONNECTION_LIMIT,
           trusted_proxy="127.0.0.1", trusted_proxy_headers={"x-forwarded-proto"}, clear_untrusted_proxy_headers=True)
 
 

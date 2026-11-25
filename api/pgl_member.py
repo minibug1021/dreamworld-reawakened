@@ -91,6 +91,28 @@ def pdw_friend_requested_list(query: Query) -> dict:
     return _dream_pal_list(DreamPalStatus.REQUESTED, query)
 
 
+def _remove_dream_pal(query: Query, status: DreamPalStatus) -> dict:
+    """End the player's `status` relationship with the player in friend_member_savedata_id."""
+    me = save_data.require_gscd()
+    other = db.find_gscd(int(query["friend_member_savedata_id"]))
+    if other is None or db.dream_pal_status(me, other) != status:
+        raise ValueError(f"No {status.name} relationship with {query['friend_member_savedata_id']}")
+    db.remove_dream_pal(me, other)
+    return {}
+
+
+@endpoint("pgl.member.profile.pdw_friend_delete", methods=("POST",))
+def pdw_friend_delete(query: Query) -> dict:
+    """Delete one of the player's Dream Pals."""
+    return _remove_dream_pal(query, DreamPalStatus.PALS)
+
+
+@endpoint("pgl.member.profile.pdw_friend_requesting_discard", methods=("POST",))
+def pdw_friend_requesting_discard(query: Query) -> dict:
+    """Cancel a Dream Pal request the player sent."""
+    return _remove_dream_pal(query, DreamPalStatus.REQUESTING)
+
+
 @endpoint("pgl.member.profile.init_create_confirm")
 def init_create_confirm(query: Query) -> dict:
     """Validate the sign-up form before init_create."""
