@@ -2,7 +2,6 @@
 from game_sync_server.entralinked.utility.db_manager import db
 from utils import save_data
 from utils.account_manager import accounts
-from utils.constants import DreamPalStatus
 from utils.models import Member
 
 FRIEND_WATERINGS_PER_DAY = 20
@@ -21,9 +20,7 @@ def can_see(viewer: str, other: str) -> bool:
         return True
     viewer_account = accounts.get_account_by_username(viewer_owner)
     # the stricter of the two privacy settings applies to both players
-    if account["dw_privacy"] != "everyone" or not viewer_account or viewer_account["dw_privacy"] != "everyone":
-        return False
-    return account["active_gscd"] == other or db.dream_pal_status(viewer, other) != DreamPalStatus.NONE
+    return account["dw_privacy"] == "everyone" and bool(viewer_account) and viewer_account["dw_privacy"] == "everyone"
 
 
 def neighbors(gscd: str | None = None) -> list[Member]:
