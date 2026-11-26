@@ -189,9 +189,9 @@ def set_play_status(status: PlayerStatus) -> None:
 # game sync data
 # ---------------
 
-def read_game_sync() -> GameSync:
-    """Return the logged-in player's game_sync column ({} without a save)."""
-    gscd = get_current_gscd()
+def read_game_sync(gscd: str | None = None) -> GameSync:
+    """Return the player's game_sync column ({} without a save)."""
+    gscd = resolve_gscd(gscd)
     if not gscd:
         return {}
     return cast(GameSync, db.read(gscd, "game_sync") or {})

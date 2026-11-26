@@ -7,7 +7,7 @@ from werkzeug.security import check_password_hash
 from api.routes import Query, endpoint
 from game_sync_server.entralinked.utility.db_manager import db
 from utils import language, managers, save_data, text
-from utils.account_manager import accounts
+from utils.account_manager import accounts, privacy_level
 from utils.auth import log_in
 from utils.constants import SECONDS_PER_DAY, SECONDS_PER_HOUR
 from utils.messages import message
@@ -104,6 +104,8 @@ def _member_data(account: Account) -> dict:
         member["rom_name"] = text.lookup_str("game", member["rom_id"])
 
     member["last_up_time"] = last_up_time_text(member)
+    member["disclosure_flag"] = privacy_level(account["pgl_privacy"])
+    member["list_disclosure_flag"] = privacy_level(account["dw_privacy"])
 
     # only the response is changed, the saved nextstart_remaintime is untouched
     if DISABLE_PLAY_TIME_LIMIT:

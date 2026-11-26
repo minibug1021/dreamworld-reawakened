@@ -48,6 +48,7 @@ class Member(TypedDict, total=False):
     player_badge_num: int | None
     avator_id: int
     avator_name: str | None
+    # only filled in responses (pgl.top.init).
     disclosure_flag: int
     list_disclosure_flag: int
     disable_flag: int
@@ -253,8 +254,9 @@ class CropData(TypedDict, total=False):
     diglett_flag: int  # 1 only in the response that added a row
 
 
-# who can see a Trainer Club account's PGL or Dream World profile
+# who can see a Trainer Club account's profile page
 Privacy = Literal["everyone", "friends", "nobody"]
+PRIVACY_LEVELS: tuple[Privacy, ...] = ("everyone", "friends", "nobody")
 
 
 class Account(TypedDict):
@@ -265,7 +267,9 @@ class Account(TypedDict):
     email: str
     country: int | None  # a raw_text/<lang>/country.txt id
     birth_month: int | None  # 1 to 12
+    # who can see your profile page, which also decides who can visit the account's islands
     pgl_privacy: Privacy | None
+    # who can see the Game Pal and Dream Pal rosters
     dw_privacy: Privacy | None
     activated: int
     activation_token: str | None

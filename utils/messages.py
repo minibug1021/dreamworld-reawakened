@@ -1,7 +1,7 @@
 """Messages the server itself writes for the player (form errors, etc.).
 
 MESSAGES is keyed by site language, then message id.
-A message that a language doesn't have, or has as an empty string, falls back to English.
+English is used as a fallback.
 """
 from config import DEFAULT_LANGUAGE
 from utils.language import current_language
@@ -26,6 +26,7 @@ MESSAGES: dict[str, dict[str, str]] = {
         "not_activated":      "This account hasn't been activated yet. Check your email for the activation link.",
         "most_tucked_in":     "Most Tucked-In Pokémon",
         "tuck_in_count":      "{count} times",
+        "profile_not_visible": "This player's page can't be viewed.",
     },
     "ja": {
         "bad_gscd_length":    "{length}文字のゲームシンクIDを入力して下さい。",

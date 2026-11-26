@@ -19,8 +19,9 @@ def can_see(viewer: str, other: str) -> bool:
     if owner == viewer_owner:
         return True
     viewer_account = accounts.get_account_by_username(viewer_owner)
-    # the stricter of the two privacy settings applies to both players
-    return account["dw_privacy"] == "everyone" and bool(viewer_account) and viewer_account["dw_privacy"] == "everyone"
+    # The profile setting decides who can visit, and the stricter of the two players'
+    # settings applies to both.
+    return account["pgl_privacy"] == "everyone" and bool(viewer_account) and viewer_account["pgl_privacy"] == "everyone"
 
 
 def neighbors(gscd: str | None = None) -> list[Member]:

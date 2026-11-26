@@ -1,5 +1,6 @@
 """pgl.member.profile.*: avatar, privacy settings, Game Sync ID linking, and profile pages."""
 from itertools import chain
+from typing import Literal
 
 from flask import session
 
@@ -7,15 +8,18 @@ from api.pgl_top import last_up_time_text
 from api.routes import Query, endpoint, query_int
 from game_sync_server.entralinked.utility.db_manager import db
 from utils import areas, pokemon, save_data, text
-from utils.account_manager import accounts
+from utils.account_manager import accounts, privacy_level
 from utils.constants import DreamPalStatus, PlayerStatus
 from utils.language import game_language
 from utils.messages import message
-from utils.models import Member
+from utils.models import PRIVACY_LEVELS, Member
 
 GSCD_LENGTH = 10
 MAX_LINKED_GSCDS = 4  # one for each of Black, White, Black 2 and White 2
 DEMO_AVATAR_ID = 4
+
+EVERYONE = PRIVACY_LEVELS.index("everyone")
+NOBODY = PRIVACY_LEVELS.index("nobody")
 
 # The avatar picker offers these avator_id values. New accounts could pick ids up to 200.
 AVATAR_IDS = tuple(chain(
@@ -47,12 +51,12 @@ def friend_list(_query: Query) -> dict:
     }
 
 
-def _dream_pal_list(status: DreamPalStatus, query: Query) -> dict:
+def _dream_pal_list(status: DreamPalStatus, query: Query, gscd: str | None = None) -> dict:
     """Return a page of players the player has `status` with.
 
     sort 2 orders them by name and dir 1 reverses the order.
     """
-    me = save_data.get_current_gscd()
+    me = save_data.resolve_gscd(gscd)
     others = [save_data.read_member(other) for other in db.dream_pals(me, status)] if me else []
     if query_int(query, "sort", 1) == 2:
         others.sort(key=lambda member: (member.get("pgl_name") or "").casefold())
@@ -132,14 +136,19 @@ def my_pdw_profile(_query: Query) -> dict:
     """
     if not session.get("gscd"):
         return {}
-    member = save_data.read_member()
-    sleeper = pokemon.get_sleeper()
+    return _pdw_profile(session["gscd"])
+
+
+def _pdw_profile(gscd: str) -> dict:
+    """Return a player's Dream World profile."""
+    member = save_data.read_member(gscd)
+    sleeper = pokemon.get_sleeper(gscd)
     profile = {
         "island_id":        member["island_id"],
         "experiment_point": member["experiment_point"],
         "encount_pokemons": []
     }
-    if not save_data.is_dreaming():
+    if not save_data.is_dreaming(gscd):
         return {**profile, **dict.fromkeys(("pokemon_name", "pokemon_nickname", "level", "sex_id", "pokemon_no",
                                             "form_no", "oyaname", "type1", "type2", "personality", "shiny"))}
     return {
@@ -185,10 +194,16 @@ def my_profile(_query: Query) -> dict:
     """Return the player's PGL profile page."""
     if not session.get("gscd"):
         return _demo_profile()
-    player_data = save_data.read_player_data()
+    return _profile(session["gscd"], session.get("username"))
+
+
+def _profile(gscd: str, username: str | None) -> dict:
+    """Return the PGL profile page of the game `gscd`."""
+    player_data = save_data.read_player_data(gscd)
     member = player_data["member"]
-    game_sync = save_data.read_game_sync()
-    country_id = accounts.get_country_id(session.get("username"))
+    game_sync = save_data.read_game_sync(gscd)
+    account = accounts.get_account_by_username(username)
+    country_id = account["country"] if account else None
 
     return {
         "avator_id":            member["avator_id"],
@@ -201,12 +216,72 @@ def my_profile(_query: Query) -> dict:
         "langcode":             member["langcode"],
         "trainer_name":         member["player_name"],
         "playtime":             f"{game_sync['hours_played']:02}:{game_sync['minutes_played']:02}",
-        "disclosure_flag":      member["disclosure_flag"],
-        "list_disclosure_flag": member["list_disclosure_flag"],
+        "disclosure_flag":      privacy_level(account["pgl_privacy"] if account else None),
+        "list_disclosure_flag": privacy_level(account["dw_privacy"] if account else None),
         "friends":              [],
         "friends_count":        0,
-        "medals":               save_data.read_medals(),
+        "medals":               save_data.read_medals(gscd),
     }
+
+
+def _page_level(username: str | None, has_game: bool = True) -> int:
+    """Return how strict the My Page privacy setting of the account `username` is.
+
+    Demo players always return "Nobody".
+    """
+    account = accounts.get_account_by_username(username)
+    return privacy_level(account["pgl_privacy"]) if account and has_game else NOBODY
+
+
+def _viewable_player(query: Query) -> tuple[str, str] | None:
+    """Return the Game Sync ID and owner of the player in friend_member_savedata_id."""
+    viewer = session.get("username")
+    savedata_id = query.get("friend_member_savedata_id", "")
+    other = db.find_gscd(int(savedata_id)) if savedata_id.isdigit() else None
+    owner = accounts.get_gscd_owner(other) if other else None
+    if not viewer or not other or not owner:
+        return None
+    if owner == viewer:
+        return other, owner
+    strictness = max(_page_level(owner), _page_level(viewer, bool(session.get("gscd"))))
+    return (other, owner) if strictness == EVERYONE else None
+
+
+def _not_viewable() -> dict:
+    """Return the `profile_not_visible` error."""
+    return _field_error("friend_member_savedata_id", "profile_not_visible")
+
+
+@endpoint("pgl.member.profile.friend_profile")
+def friend_profile(query: Query) -> dict:
+    """Return another player's PGL profile page."""
+    player = _viewable_player(query)
+    return _profile(*player) if player else _not_viewable()
+
+
+@endpoint("pgl.member.profile.friend_pdw_profile_by_pgl")
+def friend_pdw_profile(query: Query) -> dict:
+    """Return another player's Dream World profile."""
+    player = _viewable_player(query)
+    return _pdw_profile(player[0]) if player else _not_viewable()
+
+
+@endpoint("pgl.member.profile.friend_friend_list")
+def friend_friend_list(_query: Query) -> dict:
+    """Return another player's Game Pal roster."""
+    return {"list": [], "cnt": 0}
+
+
+@endpoint("pgl.member.profile.friend_pdw_friend_list")
+def friend_pdw_friend_list(query: Query) -> dict:
+    """Return a page of another player's Dream Pals."""
+    player = _viewable_player(query)
+    if not player:
+        return {"list": [], "cnt": 0}
+    gscd, owner = player
+    account = accounts.get_account_by_username(owner)
+    shown = owner == session.get("username") or (account is not None and privacy_level(account["dw_privacy"]) == EVERYONE)
+    return _dream_pal_list(DreamPalStatus.PALS, query, gscd) if shown else {"list": [], "cnt": 0}
 
 
 @endpoint("pgl.member.profile.my_state")
@@ -246,25 +321,33 @@ def avatar_select(query: Query) -> dict:
     return {}
 
 
+def _set_privacy(query: Query, flag: str, setting: Literal["pgl_privacy", "dw_privacy"]) -> dict:
+    """Save a privacy setting to an account."""
+    username = session.get("username")
+    level = query_int(query, flag, -1)
+    if not username or not session.get("gscd") or not 0 <= level < len(PRIVACY_LEVELS):
+        raise ValueError(f"Can't set {flag} to {query.get(flag)!r}")
+    accounts.set_privacy(username, setting, PRIVACY_LEVELS[level])
+    return {}
+
+
 @endpoint("pgl.member.profile.disclosure_switch", methods=("POST",))
 def disclosure_switch(query: Query) -> dict:
-    """Save the disclosure_flag privacy setting."""
-    save_data.update_member({"disclosure_flag": query_int(query, "disclosure_flag", 0)})
-    return {}
+    """Save who can see the player's profile page, which also decides who can visit their islands."""
+    return _set_privacy(query, "disclosure_flag", "pgl_privacy")
 
 
 @endpoint("pgl.member.profile.list_disclosure_switch", methods=("POST",))
 def list_disclosure_switch(query: Query) -> dict:
-    """Save the list_disclosure_flag privacy setting."""
-    save_data.update_member({"list_disclosure_flag": query_int(query, "list_disclosure_flag", 0)})
-    return {}
+    """Save who can see the player's Game Pal and Dream Pal rosters."""
+    return _set_privacy(query, "list_disclosure_flag", "dw_privacy")
 
 
 def _link_gscd(username: str, gscd: str) -> dict | None:
     """Link a Game Sync ID to the account.
 
-    Return a field error, and link nothing, if the Game Sync ID doesn't exist or is
-    already linked to any account, this one included. Return None once it's linked.
+    Return a field error if the Game Sync ID doesn't exist or is already linked to any
+    account. Return None once it's linked.
     """
     if not db.gscd_exists(gscd):
         return _field_error("gscd", "gscd_not_found")
@@ -282,6 +365,8 @@ def _link_gscd(username: str, gscd: str) -> dict | None:
         return _field_error("gscd", "gscd_game_already_linked")
 
     accounts.link_gscd(username, gscd)
+    # a save uploaded before the game was linked has records without a country
+    db.set_record_upload_country(gscd, accounts.get_country_id(username))
     session.setdefault("gscd", gscd)
 
     linked_gscds = accounts.get_gscds_for_account(username)

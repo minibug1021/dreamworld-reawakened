@@ -1,11 +1,11 @@
 """Trainer Club accounts and the Game Sync IDs linked to them (an SQLite database)."""
 import sqlite3
 import time
-from typing import cast
+from typing import Literal, cast
 
 from config import SAVE_DIR
 from game_sync_server.entralinked.utility.sqlite_store import SQLiteStore
-from utils.models import Account, Privacy
+from utils.models import PRIVACY_LEVELS, Account, Privacy
 
 # generate_password_hash("testpass")
 _TEST_PASSWORD_HASH = ("scrypt:32768:8:1$jZODhHVaqfKNahLu$671ff90e1738953e87edfa84abcc5fe3148409a7b37a207b9bb15fb02a96062b"
@@ -13,6 +13,11 @@ _TEST_PASSWORD_HASH = ("scrypt:32768:8:1$jZODhHVaqfKNahLu$671ff90e1738953e87edfa
 
 # An account that isn't activated within a week is deleted.
 UNACTIVATED_ACCOUNT_LIFETIME = 7 * 24 * 60 * 60
+
+
+def privacy_level(setting: Privacy | None) -> int:
+    """Return a privacy setting's index in PRIVACY_LEVELS."""
+    return PRIVACY_LEVELS.index(setting or "nobody")
 
 
 class AccountManager(SQLiteStore):
@@ -128,6 +133,10 @@ class AccountManager(SQLiteStore):
         """
         account = self.get_account_by_username(username)
         return bool(account["shows_shiny"]) if account else True
+
+    def set_privacy(self, username: str, setting: Literal["pgl_privacy", "dw_privacy"], value: Privacy) -> None:
+        """Change one of the account's privacy settings."""
+        self._execute(f"UPDATE accounts SET {setting} = ? WHERE username = ?", value, username)
 
     def mark_registered(self, username: str) -> None:
         """Record that the account has registered their username."""
