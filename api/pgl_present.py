@@ -74,8 +74,8 @@ def _offered(entry: dict, category: str, member: Member) -> bool:
 
 
 def _name(entry: dict) -> str:
-    """Return the DLC's name in the visitor's language, else in English."""
-    return entry["data"][current_language()][0] or entry["data"]["en"][0]
+    """Return the DLC's name in the visitor's language, else in English, else ""."""
+    return entry["data"][current_language()][0] or entry["data"]["en"][0] or ""
 
 
 def _entry(present_id: str, entry: dict) -> dict | None:

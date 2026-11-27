@@ -19,7 +19,7 @@ from utils.email_sender import send_activation_email
 from utils.messages import message
 from utils.models import Privacy
 
-SIGNUP_LANGUAGES = ("en",)
+SIGNUP_LANGUAGES = ("en", "de")
 PLACEHOLDER_SIGNUP_LANGUAGE = "en"
 _LANG = f"<any({','.join(SUPPORTED_LANGUAGES)}):lang>"  # other values get a 404
 SIGNUP_ROUTE     = f"/www.pokemon.com/{_LANG}/account/pgl/signup/"

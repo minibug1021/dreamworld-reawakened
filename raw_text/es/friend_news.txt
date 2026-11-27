@@ -1,0 +1,62 @@
+
+
+
+
+
+
+
+
+
+
+{name} ha venido a jugar a tu casa.
+
+
+
+
+
+
+
+
+
+{name} ha regado tu huerta.
+
+
+
+
+
+
+
+
+
+30
+
+
+
+
+
+
+
+
+
+
+{name} quiere ser tu sueñamigo.
+{name} quiere ser tu sueñamigo.
+
+
+
+
+
+
+
+Se ha añadido {item} al {catalog}.
+Se ha añadido {item} al {catalog}.
+Se ha añadido {item} al {catalog}.
+
+
+
+
+
+
+
+Se ha añadido {home} como casa especial (solo por un tiempo limitado).
+Se ha añadido {home} como casa especial (solo por un tiempo limitado).

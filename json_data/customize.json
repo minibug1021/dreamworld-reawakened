@@ -638,20 +638,6 @@
    "ko": ["기본", "CGEAR2/K/BW2_C100_default_6_k.bin", "241/m50a4b5ab.png"]
   }
  },
- "CGEAR2_DEFAULT": {
-  "type": "CGEAR2",
-  "id": 100,
-  "default": true,
-  "data": {
-   "ja": ["デフォルト", "CGEAR2/J/C100-2_default_0_j.bin", "220/m4fa9012b.png"],
-   "en": [null, null, null],
-   "fr": [null, null, null],
-   "it": [null, null, null],
-   "de": [null, null, null],
-   "es": [null, null, null],
-   "ko": [null, null, null]
-  }
- },
  "M010": {
   "type": "MUSICAL",
   "id": 10,
@@ -750,13 +736,13 @@
   "id": 5,
   "gender": "female",
   "data": {
-   "ja": ["カントーのさんびき", "ZUKAN/J/Z005_akamidori_fema_ja.bin", "124/m4d984c13.png"],
+   "ja": ["カントーのさんびき", "ZUKAN/J/Z005_akamidori_fema_ja.bin", "123/m4d984bee.png"],
    "en": [null, null, null],
    "fr": [null, null, null],
    "it": [null, null, null],
    "de": [null, null, null],
    "es": [null, null, null],
-   "ko": ["관동의 세 마리", "ZUKAN/K/Z005_akamidori_fema_6_k.bin", "216/m4ffe9291.png"]
+   "ko": ["관동의 세 마리", "ZUKAN/K/Z005_akamidori_fema_6_k.bin", "215/m4ffe924c.png"]
   }
  },
  "Z006": {
@@ -764,13 +750,13 @@
   "id": 6,
   "gender": "male",
   "data": {
-   "ja": ["カントーのさんびき", "ZUKAN/J/Z006_akamidori_male_ja.bin", "123/m4d984bee.png"],
+   "ja": ["カントーのさんびき", "ZUKAN/J/Z006_akamidori_male_ja.bin", "124/m4d984c13.png"],
    "en": [null, null, null],
    "fr": [null, null, null],
    "it": [null, null, null],
    "de": [null, null, null],
    "es": [null, null, null],
-   "ko": ["관동의 세 마리", "ZUKAN/K/Z006_akamidori_male_6_k.bin", "215/m4ffe924c.png"]
+   "ko": ["관동의 세 마리", "ZUKAN/K/Z006_akamidori_male_6_k.bin", "216/m4ffe9291.png"]
   }
  },
  "Z007": {
@@ -827,21 +813,6 @@
    "ko": ["기본", "ZUKAN/K/Z100_defogirl_6_ko.bin", "135/m4c58f0a2.png"]
   }
  },
- "ZUKAN_DEFAULT_PINK": {
-  "type": "ZUKAN",
-  "id": 100,
-  "default": true,
-  "gender": "female",
-  "data": {
-   "ja": ["デフォルト", "ZUKAN/J/zukan00.bin", "111/m4f87e208.png"],
-   "en": [null, null, null],
-   "fr": [null, null, null],
-   "it": [null, null, null],
-   "de": [null, null, null],
-   "es": [null, null, null],
-   "ko": [null, null, null]
-  }
- },
  "Z101": {
   "type": "ZUKAN",
   "id": 101,
@@ -855,21 +826,6 @@
    "de": ["Voreinstellung", "ZUKAN/G/Z101_defoboy_4_ge.bin", "127/m4d56347b.png"],
    "es": ["Predeterminado", "ZUKAN/S/Z101_defoboy_5_sp.bin", "127/m4d56347b.png"],
    "ko": ["기본", "ZUKAN/K/Z101_defoboy_6_ko.bin", "134/m4c58f028.png"]
-  }
- },
- "ZUKAN_DEFAULT_RED": {
-  "type": "ZUKAN",
-  "id": 101,
-  "default": true,
-  "gender": "male",
-  "data": {
-   "ja": ["デフォルト", "ZUKAN/J/zukanff.bin", "112/m4f87e12f.png"],
-   "en": [null, null, null],
-   "fr": [null, null, null],
-   "it": [null, null, null],
-   "de": [null, null, null],
-   "es": [null, null, null],
-   "ko": [null, null, null]
   }
  }
 }

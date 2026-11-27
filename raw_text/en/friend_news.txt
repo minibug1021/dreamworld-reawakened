@@ -1,0 +1,62 @@
+
+
+
+
+
+
+
+
+
+
+{name} visited your home.
+
+
+
+
+
+
+
+
+
+{name} watered your garden.
+
+
+
+
+
+
+
+
+
+Items were swapped using the Share Shelf.
+
+
+
+
+
+
+
+
+
+
+{name} became your Dream Pal.
+{name} became your Dream Pal.
+
+
+
+
+
+
+
+{item} has been added to the {catalog}.
+{item} has been added to the {catalog}.
+{item} has been added to the {catalog}.
+
+
+
+
+
+
+
+Limited Time Only: {home} has been added as a special home.
+Limited Time Only: {home} has been added as a special home.
