@@ -182,6 +182,19 @@ def _file_subs(lang: str) -> dict[str, tuple[Substitution, ...]]:
                 b"PGL.Utils.formatTime(Date.parse(this.data.member.last_up_time_strict.replace(' ', 'T') + '+09:00') / 1000, "
                 b"{ format:'SHORT' }) : this.data.member.last_up_time);",
             ),
+            # Bizarrely, the original site hid Badges/Medals on B2W2 profiles if the
+            # player viewing them was using a BW game.
+            Substitution(
+                b"if (!this.isMyProfile \n"
+                b"    && (data.rom_id == 22 || data.rom_id == 23) \n"
+                b"    && (this.data.member.rom_id != 22 && this.data.member.rom_id != 23)) {",
+                b"if (false) {",
+            ),
+            Substitution(
+                b"if ((this.data.member.rom_id == 22 || this.data.member.rom_id == 23) \n"
+                b"    && (data.rom_id == 22 || data.rom_id == 23)) {",
+                b"if (data.rom_id == 22 || data.rom_id == 23) {",
+            ),
         ),
     }
 
